@@ -1,0 +1,18 @@
+# Auto detect text files and perform LF normalization
+* text eol=lf
+
+# Denote all files that are truly binary and should not be modified.
+*.png binary
+*.gif binary
+*.jpg binary
+*.jpeg binary
+
+# Export Ignore Folders
+themes/aera/aheto/*/assets/css/*.css.map export-ignore
+themes/aera/aheto/*/assets/css/*.scss export-ignore
+themes/aera/aheto/*/assets/js/*.js.map export-ignore
+themes/aera/assets/js/*.js.map export-ignore
+themes/aera/assets/css/*.css.map export-ignore
+themes/aera/assets/css/*.scss export-ignore
+themes/aera/assets/css/blog/*.css.map export-ignore
+themes/aera/assets/css/blog/*.scss export-ignore

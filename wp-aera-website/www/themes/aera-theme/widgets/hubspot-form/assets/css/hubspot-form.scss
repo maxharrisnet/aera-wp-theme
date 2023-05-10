@@ -1,0 +1,234 @@
+@import '../../../../assets/css/mixin';
+
+.aera-hubspot-form {
+  min-height: 100vh;
+  padding-top: 300px;
+
+  @include sm-size-max {
+    padding-top: 200px;
+  }
+
+  @include xs-size-max {
+    padding-top: 180px;
+  }
+
+  &__banner {
+    text-align: center;
+
+    &-heading {
+      color: var(--c-dark);
+    }
+
+    &-description {
+      max-width: 850px;
+      margin: 10px auto 0 auto;
+      color: var(--c-grey);
+    }
+  }
+
+  &__form {
+    max-width: 850px;
+    padding: 110px 0 120px 0;
+    width: 100%;
+    margin: 0 auto;
+
+    @include sm-size-max {
+      padding: 90px 0 100px 0;
+    }
+
+    @include xs-size-max {
+      padding: 70px 0 80px 0;
+    }
+
+    form {
+      fieldset {
+        max-width: 100% !important;
+        width: 100%;
+      }
+
+      .form-columns-2 {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        column-gap: 70px;
+
+        @include sm-size-max {
+          column-gap: 40px;
+        }
+
+        @media screen and (max-width: 600px) {
+          column-gap: 0;
+        }
+
+        .hs-form-field {
+          width: calc(50% - 35px);
+
+          @include sm-size-max {
+            width: calc(50% - 20px);
+          }
+
+          @media screen and (max-width: 600px) {
+            width: 100%;
+          }
+        }
+      }
+
+      .form-columns-1 {
+        .hs-input {
+          width: 100%;
+        }
+      }
+
+      .hs-form-field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+
+        @media screen and (max-width: 600px) {
+          margin-bottom: 30px;
+        }
+
+        .input {
+          margin: 0;
+        }
+
+        label {
+          margin-bottom: -10px;
+
+          span {
+            font-size: 16px;
+            line-height: 2.77778;
+            font-family: inherit;
+          }
+        }
+      }
+
+      .hs-fieldtype-select {
+        width: calc(50% - 35px);
+        margin: 15px 100px 40px 0 !important;
+
+        @include sm-size-max {
+          width: calc(50% - 20px);
+        }
+
+        @media screen and (max-width: 600px) {
+          width: 100%;
+          margin: 15px 0 40px 0 !important;
+        }
+
+        .input {
+          width: 100%;
+          max-width: 100%;
+          position: relative;
+
+          &::before {
+            content: '';
+            position: absolute;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='7' width='12' class='_2sRtXWzrhW'%3E%3Cpath d='M12 .84l-.69-.69L6 5.46.7.15 0 .84l6 6z' fill='%231a1a1a'%3E%3C/path%3E%3C/svg%3E");
+            width: 12px;
+            height: 7px;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            z-index: 2;
+          }
+        }
+
+        select {
+          padding: 0 50px 0 40px !important;
+          width: 100% !important;
+          max-width: 100% !important;
+
+          @media screen and (max-width: 600px) {
+            padding: 0 40px !important;
+          }
+        }
+
+        label {
+          display: none;
+        }
+      }
+
+      .hs-submit {
+        margin-top: 20px;
+
+        @include sm-size-max {
+          margin-top: 0;
+        }
+
+        input[type='submit'] {
+          @media screen and (max-width: 600px) {
+            width: 100% !important;
+          }
+        }
+      }
+
+      .hs-richtext {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      .hs_error_rollup {
+        margin: 5px 0;
+      }
+
+      .hs-recaptcha {
+        margin-top: 30px;
+
+        @include xs-size-max {
+          margin-top: 10px;
+        }
+
+        textarea {
+          display: none !important;
+        }
+      }
+
+      ul {
+        padding-left: 0;
+        list-style: none;
+      }
+    }
+
+    .submitted-message {
+      p {
+        text-align: center;
+        font-family: 'Gilroy', sans-serif;
+        font-weight: 700;
+        color: var(--c-dark);
+        font-size: 66px;
+        line-height: 86px;
+        letter-spacing: -0.025em;
+        padding-bottom: 300px;
+
+        @include sm-size-max {
+          font-size: 56px;
+          line-height: 73px;
+          padding-bottom: 200px;
+        }
+
+        @include xs-size-max {
+          font-size: 42px;
+          line-height: 54px;
+          padding-bottom: 180px;
+        }
+      }
+    }
+  }
+
+  &__text {
+    margin-top: 60px;
+    text-align: center;
+    color: var(--c-grey);
+
+    @include sm-size-max {
+      margin-top: 45px;
+    }
+
+    @include xs-size-max {
+      margin-top: 30px;
+    }
+  }
+}

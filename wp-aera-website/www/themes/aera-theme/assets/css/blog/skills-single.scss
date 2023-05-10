@@ -1,0 +1,240 @@
+@import '../mixin';
+
+.aera-skills-details {
+  padding-top: 220px;
+
+  @include sm-size-max {
+    padding-top: 200px;
+  }
+
+  @include xs-size-max {
+    padding-top: 180px;
+  }
+
+  .container {
+    @include md-size-min {
+      width: 90%;
+    }
+  }
+
+  &__banner {
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 120px;
+
+    @include sm-size-max {
+      padding-bottom: 100px;
+    }
+
+    @include xs-size-max {
+      padding-bottom: 80px;
+    }
+
+    .container {
+      max-width: 1180px !important;
+    }
+
+    .aera-skills-details__title {
+      color: var(--c-dark);
+
+      i {
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+
+    .aera-skills-details__subtitle {
+      color: var(--c-grey);
+      margin-top: 30px;
+
+      @include sm-size-max {
+        margin-top: 20px;
+      }
+    }
+
+    .aera-skills-details__description {
+      color: var(--c-grey);
+      margin-top: 30px;
+
+      @include sm-size-max {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__main {
+    padding: 120px 0;
+    background-color: var(--c-aquahaze);
+
+    @include sm-size-max {
+      padding: 100px 0;
+    }
+
+    @include xs-size-max {
+      padding: 80px 0;
+
+      .container {
+        padding: 0 !important;
+      }
+    }
+
+    &-wrapper {
+      display: block;
+
+      &__top {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        margin-bottom: 30px;
+
+        @include xs-size-max {
+          margin-bottom: 50px;
+          padding: 0 5px;
+        }
+
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+
+      &__bottom {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @include xs-size-max {
+          padding: 0 20px;
+        }
+
+        .aera-skills-details__main-wrapper__bottom-text {
+          p {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            color: var(--c-black);
+            margin-bottom: 20px;
+
+            &:last-of-type {
+              margin-bottom: 0 !important;
+            }
+          }
+
+          ul,
+          ol {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            margin: 20px 0;
+
+            li {
+              font-family: inherit;
+              font-size: inherit;
+              line-height: inherit;
+            }
+          }
+
+          a {
+            color: var(--c-bahamablue) !important;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__benefits {
+    padding: 120px 0 100px 0;
+
+    @include sm-size-max {
+      padding: 100px 0 80px 0;
+    }
+
+    @include xs-size-max {
+      padding: 80px 0 60px 0;
+    }
+
+    &-content {
+      @include md-size-min {
+        padding: 0 40px;
+      }
+
+      @include md-size-max {
+        padding: 0 20px;
+      }
+
+      @include sm-size-max {
+        padding: 0;
+      }
+
+      .aera-skills-details__benefits-top,
+      .aera-skills-details__benefits-bottom {
+        display: block;
+        width: 100%;
+
+        ul {
+          padding-left: 20px;
+
+          ul {
+            margin-top: 15px;
+          }
+        }
+
+        ul,
+        ol {
+          color: var(--c-black);
+
+          li {
+            color: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            margin-bottom: 20px;
+          }
+        }
+
+        ol {
+          padding-left: 40px;
+          display: flex;
+          flex-wrap: wrap;
+
+          li {
+            width: calc(100% / 3 - 5px);
+            list-style-type: circle;
+            padding-right: 20px;
+            margin-right: 5px;
+
+            @include sm-size-max {
+              width: calc(100% / 2 - 20px);
+              margin-right: 20px;
+            }
+
+            @include xs-size-max {
+              margin-right: 0;
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      .aera-skills-details__benefits-top {
+        margin-bottom: 50px;
+      }
+
+      .aera-skills-details__benefits-title {
+        color: var(--c-dark);
+        margin-bottom: 20px;
+      }
+
+      .aera-skills-details__benefits-left {
+        @include xs-size-max {
+          margin-bottom: 40px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,175 @@
+@import '../../../../assets/css/mixin';
+
+.aera-our-locations {
+  &__banner {
+    position: relative;
+    z-index: 2;
+
+    @include xs-size-min {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-title {
+      color: var(--c-dark);
+
+      @include xs-size-min {
+        padding-right: 60px;
+      }
+
+      @include xs-size-max {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-contacts {
+      display: flex;
+      flex-direction: column;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline !important;
+        }
+
+        &.phonelink {
+          color: var(--c-dark);
+        }
+
+        &.emaillink {
+          color: var(--c-govenorbay);
+        }
+      }
+    }
+  }
+
+  &__map {
+    position: relative;
+    margin: -60px -70px;
+    z-index: 1;
+
+    @include sm-size-max {
+      margin: -10px -60px -30px -60px;
+    }
+
+    &-img {
+      display: block;
+      width: 100%;
+    }
+
+    &-marker {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+
+      @include xs-size-max {
+        background-color: currentColor;
+        border-radius: 50%;
+      }
+
+      svg {
+        @include xs-size-min {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: -5px;
+          width: auto;
+          fill-rule: evenodd;
+        }
+
+        @include sm-size-max {
+          width: 10px !important;
+        }
+
+        @include xs-size-max {
+          display: none !important;
+        }
+      }
+    }
+  }
+
+  &__addresses {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    z-index: 2;
+    margin: 0 -15px -60px -15px;
+
+    @include xs-size-max {
+      margin-bottom: -30px;
+    }
+
+    .aera-our-locations__address {
+      flex: none;
+      width: calc(100% / 5);
+      padding: 0 15px;
+
+      @include sm-size-max {
+        width: calc(100% / 4);
+      }
+
+      @include xs-size-max {
+        width: calc(100% / 3);
+      }
+
+      @media screen and (max-width: 560px) {
+        width: calc(100% / 2);
+      }
+
+      &-wrapper {
+        margin-bottom: 60px;
+
+        @include xs-size-max {
+          margin-bottom: 30px;
+        }
+      }
+
+      &-city {
+        color: var(--c-dark);
+        margin: 20px 0 5px 0;
+
+        @include xs-size-max {
+          margin-top: 15px;
+        }
+      }
+
+      &-text {
+        min-height: 21ex;
+        color: var(--c-grey);
+
+        @include xs-size-max {
+          min-height: auto;
+        }
+
+        a {
+          color: var(--c-govenorbay);
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline !important;
+          }
+        }
+
+        pre,
+        blockquote,
+        ul,
+        ol,
+        h1,
+        h2,
+        h3,
+        h4,
+        img {
+          display: none !important;
+        }
+      }
+
+      &-country {
+        color: var(--c-govenorbay);
+        margin: 15px 0;
+      }
+    }
+  }
+}

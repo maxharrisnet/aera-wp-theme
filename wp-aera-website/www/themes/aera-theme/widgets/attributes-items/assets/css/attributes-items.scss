@@ -1,0 +1,75 @@
+@import '../../../../assets/css/mixin';
+
+.aera-attributes-items {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 -15px;
+
+  @include sm-size-max {
+    margin: 0;
+  }
+
+  @include sm-size-min {
+    margin-bottom: -60px;
+  }
+
+  &__item {
+    flex: none;
+    align-self: stretch;
+    padding: 0 15px;
+    margin-bottom: 60px;
+    width: 50%;
+
+    @include sm-size-max {
+      width: 100%;
+      margin-bottom: 35px;
+      padding: 0;
+
+      &:last-of-type {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    &-content {
+      border-top: 1px solid #1a1a1a;
+      background-repeat: no-repeat;
+      margin-right: 40px;
+      padding: 30px 0 0 50px;
+      background: url('../../../../assets/img/attributes-items-tick.svg')
+        no-repeat;
+      background-position: 0 32px;
+
+      @include sm-size-max {
+        padding: 30px 0 0 55px;
+        margin-right: 0;
+      }
+
+      @include xs-size-max {
+        padding-top: 20px;
+      }
+
+      &__title {
+        color: var(--c-dark);
+        margin-top: 6px;
+
+        @include xs-size-max {
+          margin-top: 15px;
+        }
+      }
+
+      &__description {
+        color: var(--c-grey);
+        margin: 20px 0;
+
+        @include sm-size-max {
+          margin: 15px 0 0 0;
+        }
+      }
+    }
+  }
+}

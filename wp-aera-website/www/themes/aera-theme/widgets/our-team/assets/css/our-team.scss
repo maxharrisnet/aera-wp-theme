@@ -1,0 +1,101 @@
+@import '../../../../assets/css/mixin';
+
+.aera-our-team {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  z-index: 4;
+
+  &__wrapper {
+    @include xs-size-min {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: stretch;
+      justify-content: flex-start;
+      margin: 0 -55px;
+    }
+
+    @include md-size-max {
+      margin: 0 -30px;
+    }
+
+    @include sm-size-max {
+      margin: 0 -27.5px;
+    }
+
+    @include xs-size-max {
+      margin: 0 auto;
+    }
+
+    .aera-our-team__item-wrapper {
+      @include sm-size-min {
+        flex: none;
+        width: 25%;
+        padding: 0 55px;
+        margin-bottom: 30px;
+        align-self: stretch;
+
+        @include md-size-max {
+          padding: 0 30px;
+        }
+
+        &.has-link {
+          transition: transform 0.3s linear;
+
+          &:hover {
+            transform: scale(1.02);
+          }
+        }
+      }
+
+      @include sm-size-max {
+        flex: none;
+        padding: 0 27.5px;
+        width: 50%;
+        margin-bottom: 30px;
+      }
+
+      @include xs-size-max {
+        width: 100%;
+        max-width: 450px;
+        padding: 0;
+        margin: 0 auto 30px auto;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      .aera-our-team__item {
+        display: block;
+
+        &-img {
+          display: block !important;
+          height: 223px !important;
+          margin: 0 auto !important;
+          object-fit: cover;
+
+          @include sm-size-max {
+            width: 223px !important;
+          }
+        }
+
+        &-content {
+          display: block;
+          text-align: center;
+
+          &__name {
+            color: var(--c-black);
+            margin-top: 20px;
+          }
+
+          &__position {
+            color: var(--c-second-blue);
+            font-weight: 400;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}

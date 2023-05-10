@@ -1,0 +1,72 @@
+@import '../../../../assets/css/mixin';
+
+.aera-four-images-gallery {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: row;
+  margin: 0 -15px;
+
+  @include md-size-max {
+    margin: 0 -10px;
+  }
+
+  @include sm-size-max {
+    margin: 0 -5px;
+  }
+
+  @media screen and (max-width: 820px) {
+    flex-wrap: wrap;
+    margin-bottom: -10px;
+  }
+
+  .aera-four-images-gallery__image-wrapper {
+    display: flex;
+    padding: 0 15px;
+    flex: 0.75;
+
+    @include md-size-max {
+      padding: 0 10px;
+    }
+
+    @include sm-size-max {
+      padding: 0 5px;
+    }
+
+    @media screen and (max-width: 820px) {
+      margin-bottom: 10px;
+    }
+
+    &:nth-child(2) {
+      flex: 1.35;
+    }
+
+    &:nth-child(4) {
+      @media screen and (max-width: 820px) {
+        order: 4;
+      }
+    }
+
+    &:nth-child(5) {
+      flex: 1.35;
+
+      @media screen and (max-width: 820px) {
+        order: 3;
+      }
+    }
+
+    .aera-four-images-gallery__image {
+      display: block;
+    }
+  }
+
+  .aera-four-images-gallery__empty {
+    @media screen and (min-width: 821px) {
+      display: none !important;
+    }
+
+    @media screen and (max-width: 820px) {
+      width: 100%;
+    }
+  }
+}

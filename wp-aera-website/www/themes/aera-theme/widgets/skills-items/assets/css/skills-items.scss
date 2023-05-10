@@ -1,0 +1,63 @@
+@import '../../../../assets/css/mixin';
+
+.aera-skills-items {
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -30px;
+
+    @include xs-size-max {
+      margin-bottom: -15px;
+    }
+  }
+
+  &__item {
+    background-repeat: no-repeat;
+    background-size: 40px;
+    background-position: 0 10px;
+    padding: 0 40px 0 60px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+
+    @media screen and (min-width: 901px) {
+      width: 33.33%;
+
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+
+    @include sm-size-max {
+      padding: 0 40px 0 50px;
+    }
+
+    @include xs-size-max {
+      padding: 0 0 0 60px;
+      margin-bottom: 15px;
+    }
+
+    &-title {
+      margin-top: 20px;
+      color: var(--c-dark);
+
+      @include xs-size-max {
+        margin: 10px 0 5px 0;
+      }
+
+      svg {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
+
+        @include xs-size-max {
+          max-width: 20px;
+        }
+      }
+    }
+
+    &-description {
+      padding-right: 20px;
+      color: var(--c-black);
+    }
+  }
+}

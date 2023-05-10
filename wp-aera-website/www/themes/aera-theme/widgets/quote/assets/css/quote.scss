@@ -1,0 +1,115 @@
+@import '../../../../assets/css/mixin';
+
+.aera-quote {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-direction: row;
+  padding: 0 20px;
+
+  background: #dcdcdc;
+
+  @include sm-size-max {
+    padding: 0 15px;
+  }
+
+  @include xs-size-max {
+    padding: 0 20px;
+    flex-direction: column;
+  }
+
+  &__content {
+    padding: 120px 0;
+
+    @include md-size-max {
+      padding: 90px 0;
+    }
+
+    @include sm-size-max {
+      padding: 80px 0;
+    }
+
+    @include xs-size-min {
+      display: flex;
+      flex-direction: column;
+      margin-left: 50%;
+      width: 50%;
+    }
+
+    @media screen and (max-width: 900px) {
+      padding: 60px 0;
+    }
+
+    @include xs-size-max {
+      padding: 30px 0;
+    }
+
+    &-text {
+      display: block;
+      color: var(--c-grey);
+      margin-bottom: 30px;
+
+      @include sm-size-max {
+        margin-bottom: 20px;
+      }
+
+      @include xs-size-max {
+        margin-bottom: 15px;
+      }
+    }
+
+    &-author {
+      color: var(--c-dark);
+      font-family: 'Gilroy', sans-serif;
+      font-weight: 700;
+      font-style: normal;
+
+      span {
+        color: var(--c-persiangreen);
+        display: block;
+        font-weight: 200;
+        font-size: 16px;
+        line-height: 1.2;
+        margin-top: 10px;
+
+        @include xs-size-max {
+          margin-top: 5px;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  &__img {
+    @include xs-size-min {
+      position: absolute !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      height: 100% !important;
+      width: auto !important;
+      max-width: 600px !important;
+    }
+
+    @media screen and (min-width: 1300px) {
+      left: 5% !important;
+    }
+
+    @include md-size-max {
+      height: 90% !important;
+    }
+
+    @include sm-size-max {
+      height: 100% !important;
+    }
+
+    @media screen and (max-width: 900px) {
+      height: 90% !important;
+    }
+
+    @include xs-size-max {
+      position: static;
+      max-width: 600px;
+    }
+  }
+}

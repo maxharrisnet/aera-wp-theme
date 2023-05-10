@@ -1,0 +1,249 @@
+@import '../../../../assets/css/mixin';
+
+.aera-events {
+  display: flex;
+
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+
+    @include md-size-min {
+      width: 87.5%;
+    }
+
+    @include md-size-max {
+      margin: 0 -20px;
+    }
+
+    @include xs-size-max {
+      flex-direction: column;
+      margin: 0;
+    }
+
+    .aera-events__item-wrapper {
+      display: inline-flex;
+      padding: 20px;
+      width: calc(100% / 3);
+
+      @include xs-size-min {
+        &:hover {
+          .aera-events__item {
+            transform: scale(1.01);
+            box-shadow: 2px 2px 30px #e5e5e5 !important;
+          }
+        }
+      }
+
+      @include sm-size-max {
+        width: calc(100% / 2);
+      }
+
+      @include xs-size-max {
+        display: block;
+        width: 100%;
+        max-width: 480px;
+        padding: 0;
+        margin: 0 auto 20px auto;
+
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+
+      .aera-events__item {
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 10px;
+        min-height: 450px;
+        background-color: var(--c-white);
+        box-shadow: 1px 1px 10px #e5e5e5;
+        transition: all 0.3s linear;
+
+        @include xs-size-max {
+          min-height: auto;
+        }
+
+        &-top {
+          &__bg {
+            display: block;
+            width: 100%;
+            height: 87px;
+            background-position: 50%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            border-radius: 10px 10px 0 0;
+            border-bottom: 5px solid var(--c-blue);
+
+            @media screen and (max-width: 420px) {
+              height: 80px;
+              background-size: cover;
+            }
+          }
+        }
+
+        &-bottom {
+          text-decoration: none !important;
+
+          &__banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            row-gap: 5px;
+            padding: 15px 15px 0;
+
+            &-text {
+              display: inline-block;
+              position: relative;
+              font-family: 'Gilroy', sans-serif;
+              font-weight: 600;
+              font-size: 14px;
+              line-height: 20px;
+              color: var(--c-black);
+              white-space: nowrap;
+              text-transform: uppercase;
+            }
+
+            &-category {
+              position: relative;
+              font-family: 'Gilroy', sans-serif;
+              font-weight: 700;
+              font-size: 14px;
+              line-height: 21px;
+              color: var(--c-dark);
+              white-space: nowrap;
+              text-align: right;
+            }
+          }
+
+          &__content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 15px 0;
+
+            &-wrapper {
+              min-height: 350px;
+
+              @include xs-size-max {
+                min-height: auto;
+              }
+
+              .aera-events__item-bottom__content-name {
+                color: var(--c-black);
+                margin: 15px 0;
+              }
+
+              .aera-events__item-bottom__content-description {
+                color: var(--c-black);
+                font-weight: 400;
+                min-height: 120px;
+                margin-bottom: 50px;
+
+                @include xs-size-max {
+                  min-height: auto;
+                  margin-bottom: 15px;
+                }
+              }
+            }
+          }
+
+          &__register {
+            width: 100%;
+
+            @include xs-size-min {
+              position: absolute;
+              bottom: 10px;
+              left: 0;
+            }
+
+            @include xs-size-max {
+              position: relative;
+              bottom: 0;
+              left: 0;
+              padding-bottom: 20px;
+            }
+
+            &-wrapper {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              padding: 15px 15px 0;
+
+              .aera-events__item-bottom__register-date {
+                position: relative;
+                font-family: 'Gilroy', sans-serif;
+                font-size: 14px;
+                font-weight: 700;
+                color: var(--c-dark);
+                text-align: right;
+                white-space: nowrap;
+
+                @include xs-size-max {
+                  text-align: left;
+                }
+              }
+
+              .aera-events__item-bottom__register-line {
+                @include xs-size-min {
+                  width: 100%;
+                  height: 1px;
+                  background-color: var(--c-black);
+                  margin: 9px 15px;
+                }
+
+                @include xs-size-max {
+                  display: none !important;
+                }
+              }
+
+              .aera-events__item-bottom__register-button {
+                span {
+                  position: relative;
+                  display: block;
+                  text-decoration: none;
+                  text-transform: uppercase;
+                  font-family: 'Gilroy', sans-serif;
+                  font-size: 13px;
+                  font-weight: 600;
+                  text-align: right;
+                  background-color: var(--c-blue);
+                  border-radius: 50px;
+                  color: var(--c-white);
+                  padding: 5px 25px;
+                  z-index: 1;
+
+                  @include xs-size-min {
+                    &::before {
+                      content: '';
+                      position: absolute;
+                      left: -2px;
+                      top: -2px;
+                      width: calc(100% + 4px);
+                      height: calc(100% + 4px);
+                      border-radius: 50px;
+                      background-color: var(--c-blue);
+                      opacity: 0;
+                      z-index: -1;
+                      transition: opacity 0.4s linear;
+                    }
+
+                    &:hover {
+                      &::before {
+                        opacity: 1;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,287 @@
+@import '../mixin';
+
+.aera-customers-details {
+  padding-top: 220px;
+
+  @include sm-size-max {
+    padding-top: 200px;
+  }
+
+  @include xs-size-max {
+    padding-top: 180px;
+  }
+
+  .container {
+    max-width: 1258px;
+
+    @include sm-size-max {
+      padding: 0 50px;
+    }
+
+    @include xs-size-max {
+      padding: 0 20px;
+    }
+  }
+
+  &__banner {
+    text-align: center;
+    padding-bottom: 120px;
+
+    @include sm-size-max {
+      padding-bottom: 100px;
+    }
+
+    @include xs-size-max {
+      padding-bottom: 80px;
+    }
+
+    &-title {
+      color: var(--c-dark);
+    }
+
+    &-subtitle {
+      color: var(--c-grey);
+      margin-top: 20px;
+    }
+  }
+
+  &__content {
+    padding-top: 120px;
+    background-color: var(--c-aquahaze);
+
+    @include sm-size-max {
+      padding-top: 100px;
+    }
+
+    @include xs-size-max {
+      padding: 80px 0 20px 0;
+    }
+
+    &-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include xs-size-max {
+        flex-direction: column;
+      }
+
+      &__icon {
+        position: relative;
+        margin: 0;
+        max-width: 110px;
+
+        img {
+          display: block;
+        }
+      }
+
+      &__text {
+        width: 70%;
+        padding-left: 40px;
+
+        @include xs-size-max {
+          width: 100%;
+          padding: 20px 0 0 0;
+        }
+
+        p {
+          color: var(--c-black);
+        }
+      }
+    }
+
+    &-lists {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 110px 0 40px 0;
+
+      @include xs-size-max {
+        padding: 50px 0 20px 0;
+        flex-direction: column;
+      }
+
+      .aera-customers-details__content-lists__title {
+        color: var(--c-dark);
+        margin-bottom: 20px;
+
+        @include xs-size-max {
+          margin-bottom: -5px;
+        }
+      }
+
+      &__left,
+      &__right {
+        width: 50%;
+        padding: 10px 50px 10px 10px;
+
+        @include xs-size-max {
+          width: 100%;
+          padding: 0;
+        }
+      }
+
+      &__left {
+        @include xs-size-max {
+          margin-bottom: 30px;
+        }
+      }
+
+      &__right {
+        @include sm-size-max {
+          padding-right: 0;
+        }
+      }
+    }
+
+    &-info {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-bottom: 10px;
+
+      @include xs-size-max {
+        flex-direction: column;
+      }
+
+      .aera-customers-details__content-info__title {
+        color: var(--c-dark);
+        padding-top: 20px;
+        margin: 20px 0;
+        border-top: 1px solid var(--c-dark);
+
+        @include xs-size-max {
+          padding-top: 20px;
+          margin: 15px 0 -5px 0;
+        }
+      }
+
+      &__left,
+      &__right {
+        width: 50%;
+        padding: 10px 50px 0 10px;
+        margin-bottom: 40px;
+
+        @include sm-size-max {
+          padding: 0 50px 0 10px;
+        }
+
+        @include xs-size-max {
+          width: 100%;
+          margin-bottom: 0;
+        }
+      }
+
+      &__left {
+        @include xs-size-max {
+          margin-bottom: 25px;
+          padding-right: 0;
+        }
+      }
+
+      &__right {
+        @include sm-size-max {
+          padding-right: 0;
+        }
+      }
+    }
+
+    &-quote {
+      margin: 0 auto;
+      max-width: 80%;
+      padding: 20px 0 120px 0;
+
+      @include sm-size-max {
+        padding: 20px 0 100px 0;
+      }
+
+      @include xs-size-max {
+        max-width: 90%;
+        padding: 30px 0 60px 0;
+      }
+
+      &__top {
+        p {
+          color: var(--c-second-blue);
+          font-weight: 700;
+          font-size: 28px;
+          line-height: 40px;
+          margin-bottom: 30px;
+
+          @include xs-size-max {
+            font-size: 24px;
+            line-height: 36px;
+          }
+        }
+      }
+
+      &__bottom {
+        p {
+          text-align: right;
+          color: var(--c-second-blue);
+          font-weight: 400;
+          font-size: 14px;
+        }
+      }
+    }
+
+    &-results {
+      border-top: 1px solid var(--c-black);
+
+      &__title {
+        color: var(--c-dark);
+        margin: 20px 0;
+      }
+
+      &__items {
+        @media screen and (min-width: 821px) {
+          display: grid;
+          grid-template-columns: auto auto auto auto;
+        }
+
+        @media screen and (max-width: 820px) {
+          display: block;
+        }
+
+        .aera-customers-details__content-results__item {
+          margin: 0 35px 40px 0;
+          padding-right: 20px;
+          color: var(--c-black);
+
+          @include sm-size-max {
+            padding-right: 0;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+
+          @media screen and (max-width: 820px) {
+            padding-right: 0;
+            margin: 0 0 20px 0;
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .wysiwyg-content {
+      color: var(--c-black);
+
+      ol,
+      ul {
+        padding-left: 20px;
+      }
+
+      ul,
+      ol,
+      p {
+        margin: 20px 0;
+      }
+    }
+  }
+}
