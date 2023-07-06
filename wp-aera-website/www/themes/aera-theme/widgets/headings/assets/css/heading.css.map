@@ -1,1 +1,0 @@
-{"version":3,"sources":["widgets/headings/assets/css/heading.css"],"names":[],"mappings":"AAAA,qBACE,gBAAiB,UAGnB,wBACE,MAAO","file":"heading.css","sourcesContent":[".aera-heading__title{text-decoration:underline}.aera-heading__subtitle{color:var(--c-grey)}\n/*# sourceMappingURL=heading.css.map */\n"]}
