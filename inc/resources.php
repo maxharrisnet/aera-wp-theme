@@ -61,14 +61,6 @@ function get_resource_types(): array
       'label'      => __('Podcasts', 'aera'),
       'post_types' => array('podcast'),
     ),
-    'customers'     => array(
-      'label'      => __('Customers', 'aera'),
-      'post_types' => array('customer'),
-    ),
-    'events'        => array(
-      'label'      => __('Events', 'aera'),
-      'post_types' => array('event', 'webinar'),
-    ),
   );
 
   return $types;
@@ -150,7 +142,7 @@ function get_resource_cta_label(string $postType): string
     'video'        => __('Watch', 'aera'),
     'webinar'      => __('Watch', 'aera'),
     'event'        => __('Register', 'aera'),
-    'press-release'=> __('Read', 'aera'),
+    'press-release' => __('Read', 'aera'),
     'news'         => __('Read', 'aera'),
     'whitepaper'   => __('Download', 'aera'),
     'podcast'      => __('Listen', 'aera'),
@@ -178,7 +170,7 @@ function get_resource_fallback_media(string $postType): array
     'video'     => array('path' => 'webinars/agentic-decision-intel.jpg'),
     'webinar'   => array('path' => 'webinars/agentic-decision-intel.jpg'),
     'event'     => array('path' => 'webinars/agentic-decision-intel.jpg'),
-    'whitepaper'=> array('path' => 'blogs/smarter-waste.jpg'),
+    'whitepaper' => array('path' => 'blogs/smarter-waste.jpg'),
   );
 
   if (! isset($map[$postType])) {

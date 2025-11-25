@@ -1,0 +1,264 @@
+@use '../variables' as *;
+@use '../legacy/variables' as legacy;
+@use '../legacy/grid' as *;
+@use '../legacy/mixins' as *;
+
+.site-main--webinars {
+	padding-top: 7rem;
+}
+
+.webinars-hero {
+	@include container;
+	padding: 3rem 0 2rem;
+	text-align: center;
+
+	&__title {
+		@include heading($hasMargin: false, $min: 32, $max: 60);
+		margin-bottom: 1rem;
+		color: $color-black;
+	}
+
+	&__description {
+		max-width: 720px;
+		margin: 0 auto;
+		font-size: 1.1rem;
+		color: $color-slate;
+	}
+}
+
+.webinars-featured {
+	padding: clamp(2rem, 6vw, 4rem) 0;
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		@include heading($hasMargin: false, $min: 28, $max: 42);
+		margin-bottom: 2rem;
+		color: $color-black;
+		text-align: center;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+		gap: clamp(1.5rem, 4vw, 2.75rem);
+		padding: 1.5rem 0;
+	}
+
+	@media (max-width: legacy.$max-960) {
+		&__list {
+			grid-template-columns: 1fr;
+		}
+	}
+}
+
+.webinar-featured-card {
+	padding: 0;
+	height: 100%;
+	display: flex;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		min-height: 500px;
+		background: $color-white;
+		border-radius: 10px;
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
+		text-decoration: none;
+		color: $color-black;
+		transition: transform 220ms ease, box-shadow 220ms ease;
+	}
+
+	&__wrapper:hover,
+	&__wrapper:focus-visible {
+		transform: translateY(-4px);
+		box-shadow: 0 30px 80px rgba(0, 0, 0, 0.14);
+	}
+
+	&__wrapper:focus-visible {
+		outline: 3px solid $color-primary;
+		outline-offset: 3px;
+	}
+
+	&__figure {
+		width: 100%;
+		min-height: 240px;
+		border-bottom: 5px solid #003f68;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: $color-background;
+		overflow: hidden;
+	}
+
+	&__figure img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		min-height: 260px;
+	}
+
+	&__row {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		padding: 15px 20px 0;
+		gap: 0.5rem;
+	}
+
+	&__row--meta {
+		padding-top: 20px;
+	}
+
+	&__type {
+		font-family: legacy.$font-family-heading;
+		font-size: 0.95rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		font-weight: 600;
+		color: $color-black;
+	}
+
+	&__content {
+		width: 100%;
+		color: $color-black;
+	}
+
+	&__title {
+		font-family: legacy.$font-family-heading;
+		font-weight: 700;
+		font-size: 1.5rem;
+		line-height: 1.3;
+		margin: 15px 0;
+		color: $color-black;
+	}
+
+	&__text {
+		font-size: 1rem;
+		line-height: 1.6;
+		min-height: 120px;
+		margin: 0;
+		color: $color-black;
+	}
+
+	&__footerRow {
+		margin-top: auto;
+		display: flex;
+		align-items: center;
+		padding: 20px;
+		gap: 1rem;
+		position: relative;
+	}
+
+	&__date {
+		font-family: legacy.$font-family-heading;
+		font-size: 0.92rem;
+		font-weight: 700;
+		color: $color-black;
+		white-space: nowrap;
+	}
+
+	&__line {
+		flex: 1;
+		height: 1px;
+		background: $color-black;
+	}
+
+	&__ctaLabel {
+		font-family: legacy.$font-family-heading;
+		font-size: 0.78rem;
+		font-weight: 600;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: $color-white;
+		background: #003f68;
+		border-radius: 50px;
+		padding: 6px 24px;
+		white-space: nowrap;
+	}
+
+	@media (max-width: legacy.$max-960) {
+		&__wrapper {
+			min-height: 520px;
+		}
+
+		&__text {
+			min-height: auto;
+		}
+	}
+
+	@media (max-width: legacy.$max-720) {
+		&__wrapper {
+			min-height: auto;
+		}
+
+		&__figure {
+			min-height: 180px;
+		}
+
+		&__footerRow {
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 0.5rem;
+		}
+
+		&__line {
+			width: 100%;
+			margin: 0;
+		}
+	}
+}
+
+.webinars-on-demand {
+	padding: clamp(2rem, 6vw, 4rem) 0;
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		@include heading($hasMargin: false, $min: 28, $max: 42);
+		margin-bottom: 2rem;
+		color: $color-black;
+		text-align: center;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		gap: clamp(1.5rem, 4vw, 2.75rem);
+		padding: 1.5rem 0 3.5rem;
+	}
+
+	&__pagination {
+		padding-bottom: 4rem;
+		text-align: center;
+
+		ul {
+			list-style: none;
+			display: inline-flex;
+			gap: 0.5rem;
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	&__empty {
+		text-align: center;
+		padding: 3rem 0;
+		color: $color-slate;
+		font-size: 1.1rem;
+	}
+}
+
