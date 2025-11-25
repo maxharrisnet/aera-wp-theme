@@ -1,0 +1,161 @@
+{
+  "key": "group_aera_blog",
+  "title": "Blog Article Settings",
+  "fields": [
+    {
+      "key": "field_blog_lead",
+      "label": "Lead Text",
+      "name": "blog_lead",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "Publisher or source information. Each line will be displayed as a separate paragraph.",
+      "required": false,
+      "conditional_logic": false,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "rows": 3,
+      "new_lines": "br",
+      "default_value": "",
+      "maxlength": "",
+      "placeholder": ""
+    },
+        {
+            "key": "field_blog_author_photo",
+            "label": "Author Photo",
+            "name": "blog_author_photo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Photo for the main author.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_blog_author_photo_2",
+            "label": "Author 2 Photo",
+            "name": "blog_author_photo_2",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Photo for the second author.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_blog_author_photo_3",
+            "label": "Author 3 Photo",
+            "name": "blog_author_photo_3",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Photo for the third author.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33.34",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_blog_publisher_2",
+            "label": "Publisher 2",
+            "name": "blog_publisher_2",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Publisher or source for the second author. Each line will be displayed as a separate paragraph.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "rows": 2,
+            "new_lines": "br",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_blog_publisher_3",
+            "label": "Publisher 3",
+            "name": "blog_publisher_3",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Publisher or source for the third author. Each line will be displayed as a separate paragraph.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "rows": 2,
+            "new_lines": "br",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "blog"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Custom fields for blog articles including author information and lead text.",
+  "show_in_rest": 1,
+  "display_title": "",
+  "modified": 1764070230
+}

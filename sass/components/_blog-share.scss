@@ -1,0 +1,53 @@
+@use 'sass:math';
+@use '../legacy/reset' as *;
+@use '../legacy/variables' as *;
+@use '../legacy/mixins' as *;
+
+.blog-share {
+	margin-bottom: $gutter * 2;
+	padding-top: 0;
+
+	@media (max-width: $max-960) {
+		padding-top: 0;
+	}
+
+	@media (max-width: $max-720) {
+		padding-top: 0;
+	}
+
+	&__container {
+		padding-bottom: 20px;
+		padding-top: 0;
+		margin: 0;
+		border-top: 1px solid #000;
+		border-bottom: 1px solid #000;
+	}
+
+	&__networks {
+		display: flex;
+		align-items: center;
+		gap: 9%;
+		margin-top: 15px;
+	}
+
+	&__network {
+		vertical-align: top;
+		display: inline-block;
+		text-align: right;
+	}
+
+	&__button {
+		@include reset-anchor;
+		display: inline-block;
+		cursor: pointer;
+		transition: opacity 0.3s ease-in-out;
+
+		&:hover:not(:active) {
+			opacity: 0.75;
+		}
+
+		svg {
+			display: block;
+		}
+	}
+}

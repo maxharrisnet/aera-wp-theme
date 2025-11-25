@@ -20,14 +20,29 @@ $type_label = $args['type_label'] ?? get_resource_label_for_post_type($post_type
 $date_value = $args['date'] ?? get_the_date('c', $post_id);
 $display_date = $date_value ? date_i18n(get_option('date_format'), strtotime($date_value)) : '';
 
-$external_url = $args['external_url'] ?? '';
+$external_url = $args['external_url'] ?? (function_exists('get_field') ? get_field('resource_external_url', $post_id) : '');
 $link = $args['link'] ?? ($external_url ?: get_permalink($post_id));
 $is_external = ! empty($external_url) || (isset($args['link']) && str_contains($args['link'], 'http'));
 $cta_label = $args['cta_label'] ?? get_resource_cta_label($post_type);
 $custom_image = $args['image'] ?? '';
 $custom_image_alt = $args['image_alt'] ?? $title;
 
-$thumbnail = $is_demo ? '' : get_the_post_thumbnail(
+// Get card image from ACF field, fallback to featured image
+$card_image = '';
+if (!$is_demo && function_exists('get_field')) {
+  $card_image_data = get_field('resource_card_image', $post_id);
+  if ($card_image_data && !empty($card_image_data['url'])) {
+    $card_image = sprintf(
+      '<img src="%1$s" alt="%2$s" class="resource-card__image" loading="lazy" width="%3$d" height="%4$d" />',
+      esc_url($card_image_data['url']),
+      esc_attr($card_image_data['alt'] ?? $title),
+      esc_attr($card_image_data['width'] ?? ''),
+      esc_attr($card_image_data['height'] ?? '')
+    );
+  }
+}
+
+$thumbnail = $card_image ?: ($is_demo ? '' : get_the_post_thumbnail(
   $post_id,
   'resource_card',
   array(
@@ -35,10 +50,10 @@ $thumbnail = $is_demo ? '' : get_the_post_thumbnail(
     'loading' => 'lazy',
     'alt'     => $title,
   )
-);
+));
 
-$fallback_media = $thumbnail ? array() : get_resource_fallback_media($post_type);
-$media_markup = $thumbnail;
+$fallback_media = ($thumbnail || $card_image) ? array() : get_resource_fallback_media($post_type);
+$media_markup = $card_image ?: $thumbnail;
 
 if (! $media_markup && $custom_image) {
   $media_markup = sprintf(
@@ -59,6 +74,17 @@ if (! $media_markup && ! empty($fallback_media['url'])) {
     esc_attr($title),
     esc_attr(implode(' ', $media_classes))
   );
+}
+
+// Get author fields
+$authors = array();
+if (!$is_demo && function_exists('get_field')) {
+  for ($i = 1; $i <= 3; $i++) {
+    $author = get_field("resource_author_{$i}", $post_id);
+    if (!empty($author)) {
+      $authors[] = $author;
+    }
+  }
 }
 
 $card_classes = array('resource-card');
@@ -107,6 +133,16 @@ foreach ($wrapper_attrs as $attr => $value) {
 
           <?php if ($excerpt) : ?>
             <p class="resource-card__text"><?php echo esc_html($excerpt); ?></p>
+          <?php endif; ?>
+
+          <?php if (!empty($authors)) : ?>
+            <div class="resource-card__authors">
+              <?php foreach ($authors as $author) : ?>
+                <div class="resource-card__author">
+                  <?php echo wp_kses_post(wpautop($author)); ?>
+                </div>
+              <?php endforeach; ?>
+            </div>
           <?php endif; ?>
         </div>
       </div>

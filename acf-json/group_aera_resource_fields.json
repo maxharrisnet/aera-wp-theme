@@ -1,0 +1,205 @@
+{
+    "key": "group_aera_resource_fields",
+    "title": "Resource Fields",
+    "fields": [
+        {
+            "key": "field_resource_card_image",
+            "label": "Card Image",
+            "name": "resource_card_image",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Image displayed on the resource archive/card view. If not set, the featured image will be used.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_resource_external_url",
+            "label": "External URL",
+            "name": "resource_external_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "If this resource links to an external URL (e.g., HubSpot, YouTube), enter it here. Leave empty to use the WordPress post permalink.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_resource_author_1",
+            "label": "Author 1",
+            "name": "resource_author_1",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "First author name and details. Each line will create a new paragraph.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "wpautop",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_resource_author_2",
+            "label": "Author 2",
+            "name": "resource_author_2",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Second author name and details. Each line will create a new paragraph.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33.33",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "wpautop",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_resource_author_3",
+            "label": "Author 3",
+            "name": "resource_author_3",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Third author name and details. Each line will create a new paragraph.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "33.34",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "wpautop",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "press-release"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "video"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "whitepaper"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "blog"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "case-study"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "podcast"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "customer"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "event"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "webinar"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "faq"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "media-item"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Common fields for all resource post types including card image, external URL, and author information.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1735000000
+}

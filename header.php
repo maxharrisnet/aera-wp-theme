@@ -24,11 +24,22 @@
 <?php
 wp_body_open();
 $background_classes = 'background';
+$background_active = false;
+
+// Determine if background should be active based on WordPress conditionals
+$background_active = false;
 if (is_front_page()) {
+	$background_active = true;
 	$background_classes .= ' background--home';
+} elseif (
+	is_page_template('page-resources.php') ||
+	(is_page() && get_page_template_slug() === 'page-resources.php') ||
+	is_page(array('resources', 'about-us', 'careers', 'webinars', 'aera-decision-cloud', 'test-drive', 'demo', 'aerahub-2025'))
+) {
+	$background_active = true;
 }
 ?>
-<div class="<?php echo esc_attr($background_classes); ?>" data-background aria-hidden="true"></div>
+<div class="<?php echo esc_attr($background_classes); ?>" data-background data-background-active="<?php echo $background_active ? 'true' : 'false'; ?>" aria-hidden="true"></div>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'aera'); ?></a>
 

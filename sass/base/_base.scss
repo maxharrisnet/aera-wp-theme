@@ -1,0 +1,97 @@
+@use '../legacy/variables' as *;
+@use '../legacy/mixins' as *;
+
+// Base styles matching original base.scss
+
+@-ms-viewport {
+	width: device-width;
+}
+
+@-o-viewport {
+	width: device-width;
+}
+
+@viewport {
+	width: device-width;
+}
+
+html,
+body {
+	min-height: 100vh;
+	background: $color-background;
+}
+
+html {
+	-webkit-overflow-scrolling: touch;
+	overflow-x: hidden;
+	// always show the vertical scrollbar so that content doesn't jump
+	overflow-y: scroll;
+	box-sizing: border-box;
+}
+
+// inherited from <html>
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	@include responsive-font(16, 18);
+	position: relative;
+	margin: 0;
+	font-family: $font-family;
+	font-weight: 400;
+	letter-spacing: 0.01em;
+	line-height: $line-height;
+	color: $font-color;
+
+	// iOS on orientation change
+	text-size-adjust: 100%;
+
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+
+	overflow-x: hidden;
+
+	@media (min-width: $min-480) {
+		overflow-x: visible;
+	}
+}
+
+a {
+	color: $color-link;
+	text-decoration: none;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+h1,
+h2,
+h3 {
+	color: $font-color-dark;
+}
+
+// placeholders
+input,
+textarea,
+select {
+	&::-webkit-input-placeholder {
+		color: $color-placeholder;
+	}
+
+	&::-moz-placeholder {
+		opacity: 1;
+		color: $color-placeholder;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color-placeholder;
+	}
+}
+

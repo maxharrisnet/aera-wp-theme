@@ -1,8 +1,8 @@
 @use 'sass:math';
-@use '../legacy/variables' as *;
-@use '../legacy/mixins' as *;
-@use '../legacy/grid' as *;
 @use '../legacy/reset' as *;
+@use '../legacy/variables' as *;
+@use '../legacy/grid' as *;
+@use '../legacy/mixins' as *;
 
 .article-template {
 	@include segment;
@@ -41,6 +41,26 @@
 
 		@media (min-width: $min-1080) {
 			width: math.percentage(math.div(12, 12));
+		}
+
+		&--main {
+			@media (min-width: $min-1200) {
+				@include make-col(math.percentage(math.div(8, 12)));
+				margin-left: math.percentage(math.div(0.5, 12));
+			}
+		}
+
+		&--sidebar {
+			@media (min-width: $min-1200) {
+				@include make-col(math.percentage(math.div(4, 12)));
+				margin-left: 0;
+			}
+
+			@media (max-width: $max-1200) {
+				@include make-col(math.percentage(math.div(12, 12)));
+				margin-left: 0;
+				margin-top: $gutter * 2;
+			}
 		}
 	}
 
@@ -125,7 +145,7 @@
 			color: $color-articles;
 			text-decoration: underline;
 
-			@include hover {
+			&:hover {
 				color: darken($color-articles, 10%);
 			}
 		}

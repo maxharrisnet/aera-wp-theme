@@ -4,12 +4,16 @@ Custom Aera styles compiled from SCSS
 
 @use 'variables';
 @use 'base/fonts';
+@use 'base/base';
 @use 'base/typography';
 @use 'components/buttons';
 @use 'components/header';
 @use 'components/background';
 @use 'components/intro-home';
 @use 'components/blog';
+@use 'components/blog-author';
+@use 'components/blog-share';
+@use 'components/blog-related';
 @use 'components/technology';
 @use 'components/resource-card';
 @use 'components/footer';

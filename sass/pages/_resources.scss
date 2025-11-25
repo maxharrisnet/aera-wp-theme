@@ -34,9 +34,10 @@
 	}
 
 	&__controls {
-		width: min(90%, 960px);
-		margin: 0 auto 2.5rem;
-		padding: clamp(4rem, 12vw, 14rem) 0 1rem;
+		// width: min(90%, 960px);
+		margin: 0 auto;
+		padding: 0 auto 2.5rem;
+		// padding: clamp(4rem, 12vw, 14rem) 0 1rem;
 		text-align: center;
 		font-family: legacy.$font-family;
 		font-size: 1rem;
@@ -56,7 +57,9 @@
 		letter-spacing: 0.08em;
 		font-weight: 600;
 		text-transform: uppercase;
-		transition: color 150ms ease, border-color 150ms ease;
+		transition:
+			color 150ms ease,
+			border-color 150ms ease;
 
 		&:hover,
 		&:focus-visible {
@@ -115,4 +118,3 @@
 		}
 	}
 }
-

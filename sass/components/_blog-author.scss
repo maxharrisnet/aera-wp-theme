@@ -1,0 +1,62 @@
+@use 'sass:math';
+@use '../legacy/reset' as *;
+@use '../legacy/variables' as *;
+@use '../legacy/grid' as *;
+@use '../legacy/mixins' as *;
+
+.article-author {
+	margin-bottom: $gutter * 2;
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+	width: 100%;
+
+	&__container {
+		// Remove container since it's inside the sidebar
+		padding: 0;
+		margin: 0;
+	}
+
+	&__row {
+		@media (min-width: $min-720) {
+			@include make-row;
+			justify-content: center;
+		}
+	}
+
+	&__col {
+		padding: 0 10px;
+		margin-bottom: 20px;
+
+		@media (max-width: $max-960) {
+			margin-left: 0;
+			padding-left: 0;
+			padding-right: 0;
+			margin-bottom: 30px;
+		}
+	}
+
+	img {
+		width: 120px;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		border-radius: 70px;
+	}
+
+	&__lead {
+		@include responsive-font(14, 14);
+		margin-top: 0;
+		margin-bottom: 5px;
+		text-align: center;
+
+		&:last-child {
+			@media (max-width: $min-720) {
+				text-align: center;
+			}
+		}
+
+		&Name {
+			color: #1a1a1a;
+			font-weight: 500;
+		}
+	}
+}

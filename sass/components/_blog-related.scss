@@ -1,0 +1,101 @@
+@use 'sass:math';
+@use '../legacy/reset' as *;
+@use '../legacy/variables' as *;
+@use '../legacy/grid' as *;
+@use '../legacy/mixins' as *;
+
+.blog-related {
+	margin-top: $gutter * 1;
+
+	&__container {
+		@include container;
+	}
+
+	&__list {
+		@media (min-width: $min-desktop) {
+			@include make-row;
+		}
+	}
+
+	&__col {
+		@media (min-width: $min-desktop) {
+			@include make-col(math.percentage(math.div(12, 12)));
+			margin-left: 0;
+		}
+	}
+
+	&Item {
+		margin-bottom: 15px;
+
+		&__row {
+			@include make-row;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		&Wrapper {
+			border: 1px solid #c4c4c4;
+
+			a {
+				@include reset-anchor;
+				display: block;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		}
+
+		&__author {
+			font-size: 14px;
+			line-height: 26px;
+			margin-bottom: 0;
+			color: #000;
+			padding: 0 15px;
+		}
+
+		&__title {
+			font-size: 16px;
+			line-height: 26px;
+			margin-top: 5px;
+			padding: 0 15px;
+			margin-bottom: 15px;
+
+			a {
+				color: #1a1a1a;
+			}
+		}
+	}
+
+	&__sidebar {
+		border-top: 1px solid #5c6476;
+		margin-top: 0;
+		padding-top: $gutter * 2;
+
+		h3 {
+			margin-top: 0;
+			margin-bottom: $gutter;
+		}
+
+		ul {
+			@include reset-list;
+			padding-left: 20px;
+			margin-top: 0;
+		}
+
+		a {
+			display: block;
+			color: #1a1a1a;
+			font-weight: 400;
+			font-size: 18px;
+			@include reset-anchor;
+			margin-bottom: 10px;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

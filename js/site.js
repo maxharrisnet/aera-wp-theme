@@ -60,23 +60,42 @@
 	handleScroll();
 	window.addEventListener('scroll', handleScroll);
 
-	document.querySelectorAll('.menu-item-has-children').forEach((item) => {
-		const trigger = document.createElement('button');
-		trigger.className = 'navigation__submenuToggle';
-		trigger.type = 'button';
-		trigger.setAttribute('aria-expanded', 'false');
-		trigger.innerHTML = '<span class="screen-reader-text">Toggle submenu</span>';
+	// Handle mobile submenu toggles
+	const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+	if (!isDesktop) {
+		document.querySelectorAll('.menu-item-has-children').forEach((item) => {
+			const trigger = document.createElement('button');
+			trigger.className = 'navigation__submenuToggle';
+			trigger.type = 'button';
+			trigger.setAttribute('aria-expanded', 'false');
+			trigger.innerHTML = '<span class="screen-reader-text">Toggle submenu</span>';
 
-		trigger.addEventListener('click', () => {
-			const isOpen = item.classList.toggle('is-open');
-			trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+			trigger.addEventListener('click', () => {
+				const isOpen = item.classList.toggle('is-open');
+				trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+			});
+
+			const link = item.querySelector('a');
+			if (link) {
+				link.after(trigger);
+			}
 		});
+	}
 
-		const link = item.querySelector('a');
-		if (link) {
-			link.after(trigger);
-		}
-	});
+	// Close desktop dropdowns when clicking a link
+	if (isDesktop) {
+		document.querySelectorAll('.menu-item-has-children a').forEach((link) => {
+			link.addEventListener('click', () => {
+				const submenu = link.closest('.menu-item-has-children')?.querySelector('.sub-menu');
+				if (submenu) {
+					// Small delay to allow navigation
+					setTimeout(() => {
+						submenu.style.display = '';
+					}, 100);
+				}
+			});
+		});
+	}
 
 	const filterContainer = document.querySelector('.resources-filter__controls');
 	if (filterContainer) {

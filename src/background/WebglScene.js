@@ -125,28 +125,34 @@ export default class WebglScene {
   }
 
   createGeometries() {
-    const planeGeo1 = new THREE.PlaneGeometry(
+    this.planeGeo1 = new THREE.PlaneGeometry(
       this.widthPlane,
       this.lengthPlane,
       this.nbSegments,
       this.nbSegments,
     );
-    const planeGeo2 = new THREE.PlaneGeometry(
+    this.planeGeo2 = new THREE.PlaneGeometry(
       this.widthPlane,
       this.lengthPlane,
       this.nbSegments,
       this.nbSegments,
     );
-    const planeGeo3 = new THREE.PlaneGeometry(
+    this.planeGeo3 = new THREE.PlaneGeometry(
       this.widthPlaneMini,
       this.lengthPlane,
       this.nbSegments,
       this.nbSegments,
     );
 
-    this.planeGeo1 = new THREE.Geometry().fromBufferGeometry(planeGeo1);
-    this.planeGeo2 = new THREE.Geometry().fromBufferGeometry(planeGeo2);
-    this.planeGeo3 = new THREE.Geometry().fromBufferGeometry(planeGeo3);
+    // Get position attribute arrays for direct manipulation
+    this.positions1 = this.planeGeo1.attributes.position.array;
+    this.positions2 = this.planeGeo2.attributes.position.array;
+    this.positions3 = this.planeGeo3.attributes.position.array;
+
+    // Store original positions for reference
+    this.originalPositions1 = new Float32Array(this.positions1);
+    this.originalPositions2 = new Float32Array(this.positions2);
+    this.originalPositions3 = new Float32Array(this.positions3);
 
     const plane1 = new THREE.Mesh(this.planeGeo1, this.material1);
     plane1.rotation.y = Math.PI / 2;
@@ -156,7 +162,8 @@ export default class WebglScene {
 
     const plane3 = new THREE.Mesh(this.planeGeo3, this.material3);
 
-    this.nbVerticesPlane = this.planeGeo1.vertices.length;
+    // Each vertex has 3 components (x, y, z)
+    this.nbVerticesPlane = this.positions1.length / 3;
 
     this.globalGroup.add(plane1);
     this.globalGroup.add(plane2);
@@ -169,19 +176,20 @@ export default class WebglScene {
     let j = this.nbVerticesPlane;
 
     for (let i = 0; i < this.nbVerticesPlane; i += 1) {
+      const idx = i * 3; // Position array index (x, y, z)
       let t = (1 / this.nbVerticesPlane) * j;
       let easing = (((t -= 1) * t) * t) + 1;
 
-      const x1 = (this.planeGeo1.vertices[i].x * easing)
+      const x1 = (this.originalPositions1[idx] * easing)
         + (Math.sin(1.45 + (frame / 8)) * (-6 * easing));
-      const x2 = (this.planeGeo2.vertices[i].x * easing)
+      const x2 = (this.originalPositions2[idx] * easing)
         + (Math.sin(1.45 + (frame / 8)) * (8 * easing));
-      const x3 = (this.planeGeo3.vertices[i].x * easing)
+      const x3 = (this.originalPositions3[idx] * easing)
         + (Math.sin(0.88 + (frame / -5)) * (3 * easing));
 
-      this.planeGeo1.vertices[i].x = x1;
-      this.planeGeo2.vertices[i].x = x2;
-      this.planeGeo3.vertices[i].x = x3;
+      this.positions1[idx] = x1;
+      this.positions2[idx] = x2;
+      this.positions3[idx] = x3;
 
       if (flagCount === this.nbSegments) {
         frame += 1;
@@ -190,6 +198,11 @@ export default class WebglScene {
       flagCount += 1;
       j -= 1;
     }
+
+    // Mark positions as needing update
+    this.planeGeo1.attributes.position.needsUpdate = true;
+    this.planeGeo2.attributes.position.needsUpdate = true;
+    this.planeGeo3.attributes.position.needsUpdate = true;
   }
 
   updateMouseMove(x, y) {
@@ -242,6 +255,7 @@ export default class WebglScene {
     let twistVar = 0;
 
     for (let i = 0; i < this.nbVerticesPlane; i += 1) {
+      const idx = i * 3; // Position array index (x, y, z)
       let t = (1 / this.nbVerticesPlane) * k;
       let easing = (((t -= 1) * t) * t) + 1;
 
@@ -256,14 +270,10 @@ export default class WebglScene {
       this.tWave3 = (Math.sin((this.frame / 400000) + (i / 10)) * (3 * easing));
       this.tY3 = ((Math.sin(3.4 + (j / -40)) * 6) + (18 * easing)) * (1 + this.mouse.x);
 
-      this.planeGeo1.vertices[i].z = (this.tWave1 + this.twist1 + this.tY1) * easing;
-      this.planeGeo1.verticesNeedUpdate = true;
-
-      this.planeGeo2.vertices[i].z = (this.tWave2 + this.twist2 + this.tY2) * easing;
-      this.planeGeo2.verticesNeedUpdate = true;
-
-      this.planeGeo3.vertices[i].z = (this.tWave3 + this.tY3) * easing;
-      this.planeGeo3.verticesNeedUpdate = true;
+      // z is at index idx + 2 (x=idx, y=idx+1, z=idx+2)
+      this.positions1[idx + 2] = (this.tWave1 + this.twist1 + this.tY1) * easing;
+      this.positions2[idx + 2] = (this.tWave2 + this.twist2 + this.tY2) * easing;
+      this.positions3[idx + 2] = (this.tWave3 + this.tY3) * easing;
 
       if (this.flagCount === this.nbSegments) {
         j += 1;
@@ -275,6 +285,11 @@ export default class WebglScene {
       this.frame += 1;
       k -= 1;
     }
+
+    // Mark positions as needing update
+    this.planeGeo1.attributes.position.needsUpdate = true;
+    this.planeGeo2.attributes.position.needsUpdate = true;
+    this.planeGeo3.attributes.position.needsUpdate = true;
   }
 
   mousemoveLoopAnimation() {

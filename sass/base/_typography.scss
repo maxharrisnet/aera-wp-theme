@@ -16,7 +16,6 @@ a {
 	&:hover,
 	&:focus {
 		color: color.adjust($color-primary-strong, $lightness: -5%);
-		text-decoration: underline;
 	}
 }
 

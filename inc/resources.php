@@ -124,12 +124,17 @@ function get_resource_label_for_post_type(string $postType): string
 {
   $types = get_resource_types();
 
-  foreach ($types as $type) {
+  // Skip 'all' type and check specific types first
+  foreach ($types as $key => $type) {
+    if ($key === 'all') {
+      continue;
+    }
     if (! empty($type['post_types']) && in_array($postType, $type['post_types'], true)) {
       return $type['label'];
     }
   }
 
+  // Fallback: format the post type name
   return ucfirst(str_replace('-', ' ', $postType));
 }
 

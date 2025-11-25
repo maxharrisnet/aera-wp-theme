@@ -11,10 +11,9 @@ defined('ABSPATH') || exit;
 $lead_text = function_exists('get_field') ? (string) get_field('blog_lead') : '';
 $lead_paragraphs = array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $lead_text ?? ''))));
 
-$author_text = function_exists('get_field') ? (string) get_field('blog_author') : '';
+// Use resource_author_1 from resource fields instead of blog_author
+$author_text = function_exists('get_field') ? (string) get_field('resource_author_1') : '';
 $author_paragraphs = array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $author_text ?? ''))));
-
-$article_url = function_exists('get_field') ? (string) get_field('blog_article_url') : '';
 
 $date_value = get_the_date('c');
 $display_date = get_the_date();
@@ -27,7 +26,7 @@ $article_classes = array(
 <article id="post-<?php the_ID(); ?>" <?php post_class($article_classes); ?>>
   <div class="article-template__container">
     <div class="article-template__row">
-      <div class="article-template__col">
+      <div class="article-template__col article-template__col--main">
         <header class="article-template__header">
           <?php if ($display_date) : ?>
             <p class="article-template__date">
@@ -42,17 +41,7 @@ $article_classes = array(
           <?php if (! empty($lead_paragraphs)) : ?>
             <?php foreach ($lead_paragraphs as $paragraph) : ?>
               <p class="article-template__lead">
-                <?php if ($article_url) : ?>
-                  <a
-                    class="article-template__leadName"
-                    href="<?php echo esc_url($article_url); ?>"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <?php echo esc_html($paragraph); ?>
-                  </a>
-                <?php else : ?>
-                  <span class="article-template__leadName"><?php echo esc_html($paragraph); ?></span>
-                <?php endif; ?>
+                <span class="article-template__leadName"><?php echo esc_html($paragraph); ?></span>
               </p>
             <?php endforeach; ?>
           <?php endif; ?>
@@ -79,6 +68,28 @@ $article_classes = array(
         );
         ?>
       </div>
+
+      <aside class="article-template__col article-template__col--sidebar">
+        <?php
+        // Social sharing section
+        get_template_part('template-parts/content', 'blog-share');
+        ?>
+
+        <?php
+        // Author section (if multiple authors)
+        get_template_part('template-parts/content', 'blog-author');
+        ?>
+
+        <?php
+        // Related posts sidebar (just the "Other Resources" links)
+        get_template_part('template-parts/content', 'blog-related-sidebar');
+        ?>
+      </aside>
     </div>
   </div>
 </article>
+
+<?php
+// Related posts section (full list below)
+get_template_part('template-parts/content', 'blog-related');
+?>
