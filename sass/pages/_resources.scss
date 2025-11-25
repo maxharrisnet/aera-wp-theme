@@ -1,0 +1,73 @@
+.site-main--resources {
+	padding-top: 7rem;
+}
+
+.resources-hero {
+	padding: 3rem 1.5rem 2rem;
+	text-align: center;
+
+	&__title {
+		font-size: 3rem;
+		margin-bottom: 1rem;
+	}
+
+	&__description {
+		max-width: 720px;
+		margin: 0 auto;
+		font-size: 1.1rem;
+		color: $color-slate;
+	}
+}
+
+.resources-filter {
+	&__controls {
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+		justify-content: center;
+		padding: 1rem 1.5rem 2rem;
+	}
+
+	&__button {
+		padding: 0.35rem 1.25rem;
+		border-radius: 999px;
+		border: 1px solid transparent;
+		background: $color-background;
+		font-size: 0.9rem;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+
+		&.is-active {
+			background: $color-primary-soft;
+			border-color: $color-primary;
+		}
+	}
+}
+
+.resources-grid {
+	&__container {
+		padding-bottom: 3rem;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.75rem;
+		padding: 0 1.5rem 3rem;
+	}
+
+	&__pagination {
+		padding-bottom: 4rem;
+		text-align: center;
+
+		ul {
+			list-style: none;
+			display: inline-flex;
+			gap: 0.5rem;
+			padding: 0;
+			margin: 0;
+		}
+	}
+}
+

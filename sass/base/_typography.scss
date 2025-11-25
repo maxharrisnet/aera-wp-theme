@@ -1,0 +1,21 @@
+@use 'sass:color';
+
+body {
+	font-family: $font-family-base;
+	color: $color-black;
+	background-color: $color-white;
+	line-height: 1.6;
+}
+
+a {
+	color: $color-primary-strong;
+	text-decoration: none;
+	transition: color 180ms ease;
+
+	&:hover,
+	&:focus {
+		color: color.adjust($color-primary-strong, $lightness: -5%);
+		text-decoration: underline;
+	}
+}
+

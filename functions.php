@@ -47,11 +47,21 @@ function aera_technology_setup()
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
   add_theme_support('post-thumbnails');
+  add_image_size('resource_card', 720, 405, true);
 
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus(
     array(
-      'menu-1' => esc_html__('Primary', 'aera-technology'),
+      'primary'          => esc_html__('Primary Navigation', 'aera'),
+      'primary-utility'  => esc_html__('Utility Navigation', 'aera'),
+      'footer-aera'      => esc_html__('Footer: Aera Decision Cloud', 'aera'),
+      'footer-skills'    => esc_html__('Footer: Aera Skills', 'aera'),
+      'footer-company'   => esc_html__('Footer: Company', 'aera'),
+      'footer-resources' => esc_html__('Footer: Resources', 'aera'),
+      'footer-customers' => esc_html__('Footer: Customers', 'aera'),
+      'footer-events'    => esc_html__('Footer: Events', 'aera'),
+      'footer-cta'       => esc_html__('Footer: CTA', 'aera'),
+      'footer-social'    => esc_html__('Footer: Social Links', 'aera'),
     )
   );
 
@@ -145,8 +155,10 @@ function aera_technology_scripts()
 {
   wp_enqueue_style('aera-technology-style', get_stylesheet_uri(), array(), _S_VERSION);
   wp_style_add_data('aera-technology-style', 'rtl', 'replace');
+  wp_enqueue_style('aera-theme-components', get_template_directory_uri() . '/assets/css/aera.css', array('aera-technology-style'), _S_VERSION);
 
   wp_enqueue_script('aera-technology-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
+  wp_enqueue_script('aera-theme-site', get_template_directory_uri() . '/js/site.js', array(), _S_VERSION, true);
 
   if (is_singular() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
@@ -168,6 +180,31 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Custom post types.
+ */
+require get_template_directory() . '/inc/post-types.php';
+
+/**
+ * Custom taxonomies.
+ */
+require get_template_directory() . '/inc/taxonomies.php';
+
+/**
+ * Resource helpers.
+ */
+require get_template_directory() . '/inc/resources.php';
+
+/**
+ * Admin enhancements.
+ */
+require get_template_directory() . '/inc/admin.php';
+
+/**
+ * Advanced Custom Fields helpers.
+ */
+require get_template_directory() . '/inc/acf.php';
 
 /**
  * Customizer additions.

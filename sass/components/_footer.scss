@@ -1,0 +1,64 @@
+.footer {
+	background: $color-footer;
+	color: $color-white;
+	padding: 4rem 1.5rem 2rem;
+	margin-top: 4rem;
+
+	&__container {
+		width: min(1280px, 100%);
+		margin: 0 auto;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+
+	&__logo img {
+		width: 160px;
+		height: auto;
+	}
+
+	&__row--navigation {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+		gap: 1.5rem;
+	}
+
+	&__columnTitle {
+		font-family: $font-family-heading;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+		font-size: 0.85rem;
+		margin-bottom: 0.75rem;
+	}
+
+	&__list,
+	&__socialList {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+	}
+
+	&__socialList {
+		flex-direction: row;
+		gap: 1rem;
+	}
+
+	a {
+		color: rgba(255, 255, 255, 0.8);
+
+		&:hover,
+		&:focus {
+			color: $color-white;
+		}
+	}
+
+	&__copyright {
+		margin: 0;
+		font-size: 0.85rem;
+		color: rgba(255, 255, 255, 0.7);
+	}
+}
+
