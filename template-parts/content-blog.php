@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * Template part for single blog articles.
+ *
+ * @package Aera_Technology
+ */
+
+defined('ABSPATH') || exit;
+
+$lead_text = function_exists('get_field') ? (string) get_field('blog_lead') : '';
+$lead_paragraphs = array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $lead_text ?? ''))));
+
+$author_text = function_exists('get_field') ? (string) get_field('blog_author') : '';
+$author_paragraphs = array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $author_text ?? ''))));
+
+$article_url = function_exists('get_field') ? (string) get_field('blog_article_url') : '';
+
+$date_value = get_the_date('c');
+$display_date = get_the_date();
+
+$article_classes = array(
+  'article-template',
+);
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class($article_classes); ?>>
+  <div class="article-template__container">
+    <div class="article-template__row">
+      <div class="article-template__col">
+        <header class="article-template__header">
+          <?php if ($display_date) : ?>
+            <p class="article-template__date">
+              <time datetime="<?php echo esc_attr($date_value); ?>">
+                <?php echo esc_html($display_date); ?>
+              </time>
+            </p>
+          <?php endif; ?>
+
+          <?php the_title('<h1 class="article-template__title">', '</h1>'); ?>
+
+          <?php if (! empty($lead_paragraphs)) : ?>
+            <?php foreach ($lead_paragraphs as $paragraph) : ?>
+              <p class="article-template__lead">
+                <?php if ($article_url) : ?>
+                  <a
+                    class="article-template__leadName"
+                    href="<?php echo esc_url($article_url); ?>"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <?php echo esc_html($paragraph); ?>
+                  </a>
+                <?php else : ?>
+                  <span class="article-template__leadName"><?php echo esc_html($paragraph); ?></span>
+                <?php endif; ?>
+              </p>
+            <?php endforeach; ?>
+          <?php endif; ?>
+
+          <?php if (! empty($author_paragraphs)) : ?>
+            <?php foreach ($author_paragraphs as $paragraph) : ?>
+              <p class="article-template__lead">
+                <span class="article-template__leadName"><?php echo esc_html($paragraph); ?></span>
+              </p>
+            <?php endforeach; ?>
+          <?php endif; ?>
+        </header>
+
+        <div class="article-template__content">
+          <?php the_content(); ?>
+        </div>
+
+        <?php
+        wp_link_pages(
+          array(
+            'before' => '<nav class="article-template__pagination" aria-label="' . esc_attr__('Article pages', 'aera') . '">',
+            'after'  => '</nav>',
+          )
+        );
+        ?>
+      </div>
+    </div>
+  </div>
+</article>

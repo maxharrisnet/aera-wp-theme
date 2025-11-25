@@ -42,8 +42,8 @@ $sceneScale: 1.4;
 		width: 100%;
 
 		@media (min-width: $min-768) {
-			@include make-col(math.percentage(math.div(5, 12)));
-			margin-left: math.percentage(math.div(7, 12));
+			@include make-col(math.percentage(math.div(4, 12)));
+			margin-left: math.percentage(math.div(8, 12));
 		}
 	}
 }
@@ -66,6 +66,7 @@ $sceneScale: 1.4;
 		width: 100%;
 		height: 100%;
 		will-change: opacity;
+		overflow: hidden;
 	}
 
 	&__container {

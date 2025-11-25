@@ -160,6 +160,17 @@ function aera_technology_scripts()
   wp_enqueue_script('aera-technology-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
   wp_enqueue_script('aera-theme-site', get_template_directory_uri() . '/js/site.js', array(), _S_VERSION, true);
 
+  $background_bundle_path = get_template_directory() . '/assets/js/dist/background.js';
+  if (file_exists($background_bundle_path)) {
+    wp_enqueue_script(
+      'aera-background',
+      get_template_directory_uri() . '/assets/js/dist/background.js',
+      array(),
+      filemtime($background_bundle_path),
+      true
+    );
+  }
+
   if (is_singular() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }

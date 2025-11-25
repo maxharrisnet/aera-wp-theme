@@ -132,3 +132,56 @@ function get_resource_label_for_post_type(string $postType): string
 
   return ucfirst(str_replace('-', ' ', $postType));
 }
+
+/**
+ * Returns the CTA label based on the resource post type.
+ *
+ * @param string $postType Post type slug.
+ * @return string
+ */
+function get_resource_cta_label(string $postType): string
+{
+  $map = array(
+    'video'        => __('Watch', 'aera'),
+    'webinar'      => __('Watch', 'aera'),
+    'event'        => __('Register', 'aera'),
+    'press-release'=> __('Read', 'aera'),
+    'news'         => __('Read', 'aera'),
+    'whitepaper'   => __('Download', 'aera'),
+    'podcast'      => __('Listen', 'aera'),
+    'customer'     => __('Explore', 'aera'),
+    'case-study'   => __('Explore', 'aera'),
+  );
+
+  return $map[$postType] ?? __('Read', 'aera');
+}
+
+/**
+ * Provides a fallback media asset for demo cards or posts missing thumbnails.
+ *
+ * @param string $postType Post type slug.
+ * @return array<string, mixed>
+ */
+function get_resource_fallback_media(string $postType): array
+{
+  $base = trailingslashit(get_template_directory_uri()) . 'assets/content/';
+  $map = array(
+    'blog'      => array('path' => 'blogs/smarter-waste.jpg'),
+    'news'      => array('path' => 'news/logistics-viewpoints.jpg', 'is_logo' => true),
+    'press-release' => array('path' => 'news/logistics-viewpoints.jpg', 'is_logo' => true),
+    'podcast'   => array('path' => 'podcasts/eye-on-ai.jpg'),
+    'video'     => array('path' => 'webinars/agentic-decision-intel.jpg'),
+    'webinar'   => array('path' => 'webinars/agentic-decision-intel.jpg'),
+    'event'     => array('path' => 'webinars/agentic-decision-intel.jpg'),
+    'whitepaper'=> array('path' => 'blogs/smarter-waste.jpg'),
+  );
+
+  if (! isset($map[$postType])) {
+    return array();
+  }
+
+  return array(
+    'url'     => $base . $map[$postType]['path'],
+    'is_logo' => ! empty($map[$postType]['is_logo']),
+  );
+}

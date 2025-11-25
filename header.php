@@ -21,7 +21,14 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php
+wp_body_open();
+$background_classes = 'background';
+if (is_front_page()) {
+	$background_classes .= ' background--home';
+}
+?>
+<div class="<?php echo esc_attr($background_classes); ?>" data-background aria-hidden="true"></div>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e('Skip to content', 'aera'); ?></a>
 

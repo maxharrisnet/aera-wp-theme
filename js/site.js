@@ -97,7 +97,7 @@
 	});
 
 	const technology = document.querySelector('[data-technology]');
-	const desktopQuery = window.matchMedia('(min-width: 768px)');
+	const desktopQuery = window.matchMedia('(min-width: 1024px)');
 	let teardownTechnology;
 
 	const initTechnology = () => {
@@ -169,8 +169,8 @@
 				}
 				const rect = item.getBoundingClientRect();
 				const itemCenter = rect.top + rect.height / 2;
-				const distance = Math.abs(itemCenter - viewportCenter);
-				if (distance < closestDistance) {
+				const distance = Math.abs(rect.top - viewportCenter);
+				if (distance < closestDistance && rect.top < viewportCenter + 200) {
 					closestDistance = distance;
 					closestIndex = index;
 				}

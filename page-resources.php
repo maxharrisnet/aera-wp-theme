@@ -27,24 +27,34 @@ $paged = max(1, get_query_var('paged') ?: get_query_var('page') ?: 1);
 
 $resource_query = new WP_Query(build_resource_query_args($active_slug, $paged));
 
+$demo_media_base = trailingslashit(get_template_directory_uri()) . 'assets/home/';
 $demo_resources = array(
   array(
     'title'      => __('Smarter Waste Mitigation for Maximum Margin Recovery and Less Loss', 'aera'),
     'excerpt'    => __('Aera’s Business Waste Mitigation Skill detects at-risk inventory and recommends the most effective mitigation path.', 'aera'),
     'type_label' => __('Blogs', 'aera'),
+    'post_type'  => 'blog',
     'date'       => '2025-11-19',
+    'image'      => $demo_media_base . 'technology-truck.jpg',
+    'image_alt'  => __('Technology powered freight truck', 'aera'),
   ),
   array(
     'title'      => __('Hershey, Gallo Advance Decision Intelligence Across the Supply Chain', 'aera'),
     'excerpt'    => __('Supply chain leaders from Hershey and Gallo share how they are scaling decision intelligence from pilot to production.', 'aera'),
     'type_label' => __('News', 'aera'),
+    'post_type'  => 'news',
     'date'       => '2025-11-18',
+    'image'      => $demo_media_base . 'merck-building.jpg',
+    'image_alt'  => __('Corporate building exterior', 'aera'),
   ),
   array(
     'title'      => __('Fred Laluyaux: How Decision Intelligence & AI Agents Are Redefining Enterprise Operations', 'aera'),
     'excerpt'    => __('CEO Fred Laluyaux unpacks how organizations can move from dashboards to systems that sense, reason, and act.', 'aera'),
     'type_label' => __('Podcasts', 'aera'),
+    'post_type'  => 'podcast',
     'date'       => '2025-11-13',
+    'image'      => $demo_media_base . 'messages-activity.gif',
+    'image_alt'  => __('Animated conversational UI preview', 'aera'),
   ),
 );
 
@@ -95,6 +105,7 @@ $base_url = get_permalink();
 								'post_id'     => get_the_ID(),
 								'type_label'  => get_resource_label_for_post_type(get_post_type()),
 								'external_url' => function_exists('get_field') ? get_field('resource_external_url') : '',
+								'post_type'   => get_post_type(),
 							)
 						);
 					endwhile;
@@ -129,6 +140,9 @@ $base_url = get_permalink();
 								'date'       => $item['date'],
 								'link'       => '#',
 								'is_demo'    => true,
+								'post_type'  => $item['post_type'] ?? 'blog',
+            'image'      => $item['image'] ?? '',
+            'image_alt'  => $item['image_alt'] ?? '',
 							)
 						);
 						?>
