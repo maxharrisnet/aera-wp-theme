@@ -1,0 +1,30 @@
+---
+alwaysApply: true
+name: Aera WP Rules
+description: Rules for Aera WordPress Theme
+---
+
+- Always use the latest version of WordPress.
+- Use PHP version 8.0 or higher.
+- Use WordPress version 6.8 or higher.
+- Use WordPress Coding Standards.
+- Use WordPress best practices.
+- Use WordPress security best practices.
+- Use WordPress performance best practices.
+- Use WordPress accessibility best practices.
+- Use WordPress internationalization best practices.
+- Use WordPress security best practices.
+- Use WordPress performance best practices.
+
+- For localization, use the text domain "aera"
+- Use appropriate escapes for strings and variables.
+- Check for functions and variables before using them.
+- Use conditional tags to check for the existence of a feature or a plugin.
+- Use namespace "Aera" for functions and classes.
+
+- Custom fields are created using Advanced Custom Fields
+- Follow best practices for Advanced Custom Fields
+
+- Backend logic (post types, taxonomies, shortcodes, etc.) should be handled in a plugin
+- Frontend logic (templates, styles, scripts, etc.) should be handled in the theme
+- Use best practices when enqueuing scripts and styles
