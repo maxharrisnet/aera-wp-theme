@@ -320,6 +320,167 @@ $sceneScale: 1.4;
 		background: $color-resources;
 		color: $color-white;
 	}
+
+	.scene-0 &.pos-0 .technologyMessagesItem__panel {
+		margin-left: auto;
+
+		@media (min-width: $min-768) {
+			margin-left: 27.5%;
+		}
+	}
+
+	.scene-0 &.pos-1 .technologyMessagesItem__panel {
+		margin-left: 8px;
+
+		@media (min-width: $min-768) {
+			margin-left: 38%;
+			width: 43%;
+		}
+	}
+
+	.scene-1 &.pos-0 .technologyMessagesItem__panel {
+		margin-left: auto;
+		max-width: 80%;
+
+		@media (min-width: $min-768) {
+			margin-left: 21.5%;
+			max-width: none;
+		}
+	}
+
+	.scene-1 &.pos-1 .technologyMessagesItem__panel {
+		margin-right: 15px;
+
+		@media (min-width: $min-768) {
+			padding: 17px 45px;
+			margin-left: 9.5%;
+			margin-right: auto;
+			width: 46%;
+		}
+	}
+
+	.scene-2 &.pos-0 .technologyMessagesItem__panel {
+		margin-left: -10px;
+
+		@media (min-width: $min-768) {
+			margin-left: 24.4%;
+		}
+	}
+
+	.scene-2 &.pos-1 .technologyMessagesItem__panel {
+		margin-left: auto;
+		max-width: 85%;
+
+		@media (min-width: $min-768) {
+			margin-left: 27.7%;
+			max-width: none;
+		}
+	}
+
+	.scene-2 &.pos-2 .technologyMessagesItem__panel {
+		margin-left: 8px;
+
+		@media (min-width: $min-768) {
+			margin-left: 16.3%;
+			width: 46.1%;
+		}
+	}
+
+	.scene-3 &.pos-0 .technologyMessagesItem__panel {
+		margin-left: 8px;
+
+		@media (min-width: $min-768) {
+			margin-left: 4.7%;
+			width: 66.3%;
+		}
+	}
+
+	.scene-3 &.pos-1 .technologyMessagesItem__panel {
+		margin-left: auto;
+
+		@media (min-width: $min-768) {
+			margin-left: 16%;
+		}
+	}
+
+	&.user .technologyMessagesItem__panel {
+		.scene-0 & {
+			background-color: $color-messages0;
+		}
+
+		.scene-1 & {
+			background-color: $color-messages1;
+		}
+
+		.scene-2 & {
+			background-color: $color-messages2;
+		}
+
+		.scene-3 & {
+			background-color: $color-messages3;
+		}
+	}
+
+	&.lastAera .technologyMessagesItem__panel::before {
+		content: '';
+		position: absolute;
+		left: -28px;
+		bottom: -42px;
+		width: 73px;
+		height: 74px;
+		background: url('../home/messages-activity-background.svg') no-repeat;
+
+		@media (max-width: $max-768) {
+			background-size: 74px;
+
+			.scene-1 & {
+				left: auto;
+				right: -28px;
+				transform: scaleX(-1);
+			}
+		}
+
+		@media (min-width: $min-768) {
+			left: -40px;
+			bottom: -47px;
+			width: 90px;
+			height: 87px;
+
+			.scene-0 & {
+				left: auto;
+				right: -40px;
+				transform: scaleX(-1);
+			}
+		}
+	}
+
+	&.lastAera .technologyMessagesItem__panel::after {
+		content: '';
+		position: absolute;
+		left: -17px;
+		bottom: -34px;
+		width: 27px;
+		height: 30px;
+		background: url('../home/messages-activity.gif') no-repeat;
+		background-size: 23px 25px;
+
+		@media (max-width: $max-768) {
+			.scene-1 & {
+				left: auto;
+				right: -20px;
+			}
+		}
+
+		@media (min-width: $min-768) {
+			left: -25px;
+			background-size: 27px;
+
+			.scene-0 & {
+				left: auto;
+				right: -25px;
+			}
+		}
+	}
 }
 
 .technologyItem {
