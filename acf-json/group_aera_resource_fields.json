@@ -45,6 +45,26 @@
             "placeholder": ""
         },
         {
+            "key": "field_resource_excerpt",
+            "label": "Card Excerpt",
+            "name": "resource_excerpt",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Short description displayed on the resource card. If not set, the WordPress excerpt will be used.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "br",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_resource_author_1",
             "label": "Author 1",
             "name": "resource_author_1",
@@ -198,7 +218,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Common fields for all resource post types including card image, external URL, and author information.",
+    "description": "Common fields for all resource post types including card image, external URL, card excerpt, and author information.",
     "show_in_rest": 1,
     "display_title": "",
     "modified": 1735000000

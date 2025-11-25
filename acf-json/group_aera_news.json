@@ -1,0 +1,119 @@
+{
+    "key": "group_aera_news",
+    "title": "News Fields",
+    "fields": [
+        {
+            "key": "field_news_type",
+            "label": "Type",
+            "name": "news_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Select the type of news item.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "News": "News",
+                "Video": "Video",
+                "Announcements": "Announcements",
+                "Perspectives": "Perspectives",
+                "Community": "Community",
+                "Press Release": "Press Release"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "multiple": false,
+            "allow_null": false,
+            "ui": false,
+            "ajax": false,
+            "placeholder": ""
+        },
+        {
+            "key": "field_news_publication",
+            "label": "Publication",
+            "name": "news_publication",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Name of the publication or source.",
+            "required": true,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_news_logo",
+            "label": "Publication Logo",
+            "name": "news_logo",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Logo of the publication or source.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_news_video",
+            "label": "Video URL",
+            "name": "news_video",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "URL to a video (YouTube, Vimeo, etc.).",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "news"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Additional fields for news items including type, publication, logo, and video URL.",
+    "show_in_rest": 1,
+    "display_title": "",
+    "modified": 1735000000
+}
+

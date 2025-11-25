@@ -48,14 +48,14 @@
 								'fallback_cb'    => false,
 							)
 						);
-						?>
+				?>
 					</div>
 				<?php endforeach; ?>
 			</div>
 
 			<div class="footer__row footer__row--meta">
 				<div class="footer__social">
-					<?php
+				<?php
 					if (has_nav_menu('footer-social')) {
 						wp_nav_menu(
 							array(

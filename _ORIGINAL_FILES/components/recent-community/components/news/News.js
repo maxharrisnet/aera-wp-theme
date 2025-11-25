@@ -35,7 +35,7 @@ export default class News extends Component {
 			<WaypointEnter onEnter={this.animate}>
 				<div className={s.news}>
 					<div className={s.news__container}>
-						<h3>Recent Articles</h3>
+						<h3>Related Articles</h3>
 						<div>
 							<h2
 								ref={(c) => (this.el = c)}

@@ -1,66 +1,335 @@
 @use '../variables' as *;
+@use '../legacy/variables' as legacy;
+@use '../legacy/mixins' as legacy-mixins;
+@use '../legacy/grid' as legacy-grid;
+@use '../legacy/reset' as legacy-reset;
+@use 'sass:math';
 
 .footer {
-	background: $color-footer;
-	color: $color-white;
-	padding: 4rem 1.5rem 2rem;
-	margin-top: 4rem;
+	position: relative;
+	z-index: 3;
+	padding: legacy.$gutter * 2 0 legacy.$gutter;
+	background: legacy.$color-background-darker;
+
+	@media (min-width: legacy.$min-720) {
+		padding: legacy.$gutter * 4 0 legacy.$gutter * 2;
+	}
 
 	&__container {
-		width: min(1280px, 100%);
-		margin: 0 auto;
+		@include legacy-mixins.container;
+	}
+
+	&__row {
+		@include legacy-grid.make-row;
+		justify-content: space-between;
+	}
+
+	&__navigationCol {
 		display: flex;
-		flex-direction: column;
-		gap: 2rem;
+		text-align: center;
+
+		@media (min-width: legacy.$min-560) {
+			width: math.percentage(math.div(12, 12));
+		}
+		@media (max-width: legacy.$min-560) {
+			flex-wrap: wrap;
+		}
+
+		ul {
+			@include legacy-grid.make-col(math.percentage(math.div(12, 12)));
+			margin-top: 0;
+			padding-left: 0;
+			padding-right: 0;
+			text-align: left;
+
+			@media (min-width: legacy.$min-tablet) {
+				width: math.percentage(math.div(2.4, 12));
+				text-align: left;
+				padding-right: 10px;
+			}
+
+			@media (min-width: legacy.$min-560) {
+				width: math.percentage(math.div(2.4, 12));
+				padding-right: 10px;
+			}
+
+			@media (min-width: legacy.$min-960) {
+				width: math.percentage(math.div(2.4, 12));
+				text-align: left;
+				padding-right: 10px;
+			}
+		}
+
+		li {
+			list-style-type: none;
+			padding-bottom: 5px;
+
+			@media (max-width: legacy.$max-960) {
+				&__hiddenXS {
+					display: none;
+				}
+			}
+		}
 	}
 
-	&__logo img {
-		width: 160px;
-		height: auto;
+	&__logo {
+		@include legacy-grid.make-col(math.percentage(math.div(12, 12)));
+
+		@media (min-width: legacy.$min-560) {
+			width: math.percentage(math.div(12, 12));
+		}
+
+		@media (min-width: legacy.$min-960) {
+			width: math.percentage(math.div(12, 12));
+		}
+
+		&Link {
+			@include legacy-reset.reset-anchor;
+		}
+
+		&Image {
+			margin-bottom: legacy.$gutter * 2;
+			margin-top: -10px;
+			width: 70px;
+
+			@media (min-width: legacy.$min-768) {
+				width: 121px;
+			}
+		}
 	}
 
-	&__row--navigation {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-		gap: 1.5rem;
+	&__w15 {
+		width: 15% !important;
+		@media (max-width: legacy.$max-720) {
+			width: 100% !important;
+		}
 	}
 
-	&__columnTitle {
-		font-family: $font-family-heading;
+	&__w25 {
+		width: 25% !important;
+		@media (max-width: legacy.$max-720) {
+			width: 100% !important;
+		}
+	}
+
+	&__w30 {
+		width: 30% !important;
+		@media (max-width: legacy.$max-720) {
+			width: 100% !important;
+		}
+	}
+
+	&__navigation {
+		@include legacy-grid.make-col(math.percentage(math.div(12, 12)));
+
+		@media (min-width: legacy.$min-560) {
+			width: math.percentage(math.div(12, 12));
+		}
+
+		@media (min-width: legacy.$min-960) {
+			width: math.percentage(math.div(9.5, 12));
+		}
+
+		&List {
+			@include legacy-reset.reset-list;
+		}
+	}
+
+	&__social {
+		@include legacy-grid.make-col(math.percentage(math.div(12, 12)));
+
+		@media (max-width: legacy.$min-560) {
+			margin-top: 30px;
+		}
+
+		@media (min-width: legacy.$min-560) {
+			width: math.percentage(math.div(12, 12));
+		}
+
+		@media (min-width: legacy.$min-960) {
+			width: math.percentage(math.div(1.5, 12));
+			text-align: right;
+		}
+
+		&List {
+			@include legacy-reset.reset-list;
+		}
+	}
+
+	&__item {
+		margin-bottom: 6px;
+		text-align: right;
+	}
+
+	&__link {
+		@include legacy-reset.reset-anchor;
+
+		font-family: legacy.$font-family-heading;
+		font-size: 13px;
+		font-weight: 400;
 		text-transform: uppercase;
-		letter-spacing: 0.08em;
-		font-size: 0.85rem;
-		margin-bottom: 0.75rem;
+		color: legacy.$font-color-dark;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		@media (min-width: legacy.$min-tablet) {
+			// Empty but kept for consistency
+		}
+
+		@media (min-width: legacy.$min-560) {
+			font-size: 12px;
+		}
+
+		@media (min-width: legacy.$min-960) {
+			font-size: 12px;
+		}
 	}
 
-	&__list,
-	&__socialList {
-		list-style: none;
-		margin: 0;
-		padding: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 0.35rem;
+	&__parentLink {
+		font-family: legacy.$font-family-heading;
+		font-size: 15px;
+		color: legacy.$font-color-dark;
+		font-weight: 600;
+		line-height: 28px;
 	}
 
-	&__socialList {
-		flex-direction: row;
-		gap: 1rem;
-	}
-
-	a {
-		color: rgba(255, 255, 255, 0.8);
-
-		&:hover,
-		&:focus {
-			color: $color-white;
+	&__parentLinkHover {
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 
 	&__copyright {
-		margin: 0;
-		font-size: 0.85rem;
-		color: rgba(255, 255, 255, 0.7);
+		margin-top: legacy.$gutter * 1;
+		margin-bottom: legacy.$gutter * 1;
+
+		@media (min-width: legacy.$min-720) {
+			margin-top: legacy.$gutter * 3;
+		}
+
+		font-size: 13px;
+	}
+
+	&__noLinkTitle {
+		font-size: 13px;
+		font-family: legacy.$font-family-gilroy, sans-serif;
+		font-weight: 400;
+		color: #1a1a1a;
+		padding-bottom: 0 !important;
+		line-height: 30px;
+	}
+
+	&__noLink {
+		font-size: 13px;
+		font-family: legacy.$font-family-freight;
+		padding-bottom: 0 !important;
+		padding-top: 5px;
+	}
+
+	&__bold {
+		font-weight: 600;
+	}
+
+	&__linkHidden {
+		visibility: hidden;
+		@media (max-width: legacy.$max-960) {
+			display: none;
+		}
+	}
+
+	&__paddingLeft {
+		padding-left: 10px;
+	}
+
+	&__skillsmenu {
+		width: 16% !important;
+		@media (max-width: legacy.$max-720) {
+			width: 100% !important;
+		}
+	}
+
+	&__aeradevelopermenu {
+		width: 16% !important;
+		@media (max-width: legacy.$max-720) {
+			width: 100% !important;
+		}
+	}
+
+	// Additional styles for WordPress structure
+	&__row--navigation {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__column {
+		@include legacy-grid.make-col(math.percentage(math.div(2.4, 12)));
+		padding-right: 10px;
+
+		@media (max-width: legacy.$min-560) {
+			width: 100%;
+			margin-bottom: 1.5rem;
+		}
+	}
+
+	&__columnTitle {
+		font-family: legacy.$font-family-heading;
+		font-size: 15px;
+		color: legacy.$font-color-dark;
+		font-weight: 600;
+		line-height: 28px;
+		margin-bottom: 0.5rem;
+		text-transform: uppercase;
+	}
+
+	&__list {
+		@include legacy-reset.reset-list;
+
+		li {
+			list-style-type: none;
+			padding-bottom: 5px;
+		}
+
+		a {
+			@include legacy-reset.reset-anchor;
+			font-family: legacy.$font-family-heading;
+			font-size: 13px;
+			font-weight: 400;
+			text-transform: uppercase;
+			color: legacy.$font-color-dark;
+
+			&:hover {
+				text-decoration: underline;
+			}
+
+			@media (min-width: legacy.$min-560) {
+				font-size: 12px;
+			}
+
+			@media (min-width: legacy.$min-960) {
+				font-size: 12px;
+			}
+		}
+	}
+
+	&__socialList {
+		@include legacy-reset.reset-list;
+		display: flex;
+		flex-direction: row;
+		gap: 1rem;
+	}
+
+	&__row--meta {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		margin-top: legacy.$gutter * 1;
+
+		@media (min-width: legacy.$min-720) {
+			margin-top: legacy.$gutter * 3;
+		}
 	}
 }
-

@@ -1,0 +1,51 @@
+{
+    "key": "group_aera_press_release",
+    "title": "Press Release Fields",
+    "fields": [
+        {
+            "key": "field_press_release_publication",
+            "label": "Publication",
+            "name": "press_release_publication",
+            "type": "text",
+            "instructions": "Name of the publication or source.",
+            "required": true,
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_press_release_logo",
+            "label": "Publication Logo",
+            "name": "press_release_logo",
+            "type": "image",
+            "instructions": "Logo of the publication or source.",
+            "required": false,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "wrapper": {
+                "width": "50"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "press-release"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Additional fields for press releases including publication name and logo.",
+    "show_in_rest": 1,
+    "modified": 1735000000
+}
+

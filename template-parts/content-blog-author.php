@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for blog author section.
  *
@@ -122,4 +123,3 @@ if (! $has_content) {
     </div>
   </div>
 </section>
-

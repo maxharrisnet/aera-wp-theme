@@ -15,7 +15,22 @@ $post_id = $args['post_id'] ?? get_the_ID();
 $post_type = $args['post_type'] ?? get_post_type($post_id) ?? 'resource';
 
 $title = $args['title'] ?? get_the_title($post_id);
-$excerpt = $args['excerpt'] ?? wp_strip_all_tags(get_the_excerpt($post_id));
+
+// Get excerpt: ACF field first, then args, then WordPress excerpt
+$excerpt = '';
+if (!$is_demo && function_exists('get_field')) {
+  $acf_excerpt = get_field('resource_excerpt', $post_id);
+  if (!empty($acf_excerpt)) {
+    $excerpt = wp_strip_all_tags($acf_excerpt);
+  }
+}
+if (empty($excerpt) && isset($args['excerpt'])) {
+  $excerpt = $args['excerpt'];
+}
+if (empty($excerpt)) {
+  $excerpt = wp_strip_all_tags(get_the_excerpt($post_id));
+}
+
 $type_label = $args['type_label'] ?? get_resource_label_for_post_type($post_type);
 $date_value = $args['date'] ?? get_the_date('c', $post_id);
 $display_date = $date_value ? date_i18n(get_option('date_format'), strtotime($date_value)) : '';

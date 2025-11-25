@@ -1,0 +1,48 @@
+{
+    "key": "group_aera_media_item",
+    "title": "Media Item Fields",
+    "fields": [
+        {
+            "key": "field_media_item_type",
+            "label": "Type",
+            "name": "media_item_type",
+            "type": "text",
+            "instructions": "Type of media item.",
+            "required": false,
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_media_item_source",
+            "label": "Source",
+            "name": "media_item_source",
+            "type": "text",
+            "instructions": "Source or origin of the media item.",
+            "required": false,
+            "wrapper": {
+                "width": "50"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "media-item"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Additional fields for media items including type and source.",
+    "show_in_rest": 1,
+    "modified": 1735000000
+}
+

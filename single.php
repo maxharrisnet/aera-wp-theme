@@ -24,5 +24,8 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
+// Don't show WordPress sidebar for blog posts (they have their own custom sidebar)
+if ( 'blog' !== get_post_type() ) {
+	get_sidebar();
+}
 get_footer();

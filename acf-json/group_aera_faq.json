@@ -1,0 +1,37 @@
+{
+    "key": "group_aera_faq",
+    "title": "FAQ Fields",
+    "fields": [
+        {
+            "key": "field_faq_category",
+            "label": "Category",
+            "name": "faq_category",
+            "type": "text",
+            "instructions": "Category or topic for the FAQ.",
+            "required": false,
+            "wrapper": {
+                "width": "100"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "faq"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Additional fields for FAQs including category.",
+    "show_in_rest": 1,
+    "modified": 1735000000
+}
+

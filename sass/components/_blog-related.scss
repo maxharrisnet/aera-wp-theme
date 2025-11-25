@@ -5,24 +5,21 @@
 @use '../legacy/mixins' as *;
 
 .blog-related {
-	margin-top: $gutter * 1;
+	margin-top: 0;
+	margin-bottom: $gutter * 2;
 
 	&__container {
-		@include container;
+		// Remove container since it's inside the sidebar
+		padding: 0;
+		margin: 0;
 	}
 
-	&__list {
-		@media (min-width: $min-desktop) {
-			@include make-row;
-		}
+	h3 {
+		margin-top: 0;
+		margin-bottom: $gutter;
 	}
 
-	&__col {
-		@media (min-width: $min-desktop) {
-			@include make-col(math.percentage(math.div(12, 12)));
-			margin-left: 0;
-		}
-	}
+	// Remove row/col layouts since it's in sidebar
 
 	&Item {
 		margin-bottom: 15px;

@@ -48,7 +48,7 @@ if (is_front_page()) {
 			<div class="header__content">
 				<div class="header__bar" id="logo">
 					<a class="header__logo" href="<?php echo esc_url(home_url('/')); ?>" rel="home" aria-label="<?php esc_attr_e('Aera Technology', 'aera'); ?>">
-						<?php
+			<?php
 						$logo = get_theme_mod('custom_logo');
 						$logo_src = $logo ? wp_get_attachment_image_url($logo, 'full') : get_template_directory_uri() . '/assets/images/aera-logo.svg';
 						?>
@@ -61,6 +61,47 @@ if (is_front_page()) {
 						<span class="screen-reader-text"><?php esc_html_e('Toggle navigation', 'aera'); ?></span>
 					</button>
 				</div>
+
+				<div class="header__overlay" data-nav-overlay></div>
+
+				<nav class="header__navigation" aria-label="<?php esc_attr_e('Primary navigation', 'aera'); ?>" data-nav-panel>
+					<div class="header__navBackground" aria-hidden="true">
+						<svg class="header__backgroundSvg" x="0" y="0" width="100%" height="100%" viewBox="0 0 100 1000" preserveAspectRatio="none">
+							<path class="header__backgroundPath" fill="#f7f9fa" d="M100,0C100,0,0,118,0,249c0,146,34,150,65,249c33.7,107.8,35,85,35,278c0,87.1,0,224,0,224l0,0V0L100,0z" />
+						</svg>
+					</div>
+
+					<div class="header__navlist">
+			<?php
+			wp_nav_menu(
+				array(
+								'theme_location' => 'primary',
+								'menu_id'        => 'primary-navigation',
+								'container'      => false,
+								'menu_class'     => 'navigation__list',
+								'depth'          => 2,
+								'fallback_cb'    => '__return_false',
+				)
+			);
+			?>
+					</div>
+
+					<div class="header__social">
+						<?php
+						if (has_nav_menu('primary-utility')) {
+							wp_nav_menu(
+								array(
+									'theme_location' => 'primary-utility',
+									'container'      => false,
+									'menu_class'     => 'header__utility header__utility--mobile',
+									'depth'          => 1,
+									'fallback_cb'    => false,
+								)
+							);
+						}
+						?>
+					</div>
+				</nav>
 
 				<div class="header__demo" id="meetAera-desktop">
 					<?php
@@ -85,42 +126,4 @@ if (is_front_page()) {
 				</div>
 			</div>
 		</div>
-
-		<div class="header__overlay" data-nav-overlay></div>
-		<nav class="header__navigation" aria-label="<?php esc_attr_e('Primary navigation', 'aera'); ?>" data-nav-panel>
-			<div class="header__navBackground" aria-hidden="true">
-				<svg class="header__backgroundSvg" x="0" y="0" width="100%" height="100%" viewBox="0 0 100 1000" preserveAspectRatio="none">
-					<path class="header__backgroundPath" fill="#f7f9fa" d="M100,0C100,0,0,118,0,249c0,146,34,150,65,249c33.7,107.8,35,85,35,278c0,87.1,0,224,0,224l0,0V0L100,0z" />
-				</svg>
-			</div>
-
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'primary',
-					'menu_id'        => 'primary-navigation',
-					'container'      => false,
-					'menu_class'     => 'navigation__list',
-					'depth'          => 2,
-					'fallback_cb'    => '__return_false',
-				)
-			);
-			?>
-
-			<div class="header__social">
-				<?php
-				if (has_nav_menu('primary-utility')) {
-					wp_nav_menu(
-						array(
-							'theme_location' => 'primary-utility',
-							'container'      => false,
-							'menu_class'     => 'header__utility header__utility--mobile',
-							'depth'          => 1,
-							'fallback_cb'    => false,
-						)
-					);
-				}
-				?>
-			</div>
-		</nav>
 	</header>

@@ -1,5 +1,6 @@
 @use '../variables' as *;
 @use '../legacy/variables' as legacy;
+@use 'sass:math';
 
 .header {
 	position: absolute;
@@ -98,7 +99,10 @@
 		padding: 6rem 1.5rem 2rem;
 		transform: translateX(100%);
 		transition: transform 220ms ease;
-		overflow-y: auto;
+		overflow-y: visible;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		z-index: 2;
 	}
 
@@ -171,26 +175,40 @@
 	margin: 0;
 	padding: 0;
 	display: flex;
+	justify-content: center;
 	flex-direction: column;
-	gap: 1.25rem;
+
+	@media (max-width: 960px) {
+		padding: 85px 0 50px 0;
+	}
 
 	> li {
+		display: block;
+		align-items: center;
+		justify-content: center;
 		position: relative;
+
+		@media (max-width: 1024px) {
+			text-align: center;
+			margin-bottom: 10px;
+		}
 	}
 
 	> li > a {
 		font-family: $font-family-heading;
+		font-size: 16px;
 		font-weight: 600;
 		text-transform: uppercase;
 		letter-spacing: 0.05em;
 		display: inline-flex;
 		align-items: center;
 		border-bottom: 2px solid transparent;
-		padding-bottom: 0.35rem;
-		color: legacy.$color-codgray;
-		transition: border-color 200ms ease;
+		color: legacy.$font-color-dark;
+		transition: border legacy.$transition-leave;
 
 		&:hover {
+			transition-duration: legacy.$transition-enter;
+
 			&.platform,
 			&[href*='aera-decision-cloud'] {
 				border-color: legacy.$color-technology;
@@ -256,6 +274,22 @@
 		gap: 0.3rem;
 		flex-direction: column;
 
+		@media (max-width: 1023px) {
+			position: static;
+			z-index: -1;
+			border: 0;
+			top: 10px;
+			left: 0;
+			background-color: transparent;
+			width: 100%;
+			color: legacy.$color-codgray;
+			padding: 0;
+			padding-top: 10px;
+			margin-top: 10px;
+			box-shadow: none;
+			text-align: center;
+		}
+
 		a {
 			text-transform: none;
 			letter-spacing: 0.02em;
@@ -264,6 +298,25 @@
 			border-bottom: 1px solid transparent;
 			font-weight: 600;
 			color: legacy.$color-codgray;
+
+			@media (max-width: 1023px) {
+				font-family: $font-family-base;
+				font-style: normal;
+				font-weight: normal;
+				font-size: 14px;
+				line-height: 20px;
+				text-align: center;
+				color: legacy.$color-codgray;
+				display: inline-block;
+				border-bottom: 2px solid transparent;
+				padding-bottom: 0;
+				padding-top: 5px;
+
+				&:hover::before {
+					background: transparent;
+					border-bottom: 2px solid rgba(187, 225, 250, 1);
+				}
+			}
 
 			&:hover,
 			&:focus {
@@ -311,6 +364,19 @@
 	}
 }
 
+.navigation__arrowUp {
+	width: 100px;
+	height: 5px;
+	border-bottom: 10px solid transparent;
+	position: absolute;
+	top: -10px;
+	left: 0;
+
+	@media (max-width: 1023px) {
+		display: none;
+	}
+}
+
 @media (min-width: 1024px) {
 	.header {
 		position: absolute;
@@ -346,23 +412,22 @@
 		> li {
 			display: flex;
 			justify-content: flex-start;
-			padding: 0 0.5rem;
+			padding: 0 math.div(legacy.$gutter, 2);
 		}
 
 		> li > a {
 			font-size: 14px;
-			padding: 0 3px;
 
 			@media (max-width: 1200px) {
 				font-size: 12px;
+				padding: 0 3px;
 			}
 		}
 
 		.sub-menu {
 			position: absolute;
-			top: calc(100% + 8px);
+			top: -2px;
 			left: 0;
-			min-width: 220px;
 			background: $color-white;
 			padding: 20px;
 			box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.13);
@@ -370,27 +435,64 @@
 			display: none;
 			z-index: 999;
 			text-align: left;
+			margin-top: 35px;
+			width: 220px;
+			color: #1a1a1a;
+
+			.navigation__arrowUp {
+				display: block;
+			}
 
 			li {
-				list-style: none;
-				padding: 5px 0;
+				list-style-type: none;
 				border-bottom: 2px solid transparent;
+				padding: 5px 0;
 			}
 
 			a {
-				font-size: 14px;
-				letter-spacing: 0.05em;
 				padding: 0;
-				color: legacy.$color-codgray;
+				color: #1a1a1a;
 				font-weight: 600;
 				display: inline-block;
+				position: relative;
+				border-bottom: 0;
 				border-bottom: 2px solid transparent;
-				transition: border-color 200ms ease;
+				font-size: 14px;
 
-				&:hover {
-					border-bottom-color: legacy.$color-poloblue;
+				&:hover,
+				&:active,
+				&:focus,
+				&:target {
+					border-bottom: 2px solid #96b1d8;
 				}
 			}
+		}
+
+		// Skills dropdown - 250px width
+		.menu-item-has-children[data-menu-type='skills'] .sub-menu {
+			width: 250px;
+			left: 0;
+		}
+
+		// Company dropdown - 220px width, padding-left: 15px
+		.menu-item-has-children[data-menu-type='company'] .sub-menu {
+			width: 220px;
+			left: 0;
+			padding-left: 15px;
+		}
+
+		// Resources dropdown - 290px width, padding-left: 15px
+		.menu-item-has-children[data-menu-type='resources'] .sub-menu {
+			width: 290px;
+			left: 0;
+			padding-left: 15px;
+		}
+
+		// Events dropdown - 185px width, padding-left: 15px
+		.menu-item-has-children[data-menu-type='events'] .sub-menu {
+			width: 185px;
+			left: 0;
+			padding-left: 15px;
 		}
 	}
 
@@ -401,22 +503,6 @@
 	.menu-item-has-children {
 		&:hover > .sub-menu {
 			display: block;
-		}
-	}
-
-	// Special dropdown positioning for different menu items
-	.menu-item-has-children {
-		&:nth-child(1) .sub-menu {
-			left: -40px;
-		}
-		&:nth-child(2) .sub-menu {
-			left: 0;
-		}
-		&:nth-child(3) .sub-menu {
-			left: 0;
-		}
-		&:nth-child(4) .sub-menu {
-			left: 0;
 		}
 	}
 

@@ -11,10 +11,6 @@ defined('ABSPATH') || exit;
 $lead_text = function_exists('get_field') ? (string) get_field('blog_lead') : '';
 $lead_paragraphs = array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $lead_text ?? ''))));
 
-// Use resource_author_1 from resource fields instead of blog_author
-$author_text = function_exists('get_field') ? (string) get_field('resource_author_1') : '';
-$author_paragraphs = array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $author_text ?? ''))));
-
 $date_value = get_the_date('c');
 $display_date = get_the_date();
 
@@ -45,14 +41,6 @@ $article_classes = array(
               </p>
             <?php endforeach; ?>
           <?php endif; ?>
-
-          <?php if (! empty($author_paragraphs)) : ?>
-            <?php foreach ($author_paragraphs as $paragraph) : ?>
-              <p class="article-template__lead">
-                <span class="article-template__leadName"><?php echo esc_html($paragraph); ?></span>
-              </p>
-            <?php endforeach; ?>
-          <?php endif; ?>
         </header>
 
         <div class="article-template__content">
@@ -70,14 +58,20 @@ $article_classes = array(
       </div>
 
       <aside class="article-template__col article-template__col--sidebar">
+
+        <?php
+        // Author section (if multiple authors)
+        get_template_part('template-parts/content', 'blog-author');
+        ?>
+
         <?php
         // Social sharing section
         get_template_part('template-parts/content', 'blog-share');
         ?>
 
         <?php
-        // Author section (if multiple authors)
-        get_template_part('template-parts/content', 'blog-author');
+        // Related posts section (full list)
+        get_template_part('template-parts/content', 'blog-related');
         ?>
 
         <?php
@@ -88,8 +82,3 @@ $article_classes = array(
     </div>
   </div>
 </article>
-
-<?php
-// Related posts section (full list below)
-get_template_part('template-parts/content', 'blog-related');
-?>

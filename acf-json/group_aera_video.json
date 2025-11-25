@@ -1,0 +1,119 @@
+{
+    "key": "group_aera_video",
+    "title": "Video Fields",
+    "fields": [
+        {
+            "key": "field_video_type",
+            "label": "Type",
+            "name": "video_type",
+            "type": "text",
+            "instructions": "Type or category of the video.",
+            "required": false,
+            "wrapper": {
+                "width": "33.33"
+            }
+        },
+        {
+            "key": "field_video_tags",
+            "label": "Tags",
+            "name": "video_tags",
+            "type": "textarea",
+            "instructions": "Tags or keywords for the video. Each line will create a new tag.",
+            "required": false,
+            "rows": 3,
+            "new_lines": "br",
+            "wrapper": {
+                "width": "33.33"
+            }
+        },
+        {
+            "key": "field_video_end_date",
+            "label": "End Date",
+            "name": "video_end_date",
+            "type": "date_picker",
+            "instructions": "End date for the video (if applicable).",
+            "required": false,
+            "display_format": "F j, Y",
+            "return_format": "Y-m-d",
+            "first_day": 1,
+            "wrapper": {
+                "width": "33.34"
+            }
+        },
+        {
+            "key": "field_video_city",
+            "label": "City",
+            "name": "video_city",
+            "type": "text",
+            "instructions": "City where the video was recorded or is relevant to.",
+            "required": false,
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_video_form_or_video",
+            "label": "Form or Video",
+            "name": "video_form_or_video",
+            "type": "select",
+            "instructions": "Choose whether this video uses a form or video.",
+            "required": false,
+            "choices": {
+                "Form": "Form",
+                "Video": "Video"
+            },
+            "default_value": "Video",
+            "return_format": "value",
+            "allow_null": false,
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_video_attachment",
+            "label": "Attachment",
+            "name": "video_attachment",
+            "type": "file",
+            "instructions": "Video file or other attachment.",
+            "required": false,
+            "return_format": "array",
+            "library": "all",
+            "mime_types": "video,mp4,webm",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_video_url",
+            "label": "Video URL",
+            "name": "video_url",
+            "type": "url",
+            "instructions": "YouTube or Vimeo URL for the video.",
+            "required": false,
+            "placeholder": "https://youtube.com/... or https://vimeo.com/...",
+            "wrapper": {
+                "width": "50"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "video"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Additional fields for videos including type, tags, dates, city, attachment, and video URL.",
+    "show_in_rest": 1,
+    "modified": 1735000000
+}
+

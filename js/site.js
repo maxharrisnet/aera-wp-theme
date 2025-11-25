@@ -62,6 +62,33 @@
 
 	// Handle mobile submenu toggles
 	const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+
+	// Add menu type classes and arrow elements to dropdowns
+	document.querySelectorAll('.menu-item-has-children').forEach((item) => {
+		const link = item.querySelector('a');
+		if (!link) return;
+
+		const href = link.getAttribute('href') || '';
+
+		// Determine menu type based on href
+		if (href.includes('skills')) {
+			item.setAttribute('data-menu-type', 'skills');
+		} else if (href.includes('about-us') || href.includes('partners') || href.includes('careers') || href.includes('contact')) {
+			item.setAttribute('data-menu-type', 'company');
+		} else if (href.includes('resources')) {
+			item.setAttribute('data-menu-type', 'resources');
+		} else if (href.includes('events') || href.includes('webinars')) {
+			item.setAttribute('data-menu-type', 'events');
+		}
+
+		// Add arrow element to dropdown (desktop only)
+		const submenu = item.querySelector('.sub-menu');
+		if (submenu && isDesktop) {
+			const arrow = document.createElement('div');
+			arrow.className = 'navigation__arrowUp';
+			submenu.insertBefore(arrow, submenu.firstChild);
+		}
+	});
 	if (!isDesktop) {
 		document.querySelectorAll('.menu-item-has-children').forEach((item) => {
 			const trigger = document.createElement('button');
