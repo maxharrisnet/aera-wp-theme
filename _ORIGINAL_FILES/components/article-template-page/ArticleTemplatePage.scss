@@ -1,0 +1,234 @@
+/* stylelint-disable selector-no-type, selector-max-type */
+@import "~styles/config";
+
+.articleTemplatePage {
+  @include segment;
+  padding-bottom: 0px !important;
+  width: percentage(12/12);
+
+  &__container {
+    @include container;
+  }
+
+  @media (max-width: $max-960) {
+    padding-top: 28%;
+  }
+
+  @media (max-width: $max-1080) {
+    padding-top: 40%;
+  }
+
+  &__row {
+    @media (min-width: $min-720) {
+      @include make-row;
+    }
+  }
+
+  &__col {
+    @media (min-width: $min-720) {
+      @include make-col(percentage(12/12));
+      margin-left: percentage(0.5/12);
+    }
+
+    @media (max-width: $max-960) {
+      @include make-col(percentage(12/12));
+      margin-left: 0;
+      padding-left: 0;
+    }
+
+    @media (min-width: $min-1080) {
+      //margin-left: percentage(0.5/12);
+      width: percentage(12/12);
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &__date {
+    font-size: 14px;
+    font-weight: 500;
+    color: $font-color-dark;
+  }
+
+  &__title {
+    @include heading(false, 30, 50);
+  }
+
+  &__lead {
+    @include responsive-font(14, 16);
+
+    &:last-child {
+      margin-bottom: $gutter * 2;
+      @media (max-width: $min-720) {
+        margin-bottom: $gutter * 1.5;
+      }
+    }
+    &__name {
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+  }
+
+  &__image {
+    margin-top: $gutter * 1;
+    margin-bottom: $gutter * 1;
+
+    @media (min-width: $min-tablet) {
+      margin-left: calc(-25% - 8px);
+      margin-right: calc(-25% - 8px);
+    }
+
+    @media (min-width: $min-desktop) {
+      margin-left: calc(-50% - #{$gutter/2});
+      margin-right: calc(-50% - #{$gutter/2});
+    }
+  }
+
+  &__content {
+    // > h2,
+    // > h3 {
+    //   //margin-bottom: 0;
+    // }
+
+    h2 + p,
+    h3 + p {
+      margin-top: 0;
+    }
+
+    &Image,
+    &Embed {
+      display: block;
+      margin-top: $gutter * 1;
+      margin-bottom: $gutter * 1;
+
+      @media (min-width: $min-tablet) {
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+
+    &Iframe {
+      position: relative;
+      padding-top: 56.25%;
+
+      > iframe {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    p > a {
+      color: $color-articles;
+      text-decoration: underline;
+
+      &:hover {
+        color: darken($color-articles, 10%);
+      }
+    }
+
+    blockquote {
+      @include reset-all;
+      @include responsive-font(18, 28);
+
+      margin-left: calc(#{percentage(1/12)} + 3px);
+      margin-right: calc(#{percentage(1/12)} + 3px);
+
+      @media (min-width: $min-720) {
+        margin-left: calc(#{percentage(1/8)} + 5px);
+        margin-right: calc(#{percentage(1/8) * -1} - 3px);
+      }
+
+      @media (min-width: $min-1080) {
+        margin-left: calc(#{percentage(1/6)} + 5px);
+        margin-right: calc(#{percentage(1/6) * -1} - 4px);
+      }
+
+      padding: $gutter/2 0;
+
+      line-height: 1.3;
+
+      p {
+        quotes: "“" "”" "‘" "’";
+
+        &:first-child::before {
+          content: open-quote;
+          margin-left: -0.31em;
+        }
+
+        &:last-child::after {
+          content: close-quote;
+        }
+      }
+    }
+
+    hr {
+      margin: $gutter 0;
+      height: 1px;
+
+      border: 0;
+      background: $color-border;
+    }
+
+    ul,
+    ol {
+      @include reset-list;
+      margin: 1em 0;
+
+      > li {
+        position: relative;
+
+        margin-bottom: $gutter / 2;
+        padding-left: $gutter;
+
+        &::before {
+          content: "–";
+
+          position: absolute;
+          top: -2px;
+          left: 1px;
+
+          font-weight: 500;
+          color: $color-persiangreen;
+        }
+      }
+    }
+
+    ol {
+      counter-reset: ol-counter;
+
+      > li {
+        counter-increment: ol-counter;
+
+        &::before {
+          content: counter(ol-counter);
+        }
+      }
+    }
+
+    figure {
+      @include reset-all;
+      margin-top: $gutter * 2;
+      margin-left: -$gutter;
+      margin-right: -$gutter;
+
+      figcaption {
+        padding: $gutter / 2 $gutter;
+
+        font-size: 14px;
+        font-weight: 500;
+        color: $font-color-dark;
+      }
+    }
+  }
+
+  &__action {
+    margin-top: $gutter * 3;
+  }
+}

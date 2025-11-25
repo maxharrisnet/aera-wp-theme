@@ -1,0 +1,96 @@
+@import "~styles/config";
+
+.button {
+  @include button;
+
+  cursor: pointer;
+
+  background: rgba($color-white, 0.5);
+
+  transition: 180ms;
+  transition-property: border-color, background-color, color, opacity;
+
+  & + & {
+    margin-top: $gutter / 2;
+
+    @media (min-width: $min-mobile) {
+      margin-top: 0;
+      margin-left: $gutter / 2;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &--disabled {
+    cursor: default;
+
+    background-color: #ddd;
+  }
+
+  &--default {
+    @include button-color(
+      $color-btn-default,
+      $color-hawkesblue,
+      $color-oysterbay
+    );
+  }
+
+  &--teal {
+    @include button-color($color-btn-teal, #dcfaf4, #f5fef5);
+  }
+
+  &--sky-blue {
+    @include button-color($color-btn-sky-blue, #e0f9ff, #f7f5e9);
+  }
+
+  &--blue {
+    @include button-color($color-btn-blue, #e0f4ff, #e8fcf5);
+  }
+
+  &--lilac {
+    @include button-color($color-btn-lilac, #dee8fb, #e0f9ff);
+  }
+
+  &--transparent {
+    background: transparent;
+
+    @include hover {
+      border-color: #e0f9ff rgba(255, 255, 255, 0) #dee8fb;
+      background-color: #e0f9ff;
+      background-image: linear-gradient(rgba(#dee8fb, 0) 0%, #dee8fb 90%);
+    }
+  }
+
+  &--solid {
+    line-height: (52/14);
+    border: 0;
+    background-color: #dee8fb;
+    background-image: linear-gradient(rgba(#e0f9ff, 0) 0%, #e0f9ff 90%);
+
+    @include hover {
+      background-color: #e0f9ff;
+      background-image: linear-gradient(rgba(#dee8fb, 0) 0%, #dee8fb 90%);
+    }
+  }
+
+  &--submit {
+    line-height: (52/14);
+    border: 0;
+    background-color: #dee8fb;
+    background-image: linear-gradient(rgba(#e0f9ff, 0) 0%, #e0f9ff 90%);
+
+    @include hover {
+      background-color: #e0f9ff;
+      background-image: linear-gradient(rgba(#dee8fb, 0) 0%, #dee8fb 90%);
+    }
+  }
+
+  &--mobileFull {
+    @media (max-width: $max-480) {
+      width: 100%;
+    }
+  }
+}

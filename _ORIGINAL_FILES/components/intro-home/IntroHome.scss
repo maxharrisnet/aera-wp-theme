@@ -1,0 +1,104 @@
+@import "~styles/config";
+
+.intro {
+  position: relative;
+  z-index: 3;
+
+  padding: 50px 0 0;
+
+  text-align: center;
+
+  &.fullHeight {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: 500px;
+    min-height: 100vh;
+  }
+
+  @media (min-width: $min-768) {
+    padding: 50px 0 0;
+  }
+
+  @media (min-width: $min-1024) {
+    padding: 0px 0 0;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    @include responsive-font(28, 66);
+    margin-bottom: 0px;
+
+    font-family: $font-family-heading;
+    font-weight: 700;
+    line-height: 76px;
+    letter-spacing: -0.025em;
+    color: $font-color-dark;
+    @media (max-width: $min-720) {
+      line-height: 40px;
+    }
+  }
+  &__subtitle {
+    @include responsive-font(18, 36);
+    //margin-bottom: 6px;
+    margin: 0;
+    font-family: $font-family-heading;
+    font-weight: 100;
+    line-height: 46px;
+    letter-spacing: -0.025em;
+    color: $font-color-dark;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    @media (max-width: $min-720) {
+      line-height: 18px;
+    }
+  }
+  
+  &__scrollBtn{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    // animation: bounce 2.5s infinite;
+    // @keyframes bounce {
+    //   0%, 20%, 50%, 80%, 100% {
+    //     transform: translateY(0);
+    //   }
+    //   40% {
+    //     transform: translateY(-30px);
+    //   }
+    //   60% {
+    //     transform: translateY(-15px);
+    //   }
+    // }
+    img{
+     
+      width: 35px;
+      cursor: pointer;
+    }
+    @media (max-width: $min-720) {
+      transform: translate(-50%, -120%);
+      bottom: 8%;
+    }
+  }
+  &__text {
+    @include reset-paragraph;
+    @include responsive-font(18, 26);
+
+    margin: 0 auto 1em;
+
+    font-weight: 400;
+
+    @media (min-width: $min-480) {
+      max-width: (840/26) * 1em;
+      width: 100%;
+
+      .fullHeight & {
+        max-width: (940/26) * 1em;
+      }
+    }
+  }
+}
