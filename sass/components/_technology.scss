@@ -1,0 +1,384 @@
+@use 'sass:math';
+@use '../legacy/variables' as *;
+@use '../legacy/mixins' as *;
+@use '../legacy/grid' as *;
+
+$sceneScaleHeight: 850px;
+$sceneScale: 1.4;
+
+.technology {
+	position: relative;
+	z-index: 3;
+
+	@media (max-width: $max-768) {
+		padding-top: $gutter * 4;
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 150px);
+		background-repeat: repeat-x;
+	}
+
+	&__sceneWrapper {
+		position: sticky;
+		top: 120px;
+		height: 70vh;
+		min-height: 520px;
+		margin-bottom: $gutter * 2;
+
+		@media (max-width: $max-768) {
+			display: none;
+		}
+	}
+
+	&__container {
+		@include container;
+		position: relative;
+		z-index: 10;
+	}
+
+	&__row {
+		@include make-row;
+	}
+
+	&__colItems {
+		width: 100%;
+
+		@media (min-width: $min-768) {
+			@include make-col(math.percentage(math.div(5, 12)));
+			margin-left: math.percentage(math.div(7, 12));
+		}
+	}
+}
+
+.technologyScene {
+	opacity: 0;
+	pointer-events: none;
+	background: $color-background;
+	transition: opacity 500ms ease;
+
+	&.isVisible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	@media (min-width: $min-768) {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		will-change: opacity;
+	}
+
+	&__container {
+		@include container;
+		position: relative;
+		height: 100%;
+
+		@media (max-width: $max-768) {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__videoContainer {
+		position: relative;
+		width: 100%;
+		order: 1;
+
+		&::before {
+			content: '';
+			display: block;
+			padding-bottom: 56.25%;
+			margin-right: -100%;
+		}
+
+		@media (max-width: $max-768) {
+			.scene-0 & {
+				width: 190%;
+				transform: translate(-22%, 0);
+			}
+			.scene-1 & {
+				width: 260%;
+				transform: translate(-33%, 0);
+			}
+			.scene-2 & {
+				width: 190%;
+				transform: translate(-29%, 0);
+			}
+			.scene-3 & {
+				width: 249%;
+				transform: translate(-33%, 0);
+			}
+		}
+
+		@media (min-width: $min-768) {
+			top: 60%;
+			order: none;
+
+			.scene-0 & {
+				width: 90%;
+				transform: translate(-23.15%, -50%);
+
+				@media (min-height: $sceneScaleHeight) {
+					width: 120%;
+					transform: translate(-31%, -50%);
+				}
+			}
+
+			.scene-1 & {
+				width: 109%;
+				transform: translate(-20.25%, -50%);
+
+				@media (min-height: $sceneScaleHeight) {
+					width: 145%;
+					transform: translate(-30%, -50%);
+				}
+			}
+
+			.scene-2 & {
+				width: 88%;
+				transform: translate(-19.58%, -50%);
+
+				@media (min-height: $sceneScaleHeight) {
+					width: 117%;
+					transform: translate(-29%, -50%);
+				}
+
+				&::after {
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: -1px;
+					z-index: 1;
+					width: 200px;
+					height: 100%;
+					background: linear-gradient(to right, $color-background, rgba($color-background, 0));
+				}
+			}
+
+			.scene-3 & {
+				width: 105%;
+				transform: translate(-21.9%, -50%);
+
+				@media (min-height: $sceneScaleHeight) {
+					width: 140%;
+					transform: translate(-31%, -50%);
+				}
+			}
+		}
+	}
+
+	&__videoWrap {
+		position: absolute;
+		inset: 0;
+		overflow: hidden;
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			pointer-events: none;
+			box-shadow: inset 0 0 30px 5px #fff;
+		}
+	}
+
+	&__video {
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		width: calc(100% + 4px);
+		height: auto;
+	}
+
+	&__prop {
+		position: absolute;
+
+		.scene-1 & {
+			display: none;
+			bottom: 42%;
+			right: 91%;
+			left: auto;
+			width: 55%;
+
+			@media (min-height: $sceneScaleHeight) {
+				width: 65%;
+			}
+
+			@media (min-width: $min-desktop) {
+				display: block;
+			}
+		}
+
+		.scene-3 & {
+			bottom: 30%;
+			left: -17%;
+			width: 86%;
+
+			@media (min-width: $min-768) {
+				bottom: 8%;
+				left: -10%;
+			}
+		}
+	}
+
+	&__messages {
+		margin-bottom: -17%;
+
+		@media (min-width: $min-768) {
+			@include container;
+			position: absolute;
+			bottom: 50%;
+			left: 0;
+			margin-bottom: 0;
+			width: 100%;
+		}
+
+		&Row {
+			@include make-row;
+		}
+
+		&Col {
+			@include make-col(math.percentage(math.div(7, 12)));
+		}
+	}
+}
+
+.technologyMessages {
+	position: relative;
+	margin-left: 10px;
+
+	@media (min-width: $min-768) {
+		margin-left: 0;
+	}
+
+	&.scene-0 {
+		@media (min-width: $min-768) {
+			padding-bottom: 6%;
+
+			@media (min-height: $sceneScaleHeight) {
+				padding-bottom: 9%;
+			}
+		}
+	}
+
+	&.scene-1 {
+		@media (min-width: $min-768) {
+			padding-bottom: 12%;
+
+			@media (min-height: $sceneScaleHeight) {
+				padding-bottom: 17.25% * $sceneScale;
+			}
+		}
+	}
+
+	&.scene-2 {
+		@media (min-width: $min-768) {
+			padding-bottom: 4%;
+
+			@media (min-height: $sceneScaleHeight) {
+				padding-bottom: 12.5% * $sceneScale;
+			}
+		}
+	}
+
+	&.scene-3 {
+		@media (min-width: $min-768) {
+			padding-bottom: 16%;
+
+			@media (min-height: $sceneScaleHeight) {
+				padding-bottom: 21% * $sceneScale;
+			}
+		}
+	}
+}
+
+.technologyMessagesItem {
+	display: flex;
+	margin-bottom: 15px;
+	transform-origin: 50% 100%;
+	will-change: opacity;
+
+	&__panel {
+		@include responsive-font(16, 18);
+		display: inline-block;
+		position: relative;
+		padding: 18px 30px;
+		line-height: 1.333;
+		letter-spacing: -0.0002em;
+		color: $color-messages-text;
+		background: $color-messages;
+		border-radius: 40px;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+	}
+
+	&.aera .technologyMessagesItem__panel {
+		background: $color-primary;
+		color: $color-white;
+	}
+
+	&.lastAera .technologyMessagesItem__panel {
+		background: $color-resources;
+		color: $color-white;
+	}
+}
+
+.technologyItem {
+	position: relative;
+	margin-bottom: $gutter * 4;
+	scroll-margin-top: 140px;
+
+	@media (min-width: $min-768) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		z-index: 1;
+		margin-bottom: 0;
+		height: 130vh;
+	}
+
+	&:last-child {
+		margin-bottom: $gutter * 3;
+	}
+
+	&__scene {
+		display: none;
+
+		@media (max-width: $max-768) {
+			display: block;
+			margin-bottom: 1.25rem;
+
+			video {
+				width: 100%;
+				border-radius: 24px;
+				border: 1px solid $color-border;
+			}
+		}
+	}
+
+	&__title {
+		@include heading($hasMargin: false, $min: 17, $max: 60);
+		position: relative;
+		margin-bottom: 0;
+		margin-top: -8%;
+
+		@media (min-width: $min-768) {
+			margin-top: 0;
+		}
+
+		@media (min-width: $min-1280) {
+			white-space: nowrap;
+		}
+	}
+
+	&__text {
+		@include responsive-font(16, 24);
+
+		a {
+			@include link($font-color-dark);
+		}
+	}
+
+	&.isActive .technologyItem__title {
+		color: $color-primary;
+	}
+}

@@ -86,4 +86,66 @@
 			});
 		});
 	}
+
+	document.querySelectorAll('[data-scroll-to]').forEach((trigger) => {
+		trigger.addEventListener('click', () => {
+			const target = document.querySelector(trigger.dataset.scrollTo);
+			if (target) {
+				target.scrollIntoView({ behavior: 'smooth' });
+			}
+		});
+	});
+
+	const technology = document.querySelector('[data-technology]');
+	if (technology) {
+		const items = technology.querySelectorAll('[data-technology-item]');
+		const scenes = technology.querySelectorAll('[data-technology-scene]');
+		const sceneWrapper = technology.querySelector('[data-technology-scene-wrapper]');
+
+		const setActiveScene = (activeIndex) => {
+			items.forEach((item) => {
+				const index = parseInt(item.dataset.technologyIndex, 10);
+				item.classList.toggle('isActive', index === activeIndex);
+			});
+
+			scenes.forEach((scene) => {
+				const index = parseInt(scene.dataset.technologyScene, 10);
+				scene.classList.toggle('isVisible', index === activeIndex);
+			});
+		};
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						const index = parseInt(entry.target.dataset.technologyIndex, 10);
+						if (!Number.isNaN(index)) {
+							setActiveScene(index);
+						}
+					}
+				});
+			},
+			{
+				root: null,
+				threshold: 0.4,
+				rootMargin: '-20% 0px -30% 0px',
+			}
+		);
+
+		items.forEach((item) => observer.observe(item));
+
+		if (sceneWrapper) {
+			const sceneHeight = () => {
+				const firstScene = sceneWrapper.querySelector('.technologyScene');
+				if (firstScene) {
+					sceneWrapper.style.height = `${firstScene.offsetHeight}px`;
+				}
+			};
+
+			sceneHeight();
+			window.addEventListener('resize', sceneHeight);
+		}
+
+		setActiveScene(0);
+	}
 })();

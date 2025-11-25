@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Front page template.
  *
@@ -7,7 +8,9 @@
 
 get_header();
 
-$hero = function_exists('get_field') ? (array) get_field('home_hero') : array();
+$assets_base = trailingslashit(get_template_directory_uri()) . 'assets/home/';
+
+$hero = function_exists('get_field') ? (array) call_user_func('get_field', 'home_hero') : array();
 $hero = wp_parse_args(
   $hero,
   array(
@@ -19,14 +22,15 @@ $hero = wp_parse_args(
   )
 );
 
-$technology_sections = function_exists('get_field') ? (array) get_field('home_technology_sections') : array();
+$technology_sections = function_exists('get_field') ? (array) call_user_func('get_field', 'home_technology_sections') : array();
 
 if (empty($technology_sections)) {
   $technology_sections = array(
     array(
       'title'       => __('Aera understands.', 'aera'),
       'description' => __('Aera continuously crawls enterprise systems; refines, indexes, and augments data; and delivers real-time visibility into your operations.', 'aera'),
-      'video'       => '',
+      'video'       => $assets_base . 'technology-loop-vpsales.mp4',
+      'background_image' => '',
       'messages'    => array(
         array(
           'speaker' => 'user',
@@ -41,7 +45,8 @@ if (empty($technology_sections)) {
     array(
       'title'       => __('Aera recommends.', 'aera'),
       'description' => __('Aera uses real-time data and AI to predict risks and opportunities accurately, then recommends the best course of action.', 'aera'),
-      'video'       => '',
+      'video'       => $assets_base . 'technology-loop-csco.mp4',
+      'background_image' => $assets_base . 'technology-truck.jpg',
       'messages'    => array(
         array(
           'speaker' => 'user',
@@ -56,7 +61,8 @@ if (empty($technology_sections)) {
     array(
       'title'       => __('Aera acts.', 'aera'),
       'description' => __('Aera proactively engages relevant users and autonomously drives the execution of decisions.', 'aera'),
-      'video'       => '',
+      'video'       => $assets_base . 'technology-loop-ceo.mp4',
+      'background_image' => '',
       'messages'    => array(
         array(
           'speaker' => 'aera',
@@ -75,7 +81,8 @@ if (empty($technology_sections)) {
     array(
       'title'       => __('Aera learns.', 'aera'),
       'description' => __('Aera learns from decisions made and their outcomes in order to improve future recommendations.', 'aera'),
-      'video'       => '',
+      'video'       => $assets_base . 'technology-loop-vpmanufacturing.mp4',
+      'background_image' => '',
       'cta_link'    => home_url('/aera-decision-cloud'),
       'cta_label'   => __('More About the technology', 'aera'),
       'messages'    => array(
@@ -92,10 +99,10 @@ if (empty($technology_sections)) {
   );
 }
 
-$additional_text = function_exists('get_field') ? get_field('home_additional_text') : '';
+$additional_text = function_exists('get_field') ? call_user_func('get_field', 'home_additional_text') : '';
 $additional_text = $additional_text ? $additional_text : __('With Decision Intelligence, your business is agile, scalable, and continuously learning.', 'aera');
 
-$cta = function_exists('get_field') ? (array) get_field('home_cta') : array();
+$cta = function_exists('get_field') ? (array) call_user_func('get_field', 'home_cta') : array();
 $cta = wp_parse_args(
   $cta,
   array(
@@ -104,84 +111,127 @@ $cta = wp_parse_args(
     'link'  => home_url('/demo'),
   )
 );
+
 ?>
 
 <main id="primary" class="site-main site-main--home">
-	<section class="intro intro--home">
-		<div class="intro__container">
-			<h1 class="intro__title"><?php echo esc_html($hero['title']); ?></h1>
-			<p class="intro__subtitle"><?php echo esc_html($hero['tagline']); ?></p>
-			<p class="intro__text"><?php echo esc_html($hero['description']); ?></p>
-			<?php if (! empty($hero['cta_label']) && ! empty($hero['cta_link'])) : ?>
-				<a class="button" href="<?php echo esc_url($hero['cta_link']); ?>">
-					<?php echo esc_html($hero['cta_label']); ?>
-				</a>
-			<?php endif; ?>
-		</div>
-	</section>
+  <section class="intro fullHeight" id="hero">
+    <div class="intro__container">
+      <h1 class="intro__title"><?php echo esc_html($hero['title']); ?></h1>
+      <h2 class="intro__subtitle"><?php echo esc_html($hero['tagline']); ?></h2>
+      <p class="intro__text"><?php echo esc_html($hero['description']); ?></p>
+      <?php if (! empty($hero['cta_label']) && ! empty($hero['cta_link'])) : ?>
+        <div class="intro__actions">
+          <a class="button" href="<?php echo esc_url($hero['cta_link']); ?>">
+            <?php echo esc_html($hero['cta_label']); ?>
+          </a>
+        </div>
+      <?php endif; ?>
+    </div>
+    <button class="intro__scrollBtn" id="scrollDownBtn" type="button" data-scroll-to="#sectionTechnology">
+      <img src="<?php echo esc_url($assets_base . 'downArrow.png'); ?>" alt="<?php esc_attr_e('Scroll down', 'aera'); ?>" loading="lazy" width="35" height="35" />
+    </button>
+  </section>
 
-	<section class="technology" id="sectionTechnology">
-		<div class="technology__container">
-			<?php foreach ($technology_sections as $index => $section) : ?>
-				<?php
-				$title = $section['title'] ?? '';
-				$description = $section['description'] ?? '';
-				$video = $section['video'] ?? '';
-				$messages = $section['messages'] ?? array();
-				$cta_link = $section['cta_link'] ?? '';
-				$cta_label = $section['cta_label'] ?? '';
-				?>
-				<article class="technology__item" data-technology="<?php echo esc_attr($index); ?>">
-					<header class="technology__header">
-						<p class="technology__step"><?php printf(esc_html__('0%d', 'aera'), $index + 1); ?></p>
-						<h2 class="technology__title"><?php echo esc_html($title); ?></h2>
-					</header>
-					<div class="technology__body">
-						<p class="technology__description"><?php echo esc_html($description); ?></p>
-						<?php if ($cta_link && $cta_label) : ?>
-							<a class="technology__link" href="<?php echo esc_url($cta_link); ?>"><?php echo esc_html($cta_label); ?></a>
-						<?php endif; ?>
-					</div>
-					<?php if ($video) : ?>
-						<div class="technology__media">
-							<video class="technology__video" autoplay muted loop playsinline preload="metadata">
-								<source src="<?php echo esc_url($video); ?>" type="video/mp4" />
-							</video>
-						</div>
-					<?php endif; ?>
-					<?php if (! empty($messages)) : ?>
-						<ul class="technology__messages">
-							<?php foreach ($messages as $message) : ?>
-								<li class="technology__message technology__message--<?php echo esc_attr($message['speaker'] ?? 'user'); ?>">
-									<span class="technology__messageLabel">
-										<?php echo 'aera' === ($message['speaker'] ?? '') ? esc_html__('Aera', 'aera') : esc_html__('You', 'aera'); ?>
-									</span>
-									<p><?php echo esc_html($message['text'] ?? ''); ?></p>
-								</li>
-							<?php endforeach; ?>
-						</ul>
-					<?php endif; ?>
-				</article>
-			<?php endforeach; ?>
-		</div>
-	</section>
+  <section class="technology" id="sectionTechnology" data-technology>
+    <div class="technology__sceneWrapper" data-technology-scene-wrapper>
+      <?php foreach ($technology_sections as $index => $section) : ?>
+        <?php
+        $video = $section['video'] ?? '';
+        $messages = $section['messages'] ?? array();
+        $background_image = $section['background_image'] ?? '';
+        $last_aera_index = -1;
+        foreach ($messages as $message_index => $message) {
+          if ('aera' === ($message['speaker'] ?? '')) {
+            $last_aera_index = $message_index;
+          }
+        }
+        ?>
+        <div class="technologyScene scene-<?php echo esc_attr($index); ?><?php echo 0 === $index ? ' isVisible' : ''; ?>" data-technology-scene="<?php echo esc_attr($index); ?>">
+          <div class="technologyScene__container">
+            <div class="technologyScene__videoContainer">
+              <div class="technologyScene__videoWrap">
+                <?php if (! empty($video)) : ?>
+                  <video class="technologyScene__video" autoplay muted loop playsinline preload="metadata" src="<?php echo esc_url($video); ?>" width="1280" height="720"></video>
+                <?php endif; ?>
+              </div>
+            </div>
+            <?php if (! empty($background_image)) : ?>
+              <div class="technologyScene__prop">
+                <img src="<?php echo esc_url($background_image); ?>" alt="" loading="lazy" />
+              </div>
+            <?php endif; ?>
+            <div class="technologyScene__messages">
+              <div class="technologyScene__messagesRow">
+                <div class="technologyScene__messagesCol">
+                  <div class="technologyMessages scene-<?php echo esc_attr($index); ?>">
+                    <?php foreach ($messages as $message_index => $message) : ?>
+                      <?php
+                      $speaker = 'aera' === ($message['speaker'] ?? '') ? 'aera' : 'user';
+                      $is_last_aera = ($speaker === 'aera' && $message_index === $last_aera_index);
+                      ?>
+                      <div class="technologyMessagesItem <?php echo esc_attr($speaker); ?> pos-<?php echo esc_attr($message_index); ?><?php echo $is_last_aera ? ' lastAera' : ''; ?>">
+                        <div class="technologyMessagesItem__panel">
+                          <?php echo esc_html($message['text'] ?? ''); ?>
+                        </div>
+                      </div>
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </div>
 
-	<section class="additionalsection">
-		<div class="additionalsection__container">
-			<p class="additionalsection__text"><?php echo esc_html($additional_text); ?></p>
-		</div>
-	</section>
+    <div class="technology__container">
+      <div class="technology__row">
+        <div class="technology__colItems">
+          <?php foreach ($technology_sections as $index => $section) : ?>
+            <?php
+            $title = $section['title'] ?? '';
+            $description = $section['description'] ?? '';
+            $video = $section['video'] ?? '';
+            $cta_link = $section['cta_link'] ?? '';
+            $cta_label = $section['cta_label'] ?? '';
+            ?>
+            <article class="technologyItem pos-<?php echo esc_attr($index); ?><?php echo 0 === $index ? ' isActive' : ''; ?>" data-technology-item data-technology-index="<?php echo esc_attr($index); ?>">
+              <div class="technologyItem__scene">
+                <?php if (! empty($video)) : ?>
+                  <video autoplay muted loop playsinline preload="metadata" src="<?php echo esc_url($video); ?>"></video>
+                <?php endif; ?>
+              </div>
+              <span class="technology__badge"><?php printf(esc_html__('0%d', 'aera'), $index + 1); ?></span>
+              <h2 class="technologyItem__title"><?php echo esc_html($title); ?></h2>
+              <div class="technologyItem__text">
+                <?php echo wp_kses_post($description); ?>
+              </div>
+              <?php if ($cta_link && $cta_label) : ?>
+                <a class="technology__link" href="<?php echo esc_url($cta_link); ?>"><?php echo esc_html($cta_label); ?></a>
+              <?php endif; ?>
+            </article>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<section class="request">
-		<div class="request__container">
-			<div class="request__content">
-				<h2 class="request__title"><?php echo esc_html($cta['title']); ?></h2>
-				<a class="button button--outline" href="<?php echo esc_url($cta['link']); ?>"><?php echo esc_html($cta['text']); ?></a>
-			</div>
-		</div>
-	</section>
+  <section class="additionalsection">
+    <div class="additionalsection__container">
+      <p class="additionalsection__text"><?php echo esc_html($additional_text); ?></p>
+    </div>
+  </section>
+
+  <section class="request">
+    <div class="request__container">
+      <div class="request__content">
+        <h2 class="request__title"><?php echo esc_html($cta['title']); ?></h2>
+        <a class="button button--outline" href="<?php echo esc_url($cta['link']); ?>"><?php echo esc_html($cta['text']); ?></a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <?php
 get_footer();
-

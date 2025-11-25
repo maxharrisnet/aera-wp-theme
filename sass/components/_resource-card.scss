@@ -1,3 +1,5 @@
+@use '../variables' as *;
+
 .resource-card {
 	border: 1px solid $color-border;
 	border-radius: 20px;

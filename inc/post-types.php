@@ -128,7 +128,7 @@ function register_post_types(): void
       'new_item'           => sprintf(__('New %s', 'aera'), $settings['singular']),
       'edit_item'          => sprintf(__('Edit %s', 'aera'), $settings['singular']),
       'view_item'          => sprintf(__('View %s', 'aera'), $settings['singular']),
-      'all_items'          => sprintf(__('All %s', 'aera'), $settings['plural']),
+      'all_items'          => $settings['plural'],
       'search_items'       => sprintf(__('Search %s', 'aera'), $settings['plural']),
       'parent_item_colon'  => sprintf(__('Parent %s:', 'aera'), $settings['plural']),
       'not_found'          => __('No results found.', 'aera'),

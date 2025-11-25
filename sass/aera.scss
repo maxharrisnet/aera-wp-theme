@@ -2,13 +2,14 @@
 Custom Aera styles compiled from SCSS
 */
 
-@import 'variables';
-@import 'base/fonts';
-@import 'base/typography';
-@import 'components/buttons';
-@import 'components/header';
-@import 'components/resource-card';
-@import 'components/footer';
-@import 'pages/home';
-@import 'pages/resources';
-
+@use 'variables';
+@use 'base/fonts';
+@use 'base/typography';
+@use 'components/buttons';
+@use 'components/header';
+@use 'components/intro-home';
+@use 'components/technology';
+@use 'components/resource-card';
+@use 'components/footer';
+@use 'pages/home';
+@use 'pages/resources';
