@@ -18,16 +18,15 @@ Custom Aera styles compiled from SCSS
 
 @use 'components/header';
 @use 'components/navigation';
-// @use 'components/footer';
+@use 'components/footer';
 
 // @use 'components/buttons';
 
-// @use 'components/intro-home';
 // @use 'components/blog';
 // @use 'components/blog-author';
 // @use 'components/blog-share';
 // @use 'components/blog-related';
-// @use 'components/technology';
+@use 'components/technology';
 // @use 'components/resource-card';
 // @use 'components/template-page';
 

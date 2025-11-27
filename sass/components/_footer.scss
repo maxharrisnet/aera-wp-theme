@@ -1,8 +1,8 @@
-@use '../variables' as *;
-@use '../mixins' as legacy-mixins;
-@use '../grid' as legacy-grid;
-@use '../reset' as legacy-reset;
 @use 'sass:math';
+@use '../mixins' as *;
+@use '../grid' as *;
+@use '../reset' as *;
+@use '../variables' as *;
 
 .footer {
 	position: relative;
