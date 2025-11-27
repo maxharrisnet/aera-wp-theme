@@ -41,7 +41,7 @@ class Navigation_Walker extends \Walker_Nav_Menu
 
     // Default class.
     $classes = array('navigation__dropdownShow navigation__dropdownSkills'); // TODO: make parent menu class dynamic
-    
+
 
     /**
      * Filters the CSS class(es) applied to a menu list element.
