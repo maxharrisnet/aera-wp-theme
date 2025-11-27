@@ -1,7 +1,7 @@
 @use '../variables' as *;
 
 :global {
-	// @import '../base'; TODO: Fix variables in Vase
+	// @import '../base'; // TODO: Fix variables in base
 
 	div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner {
 		display: flex;

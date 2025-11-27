@@ -1,6 +1,6 @@
-/***
-*  This file is imported in components/app-layout/AppLayout.scss
-*/
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'fonts' as *;
 
 @-ms-viewport {
 	// stylelint-disable-line

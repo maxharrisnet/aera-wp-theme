@@ -1,9 +1,6 @@
 <?php
 
 /**
- * The header for our theme
- *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -84,6 +81,7 @@
                   'menu_class'     => 'navigation__list',
                   'depth'          => 2,
                   'fallback_cb'    => '__return_false',
+                  'walker'         => new \Aera\Navigation_Walker(),
                 )
               );
               ?>

@@ -3,8 +3,10 @@ Custom Aera styles compiled from SCSS
 */
 
 // @use 'config';
+@use 'fonts';
 
 /* LAYOUT */
+@use 'base';
 @use 'layout/layout';
 @use 'layout/column-content';
 
@@ -14,8 +16,11 @@ Custom Aera styles compiled from SCSS
 @use 'components/background';
 @use 'components/loading';
 
+@use 'components/header';
+@use 'components/navigation';
+// @use 'components/footer';
+
 // @use 'components/buttons';
-// @use 'components/header';
 
 // @use 'components/intro-home';
 // @use 'components/blog';
@@ -25,10 +30,9 @@ Custom Aera styles compiled from SCSS
 // @use 'components/technology';
 // @use 'components/resource-card';
 // @use 'components/template-page';
-// @use 'components/footer';
 
 /* Pages */
 // @use 'pages/layout';
-// @use 'pages/home';
+@use 'pages/home';
 // @use 'pages/resources';
 // @use 'pages/webinars';

@@ -16,12 +16,12 @@
 	font-family: 'FreightSans Pro';
 	font-style: normal;
 	font-weight: 300;
-	src: url('../assets/fonts/FreightSans-Pro-Book.eot');
+	src: url('./assets/fonts/FreightSans-Pro-Book.eot');
 	src:
-		url('../assets/fonts/FreightSans-Pro-Book.eot?#iefix') format('embedded-opentype'),
-		url('../assets/fonts/FreightSans-Pro-Book.woff2') format('woff2'),
-		url('../assets/fonts/FreightSans-Pro-Book.woff') format('woff'),
-		url('../assets/fonts/FreightSans-Pro-Book.ttf') format('truetype');
+		url('./assets/fonts/FreightSans-Pro-Book.eot?#iefix') format('embedded-opentype'),
+		url('./assets/fonts/FreightSans-Pro-Book.woff2') format('woff2'),
+		url('./assets/fonts/FreightSans-Pro-Book.woff') format('woff'),
+		url('./assets/fonts/FreightSans-Pro-Book.ttf') format('truetype');
 }
 
 @font-face {

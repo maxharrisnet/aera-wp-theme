@@ -218,6 +218,11 @@ require get_template_directory() . '/inc/admin.php';
 require get_template_directory() . '/inc/acf.php';
 
 /**
+ * Custom navigation walker.
+ */
+require get_template_directory() . '/inc/class-navigation-walker.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';

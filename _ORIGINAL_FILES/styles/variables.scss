@@ -1,3 +1,5 @@
+@use 'fonts' as *;
+
 $gutter: 30px;
 $container-gutter-mobile: 20px;
 $container-gutter-tablet: 50px;
@@ -103,8 +105,8 @@ $btn-border-radius: 999px;
 $color-input-border: $color-bemuda;
 
 // Fonts
-$font-family-freight: "FreightSans Pro", sans-serif;
-$font-family-gilroy: "Gilroy", sans-serif;
+$font-family-freight: 'FreightSans Pro', sans-serif;
+$font-family-gilroy: 'Gilroy', sans-serif;
 $font-family: $font-family-freight;
 $font-family-heading: $font-family-gilroy;
 $font-size: 18px;

@@ -1,86 +1,85 @@
 /* FreightSans Pro */
-
 @font-face {
-  font-family: 'FreightSans Pro';
-  font-style: normal;
-  font-weight: 200;
-  src: url('../assets/fonts/FreightSans-Pro-Light.eot');
-  src:
-    url('../assets/fonts/FreightSans-Pro-Light.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/FreightSans-Pro-Light.woff2') format('woff2'),
-    url('../assets/fonts/FreightSans-Pro-Light.woff') format('woff'),
-    url('../assets/fonts/FreightSans-Pro-Light.ttf') format('truetype');
+	font-family: 'FreightSans Pro';
+	font-style: normal;
+	font-weight: 200;
+	src: url('../assets/fonts/FreightSans-Pro-Light.eot');
+	src:
+		url('../assets/fonts/FreightSans-Pro-Light.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/FreightSans-Pro-Light.woff2') format('woff2'),
+		url('../assets/fonts/FreightSans-Pro-Light.woff') format('woff'),
+		url('../assets/fonts/FreightSans-Pro-Light.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'FreightSans Pro';
-  font-style: normal;
-  font-weight: 300;
-  src: url('../assets/fonts/FreightSans-Pro-Book.eot');
-  src:
-    url('../assets/fonts/FreightSans-Pro-Book.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/FreightSans-Pro-Book.woff2') format('woff2'),
-    url('../assets/fonts/FreightSans-Pro-Book.woff') format('woff'),
-    url('../assets/fonts/FreightSans-Pro-Book.ttf') format('truetype');
+	font-family: 'FreightSans Pro';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../assets/fonts/FreightSans-Pro-Book.eot');
+	src:
+		url('../assets/fonts/FreightSans-Pro-Book.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/FreightSans-Pro-Book.woff2') format('woff2'),
+		url('../assets/fonts/FreightSans-Pro-Book.woff') format('woff'),
+		url('../assets/fonts/FreightSans-Pro-Book.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'FreightSans Pro';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../assets/fonts/FreightSans-Pro-Medium.eot');
-  src:
-    url('../assets/fonts/FreightSans-Pro-Medium.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/FreightSans-Pro-Medium.woff2') format('woff2'),
-    url('../assets/fonts/FreightSans-Pro-Medium.woff') format('woff'),
-    url('../assets/fonts/FreightSans-Pro-Medium.ttf') format('truetype');
+	font-family: 'FreightSans Pro';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../assets/fonts/FreightSans-Pro-Medium.eot');
+	src:
+		url('../assets/fonts/FreightSans-Pro-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/FreightSans-Pro-Medium.woff2') format('woff2'),
+		url('../assets/fonts/FreightSans-Pro-Medium.woff') format('woff'),
+		url('../assets/fonts/FreightSans-Pro-Medium.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'FreightSans Pro';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../assets/fonts/FreightSans-Pro-Semibold.eot');
-  src:
-    url('../assets/fonts/FreightSans-Pro-Semibold.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/FreightSans-Pro-Semibold.woff2') format('woff2'),
-    url('../assets/fonts/FreightSans-Pro-Semibold.woff') format('woff'),
-    url('../assets/fonts/FreightSans-Pro-Semibold.ttf') format('truetype');
+	font-family: 'FreightSans Pro';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../assets/fonts/FreightSans-Pro-Semibold.eot');
+	src:
+		url('../assets/fonts/FreightSans-Pro-Semibold.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/FreightSans-Pro-Semibold.woff2') format('woff2'),
+		url('../assets/fonts/FreightSans-Pro-Semibold.woff') format('woff'),
+		url('../assets/fonts/FreightSans-Pro-Semibold.ttf') format('truetype');
 }
 
 /* Gilroy */
 @font-face {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../assets/fonts/Gilroy-Bold.eot');
-  src:
-    url('../assets/fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/Gilroy-Bold.woff2') format('woff2'),
-    url('../assets/fonts/Gilroy-Bold.woff') format('woff'),
-    url('../assets/fonts/Gilroy-Bold.ttf') format('truetype');
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../assets/fonts/Gilroy-Bold.eot');
+	src:
+		url('../assets/fonts/Gilroy-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/Gilroy-Bold.woff2') format('woff2'),
+		url('../assets/fonts/Gilroy-Bold.woff') format('woff'),
+		url('../assets/fonts/Gilroy-Bold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 600;
-  src: url('../assets/fonts/Gilroy-Semibold.eot');
-  src:
-    url('../assets/fonts/Gilroy-Semibold.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/Gilroy-Semibold.woff2') format('woff2'),
-    url('../assets/fonts/Gilroy-Semibold.woff') format('woff'),
-    url('../assets/fonts/Gilroy-Semibold.ttf') format('truetype');
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 600;
+	src: url('../assets/fonts/Gilroy-Semibold.eot');
+	src:
+		url('../assets/fonts/Gilroy-Semibold.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/Gilroy-Semibold.woff2') format('woff2'),
+		url('../assets/fonts/Gilroy-Semibold.woff') format('woff'),
+		url('../assets/fonts/Gilroy-Semibold.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 500;
-  src: url('../assets/fonts/Gilroy-Medium.eot');
-  src:
-    url('../assets/fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
-    url('../assets/fonts/Gilroy-Medium.woff2') format('woff2'),
-    url('../assets/fonts/Gilroy-Medium.woff') format('woff'),
-    url('../assets/fonts/Gilroy-Medium.ttf') format('truetype');
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 500;
+	src: url('../assets/fonts/Gilroy-Medium.eot');
+	src:
+		url('../assets/fonts/Gilroy-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../assets/fonts/Gilroy-Medium.woff2') format('woff2'),
+		url('../assets/fonts/Gilroy-Medium.woff') format('woff'),
+		url('../assets/fonts/Gilroy-Medium.ttf') format('truetype');
 }

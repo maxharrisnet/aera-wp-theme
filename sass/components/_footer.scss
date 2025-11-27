@@ -15,11 +15,11 @@
 	}
 
 	&__container {
-		@include legacy-mixins.container;
+		@include container;
 	}
 
 	&__row {
-		@include legacy-grid.make-row;
+		@include make-row;
 		justify-content: space-between;
 	}
 
@@ -28,32 +28,32 @@
 		text-align: center;
 
 		@media (min-width: $min-560) {
-			width: math.percentage(math.div(12, 12));
+			width: percentage(12/12);
 		}
 		@media (max-width: $min-560) {
 			flex-wrap: wrap;
 		}
 
 		ul {
-			@include legacy-grid.make-col(math.percentage(math.div(12, 12)));
-			margin-top: 0;
-			padding-left: 0;
-			padding-right: 0;
+			@include make-col(percentage(12/12));
+			margin-top: 0px;
+			padding-left: 0px;
+			padding-right: 0px;
 			text-align: left;
 
 			@media (min-width: $min-tablet) {
-				width: math.percentage(math.div(2.4, 12));
+				width: percentage(2.4/12);
 				text-align: left;
 				padding-right: 10px;
 			}
 
 			@media (min-width: $min-560) {
-				width: math.percentage(math.div(2.4, 12));
+				width: percentage(2.4/12);
 				padding-right: 10px;
 			}
 
 			@media (min-width: $min-960) {
-				width: math.percentage(math.div(2.4, 12));
+				width: percentage(2.4/12);
 				text-align: left;
 				padding-right: 10px;
 			}
@@ -62,7 +62,6 @@
 		li {
 			list-style-type: none;
 			padding-bottom: 5px;
-
 			@media (max-width: $max-960) {
 				&__hiddenXS {
 					display: none;
@@ -72,18 +71,18 @@
 	}
 
 	&__logo {
-		@include legacy-grid.make-col(math.percentage(math.div(12, 12)));
+		@include make-col(percentage(12/12));
 
 		@media (min-width: $min-560) {
-			width: math.percentage(math.div(12, 12));
+			width: percentage(12/12);
 		}
 
 		@media (min-width: $min-960) {
-			width: math.percentage(math.div(12, 12));
+			width: percentage(12/12);
 		}
 
 		&Link {
-			@include legacy-reset.reset-anchor;
+			@include reset-anchor;
 		}
 
 		&Image {
@@ -103,14 +102,12 @@
 			width: 100% !important;
 		}
 	}
-
 	&__w25 {
 		width: 25% !important;
 		@media (max-width: $max-720) {
 			width: 100% !important;
 		}
 	}
-
 	&__w30 {
 		width: 30% !important;
 		@media (max-width: $max-720) {
@@ -119,39 +116,39 @@
 	}
 
 	&__navigation {
-		@include legacy-grid.make-col(math.percentage(math.div(12, 12)));
+		@include make-col(percentage(12/12));
 
 		@media (min-width: $min-560) {
-			width: math.percentage(math.div(12, 12));
+			width: percentage(12/12);
 		}
 
 		@media (min-width: $min-960) {
-			width: math.percentage(math.div(9.5, 12));
+			width: percentage(9.5/12);
 		}
 
 		&List {
-			@include legacy-reset.reset-list;
+			@include reset-list;
 		}
 	}
 
 	&__social {
-		@include legacy-grid.make-col(math.percentage(math.div(12, 12)));
+		@include make-col(percentage(12/12));
 
 		@media (max-width: $min-560) {
 			margin-top: 30px;
 		}
 
 		@media (min-width: $min-560) {
-			width: math.percentage(math.div(12, 12));
+			width: percentage(12/12);
 		}
 
 		@media (min-width: $min-960) {
-			width: math.percentage(math.div(1.5, 12));
+			width: percentage(1.5/12);
 			text-align: right;
 		}
 
 		&List {
-			@include legacy-reset.reset-list;
+			@include reset-list;
 		}
 	}
 
@@ -161,7 +158,7 @@
 	}
 
 	&__link {
-		@include legacy-reset.reset-anchor;
+		@include reset-anchor;
 
 		font-family: $font-family-heading;
 		font-size: 13px;
@@ -174,7 +171,6 @@
 		}
 
 		@media (min-width: $min-tablet) {
-			// Empty but kept for consistency
 		}
 
 		@media (min-width: $min-560) {
@@ -185,7 +181,6 @@
 			font-size: 12px;
 		}
 	}
-
 	&__parentLink {
 		font-family: $font-family-heading;
 		font-size: 15px;
@@ -210,125 +205,43 @@
 
 		font-size: 13px;
 	}
-
 	&__noLinkTitle {
 		font-size: 13px;
-		font-family: $font-family-gilroy, sans-serif;
+		font-family: 'Gilroy', sans-serif;
 		font-weight: 400;
 		color: #1a1a1a;
-		padding-bottom: 0 !important;
+		padding-bottom: 0px !important;
 		line-height: 30px;
 	}
-
 	&__noLink {
 		font-size: 13px;
-		font-family: $font-family-freight;
-		padding-bottom: 0 !important;
+		font-family: FreightSans Pro;
+		padding-bottom: 0px !important;
 		padding-top: 5px;
 	}
-
 	&__bold {
 		font-weight: 600;
 	}
-
 	&__linkHidden {
 		visibility: hidden;
 		@media (max-width: $max-960) {
 			display: none;
 		}
 	}
-
 	&__paddingLeft {
 		padding-left: 10px;
 	}
-
 	&__skillsmenu {
 		width: 16% !important;
 		@media (max-width: $max-720) {
 			width: 100% !important;
 		}
+		//margin-left: 20px;
 	}
-
 	&__aeradevelopermenu {
 		width: 16% !important;
 		@media (max-width: $max-720) {
 			width: 100% !important;
-		}
-	}
-
-	// Additional styles for WordPress structure
-	&__row--navigation {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-	}
-
-	&__column {
-		@include legacy-grid.make-col(math.percentage(math.div(2.4, 12)));
-		padding-right: 10px;
-
-		@media (max-width: $min-560) {
-			width: 100%;
-			margin-bottom: 1.5rem;
-		}
-	}
-
-	&__columnTitle {
-		font-family: $font-family-heading;
-		font-size: 15px;
-		color: $font-color-dark;
-		font-weight: 600;
-		line-height: 28px;
-		margin-bottom: 0.5rem;
-		text-transform: uppercase;
-	}
-
-	&__list {
-		@include legacy-reset.reset-list;
-
-		li {
-			list-style-type: none;
-			padding-bottom: 5px;
-		}
-
-		a {
-			@include legacy-reset.reset-anchor;
-			font-family: $font-family-heading;
-			font-size: 13px;
-			font-weight: 400;
-			text-transform: uppercase;
-			color: $font-color-dark;
-
-			&:hover {
-				text-decoration: underline;
-			}
-
-			@media (min-width: $min-560) {
-				font-size: 12px;
-			}
-
-			@media (min-width: $min-960) {
-				font-size: 12px;
-			}
-		}
-	}
-
-	&__socialList {
-		@include legacy-reset.reset-list;
-		display: flex;
-		flex-direction: row;
-		gap: 1rem;
-	}
-
-	&__row--meta {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		flex-wrap: wrap;
-		margin-top: $gutter * 1;
-
-		@media (min-width: $min-720) {
-			margin-top: $gutter * 3;
 		}
 	}
 }
