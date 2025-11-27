@@ -4,8 +4,8 @@
  * Custom Footer Navigation Walker
  *
  * Extends WordPress Walker_Nav_Menu to add custom markup for footer menus:
- * - Parent links with Footer_footer__parentLink classes
- * - Child links with Footer_footer__link classes
+ * - Parent links with footer__parentLink classes
+ * - Child links with footer__link classes
  * - Proper list structure matching the design system
  *
  * @package Aera_Technology
@@ -139,7 +139,7 @@ class Footer_Walker extends \Walker_Nav_Menu
 
     // Determine if this is a parent link (first item in menu) or child link
     $is_parent = $this->is_parent_link($item, $args);
-    $link_class = $is_parent ? 'Footer_footer__parentLink_2LsJC Footer_footer__parentLinkHover_2THi4' : 'Footer_footer__link_2A8DS';
+    $link_class = $is_parent ? 'footer__parentLink footer__parentLinkHover' : 'footer__link';
 
     // Add link class
     if (isset($atts['class'])) {
@@ -249,4 +249,3 @@ class Footer_Walker extends \Walker_Nav_Menu
     return false;
   }
 }
-
