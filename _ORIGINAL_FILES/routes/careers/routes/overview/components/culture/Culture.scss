@@ -1,0 +1,25 @@
+@import '~styles/config';
+
+.culture {
+  margin-bottom: $gutter * 3;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    @include heading;
+    margin-bottom: $gutter;
+
+    @media (min-width: $min-720) {
+      margin-bottom: $gutter;
+      max-width: 9em;
+    }
+  }
+
+  &__text {
+    @media (min-width: $min-720) {
+      max-width: 36em;
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import '~styles/config';
+
+.interested {
+  margin-top: $gutter * 2;
+
+  &__container {
+    @include container;
+  }
+
+  &__wrapper {
+    margin: 0 -$container-gutter-mobile;
+    padding: $gutter $container-gutter-mobile;
+    background: $color-background-darker;
+
+    @media (min-width: $min-720) {
+      margin: 0;
+      padding: 65px 0 100px;
+    }
+  }
+
+  &__row {
+    @media (min-width: $min-720) {
+      @include make-row;
+    }
+  }
+
+  &__apply {
+    @media (min-width: $min-720) {
+      @include make-col(percentage(4/12));
+      margin-left: percentage(1/12);
+    }
+
+    p { // stylelint-disable-line
+      margin-bottom: $gutter;
+    }
+  }
+
+  &__info {
+    margin-top: $gutter * 2;
+
+    @media (min-width: $min-720) {
+      @include make-col(percentage(5/12));
+      margin-left: percentage(1/12);
+      margin-top: 0;
+    }
+
+    strong { // stylelint-disable-line
+      font-weight: 500;
+    }
+
+    a { // stylelint-disable-line
+      color: $color-persiangreen;
+    }
+
+    p { // stylelint-disable-line
+      margin-bottom: $gutter;
+    }
+  }
+
+  &__title {
+    @include heading($hasMargin: false);
+    margin-bottom: 0;
+
+    @media (min-width: $min-720) {
+      margin-bottom: 6px;
+    }
+  }
+}

@@ -1,0 +1,205 @@
+@import '~styles/config';
+
+.description {
+  padding: 120px 0 0;
+
+  &.isLoading {
+    padding-bottom: 400px;
+  }
+
+  @media (min-width: $min-720) {
+    padding: 290px 0 0;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__row {
+    @media (min-width: $min-720) {
+      @include make-row;
+    }
+  }
+
+  &__col {
+    @media (min-width: $min-720) {
+      @include make-col(percentage(6/12));
+    }
+  }
+
+  &__loading {
+    display: inline-block;
+    width: 200px;
+    height: 1ex;
+
+    background: $font-color-light;
+
+    &.block {
+      width: 100%;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    @include heading($hasMargin: false);
+  }
+
+  &__details {
+    position: relative;
+    z-index: 1;
+    margin-bottom: $gutter * 3;
+  }
+
+  &__location {
+    position: relative;
+
+    padding-left: 45px;
+
+    font-size: 16px;
+    color: $font-color-dark;
+
+    &Text {
+      position: relative;
+      z-index: 1;
+    }
+
+    &Name {
+      display: block;
+      position: relative;
+      z-index: 1;
+
+      font-family: $font-family-heading;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    &Marker {
+      position: absolute;
+      z-index: 1;
+      left: -45px;
+      bottom: 6px;
+
+      path { // stylelint-disable-line
+        fill: #96b1d8;
+        fill-rule: evenodd;
+      }
+    }
+
+    &Map {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: (1438px / 2);
+      height: (703px / 2);
+      background: 3px 42px url('assets/images/company/offices-map.png') no-repeat;
+      background-size: contain;
+
+      transform: translate(-13.07%, -36.98%);
+
+      @media (min-width: $min-tablet) {
+        width: 1438px;
+        height: 703px;
+      }
+
+      &.mountainView {
+        transform: translate(-13%, -39.98%);
+      }
+
+      &.mountainViewOrSanFrancisco {
+        transform: translate(-13%, -39.98%);
+      }
+
+      &.sanFrancisco {
+        transform: translate(-13%, -39.58%);
+      }
+
+      &.chicago {
+        transform: translate(-22.88%, -39.58%);
+      }
+
+      &.sanFrancisco,
+      &.mountainView,
+      &.mountainViewOrSanFrancisco {
+        transform: translate(-13.21%, -42.39%);
+      }
+
+      &.portland {
+        transform: translate(-13.14%, -42.11%);
+      }
+
+      &.eagan {
+        transform: translate(-21%, -37.55%);
+      }
+
+      &.cluj,
+      &.clujNapoca {
+        transform: translate(-53.82%, -37.12%);
+      }
+
+      &.bucharest {
+        transform: translate(-53.99%, -38%);
+      }
+
+      &.london {
+        transform: translate(-46.38%, -32.01%);
+      }
+
+      &.paris {
+        transform: translate(-47.91%, -34.57%);
+      }
+
+      &.franceGermanyOrTheUk {
+        transform: translate(-47.91%, -34.71%);
+      }
+
+      &.pune {
+        transform: translate(-67.52%, -53.77%);
+      }
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    z-index: 1;
+
+    @include subheading;
+
+    padding-top: $gutter;
+    border-top: 1px solid $color-border;
+  }
+
+  &__list {
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: $gutter * 2;
+
+    @media (min-width: $min-720) {
+      margin-bottom: $gutter * 3;
+    }
+
+    ul { // stylelint-disable-line selector-no-type
+      @include reset-list;
+
+      > li { // stylelint-disable-line selector-no-type
+        position: relative;
+
+        margin-bottom: $gutter / 2;
+        padding-left: 28px;
+
+        &::before { // stylelint-disable-line
+          content: '–';
+
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          font-weight: 500;
+          color: $color-persiangreen;
+        }
+      }
+    }
+  }
+}

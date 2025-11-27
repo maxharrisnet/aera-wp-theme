@@ -1,0 +1,169 @@
+@import "~styles/config";
+
+.roles {
+  margin-top: $gutter * 4;
+  @include segment-bottom;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    padding-bottom: $gutter * 1.5;
+
+    @media (min-width: $min-720) {
+      @include make-row;
+      padding-bottom: $gutter;
+
+      &Col {
+        @include make-col(percentage(9/12));
+        margin-left: percentage(1/12);
+      }
+    }
+  }
+
+  &__title {
+    @include heading($hasMargin: false);
+    margin-bottom: 25px;
+  }
+
+  &__text {
+    @include reset-paragraph;
+  }
+  &__boldtext{
+    font-size: 14px;
+    color: #000;
+    margin-top: 20px;
+  }
+
+  &__center {
+    text-align: center;
+  }
+
+  &__row {
+    @include make-row;
+
+    @media (min-width: $min-720) {
+      display: flex;
+    }
+  }
+
+  &__col {
+    @include make-col(percentage(5/12));
+
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+    color: $color-table-heading;
+
+    &:first-child {
+      margin-left: percentage(1/12);
+    }
+  }
+
+  &__filter {
+    padding-top: $gutter * 2;
+
+    &Item {
+      display: inline-block;
+      margin-bottom: $gutter;
+      margin-right: $gutter;
+      // width: 30%;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      // @media (max-width: 768px) {
+      //   width: 100%;
+      // }
+    }
+  }
+
+  &__noMatch {
+    @include make-row;
+
+    &Content {
+      @include make-col(percentage(10/12));
+      margin-left: percentage(1/12);
+    }
+  }
+
+  &__list {
+    @include reset-list;
+
+    margin: 0 (-$container-gutter-mobile);
+
+    @media (min-width: $min-720) {
+      margin: 0;
+    }
+  }
+
+  &Item {
+    &:nth-child(odd) {
+      background: $color-background-darker;
+    }
+
+    &__link {
+      @include reset-anchor;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      position: relative;
+      padding: 0 $container-gutter-mobile * 2 0 $container-gutter-mobile;
+      min-height: 100px;
+
+      text-decoration: none;
+      color: $font-color-dark;
+
+      background: url("!file-loader!assets/images/arrow-right.svg") no-repeat
+        calc(100% - #{$container-gutter-mobile}) 50%;
+
+      @media (min-width: $min-720) {
+        padding-left: 0;
+        padding-right: 0;
+        background-position: calc(#{percentage(11/12)} - 3px) 50%;
+      }
+    }
+
+    &__row {
+      @media (min-width: $min-720) {
+        @include make-row;
+      }
+    }
+
+    &__col {
+      @media (min-width: $min-720) {
+        @include make-col(percentage(5/12));
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &:first-child {
+          margin-left: percentage(1/12);
+        }
+      }
+    }
+
+    &__name {
+      @include responsive-font(16, 18);
+      margin-bottom: 0;
+      font-weight: 500;
+    }
+
+    &__type {
+      @include responsive-font(12, 14);
+      margin-top: 0;
+      text-transform: uppercase;
+    }
+
+    &__location {
+      @include responsive-font(16, 18);
+      font-weight: 200;
+    }
+  }
+}

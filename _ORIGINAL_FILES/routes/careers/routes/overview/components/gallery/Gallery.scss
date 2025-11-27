@@ -1,0 +1,61 @@
+@import '~styles/config';
+
+.gallery {
+  margin-top: $gutter * 3;
+
+  &__container {
+    @include container;
+  }
+
+  &__row {
+    @media (min-width: $min-720) {
+      @include make-row;
+    }
+
+    &:first-child {
+      margin-bottom: $gutter;
+    }
+  }
+
+  &__col1 {
+    @media (min-width: $min-720) {
+      @include make-col(percentage(8/12));
+    }
+  }
+
+  &__col2 {
+    @media (min-width: $min-720) {
+      @include make-col(percentage(4/12));
+      align-self: flex-end;
+    }
+  }
+
+  &__col3 {
+    @media (min-width: $min-720) {
+      @include make-col(percentage(3/12));
+      margin-left: percentage(1/12);
+    }
+  }
+
+  &__col4 {
+    @media (min-width: $min-720) {
+      @include make-col(percentage(8/12));
+    }
+  }
+
+  &__col5 {
+    @media (min-width: $min-720) {
+      @include make-col(percentage(7/12));
+      margin-left: percentage(4/12);
+    }
+  }
+
+  &__media {
+    margin-bottom: $gutter;
+
+    @media (min-width: $min-720) {
+      margin-bottom: 0;
+    }
+  }
+
+}
