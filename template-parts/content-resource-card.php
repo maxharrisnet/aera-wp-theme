@@ -43,136 +43,99 @@ $custom_image = $args['image'] ?? '';
 $custom_image_alt = $args['image_alt'] ?? $title;
 
 // Get card image from ACF field, fallback to featured image
-$card_image = '';
+$card_image_url = '';
+$card_image_data = null;
 if (!$is_demo && function_exists('get_field')) {
   $card_image_data = get_field('resource_card_image', $post_id);
   if ($card_image_data && !empty($card_image_data['url'])) {
-    $card_image = sprintf(
-      '<img src="%1$s" alt="%2$s" class="resource-card__image" loading="lazy" width="%3$d" height="%4$d" />',
-      esc_url($card_image_data['url']),
-      esc_attr($card_image_data['alt'] ?? $title),
-      esc_attr($card_image_data['width'] ?? ''),
-      esc_attr($card_image_data['height'] ?? '')
-    );
+    $card_image_url = $card_image_data['url'];
   }
 }
 
-$thumbnail = $card_image ?: ($is_demo ? '' : get_the_post_thumbnail(
-  $post_id,
-  'resource_card',
-  array(
-    'class'   => 'resource-card__image',
-    'loading' => 'lazy',
-    'alt'     => $title,
-  )
-));
-
-$fallback_media = ($thumbnail || $card_image) ? array() : get_resource_fallback_media($post_type);
-$media_markup = $card_image ?: $thumbnail;
-
-if (! $media_markup && $custom_image) {
-  $media_markup = sprintf(
-    '<img src="%1$s" alt="%2$s" class="resource-card__image" loading="lazy" />',
-    esc_url($custom_image),
-    esc_attr($custom_image_alt)
-  );
-}
-
-if (! $media_markup && ! empty($fallback_media['url'])) {
-  $media_classes = array('resource-card__image');
-  if (! empty($fallback_media['is_logo'])) {
-    $media_classes[] = 'resource-card__image--logo';
-  }
-  $media_markup = sprintf(
-    '<img src="%1$s" alt="%2$s" class="%3$s" loading="lazy" />',
-    esc_url($fallback_media['url']),
-    esc_attr($title),
-    esc_attr(implode(' ', $media_classes))
-  );
-}
-
-// Get author fields
-$authors = array();
+// Get logo from ACF
+$logo_url = '';
+$logo_data = null;
 if (!$is_demo && function_exists('get_field')) {
-  for ($i = 1; $i <= 3; $i++) {
-    $author = get_field("resource_author_{$i}", $post_id);
-    if (!empty($author)) {
-      $authors[] = $author;
-    }
+  $logo_data = get_field('resource_logo', $post_id);
+  if ($logo_data && !empty($logo_data['url'])) {
+    $logo_url = $logo_data['url'];
   }
 }
+
+// Determine if we have an image or logo
+$has_image = !empty($card_image_url) || !empty($custom_image);
+$has_logo = !empty($logo_url);
+$image_url = $card_image_url ?: $custom_image;
+
+// Fallback media
+$fallback_media = (!$has_image && !$has_logo) ? get_resource_fallback_media($post_type) : array();
 
 $card_classes = array('resource-card');
-if ($media_markup) {
-  $card_classes[] = 'resource-card--has-media';
-} else {
-  $card_classes[] = 'resource-card--text';
-}
+$card_classes[] = 'resource-card--' . esc_attr($post_type);
 
-$wrapper_attrs = array(
-  'class' => 'resource-card__wrapper',
-  'href'  => esc_url($link),
-);
-
+// Build link attributes
+$link_attrs = array('href' => esc_url($link));
 if ($is_external) {
-  $wrapper_attrs['target'] = '_blank';
-  $wrapper_attrs['rel'] = 'noopener noreferrer';
+  $link_attrs['target'] = '_blank';
+  $link_attrs['rel'] = 'noopener noreferrer';
 }
-
-$wrapper_attr_string = '';
-foreach ($wrapper_attrs as $attr => $value) {
-  $wrapper_attr_string .= sprintf(' %1$s="%2$s"', $attr, $value);
+$link_attr_string = '';
+foreach ($link_attrs as $attr => $value) {
+  $link_attr_string .= sprintf(' %1$s="%2$s"', $attr, $value);
 }
 ?>
 
-<article class="<?php echo esc_attr(implode(' ', $card_classes)); ?>" data-resource-type="<?php echo esc_attr($post_type); ?>">
-  <a<?php echo $wrapper_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-    ?>>
-    <?php if ($media_markup) : ?>
-      <div class="resource-card__figure" aria-hidden="true">
-        <?php echo $media_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-        ?>
+<article class="<?php echo esc_attr(implode(' ', $card_classes)); ?>" data-resource-type="<?php echo esc_attr($post_type); ?>" data-resource-class="resources">
+  <div class="resource-card__wrapper">
+    <?php if ($has_image || $has_logo || !empty($fallback_media['url'])) : ?>
+      <div class="resource-card__figure">
+        <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+          <?php if ($has_image && !$has_logo) : ?>
+            <div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url(<?php echo esc_url($image_url); ?>);"></div>
+          <?php elseif ($has_logo) : ?>
+            <div class="resource-card__logoImage resource-card__imageBorder">
+              <img class="resource-card__logo" src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($title); ?>" />
+            </div>
+          <?php elseif (!empty($fallback_media['url'])) : ?>
+            <?php if (!empty($fallback_media['is_logo'])) : ?>
+              <div class="resource-card__logoImage resource-card__imageBorder">
+                <img class="resource-card__logo" src="<?php echo esc_url($fallback_media['url']); ?>" alt="<?php echo esc_attr($title); ?>" />
+              </div>
+            <?php else : ?>
+              <div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url(<?php echo esc_url($fallback_media['url']); ?>);"></div>
+            <?php endif; ?>
+          <?php endif; ?>
+        </a>
       </div>
     <?php endif; ?>
 
-    <div class="resource-card__inner">
-      <?php if ($type_label) : ?>
-        <div class="resource-card__row resource-card__row--meta">
-          <span class="resource-card__type"><?php echo esc_html($type_label); ?></span>
-        </div>
-      <?php endif; ?>
+    <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+      <div class="resource-card__row">
+        <?php if ($type_label) : ?>
+          <div class="resource-card__type"><?php echo esc_html($type_label); ?></div>
+        <?php endif; ?>
+      </div>
 
       <div class="resource-card__row">
         <div class="resource-card__content">
-          <h3 class="resource-card__title">
-            <?php echo esc_html($title); ?>
-          </h3>
-
+          <h2 class="resource-card__title"><?php echo esc_html($title); ?></h2>
           <?php if ($excerpt) : ?>
             <p class="resource-card__text"><?php echo esc_html($excerpt); ?></p>
-          <?php endif; ?>
-
-          <?php if (!empty($authors)) : ?>
-            <div class="resource-card__authors">
-              <?php foreach ($authors as $author) : ?>
-                <div class="resource-card__author">
-                  <?php echo wp_kses_post(wpautop($author)); ?>
-                </div>
-              <?php endforeach; ?>
-            </div>
           <?php endif; ?>
         </div>
       </div>
 
-      <div class="resource-card__footerRow">
-        <?php if ($display_date) : ?>
-          <time class="resource-card__date" datetime="<?php echo esc_attr($date_value); ?>">
-            <?php echo esc_html($display_date); ?>
-          </time>
-        <?php endif; ?>
-        <span class="resource-card__line" aria-hidden="true"></span>
-        <span class="resource-card__ctaLabel"><?php echo esc_html($cta_label); ?></span>
+      <div class="resource-card__lastRow">
+        <div class="resource-card__row">
+          <?php if ($display_date) : ?>
+            <div class="resource-card__date"><?php echo esc_html($display_date); ?></div>
+          <?php endif; ?>
+          <div class="resource-card__line"></div>
+          <?php if ($cta_label && $cta_label !== 'Read') : ?>
+            <span class="resource-card__link"><?php echo esc_html($cta_label); ?></span>
+          <?php endif; ?>
+        </div>
       </div>
-    </div>
     </a>
+  </div>
 </article>

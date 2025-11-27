@@ -32,7 +32,7 @@ $demo_media_base = trailingslashit(get_template_directory_uri()) . 'assets/place
 $demo_resources = array(
   array(
     'title'      => __('Smarter Waste Mitigation for Maximum Margin Recovery and Less Loss', 'aera'),
-    'excerpt'    => __('Aera’s Business Waste Mitigation Skill detects at-risk inventory and recommends the most effective mitigation path.', 'aera'),
+    'excerpt'    => __('Aera\'s Business Waste Mitigation Skill detects at-risk inventory and recommends the most effective mitigation path.', 'aera'),
     'type_label' => __('Blogs', 'aera'),
     'post_type'  => 'blog',
     'date'       => '2025-11-19',
@@ -63,53 +63,47 @@ $base_url = get_permalink();
 ?>
 
 <main id="primary" class="site-main site-main--resources">
-  <section class="resources-hero">
-    <div class="resources-hero__container">
-      <h1 class="resources-hero__title"><?php echo esc_html($hero['title']); ?></h1>
-      <p class="resources-hero__description"><?php echo esc_html($hero['description']); ?></p>
-    </div>
-  </section>
 
-  <section class="resources-filter" data-active-filter="<?php echo esc_attr($active_slug); ?>">
-    <div class="resources-filter__container">
-      <div id="typeSelector" class="resources-filter__controls" role="tablist" aria-label="<?php esc_attr_e('Resource Categories', 'aera'); ?>">
-        <?php foreach ($types as $slug => $type) : ?>
-          <?php
-          $url = 'all' === $slug ? remove_query_arg('category', $base_url) : add_query_arg('category', $slug, $base_url);
-          $is_active = $slug === $active_slug;
-          ?>
-          <a
-            class="resources-filter__button<?php echo $is_active ? ' is-active' : ''; ?>"
-            href="<?php echo esc_url($url); ?>"
-            data-filter="<?php echo esc_attr($slug); ?>"
-            role="tab"
-            aria-selected="<?php echo $is_active ? 'true' : 'false'; ?>">
-            <?php echo esc_html($type['label']); ?>
-          </a>
-        <?php endforeach; ?>
-      </div>
+  <div class="resources__filterWrapper">
+    <div class="resources__filterType" id="typeSelector">
+      <?php foreach ($types as $slug => $type) : ?>
+        <?php
+        $url = 'all' === $slug ? remove_query_arg('category', $base_url) : add_query_arg('category', $slug, $base_url);
+        $is_active = $slug === $active_slug;
+        $style = $is_active ? 'border-bottom: 1px solid #00578f;' : '';
+        ?>
+        <a
+          href="<?php echo esc_url($url); ?>"
+          data-filter="<?php echo esc_attr($slug); ?>"
+          class="<?php echo $is_active ? 'active' : ''; ?>"
+          style="<?php echo esc_attr($style); ?>">
+          <?php echo esc_html($type['label']); ?>
+        </a>
+      <?php endforeach; ?>
     </div>
-  </section>
+  </div>
 
-  <section class="resources-grid">
-    <div class="resources-grid__container">
+  <div class="resources">
+    <div class="resources__container">
       <?php if ($resource_query->have_posts()) : ?>
-        <div class="resources-grid__list">
-          <?php
-          while ($resource_query->have_posts()) :
-            $resource_query->the_post();
-            get_template_part(
-              'template-parts/content',
-              'resource-card',
-              array(
-                'post_id'     => get_the_ID(),
-                'type_label'  => get_resource_label_for_post_type(get_post_type()),
-                'external_url' => function_exists('get_field') ? get_field('resource_external_url') : '',
-                'post_type'   => get_post_type(),
-              )
-            );
-          endwhile;
-          ?>
+        <div class="resources__list">
+          <div class="resources__col">
+            <?php
+            while ($resource_query->have_posts()) :
+              $resource_query->the_post();
+              get_template_part(
+                'template-parts/content',
+                'resource-card',
+                array(
+                  'post_id'     => get_the_ID(),
+                  'type_label'  => get_resource_label_for_post_type(get_post_type()),
+                  'external_url' => function_exists('get_field') ? get_field('resource_external_url') : '',
+                  'post_type'   => get_post_type(),
+                )
+              );
+            endwhile;
+            ?>
+          </div>
         </div>
 
         <?php
@@ -122,35 +116,37 @@ $base_url = get_permalink();
         );
         if ($pagination) :
         ?>
-          <nav class="resources-grid__pagination" aria-label="<?php esc_attr_e('Resources pagination', 'aera'); ?>">
+          <nav class="resources__pagination" aria-label="<?php esc_attr_e('Resources pagination', 'aera'); ?>">
             <?php echo wp_kses_post($pagination); ?>
           </nav>
         <?php endif; ?>
       <?php else : ?>
-        <div ist"resources-grid__list">
-          <?php foreach ($demo_resources as $item) : ?>
-            <?php
-            get_template_part(
-              'template-parts/content',
-              'resource',
-              array(
-                'title'      => $item['title'],
-                'excerpt'    => $item['excerpt'],
-                'type_label' => $item['type_label'],
-                'date'       => $item['date'],
-                'link'       => '#',
-                'is_demo'    => true,
-                'post_type'  => $item['post_type'] ?? 'blog',
-                'image'      => $item['image'] ?? '',
-                'image_alt'  => $item['image_alt'] ?? '',
-              )
-            );
-            ?>
-          <?php endforeach; ?>
+        <div class="resources__list">
+          <div class="resources__col">
+            <?php foreach ($demo_resources as $item) : ?>
+              <?php
+              get_template_part(
+                'template-parts/content',
+                'resource-card',
+                array(
+                  'title'      => $item['title'],
+                  'excerpt'    => $item['excerpt'],
+                  'type_label' => $item['type_label'],
+                  'date'       => $item['date'],
+                  'link'       => '#',
+                  'is_demo'    => true,
+                  'post_type'  => $item['post_type'] ?? 'blog',
+                  'image'      => $item['image'] ?? '',
+                  'image_alt'  => $item['image_alt'] ?? '',
+                )
+              );
+              ?>
+            <?php endforeach; ?>
+          </div>
         </div>
       <?php endif; ?>
     </div>
-  </section>
+  </div>
 </main>
 
 <?php

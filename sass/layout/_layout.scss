@@ -52,6 +52,11 @@
 	}
 }
 
+#app {
+	z-index: 10; // TODO: Fix z-index
+	position: relative;
+}
+
 .layout {
 	display: block;
 }
