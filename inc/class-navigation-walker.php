@@ -6,6 +6,7 @@
  * Extends WordPress Walker_Nav_Menu to add custom markup:
  * - Adds navigation__arrowUp div to sub-menus
  * - Adds data-menu-type attributes to menu items
+ * - Adds dropdownShow class to parent menu items that contain sub-menus
  *
  * @package Aera_Technology
  */
@@ -39,7 +40,8 @@ class Navigation_Walker extends \Walker_Nav_Menu
     $indent = str_repeat($t, $depth);
 
     // Default class.
-    $classes = array('sub-menu');
+    $classes = array('navigation__dropdownShow navigation__dropdownSkills'); // TODO: make parent menu class dynamic
+    
 
     /**
      * Filters the CSS class(es) applied to a menu list element.
@@ -80,6 +82,10 @@ class Navigation_Walker extends \Walker_Nav_Menu
     $classes[] = 'menu-item-' . $item->ID;
     $classes[] = 'navigation__item';
     $classes[] = 'navigation__link';
+
+    if (in_array('menu-item-has-children', $classes)) {
+      $classes[] = 'navigation__dropdownShow';
+    }
 
     /**
      * Filters the arguments for a single nav menu item.
