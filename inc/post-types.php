@@ -125,6 +125,16 @@ function register_post_types(): void
       'has_archive' => false,
       'publicly_queryable' => false,
     ),
+    'partner'       => array(
+      'singular'  => __('Partner', 'aera'),
+      'plural'    => __('Partners', 'aera'),
+      'rewrite'   => 'partners',
+      'menu_icon' => 'dashicons-groups',
+      'supports'  => array('title', 'editor', 'thumbnail', 'revisions'),
+      'public'    => true,
+      'has_archive' => false,
+      'publicly_queryable' => false,
+    ),
   );
 
   foreach ($postTypes as $type => $settings) {

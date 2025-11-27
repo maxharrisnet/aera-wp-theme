@@ -223,14 +223,9 @@ $cta = wp_parse_args(
     </div>
   </section>
 
-  <section class="request">
-    <div class="request__container">
-      <div class="request__content">
-        <h2 class="request__title"><?php echo esc_html($cta['title']); ?></h2>
-        <a class="button button--outline" href="<?php echo esc_url($cta['link']); ?>"><?php echo esc_html($cta['text']); ?></a>
-      </div>
-    </div>
-  </section>
+  <?php
+  get_template_part('template-parts/components/cta', null, array('cta' => $cta));
+  ?>
 </main>
 
 <?php
