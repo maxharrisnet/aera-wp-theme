@@ -223,6 +223,16 @@ require get_template_directory() . '/inc/acf.php';
 require get_template_directory() . '/inc/class-navigation-walker.php';
 
 /**
+ * Custom footer walker.
+ */
+require get_template_directory() . '/inc/class-footer-walker.php';
+
+/**
+ * Custom footer social walker.
+ */
+require get_template_directory() . '/inc/class-footer-social-walker.php';
+
+/**
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
