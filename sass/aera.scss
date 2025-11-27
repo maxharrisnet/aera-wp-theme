@@ -4,23 +4,22 @@ Custom Aera styles compiled from SCSS
 
 // @use 'config';
 @use 'fonts';
+@use 'base';
 
 /* LAYOUT */
-@use 'base';
 @use 'layout/layout';
 @use 'layout/column-content';
 
 /* PAGES */
 
 /* COMPONENTS */
+@use 'components/buttons';
 @use 'components/background';
 @use 'components/loading';
 
 @use 'components/header';
 @use 'components/navigation';
 @use 'components/footer';
-
-// @use 'components/buttons';
 
 // @use 'components/blog';
 // @use 'components/blog-author';
