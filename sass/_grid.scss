@@ -177,6 +177,6 @@
 // Like Safari 9
 @for $i from 1 through 12 {
 	[data-columns='#{$i}'] .grid__column {
-		min-width: 100% / $i;
+		min-width: math.div(100%, $i);
 	}
 }

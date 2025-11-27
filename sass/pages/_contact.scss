@@ -1,0 +1,206 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+@use '../reset' as *;
+
+/* CONTACT */
+.makeContact {
+	@include segment-bottom;
+	padding-top: math.percentage(math.div(140px, $limit));
+
+	@media (min-width: $limit) {
+		padding-top: 140px;
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__inner {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 850px;
+
+		&.isLoading {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	}
+
+	&__group {
+		@media (min-width: $min-mobile) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&Actions {
+			padding-top: 20px;
+		}
+	}
+
+	&__item {
+		flex: none;
+		position: relative;
+		margin-bottom: $gutter;
+
+		@media (min-width: $min-mobile) {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			flex: none;
+			margin-bottom: $gutter * 1.5;
+			width: calc(50% - 1em);
+
+			&:nth-child(even) {
+				justify-content: flex-end;
+				margin-left: auto;
+			}
+		}
+
+		@media (min-width: $min-tablet) {
+			width: calc(50% - #{math.div(35, 18) * 1em});
+		}
+
+		@media (min-width: $min-desktop) {
+			margin-bottom: $gutter * 2;
+		}
+
+		&Right {
+			align-items: flex-end;
+		}
+
+		&TabletFull {
+			width: 100%;
+		}
+	}
+
+	&__item:nth-child(3) &__input,
+	&__item:nth-child(4) &__input {
+		border-color: $color-primary;
+	}
+
+	&__item:nth-child(5) &__input,
+	&__item:nth-child(6) &__input {
+		border-color: $color-cornflower;
+	}
+
+	&__thanks {
+		padding: $gutter 0;
+		text-align: center;
+	}
+
+	&__title {
+		@include reset-heading;
+		margin: 0 0 math.div($gutter, 2);
+		@include responsive-font(20, 24);
+		font-family: $font-family-gilroy;
+		font-weight: 700;
+		color: $color-codgray;
+	}
+
+	&__subline {
+		@include reset-all;
+		@include responsive-font(16, 18);
+	}
+
+	&__formPlaceholder {
+		padding: 40px 20px;
+		text-align: center;
+		color: $color-shuttlegray;
+
+		p {
+			margin-bottom: 10px;
+		}
+	}
+
+	// Hubspot form styling
+	.hs-form {
+		fieldset {
+			max-width: 100% !important;
+		}
+
+		.hs-form-field {
+			margin-bottom: $gutter;
+
+			@media (min-width: $min-mobile) {
+				width: calc(50% - 1em);
+				display: inline-block;
+				vertical-align: top;
+
+				&:nth-child(even) {
+					margin-left: 2em;
+				}
+
+				&.hs-form-field--full-width {
+					width: 100%;
+					margin-left: 0;
+				}
+			}
+		}
+
+		input[type="text"],
+		input[type="email"],
+		input[type="tel"],
+		textarea,
+		select {
+			width: 100%;
+			padding: 10px 0;
+			border: 0;
+			border-bottom: 1px solid rgba(138, 196, 232, 0.5);
+			font-family: $font-family-freight;
+			font-size: 16px;
+			color: $color-shuttlegray;
+			background: transparent;
+
+			&:focus {
+				outline: 0;
+				border-bottom-color: $color-cornflower;
+			}
+		}
+
+		textarea {
+			resize: vertical;
+			min-height: 100px;
+		}
+
+		.hs-button {
+			display: inline-block;
+			padding: 10px 50px;
+			border-radius: 20px;
+			background-color: $color-hawkesblue;
+			background-image: linear-gradient(rgba(224, 249, 255, 0) 0%, $color-oysterbay 90%);
+			color: $color-codgray;
+			font-family: $font-family-gilroy;
+			font-size: 18px;
+			font-weight: 600;
+			text-transform: uppercase;
+			letter-spacing: 0.025em;
+			border: 1px solid rgba(138, 196, 232, 0.5);
+			cursor: pointer;
+			transition: 0.18s;
+			transition-property: border-color, background-color, color, opacity;
+
+			&:hover {
+				background-color: $color-oysterbay;
+				background-image: linear-gradient(rgba(222, 232, 251, 0), $color-hawkesblue 90%);
+			}
+		}
+
+		.hs-error-msgs {
+			margin-top: 5px;
+
+			label {
+				color: red;
+				font-size: 12px;
+			}
+		}
+
+		.submitted-message {
+			padding: $gutter 0;
+			text-align: center;
+			color: $color-bahamablue;
+			font-weight: 600;
+		}
+	}
+}
