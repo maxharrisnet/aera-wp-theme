@@ -73,25 +73,25 @@ if (empty($investors)) {
   $investors = array(
     array(
       'name' => 'NEA',
-      'logo' => $assets_base . 'images/company/investors-nea.png',
+      'logo' => $assets_base . 'images/company/investors/nea.png',
       'description' => __('New Enterprise Association (NEA) is a global venture capital firm partnering with entrepreneurs to build transformational businesses across multiple stages and sectors, with more than 210 IPOs and 360 acquisitions since the firm\'s founding in 1977. For more information, visit', 'aera'),
       'link' => 'https://www.nea.com/',
     ),
     array(
       'name' => 'Georgian Partners',
-      'logo' => $assets_base . 'images/company/investors-gp.png',
+      'logo' => $assets_base . 'images/company/investors/gp.png',
       'description' => __('Georgian Partners is a thesis-driven growth equity firm investing in SaaS-based business software companies exploiting applied artificial intelligence, security first and conversational business. Founded by successful entrepreneurs and technology executives, Georgian Partners leverages our global software expertise to be able to directly impact the success of companies. For more information, visit', 'aera'),
       'link' => 'https://georgianpartners.com',
     ),
     array(
       'name' => 'New View Capital',
-      'logo' => $assets_base . 'images/company/investors-nvcap.png',
+      'logo' => $assets_base . 'images/company/investors/nvcap.png',
       'description' => __('NewView Capital is a venture firm based in Burlingame, California. In 2018, NewView Capital spun out of New Enterprise Associates (NEA) and has developed a new model in venture capital to drive sustainable growth for entrepreneurs, venture capital firms, and limited partners in this changing venture landscape. The firm\'s first fund is a $1.35 billion portfolio of diverse, growth-stage technology companies. For more information, visit', 'aera'),
       'link' => 'https://www.nvc.vc/',
     ),
     array(
       'name' => 'DFJ Growth',
-      'logo' => $assets_base . 'images/company/investor-dfjgrowth.png',
+      'logo' => $assets_base . 'images/company/investors/dfjgrowth.png',
       'description' => __('DFJ Growth is a venture capital firm that partners with extraordinary entrepreneurs who set out to change the world. Their investments include Anaplan (NYSE: PLAN), Box (NYSE: BOX), Coinbase, Cylance (BlackBerry), Ring (Amazon), SpaceX, Tesla (NASDAQ: TSLA), Twitter (NYSE:TWTR), Unity, and Yammer (Microsoft). The firm works with companies at the growth stage, with the goal of creating iconic and lasting businesses in consumer, enterprise, and disruptive technologies. For more information, visit', 'aera'),
       'link' => 'https://dfjgrowth.com/',
     ),
