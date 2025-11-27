@@ -1,5 +1,5 @@
 @use '../variables' as *;
-@use '../legacy/mixins' as *;
+@use '../mixins' as *;
 
 .resource-card {
 	padding: 1.5rem 0;
@@ -16,7 +16,9 @@
 		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.08);
 		text-decoration: none;
 		color: $color-black;
-		transition: transform 220ms ease, box-shadow 220ms ease;
+		transition:
+			transform 220ms ease,
+			box-shadow 220ms ease;
 	}
 
 	&__wrapper:hover,

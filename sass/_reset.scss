@@ -1,9 +1,14 @@
 @mixin reset-all {
-	margin: 0;
 	padding: 0;
-	font: inherit;
+	margin: 0;
+
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
 	line-height: inherit;
+
 	vertical-align: baseline;
+
 	border: 0;
 }
 
@@ -17,11 +22,13 @@
 
 @mixin reset-list {
 	@include reset-all;
+
 	list-style: none;
 }
 
 @mixin reset-button {
 	@include reset-all;
+
 	background: transparent;
 	appearance: none;
 
@@ -32,6 +39,7 @@
 
 @mixin reset-input {
 	@include reset-all;
+
 	border-radius: 0;
 	appearance: none;
 

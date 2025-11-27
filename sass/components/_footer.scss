@@ -1,7 +1,7 @@
 @use '../variables' as *;
-@use '../legacy/mixins' as legacy-mixins;
-@use '../legacy/grid' as legacy-grid;
-@use '../legacy/reset' as legacy-reset;
+@use '../mixins' as legacy-mixins;
+@use '../grid' as legacy-grid;
+@use '../reset' as legacy-reset;
 @use 'sass:math';
 
 .footer {

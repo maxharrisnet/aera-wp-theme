@@ -1,0 +1,156 @@
+/***
+*  This file is imported in components/app-layout/AppLayout.scss
+*/
+
+@-ms-viewport {
+	// stylelint-disable-line
+	width: device-width;
+}
+
+@-o-viewport {
+	// stylelint-disable-line
+	width: device-width;
+}
+
+@viewport {
+	width: device-width;
+}
+
+html,
+body {
+	// stylelint-disable-line
+	min-height: 100vh;
+
+	background: $color-background;
+}
+
+html {
+	// stylelint-disable-line
+	-webkit-overflow-scrolling: touch;
+
+	overflow-x: hidden;
+	// always show the vertical scrollbar so that content doesn't jump
+	overflow-y: scroll;
+
+	box-sizing: border-box;
+}
+
+// inherited from <html>
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	// stylelint-disable-line
+	@include responsive-font(16, 18);
+	position: relative;
+
+	margin: 0;
+
+	font-family: $font-family;
+	font-weight: 400;
+	letter-spacing: 0.01em;
+	line-height: $line-height;
+	color: $font-color;
+
+	// iOS on orientation change
+	text-size-adjust: 100%;
+
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%; // stylelint-disable-line
+
+	overflow-x: hidden;
+
+	@media (min-width: $min-480) {
+		overflow-x: visible;
+	}
+}
+
+a {
+	// stylelint-disable-line
+	color: $color-link;
+	text-decoration: none;
+}
+
+img {
+	// stylelint-disable-line
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+h1,
+h2,
+h3 {
+	// stylelint-disable-line
+	color: $font-color-dark;
+}
+// div.grecaptcha-badge{
+//     visibility: hidden;
+// }
+
+// placeholders
+input,
+textarea,
+select {
+	// stylelint-disable-line
+	&::-webkit-input-placeholder {
+		// stylelint-disable-line
+		color: $color-placeholder;
+	}
+
+	&::-moz-placeholder {
+		// stylelint-disable-line
+		opacity: 1;
+		color: $color-placeholder;
+	}
+
+	&:-ms-input-placeholder {
+		// stylelint-disable-line
+		color: $color-placeholder;
+	}
+}
+div#hs-eu-cookie-confirmation.can-use-gradients {
+	bottom: 32% !important;
+	width: 40%;
+	left: 30%;
+	border: 0px;
+	box-shadow: 0px 0px 30px #00000069 !important;
+}
+div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p {
+	font-size: 14px;
+	line-height: 24px;
+}
+div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+	text-align: center !important;
+}
+
+@media (max-width: 1024px) {
+	div#hs-eu-cookie-confirmation.can-use-gradients {
+		bottom: auto !important;
+		width: 60% !important;
+		left: 20% !important;
+		top: 5% !important;
+	}
+}
+
+@media (max-width: 768px) {
+	div#hs-eu-cookie-confirmation.can-use-gradients {
+		bottom: auto !important;
+		width: 60% !important;
+		left: 20% !important;
+		top: 3% !important;
+	}
+}
+
+@media (max-width: 700px) {
+	div#hs-eu-cookie-confirmation.can-use-gradients {
+		bottom: auto !important;
+		top: 3% !important;
+		width: 80% !important;
+		left: 10% !important;
+	}
+}

@@ -1,7 +1,7 @@
 @use 'sass:math';
 @use '../variables' as *;
-@use '../legacy/mixins' as *;
-@use '../legacy/grid' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
 
 $sceneScaleHeight: 850px;
 $sceneScale: 1.4;

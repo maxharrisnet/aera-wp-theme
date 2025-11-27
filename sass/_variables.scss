@@ -59,17 +59,11 @@ $color-careers: $color-poloblue;
 $color-resources: $color-persiangreen;
 
 $color-primary: $color-seagull;
-$color-primary-strong: $color-bahamablue;
-$color-primary-soft: $color-oysterbay;
 $color-placeholder: $color-shuttlegray;
 $color-background: $color-white;
 $color-background-darker: $color-aquahaze;
 $color-border: $color-codgray;
 $color-link: $color-bahamablue;
-
-// Additional semantic aliases for compatibility
-$color-black: $color-codgray;
-$color-slate: $color-shuttlegray;
 
 $color-america: $color-govenorbay;
 $color-america-light: $color-poloblue;
@@ -109,11 +103,10 @@ $btn-border-radius: 999px;
 $color-input-border: $color-bemuda;
 
 // Fonts
-$font-family-freight: "FreightSans Pro", sans-serif;
-$font-family-gilroy: "Gilroy", sans-serif;
+$font-family-freight: 'FreightSans Pro', sans-serif;
+$font-family-gilroy: 'Gilroy', sans-serif;
 $font-family: $font-family-freight;
 $font-family-heading: $font-family-gilroy;
-$font-family-base: "FreightSans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 $font-size: 18px;
 $font-color: $color-shuttlegray;
 $font-color-light: #777;

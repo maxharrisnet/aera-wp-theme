@@ -1,30 +1,29 @@
-@use 'sass:math';
-@use 'sass:meta';
-@use '../variables' as *;
-@use './grid' as *;
-@use './reset' as *;
-
 @mixin fit {
 	position: absolute;
-	inset: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 @function strip-unit($number) {
-	@if meta.type-of($number) == 'number' and not math.is-unitless($number) {
-		@return math.div($number, $number * 0 + 1);
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return $number / ($number * 0 + 1);
 	}
 
 	@return $number;
 }
 
+// defaults to standard heading size
 @mixin responsive-font($min-size: 23, $size: 36, $limit: 1200px) {
 	$baseline: 375px;
-	$font-multiplier: math.div(($size - $min-size), (strip-unit($limit) - strip-unit($baseline)));
+	$font-multiplier: (($size - $min-size) / (strip-unit($limit) - strip-unit($baseline)));
 	$font-baseline: ($min-size - $font-multiplier * strip-unit($baseline));
 
 	font-size: #{$min-size}px;
 
 	@media (min-width: $baseline) {
+		font-size: #{$min-size}px;
 		font-size: calc(#{$font-multiplier} * #{100vw} + (#{$font-baseline}px));
 	}
 
@@ -37,7 +36,7 @@
 	padding-top: $padding-mobile;
 
 	@media (min-width: $min-tablet) {
-		padding-top: math.percentage(math.div($padding, $limit));
+		padding-top: percentage($padding/$limit);
 	}
 
 	@media (min-width: $limit) {
@@ -49,7 +48,7 @@
 	padding-bottom: $padding-mobile;
 
 	@media (min-width: $min-tablet) {
-		padding-bottom: math.percentage(math.div($padding, $limit));
+		padding-bottom: percentage($padding/$limit);
 	}
 
 	@media (min-width: $limit) {
@@ -62,8 +61,8 @@
 	padding-bottom: $padding-mobile;
 
 	@media (min-width: $min-tablet) {
-		padding-top: math.percentage(math.div($padding, $limit));
-		padding-bottom: math.percentage(math.div($padding, $limit));
+		padding-top: percentage($padding/$limit);
+		padding-bottom: percentage($padding/$limit);
 	}
 
 	@media (min-width: $limit) {
@@ -74,8 +73,9 @@
 
 @mixin container() {
 	margin: 0 auto;
+
 	padding: 0 $container-gutter-mobile;
-	max-width: $page-width + $container-gutter-mobile;
+	max-width: $page-width + $container-gutter-mobile * 1;
 
 	@media (min-width: 340px) {
 		max-width: $page-width + $container-gutter-mobile * 2;
@@ -116,6 +116,7 @@
 
 @mixin subheading() {
 	@include responsive-font(17, 24);
+
 	font-family: $font-family-heading;
 	letter-spacing: -0.01em;
 	line-height: 1.33;
@@ -129,6 +130,7 @@
 
 @mixin smallheading() {
 	@include responsive-font(17, 18);
+
 	font-family: $font-family-heading;
 	letter-spacing: -0.01em;
 	color: $font-color-dark;
@@ -136,6 +138,7 @@
 
 @mixin link($color: $color-link) {
 	@include reset-anchor;
+
 	text-transform: uppercase;
 	font-family: $font-family-heading;
 	font-size: 13px;
@@ -150,19 +153,24 @@
 @mixin button {
 	@include reset-button;
 	@include responsive-font(13, 14);
+
 	display: inline-flex;
 	justify-content: center;
 	position: relative;
-	padding: 0 (40 / 14) * 1em;
+
+	padding: 0 (40/14) * 1em;
+
 	height: $btn-height;
+
 	color: $font-color-dark;
 	font-family: $font-family-heading;
 	font-weight: 600;
-	line-height: (50 / 14);
+	line-height: (50/14);
 	letter-spacing: 0.025em;
 	text-transform: uppercase;
 	text-decoration: none;
 	white-space: nowrap;
+
 	border-radius: $btn-border-radius;
 	border: 1px solid #bee9f3;
 }
@@ -178,6 +186,7 @@
 	}
 }
 
+// only hover if device can (properly)
 @mixin hover {
 	@media (pointer: fine), (-moz-touch-enabled: 0) {
 		&:hover {

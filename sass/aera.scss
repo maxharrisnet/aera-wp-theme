@@ -2,23 +2,25 @@
 Custom Aera styles compiled from SCSS
 */
 
-@use 'variables';
-@use 'base/fonts';
-@use 'base/base';
-@use 'base/typography';
-@use 'components/buttons';
-@use 'components/header';
-@use 'components/background';
-@use 'components/intro-home';
-@use 'components/blog';
-@use 'components/blog-author';
-@use 'components/blog-share';
-@use 'components/blog-related';
-@use 'components/technology';
-@use 'components/resource-card';
-@use 'components/template-page';
-@use 'components/footer';
-@use 'pages/layout';
-@use 'pages/home';
-@use 'pages/resources';
-@use 'pages/webinars';
+@use 'config';
+
+/* Components */
+
+// @use 'components/buttons';
+// @use 'components/header';
+// @use 'components/background';
+// @use 'components/intro-home';
+// @use 'components/blog';
+// @use 'components/blog-author';
+// @use 'components/blog-share';
+// @use 'components/blog-related';
+// @use 'components/technology';
+// @use 'components/resource-card';
+// @use 'components/template-page';
+// @use 'components/footer';
+
+/* Pages */
+// @use 'pages/layout';
+// @use 'pages/home';
+// @use 'pages/resources';
+// @use 'pages/webinars';
