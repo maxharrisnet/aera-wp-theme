@@ -1,0 +1,67 @@
+@import 'config';
+
+:global {
+	@import 'base';
+
+	div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner {
+		display: flex;
+		max-width: 1025px !important;
+	}
+	div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+		width: 105px;
+		margin-top: 0px !important;
+	}
+	#hs-eu-confirmation-button {
+		margin-top: -10px;
+	}
+	@media (max-width: 845px) {
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+			width: 125px;
+			margin-top: 0px !important;
+		}
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p {
+			margin-right: 5px !important;
+			margin-left: 0px !important;
+		}
+	}
+	@media (max-width: 768px) {
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+			width: 130px;
+			margin-top: 0px !important;
+		}
+	}
+	@media (max-width: 740px) {
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+			width: 140px;
+			margin-top: 0px !important;
+			margin-left: 0px !important;
+			display: block !important;
+		}
+	}
+	@media (max-width: 720px) {
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+			width: 280px;
+			margin-top: 0px !important;
+			margin-left: 0px !important;
+			margin-right: 0px !important;
+			display: block !important;
+		}
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-eu-policy-wording {
+			margin-bottom: 0px !important;
+		}
+	}
+}
+
+.layout {
+	display: block;
+}
+
+/* Content */
+
+.content {
+	&Item {
+		position: relative;
+
+		width: 100%;
+	}
+}

@@ -52,52 +52,108 @@ Custom Aera styles compiled from SCSS
   src: url("../assets/fonts/Gilroy-Medium.eot");
   src: url("../assets/fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Gilroy-Medium.woff2") format("woff2"), url("../assets/fonts/Gilroy-Medium.woff") format("woff"), url("../assets/fonts/Gilroy-Medium.ttf") format("truetype");
 }
-/***
-*  This file is imported in components/app-layout/AppLayout.scss
-*/
+/* FreightSans Pro */
+@font-face {
+  font-family: "FreightSans Pro";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../assets/fonts/FreightSans-Pro-Light.eot");
+  src: url("../assets/fonts/FreightSans-Pro-Light.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/FreightSans-Pro-Light.woff2") format("woff2"), url("../assets/fonts/FreightSans-Pro-Light.woff") format("woff"), url("../assets/fonts/FreightSans-Pro-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "FreightSans Pro";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/FreightSans-Pro-Book.eot");
+  src: url("../assets/fonts/FreightSans-Pro-Book.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/FreightSans-Pro-Book.woff2") format("woff2"), url("../assets/fonts/FreightSans-Pro-Book.woff") format("woff"), url("../assets/fonts/FreightSans-Pro-Book.ttf") format("truetype");
+}
+@font-face {
+  font-family: "FreightSans Pro";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/FreightSans-Pro-Medium.eot");
+  src: url("../assets/fonts/FreightSans-Pro-Medium.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/FreightSans-Pro-Medium.woff2") format("woff2"), url("../assets/fonts/FreightSans-Pro-Medium.woff") format("woff"), url("../assets/fonts/FreightSans-Pro-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "FreightSans Pro";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/FreightSans-Pro-Semibold.eot");
+  src: url("../assets/fonts/FreightSans-Pro-Semibold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/FreightSans-Pro-Semibold.woff2") format("woff2"), url("../assets/fonts/FreightSans-Pro-Semibold.woff") format("woff"), url("../assets/fonts/FreightSans-Pro-Semibold.ttf") format("truetype");
+}
+/* Gilroy */
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/Gilroy-Bold.eot");
+  src: url("../assets/fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Gilroy-Bold.woff2") format("woff2"), url("../assets/fonts/Gilroy-Bold.woff") format("woff"), url("../assets/fonts/Gilroy-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/Gilroy-Semibold.eot");
+  src: url("../assets/fonts/Gilroy-Semibold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Gilroy-Semibold.woff2") format("woff2"), url("../assets/fonts/Gilroy-Semibold.woff") format("woff"), url("../assets/fonts/Gilroy-Semibold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Gilroy-Medium.eot");
+  src: url("../assets/fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Gilroy-Medium.woff2") format("woff2"), url("../assets/fonts/Gilroy-Medium.woff") format("woff"), url("../assets/fonts/Gilroy-Medium.ttf") format("truetype");
+}
+:global {
+  /***
+  *  This file is imported in components/app-layout/AppLayout.scss
+  */
+}
 @-ms-viewport {
-  width: device-width;
+  :global {
+    width: device-width;
+  }
 }
 @-o-viewport {
-  width: device-width;
+  :global {
+    width: device-width;
+  }
 }
 @viewport {
-  width: device-width;
+  :global {
+    width: device-width;
+  }
 }
-html,
-body {
+:global html,
+:global body {
   min-height: 100vh;
   background: #fff;
 }
-
-html {
+:global html {
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
   overflow-y: scroll;
   box-sizing: border-box;
 }
-
-*,
-*::before,
-*::after {
+:global *,
+:global *::before,
+:global *::after {
   box-sizing: inherit;
 }
-
-body {
+:global body {
   font-size: 16px;
 }
 @media (min-width: 375px) {
-  body {
+  :global body {
     font-size: 16px;
     font-size: calc(0.0024242424 * 100vw + (15.0909090909px));
   }
 }
 @media (min-width: 1200px) {
-  body {
+  :global body {
     font-size: 18px;
   }
 }
-body {
+:global body {
   position: relative;
   margin: 0;
   font-family: "FreightSans Pro", sans-serif;
@@ -112,64 +168,56 @@ body {
   overflow-x: hidden;
 }
 @media (min-width: 480px) {
-  body {
+  :global body {
     overflow-x: visible;
   }
 }
-
-a {
+:global a {
   color: #00619e;
   text-decoration: none;
 }
-
-img {
+:global img {
   display: block;
   max-width: 100%;
   height: auto;
 }
-
-h1,
-h2,
-h3 {
+:global h1,
+:global h2,
+:global h3 {
   color: #1a1a1a;
 }
-
-input::-webkit-input-placeholder,
-textarea::-webkit-input-placeholder,
-select::-webkit-input-placeholder {
+:global input::-webkit-input-placeholder,
+:global textarea::-webkit-input-placeholder,
+:global select::-webkit-input-placeholder {
   color: #5c6476;
 }
-input::-moz-placeholder,
-textarea::-moz-placeholder,
-select::-moz-placeholder {
+:global input::-moz-placeholder,
+:global textarea::-moz-placeholder,
+:global select::-moz-placeholder {
   opacity: 1;
   color: #5c6476;
 }
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder,
-select:-ms-input-placeholder {
+:global input:-ms-input-placeholder,
+:global textarea:-ms-input-placeholder,
+:global select:-ms-input-placeholder {
   color: #5c6476;
 }
-
-div#hs-eu-cookie-confirmation.can-use-gradients {
+:global div#hs-eu-cookie-confirmation.can-use-gradients {
   bottom: 32% !important;
   width: 40%;
   left: 30%;
   border: 0px;
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.4117647059) !important;
 }
-
-div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p {
+:global div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p {
   font-size: 14px;
   line-height: 24px;
 }
-
-div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+:global div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
   text-align: center !important;
 }
-
 @media (max-width: 1024px) {
-  div#hs-eu-cookie-confirmation.can-use-gradients {
+  :global div#hs-eu-cookie-confirmation.can-use-gradients {
     bottom: auto !important;
     width: 60% !important;
     left: 20% !important;
@@ -177,7 +225,7 @@ div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cook
   }
 }
 @media (max-width: 768px) {
-  div#hs-eu-cookie-confirmation.can-use-gradients {
+  :global div#hs-eu-cookie-confirmation.can-use-gradients {
     bottom: auto !important;
     width: 60% !important;
     left: 20% !important;
@@ -185,14 +233,73 @@ div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cook
   }
 }
 @media (max-width: 700px) {
-  div#hs-eu-cookie-confirmation.can-use-gradients {
+  :global div#hs-eu-cookie-confirmation.can-use-gradients {
     bottom: auto !important;
     top: 3% !important;
     width: 80% !important;
     left: 10% !important;
   }
 }
+:global div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner {
+  display: flex;
+  max-width: 1025px !important;
+}
+:global div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+  width: 105px;
+  margin-top: 0px !important;
+}
+:global #hs-eu-confirmation-button {
+  margin-top: -10px;
+}
+@media (max-width: 845px) {
+  :global div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+    width: 125px;
+    margin-top: 0px !important;
+  }
+  :global div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p {
+    margin-right: 5px !important;
+    margin-left: 0px !important;
+  }
+}
+@media (max-width: 768px) {
+  :global div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+    width: 130px;
+    margin-top: 0px !important;
+  }
+}
+@media (max-width: 740px) {
+  :global div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+    width: 140px;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    display: block !important;
+  }
+}
+@media (max-width: 720px) {
+  :global div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+    width: 280px;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    display: block !important;
+  }
+  :global div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-eu-policy-wording {
+    margin-bottom: 0px !important;
+  }
+}
+
+.layout {
+  display: block;
+}
+
+/* Content */
+.contentItem {
+  position: relative;
+  width: 100%;
+}
+
+/* PAGES */
 /* Components */
 /* Pages */
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../sass/aera.scss%22,%22../../sass/_fonts.scss%22,%22../../sass/_base.scss%22,%22../../sass/_variables.scss%22,%22../../sass/_mixins.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;AAAA;AAAA;ACAA;AAEA;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;AACA;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;ACjFF;AAAA;AAAA;AAIA;EAEC;;AAGD;EAEC;;AAGD;EACC;;AAGD;AAAA;EAGC;EAEA,YCPa;;;ADUd;EAEC;EAEA;EAEA;EAEA;;;AAID;AAAA;AAAA;EAGC;;;AAGD;EEtBC;;AAEA;EFoBD;IEnBE;IACA;;;AAGD;EFeD;IEdE;;;AFcF;EAGC;EAEA;EAEA,aCsDqB;EDrDrB;EACA;EACA,aC4Da;ED3Db,OC1CmB;ED6CnB;EAEA;EACA;EACA;EAEA;;AAEA;EAtBD;IAuBE;;;;AAIF;EAEC,OC9CkB;ED+ClB;;;AAGD;EAEC;EACA;EACA;;;AAGD;AAAA;AAAA;EAIC,OC5Ee;;;ADuFf;AAAA;AAAA;EAEC,OCxFkB;;AD2FnB;AAAA;AAAA;EAEC;EACA,OC9FkB;;ADiGnB;AAAA;AAAA;EAEC,OCnGkB;;;ADsGpB;EACC;EACA;EACA;EACA;EACA;;;AAED;EACC;EACA;;;AAED;EACC;;;AAGD;EACC;IACC;IACA;IACA;IACA;;;AAIF;EACC;IACC;IACA;IACA;IACA;;;AAIF;EACC;IACC;IACA;IACA;IACA;;;AFnJF;AAeA%22,%22file%22:%22aera.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../sass/aera.scss%22,%22../../sass/_fonts.scss%22,%22../../sass/_layout.scss%22,%22../../sass/_base.scss%22,%22../../sass/_variables.scss%22,%22../../sass/_mixins.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;AAAA;AAAA;ACAA;AAEA;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;AACA;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAjFF;AAEA;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;AACA;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AC/EF;ACFA;AAAA;AAAA;;AAIA;EDFA;ICIC;;;AAGD;EDPA;ICSC;;;AAGD;EDZA;ICaC;;;AAGD;AAAA;EAGC;EAEA,YCPa;;ADUd;EAEC;EAEA;EAEA;EAEA;;AAID;AAAA;AAAA;EAGC;;AAGD;EEtBC;;AAEA;EFoBD;IEnBE;IACA;;;AAGD;EFeD;IEdE;;;AFcF;EAGC;EAEA;EAEA,aCsDqB;EDrDrB;EACA;EACA,aC4Da;ED3Db,OC1CmB;ED6CnB;EAEA;EACA;EACA;EAEA;;AAEA;EAtBD;IAuBE;;;AAIF;EAEC,OC9CkB;ED+ClB;;AAGD;EAEC;EACA;EACA;;AAGD;AAAA;AAAA;EAIC,OC5Ee;;ADuFf;AAAA;AAAA;EAEC,OCxFkB;;AD2FnB;AAAA;AAAA;EAEC;EACA,OC9FkB;;ADiGnB;AAAA;AAAA;EAEC,OCnGkB;;ADsGpB;EACC;EACA;EACA;EACA;EACA;;AAED;EACC;EACA;;AAED;EACC;;AAGD;EACC;IACC;IACA;IACA;IACA;;;AAIF;EACC;IACC;IACA;IACA;IACA;;;AAIF;EACC;IACC;IACA;IACA;IACA;;;ADpJD;EACC;EACA;;AAED;EACC;EACA;;AAED;EACC;;AAED;EACC;IACC;IACA;;EAED;IACC;IACA;;;AAGF;EACC;IACC;IACA;;;AAGF;EACC;IACC;IACA;IACA;IACA;;;AAGF;EACC;IACC;IACA;IACA;IACA;IACA;;EAED;IACC;;;;AAKH;EACC;;;AAGD;AAGC;EACC;EAEA;;;AFzDF;AAEA;AAeA%22,%22file%22:%22aera.css%22%7D */
