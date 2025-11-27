@@ -238,54 +238,65 @@ $offices_map_image = $assets_base . 'images/company/offices-map.png';
 
   <!-- Leadership Section -->
   <?php if ($leadership_query->have_posts()) : ?>
-    <section class="executive-team">
-      <div class="executive-team__container">
-        <h2 class="executive-team__title"><?php esc_html_e('Leadership', 'aera'); ?></h2>
-        <div class="executive-team__list">
-          <?php
-          while ($leadership_query->have_posts()) :
-            $leadership_query->the_post();
-            $member_image = function_exists('get_field') ? get_field('team_member_image') : null;
-            $member_name = function_exists('get_field') ? get_field('team_member_name') : get_the_title();
-            $member_title = function_exists('get_field') ? get_field('team_member_title') : '';
-            $member_linkedin = function_exists('get_field') ? get_field('team_member_linkedin') : '';
+    <section class="othermanagement">
+      <div class="othermanagement__container">
+        <div class="othermanagement__content">
+          <h2 class="othermanagement__title"><?php esc_html_e('Leadership', 'aera'); ?></h2>
+          <div class="othermanagement__row">
+            <?php
+            while ($leadership_query->have_posts()) :
+              $leadership_query->the_post();
+              $member_image = function_exists('get_field') ? get_field('team_member_image') : null;
+              $member_name = function_exists('get_field') ? get_field('team_member_name') : get_the_title();
+              $member_title = function_exists('get_field') ? get_field('team_member_title') : '';
+              $member_linkedin = function_exists('get_field') ? get_field('team_member_linkedin') : '';
 
-            if (!$member_image && has_post_thumbnail()) {
-              $member_image = array('url' => get_the_post_thumbnail_url(get_the_ID(), 'full'));
-            }
-          ?>
-            <article class="executive-team__item">
-              <?php if (!empty($member_image['url'])) : ?>
-                <div class="executive-team__item-image">
-                  <?php if (!empty($member_linkedin)) : ?>
-                    <a href="<?php echo esc_url($member_linkedin); ?>" target="_blank" rel="noopener noreferrer">
-                      <img src="<?php echo esc_url($member_image['url']); ?>" alt="<?php echo esc_attr($member_name); ?>" loading="lazy" />
+              if (!$member_image && has_post_thumbnail()) {
+                $member_image = array('url' => get_the_post_thumbnail_url(get_the_ID(), 'full'));
+              }
+
+              // Default to # if no LinkedIn link
+              $member_link = !empty($member_linkedin) ? $member_linkedin : '#';
+            ?>
+              <div class="othermanagement__col">
+                <div class="othermanagementItem">
+                  <?php if (!empty($member_image['url'])) : ?>
+                    <a
+                      class="othermanagementItem__logo"
+                      href="<?php echo esc_url($member_link); ?>"
+                      <?php if (!empty($member_linkedin)) : ?>
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      <?php endif; ?>>
+                      <img
+                        class="othermanagementItem__logoImage"
+                        src="<?php echo esc_url($member_image['url']); ?>"
+                        alt="<?php echo esc_attr($member_name); ?>"
+                        loading="lazy" />
+                      <div>
+                        <p class="othermanagement__name"><?php echo esc_html($member_name); ?></p>
+                        <?php if (!empty($member_title)) : ?>
+                          <p class="othermanagement__designation"><?php echo esc_html($member_title); ?></p>
+                        <?php endif; ?>
+                      </div>
                     </a>
                   <?php else : ?>
-                    <img src="<?php echo esc_url($member_image['url']); ?>" alt="<?php echo esc_attr($member_name); ?>" loading="lazy" />
+                    <div class="othermanagementItem__logo">
+                      <div>
+                        <p class="othermanagement__name"><?php echo esc_html($member_name); ?></p>
+                        <?php if (!empty($member_title)) : ?>
+                          <p class="othermanagement__designation"><?php echo esc_html($member_title); ?></p>
+                        <?php endif; ?>
+                      </div>
+                    </div>
                   <?php endif; ?>
                 </div>
-              <?php endif; ?>
-              <div class="executive-team__item-content">
-                <?php if (!empty($member_linkedin)) : ?>
-                  <a href="<?php echo esc_url($member_linkedin); ?>" target="_blank" rel="noopener noreferrer" class="executive-team__item-link">
-                    <p class="executive-team__item-name"><?php echo esc_html($member_name); ?></p>
-                    <?php if (!empty($member_title)) : ?>
-                      <p class="executive-team__item-designation"><?php echo esc_html($member_title); ?></p>
-                    <?php endif; ?>
-                  </a>
-                <?php else : ?>
-                  <p class="executive-team__item-name"><?php echo esc_html($member_name); ?></p>
-                  <?php if (!empty($member_title)) : ?>
-                    <p class="executive-team__item-designation"><?php echo esc_html($member_title); ?></p>
-                  <?php endif; ?>
-                <?php endif; ?>
               </div>
-            </article>
-          <?php
-          endwhile;
-          wp_reset_postdata();
-          ?>
+            <?php
+            endwhile;
+            wp_reset_postdata();
+            ?>
+          </div>
         </div>
       </div>
     </section>
@@ -293,54 +304,65 @@ $offices_map_image = $assets_base . 'images/company/offices-map.png';
 
   <!-- Board Members Section -->
   <?php if ($board_query->have_posts()) : ?>
-    <section class="executive-team">
-      <div class="executive-team__container">
-        <h2 class="executive-team__title"><?php esc_html_e('Board Members', 'aera'); ?></h2>
-        <div class="executive-team__list">
-          <?php
-          while ($board_query->have_posts()) :
-            $board_query->the_post();
-            $member_image = function_exists('get_field') ? get_field('team_member_image') : null;
-            $member_name = function_exists('get_field') ? get_field('team_member_name') : get_the_title();
-            $member_title = function_exists('get_field') ? get_field('team_member_title') : '';
-            $member_linkedin = function_exists('get_field') ? get_field('team_member_linkedin') : '';
+    <section class="othermanagement">
+      <div class="othermanagement__container">
+        <div class="othermanagement__content">
+          <h2 class="othermanagement__title"><?php esc_html_e('Board Members', 'aera'); ?></h2>
+          <div class="othermanagement__row">
+            <?php
+            while ($board_query->have_posts()) :
+              $board_query->the_post();
+              $member_image = function_exists('get_field') ? get_field('team_member_image') : null;
+              $member_name = function_exists('get_field') ? get_field('team_member_name') : get_the_title();
+              $member_title = function_exists('get_field') ? get_field('team_member_title') : '';
+              $member_linkedin = function_exists('get_field') ? get_field('team_member_linkedin') : '';
 
-            if (!$member_image && has_post_thumbnail()) {
-              $member_image = array('url' => get_the_post_thumbnail_url(get_the_ID(), 'full'));
-            }
-          ?>
-            <article class="executive-team__item">
-              <?php if (!empty($member_image['url'])) : ?>
-                <div class="executive-team__item-image">
-                  <?php if (!empty($member_linkedin)) : ?>
-                    <a href="<?php echo esc_url($member_linkedin); ?>" target="_blank" rel="noopener noreferrer">
-                      <img src="<?php echo esc_url($member_image['url']); ?>" alt="<?php echo esc_attr($member_name); ?>" loading="lazy" />
+              if (!$member_image && has_post_thumbnail()) {
+                $member_image = array('url' => get_the_post_thumbnail_url(get_the_ID(), 'full'));
+              }
+
+              // Default to # if no LinkedIn link
+              $member_link = !empty($member_linkedin) ? $member_linkedin : '#';
+            ?>
+              <div class="othermanagement__col">
+                <div class="othermanagementItem">
+                  <?php if (!empty($member_image['url'])) : ?>
+                    <a
+                      class="othermanagementItem__logo"
+                      href="<?php echo esc_url($member_link); ?>"
+                      <?php if (!empty($member_linkedin)) : ?>
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      <?php endif; ?>>
+                      <img
+                        class="othermanagementItem__logoImage"
+                        src="<?php echo esc_url($member_image['url']); ?>"
+                        alt="<?php echo esc_attr($member_name); ?>"
+                        loading="lazy" />
+                      <div>
+                        <p class="othermanagement__name"><?php echo esc_html($member_name); ?></p>
+                        <?php if (!empty($member_title)) : ?>
+                          <p class="othermanagement__designation"><?php echo esc_html($member_title); ?></p>
+                        <?php endif; ?>
+                      </div>
                     </a>
                   <?php else : ?>
-                    <img src="<?php echo esc_url($member_image['url']); ?>" alt="<?php echo esc_attr($member_name); ?>" loading="lazy" />
+                    <div class="othermanagementItem__logo">
+                      <div>
+                        <p class="othermanagement__name"><?php echo esc_html($member_name); ?></p>
+                        <?php if (!empty($member_title)) : ?>
+                          <p class="othermanagement__designation"><?php echo esc_html($member_title); ?></p>
+                        <?php endif; ?>
+                      </div>
+                    </div>
                   <?php endif; ?>
                 </div>
-              <?php endif; ?>
-              <div class="executive-team__item-content">
-                <?php if (!empty($member_linkedin)) : ?>
-                  <a href="<?php echo esc_url($member_linkedin); ?>" target="_blank" rel="noopener noreferrer" class="executive-team__item-link">
-                    <p class="executive-team__item-name"><?php echo esc_html($member_name); ?></p>
-                    <?php if (!empty($member_title)) : ?>
-                      <p class="executive-team__item-designation"><?php echo esc_html($member_title); ?></p>
-                    <?php endif; ?>
-                  </a>
-                <?php else : ?>
-                  <p class="executive-team__item-name"><?php echo esc_html($member_name); ?></p>
-                  <?php if (!empty($member_title)) : ?>
-                    <p class="executive-team__item-designation"><?php echo esc_html($member_title); ?></p>
-                  <?php endif; ?>
-                <?php endif; ?>
               </div>
-            </article>
-          <?php
-          endwhile;
-          wp_reset_postdata();
-          ?>
+            <?php
+            endwhile;
+            wp_reset_postdata();
+            ?>
+          </div>
         </div>
       </div>
     </section>
@@ -351,7 +373,7 @@ $offices_map_image = $assets_base . 'images/company/offices-map.png';
     <section class="investors">
       <div class="investors__container">
         <h2 class="investors__title"><?php esc_html_e('Investors', 'aera'); ?></h2>
-        <div class="investors__list">
+        <div class="investors__row">
           <?php foreach ($investors as $investor) : ?>
             <?php
             $investor_name = $investor['name'] ?? '';
@@ -359,34 +381,33 @@ $offices_map_image = $assets_base . 'images/company/offices-map.png';
             $investor_description = $investor['description'] ?? '';
             $investor_link = $investor['link'] ?? '';
             ?>
-            <article class="investors__item">
-              <?php if (!empty($investor_logo)) : ?>
-                <div class="investors__item-logo">
-                  <?php if (!empty($investor_link)) : ?>
-                    <a href="<?php echo esc_url($investor_link); ?>" target="_blank" rel="noopener noreferrer">
-                      <img src="<?php echo esc_url($investor_logo); ?>" alt="<?php echo esc_attr($investor_name); ?>" loading="lazy" />
-                    </a>
-                  <?php else : ?>
-                    <img src="<?php echo esc_url($investor_logo); ?>" alt="<?php echo esc_attr($investor_name); ?>" loading="lazy" />
-                  <?php endif; ?>
-                </div>
-              <?php endif; ?>
-              <div class="investors__item-content">
-                <?php if (!empty($investor_name)) : ?>
-                  <h3 class="investors__item-name"><?php echo esc_html($investor_name); ?></h3>
+            <div class="investors__col">
+              <div class="investorsItem">
+                <?php if (!empty($investor_logo)) : ?>
+                  <a
+                    class="investorsItem__logo"
+                    href="<?php echo esc_url($investor_link); ?>"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <img
+                      class="investorsItem__logoImage"
+                      src="<?php echo esc_url($investor_logo); ?>"
+                      alt="<?php echo esc_attr($investor_name); ?>"
+                      loading="lazy" />
+                  </a>
                 <?php endif; ?>
-                <?php if (!empty($investor_description)) : ?>
-                  <div class="investors__item-text">
+                <div class="investorsItem__text">
+                  <?php if (!empty($investor_description)) : ?>
                     <p>
                       <?php echo esc_html($investor_description); ?>
                       <?php if (!empty($investor_link)) : ?>
-                        <a href="<?php echo esc_url($investor_link); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html(parse_url($investor_link, PHP_URL_HOST)); ?></a>
+                        <a href="<?php echo esc_url($investor_link); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html(str_replace(array('http://', 'https://', 'www.'), '', $investor_link)); ?></a>
                       <?php endif; ?>
                     </p>
-                  </div>
-                <?php endif; ?>
+                  <?php endif; ?>
+                </div>
               </div>
-            </article>
+            </div>
           <?php endforeach; ?>
         </div>
       </div>
