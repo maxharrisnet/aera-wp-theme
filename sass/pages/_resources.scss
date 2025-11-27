@@ -16,7 +16,7 @@
 		@include heading;
 
 		@media (min-width: $min-1200) {
-			margin-left: percentage(1/12);
+			margin-left: math.percentage(math.div(1, 12));
 		}
 	}
 
@@ -28,7 +28,7 @@
 
 	&__col {
 		@media (min-width: $min-1200) {
-			@include make-col(percentage(10.5/12));
+			@include make-col(math.percentage(math.div(10.5, 12)));
 			margin: 0 auto;
 			padding: 50px 0px;
 		}
@@ -121,7 +121,7 @@
 
 		&__col1 {
 			// logo
-			@include make-col(percentage(7/12));
+			@include make-col(math.percentage(math.div(7, 12)));
 			padding: 0;
 
 			img {
@@ -129,40 +129,40 @@
 			}
 
 			@media (min-width: $min-720) {
-				width: percentage(5/12);
+				width: math.percentage(math.div(5, 12));
 				float: left;
 			}
 
 			@media (min-width: $min-1200) {
-				width: percentage(5/10);
+				width: math.percentage(math.div(5, 10));
 			}
 		}
 
 		&__col2 {
 			// date
-			@include make-col(percentage(5/12));
+			@include make-col(math.percentage(math.div(5, 12)));
 
 			@media (min-width: $min-720) {
-				width: percentage(2/12);
+				width: math.percentage(math.div(2, 12));
 				order: 3;
 			}
 
 			@media (min-width: $min-1200) {
-				width: percentage(2/10);
+				width: math.percentage(math.div(2, 10));
 			}
 
 			@media (min-width: $min-1280) {
-				width: percentage(1/10);
+				width: math.percentage(math.div(1, 10));
 			}
 		}
 
 		&__col3 {
 			// content
-			@include make-col(percentage(12/12));
+			@include make-col(math.percentage(math.div(12, 12)));
 			padding: 0;
 
 			@media (min-width: $min-720) {
-				width: percentage(7/12);
+				width: math.percentage(math.div(7, 12));
 				float: right;
 				p {
 					margin-top: 0px;
@@ -172,7 +172,7 @@
 			}
 
 			@media (min-width: $min-1200) {
-				width: percentage(5/10);
+				width: math.percentage(math.div(5, 10));
 				p {
 					margin-top: 0px;
 					font-size: 16px;
@@ -181,7 +181,7 @@
 			}
 
 			@media (min-width: $min-1280) {
-				width: percentage(5/10);
+				width: math.percentage(math.div(5, 10));
 				p {
 					margin-top: 0px;
 					font-size: 16px;
@@ -192,11 +192,11 @@
 
 		&__col12 {
 			// content
-			@include make-col(percentage(12/12));
+			@include make-col(math.percentage(math.div(12, 12)));
 			padding: 0;
 
 			@media (min-width: $min-720) {
-				width: percentage(12/12);
+				width: math.percentage(math.div(12, 12));
 				float: right;
 				p {
 					margin-top: 0px;
@@ -206,7 +206,7 @@
 			}
 
 			@media (min-width: $min-1200) {
-				width: percentage(12/12);
+				width: math.percentage(math.div(12, 12));
 				p {
 					margin-top: 0px;
 					font-size: 16px;
@@ -215,7 +215,7 @@
 			}
 
 			@media (min-width: $min-1280) {
-				width: percentage(12/12);
+				width: math.percentage(math.div(12, 12));
 				p {
 					margin-top: 0px;
 					font-size: 16px;

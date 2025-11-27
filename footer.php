@@ -90,7 +90,7 @@
                 'menu_class'     => 'Social_social__list_25ja3',
                 'depth'          => 1,
                 'fallback_cb'    => false,
-                'walker'         => new \Aera\Social_Walker(),
+                'walker'         => new \Aera\Footer_Social_Walker(),
               )
             );
           }

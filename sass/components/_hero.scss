@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use '../variables' as *;
 @use '../mixins' as *;
 @use '../reset' as *;
@@ -63,11 +64,11 @@
 		font-weight: 400;
 
 		@media (min-width: $min-480) {
-			max-width: (840/24) * 1em;
+			max-width: math.div(840, 24) * 1em;
 			width: 90%;
 
 			.hero--full-height & {
-				max-width: (940/26) * 1em;
+				max-width: math.div(940, 26) * 1em;
 			}
 		}
 	}
@@ -131,11 +132,11 @@
 
 	.hero__text {
 		@media (min-width: $min-480) {
-			max-width: (840/26) * 1em;
+			max-width: math.div(840, 26) * 1em;
 			width: 100%;
 
 			.hero--full-height & {
-				max-width: (940/26) * 1em;
+				max-width: math.div(940, 26) * 1em;
 			}
 		}
 	}
@@ -145,11 +146,11 @@
 .hero--careers {
 	.hero__text {
 		@media (min-width: $min-480) {
-			max-width: (840/26) * 1em;
+			max-width: math.div(840, 26) * 1em;
 			width: 80%;
 
 			.hero--full-height & {
-				max-width: (940/26) * 1em;
+				max-width: math.div(940, 26) * 1em;
 			}
 		}
 	}
@@ -198,11 +199,11 @@
 		font-weight: 200;
 
 		@media (min-width: $min-480) {
-			max-width: (840/20) * 1em;
+			max-width: math.div(840, 20) * 1em;
 			width: 100%;
 
 			.hero--full-height & {
-				max-width: (940/26) * 1em;
+				max-width: math.div(940, 26) * 1em;
 			}
 		}
 	}
@@ -246,11 +247,11 @@
 		@include responsive-font(16, 24);
 
 		@media (min-width: $min-480) {
-			max-width: (840/18) * 1em;
+			max-width: math.div(840, 18) * 1em;
 			width: 100%;
 
 			.hero--full-height & {
-				max-width: (940/26) * 1em;
+				max-width: math.div(940, 26) * 1em;
 			}
 		}
 	}

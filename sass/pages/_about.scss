@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use '../variables' as *;
 @use '../mixins' as *;
 @use '../grid' as *;
@@ -41,11 +42,11 @@
 
 	&__col {
 		@media (min-width: $min-720) {
-			@include make-col(percentage(6/12), $grid-gutter: 55px);
+			@include make-col(math.percentage(math.div(6, 12)), $grid-gutter: 55px);
 		}
 
 		@media (min-width: $min-960) {
-			@include make-col(percentage(12/12), $grid-gutter: 110px);
+			@include make-col(math.percentage(math.div(12, 12)), $grid-gutter: 110px);
 		}
 	}
 
@@ -171,11 +172,11 @@
 
 	&__col {
 		@media (min-width: $min-720) {
-			@include make-col(percentage(6/12), $grid-gutter: 55px);
+			@include make-col(math.percentage(math.div(6, 12)), $grid-gutter: 55px);
 		}
 
 		@media (min-width: $min-960) {
-			@include make-col(percentage(3/12), $grid-gutter: 110px);
+			@include make-col(math.percentage(math.div(3, 12)), $grid-gutter: 110px);
 		}
 	}
 
@@ -274,11 +275,11 @@
 
 	&__col {
 		@media (min-width: $min-720) {
-			@include make-col(percentage(6/12), $grid-gutter: 55px);
+			@include make-col(math.percentage(math.div(6, 12)), $grid-gutter: 55px);
 		}
 
 		@media (min-width: $min-960) {
-			@include make-col(percentage(6/12), $grid-gutter: 110px);
+			@include make-col(math.percentage(math.div(6, 12)), $grid-gutter: 110px);
 		}
 	}
 
@@ -379,18 +380,18 @@
 	}
 
 	&__col {
-		@include make-col(percentage(6/12));
+		@include make-col(math.percentage(math.div(6, 12)));
 
 		@media (min-width: $min-560) {
-			width: percentage(4/12);
+			width: math.percentage(math.div(4, 12));
 		}
 
 		@media (min-width: $min-720) {
-			width: percentage(3/12);
+			width: math.percentage(math.div(3, 12));
 		}
 
 		@media (min-width: $min-1024) {
-			width: percentage(2.4/12);
+			width: math.percentage(math.div(2.4, 12));
 		}
 	}
 

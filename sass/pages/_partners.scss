@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use '../variables' as *;
 @use '../mixins' as *;
 @use '../grid' as *;
@@ -176,7 +177,7 @@
 
     @media (min-width: $min-1024) {
       // margin-left: percentage(1/12);
-      width: percentage(12/12);
+      width: math.percentage(math.div(12, 12));
     }
 
     @media (max-width: $max-720) {

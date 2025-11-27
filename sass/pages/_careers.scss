@@ -123,27 +123,27 @@
 
 	&__col1 {
 		@media (min-width: $min-720) {
-			@include make-col(percentage(8/12));
+			@include make-col(math.percentage(math.div(8, 12)));
 		}
 	}
 
 	&__col2 {
 		@media (min-width: $min-720) {
-			@include make-col(percentage(4/12));
+			@include make-col(math.percentage(math.div(4, 12)));
 			align-self: flex-end;
 		}
 	}
 
 	&__col3 {
 		@media (min-width: $min-720) {
-			@include make-col(percentage(3/12));
-			margin-left: percentage(1/12);
+			@include make-col(math.percentage(math.div(3, 12)));
+			margin-left: math.percentage(math.div(1, 12));
 		}
 	}
 
 	&__col4 {
 		@media (min-width: $min-720) {
-			@include make-col(percentage(8/12));
+			@include make-col(math.percentage(math.div(8, 12)));
 		}
 	}
 
@@ -179,8 +179,8 @@
 
 	&__contentCol {
 		@media (min-width: $min-720) {
-			@include make-col(percentage(9/12));
-			margin-left: percentage(1/12);
+			@include make-col(math.percentage(math.div(9, 12)));
+			margin-left: math.percentage(math.div(1, 12));
 		}
 	}
 
@@ -219,7 +219,7 @@
 	}
 
 	&__col {
-		@include make-col(percentage(5/12));
+		@include make-col(math.percentage(math.div(5, 12)));
 
 		padding-top: $gutter;
 		padding-bottom: $gutter;
@@ -232,7 +232,7 @@
 		}
 
 		&:first-child {
-			margin-left: percentage(1/12);
+			margin-left: math.percentage(math.div(1, 12));
 		}
 	}
 
@@ -276,8 +276,8 @@
 		@include make-row;
 
 		&Content {
-			@include make-col(percentage(10/12));
-			margin-left: percentage(1/12);
+			@include make-col(math.percentage(math.div(10, 12)));
+			margin-left: math.percentage(math.div(1, 12));
 			padding: $gutter * 2;
 			text-align: center;
 		}
@@ -323,7 +323,7 @@
 		@media (min-width: $min-720) {
 			padding-left: 0;
 			padding-right: 0;
-			background-position: calc(#{percentage(11/12)} - 3px) 50%;
+			background-position: calc(#{math.percentage(math.div(11, 12))} - 3px) 50%;
 		}
 
 		&:hover {
@@ -339,13 +339,13 @@
 
 	&__col {
 		@media (min-width: $min-720) {
-			@include make-col(percentage(5/12));
+			@include make-col(math.percentage(math.div(5, 12)));
 			display: flex;
 			flex-direction: row;
 			align-items: center;
 
 			&:first-child {
-				margin-left: percentage(1/12);
+				margin-left: math.percentage(math.div(1, 12));
 			}
 		}
 	}
