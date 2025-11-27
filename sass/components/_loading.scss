@@ -1,0 +1,95 @@
+// @use '../config' as *;
+@use 'sass:math';
+@use '../mixins' as *;
+@use '../variables' as *;
+@use '../grid' as *;
+
+.loading {
+	@include segment;
+
+	&__container {
+		@include container;
+	}
+
+	&__row {
+		@media (min-width: $min-720) {
+			@include make-row;
+		}
+	}
+
+	&__col {
+		@media (min-width: $min-720) {
+			@include make-col(math.percentage(math.div(8, 12)));
+			margin-left: math.percentage(math.div(2, 12));
+		}
+
+		@media (min-width: $min-1080) {
+			margin-left: math.percentage(math.div(3, 12));
+			width: math.percentage(math.div(6, 12));
+		}
+	}
+
+	&__date {
+		font-size: 14px;
+		font-weight: 500;
+		color: $font-color-dark;
+	}
+
+	&__title {
+		@include heading(false, 30, 70);
+	}
+
+	&__lead {
+		@include responsive-font(20, 24);
+		margin-bottom: $gutter * 2;
+	}
+
+	&__image {
+		margin-top: $gutter * 2;
+		margin-bottom: $gutter * 2;
+
+		@media (min-width: $min-tablet) {
+			margin-left: calc(-25% - 8px);
+			margin-right: calc(-25% - 8px);
+		}
+
+		@media (min-width: $min-desktop) {
+			margin-left: calc(-50% - #{math.div($gutter, 2)});
+			margin-right: calc(-50% - #{math.div($gutter, 2)});
+		}
+	}
+}
+
+// Loading Text
+
+.loadingText {
+	display: inline-block;
+
+	opacity: 0.2;
+
+	width: 10em;
+	height: 1ex;
+	max-width: 100%;
+
+	background: $font-color;
+
+	&.block {
+		display: block;
+		width: 100%;
+		height: 25px;
+		background: url('assets/images/loading-text.png') 100% 9px;
+	}
+
+	&.lines-2 {
+		height: 54px;
+	}
+	&.lines-3 {
+		height: 82px;
+	}
+	&.lines-4 {
+		height: 108px;
+	}
+	&.lines-5 {
+		height: 134px;
+	}
+}

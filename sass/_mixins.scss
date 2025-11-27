@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:meta';
 
 @use 'variables' as *;
 @use 'reset' as *;
@@ -12,7 +13,7 @@
 }
 
 @function strip-unit($number) {
-	@if type-of($number) == 'number' and not math.is-unitless($number) {
+	@if meta.type-of($number) == 'number' and not math.is-unitless($number) {
 		@return math.div($number, ($number * 0 + 1));
 	}
 
@@ -41,7 +42,7 @@
 	padding-top: $padding-mobile;
 
 	@media (min-width: $min-tablet) {
-		padding-top: percentage(math.div($padding, $limit));
+		padding-top: math.percentage(math.div($padding, $limit));
 	}
 
 	@media (min-width: $limit) {
@@ -53,7 +54,7 @@
 	padding-bottom: $padding-mobile;
 
 	@media (min-width: $min-tablet) {
-		padding-bottom: percentage(math.div($padding, $limit));
+		padding-bottom: math.percentage(math.div($padding, $limit));
 	}
 
 	@media (min-width: $limit) {
@@ -66,8 +67,8 @@
 	padding-bottom: $padding-mobile;
 
 	@media (min-width: $min-tablet) {
-		padding-top: percentage(math.div($padding, $limit));
-		padding-bottom: percentage(math.div($padding, $limit));
+		padding-top: math.percentage(math.div($padding, $limit));
+		padding-bottom: math.percentage(math.div($padding, $limit));
 	}
 
 	@media (min-width: $limit) {

@@ -11,10 +11,12 @@ Custom Aera styles compiled from SCSS
 /* PAGES */
 
 /* COMPONENTS */
+@use 'components/background';
+@use 'components/loading';
 
 // @use 'components/buttons';
 // @use 'components/header';
-@use 'components/background';
+
 // @use 'components/intro-home';
 // @use 'components/blog';
 // @use 'components/blog-author';

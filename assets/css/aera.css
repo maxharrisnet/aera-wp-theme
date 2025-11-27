@@ -2,57 +2,6 @@
 Custom Aera styles compiled from SCSS
 */
 /* LAYOUT */
-/* FreightSans Pro */
-@font-face {
-  font-family: "FreightSans Pro";
-  font-style: normal;
-  font-weight: 200;
-  src: url("../assets/fonts/FreightSans-Pro-Light.eot");
-  src: url("../assets/fonts/FreightSans-Pro-Light.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/FreightSans-Pro-Light.woff2") format("woff2"), url("../assets/fonts/FreightSans-Pro-Light.woff") format("woff"), url("../assets/fonts/FreightSans-Pro-Light.ttf") format("truetype");
-}
-@font-face {
-  font-family: "FreightSans Pro";
-  font-style: normal;
-  font-weight: 300;
-  src: url("../assets/fonts/FreightSans-Pro-Book.eot");
-  src: url("../assets/fonts/FreightSans-Pro-Book.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/FreightSans-Pro-Book.woff2") format("woff2"), url("../assets/fonts/FreightSans-Pro-Book.woff") format("woff"), url("../assets/fonts/FreightSans-Pro-Book.ttf") format("truetype");
-}
-@font-face {
-  font-family: "FreightSans Pro";
-  font-style: normal;
-  font-weight: 500;
-  src: url("../assets/fonts/FreightSans-Pro-Medium.eot");
-  src: url("../assets/fonts/FreightSans-Pro-Medium.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/FreightSans-Pro-Medium.woff2") format("woff2"), url("../assets/fonts/FreightSans-Pro-Medium.woff") format("woff"), url("../assets/fonts/FreightSans-Pro-Medium.ttf") format("truetype");
-}
-@font-face {
-  font-family: "FreightSans Pro";
-  font-style: normal;
-  font-weight: 600;
-  src: url("../assets/fonts/FreightSans-Pro-Semibold.eot");
-  src: url("../assets/fonts/FreightSans-Pro-Semibold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/FreightSans-Pro-Semibold.woff2") format("woff2"), url("../assets/fonts/FreightSans-Pro-Semibold.woff") format("woff"), url("../assets/fonts/FreightSans-Pro-Semibold.ttf") format("truetype");
-}
-/* Gilroy */
-@font-face {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../assets/fonts/Gilroy-Bold.eot");
-  src: url("../assets/fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Gilroy-Bold.woff2") format("woff2"), url("../assets/fonts/Gilroy-Bold.woff") format("woff"), url("../assets/fonts/Gilroy-Bold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 600;
-  src: url("../assets/fonts/Gilroy-Semibold.eot");
-  src: url("../assets/fonts/Gilroy-Semibold.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Gilroy-Semibold.woff2") format("woff2"), url("../assets/fonts/Gilroy-Semibold.woff") format("woff"), url("../assets/fonts/Gilroy-Semibold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  src: url("../assets/fonts/Gilroy-Medium.eot");
-  src: url("../assets/fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/Gilroy-Medium.woff2") format("woff2"), url("../assets/fonts/Gilroy-Medium.woff") format("woff"), url("../assets/fonts/Gilroy-Medium.ttf") format("truetype");
-}
 :global div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner {
   display: flex;
   max-width: 1025px !important;
@@ -103,6 +52,19 @@ Custom Aera styles compiled from SCSS
 
 .layout {
   display: block;
+}
+
+/* Page */
+.page {
+  position: relative;
+  z-index: 3;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30vh, rgb(255, 255, 255) 60vh);
+  background-repeat: repeat-x;
+}
+@media (min-width: 720px) {
+  .page {
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50vh, rgb(255, 255, 255) 110vh);
+  }
 }
 
 /* Content */
@@ -214,6 +176,167 @@ Custom Aera styles compiled from SCSS
   z-index: 2;
 }
 
+.loading {
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+@media (min-width: 720px) {
+  .loading {
+    padding-top: 14.0845070423%;
+    padding-bottom: 14.0845070423%;
+  }
+}
+@media (min-width: 1420px) {
+  .loading {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+}
+.loading__container {
+  margin: 0 auto;
+  padding: 0 20px;
+  max-width: 1300px;
+}
+@media (min-width: 340px) {
+  .loading__container {
+    max-width: 1320px;
+  }
+}
+@media (min-width: 720px) {
+  .loading__container {
+    padding: 0 50px;
+    max-width: 1380px;
+  }
+}
+@media (min-width: 1080px) {
+  .loading__container {
+    padding: 0 70px;
+    max-width: 1420px;
+  }
+}
+@media (min-width: 720px) {
+  .loading__row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-left: -15px;
+    margin-right: -15px;
+    flex-direction: row;
+  }
+}
+@media (min-width: 720px) {
+  .loading__col {
+    flex: none;
+    align-self: stretch;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 66.6666666667%;
+    margin-left: 16.6666666667%;
+  }
+}
+@media (min-width: 1080px) {
+  .loading__col {
+    margin-left: 25%;
+    width: 50%;
+  }
+}
+.loading__date {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+.loading__title {
+  font-size: 30px;
+}
+@media (min-width: 375px) {
+  .loading__title {
+    font-size: 30px;
+    font-size: calc(0.0484848485 * 100vw + (11.8181818182px));
+  }
+}
+@media (min-width: 1200px) {
+  .loading__title {
+    font-size: 70px;
+  }
+}
+.loading__title {
+  font-family: "Gilroy", sans-serif;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+  color: #1a1a1a;
+}
+.loading__title > a {
+  color: inherit;
+  text-decoration: none;
+}
+.loading__title > a:focus {
+  outline: none;
+}
+.loading__title > a {
+  color: #1a1a1a;
+}
+.loading__lead {
+  font-size: 20px;
+}
+@media (min-width: 375px) {
+  .loading__lead {
+    font-size: 20px;
+    font-size: calc(0.0048484848 * 100vw + (18.1818181818px));
+  }
+}
+@media (min-width: 1200px) {
+  .loading__lead {
+    font-size: 24px;
+  }
+}
+.loading__lead {
+  margin-bottom: 60px;
+}
+.loading__image {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+@media (min-width: 720px) {
+  .loading__image {
+    margin-left: calc(-25% - 8px);
+    margin-right: calc(-25% - 8px);
+  }
+}
+@media (min-width: 1080px) {
+  .loading__image {
+    margin-left: calc(-50% - 15px);
+    margin-right: calc(-50% - 15px);
+  }
+}
+
+.loadingText {
+  display: inline-block;
+  opacity: 0.2;
+  width: 10em;
+  height: 1ex;
+  max-width: 100%;
+  background: #5c6476;
+}
+.loadingText.block {
+  display: block;
+  width: 100%;
+  height: 25px;
+  background: url("assets/images/loading-text.png") 100% 9px;
+}
+.loadingText.lines-2 {
+  height: 54px;
+}
+.loadingText.lines-3 {
+  height: 82px;
+}
+.loadingText.lines-4 {
+  height: 108px;
+}
+.loadingText.lines-5 {
+  height: 134px;
+}
+
 /* Pages */
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../sass/aera.scss%22,%22../../sass/_fonts.scss%22,%22../../sass/layout/_layout.scss%22,%22../../sass/layout/_column-content.scss%22,%22../../sass/_mixins.scss%22,%22../../sass/_grid.scss%22,%22../../sass/_variables.scss%22,%22../../sass/_reset.scss%22,%22../../sass/components/_background.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;AAAA;AAAA;AAMA;ACNA;AAEA;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;AACA;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AAMF;EACC;EACA;EACA;EACA;EACA,KACC;;AC5ED;EACC;EACA;;AAED;EACC;EACA;;AAED;EACC;;AAED;EACC;IACC;IACA;;EAED;IACC;IACA;;;AAGF;EACC;IACC;IACA;;;AAGF;EACC;IACC;IACA;IACA;IACA;;;AAGF;EACC;IACC;IACA;IACA;IACA;IACA;;EAED;IACC;;;;AAKH;EACC;;;AAGD;AAGC;EACC;EAEA;;;AC3DD;EC0EA;EAEA;EACA;;AAEA;ED/EA;ICgFC;;;AAGD;EDnFA;ICoFC;IACA;;;AAGD;EDxFA;ICyFC;IACA;;;ADrFA;EADD;IEHA;IACA,WAFqG;IAIrG,aAJwC;IAKxC,iBAL2D;IAO3D;IACA;IAGC;;;AFAA;EADD;IESA;IACA,YAFqC;IAIrC;IACA;IAEA,OFboB;;;AAOnB;EAHD;IAIE;;;AAGD;ECDD;;AAEA;EDDC;ICEA;IACA;;;AAGD;EDNC;ICOA;;;ADPA;ECgGD,aEjBoB;EFkBpB;EACA;EACA,OEnHe;;AFqHf;EG9EA;EACA;;AAEA;EACC;;AH0ED;EAEC,OEvHc;;AHgBd;EAGC;EACA;;AAEA;EAND;IAOE,aGnCK;;;;ANUT;AAEA;AQZA;EACC;;;AAGD;EACC;EAEA;EACA;EAEA;;AAEA;EACC;;;ARcF%22,%22file%22:%22aera.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22../../sass/aera.scss%22,%22../../sass/layout/_layout.scss%22,%22../../sass/layout/_column-content.scss%22,%22../../sass/_mixins.scss%22,%22../../sass/_grid.scss%22,%22../../sass/_variables.scss%22,%22../../sass/_reset.scss%22,%22../../sass/components/_background.scss%22,%22../../sass/components/_loading.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAAA;AAAA;AAAA;AAMA;ACDC;EACC;EACA;;AAED;EACC;EACA;;AAED;EACC;;AAED;EACC;IACC;IACA;;EAED;IACC;IACA;;;AAGF;EACC;IACC;IACA;;;AAGF;EACC;IACC;IACA;IACA;IACA;;;AAGF;EACC;IACC;IACA;IACA;IACA;IACA;;EAED;IACC;;;;AAKH;EACC;;;AAGD;AAEA;EACC;EACA;EAEA;EACA;;AAEA;EAPD;IAQE;;;;AAIF;AAGC;EACC;EAEA;;;ACxED;EC0EA;EAEA;EACA;;AAEA;ED/EA;ICgFC;;;AAGD;EDnFA;ICoFC;IACA;;;AAGD;EDxFA;ICyFC;IACA;;;ADrFA;EADD;IEJA;IACA,WAFqG;IAIrG,aAJwC;IAKxC,iBAL2D;IAO3D;IACA;IAGC;;;AFCA;EADD;IEQA;IACA,YAFqC;IAIrC;IACA;IAEA,OFZoB;;;AAOnB;EAHD;IAIE;;;AAGD;ECDD;;AAEA;EDDC;ICEA;IACA;;;AAGD;EDNC;ICOA;;;ADPA;ECgGD,aElBoB;EFmBpB;EACA;EACA,OEpHe;;AFsHf;EG/EA;EACA;;AAEA;EACC;;AH2ED;EAEC,OExHc;;AHiBd;EAGC;EACA;;AAEA;EAND;IAOE,aGpCK;;;;ALUT;AAEA;AOZA;EACC;;;AAGD;EACC;EAEA;EACA;EAEA;;AAEA;EACC;;;ACPF;EL2DC,aEsGwB;EFrGxB,gBEqGwB;;AFnGxB;EK9DD;IL+DE;IACA;;;AAGD;EKnED;ILoEE,aE8FgB;IF7FhB,gBE6FgB;;;AG/JjB;ELuEA;EAEA;EACA;;AAEA;EK5EA;IL6EC;;;AAGD;EKhFA;ILiFC;IACA;;;AAGD;EKrFA;ILsFC;IACA;;;AKlFA;EADD;IJPA;IACA,WAFqG;IAIrG,aAJwC;IAKxC,iBAL2D;IAO3D;IACA;IAGC;;;AIIA;EADD;IJKA;IACA,YAFqC;IAIrC;IACA;IAEA,OIToB;IAClB;;;AAGD;EAND;IAOE;IACA;;;AAIF;EACC;EACA;EACA,OHtBc;;AGyBf;ELTA;;AAEA;EKOA;ILNC;IACA;;;AAGD;EKEA;ILDC;;;AKCD;EL0EA,aEJoB;EFKpB;EACA;EACA,OEtGe;;AFwGf;EGjEA;EACA;;AAEA;EACC;;AH6DD;EAEC,OE1Gc;;AG6Bf;ELbA;;AAEA;EKWA;ILVC;IACA;;;AAGD;EKMA;ILLC;;;AKKD;EAEC;;AAGD;EACC;EACA;;AAEA;EAJD;IAKE;IACA;;;AAGD;EATD;IAUE;IACA;;;;AAOH;EACC;EAEA;EAEA;EACA;EACA;EAEA,YH5DmB;;AG8DnB;EACC;EACA;EACA;EACA;;AAGD;EACC;;AAED;EACC;;AAED;EACC;;AAED;EACC;;;AR/DF%22,%22file%22:%22aera.css%22%7D */

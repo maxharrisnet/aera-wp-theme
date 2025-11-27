@@ -1,4 +1,4 @@
-@use '../config';
+@use '../variables' as *;
 
 :global {
 	// @import '../base'; TODO: Fix variables in Vase
@@ -54,6 +54,20 @@
 
 .layout {
 	display: block;
+}
+
+/* Page */
+
+.page {
+	position: relative;
+	z-index: 3;
+
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30vh, rgba(255, 255, 255, 1) 60vh);
+	background-repeat: repeat-x;
+
+	@media (min-width: $min-720) {
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50vh, rgba(255, 255, 255, 1) 110vh);
+	}
 }
 
 /* Content */
