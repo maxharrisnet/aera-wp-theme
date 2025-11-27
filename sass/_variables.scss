@@ -96,7 +96,8 @@ $color-btn-blue: rgba($color-cornflower, 0.5);
 $color-btn-lilac: rgba(#96b0d8, 0.5);
 
 // input imensions
-$btn-height: (50/14) * 1em;
+// math.div(50, 14) ≈ 3.5714285714
+$btn-height: 3.5714285714 * 1em;
 $btn-border-radius: 999px;
 
 // input

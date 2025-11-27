@@ -2,16 +2,19 @@
 Custom Aera styles compiled from SCSS
 */
 
-@use 'config';
-@use 'layout';
+// @use 'config';
+
+/* LAYOUT */
+@use 'layout/layout';
+@use 'layout/column-content';
 
 /* PAGES */
 
-/* Components */
+/* COMPONENTS */
 
 // @use 'components/buttons';
 // @use 'components/header';
-// @use 'components/background';
+@use 'components/background';
 // @use 'components/intro-home';
 // @use 'components/blog';
 // @use 'components/blog-author';

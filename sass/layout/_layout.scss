@@ -1,7 +1,7 @@
-@import 'config';
+@use '../config';
 
 :global {
-	@import 'base';
+	// @import '../base'; TODO: Fix variables in Vase
 
 	div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner {
 		display: flex;

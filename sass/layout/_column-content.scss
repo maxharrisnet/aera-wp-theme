@@ -1,0 +1,40 @@
+@use '../variables' as *;
+@use '../grid' as *;
+@use '../mixins' as *;
+
+.columnContent {
+	&__container {
+		@include container;
+	}
+
+	&__row {
+		@media (min-width: $min-720) {
+			@include make-row;
+		}
+	}
+
+	&__col {
+		@media (min-width: $min-720) {
+			@include make-col(percentage(4/12));
+		}
+	}
+
+	&Item {
+		// margin-bottom: $gutter * 2;
+
+		@media (min-width: $min-960) {
+			margin-right: 40px;
+		}
+
+		&__title {
+			@include subheading;
+
+			padding-top: 24px;
+			border-top: 1px solid $color-border;
+
+			@media (min-width: $min-840) {
+				padding-top: $gutter;
+			}
+		}
+	}
+}

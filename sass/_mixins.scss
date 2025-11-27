@@ -1,3 +1,8 @@
+@use 'sass:math';
+
+@use 'variables' as *;
+@use 'reset' as *;
+
 @mixin fit {
 	position: absolute;
 	top: 0;
@@ -7,8 +12,8 @@
 }
 
 @function strip-unit($number) {
-	@if type-of($number) == 'number' and not unitless($number) {
-		@return $number / ($number * 0 + 1);
+	@if type-of($number) == 'number' and not math.is-unitless($number) {
+		@return math.div($number, ($number * 0 + 1));
 	}
 
 	@return $number;
@@ -17,7 +22,7 @@
 // defaults to standard heading size
 @mixin responsive-font($min-size: 23, $size: 36, $limit: 1200px) {
 	$baseline: 375px;
-	$font-multiplier: (($size - $min-size) / (strip-unit($limit) - strip-unit($baseline)));
+	$font-multiplier: math.div(($size - $min-size), (strip-unit($limit) - strip-unit($baseline)));
 	$font-baseline: ($min-size - $font-multiplier * strip-unit($baseline));
 
 	font-size: #{$min-size}px;
@@ -36,7 +41,7 @@
 	padding-top: $padding-mobile;
 
 	@media (min-width: $min-tablet) {
-		padding-top: percentage($padding/$limit);
+		padding-top: percentage(math.div($padding, $limit));
 	}
 
 	@media (min-width: $limit) {
@@ -48,7 +53,7 @@
 	padding-bottom: $padding-mobile;
 
 	@media (min-width: $min-tablet) {
-		padding-bottom: percentage($padding/$limit);
+		padding-bottom: percentage(math.div($padding, $limit));
 	}
 
 	@media (min-width: $limit) {
@@ -61,8 +66,8 @@
 	padding-bottom: $padding-mobile;
 
 	@media (min-width: $min-tablet) {
-		padding-top: percentage($padding/$limit);
-		padding-bottom: percentage($padding/$limit);
+		padding-top: percentage(math.div($padding, $limit));
+		padding-bottom: percentage(math.div($padding, $limit));
 	}
 
 	@media (min-width: $limit) {
@@ -158,14 +163,14 @@
 	justify-content: center;
 	position: relative;
 
-	padding: 0 (40/14) * 1em;
+	padding: 0 math.div(40, 14) * 1em;
 
 	height: $btn-height;
 
 	color: $font-color-dark;
 	font-family: $font-family-heading;
 	font-weight: 600;
-	line-height: (50/14);
+	line-height: math.div(50, 14);
 	letter-spacing: 0.025em;
 	text-transform: uppercase;
 	text-decoration: none;
