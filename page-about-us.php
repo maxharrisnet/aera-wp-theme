@@ -104,57 +104,84 @@ if (empty($investors)) {
   );
 }
 
-// Offices data
+// Offices data with location coordinates for map markers
 $offices = function_exists('get_field') ? get_field('about_offices') : array();
 if (empty($offices)) {
-  // Default offices data
+  // Default offices data with x, y coordinates for map positioning
   $offices = array(
     array(
-      'title'   => __('Mountain View', 'aera'),
-      'address' => "707 California Street\nMountain View, CA 94041",
-      'country' => __('United States', 'aera'),
-      'phone'   => '+1 (408) 524 2222',
-      'email'   => 'info@aeratechnology.com',
+      'title'     => __('Mountain View', 'aera'),
+      'address'   => "707 California Street\nMountain View, CA 94041",
+      'country'   => __('United States', 'aera'),
+      'continent' => 'america',
+      'location_x' => 13.24,
+      'location_y' => 42.41,
+      'phone'     => '+1 (408) 524 2222',
+      'email'     => 'info@aeratechnology.com',
     ),
     array(
-      'title'   => __('San Francisco', 'aera'),
-      'address' => "171 2nd Street\n5th Floor\nSan Francisco, CA 94105",
-      'country' => __('United States', 'aera'),
+      'title'     => __('San Francisco', 'aera'),
+      'address'   => "171 2nd Street\n5th Floor\nSan Francisco, CA 94105",
+      'country'   => __('United States', 'aera'),
+      'continent' => 'america',
+      'location_x' => 12.7,
+      'location_y' => 40.8,
     ),
     array(
-      'title'   => __('Paris', 'aera'),
-      'address' => "24-26 Rue de la Pépinière,\n75008 Paris",
-      'country' => __('France', 'aera'),
+      'title'     => __('Paris', 'aera'),
+      'address'   => "24-26 Rue de la Pépinière,\n75008 Paris",
+      'country'   => __('France', 'aera'),
+      'continent' => 'europe',
+      'location_x' => 47.91,
+      'location_y' => 34.71,
     ),
     array(
-      'title'   => __('Bucharest', 'aera'),
-      'address' => "201 Barbu Vacarescu Street,\n10th Floor\nBucharest, 020276",
-      'country' => __('Romania', 'aera'),
+      'title'     => __('Bucharest', 'aera'),
+      'address'   => "201 Barbu Vacarescu Street,\n10th Floor\nBucharest, 020276",
+      'country'   => __('Romania', 'aera'),
+      'continent' => 'europe',
+      'location_x' => 52.69,
+      'location_y' => 37.56,
     ),
     array(
-      'title'   => __('Cluj-Napoca', 'aera'),
-      'address' => "48 Calea Dorobantilor\n1st Floor\nCluj - Napoca 400121",
-      'country' => __('Romania', 'aera'),
+      'title'     => __('Cluj-Napoca', 'aera'),
+      'address'   => "48 Calea Dorobantilor\n1st Floor\nCluj - Napoca 400121",
+      'country'   => __('Romania', 'aera'),
+      'continent' => 'europe',
+      'location_x' => 53.69,
+      'location_y' => 36.56,
     ),
     array(
-      'title'   => __('Pune', 'aera'),
-      'address' => "Manikchand Icon\nC Wing, Ground floor\nDhole Patil Rd, Pune 411001",
-      'country' => __('India', 'aera'),
+      'title'     => __('Pune', 'aera'),
+      'address'   => "Manikchand Icon\nC Wing, Ground floor\nDhole Patil Rd, Pune 411001",
+      'country'   => __('India', 'aera'),
+      'continent' => 'asia',
+      'location_x' => 67.52,
+      'location_y' => 53.77,
     ),
     array(
-      'title'   => __('Sydney', 'aera'),
-      'address' => "Level 16, 1 Denison Street\nNorth Sydney, NSW 2060",
-      'country' => __('Australia', 'aera'),
+      'title'     => __('Sydney', 'aera'),
+      'address'   => "Level 16, 1 Denison Street\nNorth Sydney, NSW 2060",
+      'country'   => __('Australia', 'aera'),
+      'continent' => 'asia',
+      'location_x' => 88.78,
+      'location_y' => 85.21,
     ),
     array(
-      'title'   => __('Singapore', 'aera'),
-      'address' => "18 Robinson Road #02-03\nSingapore 048547",
-      'country' => __('Singapore', 'aera'),
+      'title'     => __('Singapore', 'aera'),
+      'address'   => "18 Robinson Road #02-03\nSingapore 048547",
+      'country'   => __('Singapore', 'aera'),
+      'continent' => 'asia',
+      'location_x' => 75.78,
+      'location_y' => 63.21,
     ),
     array(
-      'title'   => __('York', 'aera'),
-      'address' => "Westminster Business Centre\nYork Business Park\n10 Great North Way\nNether Poppleton, York\nYO26 6RB",
-      'country' => __('United Kingdom', 'aera'),
+      'title'     => __('York', 'aera'),
+      'address'   => "Westminster Business Centre\nYork Business Park\n10 Great North Way\nNether Poppleton, York\nYO26 6RB",
+      'country'   => __('United Kingdom', 'aera'),
+      'continent' => 'europe',
+      'location_x' => 46.7,
+      'location_y' => 29.4,
     ),
   );
 }
@@ -226,7 +253,7 @@ $offices_map_image = $assets_base . 'images/company/offices-map.png';
             if (!$member_image && has_post_thumbnail()) {
               $member_image = array('url' => get_the_post_thumbnail_url(get_the_ID(), 'full'));
             }
-            ?>
+          ?>
             <article class="executive-team__item">
               <?php if (!empty($member_image['url'])) : ?>
                 <div class="executive-team__item-image">
@@ -281,7 +308,7 @@ $offices_map_image = $assets_base . 'images/company/offices-map.png';
             if (!$member_image && has_post_thumbnail()) {
               $member_image = array('url' => get_the_post_thumbnail_url(get_the_ID(), 'full'));
             }
-            ?>
+          ?>
             <article class="executive-team__item">
               <?php if (!empty($member_image['url'])) : ?>
                 <div class="executive-team__item-image">
@@ -370,49 +397,71 @@ $offices_map_image = $assets_base . 'images/company/offices-map.png';
   <?php if (!empty($offices)) : ?>
     <section class="offices">
       <div class="offices__container">
-        <h2 class="offices__title"><?php esc_html_e('Offices', 'aera'); ?></h2>
-        <?php
-        $main_phone = $offices[0]['phone'] ?? '+1 (408) 524 2222';
-        $main_email = $offices[0]['email'] ?? 'info@aeratechnology.com';
-        ?>
-        <?php if (!empty($main_phone) || !empty($main_email)) : ?>
-          <div class="offices__contact">
-            <?php if (!empty($main_phone)) : ?>
-              <p class="offices__phone"><?php echo esc_html($main_phone); ?></p>
-            <?php endif; ?>
-            <?php if (!empty($main_email)) : ?>
-              <p class="offices__email">
-                <a href="mailto:<?php echo esc_attr($main_email); ?>"><?php echo esc_html($main_email); ?></a>
-              </p>
-            <?php endif; ?>
-          </div>
-        <?php endif; ?>
+        <div class="offices__header">
+          <h2 class="offices__title"><?php esc_html_e('Offices', 'aera'); ?></h2>
+          <?php
+          $main_phone = $offices[0]['phone'] ?? '+1 (408) 524 2222';
+          $main_email = $offices[0]['email'] ?? 'info@aeratechnology.com';
+          ?>
+          <?php if (!empty($main_phone) || !empty($main_email)) : ?>
+            <div class="offices__contact">
+              <?php if (!empty($main_phone)) : ?>
+                <p class="offices__contactPhone"><?php echo esc_html($main_phone); ?></p>
+              <?php endif; ?>
+              <?php if (!empty($main_email)) : ?>
+                <p class="offices__contactEmail">
+                  <a class="offices__contactEmailLink" href="mailto:<?php echo esc_attr($main_email); ?>"><?php echo esc_html($main_email); ?></a>
+                </p>
+              <?php endif; ?>
+            </div>
+          <?php endif; ?>
+        </div>
 
         <?php if (!empty($offices_map_image)) : ?>
-          <div class="offices__map">
-            <img src="<?php echo esc_url($offices_map_image); ?>" alt="<?php esc_attr_e('Office locations map', 'aera'); ?>" loading="lazy" />
+          <div class="officesMap" id="officesMap">
+            <img class="offices__image" src="<?php echo esc_url($offices_map_image); ?>" alt="<?php esc_attr_e('Office locations map', 'aera'); ?>" loading="lazy" />
+            <?php foreach ($offices as $index => $office) : ?>
+              <?php
+              $location_x = $office['location_x'] ?? 0;
+              $location_y = $office['location_y'] ?? 0;
+              $continent = $office['continent'] ?? '';
+              ?>
+              <?php if ($location_x > 0 && $location_y > 0) : ?>
+                <span
+                  class="officesMap__marker <?php echo esc_attr($continent); ?>"
+                  data-office-index="<?php echo esc_attr($index); ?>"
+                  style="top: <?php echo esc_attr($location_y); ?>%; left: <?php echo esc_attr($location_x); ?>%;">
+                  <svg class="officesMap__svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor" />
+                  </svg>
+                </span>
+              <?php endif; ?>
+            <?php endforeach; ?>
           </div>
         <?php endif; ?>
 
-        <div class="offices__list">
-          <?php foreach ($offices as $office) : ?>
+        <div class="offices__row">
+          <?php foreach ($offices as $index => $office) : ?>
             <?php
             $office_title = $office['title'] ?? '';
             $office_address = $office['address'] ?? '';
             $office_country = $office['country'] ?? '';
+            $continent = $office['continent'] ?? '';
             ?>
             <?php if (!empty($office_title)) : ?>
-              <article class="offices__item">
-                <h3 class="offices__item-title"><?php echo esc_html($office_title); ?></h3>
-                <?php if (!empty($office_address)) : ?>
-                  <div class="offices__item-address">
-                    <?php echo wp_kses_post(nl2br(esc_html($office_address))); ?>
-                  </div>
-                <?php endif; ?>
-                <?php if (!empty($office_country)) : ?>
-                  <p class="offices__item-country"><?php echo esc_html($office_country); ?></p>
-                <?php endif; ?>
-              </article>
+              <div class="offices__col" data-office-index="<?php echo esc_attr($index); ?>">
+                <div class="officesItem">
+                  <h3 class="officesItem__location"><?php echo esc_html($office_title); ?></h3>
+                  <?php if (!empty($office_address)) : ?>
+                    <div class="officesItem__address">
+                      <?php echo wp_kses_post(nl2br(esc_html($office_address))); ?>
+                    </div>
+                  <?php endif; ?>
+                  <?php if (!empty($office_country)) : ?>
+                    <p class="officesItem__country <?php echo esc_attr($continent); ?>"><?php echo esc_html($office_country); ?></p>
+                  <?php endif; ?>
+                </div>
+              </div>
             <?php endif; ?>
           <?php endforeach; ?>
         </div>
@@ -421,6 +470,79 @@ $offices_map_image = $assets_base . 'images/company/offices-map.png';
   <?php endif; ?>
 </main>
 
+<script>
+  (function() {
+    'use strict';
+
+    function initOfficesMap() {
+      const officesMap = document.getElementById('officesMap');
+      const officeCols = document.querySelectorAll('.offices__col');
+      const markers = document.querySelectorAll('.officesMap__marker');
+
+      if (!officesMap || officeCols.length === 0 || markers.length === 0) {
+        return;
+      }
+
+      // Function to highlight a marker
+      function highlightMarker(index) {
+        const marker = document.querySelector(`.officesMap__marker[data-office-index="${index}"]`);
+        if (!marker) {
+          return;
+        }
+
+        // Reset all markers
+        markers.forEach(function(m) {
+          m.style.zIndex = '';
+          m.style.transform = '';
+          m.style.transition = '';
+        });
+
+        // Animate the selected marker
+        marker.style.zIndex = '1';
+        marker.style.transition = 'transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+        marker.style.transform = 'translateY(-20px)';
+
+        setTimeout(function() {
+          marker.style.transform = 'translateY(0)';
+          setTimeout(function() {
+            marker.style.zIndex = '';
+          }, 800);
+        }, 200);
+      }
+
+      // Add mouseenter events to office items
+      officeCols.forEach(function(col) {
+        const index = col.getAttribute('data-office-index');
+        if (index !== null) {
+          col.addEventListener('mouseenter', function() {
+            highlightMarker(index);
+          });
+        }
+      });
+
+      // Animate markers on page load
+      if (markers.length > 0) {
+        markers.forEach(function(marker, index) {
+          marker.style.opacity = '0';
+          marker.style.transform = 'translateY(-20px)';
+          marker.style.transition = 'opacity 0.5s ease, transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+
+          setTimeout(function() {
+            marker.style.opacity = '1';
+            marker.style.transform = 'translateY(0)';
+          }, 1000 + (index * 200));
+        });
+      }
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initOfficesMap);
+    } else {
+      initOfficesMap();
+    }
+  })();
+</script>
+
 <?php
 get_footer();
-
