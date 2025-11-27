@@ -1,0 +1,504 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+@use '../reset' as *;
+
+/* ABOUT */
+.about {
+	margin-top: $gutter * 2;
+
+	@media (min-width: $min-720) {
+		margin-top: $gutter * 4;
+	}
+}
+
+/* TEAM */
+.management {
+	margin-bottom: $gutter * 0;
+
+	&__container {
+		@include container;
+	}
+
+	&__content {
+		width: 75% !important;
+		margin: 0 auto;
+	}
+
+	&__title {
+		@include heading;
+	}
+
+	&__row {
+		@media (min-width: $min-720) {
+			@include make-row($grid-gutter: 55px);
+		}
+
+		@media (min-width: $min-960) {
+			@include make-row($grid-gutter: 110px);
+		}
+	}
+
+	&__col {
+		@media (min-width: $min-720) {
+			@include make-col(percentage(6/12), $grid-gutter: 55px);
+		}
+
+		@media (min-width: $min-960) {
+			@include make-col(percentage(12/12), $grid-gutter: 110px);
+		}
+	}
+
+	&__hiddenXS {
+		@media (max-width: $min-720) {
+			display: none;
+		}
+	}
+
+	&__link {
+		font-family: Gilroy;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 15px;
+		line-height: 18px;
+	}
+
+	&__name {
+		font-family: Gilroy;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 24px;
+		margin-bottom: 0px;
+		margin-top: 33px;
+		color: #000000;
+	}
+	&__description {
+		font-family: FreightSans Pro;
+		font-style: italic;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 26px;
+		margin-top: 0px;
+		color: #000000;
+	}
+	&__designation {
+		font-family: FreightSans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 23px;
+		margin-top: 0px;
+		color: #00578f;
+	}
+
+	&Item {
+		margin-bottom: $gutter * 2;
+		padding-top: $gutter;
+
+		//border-top: 1px solid $color-border;
+
+		@media (min-width: $min-1024) {
+			display: flex;
+		}
+
+		&__logo {
+			margin-bottom: 15px;
+			display: block;
+
+			@media (min-width: $min-1024) {
+				min-width: 35%;
+			}
+
+			&Image {
+				width: 100%;
+				@media (max-width: $min-768) {
+					width: 100%;
+				}
+			}
+		}
+
+		&__text {
+			padding: 0 40px;
+			@media (min-width: $min-1024) {
+				> p:first-child {
+					font-weight: bold;
+					color: #1a1a1a;
+					// stylelint-disable-line
+					margin-top: 0;
+				}
+			}
+			@media (max-width: $min-768) {
+				padding: 0 0px;
+			}
+
+			a:hover {
+				// stylelint-disable-line
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+.othermanagement {
+	margin-bottom: $gutter * 4;
+
+	&__container {
+		@include container;
+	}
+
+	&__content {
+		width: 100% !important;
+		margin: 0 auto;
+	}
+
+	&__title {
+		@include heading;
+		margin-bottom: 40px !important;
+		margin-top: 60px;
+		//display: none;
+	}
+
+	&__row {
+		@media (min-width: $min-720) {
+			@include make-row($grid-gutter: 55px);
+		}
+
+		@media (min-width: $min-960) {
+			@include make-row($grid-gutter: 110px);
+		}
+	}
+
+	&__col {
+		@media (min-width: $min-720) {
+			@include make-col(percentage(6/12), $grid-gutter: 55px);
+		}
+
+		@media (min-width: $min-960) {
+			@include make-col(percentage(3/12), $grid-gutter: 110px);
+		}
+	}
+
+	&__execTitle {
+		font-size: 30px;
+		font-weight: 600;
+		font-family: Gilroy;
+	}
+
+	&__name {
+		font-family: Gilroy;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 20px;
+		line-height: 24px;
+		text-align: center;
+		margin-bottom: 0px;
+		color: #000000;
+	}
+	&__description {
+		font-style: italic;
+	}
+	&__designation {
+		font-family: FreightSans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 23px;
+		text-align: center;
+		margin-top: 0px;
+		color: #00578f;
+	}
+
+	&Item {
+		margin-bottom: $gutter;
+		//padding-top: $gutter;
+
+		//border-top: 1px solid $color-border;
+
+		@media (min-width: $min-1024) {
+			display: flex;
+		}
+
+		&__logo {
+			@media (min-width: $min-1024) {
+				min-width: 35%;
+			}
+
+			&Image {
+				width: 223px;
+				margin: 0 auto;
+			}
+		}
+
+		&__text {
+			padding: 0 50px;
+			@media (min-width: $min-1024) {
+				> p:first-child {
+					font-weight: bold;
+					color: #1a1a1a;
+					// stylelint-disable-line
+					margin-top: 0;
+				}
+			}
+
+			a:hover {
+				// stylelint-disable-line
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+/* INVESTORS */
+
+.investors {
+	margin-bottom: $gutter * 4;
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		@include heading;
+	}
+
+	&__row {
+		@media (min-width: $min-720) {
+			@include make-row($grid-gutter: 55px);
+		}
+
+		@media (min-width: $min-960) {
+			@include make-row($grid-gutter: 110px);
+		}
+	}
+
+	&__col {
+		@media (min-width: $min-720) {
+			@include make-col(percentage(6/12), $grid-gutter: 55px);
+		}
+
+		@media (min-width: $min-960) {
+			@include make-col(percentage(6/12), $grid-gutter: 110px);
+		}
+	}
+
+	&Item {
+		margin-bottom: $gutter * 2;
+		padding-top: $gutter;
+
+		border-top: 1px solid $color-border;
+
+		@media (min-width: $min-1024) {
+			display: flex;
+		}
+
+		&__logo {
+			@media (min-width: $min-1024) {
+				min-width: 35%;
+			}
+
+			&Image {
+				width: 120px;
+			}
+		}
+
+		&__text {
+			@media (min-width: $min-1024) {
+				> p:first-child {
+					// stylelint-disable-line
+					margin-top: 0;
+				}
+			}
+
+			a:hover {
+				// stylelint-disable-line
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+/* OFFICES */
+
+.offices {
+	margin-top: $gutter * 4;
+	@include segment-bottom;
+
+	&__container {
+		@include container;
+		position: relative;
+	}
+
+	&__header {
+		position: relative;
+		z-index: 1;
+
+		@media (min-width: $min-480) {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	&__title {
+		@include heading($hasMargin: false);
+
+		margin: 0;
+	}
+
+	&__contact {
+		margin: 10px 0 $gutter;
+
+		@include responsive-font(14, 16);
+		color: $font-color-dark;
+
+		@media (min-width: $min-480) {
+			margin: 0;
+		}
+
+		&Phone,
+		&Email {
+			margin: 0;
+		}
+
+		&EmailLink {
+			@include reset-anchor;
+
+			color: $color-govenorbay;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__row {
+		@include make-row;
+
+		position: relative;
+	}
+
+	&__col {
+		@include make-col(percentage(6/12));
+
+		@media (min-width: $min-560) {
+			width: percentage(4/12);
+		}
+
+		@media (min-width: $min-720) {
+			width: percentage(3/12);
+		}
+
+		@media (min-width: $min-1024) {
+			width: percentage(2.4/12);
+		}
+	}
+
+	&Item {
+		margin-bottom: $gutter;
+
+		@media (min-width: $min-720) {
+			margin-bottom: $gutter * 2;
+		}
+
+		&__location {
+			@include smallheading;
+
+			margin-bottom: 4px;
+		}
+
+		&__address {
+			@include responsive-font(14, 16);
+
+			@media (min-width: $min-720) {
+				min-height: 20ex;
+			}
+
+			> p {
+				// stylelint-disable-line
+				margin-top: 0;
+			}
+		}
+
+		&__country {
+			@include responsive-font(14, 16);
+
+			&.america {
+				color: $color-america;
+			}
+			&.europe {
+				color: $color-europe;
+			}
+			&.asia {
+				color: $color-asia;
+			}
+		}
+	}
+
+	&Map {
+		position: relative;
+		margin: ($gutter * -2) (-$gutter * 2) $gutter * -1 (-$gutter * 2);
+		max-width: 1438px;
+
+		@media (min-width: $min-720) {
+			margin: ($gutter * -2) (-$gutter * 2.5) (-$gutter * 2);
+		}
+
+		&__marker {
+			position: absolute;
+
+			width: 5px;
+			height: 5px;
+
+			border-radius: 50%;
+
+			&.america {
+				background: $color-america-light;
+			}
+			&.europe {
+				background: $color-europe-light;
+			}
+			&.asia {
+				background: $color-asia-light;
+			}
+
+			@media (min-width: $min-720) {
+				&.america,
+				&.europe,
+				&.asia {
+					background: none;
+				}
+			}
+		}
+
+		&__svg {
+			display: none;
+
+			position: absolute;
+			bottom: 0;
+			left: -5px;
+
+			width: 10px;
+
+			fill-rule: evenodd;
+
+			@media (min-width: $min-720) {
+				display: block;
+			}
+
+			@media (min-width: $min-1024) {
+				width: auto;
+			}
+
+			.america & {
+				fill: $color-america-light;
+			}
+			.europe & {
+				fill: $color-europe-light;
+			}
+			.asia & {
+				fill: $color-asia-light;
+			}
+		}
+	}
+}

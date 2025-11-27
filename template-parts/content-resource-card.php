@@ -126,10 +126,12 @@ foreach ($wrapper_attrs as $attr => $value) {
 ?>
 
 <article class="<?php echo esc_attr(implode(' ', $card_classes)); ?>" data-resource-type="<?php echo esc_attr($post_type); ?>">
-  <a<?php echo $wrapper_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+  <a<?php echo $wrapper_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+    ?>>
     <?php if ($media_markup) : ?>
       <div class="resource-card__figure" aria-hidden="true">
-        <?php echo $media_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+        <?php echo $media_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+        ?>
       </div>
     <?php endif; ?>
 
@@ -172,5 +174,5 @@ foreach ($wrapper_attrs as $attr => $value) {
         <span class="resource-card__ctaLabel"><?php echo esc_html($cta_label); ?></span>
       </div>
     </div>
-  </a>
+    </a>
 </article>

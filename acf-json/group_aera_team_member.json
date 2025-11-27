@@ -1,0 +1,89 @@
+{
+    "key": "group_aera_team_member",
+    "title": "Team Member Fields",
+    "fields": [
+        {
+            "key": "field_team_member_image",
+            "label": "Profile Image",
+            "name": "team_member_image",
+            "type": "image",
+            "instructions": "Profile photo of the team member.",
+            "required": true,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_team_member_name",
+            "label": "Full Name",
+            "name": "team_member_name",
+            "type": "text",
+            "instructions": "Full name of the team member (will override post title if provided).",
+            "required": false,
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_team_member_title",
+            "label": "Title\/Position",
+            "name": "team_member_title",
+            "type": "text",
+            "instructions": "Job title or position of the team member.",
+            "required": true,
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_team_member_linkedin",
+            "label": "LinkedIn Profile URL",
+            "name": "team_member_linkedin",
+            "type": "url",
+            "instructions": "LinkedIn profile URL for the team member.",
+            "required": false,
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_team_member_group",
+            "label": "Team Group",
+            "name": "team_member_group",
+            "type": "taxonomy",
+            "instructions": "Select the group this team member belongs to (Leadership, Board Members, etc.).",
+            "required": true,
+            "taxonomy": "team_group",
+            "field_type": "select",
+            "allow_null": false,
+            "return_format": "id",
+            "multiple": false,
+            "wrapper": {
+                "width": "100"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "team_member"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for team member profile including image, name, title, LinkedIn link, and group assignment.",
+    "show_in_rest": 1,
+    "modified": 1735000000
+}
+

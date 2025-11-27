@@ -115,6 +115,16 @@ function register_post_types(): void
       'menu_icon' => 'dashicons-portfolio',
       'supports'  => array_merge($defaultSupports, array('custom-fields')),
     ),
+    'team_member'   => array(
+      'singular'  => __('Team Member', 'aera'),
+      'plural'    => __('Team Members', 'aera'),
+      'rewrite'   => 'team',
+      'menu_icon' => 'dashicons-groups',
+      'supports'  => array('title', 'thumbnail', 'revisions'),
+      'public'    => true,
+      'has_archive' => false,
+      'publicly_queryable' => false,
+    ),
   );
 
   foreach ($postTypes as $type => $settings) {

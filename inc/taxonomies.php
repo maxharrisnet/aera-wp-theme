@@ -40,6 +40,7 @@ function register_taxonomies(): void
       'args'     => array(
         'hierarchical' => false,
       ),
+      'post_types' => $resourceTypes,
     ),
     'resource_industry' => array(
       'singular' => __('Industry', 'aera'),
@@ -48,6 +49,16 @@ function register_taxonomies(): void
       'args'     => array(
         'hierarchical' => true,
       ),
+      'post_types' => $resourceTypes,
+    ),
+    'team_group'        => array(
+      'singular' => __('Team Group', 'aera'),
+      'plural'   => __('Team Groups', 'aera'),
+      'slug'     => 'team-group',
+      'args'     => array(
+        'hierarchical' => true,
+      ),
+      'post_types' => array('team_member'),
     ),
   );
 
@@ -79,9 +90,11 @@ function register_taxonomies(): void
 
     $args = array_merge($args, $settings['args']);
 
-    register_taxonomy($taxonomy, $resourceTypes, $args);
+    $postTypes = $settings['post_types'] ?? $resourceTypes;
 
-    foreach ($resourceTypes as $type) {
+    register_taxonomy($taxonomy, $postTypes, $args);
+
+    foreach ($postTypes as $type) {
       register_taxonomy_for_object_type($taxonomy, $type);
     }
   }

@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use '../variables' as *;
 @use '../mixins' as *;
 @use '../reset' as *;
@@ -92,11 +93,11 @@
 		font-weight: 400;
 
 		@media (min-width: $min-480) {
-			max-width: (840/26) * 1em;
+			max-width: math.div(840, 26) * 1em;
 			width: 100%;
 
 			.fullHeight & {
-				max-width: (940/26) * 1em;
+				max-width: math.div(940, 26) * 1em;
 			}
 		}
 	}

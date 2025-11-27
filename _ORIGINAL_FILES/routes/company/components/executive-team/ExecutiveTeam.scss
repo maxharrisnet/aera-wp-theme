@@ -1,0 +1,237 @@
+@import "~styles/config";
+
+.management {
+  margin-bottom: $gutter * 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    width: 75% !important;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include heading;
+  }
+
+  &__row {
+    @media (min-width: $min-720) {
+      @include make-row($grid-gutter: 55px);
+    }
+
+    @media (min-width: $min-960) {
+      @include make-row($grid-gutter: 110px);
+    }
+  }
+
+  &__col {
+    @media (min-width: $min-720) {
+      @include make-col(percentage(6/12), $grid-gutter: 55px);
+    }
+
+    @media (min-width: $min-960) {
+      @include make-col(percentage(12/12), $grid-gutter: 110px);
+    }
+  }
+
+  &__hiddenXS {
+    @media (max-width: $min-720) {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  &__name {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 0px;
+    margin-top: 33px;
+    color: #000000;
+  }
+  &__description {
+    font-family: FreightSans Pro;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    margin-top: 0px;
+    color: #000000;
+  }
+  &__designation {
+    font-family: FreightSans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    margin-top: 0px;
+    color: #00578f;
+  }
+
+  &Item {
+    margin-bottom: $gutter * 2;
+    padding-top: $gutter;
+
+    //border-top: 1px solid $color-border;
+
+    @media (min-width: $min-1024) {
+      display: flex;
+    }
+
+    &__logo {
+      margin-bottom: 15px;
+      display: block;
+     
+      @media (min-width: $min-1024) {
+        min-width: 35%;
+      }
+
+      &Image {
+        width: 100%;
+        @media (max-width: $min-768) {
+          width: 100%;
+        }
+      }
+    }
+
+    &__text {
+      padding: 0 40px;
+      @media (min-width: $min-1024) {
+        > p:first-child {
+          font-weight: bold;
+          color: #1a1a1a;
+          // stylelint-disable-line
+          margin-top: 0;
+        }
+      }
+      @media (max-width: $min-768) {
+        padding: 0 0px;
+      }
+
+      a:hover {
+        // stylelint-disable-line
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.othermanagement {
+  margin-bottom: $gutter * 4;
+
+  &__container {
+    @include container;
+  }
+
+  &__content {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @include heading;
+    margin-bottom: 40px !important;
+    margin-top: 60px;
+    //display: none;
+  }
+
+  &__row {
+    @media (min-width: $min-720) {
+      @include make-row($grid-gutter: 55px);
+    }
+
+    @media (min-width: $min-960) {
+      @include make-row($grid-gutter: 110px);
+    }
+  }
+
+  &__col {
+    @media (min-width: $min-720) {
+      @include make-col(percentage(6/12), $grid-gutter: 55px);
+    }
+
+    @media (min-width: $min-960) {
+      @include make-col(percentage(3/12), $grid-gutter: 110px);
+    }
+  }
+
+  &__execTitle{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: Gilroy;
+  }
+
+  &__name {
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 0px;
+    color: #000000;
+  }
+  &__description {
+    font-style: italic;
+  }
+  &__designation {
+    font-family: FreightSans Pro;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 23px;
+    text-align: center;
+    margin-top: 0px;
+    color: #00578f;
+  }
+
+  &Item {
+    margin-bottom: $gutter;
+    //padding-top: $gutter;
+
+    //border-top: 1px solid $color-border;
+
+    @media (min-width: $min-1024) {
+      display: flex;
+    }
+
+    &__logo {
+      @media (min-width: $min-1024) {
+        min-width: 35%;
+      }
+
+      &Image {
+        width: 223px;
+        margin: 0 auto;
+      }
+    }
+
+    &__text {
+      padding: 0 50px;
+      @media (min-width: $min-1024) {
+        > p:first-child {
+          font-weight: bold;
+          color: #1a1a1a;
+          // stylelint-disable-line
+          margin-top: 0;
+        }
+      }
+
+      a:hover {
+        // stylelint-disable-line
+        text-decoration: underline;
+      }
+    }
+  }
+}

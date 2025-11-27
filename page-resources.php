@@ -72,7 +72,7 @@ $base_url = get_permalink();
 
   <section class="resources-filter" data-active-filter="<?php echo esc_attr($active_slug); ?>">
     <div class="resources-filter__container">
-      <div class="resources-filter__controls" role="tablist" aria-label="<?php esc_attr_e('Resource Categories', 'aera'); ?>">
+      <div id="typeSelector" class="resources-filter__controls" role="tablist" aria-label="<?php esc_attr_e('Resource Categories', 'aera'); ?>">
         <?php foreach ($types as $slug => $type) : ?>
           <?php
           $url = 'all' === $slug ? remove_query_arg('category', $base_url) : add_query_arg('category', $slug, $base_url);
@@ -100,7 +100,7 @@ $base_url = get_permalink();
             $resource_query->the_post();
             get_template_part(
               'template-parts/content',
-              'resource',
+              'resource-card',
               array(
                 'post_id'     => get_the_ID(),
                 'type_label'  => get_resource_label_for_post_type(get_post_type()),
@@ -127,7 +127,7 @@ $base_url = get_permalink();
           </nav>
         <?php endif; ?>
       <?php else : ?>
-        <div class="resources-grid__list">
+        <div ist"resources-grid__list">
           <?php foreach ($demo_resources as $item) : ?>
             <?php
             get_template_part(

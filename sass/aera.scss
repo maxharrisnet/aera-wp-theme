@@ -21,7 +21,7 @@ Custom Aera styles compiled from SCSS
 @use 'components/navigation';
 @use 'components/footer';
 
-// @use 'components/resource-card';
+@use 'components/resource-card';
 
 // @use 'components/blog';
 // @use 'components/blog-author';
@@ -33,5 +33,7 @@ Custom Aera styles compiled from SCSS
 /* Pages */
 // @use 'pages/layout';
 @use 'pages/home';
-// @use 'pages/resources';
+@use 'pages/decision-cloud';
+@use 'pages/resources';
+@use 'pages/about';
 // @use 'pages/webinars';

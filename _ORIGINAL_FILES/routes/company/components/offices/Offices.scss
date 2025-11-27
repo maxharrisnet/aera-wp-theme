@@ -1,0 +1,184 @@
+@import "~styles/config";
+
+.offices {
+  margin-top: $gutter * 4;
+  @include segment-bottom;
+
+  &__container {
+    @include container;
+    position: relative;
+  }
+
+  &__header {
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: $min-480) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    @include heading($hasMargin: false);
+
+    margin: 0;
+  }
+
+  &__contact {
+    margin: 10px 0 $gutter;
+
+    @include responsive-font(14, 16);
+    color: $font-color-dark;
+
+    @media (min-width: $min-480) {
+      margin: 0;
+    }
+
+    &Phone,
+    &Email {
+      margin: 0;
+    }
+
+    &EmailLink {
+      @include reset-anchor;
+
+      color: $color-govenorbay;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__row {
+    @include make-row;
+
+    position: relative;
+  }
+
+  &__col {
+    @include make-col(percentage(6/12));
+
+    @media (min-width: $min-560) {
+      width: percentage(4/12);
+    }
+
+    @media (min-width: $min-720) {
+      width: percentage(3/12);
+    }
+
+    @media (min-width: $min-1024) {
+      width: percentage(2.4/12);
+    }
+  }
+
+  &Item {
+    margin-bottom: $gutter;
+
+    @media (min-width: $min-720) {
+      margin-bottom: $gutter * 2;
+    }
+
+    &__location {
+      @include smallheading;
+
+      margin-bottom: 4px;
+    }
+
+    &__address {
+      @include responsive-font(14, 16);
+
+      @media (min-width: $min-720) {
+        min-height: 20ex;
+      }
+
+      > p {
+        // stylelint-disable-line
+        margin-top: 0;
+      }
+    }
+
+    &__country {
+      @include responsive-font(14, 16);
+
+      &.america {
+        color: $color-america;
+      }
+      &.europe {
+        color: $color-europe;
+      }
+      &.asia {
+        color: $color-asia;
+      }
+    }
+  }
+
+  &Map {
+    position: relative;
+    margin: ($gutter * -2) (-$gutter * 2) $gutter * -1 (-$gutter * 2);
+    max-width: 1438px;
+
+    @media (min-width: $min-720) {
+      margin: ($gutter * -2) (-$gutter * 2.5) (-$gutter * 2);
+    }
+
+    &__marker {
+      position: absolute;
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      &.america {
+        background: $color-america-light;
+      }
+      &.europe {
+        background: $color-europe-light;
+      }
+      &.asia {
+        background: $color-asia-light;
+      }
+
+      @media (min-width: $min-720) {
+        &.america,
+        &.europe,
+        &.asia {
+          background: none;
+        }
+      }
+    }
+
+    &__svg {
+      display: none;
+
+      position: absolute;
+      bottom: 0;
+      left: -5px;
+
+      width: 10px;
+
+      fill-rule: evenodd;
+
+      @media (min-width: $min-720) {
+        display: block;
+      }
+
+      @media (min-width: $min-1024) {
+        width: auto;
+      }
+
+      .america & {
+        fill: $color-america-light;
+      }
+      .europe & {
+        fill: $color-europe-light;
+      }
+      .asia & {
+        fill: $color-asia-light;
+      }
+    }
+  }
+}

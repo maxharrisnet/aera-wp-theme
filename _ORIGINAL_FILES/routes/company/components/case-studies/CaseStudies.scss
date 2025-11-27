@@ -1,0 +1,51 @@
+@import '~styles/config';
+
+.caseStudies {
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    @include heading;
+  }
+
+  &__row {
+    @media (min-width: $min-720) {
+      @include make-row($grid-gutter: 38px);
+    }
+
+    @media (min-width: $min-960) {
+      @include make-row($grid-gutter: 76px);
+    }
+  }
+
+  &Item {
+    margin-bottom: $gutter * 2;
+
+    @media (min-width: $min-720) {
+      @include make-col(percentage(4/12), $grid-gutter: 38px);
+    }
+
+    @media (min-width: $min-960) {
+      @include make-col(percentage(4/12), $grid-gutter: 76px);
+    }
+
+    &__image {
+      margin-bottom: $gutter;
+    }
+
+    &__title {
+      @include subheading;
+    }
+
+    &__action {
+      margin-top: $gutter;
+    }
+
+    &__link {
+      @include link;
+    }
+
+  }
+
+}
