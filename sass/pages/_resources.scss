@@ -1,5 +1,4 @@
 @use '../variables' as *;
-@use '../legacy/variables' as legacy;
 @use '../legacy/grid' as *;
 @use '../legacy/mixins' as *;
 
@@ -39,7 +38,7 @@
 		padding: 0 auto 2.5rem;
 		// padding: clamp(4rem, 12vw, 14rem) 0 1rem;
 		text-align: center;
-		font-family: legacy.$font-family;
+		font-family: $font-family;
 		font-size: 1rem;
 		line-height: 1.5;
 		border-bottom: 1px solid $color-black;
@@ -73,14 +72,14 @@
 		}
 	}
 
-	@media (max-width: legacy.$max-960) {
+	@media (max-width: $max-960) {
 		&__controls {
 			width: 95%;
 			padding-top: clamp(3rem, 16vw, 10rem);
 		}
 	}
 
-	@media (max-width: legacy.$max-640) {
+	@media (max-width: $max-640) {
 		&__controls {
 			padding-top: 3rem;
 		}

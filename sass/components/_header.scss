@@ -1,5 +1,4 @@
 @use '../variables' as *;
-@use '../legacy/variables' as legacy;
 @use 'sass:math';
 
 .header {
@@ -203,34 +202,34 @@
 		display: inline-flex;
 		align-items: center;
 		border-bottom: 2px solid transparent;
-		color: legacy.$font-color-dark;
-		transition: border legacy.$transition-leave;
+		color: $font-color-dark;
+		transition: border $transition-leave;
 
 		&:hover {
-			transition-duration: legacy.$transition-enter;
+			transition-duration: $transition-enter;
 
 			&.platform,
 			&[href*='aera-decision-cloud'] {
-				border-color: legacy.$color-technology;
+				border-color: $color-technology;
 			}
 			&.skills,
 			&[href*='skills'] {
-				border-color: legacy.$color-skills;
+				border-color: $color-skills;
 			}
 			&.company,
 			&[href*='about-us'],
 			&[href*='partners'],
 			&[href*='careers'],
 			&[href*='contact'] {
-				border-color: legacy.$color-company;
+				border-color: $color-company;
 			}
 			&.resources,
 			&[href*='resources'] {
-				border-color: legacy.$color-resources;
+				border-color: $color-resources;
 			}
 			&.demo,
 			&[href*='demo'] {
-				border-color: legacy.$color-company;
+				border-color: $color-company;
 			}
 			&[href='/contact'],
 			&[href='/test-drive'] {
@@ -242,26 +241,26 @@
 		&.current_page_item {
 			&.platform,
 			&[href*='aera-decision-cloud'] {
-				border-color: legacy.$color-technology;
+				border-color: $color-technology;
 			}
 			&.skills,
 			&[href*='skills'] {
-				border-color: legacy.$color-skills;
+				border-color: $color-skills;
 			}
 			&.company,
 			&[href*='about-us'],
 			&[href*='partners'],
 			&[href*='careers'],
 			&[href*='contact'] {
-				border-color: legacy.$color-company;
+				border-color: $color-company;
 			}
 			&.resources,
 			&[href*='resources'] {
-				border-color: legacy.$color-resources;
+				border-color: $color-resources;
 			}
 			&.demo,
 			&[href*='demo'] {
-				border-color: legacy.$color-company;
+				border-color: $color-company;
 			}
 		}
 	}
@@ -282,7 +281,7 @@
 			left: 0;
 			background-color: transparent;
 			width: 100%;
-			color: legacy.$color-codgray;
+			color: $color-codgray;
 			padding: 0;
 			padding-top: 10px;
 			margin-top: 10px;
@@ -297,7 +296,7 @@
 			padding-bottom: 0.15rem;
 			border-bottom: 1px solid transparent;
 			font-weight: 600;
-			color: legacy.$color-codgray;
+			color: $color-codgray;
 
 			@media (max-width: 1023px) {
 				font-family: $font-family-base;
@@ -306,7 +305,7 @@
 				font-size: 14px;
 				line-height: 20px;
 				text-align: center;
-				color: legacy.$color-codgray;
+				color: $color-codgray;
 				display: inline-block;
 				border-bottom: 2px solid transparent;
 				padding-bottom: 0;
@@ -320,7 +319,7 @@
 
 			&:hover,
 			&:focus {
-				border-bottom-color: legacy.$color-poloblue;
+				border-bottom-color: $color-poloblue;
 			}
 		}
 	}
@@ -412,7 +411,7 @@
 		> li {
 			display: flex;
 			justify-content: flex-start;
-			padding: 0 math.div(legacy.$gutter, 2);
+			padding: 0 math.div($gutter, 2);
 		}
 
 		> li > a {

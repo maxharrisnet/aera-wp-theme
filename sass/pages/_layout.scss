@@ -1,0 +1,8 @@
+@use '../variables' as *;
+@use '../legacy/grid' as *;
+@use '../legacy/mixins' as *;
+
+#page {
+	z-index: 10;
+	position: relative;
+}

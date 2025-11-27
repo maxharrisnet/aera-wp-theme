@@ -1,5 +1,4 @@
 @use '../variables' as *;
-@use '../legacy/variables' as legacy;
 @use '../legacy/mixins' as legacy-mixins;
 @use '../legacy/grid' as legacy-grid;
 @use '../legacy/reset' as legacy-reset;
@@ -8,11 +7,11 @@
 .footer {
 	position: relative;
 	z-index: 3;
-	padding: legacy.$gutter * 2 0 legacy.$gutter;
-	background: legacy.$color-background-darker;
+	padding: $gutter * 2 0 $gutter;
+	background: $color-background-darker;
 
-	@media (min-width: legacy.$min-720) {
-		padding: legacy.$gutter * 4 0 legacy.$gutter * 2;
+	@media (min-width: $min-720) {
+		padding: $gutter * 4 0 $gutter * 2;
 	}
 
 	&__container {
@@ -28,10 +27,10 @@
 		display: flex;
 		text-align: center;
 
-		@media (min-width: legacy.$min-560) {
+		@media (min-width: $min-560) {
 			width: math.percentage(math.div(12, 12));
 		}
-		@media (max-width: legacy.$min-560) {
+		@media (max-width: $min-560) {
 			flex-wrap: wrap;
 		}
 
@@ -42,18 +41,18 @@
 			padding-right: 0;
 			text-align: left;
 
-			@media (min-width: legacy.$min-tablet) {
+			@media (min-width: $min-tablet) {
 				width: math.percentage(math.div(2.4, 12));
 				text-align: left;
 				padding-right: 10px;
 			}
 
-			@media (min-width: legacy.$min-560) {
+			@media (min-width: $min-560) {
 				width: math.percentage(math.div(2.4, 12));
 				padding-right: 10px;
 			}
 
-			@media (min-width: legacy.$min-960) {
+			@media (min-width: $min-960) {
 				width: math.percentage(math.div(2.4, 12));
 				text-align: left;
 				padding-right: 10px;
@@ -64,7 +63,7 @@
 			list-style-type: none;
 			padding-bottom: 5px;
 
-			@media (max-width: legacy.$max-960) {
+			@media (max-width: $max-960) {
 				&__hiddenXS {
 					display: none;
 				}
@@ -75,11 +74,11 @@
 	&__logo {
 		@include legacy-grid.make-col(math.percentage(math.div(12, 12)));
 
-		@media (min-width: legacy.$min-560) {
+		@media (min-width: $min-560) {
 			width: math.percentage(math.div(12, 12));
 		}
 
-		@media (min-width: legacy.$min-960) {
+		@media (min-width: $min-960) {
 			width: math.percentage(math.div(12, 12));
 		}
 
@@ -88,11 +87,11 @@
 		}
 
 		&Image {
-			margin-bottom: legacy.$gutter * 2;
+			margin-bottom: $gutter * 2;
 			margin-top: -10px;
 			width: 70px;
 
-			@media (min-width: legacy.$min-768) {
+			@media (min-width: $min-768) {
 				width: 121px;
 			}
 		}
@@ -100,21 +99,21 @@
 
 	&__w15 {
 		width: 15% !important;
-		@media (max-width: legacy.$max-720) {
+		@media (max-width: $max-720) {
 			width: 100% !important;
 		}
 	}
 
 	&__w25 {
 		width: 25% !important;
-		@media (max-width: legacy.$max-720) {
+		@media (max-width: $max-720) {
 			width: 100% !important;
 		}
 	}
 
 	&__w30 {
 		width: 30% !important;
-		@media (max-width: legacy.$max-720) {
+		@media (max-width: $max-720) {
 			width: 100% !important;
 		}
 	}
@@ -122,11 +121,11 @@
 	&__navigation {
 		@include legacy-grid.make-col(math.percentage(math.div(12, 12)));
 
-		@media (min-width: legacy.$min-560) {
+		@media (min-width: $min-560) {
 			width: math.percentage(math.div(12, 12));
 		}
 
-		@media (min-width: legacy.$min-960) {
+		@media (min-width: $min-960) {
 			width: math.percentage(math.div(9.5, 12));
 		}
 
@@ -138,15 +137,15 @@
 	&__social {
 		@include legacy-grid.make-col(math.percentage(math.div(12, 12)));
 
-		@media (max-width: legacy.$min-560) {
+		@media (max-width: $min-560) {
 			margin-top: 30px;
 		}
 
-		@media (min-width: legacy.$min-560) {
+		@media (min-width: $min-560) {
 			width: math.percentage(math.div(12, 12));
 		}
 
-		@media (min-width: legacy.$min-960) {
+		@media (min-width: $min-960) {
 			width: math.percentage(math.div(1.5, 12));
 			text-align: right;
 		}
@@ -164,33 +163,33 @@
 	&__link {
 		@include legacy-reset.reset-anchor;
 
-		font-family: legacy.$font-family-heading;
+		font-family: $font-family-heading;
 		font-size: 13px;
 		font-weight: 400;
 		text-transform: uppercase;
-		color: legacy.$font-color-dark;
+		color: $font-color-dark;
 
 		&:hover {
 			text-decoration: underline;
 		}
 
-		@media (min-width: legacy.$min-tablet) {
+		@media (min-width: $min-tablet) {
 			// Empty but kept for consistency
 		}
 
-		@media (min-width: legacy.$min-560) {
+		@media (min-width: $min-560) {
 			font-size: 12px;
 		}
 
-		@media (min-width: legacy.$min-960) {
+		@media (min-width: $min-960) {
 			font-size: 12px;
 		}
 	}
 
 	&__parentLink {
-		font-family: legacy.$font-family-heading;
+		font-family: $font-family-heading;
 		font-size: 15px;
-		color: legacy.$font-color-dark;
+		color: $font-color-dark;
 		font-weight: 600;
 		line-height: 28px;
 	}
@@ -202,11 +201,11 @@
 	}
 
 	&__copyright {
-		margin-top: legacy.$gutter * 1;
-		margin-bottom: legacy.$gutter * 1;
+		margin-top: $gutter * 1;
+		margin-bottom: $gutter * 1;
 
-		@media (min-width: legacy.$min-720) {
-			margin-top: legacy.$gutter * 3;
+		@media (min-width: $min-720) {
+			margin-top: $gutter * 3;
 		}
 
 		font-size: 13px;
@@ -214,7 +213,7 @@
 
 	&__noLinkTitle {
 		font-size: 13px;
-		font-family: legacy.$font-family-gilroy, sans-serif;
+		font-family: $font-family-gilroy, sans-serif;
 		font-weight: 400;
 		color: #1a1a1a;
 		padding-bottom: 0 !important;
@@ -223,7 +222,7 @@
 
 	&__noLink {
 		font-size: 13px;
-		font-family: legacy.$font-family-freight;
+		font-family: $font-family-freight;
 		padding-bottom: 0 !important;
 		padding-top: 5px;
 	}
@@ -234,7 +233,7 @@
 
 	&__linkHidden {
 		visibility: hidden;
-		@media (max-width: legacy.$max-960) {
+		@media (max-width: $max-960) {
 			display: none;
 		}
 	}
@@ -245,14 +244,14 @@
 
 	&__skillsmenu {
 		width: 16% !important;
-		@media (max-width: legacy.$max-720) {
+		@media (max-width: $max-720) {
 			width: 100% !important;
 		}
 	}
 
 	&__aeradevelopermenu {
 		width: 16% !important;
-		@media (max-width: legacy.$max-720) {
+		@media (max-width: $max-720) {
 			width: 100% !important;
 		}
 	}
@@ -268,16 +267,16 @@
 		@include legacy-grid.make-col(math.percentage(math.div(2.4, 12)));
 		padding-right: 10px;
 
-		@media (max-width: legacy.$min-560) {
+		@media (max-width: $min-560) {
 			width: 100%;
 			margin-bottom: 1.5rem;
 		}
 	}
 
 	&__columnTitle {
-		font-family: legacy.$font-family-heading;
+		font-family: $font-family-heading;
 		font-size: 15px;
-		color: legacy.$font-color-dark;
+		color: $font-color-dark;
 		font-weight: 600;
 		line-height: 28px;
 		margin-bottom: 0.5rem;
@@ -294,21 +293,21 @@
 
 		a {
 			@include legacy-reset.reset-anchor;
-			font-family: legacy.$font-family-heading;
+			font-family: $font-family-heading;
 			font-size: 13px;
 			font-weight: 400;
 			text-transform: uppercase;
-			color: legacy.$font-color-dark;
+			color: $font-color-dark;
 
 			&:hover {
 				text-decoration: underline;
 			}
 
-			@media (min-width: legacy.$min-560) {
+			@media (min-width: $min-560) {
 				font-size: 12px;
 			}
 
-			@media (min-width: legacy.$min-960) {
+			@media (min-width: $min-960) {
 				font-size: 12px;
 			}
 		}
@@ -326,10 +325,10 @@
 		justify-content: space-between;
 		align-items: center;
 		flex-wrap: wrap;
-		margin-top: legacy.$gutter * 1;
+		margin-top: $gutter * 1;
 
-		@media (min-width: legacy.$min-720) {
-			margin-top: legacy.$gutter * 3;
+		@media (min-width: $min-720) {
+			margin-top: $gutter * 3;
 		}
 	}
 }

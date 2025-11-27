@@ -4,6 +4,9 @@ name: Aera WP Rules
 description: Rules for Aera WordPress Theme
 ---
 
+- ONLY use style values that match the original CSS. These are all in the foler: \_ORIGINAL_FILES. If you don't know what values should be applied, ask me to show you the file, or attribution. Do not remove styles. This needs to look like the original site.
+- Use CSS variables where appropriate. Do not make up new variables without my approval.
+
 - Always use the latest version of WordPress.
 - Use PHP version 8.0 or higher.
 - Use WordPress version 6.8 or higher.

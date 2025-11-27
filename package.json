@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "^19.2.2",
+    "concurrently": "^8.2.2",
     "dir-archiver": "^1.1.1",
     "rtlcss": "^3.5.0",
     "sass": "^1.80.2",
@@ -41,7 +42,16 @@
     "map": false
   },
   "scripts": {
-    "watch": "sass --watch sass:./ --style=expanded --embed-source-map",
+    "dev": "concurrently \"npm run dev:css\" \"npm run dev:js\" --names \"SASS,JS\" --prefix-colors \"cyan,green\"",
+    "dev:css": "sass --watch sass:./ --style=expanded --embed-source-map",
+    "dev:js": "vite build --watch --mode development --config vite.config.js",
+    "build": "npm run build:css && npm run build:js",
+    "build:prod": "npm run build:css && npm run build:js",
+    "build:css": "sass sass:./ --style=compressed --no-source-map && stylelint '*.css' --fix || true",
+    "build:js": "vite build --mode production --config vite.config.js",
+    "watch": "concurrently \"npm run watch:css\" \"npm run watch:js\" --names \"SASS,JS\" --prefix-colors \"cyan,green\"",
+    "watch:css": "sass --watch sass:./ --style=expanded --embed-source-map",
+    "watch:js": "vite build --watch --mode development --config vite.config.js",
     "compile:css": "sass sass:./ && stylelint '*.css' --fix || true && stylelint '*.css' --fix",
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",

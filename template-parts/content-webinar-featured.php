@@ -5,8 +5,6 @@
  * @package Aera_Technology
  */
 
-use function Aera\get_resource_cta_label;
-
 $post_id = get_the_ID();
 $title = get_the_title($post_id);
 
@@ -37,7 +35,7 @@ if ($webinar_date) {
   $display_date = date_i18n(get_option('date_format'), strtotime($webinar_date));
 }
 
-// Determine link
+// Determine link and CTA label - for upcoming webinars, use "Register"
 $link = get_permalink($post_id);
 if ($webinar_form_or_video === 'Video' && $webinar_video) {
   $link = esc_url($webinar_video);
@@ -46,7 +44,7 @@ if ($webinar_form_or_video === 'Video' && $webinar_video) {
 }
 
 $is_external = ($webinar_form_or_video === 'Video' && $webinar_video) ? true : false;
-$cta_label = get_resource_cta_label('webinar');
+$cta_label = __('Register', 'aera'); // Featured upcoming webinars use "Register"
 
 // Get featured image
 $featured_image_markup = '';
@@ -74,59 +72,67 @@ if ($webinar_featured_image && !empty($webinar_featured_image['url'])) {
   }
 }
 
-$wrapper_attrs = array(
-  'class' => 'webinar-featured-card__wrapper',
-  'href'  => esc_url($link),
+$link_attrs = array(
+  'href' => esc_url($link),
 );
 
 if ($is_external) {
-  $wrapper_attrs['target'] = '_blank';
-  $wrapper_attrs['rel'] = 'noopener noreferrer';
+  $link_attrs['target'] = '_blank';
+  $link_attrs['rel'] = 'noopener noreferrer';
 }
 
-$wrapper_attr_string = '';
-foreach ($wrapper_attrs as $attr => $value) {
-  $wrapper_attr_string .= sprintf(' %1$s="%2$s"', $attr, $value);
+$link_attr_string = '';
+foreach ($link_attrs as $attr => $value) {
+  $link_attr_string .= sprintf(' %1$s="%2$s"', $attr, $value);
 }
 ?>
 
 <article class="webinar-featured-card">
-  <a<?php echo $wrapper_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
-    <?php if ($featured_image_markup) : ?>
-      <div class="webinar-featured-card__figure" aria-hidden="true">
-        <?php echo $featured_image_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-      </div>
-    <?php endif; ?>
-
-    <div class="webinar-featured-card__inner">
+  <div class="webinar-featured-card__wrapper">
+    <div class="webinar-featured-card__row">
       <?php if ($webinar_type) : ?>
-        <div class="webinar-featured-card__row webinar-featured-card__row--meta">
-          <span class="webinar-featured-card__type"><?php echo esc_html($webinar_type); ?></span>
-        </div>
+        <span class="webinar-featured-card__type"><?php echo esc_html($webinar_type); ?></span>
       <?php endif; ?>
+      <span class="webinar-featured-card__line" aria-hidden="true"></span>
+      <?php if ($display_date) : ?>
+        <time class="webinar-featured-card__date" datetime="<?php echo esc_attr($date_value); ?>">
+          <?php echo esc_html($display_date); ?>
+        </time>
+      <?php endif; ?>
+    </div>
 
-      <div class="webinar-featured-card__row">
-        <div class="webinar-featured-card__content">
-          <h3 class="webinar-featured-card__title">
+    <div class="webinar-featured-card__row">
+      <div class="webinar-featured-card__content">
+        <h3 class="webinar-featured-card__title">
+          <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
             <?php echo esc_html($title); ?>
-          </h3>
+          </a>
+        </h3>
+      </div>
+    </div>
 
+    <?php if ($featured_image_markup || $excerpt) : ?>
+      <div class="webinar-featured-card__row">
+        <?php if ($featured_image_markup) : ?>
+          <div class="webinar-featured-card__col1">
+            <div class="webinar-featured-card__figure">
+              <?php echo $featured_image_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+            </div>
+          </div>
+        <?php endif; ?>
+
+        <div class="webinar-featured-card__col3">
           <?php if ($excerpt) : ?>
             <p class="webinar-featured-card__text"><?php echo esc_html($excerpt); ?></p>
           <?php endif; ?>
-        </div>
-      </div>
 
-      <div class="webinar-featured-card__footerRow">
-        <?php if ($display_date) : ?>
-          <time class="webinar-featured-card__date" datetime="<?php echo esc_attr($date_value); ?>">
-            <?php echo esc_html($display_date); ?>
-          </time>
-        <?php endif; ?>
-        <span class="webinar-featured-card__line" aria-hidden="true"></span>
-        <span class="webinar-featured-card__ctaLabel"><?php echo esc_html($cta_label); ?></span>
+          <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="webinar-featured-card__link">
+            <?php echo esc_html($cta_label); ?>
+          </a>
+        </div>
+        <div class="webinar-featured-card__clearfix"></div>
       </div>
-    </div>
-  </a>
+    <?php endif; ?>
+  </div>
 </article>
 

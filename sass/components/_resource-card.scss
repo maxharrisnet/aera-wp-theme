@@ -1,5 +1,4 @@
 @use '../variables' as *;
-@use '../legacy/variables' as legacy;
 @use '../legacy/mixins' as *;
 
 .resource-card {
@@ -76,7 +75,7 @@
 	}
 
 	&__type {
-		font-family: legacy.$font-family-heading;
+		font-family: $font-family-heading;
 		font-size: 0.95rem;
 		letter-spacing: 0.1em;
 		text-transform: uppercase;
@@ -90,7 +89,7 @@
 	}
 
 	&__title {
-		font-family: legacy.$font-family-heading;
+		font-family: $font-family-heading;
 		font-weight: 700;
 		font-size: 1.35rem;
 		line-height: 1.3;
@@ -116,7 +115,7 @@
 	}
 
 	&__date {
-		font-family: legacy.$font-family-heading;
+		font-family: $font-family-heading;
 		font-size: 0.92rem;
 		font-weight: 700;
 		color: $color-black;
@@ -130,7 +129,7 @@
 	}
 
 	&__ctaLabel {
-		font-family: legacy.$font-family-heading;
+		font-family: $font-family-heading;
 		font-size: 0.78rem;
 		font-weight: 600;
 		letter-spacing: 0.2em;
@@ -142,7 +141,7 @@
 		white-space: nowrap;
 	}
 
-	@media (max-width: legacy.$max-960) {
+	@media (max-width: $max-960) {
 		&__wrapper {
 			min-height: 520px;
 		}
@@ -152,7 +151,7 @@
 		}
 	}
 
-	@media (max-width: legacy.$max-720) {
+	@media (max-width: $max-720) {
 		&__wrapper {
 			min-height: auto;
 		}
