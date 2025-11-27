@@ -22,6 +22,8 @@ $customers_tile_image = $assets_base . 'images/ADC/customers.jpg';
 ?>
 
 <main id="primary" class="site-main site-main--decision-cloud">
+  <?php get_template_part('template-parts/components/hero'); ?>
+
   <div class="decisioncloud">
     <!-- Featured Skills Section -->
     <div class="decisioncloud__featuredSkills" id="featured-skills">

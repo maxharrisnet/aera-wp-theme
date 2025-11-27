@@ -1,0 +1,59 @@
+@import '~styles/config';
+
+.intro {
+  position: relative;
+  z-index: 3;
+
+  padding: 200px 0 0;
+
+  text-align: center;
+
+  &.fullHeight {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    height: 500px;
+    min-height: 100vh;
+  }
+
+  @media (min-width: $min-768) {
+    padding: 180px 0 0;
+  }
+
+  @media (min-width: $min-1024) {
+    padding: 290px 0 0;
+  }
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    @include responsive-font(26, 70);
+    margin-bottom: 6px;
+
+    font-family: $font-family-heading;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    color: $font-color-dark;
+  }
+
+  &__text {
+    @include reset-paragraph;
+    @include responsive-font(18, 26);
+
+    margin: 0 auto 1em;
+
+    font-weight: 400;
+
+    @media (min-width: $min-480) {
+      max-width: (840/24)*1em;
+      width: 90%;
+
+      .fullHeight & {
+        max-width: (940/26)*1em;
+      }
+    }
+  }
+}

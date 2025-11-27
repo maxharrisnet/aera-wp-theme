@@ -10,11 +10,6 @@ get_header();
 
 $assets_base = trailingslashit(get_template_directory_uri()) . 'assets/';
 
-// Intro section - get from ACF or use defaults
-$intro_title = function_exists('get_field') ? get_field('about_intro_title') : '';
-$intro_title_line_two = function_exists('get_field') ? get_field('about_intro_title_line_two') : '';
-$intro_text = function_exists('get_field') ? get_field('about_intro_text') : __('Our belief, at our core, is helping companies transform. We believe in driving beyond digital transformation so that organizations can operate at internet speed and scale in the era of Decision Intelligence.', 'aera');
-
 // About section content
 $about_challenge = function_exists('get_field') ? get_field('about_challenge') : __('The digital economy has created a paradox. Enterprises now have more data than ever before, which should make decision-making easier. Yet the volume, velocity, and complexity of information have outpaced human capacity to act with the speed and precision the digital era demands. That\'s why, in the age of AI, the ability to make high-quality decisions rapidly has become a competitive necessity.', 'aera');
 $about_solution = function_exists('get_field') ? get_field('about_solution') : __('The answer is decision intelligence, empowering enterprises to optimize and automate decisions at scale. It marks a profound shift: from people making decisions supported by machines to machines making decisions guided by people. Aera makes this shift possible, delivering an enterprise-wide decision intelligence agent that drives consistent, real-time decisions.', 'aera');
@@ -191,22 +186,7 @@ $offices_map_image = $assets_base . 'images/company/offices-map.png';
 ?>
 
 <main id="primary" class="site-main site-main--about-us">
-  <!-- Intro Section -->
-  <section class="intro">
-    <div class="intro__container">
-      <?php if (!empty($intro_title)) : ?>
-        <h1 class="intro__title">
-          <?php echo esc_html($intro_title); ?>
-          <?php if (!empty($intro_title_line_two)) : ?>
-            <br><?php echo esc_html($intro_title_line_two); ?>
-          <?php endif; ?>
-        </h1>
-      <?php endif; ?>
-      <?php if (!empty($intro_text)) : ?>
-        <p class="intro__text"><?php echo esc_html($intro_text); ?></p>
-      <?php endif; ?>
-    </div>
-  </section>
+  <?php get_template_part('template-parts/components/hero'); ?>
 
   <!-- About Section -->
   <section class="about">

@@ -10,10 +10,6 @@ get_header();
 
 $assets_base = trailingslashit(get_template_directory_uri()) . 'assets/';
 
-// Intro section - get from ACF or use defaults
-$intro_title = function_exists('get_field') ? get_field('careers_intro_title') : __('Careers at Aera', 'aera');
-$intro_text = function_exists('get_field') ? get_field('careers_intro_text') : __('Grow your career by joining leaders, innovators, and technology pioneers at Aera Technology', 'aera');
-
 // Culture section
 $culture_title = function_exists('get_field') ? get_field('careers_culture_title') : __('The big ideas behind our culture.', 'aera');
 
@@ -87,22 +83,7 @@ $jobs = function_exists('get_field') ? get_field('careers_jobs') : array();
 ?>
 
 <main id="primary" class="site-main site-main--careers">
-  <!-- Intro Section -->
-  <section class="intro">
-    <div class="intro__container">
-      <?php if (!empty($intro_title)) : ?>
-        <h1 class="intro__title"><?php echo esc_html($intro_title); ?></h1>
-      <?php endif; ?>
-      <?php if (!empty($intro_text)) : ?>
-        <p class="intro__text"><?php echo esc_html($intro_text); ?></p>
-      <?php endif; ?>
-      <?php if (!empty($roles_title)) : ?>
-        <button id="findCareer" class="button button--default" type="button">
-          <?php esc_html_e('Find Your Career', 'aera'); ?>
-        </button>
-      <?php endif; ?>
-    </div>
-  </section>
+  <?php get_template_part('template-parts/components/hero'); ?>
 
   <!-- Office Image Section -->
   <?php if (!empty($office_image['url'])) : ?>
