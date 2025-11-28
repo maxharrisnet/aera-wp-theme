@@ -18,7 +18,7 @@ defined('ABSPATH') || exit;
 function register_resources_hub_menu(): void
 {
   add_menu_page(
-    __('Resources', 'aera'),
+    __('Resources Options', 'aera'),
     __('Resources', 'aera'),
     'edit_posts',
     'aera-resources-hub',
@@ -30,16 +30,21 @@ function register_resources_hub_menu(): void
 add_action('admin_menu', __NAMESPACE__ . '\\register_resources_hub_menu', 5);
 
 /**
- * Renders the placeholder Resources hub page.
+ * Renders the Resources options page.
  *
  * @return void
  */
 function render_resources_hub_page(): void
 {
+  if (function_exists('acf_add_options_page')) {
+    // Redirect to ACF options page if available
+    wp_safe_redirect(admin_url('admin.php?page=acf-options-resources-options'));
+    exit;
+  }
   ?>
   <div class="wrap">
-    <h1><?php esc_html_e('Resources Hub', 'aera'); ?></h1>
-    <p><?php esc_html_e('Use the submenu links to manage News, Blogs, Press Releases, and the rest of the resource types.', 'aera'); ?></p>
+    <h1><?php esc_html_e('Resources Options', 'aera'); ?></h1>
+    <p><?php esc_html_e('Configure settings for Resources post types. ACF Options Page is required for full functionality.', 'aera'); ?></p>
   </div>
   <?php
 }
@@ -52,7 +57,7 @@ function render_resources_hub_page(): void
 function register_company_hub_menu(): void
 {
   add_menu_page(
-    __('Company', 'aera'),
+    __('Company Options', 'aera'),
     __('Company', 'aera'),
     'edit_posts',
     'aera-company-hub',
@@ -64,19 +69,77 @@ function register_company_hub_menu(): void
 add_action('admin_menu', __NAMESPACE__ . '\\register_company_hub_menu', 5);
 
 /**
- * Renders the placeholder Company hub page.
+ * Renders the Company options page.
  *
  * @return void
  */
 function render_company_hub_page(): void
 {
+  if (function_exists('acf_add_options_page')) {
+    // Redirect to ACF options page if available
+    wp_safe_redirect(admin_url('admin.php?page=acf-options-company-options'));
+    exit;
+  }
   ?>
   <div class="wrap">
-    <h1><?php esc_html_e('Company Hub', 'aera'); ?></h1>
-    <p><?php esc_html_e('Use the submenu links to manage Team Members, Partners, and Customers.', 'aera'); ?></p>
+    <h1><?php esc_html_e('Company Options', 'aera'); ?></h1>
+    <p><?php esc_html_e('Configure settings for Company post types. ACF Options Page is required for full functionality.', 'aera'); ?></p>
   </div>
   <?php
 }
+
+/**
+ * Registers ACF options pages for CPT sections.
+ *
+ * @return void
+ */
+function register_acf_options_pages(): void
+{
+  if (!function_exists('acf_add_options_page')) {
+    return;
+  }
+
+  // Resources Options
+  acf_add_options_page(array(
+    'page_title' => __('Resources Options', 'aera'),
+    'menu_title' => __('Resources Options', 'aera'),
+    'menu_slug'  => 'acf-options-resources-options',
+    'capability' => 'edit_posts',
+    'parent_slug' => 'aera-resources-hub',
+    'icon_url'   => 'dashicons-media-document',
+  ));
+
+  // Events Options
+  acf_add_options_page(array(
+    'page_title' => __('Events Options', 'aera'),
+    'menu_title' => __('Events Options', 'aera'),
+    'menu_slug'  => 'acf-options-events-options',
+    'capability' => 'edit_posts',
+    'parent_slug' => 'edit.php?post_type=event',
+    'icon_url'   => 'dashicons-calendar-alt',
+  ));
+
+  // Webinars Options
+  acf_add_options_page(array(
+    'page_title' => __('Webinars Options', 'aera'),
+    'menu_title' => __('Webinars Options', 'aera'),
+    'menu_slug'  => 'acf-options-webinars-options',
+    'capability' => 'edit_posts',
+    'parent_slug' => 'edit.php?post_type=webinar',
+    'icon_url'   => 'dashicons-video-alt2',
+  ));
+
+  // Company Options
+  acf_add_options_page(array(
+    'page_title' => __('Company Options', 'aera'),
+    'menu_title' => __('Company Options', 'aera'),
+    'menu_slug'  => 'acf-options-company-options',
+    'capability' => 'edit_posts',
+    'parent_slug' => 'aera-company-hub',
+    'icon_url'   => 'dashicons-building',
+  ));
+}
+add_action('acf/init', __NAMESPACE__ . '\\register_acf_options_pages');
 
 /**
  * Forces a visible Customizer entry under Appearance for quick access.
