@@ -1,0 +1,68 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../grid' as *;
+@use '../mixins' as *;
+
+.site-main--events {
+	padding-top: 0;
+}
+
+// Intro section for events
+.intro--events {
+	padding-top: 0;
+}
+
+// News section styles (from legacy React - adapted for resource-card)
+.news--events {
+	padding-top: 0;
+
+	&__container {
+		@include container;
+	}
+
+	&__list {
+		@media (min-width: $min-1200) {
+			@include make-row;
+		}
+	}
+
+	&__col {
+		margin-top: 50px;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+
+		@media (min-width: $min-1200) {
+			@include make-col(math.percentage(math.div(10.5, 12)));
+			margin: 0 auto;
+			padding: 50px 0px;
+		}
+	}
+}
+
+// Grid layout for resource cards on events page
+.news--events .news__col {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+
+	.resource-card,
+	article[class*='resource-card'] {
+		width: 33.33%;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+
+		@media (max-width: $max-960) {
+			width: 50%;
+		}
+
+		@media (max-width: $max-720) {
+			width: 85%;
+			padding: 0;
+			margin: 0 auto;
+			margin-bottom: 20px;
+		}
+	}
+}
+
