@@ -6,7 +6,7 @@
 /* RESOURCE CARD */
 .resource-card {
 	margin-top: $gutter * 1;
-	width: 33.33%;
+	width: 32.9%; // TODO: Fix dumb flexbox widths
 	display: inline-flex;
 	padding: 20px;
 
@@ -232,4 +232,3 @@
 		}
 	}
 }
-

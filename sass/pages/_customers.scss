@@ -1,0 +1,103 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+
+/* CUSTOMERS PAGE */
+.customers {
+	margin-top: $gutter * 1;
+
+	&__container {
+		@include container;
+		padding: 0 90px;
+		max-width: 90%;
+		margin: 0 auto;
+
+		@media (max-width: $max-1024) {
+			max-width: 100%;
+			padding: 0 50px;
+		}
+
+		@media (max-width: $max-960) {
+			padding: 0 20px;
+		}
+
+		@media (max-width: $max-720) {
+			padding: 0 20px;
+		}
+	}
+
+	&__list {
+		@media (min-width: $min-1200) {
+			@include make-row;
+		}
+	}
+
+	&__col {
+		@media (min-width: $min-1200) {
+			@include make-col(math.percentage(math.div(10.5, 12)));
+			margin: 0 auto;
+			padding: 50px 0px;
+		}
+	}
+
+	&__pagination {
+		margin-top: $gutter * 2;
+		text-align: center;
+	}
+
+	&__cta {
+		text-align: center;
+		padding: 70px 0;
+		margin-top: $gutter * 2;
+
+		@media (max-width: $max-720) {
+			padding: 50px 20px;
+		}
+	}
+
+	&__ctaTitle {
+		font-family: $font-family-gilroy;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 42px;
+		line-height: 52px;
+		color: $color-codgray;
+		margin: 0 0 30px 0;
+
+		@media (max-width: $max-720) {
+			font-size: 36px;
+			line-height: 46px;
+		}
+	}
+
+	&__ctaButton {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		padding: 0 2.85714em;
+		height: 3.57143em;
+		color: #1a1a1a;
+		font-family: $font-family-gilroy;
+		font-weight: 600;
+		line-height: 3.57143;
+		letter-spacing: 0.025em;
+		text-transform: uppercase;
+		text-decoration: none;
+		white-space: nowrap;
+		border-radius: 999px;
+		border: 1px solid #bee9f3;
+		cursor: pointer;
+		background: rgba(255, 255, 255, 0.5);
+		transition: 180ms;
+		transition-property: border-color, background-color, color, opacity;
+
+		&:hover {
+			background-color: #dee8fb;
+			border-color: #dee8fb;
+			background-image: linear-gradient(rgba(224, 249, 255, 0) 0%, #e0f9ff 90%);
+			text-decoration: none;
+		}
+	}
+}

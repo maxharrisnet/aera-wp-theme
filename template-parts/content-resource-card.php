@@ -52,13 +52,21 @@ if (!$is_demo && function_exists('get_field')) {
   }
 }
 
-// Get logo from ACF
+// Get logo from ACF - check both resource_logo and customer_logo
 $logo_url = '';
 $logo_data = null;
 if (!$is_demo && function_exists('get_field')) {
+  // First check for resource_logo (standard resource field)
   $logo_data = get_field('resource_logo', $post_id);
   if ($logo_data && !empty($logo_data['url'])) {
     $logo_url = $logo_data['url'];
+  }
+  // If no resource_logo and post type is customer, check customer_logo
+  if (empty($logo_url) && $post_type === 'customer') {
+    $customer_logo = get_field('customer_logo', $post_id);
+    if ($customer_logo && !empty($customer_logo['url'])) {
+      $logo_url = $customer_logo['url'];
+    }
   }
 }
 

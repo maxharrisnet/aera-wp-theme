@@ -21,6 +21,7 @@ Custom Aera styles compiled from SCSS
 @use 'components/header';
 @use 'components/navigation';
 @use 'components/footer';
+@use 'components/social';
 
 @use 'components/resource-card';
 
@@ -35,6 +36,7 @@ Custom Aera styles compiled from SCSS
 @use 'pages/home';
 @use 'pages/decision-cloud';
 @use 'pages/resources';
+@use 'pages/customers';
 @use 'pages/about';
 @use 'pages/careers';
 @use 'pages/partners';
