@@ -25,10 +25,13 @@ Custom Aera styles compiled from SCSS
 
 @use 'components/resource-card';
 
-// @use 'components/blog';
-// @use 'components/blog-author';
-// @use 'components/blog-share';
-// @use 'components/blog-related';
+@use 'components/blog';
+@use 'components/blog-author';
+@use 'components/blog-share';
+@use 'components/blog-related';
+@use 'components/blog-archive';
+@use 'components/blog-not-found';
+@use 'components/blog-article';
 @use 'components/technology';
 // @use 'components/template-page';
 

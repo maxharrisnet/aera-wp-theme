@@ -1,0 +1,56 @@
+@use 'sass:math';
+@use '../reset' as *;
+@use '../variables' as *;
+@use '../grid' as *;
+@use '../mixins' as *;
+
+.blog-article {
+	&__container {
+		@include container;
+
+		@media (min-width: $min-1080) {
+			max-width: 1200px;
+		}
+	}
+
+	&__row {
+		@include make-row;
+	}
+
+	&__left {
+		width: 70%;
+		float: left;
+		color: #1a1a1a;
+
+		@media (max-width: $max-960) {
+			width: 100%;
+			padding: 0 40px;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding: 0 20px;
+		}
+	}
+
+	&__right {
+		width: 30%;
+		float: right;
+		position: relative;
+		right: 0px;
+		top: 0px;
+
+		@media (max-width: $max-960) {
+			width: 100%;
+			padding: 0 40px;
+			position: relative;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding: 0 20px;
+			position: relative;
+		}
+	}
+}
+

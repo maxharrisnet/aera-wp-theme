@@ -56,29 +56,6 @@ $article_classes = array(
         );
         ?>
       </div>
-
-      <aside class="article-template__col article-template__col--sidebar">
-
-        <?php
-        // Author section (if multiple authors)
-        get_template_part('template-parts/content', 'blog-author');
-        ?>
-
-        <?php
-        // Social sharing section
-        get_template_part('template-parts/content', 'blog-share');
-        ?>
-
-        <?php
-        // Related posts section (full list)
-        get_template_part('template-parts/content', 'blog-related');
-        ?>
-
-        <?php
-        // Related posts sidebar (just the "Other Resources" links)
-        get_template_part('template-parts/content', 'blog-related-sidebar');
-        ?>
-      </aside>
     </div>
   </div>
 </article>
