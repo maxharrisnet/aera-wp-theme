@@ -60,6 +60,15 @@ function register_taxonomies(): void
       ),
       'post_types' => array('team_member'),
     ),
+    'event_type'        => array(
+      'singular' => __('Event Type', 'aera'),
+      'plural'   => __('Event Types', 'aera'),
+      'slug'     => 'event-type',
+      'args'     => array(
+        'hierarchical' => false,
+      ),
+      'post_types' => array('event'),
+    ),
   );
 
   foreach ($taxonomies as $taxonomy => $settings) {
@@ -98,6 +107,30 @@ function register_taxonomies(): void
       register_taxonomy_for_object_type($taxonomy, $type);
     }
   }
+
+  // Create default Event Type terms
+  create_default_event_type_terms();
 }
+
+/**
+ * Creates default terms for the Event Type taxonomy.
+ *
+ * @return void
+ */
+function create_default_event_type_terms(): void
+{
+  $taxonomy = 'event_type';
+  $terms = array(
+    'in-person' => __('In-Person', 'aera'),
+    'webinar'   => __('Webinar', 'aera'),
+  );
+
+  foreach ($terms as $slug => $name) {
+    if (!term_exists($slug, $taxonomy)) {
+      wp_insert_term($name, $taxonomy, array('slug' => $slug));
+    }
+  }
+}
+
 add_action('init', __NAMESPACE__ . '\\register_taxonomies', 11);
 

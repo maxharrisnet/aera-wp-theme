@@ -38,7 +38,21 @@ $display_date = $date_value ? date_i18n(get_option('date_format'), strtotime($da
 $external_url = $args['external_url'] ?? (function_exists('get_field') ? get_field('resource_external_url', $post_id) : '');
 $link = $args['link'] ?? ($external_url ?: get_permalink($post_id));
 $is_external = ! empty($external_url) || (isset($args['link']) && str_contains($args['link'], 'http'));
-$cta_label = $args['cta_label'] ?? get_resource_cta_label($post_type);
+
+// Get CTA label: ACF field first, then args, then default function
+$cta_label = '';
+if (!$is_demo && function_exists('get_field')) {
+  $acf_cta = get_field('resource_cta_text', $post_id);
+  if (!empty($acf_cta)) {
+    $cta_label = $acf_cta;
+  }
+}
+if (empty($cta_label) && isset($args['cta_label'])) {
+  $cta_label = $args['cta_label'];
+}
+if (empty($cta_label)) {
+  $cta_label = get_resource_cta_label($post_type);
+}
 $custom_image = $args['image'] ?? '';
 $custom_image_alt = $args['image_alt'] ?? $title;
 

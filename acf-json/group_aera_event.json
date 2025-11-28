@@ -3,17 +3,6 @@
     "title": "Event Fields",
     "fields": [
         {
-            "key": "field_event_type",
-            "label": "Type",
-            "name": "event_type",
-            "type": "text",
-            "instructions": "Type of event.",
-            "required": false,
-            "wrapper": {
-                "width": "33.33"
-            }
-        },
-        {
             "key": "field_event_end_date",
             "label": "End Date",
             "name": "event_end_date",
@@ -34,6 +23,24 @@
             "type": "text",
             "instructions": "City where the event takes place.",
             "required": true,
+            "wrapper": {
+                "width": "33.33"
+            }
+        },
+        {
+            "key": "field_event_status",
+            "label": "Event Status",
+            "name": "event_status",
+            "type": "select",
+            "instructions": "Status of the event.",
+            "required": false,
+            "choices": {
+                "coming_soon": "Coming Soon",
+                "register": "Register",
+                "past": "Past"
+            },
+            "default_value": "coming_soon",
+            "return_format": "value",
             "wrapper": {
                 "width": "33.34"
             }
@@ -66,42 +73,14 @@
             }
         },
         {
-            "key": "field_event_video",
-            "label": "Video URL",
-            "name": "event_video",
-            "type": "url",
-            "instructions": "YouTube or Vimeo URL for event video.",
+            "key": "field_event_featured",
+            "label": "Featured",
+            "name": "event_featured",
+            "type": "true_false",
+            "instructions": "Mark this event as featured. Featured events will appear at the top of the events page.",
             "required": false,
-            "placeholder": "https://youtube.com/... or https://vimeo.com/...",
-            "wrapper": {
-                "width": "50"
-            }
-        },
-        {
-            "key": "field_event_cta_text",
-            "label": "CTA Text",
-            "name": "event_cta_text",
-            "type": "text",
-            "instructions": "Call-to-action button text (e.g., 'Register', 'Learn More').",
-            "required": false,
-            "wrapper": {
-                "width": "50"
-            }
-        },
-        {
-            "key": "field_event_event_type",
-            "label": "Event Type",
-            "name": "event_event_type",
-            "type": "select",
-            "instructions": "Status or type of event.",
-            "required": false,
-            "choices": {
-                "Coming Soon": "Coming Soon",
-                "Register Now": "Register Now",
-                "Past Event": "Past Event"
-            },
-            "default_value": "Coming Soon",
-            "return_format": "value",
+            "default_value": 0,
+            "ui": 1,
             "wrapper": {
                 "width": "50"
             }
@@ -123,7 +102,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Additional fields for events including type, dates, city, logo, attachment, video, CTA text, and event type.",
+    "description": "Additional fields for events including dates, city, status, logo, attachment, and featured status.",
     "show_in_rest": 1,
     "modified": 1735000000
 }

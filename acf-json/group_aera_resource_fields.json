@@ -1,6 +1,6 @@
 {
     "key": "group_aera_resource_fields",
-    "title": "Resource Fields",
+    "title": "Archive Card",
     "fields": [
         {
             "key": "field_resource_card_image",
@@ -65,16 +65,16 @@
             "placeholder": ""
         },
         {
-            "key": "field_resource_author_1",
-            "label": "Author 1",
-            "name": "resource_author_1",
+            "key": "field_resource_author",
+            "label": "Author",
+            "name": "resource_author",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "First author name and details. Each line will create a new paragraph.",
+            "instructions": "Author name and details. Each line will create a new paragraph.",
             "required": false,
             "conditional_logic": false,
             "wrapper": {
-                "width": "33.33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -85,44 +85,22 @@
             "placeholder": ""
         },
         {
-            "key": "field_resource_author_2",
-            "label": "Author 2",
-            "name": "resource_author_2",
+            "key": "field_resource_cta_text",
+            "label": "CTA Text",
+            "name": "resource_cta_text",
             "aria-label": "",
-            "type": "textarea",
-            "instructions": "Second author name and details. Each line will create a new paragraph.",
+            "type": "text",
+            "instructions": "Custom call-to-action button text (e.g., 'Watch', 'Read', 'Download'). If not set, default values will be used based on post type.",
             "required": false,
             "conditional_logic": false,
             "wrapper": {
-                "width": "33.33",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
-            "rows": 3,
-            "new_lines": "wpautop",
             "default_value": "",
-            "maxlength": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_resource_author_3",
-            "label": "Author 3",
-            "name": "resource_author_3",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "Third author name and details. Each line will create a new paragraph.",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "33.34",
-                "class": "",
-                "id": ""
-            },
-            "rows": 3,
-            "new_lines": "wpautop",
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": ""
+            "placeholder": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -211,14 +189,14 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 99,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Common fields for all resource post types including card image, external URL, card excerpt, and author information.",
+    "description": "Common fields for all resource post types including card image, external URL, card excerpt, author, and CTA text.",
     "show_in_rest": 1,
     "display_title": "",
     "modified": 1735000000

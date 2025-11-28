@@ -1,0 +1,148 @@
+@import "~styles/config";
+
+.news {
+  margin-top: $gutter * 1;
+  //@include segment-bottom;
+
+  &__container {
+    @include container;
+  }
+
+  &__list {
+    @media (min-width: $min-1200) {
+      @include make-row;
+    }
+  }
+
+  &__col {
+    @media (min-width: $min-1200) {
+      @include make-col(percentage(12/12));
+      margin-left: 0;
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+  }
+
+  &Item {
+    margin-bottom: 15px;
+    //border-top: 1px solid #5c6476;
+
+    &__row {
+      @include make-row;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+
+    &__col1 {
+      // logo
+      @include make-col(percentage(7/12));
+
+      @media (min-width: $min-720) {
+        width: percentage(3/12);
+      }
+
+      @media (min-width: $min-1200) {
+        width: percentage(3/10);
+      }
+    }
+
+    &__col2 {
+      // date
+      @include make-col(percentage(5/12));
+
+      @media (min-width: $min-720) {
+        width: percentage(2/12);
+        order: 3;
+      }
+
+      @media (min-width: $min-1200) {
+        width: percentage(2/10);
+      }
+
+      @media (min-width: $min-1280) {
+        width: percentage(1/10);
+      }
+    }
+
+    &__col3 {
+      // content
+      @include make-col(percentage(12/12));
+
+      @media (min-width: $min-720) {
+        width: percentage(7/12);
+      }
+
+      @media (min-width: $min-1200) {
+        width: percentage(5/10);
+      }
+
+      @media (min-width: $min-1280) {
+        width: percentage(6/10);
+      }
+    }
+
+    &__logo {
+      margin-top: 20px;
+      max-width: 110px;
+
+      @media (min-width: $min-720) {
+        margin-top: $gutter + 4px;
+      }
+    }
+
+    &__date {
+      margin-top: 18px;
+
+      font-size: 14px;
+      font-weight: 500;
+      text-align: right;
+      color: $font-color-dark;
+
+      @media (min-width: $min-720) {
+        float: right;
+        margin-top: $gutter;
+        white-space: nowrap;
+      }
+    }
+    &__boxWrapper{
+      border: 1px solid #c4c4c4;
+    }
+    &__author{
+      font-size: 14px;
+      line-height: 26px;
+      margin-bottom: 0px;
+      color: #000;
+      padding: 0 15px;
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 26px;
+      margin-top: 5px;
+      padding: 0 15px;
+      a {
+        color: #1a1a1a;
+      }
+    }
+
+    &__link {
+      @include link;
+    }
+  }
+  &__sidebar {
+    border-top: 1px solid #5c6476;
+    ul {
+      padding-left: 20px;
+      margin-top: 0px;
+    }
+    a {
+      display: block;
+      color: #1a1a1a;
+      font-weight: 400;
+      font-size: 18px;
+    }
+  }
+}

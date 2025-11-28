@@ -14,12 +14,17 @@
             }
         },
         {
-            "key": "field_customer_industry",
+            "key": "field_customer_industry_taxonomy",
             "label": "Industry",
-            "name": "customer_industry",
-            "type": "text",
-            "instructions": "Industry or sector of the customer.",
+            "name": "customer_industry_taxonomy",
+            "type": "taxonomy",
+            "instructions": "Select the industry or industries for this customer.",
             "required": false,
+            "taxonomy": "resource_industry",
+            "field_type": "multi_select",
+            "allow_null": false,
+            "return_format": "id",
+            "multiple": true,
             "wrapper": {
                 "width": "50"
             }
@@ -34,6 +39,39 @@
             "return_format": "array",
             "preview_size": "medium",
             "library": "all",
+            "wrapper": {
+                "width": "100"
+            }
+        },
+        {
+            "key": "field_customer_asset_title",
+            "label": "Asset Title",
+            "name": "customer_asset_title",
+            "type": "text",
+            "instructions": "Title for the first asset link displayed on the customer card.",
+            "required": false,
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_customer_asset_cta",
+            "label": "Asset CTA",
+            "name": "customer_asset_cta",
+            "type": "text",
+            "instructions": "Call-to-action text for the first asset link (e.g., 'View Case Study', 'Read More').",
+            "required": false,
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_customer_asset_url",
+            "label": "Asset URL",
+            "name": "customer_asset_url",
+            "type": "url",
+            "instructions": "URL for the first asset link.",
+            "required": false,
             "wrapper": {
                 "width": "100"
             }
@@ -55,7 +93,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Additional fields for customers including company name, industry, and logo.",
+    "description": "Additional fields for customers including company name, industry taxonomy, logo, and asset links.",
     "show_in_rest": 1,
     "modified": 1735000000
 }

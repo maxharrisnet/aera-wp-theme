@@ -35,7 +35,6 @@ function register_post_types(): void
     'case-study',
     'podcast',
     'customer',
-    'event',
     'webinar',
     'faq',
     'media-item',
@@ -95,6 +94,7 @@ function register_post_types(): void
       'plural'    => __('Events', 'aera'),
       'rewrite'   => 'events',
       'menu_icon' => 'dashicons-calendar-alt',
+      'menu_position' => 7,
     ),
     'webinar'       => array(
       'singular'  => __('Webinar', 'aera'),
@@ -161,14 +161,14 @@ function register_post_types(): void
       'has_archive'        => true,
       'rewrite'            => array('slug' => $settings['rewrite'], 'with_front' => false),
       'show_in_rest'       => true,
-      'menu_position'      => 20,
+      'menu_position'      => $settings['menu_position'] ?? 20,
       'menu_icon'          => $settings['menu_icon'],
       'supports'           => $settings['supports'] ?? $defaultSupports,
       'taxonomies'         => array(),
       'show_in_nav_menus'  => true,
       'publicly_queryable' => true,
       'hierarchical'       => false,
-      'show_in_menu'       => in_array($type, $contentMenuTypes, true) ? $contentMenuSlug : true,
+      'show_in_menu'       => ($type === 'event') ? true : (in_array($type, $contentMenuTypes, true) ? $contentMenuSlug : true),
     );
 
     register_post_type($type, $args);

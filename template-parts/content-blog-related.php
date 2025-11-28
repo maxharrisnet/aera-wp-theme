@@ -62,7 +62,11 @@ if (empty($recent_posts)) {
                   // Get author - strip HTML and get first line (matching NewsItem.js structure)
                   $author = '';
                   if (function_exists('get_field')) {
-                    $author_raw = get_field('resource_author_1', $post->ID);
+                    // Try new field name first, fallback to old for backwards compatibility
+                    $author_raw = get_field('resource_author', $post->ID);
+                    if (empty($author_raw)) {
+                      $author_raw = get_field('resource_author_1', $post->ID);
+                    }
                     if ($author_raw) {
                       // Strip HTML tags completely
                       $author_text = wp_strip_all_tags($author_raw);

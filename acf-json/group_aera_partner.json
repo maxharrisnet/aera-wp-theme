@@ -17,6 +17,17 @@
             }
         },
         {
+            "key": "field_partner_link",
+            "label": "Partner Website Link",
+            "name": "partner_link",
+            "type": "url",
+            "instructions": "Optional link to the partner's website. If provided, the partner image will be clickable.",
+            "required": false,
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
             "key": "field_partner_text",
             "label": "Partner Description",
             "name": "partner_text",
@@ -29,17 +40,6 @@
             "delay": 0,
             "wrapper": {
                 "width": "100"
-            }
-        },
-        {
-            "key": "field_partner_link",
-            "label": "Partner Website Link",
-            "name": "partner_link",
-            "type": "url",
-            "instructions": "Optional link to the partner's website. If provided, the partner image will be clickable.",
-            "required": false,
-            "wrapper": {
-                "width": "50"
             }
         }
     ],

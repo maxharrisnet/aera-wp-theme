@@ -1,25 +1,30 @@
 {
   "key": "group_aera_blog",
-    "title": "Blog Fields",
+    "title": "Blog Post",
   "fields": [
     {
-            "key": "field_blog_publisher",
-            "label": "Publisher",
-            "name": "blog_publisher",
-            "type": "text",
-            "instructions": "Name of the publisher or publication.",
+            "key": "field_blog_author",
+            "label": "Author",
+            "name": "blog_author",
+            "type": "textarea",
+            "instructions": "Author name and details. Each line will create a new paragraph.",
             "required": false,
+            "rows": 4,
+            "new_lines": "wpautop",
             "wrapper": {
                 "width": "50"
             }
         },
         {
-            "key": "field_blog_article_url",
-            "label": "Article URL",
-            "name": "blog_article_url",
-            "type": "url",
-            "instructions": "External URL to the full article (if hosted elsewhere).",
+            "key": "field_blog_author_image",
+            "label": "Author Image",
+            "name": "blog_author_image",
+            "type": "image",
+            "instructions": "Author photo or image.",
             "required": false,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
             "wrapper": {
                 "width": "50"
             }
@@ -41,7 +46,7 @@
   "instruction_placement": "label",
   "hide_on_screen": "",
   "active": true,
-    "description": "Additional fields for blog posts including publisher and article URL.",
+    "description": "Additional fields for blog posts including author and author image.",
   "show_in_rest": 1,
     "modified": 1735000000
 }
