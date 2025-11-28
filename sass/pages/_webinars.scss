@@ -10,7 +10,7 @@
 // Intro section for webinars
 .intro--webinars {
 	padding-top: 0;
-}
+	}
 
 // News section styles (from legacy React)
 .news {
@@ -51,8 +51,8 @@
 		&--grid {
 			display: flex;
 			flex-wrap: wrap;
-		}
 	}
+}
 
 	&__col {
 		@media (min-width: $min-1200) {
@@ -164,16 +164,16 @@
 
 		&__imageBorder {
 			//border-bottom: 5px solid #003F68;
-		}
+	}
 
-		&__row {
-			@include make-row;
-			flex-wrap: inherit;
-			margin-left: 0px;
-			margin-right: 0px;
+	&__row {
+		@include make-row;
+		flex-wrap: inherit;
+		margin-left: 0px;
+		margin-right: 0px;
 			padding: 15px 15px 0 15px;
 			justify-content: space-between;
-			align-items: center;
+		align-items: center;
 
 			@media (max-width: $max-960) {
 				flex-direction: column;
@@ -197,13 +197,13 @@
 			a[href='javascript:;'] {
 				cursor: default;
 			}
-		}
+	}
 
 		&__content {
 			@media (max-width: $max-720) {
 				min-height: auto;
 			}
-		}
+	}
 
 		&__lastRow {
 			position: absolute;
@@ -237,13 +237,13 @@
 				margin-top: 0;
 				font-size: 18px;
 				line-height: 26px;
-			}
+		}
 
 			@media (max-width: $max-720) {
 				min-height: auto;
 				margin-top: 0;
-			}
 		}
+	}
 
 		&__link {
 			@include link;
@@ -262,14 +262,14 @@
 
 			&:hover {
 				text-decoration: none !important;
-			}
+		}
 
 			@media (max-width: $max-960) {
 				margin-top: 10px;
-			}
 		}
+	}
 
-		&__figure {
+	&__figure {
 			// For grid items
 		}
 	}
@@ -345,8 +345,8 @@
 
 		img {
 			border-radius: 15px;
-			width: 100%;
-		}
+		width: 100%;
+	}
 
 		@media (max-width: $max-720) {
 			width: 100%;
@@ -372,8 +372,8 @@
 				margin-left: 0;
 				margin-bottom: 20px;
 				width: 100%;
-			}
 		}
+	}
 
 		select,
 		.news__filter {
@@ -381,7 +381,7 @@
 			padding: 8px 10px;
 			border-radius: 8px;
 			border: 1px solid #c2ced7;
-			font-size: 16px;
+		font-size: 16px;
 			font-family: $font-family;
 			color: #5c6475;
 			background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");

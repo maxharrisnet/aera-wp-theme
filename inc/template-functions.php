@@ -35,3 +35,26 @@ function aera_technology_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'aera_technology_pingback_header' );
+
+/**
+ * Remove "Archive:" prefix from archive titles and strip HTML tags.
+ *
+ * @param string $title Archive title.
+ * @return string Cleaned archive title.
+ */
+function aera_clean_archive_title( $title ) {
+	if ( is_archive() ) {
+		// Remove "Archives:" or "Archive:" prefix (case insensitive)
+		$title = preg_replace( '/^Archives?\s*:\s*/i', '', $title );
+
+		// Strip all HTML tags and decode entities
+		$title = wp_strip_all_tags( $title );
+		$title = html_entity_decode( $title, ENT_QUOTES, get_bloginfo( 'charset' ) );
+
+		// Trim whitespace
+		$title = trim( $title );
+	}
+
+	return $title;
+}
+add_filter( 'get_the_archive_title', 'aera_clean_archive_title', 10, 1 );

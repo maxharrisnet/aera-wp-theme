@@ -9,15 +9,49 @@ namespace Aera;
 
 defined('ABSPATH') || exit;
 
-// Get hero fields from ACF
+// Initialize $args if not provided (for backward compatibility)
+$args = $args ?? array();
+
+// Priority order for hero data:
+// 1. Arguments passed directly (for archive pages, etc.)
+// 2. ACF page/post fields (for regular pages)
+// 3. ACF Options page fields (for archive defaults)
+// 4. Fallback defaults
+
+$hero_title = $args['hero_title'] ?? null;
+$hero_title_line_two = $args['hero_title_line_two'] ?? null;
+$hero_subtitle = $args['hero_subtitle'] ?? null;
+$hero_text = $args['hero_text'] ?? null;
+$hero_button_text = $args['hero_button_text'] ?? null;
+$hero_button_link = $args['hero_button_link'] ?? null;
+$hero_full_height = $args['hero_full_height'] ?? null;
+$hero_variation = $args['hero_variation'] ?? null;
+
+// Fallback to ACF page/post fields if arguments not provided
+if ($hero_title === null) {
 $hero_title = get_field('hero_title');
+}
+if ($hero_title_line_two === null) {
 $hero_title_line_two = get_field('hero_title_line_two');
+}
+if ($hero_subtitle === null) {
 $hero_subtitle = get_field('hero_subtitle');
+}
+if ($hero_text === null) {
 $hero_text = get_field('hero_text');
+}
+if ($hero_button_text === null) {
 $hero_button_text = get_field('hero_button_text');
+}
+if ($hero_button_link === null) {
 $hero_button_link = get_field('hero_button_link');
+}
+if ($hero_full_height === null) {
 $hero_full_height = get_field('hero_full_height');
+}
+if ($hero_variation === null) {
 $hero_variation = get_field('hero_variation') ?: 'default';
+}
 
 // Build classes
 $hero_classes = array('hero');

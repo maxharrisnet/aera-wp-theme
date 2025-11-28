@@ -60,15 +60,40 @@ $on_demand_query = new WP_Query($on_demand_args);
 ?>
 
 <main id="primary" class="site-main site-main--webinars">
-  <!-- Intro Section -->
-  <section class="intro intro--webinars">
-    <div class="intro__container">
-      <h1 class="intro__title">Webinars</h1>
-      <?php if (!empty($hero['description'])) : ?>
-        <p class="intro__text"><?php echo esc_html($hero['description']); ?></p>
-      <?php endif; ?>
-    </div>
-  </section>
+  <?php
+  // Prepare hero data - try ACF group field first, then use defaults
+  // You can customize any of these fields via ACF or by modifying the array below
+  $hero_args = array();
+
+  // Title - from ACF or default
+  if (!empty($hero['title'])) {
+    $hero_args['hero_title'] = $hero['title'];
+  } else {
+    $hero_args['hero_title'] = __('Webinars', 'aera');
+  }
+
+  // Text/Description - from ACF or default
+  if (!empty($hero['description'])) {
+    $hero_args['hero_text'] = $hero['description'];
+  } else {
+    $hero_args['hero_text'] = __('Register for upcoming webinars or explore our library of past sessions. Filter videos by industry, solution area or job function to find the content most relevant to you.', 'aera');
+  }
+
+  // Optional: Add subtitle if needed
+  // $hero_args['hero_subtitle'] = __('Your subtitle here', 'aera');
+
+  // Optional: Add button if needed
+  // $hero_args['hero_button_text'] = __('Schedule Demo', 'aera');
+  // $hero_args['hero_button_link'] = home_url('/demo');
+
+  // Optional: Full height hero
+  // $hero_args['hero_full_height'] = true;
+
+  // Optional: Hero variation (home, careers, team, skillset)
+  // $hero_args['hero_variation'] = 'default';
+
+  get_template_part('template-parts/components/hero', null, $hero_args);
+  ?>
 
   <!-- Featured Events Section -->
   <?php if ($featured_query->have_posts()) : ?>
