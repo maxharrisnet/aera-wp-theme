@@ -29,8 +29,6 @@ function get_resource_types(): array
         'case-study',
         'podcast',
         'customer',
-        'event',
-        'webinar',
       ),
     ),
     'news'          => array(

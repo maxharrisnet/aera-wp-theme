@@ -3,86 +3,6 @@
     "title": "Webinar Fields",
     "fields": [
         {
-            "key": "field_webinar_type",
-            "label": "Type",
-            "name": "webinar_type",
-            "type": "text",
-            "instructions": "Type or category of the webinar.",
-            "required": false,
-            "wrapper": {
-                "width": "33.33"
-            }
-        },
-        {
-            "key": "field_webinar_tags",
-            "label": "Tags",
-            "name": "webinar_tags",
-            "type": "textarea",
-            "instructions": "Tags or keywords for the webinar. Each line will create a new tag.",
-            "required": false,
-            "rows": 3,
-            "new_lines": "br",
-            "wrapper": {
-                "width": "33.33"
-            }
-        },
-        {
-            "key": "field_webinar_logo",
-            "label": "Logo",
-            "name": "webinar_logo",
-            "type": "image",
-            "instructions": "Webinar logo or branding image.",
-            "required": false,
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "wrapper": {
-                "width": "33.34"
-            }
-        },
-        {
-            "key": "field_webinar_attachment",
-            "label": "Attachment",
-            "name": "webinar_attachment",
-            "type": "file",
-            "instructions": "Webinar materials or documents.",
-            "required": false,
-            "return_format": "array",
-            "library": "all",
-            "wrapper": {
-                "width": "50"
-            }
-        },
-        {
-            "key": "field_webinar_video",
-            "label": "Video URL",
-            "name": "webinar_video",
-            "type": "url",
-            "instructions": "YouTube or Vimeo URL for the webinar video.",
-            "required": false,
-            "placeholder": "https://youtube.com/... or https://vimeo.com/...",
-            "wrapper": {
-                "width": "50"
-            }
-        },
-        {
-            "key": "field_webinar_form_or_video",
-            "label": "Form or Video",
-            "name": "webinar_form_or_video",
-            "type": "select",
-            "instructions": "Choose whether this webinar uses a form or video.",
-            "required": false,
-            "choices": {
-                "Form": "Form",
-                "Video": "Video"
-            },
-            "return_format": "value",
-            "allow_null": true,
-            "wrapper": {
-                "width": "50"
-            }
-        },
-        {
             "key": "field_webinar_date",
             "label": "Webinar Date",
             "name": "webinar_date",
@@ -122,6 +42,19 @@
             "wrapper": {
                 "width": "33.34"
             }
+        },
+        {
+            "key": "field_webinar_excerpt",
+            "label": "Excerpt",
+            "name": "webinar_excerpt",
+            "type": "textarea",
+            "instructions": "Short description for the webinar. If not set, the WordPress excerpt will be used.",
+            "required": false,
+            "rows": 3,
+            "new_lines": "br",
+            "wrapper": {
+                "width": "100"
+            }
         }
     ],
     "location": [
@@ -140,7 +73,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Additional fields for webinars including type, tags, logo, attachment, video URL, form or video option, date, featured status, and featured image.",
+    "description": "Additional fields for webinars including date, featured status, featured image, and excerpt.",
     "show_in_rest": 1,
     "modified": 1735000000
 }

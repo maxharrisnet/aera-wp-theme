@@ -108,6 +108,7 @@ function register_post_types(): void
       'plural'    => __('Webinars', 'aera'),
       'rewrite'   => 'webinars',
       'menu_icon' => 'dashicons-video-alt2',
+      'menu_position' => 7,
     ),
     'faq'           => array(
       'singular'  => __('FAQ Item', 'aera'),
@@ -175,7 +176,7 @@ function register_post_types(): void
       'show_in_nav_menus'  => true,
       'publicly_queryable' => $settings['publicly_queryable'] ?? true,
       'hierarchical'       => false,
-      'show_in_menu'       => isset($settings['show_in_menu']) ? $settings['show_in_menu'] : (($type === 'event') ? true : (in_array($type, $resourcesMenuTypes, true) ? $resourcesMenuSlug : (in_array($type, $companyMenuTypes, true) ? $companyMenuSlug : true))),
+      'show_in_menu'       => isset($settings['show_in_menu']) ? $settings['show_in_menu'] : (($type === 'event' || $type === 'webinar') ? true : (in_array($type, $resourcesMenuTypes, true) ? $resourcesMenuSlug : (in_array($type, $companyMenuTypes, true) ? $companyMenuSlug : true))),
     );
 
     register_post_type($type, $args);

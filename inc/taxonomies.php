@@ -60,14 +60,32 @@ function register_taxonomies(): void
       ),
       'post_types' => array('team_member'),
     ),
-    'event_type'        => array(
-      'singular' => __('Event Type', 'aera'),
-      'plural'   => __('Event Types', 'aera'),
-      'slug'     => 'event-type',
+    'webinar_industry'  => array(
+      'singular' => __('Industry', 'aera'),
+      'plural'   => __('Industries', 'aera'),
+      'slug'     => 'webinar-industry',
       'args'     => array(
-        'hierarchical' => false,
+        'hierarchical' => true,
       ),
-      'post_types' => array('event'),
+      'post_types' => array('webinar'),
+    ),
+    'webinar_solution_area' => array(
+      'singular' => __('Solution Area', 'aera'),
+      'plural'   => __('Solution Areas', 'aera'),
+      'slug'     => 'webinar-solution-area',
+      'args'     => array(
+        'hierarchical' => true,
+      ),
+      'post_types' => array('webinar'),
+    ),
+    'webinar_job_function' => array(
+      'singular' => __('Job Function', 'aera'),
+      'plural'   => __('Job Functions', 'aera'),
+      'slug'     => 'webinar-job-function',
+      'args'     => array(
+        'hierarchical' => true,
+      ),
+      'post_types' => array('webinar'),
     ),
   );
 
@@ -108,28 +126,6 @@ function register_taxonomies(): void
     }
   }
 
-  // Create default Event Type terms
-  create_default_event_type_terms();
-}
-
-/**
- * Creates default terms for the Event Type taxonomy.
- *
- * @return void
- */
-function create_default_event_type_terms(): void
-{
-  $taxonomy = 'event_type';
-  $terms = array(
-    'in-person' => __('In-Person', 'aera'),
-    'webinar'   => __('Webinar', 'aera'),
-  );
-
-  foreach ($terms as $slug => $name) {
-    if (!term_exists($slug, $taxonomy)) {
-      wp_insert_term($name, $taxonomy, array('slug' => $slug));
-    }
-  }
 }
 
 add_action('init', __NAMESPACE__ . '\\register_taxonomies', 11);

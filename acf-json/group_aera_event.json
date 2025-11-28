@@ -3,28 +3,14 @@
     "title": "Event Fields",
     "fields": [
         {
-            "key": "field_event_end_date",
-            "label": "End Date",
-            "name": "event_end_date",
-            "type": "date_picker",
-            "instructions": "End date for the event.",
-            "required": false,
-            "display_format": "F j, Y",
-            "return_format": "Y-m-d",
-            "first_day": 1,
-            "wrapper": {
-                "width": "33.33"
-            }
-        },
-        {
             "key": "field_event_city",
             "label": "City",
             "name": "event_city",
             "type": "text",
-            "instructions": "City where the event takes place.",
+            "instructions": "City where the event takes place. Use \"Virtual\" if the event is online.",
             "required": true,
             "wrapper": {
-                "width": "33.33"
+                "width": "50"
             }
         },
         {
@@ -42,45 +28,33 @@
             "default_value": "coming_soon",
             "return_format": "value",
             "wrapper": {
-                "width": "33.34"
+                "width": "50"
             }
         },
         {
-            "key": "field_event_logo",
-            "label": "Logo",
-            "name": "event_logo",
-            "type": "image",
-            "instructions": "Event logo or branding image.",
+            "key": "field_event_start_date",
+            "label": "Start Date",
+            "name": "event_start_date",
+            "type": "date_picker",
+            "instructions": "Start date for the event.",
             "required": false,
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
+            "display_format": "F j, Y",
+            "return_format": "Y-m-d",
+            "first_day": 1,
             "wrapper": {
                 "width": "50"
             }
         },
         {
-            "key": "field_event_attachment",
-            "label": "Attachment",
-            "name": "event_attachment",
-            "type": "file",
-            "instructions": "Event materials or documents.",
+            "key": "field_event_end_date",
+            "label": "End Date",
+            "name": "event_end_date",
+            "type": "date_picker",
+            "instructions": "End date for the event.",
             "required": false,
-            "return_format": "array",
-            "library": "all",
-            "wrapper": {
-                "width": "50"
-            }
-        },
-        {
-            "key": "field_event_featured",
-            "label": "Featured",
-            "name": "event_featured",
-            "type": "true_false",
-            "instructions": "Mark this event as featured. Featured events will appear at the top of the events page.",
-            "required": false,
-            "default_value": 0,
-            "ui": 1,
+            "display_format": "F j, Y",
+            "return_format": "Y-m-d",
+            "first_day": 1,
             "wrapper": {
                 "width": "50"
             }
@@ -102,7 +76,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Additional fields for events including dates, city, status, logo, attachment, and featured status.",
+    "description": "Additional fields for events including start date, end date, city, and status.",
     "show_in_rest": 1,
     "modified": 1735000000
 }

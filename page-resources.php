@@ -42,7 +42,7 @@ $demo_resources = array(
   array(
     'title'      => __('Hershey, Gallo Advance Decision Intelligence Across the Supply Chain', 'aera'),
     'excerpt'    => __('Supply chain leaders from Hershey and Gallo share how they are scaling decision intelligence from pilot to production.', 'aera'),
-    'type_label' => __('new', 'aera'),
+    'type_label' => __('News', 'aera'),
     'post_type'  => 'news',
     'date'       => '2025-11-18',
     'image'      => $demo_media_base . 'aera_tile.png',
