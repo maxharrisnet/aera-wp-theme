@@ -1,7 +1,27 @@
 {
     "key": "group_aera_resource_fields",
-    "title": "Archive Card",
+    "title": "Resource Card",
     "fields": [
+        {
+            "key": "field_resource_author",
+            "label": "Author",
+            "name": "resource_author",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Author name and details. Each line will create a new paragraph.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "rows": 3,
+            "new_lines": "wpautop",
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
         {
             "key": "field_resource_card_image",
             "label": "Card Image",
@@ -28,23 +48,6 @@
             "mime_types": ""
         },
         {
-            "key": "field_resource_external_url",
-            "label": "External URL",
-            "name": "resource_external_url",
-            "aria-label": "",
-            "type": "url",
-            "instructions": "If this resource links to an external URL (e.g., HubSpot, YouTube), enter it here. Leave empty to use the WordPress post permalink.",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
             "key": "field_resource_excerpt",
             "label": "Card Excerpt",
             "name": "resource_excerpt",
@@ -60,26 +63,6 @@
             },
             "rows": 3,
             "new_lines": "br",
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_resource_author",
-            "label": "Author",
-            "name": "resource_author",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "Author name and details. Each line will create a new paragraph.",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "50",
-                "class": "",
-                "id": ""
-            },
-            "rows": 3,
-            "new_lines": "wpautop",
             "default_value": "",
             "maxlength": "",
             "placeholder": ""
@@ -101,6 +84,23 @@
             "default_value": "",
             "placeholder": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_resource_external_url",
+            "label": "External URL",
+            "name": "resource_external_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "If this resource links to an external URL (e.g., HubSpot, YouTube), enter it here. Leave empty to use the WordPress post permalink.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         }
     ],
     "location": [
@@ -196,7 +196,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Common fields for all resource post types including card image, external URL, card excerpt, author, and CTA text.",
+    "description": "Common fields for all resource post types including author, card image, card excerpt, CTA text, and external URL.",
     "show_in_rest": 1,
     "display_title": "",
     "modified": 1735000000
