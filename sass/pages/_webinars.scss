@@ -4,253 +4,462 @@
 @use '../mixins' as *;
 
 .site-main--webinars {
-	padding-top: 7rem;
+	padding-top: 0;
 }
 
-.webinars-hero {
-	@include container;
-	padding: 3rem 0 2rem;
-	text-align: center;
-
-	&__title {
-		@include heading($hasMargin: false, $min: 32, $max: 60);
-		margin-bottom: 1rem;
-		color: $color-black;
-	}
-
-	&__description {
-		max-width: 720px;
-		margin: 0 auto;
-		font-size: 1.1rem;
-		color: $color-slate;
-	}
+// Intro section for webinars
+.intro--webinars {
+	padding-top: 0;
 }
 
-.webinars-featured {
-	padding: clamp(2rem, 6vw, 4rem) 0;
+// News section styles (from legacy React)
+.news {
+	padding-top: 0;
 
 	&__container {
 		@include container;
 	}
 
-	&__title {
-		@include heading($hasMargin: false, $min: 28, $max: 42);
-		margin-bottom: 2rem;
-		color: $color-black;
-		text-align: center;
+	&__subheading {
+		font-size: 48px;
+		font-family: $font-family-heading;
+		line-height: 48px;
+		color: #000;
+		margin-bottom: 0;
+
+		@media (max-width: $max-720) {
+			font-size: 36px;
+		}
+	}
+
+	&__para {
+		font-size: 26px;
+		line-height: 36px;
+		font-family: $font-family;
+		margin-top: 10px;
+
+		@media (max-width: $max-720) {
+			font-size: 22px;
+		}
 	}
 
 	&__list {
-		width: 100%;
-		padding: 1.5rem 0;
-
 		@media (min-width: $min-1200) {
 			@include make-row;
 		}
-	}
-}
 
-.webinar-featured-card {
-	width: 100%;
-	margin-bottom: 30px;
-
-	&__wrapper {
-		box-shadow: 0px 0px 8px #e5e5e5;
-		border-radius: 38px;
-		padding: 30px 0px;
-		background: $color-white;
+		&--grid {
+			display: flex;
+			flex-wrap: wrap;
+		}
 	}
 
-	&__row {
-		@include make-row;
-		flex-wrap: inherit;
-		margin-left: 0px;
-		margin-right: 0px;
-		padding: 0px 30px;
-		align-items: center;
+	&__col {
+		@media (min-width: $min-1200) {
+			@include make-col(math.percentage(math.div(10.5, 12)));
+			margin: 0 auto;
+			padding: 50px 0px;
+		}
+		padding: 50px 0;
+	}
+
+	// Featured Events Item (large horizontal cards)
+	&Item {
+		margin-bottom: $gutter * 2;
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		align-content: center;
+		flex-wrap: nowrap;
+
+		// Grid items (for all resources section)
+		.news--all-resources & {
+			width: 33.33%;
+			display: inline-flex;
+			padding: 20px 20px 20px 20px;
+			margin-bottom: 0;
+
+			@media (max-width: $max-960) {
+				width: 50%;
+			}
+
+			@media (max-width: $max-720) {
+				width: 85%;
+				padding: 0;
+				margin: 0 auto;
+				display: block;
+				margin-bottom: 20px;
+			}
+		}
+
+		&:nth-child(even) {
+			flex-direction: row-reverse;
+
+			@media (max-width: $max-720) {
+				flex-direction: column-reverse;
+			}
+		}
 
 		@media (max-width: $max-720) {
+			flex-direction: column-reverse;
+			margin-bottom: 20px;
+		}
+
+		&__highlight {
+			padding: 0;
+			margin: 0;
+			font-family: inherit;
+			font-size: inherit;
+			font-weight: inherit;
+			line-height: inherit;
+			vertical-align: baseline;
+			border: 0;
+			background: 0 0;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			font-size: 13px;
+			display: -ms-inline-flexbox;
+			display: inline-flex;
+			-ms-flex-pack: center;
+			justify-content: center;
+			position: relative;
+			padding: 0 2.85714em;
+			height: 3.57143em;
+			color: #1a1a1a;
+			font-family: $font-family-heading;
+			font-weight: 600;
+			line-height: 3.57143;
+			letter-spacing: 0.025em;
+			text-transform: uppercase;
+			text-decoration: none;
+			white-space: nowrap;
+			border-radius: 999px;
+			border: 1px solid #bee9f3;
+			cursor: pointer;
+			background: rgba(255, 255, 255, 0.5);
+			transition: 180ms;
+			transition-property: border-color, background-color, color, opacity;
+		}
+
+		&__bgImage {
+			width: 100%;
 			display: block;
+			height: 190px;
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			border-radius: 5px 5px 0px 0px;
+
+			@media (max-width: $max-960) {
+				min-height: 70px;
+				background-size: cover;
+			}
+
+			@media (max-width: $max-720) {
+				min-height: 100px;
+				background-size: contain;
+			}
+		}
+
+		&__imageBorder {
+			//border-bottom: 5px solid #003F68;
+		}
+
+		&__row {
+			@include make-row;
+			flex-wrap: inherit;
+			margin-left: 0px;
+			margin-right: 0px;
+			padding: 15px 15px 0 15px;
+			justify-content: space-between;
+			align-items: center;
+
+			@media (max-width: $max-960) {
+				flex-direction: column;
+				align-items: baseline;
+			}
+		}
+
+		&__wrapper {
+			box-shadow: 1px 1px 10px #e5e5e5;
+			border-radius: 5px;
+			min-height: 450px;
+			position: relative;
+			width: 100%;
+			display: block;
+
+			@media (max-width: $max-720) {
+				min-height: auto;
+				margin-bottom: 20px;
+			}
+
+			a[href='javascript:;'] {
+				cursor: default;
+			}
+		}
+
+		&__content {
+			@media (max-width: $max-720) {
+				min-height: auto;
+			}
+		}
+
+		&__lastRow {
+			position: absolute;
+			bottom: 15px;
+			left: 0;
+			width: 100%;
+
+			div {
+				justify-content: end;
+			}
+
+			@media (max-width: $max-720) {
+				bottom: 0;
+				position: relative;
+				padding-bottom: 20px;
+			}
+		}
+
+		&__title {
+			@include subheading;
+			font-family: $font-family-heading;
+			font-style: normal;
+			font-weight: bold;
+			font-size: 22px;
+			line-height: 27px;
+			color: #000;
+			margin: 15px 0px;
+
+			@media (max-width: $max-960) {
+				min-height: auto;
+				margin-top: 0;
+				font-size: 18px;
+				line-height: 26px;
+			}
+
+			@media (max-width: $max-720) {
+				min-height: auto;
+				margin-top: 0;
+			}
+		}
+
+		&__link {
+			@include link;
+			text-align: right;
+			display: block;
+			border-radius: 50px;
+			color: #000;
+			white-space: nowrap;
+
+			img {
+				display: inline-block;
+				vertical-align: text-bottom;
+				margin-left: 5px;
+				width: 14px;
+			}
+
+			&:hover {
+				text-decoration: none !important;
+			}
+
+			@media (max-width: $max-960) {
+				margin-top: 10px;
+			}
+		}
+
+		&__figure {
+			// For grid items
 		}
 	}
 
-	&__clearfix {
-		clear: both;
-	}
-
-	&__col1 {
-		@include make-col(math.percentage(math.div(12, 12)));
-		padding: 0;
-
-		img {
-			padding-right: 20px;
-		}
-
-		@media (min-width: $min-720) {
-			width: math.percentage(math.div(5, 12));
-			float: left;
-		}
-
-		@media (min-width: $min-1200) {
-			width: math.percentage(math.div(5, 10));
-		}
-	}
-
-	&__col3 {
-		@include make-col(math.percentage(math.div(12, 12)));
-		padding: 0;
-
-		@media (min-width: $min-720) {
-			width: math.percentage(math.div(5, 12));
-			float: right;
-		}
-
-		@media (min-width: $min-1200) {
-			width: math.percentage(math.div(5, 10));
-		}
-	}
-
-	&__figure {
-		position: relative;
-		margin-bottom: 0;
-		background: #eee;
+	// Featured Events specific styles
+	&__featuredEventsDetails {
+		padding: 20px 40px 20px 0px;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: start;
+		width: 40%;
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding: 20px 0px 20px 0px;
+		}
 	}
 
-	&__image {
-		display: block;
-		width: 100%;
-		height: auto;
-		max-width: 100%;
+	&__detailsWrapper {
+		// Container for details
 	}
 
 	&__type {
 		font-family: $font-family-heading;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 14px;
-		line-height: 20px;
-		display: inline-block;
-		color: #00578f;
-		position: relative;
-		white-space: nowrap;
+		font-size: 16px;
+		font-weight: 700;
+		line-height: 19.34px;
+		text-align: left;
+		color: #00619e;
 	}
 
-	&__line {
-		width: 100%;
-		height: 1px;
-		background-color: #000;
-		margin: 10px 10px;
+	&__heading {
+		font-family: $font-family-heading;
+		font-size: 34px;
+		font-weight: 700;
+		line-height: 41.11px;
+		text-align: left;
+		margin: 15px 0;
 
 		@media (max-width: $max-720) {
-			margin: 10px 0px;
+			font-size: 28px;
+			line-height: 38px;
 		}
 	}
 
-	&__date {
-		font-size: 14px;
-		font-weight: 500;
-		text-align: right;
-		color: #000;
+	&__subheading {
+		font-family: $font-family;
+		font-size: 20px;
+		font-weight: 400;
+		line-height: 30px;
+		text-align: left;
+		color: #5c6475;
+		margin: 0;
+		margin-bottom: 20px;
 
-		@media (min-width: $min-720) {
-			float: right;
-			white-space: nowrap;
+		@media (max-width: $max-1024) {
+			margin-bottom: 20px;
 		}
 
 		@media (max-width: $max-720) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__buttonWrapper {
+		margin-top: auto;
+	}
+
+	&__featuredEventsImage {
+		width: 60%;
+		padding-right: 50px;
+
+		img {
+			border-radius: 15px;
+			width: 100%;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding-right: 0;
+		}
+	}
+
+	// Filter row for all resources
+	&__filterRow {
+		display: flex;
+		padding: 20px 0 50px 0;
+
+		@media (max-width: $max-720) {
+			flex-direction: column;
+		}
+
+		div {
+			margin: 0 10px;
+			width: 33.33%;
+
+			@media (max-width: $max-720) {
+				margin-right: 0;
+				margin-left: 0;
+				margin-bottom: 20px;
+				width: 100%;
+			}
+		}
+
+		select,
+		.news__filter {
+			width: 100%;
+			padding: 8px 10px;
+			border-radius: 8px;
+			border: 1px solid #c2ced7;
+			font-size: 16px;
+			font-family: $font-family;
+			color: #5c6475;
+			background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+			background-repeat: no-repeat;
+			background-position-x: 100%;
+			background-position-y: 6px;
+			-moz-appearance: none !important;
+			-webkit-appearance: none !important;
+			appearance: none !important;
+		}
+	}
+
+	// Form section
+	&__formSection {
+		background-color: #f5f7fa;
+
+		h3 {
+			font-family: $font-family-heading;
+			font-size: 34px;
+			font-weight: 700;
+			line-height: 41.11px;
+			text-align: left;
+			margin: 0;
+		}
+
+		p {
+			font-family: $font-family;
+			font-size: 22px;
+			font-weight: 400;
+			line-height: 28.18px;
 			text-align: left;
 		}
 	}
 
-	&__content {
-		width: 100%;
-	}
+	&__formRow {
+		display: flex;
 
-	&__title {
-		font-family: $font-family-heading;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 20px;
-		line-height: 27px;
-		color: #1a1a1a;
-		margin: 0;
-
-		a {
-			color: #1a1a1a;
-			text-decoration: none;
-
-			&:hover {
-				text-decoration: underline;
-			}
+		@media (max-width: $max-720) {
+			flex-direction: column;
 		}
 	}
 
-	&__text {
-		margin-top: 0px;
-		font-size: 16px;
-		line-height: 20px;
-		color: $color-black;
+	&__formText {
+		width: 40%;
+		padding-right: 40px;
+
+		@media (max-width: $max-1024) {
+			width: 50%;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding-right: 0;
+		}
 	}
 
-	&__link {
-		@include link;
-		text-align: center;
-		display: inline-block;
-		background-color: #003f68;
-		border-radius: 50px;
-		color: #fff;
-		padding: 5px 25px;
-		text-decoration: none;
-		margin-top: 1rem;
+	&__formWrapper {
+		position: relative;
+		width: 60%;
+		margin: 0 auto;
 
-		&:hover {
-			text-decoration: none !important;
-			background-color: #00578f;
+		@media (max-width: $max-960) {
+			width: 50%;
+			margin-top: 0px;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			margin-top: 50px;
 		}
 	}
 }
 
-.webinars-on-demand {
-	padding: clamp(2rem, 6vw, 4rem) 0;
-
-	&__container {
-		@include container;
-	}
-
-	&__title {
-		@include heading($hasMargin: false, $min: 28, $max: 42);
-		margin-bottom: 2rem;
-		color: $color-black;
-		text-align: center;
-	}
-
-	&__list {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-		gap: clamp(1.5rem, 4vw, 2.75rem);
-		padding: 1.5rem 0 3.5rem;
-	}
-
-	&__pagination {
-		padding-bottom: 4rem;
-		text-align: center;
-
-		ul {
-			list-style: none;
-			display: inline-flex;
-			gap: 0.5rem;
-			padding: 0;
-			margin: 0;
-		}
-	}
-
-	&__empty {
-		text-align: center;
-		padding: 3rem 0;
-		color: $color-slate;
-		font-size: 1.1rem;
+.highlighted {
+	&:hover {
+		outline: none;
+		border-color: #e0f9ff rgba(255, 255, 255, 0) #dee8fb;
+		background-color: #e0f9ff;
+		background-image: linear-gradient(rgba(222, 232, 251, 0) 0%, #dee8fb 90%);
 	}
 }
