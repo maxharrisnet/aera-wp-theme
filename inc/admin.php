@@ -11,35 +11,69 @@ namespace Aera;
 defined('ABSPATH') || exit;
 
 /**
- * Registers the Content hub menu used to group resource CPTs.
+ * Registers the Resources hub menu used to group resource CPTs.
  *
  * @return void
  */
-function register_content_hub_menu(): void
+function register_resources_hub_menu(): void
 {
   add_menu_page(
-    __('Content', 'aera'),
-    __('Content', 'aera'),
+    __('Resources', 'aera'),
+    __('Resources', 'aera'),
     'edit_posts',
-    'aera-content-hub',
-    __NAMESPACE__ . '\\render_content_hub_page',
+    'aera-resources-hub',
+    __NAMESPACE__ . '\\render_resources_hub_page',
     'dashicons-media-document',
-    6
+    5
   );
 }
-add_action('admin_menu', __NAMESPACE__ . '\\register_content_hub_menu', 5);
+add_action('admin_menu', __NAMESPACE__ . '\\register_resources_hub_menu', 5);
 
 /**
- * Renders the placeholder Content hub page.
+ * Renders the placeholder Resources hub page.
  *
  * @return void
  */
-function render_content_hub_page(): void
+function render_resources_hub_page(): void
 {
   ?>
   <div class="wrap">
-    <h1><?php esc_html_e('Content Hub', 'aera'); ?></h1>
+    <h1><?php esc_html_e('Resources Hub', 'aera'); ?></h1>
     <p><?php esc_html_e('Use the submenu links to manage News, Blogs, Press Releases, and the rest of the resource types.', 'aera'); ?></p>
+  </div>
+  <?php
+}
+
+/**
+ * Registers the Company hub menu used to group company-related CPTs.
+ *
+ * @return void
+ */
+function register_company_hub_menu(): void
+{
+  add_menu_page(
+    __('Company', 'aera'),
+    __('Company', 'aera'),
+    'edit_posts',
+    'aera-company-hub',
+    __NAMESPACE__ . '\\render_company_hub_page',
+    'dashicons-building',
+    7
+  );
+}
+add_action('admin_menu', __NAMESPACE__ . '\\register_company_hub_menu', 5);
+
+/**
+ * Renders the placeholder Company hub page.
+ *
+ * @return void
+ */
+function render_company_hub_page(): void
+{
+  ?>
+  <div class="wrap">
+    <h1><?php esc_html_e('Company Hub', 'aera'); ?></h1>
+    <p><?php esc_html_e('Use the submenu links to manage Team Members, Partners, and Customers.', 'aera'); ?></p>
   </div>
   <?php
 }

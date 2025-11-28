@@ -25,8 +25,8 @@ function register_post_types(): void
     'revisions',
   );
 
-  $contentMenuSlug = 'aera-content-hub';
-  $contentMenuTypes = array(
+  $resourcesMenuSlug = 'aera-resources-hub';
+  $resourcesMenuTypes = array(
     'news',
     'press-release',
     'video',
@@ -34,10 +34,17 @@ function register_post_types(): void
     'blog',
     'case-study',
     'podcast',
-    'customer',
     'webinar',
     'faq',
     'media-item',
+  );
+
+  // TODO: Update Team Member to Leader and migrate data
+  $companyMenuSlug = 'aera-company-hub';
+  $companyMenuTypes = array(
+    'team_member',
+    'partner',
+    'customer',
   );
 
   $postTypes = array(
@@ -94,7 +101,7 @@ function register_post_types(): void
       'plural'    => __('Events', 'aera'),
       'rewrite'   => 'events',
       'menu_icon' => 'dashicons-calendar-alt',
-      'menu_position' => 7,
+      'menu_position' => 6,
     ),
     'webinar'       => array(
       'singular'  => __('Webinar', 'aera'),
@@ -116,8 +123,8 @@ function register_post_types(): void
       'supports'  => array_merge($defaultSupports, array('custom-fields')),
     ),
     'team_member'   => array(
-      'singular'  => __('Team Member', 'aera'),
-      'plural'    => __('Team Members', 'aera'),
+      'singular'  => __('Leader', 'aera'),
+      'plural'    => __('Leadership', 'aera'),
       'rewrite'   => 'team',
       'menu_icon' => 'dashicons-groups',
       'supports'  => array('title', 'thumbnail', 'revisions'),
@@ -157,8 +164,8 @@ function register_post_types(): void
 
     $args = array(
       'labels'             => $labels,
-      'public'             => true,
-      'has_archive'        => true,
+      'public'             => $settings['public'] ?? true,
+      'has_archive'        => $settings['has_archive'] ?? true,
       'rewrite'            => array('slug' => $settings['rewrite'], 'with_front' => false),
       'show_in_rest'       => true,
       'menu_position'      => $settings['menu_position'] ?? 20,
@@ -166,13 +173,12 @@ function register_post_types(): void
       'supports'           => $settings['supports'] ?? $defaultSupports,
       'taxonomies'         => array(),
       'show_in_nav_menus'  => true,
-      'publicly_queryable' => true,
+      'publicly_queryable' => $settings['publicly_queryable'] ?? true,
       'hierarchical'       => false,
-      'show_in_menu'       => ($type === 'event') ? true : (in_array($type, $contentMenuTypes, true) ? $contentMenuSlug : true),
+      'show_in_menu'       => isset($settings['show_in_menu']) ? $settings['show_in_menu'] : (($type === 'event') ? true : (in_array($type, $resourcesMenuTypes, true) ? $resourcesMenuSlug : (in_array($type, $companyMenuTypes, true) ? $companyMenuSlug : true))),
     );
 
     register_post_type($type, $args);
   }
 }
 add_action('init', __NAMESPACE__ . '\\register_post_types');
-
