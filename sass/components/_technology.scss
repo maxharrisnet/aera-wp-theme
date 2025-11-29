@@ -318,8 +318,8 @@ $sceneScale: 1.4;
 	}
 
 	&.lastAera .technologyMessagesItem__panel {
-		background: $color-resources;
-		color: $color-white;
+		background: $color-messages;
+		color: $color-messages-text;
 	}
 
 	.scene-0 &.pos-0 .technologyMessagesItem__panel {
@@ -541,6 +541,6 @@ $sceneScale: 1.4;
 	}
 
 	&.isActive .technologyItem__title {
-		color: $color-primary;
+		// color: $color-primary; 
 	}
 }

@@ -68,7 +68,7 @@ class Footer_Social_Walker extends \Walker_Nav_Menu
 
     $classes   = empty($item->classes) ? array() : (array) $item->classes;
     $classes[] = 'menu-item-' . $item->ID;
-    $classes[] = 'Social_social__item_sF9is';
+    $classes[] = 'social__item';
 
     /**
      * Filters the arguments for a single nav menu item.
@@ -140,10 +140,10 @@ class Footer_Social_Walker extends \Walker_Nav_Menu
     // Add social link class
     if (isset($atts['class'])) {
       $existing_classes = is_array($atts['class']) ? $atts['class'] : explode(' ', $atts['class']);
-      $existing_classes[] = 'Social_social__link_21NqN';
+      $existing_classes[] = 'social__link';
       $atts['class'] = array_unique($existing_classes);
     } else {
-      $atts['class'] = 'Social_social__link_21NqN';
+      $atts['class'] = 'social__link';
     }
 
     $attributes = '';
@@ -227,7 +227,7 @@ class Footer_Social_Walker extends \Walker_Nav_Menu
    */
   private function get_social_icon($url, $title)
   {
-    $icon_class = 'Social_social__linkIcon_Yvp88';
+    $icon_class = 'social__linkIcon';
     $data_attrs = 'data-event-category="Footer" data-event-action="Click" data-event-name="' . esc_attr($title) . '"';
 
     // Determine icon based on URL or title

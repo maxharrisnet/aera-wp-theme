@@ -60,15 +60,6 @@ function register_taxonomies(): void
       ),
       'post_types' => array('team_member'),
     ),
-    'webinar_industry'  => array(
-      'singular' => __('Industry', 'aera'),
-      'plural'   => __('Industries', 'aera'),
-      'slug'     => 'webinar-industry',
-      'args'     => array(
-        'hierarchical' => true,
-      ),
-      'post_types' => array('webinar'),
-    ),
     'webinar_solution_area' => array(
       'singular' => __('Solution Area', 'aera'),
       'plural'   => __('Solution Areas', 'aera'),

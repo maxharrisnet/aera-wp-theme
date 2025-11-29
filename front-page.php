@@ -120,17 +120,10 @@ $cta = wp_parse_args(
       <h1 class="intro__title"><?php echo esc_html($hero['title']); ?></h1>
       <h2 class="intro__subtitle"><?php echo esc_html($hero['tagline']); ?></h2>
       <p class="intro__text"><?php echo esc_html($hero['description']); ?></p>
-      <?php if (! empty($hero['cta_label']) && ! empty($hero['cta_link'])) : ?>
-        <div class="intro__actions">
-          <a class="button" href="<?php echo esc_url($hero['cta_link']); ?>">
-            <?php echo esc_html($hero['cta_label']); ?>
-          </a>
-        </div>
-      <?php endif; ?>
     </div>
-    <button class="intro__scrollBtn" id="scrollDownBtn" type="button" data-scroll-to="#sectionTechnology">
+    <?php /* <button class="intro__scrollBtn" id="scrollDownBtn" type="button" data-scroll-to="#sectionTechnology">
       <img src="<?php echo esc_url($assets_base . 'downArrow.png'); ?>" alt="<?php esc_attr_e('Scroll down', 'aera'); ?>" loading="lazy" width="35" height="35" />
-    </button>
+    </button> */ ?>
   </section>
 
   <section class="technology" id="sectionTechnology" data-technology>

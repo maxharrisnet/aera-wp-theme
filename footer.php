@@ -87,7 +87,7 @@
               array(
                 'theme_location' => 'footer-social',
                 'container'      => false,
-                'menu_class'     => 'Social_social__list_25ja3',
+                'menu_class'     => 'social__list',
                 'depth'          => 1,
                 'fallback_cb'    => false,
                 'walker'         => new \Aera\Footer_Social_Walker(),
