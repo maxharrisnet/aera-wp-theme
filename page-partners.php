@@ -30,7 +30,7 @@ $partners = get_posts(array(
 ?>
 
 <main id="primary" class="site-main site-main--partners">
-  <?php get_template_part('template-parts/components/hero'); ?>
+  <?php get_template_part('template-parts/components/hero'); $hero_args['hero_text'] = null; ?>
 
   <!-- Partners Content Section -->
   <?php if (!empty($partners)) : ?>

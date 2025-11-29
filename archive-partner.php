@@ -11,14 +11,43 @@
 get_header();
 
 // Hero section - try ACF Company Options first, then use defaults
-$hero_title = function_exists('get_field') ? get_field('company_partner_hero_title', 'option') : __('Partners', 'aera');
-$hero_text = function_exists('get_field') ? get_field('company_partner_hero_text', 'option') : __('We are partnering with a select group of organizations, from consulting firms to technology platforms and data service providers, to accelerate time to value and value over time. Together, we are delivering and scaling Decision Intelligence across the globe.', 'aera');
+$hero_title = __('Partners', 'aera');
+$hero_text = __('We are partnering with a select group of organizations, from consulting firms to technology platforms and data service providers, to accelerate time to value and value over time. Together, we are delivering and scaling Decision Intelligence across the globe.', 'aera');
+
+if (function_exists('get_field')) {
+  $acf_title = get_field('company_partner_hero_title', 'option');
+  $acf_text = get_field('company_partner_hero_text', 'option');
+
+  if (!empty($acf_title)) {
+    $hero_title = $acf_title;
+  }
+  if (!empty($acf_text)) {
+    $hero_text = $acf_text;
+  }
+}
+
 $hero_full_height = true;
 
 // CTA section - try ACF first, then use defaults
-$cta_title = function_exists('get_field') ? get_field('partners_cta_title', 'option') : __('Interested in becoming a partner?', 'aera');
-$cta_text = function_exists('get_field') ? get_field('partners_cta_text', 'option') : __('Schedule Demo', 'aera');
-$cta_link = function_exists('get_field') ? get_field('partners_cta_link', 'option') : home_url('/demo');
+$cta_title = __('Interested in becoming a partner?', 'aera');
+$cta_text = __('Schedule Demo', 'aera');
+$cta_link = home_url('/demo');
+
+if (function_exists('get_field')) {
+  $acf_cta_title = get_field('partners_cta_title', 'option');
+  $acf_cta_text = get_field('partners_cta_text', 'option');
+  $acf_cta_link = get_field('partners_cta_link', 'option');
+
+  if (!empty($acf_cta_title)) {
+    $cta_title = $acf_cta_title;
+  }
+  if (!empty($acf_cta_text)) {
+    $cta_text = $acf_cta_text;
+  }
+  if (!empty($acf_cta_link)) {
+    $cta_link = $acf_cta_link;
+  }
+}
 
 ?>
 
@@ -50,7 +79,7 @@ $cta_link = function_exists('get_field') ? get_field('partners_cta_link', 'optio
           if (!$partner_image && has_post_thumbnail($partner_id)) {
             $partner_image = array('url' => get_the_post_thumbnail_url($partner_id, 'full'));
           }
-          ?>
+        ?>
           <div class="partners__components">
             <?php if (!empty($partner_image['url'])) : ?>
               <div class="partners__cosImage">
@@ -90,4 +119,3 @@ $cta_link = function_exists('get_field') ? get_field('partners_cta_link', 'optio
 
 <?php
 get_footer();
-
