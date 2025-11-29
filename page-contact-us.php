@@ -10,12 +10,7 @@ get_header();
 
 ?>
 
-<div class="intro">
-  <div class="intro__container">
-    <h1 class="intro__title"><?php esc_html_e('Contact us.', 'aera'); ?></h1>
-    <p class="intro__text"><?php esc_html_e('The new era of decision making is here. Fill out the form below and we will be in touch shortly.', 'aera'); ?></p>
-  </div>
-</div>
+<?php get_template_part('template-parts/components/hero'); ?>
 
 <div class="makeContact">
   <div class="makeContact__container">

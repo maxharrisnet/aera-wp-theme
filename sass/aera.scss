@@ -1,5 +1,5 @@
 /*!
-Custom Aera styles compiled from SCSS
+Custom Aera website styles compiled from SCSS
 */
 
 // @use 'config';
@@ -10,10 +10,12 @@ Custom Aera styles compiled from SCSS
 @use 'layout/layout';
 @use 'layout/column-content';
 
-/* PAGES */
-
 /* COMPONENTS */
 @use 'components/buttons';
+@use 'components/forms';
+@use 'components/contact-form';
+@use 'components/demo-form';
+@use 'components/hubspot-forms';
 @use 'components/background';
 @use 'components/loading';
 @use 'components/hero';
@@ -23,8 +25,10 @@ Custom Aera styles compiled from SCSS
 @use 'components/footer';
 @use 'components/social';
 
+/* Resources */
 @use 'components/resource-card';
 
+/* Blog Components */
 @use 'components/blog';
 @use 'components/blog-author';
 @use 'components/blog-share';
@@ -32,11 +36,12 @@ Custom Aera styles compiled from SCSS
 @use 'components/blog-archive';
 @use 'components/blog-not-found';
 @use 'components/blog-article';
+
 @use 'components/technology';
 @use 'components/skills';
-// @use 'components/template-page';
 
 /* Pages */
+// @use 'components/template-page';
 @use 'pages/home';
 @use 'pages/decision-cloud';
 @use 'pages/resources';

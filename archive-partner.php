@@ -28,7 +28,7 @@ if (function_exists('get_field')) {
 
 $hero_full_height = true;
 
-// CTA section - try ACF first, then use defaults
+// CTA section - try ACF first, then use defaultsloading
 $cta_title = __('Interested in becoming a partner?', 'aera');
 $cta_text = __('Schedule Demo', 'aera');
 $cta_link = home_url('/demo');

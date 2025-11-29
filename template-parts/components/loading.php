@@ -4,13 +4,13 @@
       <div class="loading__col">
         <header class="loading__header">
           <p class="loading__date">
-            <span class="loadingText"></span>
+            <span class="loadingText">Loading...</span>
           </p>
           <h1 class="loading__title">
-            <span class="loadingText"></span>
+            <span class="loadingText">Loading...</span>
           </h1>
           <p class="loading__lead">
-            <span class="loadingText block lines-4"></span>
+            <span class="loadingText block lines-4">Loading content...</span>
           </p>
         </header>
       </div>

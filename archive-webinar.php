@@ -79,19 +79,6 @@ $on_demand_query = new WP_Query($on_demand_args);
     $hero_args['hero_text'] = __('Register for upcoming webinars or explore our library of past sessions. Filter videos by industry, solution area or job function to find the content most relevant to you.', 'aera');
   }
 
-  // Optional: Add subtitle if needed
-  // $hero_args['hero_subtitle'] = __('Your subtitle here', 'aera');
-
-  // Optional: Add button if needed
-  // $hero_args['hero_button_text'] = __('Schedule Demo', 'aera');
-  // $hero_args['hero_button_link'] = home_url('/demo');
-
-  // Optional: Full height hero
-  // $hero_args['hero_full_height'] = true;
-
-  // Optional: Hero variation (home, careers, team, skillset)
-  // $hero_args['hero_variation'] = 'default';
-
   get_template_part('template-parts/components/hero', null, $hero_args);
   ?>
 
