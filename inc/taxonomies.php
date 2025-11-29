@@ -42,14 +42,14 @@ function register_taxonomies(): void
       ),
       'post_types' => $resourceTypes,
     ),
-    'resource_industry' => array(
+    'industry' => array(
       'singular' => __('Industry', 'aera'),
       'plural'   => __('Industries', 'aera'),
       'slug'     => 'industry',
       'args'     => array(
         'hierarchical' => true,
       ),
-      'post_types' => $resourceTypes,
+      'post_types' => array_merge($resourceTypes, array('webinar')),
     ),
     'team_group'        => array(
       'singular' => __('Team Group', 'aera'),
@@ -138,4 +138,41 @@ function register_taxonomies(): void
 }
 
 add_action('init', __NAMESPACE__ . '\\register_taxonomies', 11);
+
+/**
+ * Moves the Industry taxonomy menu item under the Company hub menu.
+ *
+ * @return void
+ */
+function nest_industry_taxonomy_menu(): void
+{
+  global $submenu;
+
+  // Remove Industry from its default location (under each post type)
+  if (isset($submenu['aera-company-hub'])) {
+    // Find and remove Industry taxonomy menu items from other locations
+    foreach ($submenu as $parent => $items) {
+      if ($parent !== 'aera-company-hub' && is_array($items)) {
+        foreach ($items as $key => $item) {
+          if (isset($item[2]) && strpos($item[2], 'edit-tags.php?taxonomy=industry') !== false) {
+            unset($submenu[$parent][$key]);
+          }
+        }
+      }
+    }
+
+    // Add Industry taxonomy under Company hub
+    $taxonomy = get_taxonomy('industry');
+    if ($taxonomy && current_user_can($taxonomy->cap->manage_terms)) {
+      add_submenu_page(
+        'aera-company-hub',
+        $taxonomy->labels->name,
+        $taxonomy->labels->menu_name,
+        $taxonomy->cap->manage_terms,
+        'edit-tags.php?taxonomy=industry'
+      );
+    }
+  }
+}
+add_action('admin_menu', __NAMESPACE__ . '\\nest_industry_taxonomy_menu', 20);
 

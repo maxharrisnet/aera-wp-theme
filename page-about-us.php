@@ -190,26 +190,28 @@ $offices_map_image = $assets_base . 'images/company/offices-map.png';
 
   <!-- About Section -->
   <section class="about">
-    <div class="about__container">
-      <div class="column-content">
-        <div class="column-content__item">
-          <h3 class="column-content__title"><?php esc_html_e('The Challenge', 'aera'); ?></h3>
-          <div class="column-content__text">
-            <p><?php echo esc_html($about_challenge); ?></p>
+    <div class="columnContent">
+      <div class="columnContent__container">
+        <div class="columnContent__row">
+          <div class="columnContent__col">
+            <div class="columnContentItem">
+              <h2 class="columnContentItem__title"><?php esc_html_e('The Challenge', 'aera'); ?></h2>
+              <p><?php echo esc_html($about_challenge); ?></p>
+            </div>
           </div>
-        </div>
 
-        <div class="column-content__item">
-          <h3 class="column-content__title"><?php esc_html_e('The Solution', 'aera'); ?></h3>
-          <div class="column-content__text">
-            <p><?php echo esc_html($about_solution); ?></p>
+          <div class="columnContent__col">
+            <div class="columnContentItem">
+              <h2 class="columnContentItem__title"><?php esc_html_e('The Solution', 'aera'); ?></h2>
+              <p><?php echo esc_html($about_solution); ?></p>
+            </div>
           </div>
-        </div>
 
-        <div class="column-content__item">
-          <h3 class="column-content__title"><?php esc_html_e('The People', 'aera'); ?></h3>
-          <div class="column-content__text">
-            <p><?php echo esc_html($about_people); ?></p>
+          <div class="columnContent__col">
+            <div class="columnContentItem">
+              <h2 class="columnContentItem__title"><?php esc_html_e('The People', 'aera'); ?></h2>
+              <p><?php echo esc_html($about_people); ?></p>
+            </div>
           </div>
         </div>
       </div>
