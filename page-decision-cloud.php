@@ -11,13 +11,13 @@ get_header();
 $assets_base = trailingslashit(get_template_directory_uri()) . 'assets/';
 
 // Asset paths - adjust based on actual file locations
-$adc_intro_video = $assets_base . 'images/ADC/IntrovideoNew.mp4';
-$chipset_image_mobile = $assets_base . 'images/ADC/chipsetimagemobile.png';
-$chip_scroll_video = $assets_base . 'images/ADC/chipscrollanimation.mp4';
-$explore_arrow = $assets_base . 'images/ADC/explorearrow.png';
-$what_is_di_image = $assets_base . 'images/ADC/whatIsDI.jpg';
-$idc_image = $assets_base . 'images/ADC/IDC.jpg';
-$customers_tile_image = $assets_base . 'images/ADC/customers.jpg';
+$adc_intro_video = $assets_base . 'images/decision-cloud/IntrovideoNew.mp4';
+$chipset_image_mobile = $assets_base . 'images/decision-cloud/chipsetimagemobile.png';
+$chip_scroll_video = $assets_base . 'images/decision-cloud/chipscrollanimation.mp4';
+$explore_arrow = $assets_base . 'images/decision-cloud/explorearrow.png';
+$what_is_di_image = $assets_base . 'images/decision-cloud/whatIsDI.jpg';
+$idc_image = $assets_base . 'images/decision-cloud/IDC.jpg';
+$customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
 
 ?>
 
@@ -554,9 +554,9 @@ $customers_tile_image = $assets_base . 'images/ADC/customers.jpg';
           const middleBottom = middleSections[middleSections.length - 1].offsetTop + middleSections[middleSections.length - 1].offsetHeight;
 
           if (window.scrollY >= middleTop && window.scrollY < middleBottom) {
-            scrollBtn.style.display = 'inline-block';
+            scrollBtn.classList.add('is-visible');
           } else {
-            scrollBtn.style.display = 'none';
+            scrollBtn.classList.remove('is-visible');
           }
 
           // Update nearest index while scrolling
@@ -585,19 +585,19 @@ $customers_tile_image = $assets_base . 'images/ADC/customers.jpg';
           }
 
           // Toggle display
-          if (content.style.display === 'none' || !content.style.display) {
-            content.style.display = 'block';
-            this.querySelector('.icon').innerHTML = '&uarr;';
-            const textNode = this.childNodes[0];
-            if (textNode && textNode.nodeType === 3) {
-              textNode.textContent = 'Hide Details ';
-            }
-          } else {
-            content.style.display = 'none';
+          if (content.classList.contains('is-open')) {
+            content.classList.remove('is-open');
             this.querySelector('.icon').innerHTML = '&darr;';
             const textNode = this.childNodes[0];
             if (textNode && textNode.nodeType === 3) {
               textNode.textContent = 'Show Details ';
+            }
+          } else {
+            content.classList.add('is-open');
+            this.querySelector('.icon').innerHTML = '&uarr;';
+            const textNode = this.childNodes[0];
+            if (textNode && textNode.nodeType === 3) {
+              textNode.textContent = 'Hide Details ';
             }
           }
         });
