@@ -1,17 +1,16 @@
-<div class="loading">
+<div class="loading" id="loading-overlay" aria-hidden="true">
   <div class="loading__container">
     <div class="loading__row">
       <div class="loading__col">
         <header class="loading__header">
           <p class="loading__date">
-            <LoadingText />
+            <span class="loadingText"></span>
           </p>
           <h1 class="loading__title">
-            <span </h1>
-              <span class="loading-text">Loading... </span>
+            <span class="loadingText"></span>
           </h1>
           <p class="loading__lead">
-            <LoadingText block lines={4} />
+            <span class="loadingText block lines-4"></span>
           </p>
         </header>
       </div>

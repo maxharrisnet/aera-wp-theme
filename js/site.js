@@ -453,4 +453,35 @@
 	} else if (desktopQuery.addListener) {
 		desktopQuery.addListener(mediaHandler);
 	}
+
+	// Loading overlay - hide when page is fully loaded
+	// This ensures the loading screen shows during initial page load and hides when everything is ready
+	const loadingOverlay = document.getElementById('loading-overlay');
+	if (loadingOverlay) {
+		// Ensure loading overlay is visible initially
+		loadingOverlay.style.display = 'block';
+		loadingOverlay.classList.remove('is-hidden');
+
+		const hideLoading = () => {
+			loadingOverlay.classList.add('is-hidden');
+			// Remove from DOM after transition completes
+			setTimeout(() => {
+				if (loadingOverlay && loadingOverlay.parentNode) {
+					loadingOverlay.remove();
+				}
+			}, 300);
+		};
+
+		// Hide loading overlay when page is fully loaded (including images, stylesheets, etc.)
+		if (document.readyState === 'complete') {
+			// Page already fully loaded, hide immediately
+			setTimeout(hideLoading, 100);
+		} else {
+			// Wait for window load event (fires when all resources are loaded)
+			window.addEventListener('load', () => {
+				// Small delay to ensure smooth transition
+				setTimeout(hideLoading, 100);
+			}, { once: true });
+		}
+	}
 })();
