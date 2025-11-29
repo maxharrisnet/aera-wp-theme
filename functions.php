@@ -174,6 +174,20 @@ function aera_technology_scripts()
   if (is_singular() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
+
+  // Enqueue Decision Intelligence page scripts and styles
+  if (is_page_template('page-what-is-decision-intelligence.php')) {
+    $decision_intelligence_js_path = get_template_directory() . '/js/decision-intelligence.js';
+    if (file_exists($decision_intelligence_js_path)) {
+      wp_enqueue_script(
+        'aera-decision-intelligence',
+        get_template_directory_uri() . '/js/decision-intelligence.js',
+        array(),
+        filemtime($decision_intelligence_js_path),
+        true
+      );
+    }
+  }
 }
 add_action('wp_enqueue_scripts', 'aera_technology_scripts');
 

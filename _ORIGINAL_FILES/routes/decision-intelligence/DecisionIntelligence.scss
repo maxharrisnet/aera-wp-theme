@@ -1,0 +1,267 @@
+@import "~styles/config";
+
+.di {
+    width: 100%;
+    padding-top:50px;
+    &__container{
+        @include container;
+    }
+    &__left{
+        padding-left: 55px;
+        margin-top: 50px;
+        @media (max-width: $min-720) {
+            padding-left: 0;
+            margin-top: 0;
+        }
+    }
+    &__name{
+        font-family: Gilroy;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 38px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 0 0 10px 0;
+    }
+    &__title{
+        font-family: FreightSans Pro;
+        font-size: 18px;
+        line-height: 31px;
+        letter-spacing: 0em;
+        text-align: left;
+        margin: 0 0 20px 0;
+    }
+    &__socialIcons{
+        a{
+            display: inline-block;
+            margin-right: 20px;
+        }
+    }
+    &__contentwrapper{
+        background-color: #F7F8FA;
+        padding: 30px 0px;
+        margin-top:30px;
+    }
+    &__contentrow{
+        display: flex;
+        position: relative;
+        flex-wrap: wrap;
+    }
+    &__contentleft{
+        font-family: FreightSans Pro;
+        font-size: 18px;
+        font-style: italic;
+        font-weight: 600;
+        line-height: 29px;
+        color: #000;
+        padding-right: 20px;
+        width: 50%;
+        padding-left:50px;
+        @media (max-width: $min-720) {
+            padding-left: 0px;
+            width: 100%;
+            padding-right: 0;
+        }
+    }
+    &__imageright{
+        position: absolute;
+        right: 0;
+        top: -185px;
+        img{
+            width: 480px;
+        }
+        @media (max-width: $min-720) {
+            position: relative;
+            top: 0;
+            img{
+                width: 100%;
+            }
+        }
+    }
+    &__maincontent{
+        padding: 30px 0px 0 50px;
+        color: #000;
+        @media (max-width: $min-720) {
+            padding: 30px 0 0 0;
+        }
+    }
+    &__buttonwrapper{
+        text-align: center;
+        padding: 100px 0px
+    }
+    &__section{
+        width: 100%;
+        position: relative;
+        scroll-behavior: smooth;
+        margin-bottom: 100px;
+        
+    }
+    &__scrollWrapper{
+        max-width: 1440px;
+        padding: 0 20px;
+        margin: 0 auto;
+        position: relative;
+        // display: flex;
+        // @media (max-width: $min-720) {
+        //     flex-direction: column;
+        // }
+    }
+    &__mainSection{
+        //margin-left: 280px;
+        margin-top: 0;
+        padding: 0 20px;
+    }
+    &__navList{
+        background-color: #fff;
+        z-index: 999;
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            &:before{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 15px;
+                width: 4px;
+                height: 100%;
+                background: repeating-linear-gradient(to bottom, #ccc, #ccc 4px, transparent 4px, transparent 8px);
+                z-index: 0;
+                @media (max-width: $max-768) {
+                    display: none;
+                }
+            }
+            &:after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 15px;
+                width: 4px;
+                background: #9AE6B4;
+                z-index: 1;
+                transition: height 0.3s ease;
+                height: 0;
+            }
+        }
+        
+        li{
+            margin-bottom: 10px;
+            position: relative;
+            a{
+                text-decoration: none;
+                color: #3c096c;
+                padding-left: 20px;
+                position: relative;
+                z-index: 2;
+                display: block;
+                font-size: 16px;
+                font-family: Gilroy, sans-serif;
+                &:before{
+                    content: "";
+                    position: absolute;
+                    left: -12px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 50%;
+                    border: 2px solid #3c096c;
+                    background-color: white;
+                    z-index: 3;
+                    transition: background-color 0.3s, border-color 0.3s;
+                    
+                }
+                &filled::before{
+
+                    background-color: #9AE6B4;
+                    border-color: #9AE6B4;
+                }
+               
+            }
+        }
+        @media (min-width: $min-768) {
+            width: 50%;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            left: 0;
+            border-right: 1px solid #eee;
+        }
+        @media (max-width: $max-768) {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            border-bottom: 1px solid #ddd;
+        }
+    }
+    #hamburgerToggle{
+        
+    }
+    &__burgerToggle{
+        @media (min-width: $min-768) {
+            display: none !important;
+        }
+        @media (max-width: $max-768) {
+            display: flex;
+        }
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #f5f5f5;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+        font-size: 1.2rem;
+        display: none;
+    }
+    &__toogleBtn{
+        margin-left: 10px;
+        cursor: pointer;
+        @media (min-width: $min-768) {
+            display: none !important;
+        }
+        @media (max-width: $max-768) {
+            display: inline-block;
+        }
+    }
+    &__subMenu{
+        padding-left: 20px !important;
+        transition: max-height 0.3s ease-out;
+        overflow: hidden;
+        padding-top: 20px !important;
+        @media (min-width: $min-768) {
+            max-height: none !important;
+            display: block !important;
+        }
+        li{
+            a{
+                &:before{
+                    width: 0;
+                    height: 0;
+                    border: 0;
+                }
+            }
+            
+        }
+    }
+    &__accordianMenu{
+        max-height: 100vh;
+        overflow-y: auto;
+        padding-left: 20px;
+        position: relative;
+        &.show{
+            display: block;
+        }
+      @media (min-width: $min-768) {
+        display: block !important;
+      }
+      @media (max-width: $max-768) {
+        display: none;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+      }
+      
+    }
+}
