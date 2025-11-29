@@ -1,0 +1,505 @@
+@import "~styles/config";
+
+
+.decisioncloud{
+    width: 100%;
+    &__background{
+        width: 100%;
+        padding: 50px 0;
+        // background-image: url('assets/images/newskills/Helixcompressed.png');
+        // background-size: contain;
+        // background-position: right;
+        // background-repeat: no-repeat;
+    background-color: #fafbfe;
+    
+    }
+    &__container {
+        //@include container;
+        padding: 0 70px;
+        max-width: 1420px;
+        margin: 0 auto;
+        @media (max-width: $max-1024) {
+        //   max-width: 100%;
+           padding: 0 50px;
+        }
+        @media (max-width: $max-960) {
+          padding: 0 50px;
+        }
+        @media (max-width: $max-720) {
+          padding: 0 20px;
+        }
+    }
+    &__row {
+        @include make-row;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-align: stretch;
+        align-items: center;
+        -ms-flex-pack: start;
+        justify-content: space-between;
+        margin-left: 0px;
+        margin-right: 0px;
+        -ms-flex-direction: row;
+        flex-direction: row;
+      }
+    &__skillsetRow {
+        @include make-row;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: nowrap;
+        -ms-flex-align: stretch;
+        align-items: flex-start;
+        -ms-flex-pack: start;
+        justify-content: space-between;
+        margin-left: 0px;
+        margin-right: 0px;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        @media (max-width: $max-720) {
+            flex-direction: column;
+        }
+    }
+      
+    &__wrapper{
+        h2{
+            font-size: 38px;
+            font-family: "Gilroy",sans-serif;
+            margin-top: 0;
+            @media (max-width: $max-720) {
+                font-size: 30px;
+                
+            }
+        }
+        @media (max-width: $max-960) {
+            
+        }
+    }
+    &__skillsList{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 10px;
+        width: 50%;
+        div{
+            width: 34%;
+            padding: 10px;
+            box-shadow: 0px 0px 10px 0px #9c9c9c;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            margin-right: 20px;
+            height: 120px;
+            cursor: pointer;
+            position: relative;
+            transition: 0.3s;
+            color: #1a1a1a;
+            font-weight: bold;
+            font-size: 20px;
+            span{
+                position: absolute;
+                bottom: 0;
+                right: 10px;
+                font-size: 24px;
+            }
+            &:hover{
+                background-color: #023059 !important;
+                color: #fff !important;
+            }
+            @media (max-width: $max-960) {
+                width: 40%;
+                height: 100px;
+                
+            }
+            @media (max-width: $max-720) {
+                //width: 44%;
+                height: 80px;
+                margin-bottom: 0;
+                flex-shrink: 0;
+            }
+
+        }
+        @media (max-width: $max-960) {
+            
+            width: 80%;
+            
+        }
+        @media (max-width: $max-720) {
+            justify-content: space-between;
+            width: 100%;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+        }
+        
+    }
+    &__skillsDetails{
+        @media (max-width: $max-720) {
+            //padding-top: 30px;
+        }
+        h2{
+            font-size: 28px;
+            line-height: 38px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin: 0;
+            margin-top: 20px;
+            @media (max-width: $max-720) {
+                font-size: 24px;
+                line-height: 34px;
+            }
+        }
+        h3{
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: normal;
+            color: #1a1a1a;
+            margin-top: 10px;
+            
+        }
+        p{
+            font-size: 18px;
+            color: #1a1a1a;
+        }
+        a{
+            color: #00619E;
+            display: inline-block;
+            line-height: 28px;
+            font-size: 20px;
+            span{
+                display: inline-block;
+                vertical-align: text-top;
+                font-size: 22px;
+            }
+        }
+        ul{
+            font-size: 18px;
+            color: #1a1a1a;
+            padding-left: 20px;
+            li{
+                margin-bottom: 10px;
+            }
+        }
+    }
+    // &__skillsetWrapper{
+    //     display: none;
+    // }
+    // &__skillsetWrapper div[data-details="Logistics"]{
+    //     display: block;
+    // }
+    
+
+
+
+    &__assetwrapper{
+        padding: 0 15px 15px 15px;
+        //margin-bottom: 13px;
+
+        ul{
+            font-size: 15px;
+            margin: 0;
+            padding-left: 25px;
+        }
+    }
+
+    &__assettype{
+        color: #009D95;
+        font-family: Gilroy;
+        font-size: 16px;
+        margin-bottom: 5px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        a{
+            color: #009D95;
+        }
+    }
+
+    &__companyType{
+        padding-left: 10px;
+        font-size: 22px;
+    }
+
+    &__linkwrapper{
+        display: flex;
+        a{
+            margin-right: 15px;
+        }
+        
+    }
+
+    // &__imageRow{
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     font-size: 24px;
+    //     font-weight: bold;
+    //     margin-bottom: 20px;
+    //     img{
+    //         width: 70px;
+    //     }
+    //     @media (max-width: $max-1200) {
+    //         flex-direction: column;
+    //     }
+    //     @media (max-width: $max-960) {
+    //         font-size: 20px;
+    //         flex-direction: row;
+    //     }
+    // }
+    &__cardwrapper{
+        display: flex;
+        //width: 50%;
+        margin: 0 auto;
+        flex-wrap: wrap;
+        flex-direction: row;
+        @media (max-width: $max-1024) {
+            width: 100%;
+        }
+        @media (max-width: $max-960) {
+            flex-direction: row;
+            width: 100%;
+
+        }
+        @media (max-width: $max-720) {
+            flex-direction: column;
+            width: 100%;
+
+        }
+    }
+    &__skillsetWrapper{
+        width: 50%;
+        padding: 30px;
+        img{
+            height: 70px;
+        }
+        @media (max-width: $max-720) {
+            width: 100%;
+        }
+    }
+    &__card{
+        
+        @media (max-width: $max-1024) {
+            
+        }
+        @media (max-width: $max-960) {
+            
+
+        }
+        @media (max-width: $max-720) {
+            
+
+        }
+    }
+    &__playReadBtn{
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+        height: 18px;
+    }
+    &__components{
+        height: 530px;
+        box-shadow: 1px 1px 10px #e5e5e5;
+        border-radius: 10px;
+        overflow-y: hidden;
+        position: relative;
+        transition: 2s;
+        @media (max-width: $max-1024) {
+            //min-height: 710px;
+        }
+        @media (max-width: $max-960) {
+            height: 560px;
+        }
+        @media (max-width: $max-720) {
+            height: 510px;
+        }
+        @media (max-width: $max-480) {
+            height: 500px;
+        }
+        @media (max-width: $max-431) {
+            height: 520px;
+        }
+
+        // @mixin binaryCounter($selector: 'li', $bits: 4) {
+        //     :root {
+        //       @for $i from 0 to $bits {
+        //         --b#{$i}: 0
+        //       }
+        //     }
+        // }
+
+        &:hover{
+            img[alt="companyImage"]{
+                margin-top: -210px;
+                @media (max-width: $max-960) {
+                    margin-top: -245px;
+                }
+            }
+            img[alt="companyLogo"]{
+                margin: 5px 0px 8px 0;
+                // @media (max-width: $max-960) {
+                //     height: 20px;
+                // }
+                @media (max-width: $max-720) {
+                    height: 25px;
+                }
+                @media (max-width: $max-480) {
+                    height: 25px;
+                }
+            }
+        }
+
+        // $count: 2;
+
+        // @if $count >= 2{
+        //     &:hover{
+        //         img[alt="companyImage"]{
+        //             margin-top: -210px;
+        //             @media (max-width: $max-960) {
+        //                 margin-top: -245px;
+        //             }
+        //         }
+        //         img[alt="companyLogo"]{
+        //             margin: 5px 0px 8px 0;
+        //             // @media (max-width: $max-960) {
+        //             //     height: 20px;
+        //             // }
+        //             @media (max-width: $max-720) {
+        //                 height: 20px;
+        //             }
+        //             @media (max-width: $max-480) {
+        //                 height: 15px;
+        //             }
+        //         }
+        //     }
+        // }
+        
+    }
+    &__learnmore{
+        padding: 0 15px;
+        padding-bottom: 20px;
+        text-align: right;
+        font-family: Gilroy;
+        font-weight: 600;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: #009D95;
+        font-size: 14px;
+        text-transform: uppercase;
+        // @media (max-width: $max-1024) {
+        //     position: relative;
+        // }
+        @media (max-width: $max-720) {
+            position: relative;
+        }
+    }
+    &__cosImage{
+        //transition-duration: 2ms;
+        //border-bottom: 5px solid #003f68;
+        padding: 5px;
+        //margin-bottom: 15px;
+        // background-image: url(http://localhost:7331/client/6b413a4….png);
+        //min-height: 95px;
+        // background-size: contain;
+        // background-position: center;
+        // background-repeat: no-repeat;
+        img{
+            //transition: margin-top 1s;
+            transition: margin-top 1s;
+            //width: 50px;
+            display: block;
+            margin: 0 auto;
+            @media (max-width: $max-960) {
+                margin: 0 auto;
+            }
+            @media (max-width: $max-720) {
+                //transition: height 1s, margin-top 1s;
+            }
+        }
+    }
+    &__companydetails{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        padding: 0 15px;
+        color: #000;
+        img{
+            margin: 20px 0;
+            transition: margin 1s, height 1s;
+            //transition: height 1s;
+        }
+        
+    }
+    &__businessproblem{
+        padding: 0 15px;
+        margin-bottom: 20px;
+        font-size: 22px;
+        line-height: 32px;
+        color: #023059;
+        font-family: "Gilroy",sans-serif;
+        font-weight: 600;
+        min-height: 100px;
+        // @media (max-width: $max-480) {
+        //     min-height: auto;
+        // }
+    }
+    &__title{
+        font-family: Gilroy;
+        color: #8AC4E8;
+        font-size: 18px;
+        font-weight: 600;
+
+        img{
+            height: 30px;
+        }
+    }
+
+    &__companyText{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    &__tags{
+        padding: 0px 15px;
+        //margin-top: 30px;
+        margin-bottom: 20px;
+
+        span{
+            display: inline-block;
+            background-color: #F0F0F0;
+            border-radius: 15px;
+            color: #000;
+            padding: 2px 15px;
+            color: #023059;
+            font-family: "Gilroy",sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    }
+    &__type{
+        font-size: 18px;
+        font-family: Gilroy;
+    }
+    &__details{
+        font-size: 18px;
+    }
+    &__cosText{
+        width: 100%;
+        h3{
+            font-size: 24px;
+            font-family: "Gilroy",sans-serif;
+            margin-bottom: 0px;
+            @media (max-width: $max-960) {
+                font-size: 20px;
+            }
+        }
+        p{
+            margin-top: 0;
+        }
+        @media (max-width: $max-960) {
+            width: 100%;
+        }
+    }
+}

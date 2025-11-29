@@ -143,6 +143,14 @@ function register_post_types(): void
       'has_archive' => false,
       'publicly_queryable' => false,
     ),
+    'skill'         => array(
+      'singular'  => __('Skill', 'aera'),
+      'plural'    => __('Skills', 'aera'),
+      'rewrite'   => 'skills',
+      'menu_icon' => 'dashicons-awards',
+      'menu_position' => 8,
+      'supports'  => array_merge($defaultSupports, array('custom-fields')),
+    ),
   );
 
   foreach ($postTypes as $type => $settings) {

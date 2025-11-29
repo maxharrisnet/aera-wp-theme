@@ -87,6 +87,24 @@ function register_taxonomies(): void
       ),
       'post_types' => array('webinar'),
     ),
+    'skillset'      => array(
+      'singular' => __('Skillset', 'aera'),
+      'plural'   => __('Skillsets', 'aera'),
+      'slug'     => 'skillset',
+      'args'     => array(
+        'hierarchical' => true,
+      ),
+      'post_types' => array('skill'),
+    ),
+    'skill_category' => array(
+      'singular' => __('Skill Category', 'aera'),
+      'plural'   => __('Skill Categories', 'aera'),
+      'slug'     => 'skill-category',
+      'args'     => array(
+        'hierarchical' => true,
+      ),
+      'post_types' => array('skill'),
+    ),
   );
 
   foreach ($taxonomies as $taxonomy => $settings) {
