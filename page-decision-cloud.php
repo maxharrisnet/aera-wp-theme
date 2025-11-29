@@ -116,24 +116,24 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
                   <?php esc_html_e('Decision Data Model™', 'aera'); ?>
                 </h5>
                 <p>
-                  <?php echo wp_kses(__('The <strong>Aera Decision Data Model™</strong> unifies real-time data from your systems and outside sources into a decision-ready model. It records every decision made along with its details and outcomes. Over time, this decision memory enables Aera to learn, provide deeper insights, and make smarter, more optimized recommendations.', 'aera'), array('strong' => array())); ?><br />
-                  <a href="<?php echo esc_url(home_url('/decision-data-model')); ?>" class="text-section-link"><?php esc_html_e('Learn More', 'aera'); ?></a>
-                  <a href="javascript:;" class="toggleBtn"><?php esc_html_e('Show Details', 'aera'); ?> <span class="icon">&darr;</span></a>
-                <div class="accordion-content">
-                  <div class="box grey">
-                    <h3><?php esc_html_e('Comprehensive Integration', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Unify data across the enterprise, including transactions, analytics, planning data, unstructured inputs, and IoT signals, as well as external sources, through over 250 prebuilt connectors.', 'aera'); ?></p>
-                  </div>
-                  <div class="box grey">
-                    <h3><?php esc_html_e('Advanced Modeling', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Compose analytical, graph, mathematical, AI/ML, simulations, and decision models to deliver contextual recommendations.', 'aera'); ?></p>
-                  </div>
-                  <div class="box grey">
-                    <h3><?php esc_html_e('Data Quality and Connectivity', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Ensure trusted, decision-ready data with normalization, bi-directional integration, robust connection management, and comprehensive governance.', 'aera'); ?></p>
-                  </div>
-                </div>
+                  <?php echo wp_kses(__('The <strong>Decision Data Model</strong> unifies real-time data from your systems and outside sources. It also captures all the decisions made in your organization, along with their context, actions taken, and outcomes. Over time, this decision memory enables Aera to learn and make smarter, more optimized recommendations.', 'aera'), array('strong' => array())); ?>
                 </p>
+                <div class="box grey">
+                  <h3><?php esc_html_e('Comprehensive Integration', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Unify data across the enterprise, including transactions, planning, analytics, unstructured data, IoT signals, and external sources — with 200+ prebuilt connectors.', 'aera'); ?></p>
+                </div>
+                <div class="box grey">
+                  <h3><?php esc_html_e('Data Quality and Connectivity', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Ensure trusted, decision-ready data with normalization, bi-directional integration, robust connection management, and comprehensive governance.', 'aera'); ?></p>
+                </div>
+                <div class="box grey">
+                  <h3><?php esc_html_e('Data Workbench', 'aera'); ?></h3>
+                  <p><?php esc_html_e('​Harmonize data across internal and external systems to build and maintain the Decision Data Model.', 'aera'); ?></p>
+                  <a href="<?php echo esc_url(home_url('/data-workbench')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
+                </div>
+                <div class="section-link">
+                  <a href="<?php echo esc_url(home_url('/decision-data-model')); ?>" class="text-section-link"><?php esc_html_e('Learn More', 'aera'); ?></a>
+                </div>
               </div>
             </div>
 
@@ -158,31 +158,24 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
                   <?php esc_html_e('Decision Engines', 'aera'); ?>
                 </h5>
                 <p>
-                  <?php echo wp_kses(__('Comprehensive <strong>decision engines</strong> support all types of decisions, from advised to assisted to fully automated. Together, they quickly analyze data, apply logic, run simulations, and generate recommendations and actions.', 'aera'), array('strong' => array())); ?><br />
-                  <a href="<?php echo esc_url(home_url('/decision-engines')); ?>" class="text-section-link"><?php esc_html_e('Learn More', 'aera'); ?></a>
-                  <a href="javascript:;" class="toggleBtn"><?php esc_html_e('Show Details', 'aera'); ?> <span class="icon">&darr;</span></a>
-                <div class="accordion-content">
-                  <div class="box lightGreen">
-                    <h3><?php esc_html_e('Decision Process and Execution', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Compose and model decision processes visually by embedding business rules, scenarios, optimization logic, AI/ML models, and agent teams.', 'aera'); ?></p>
-                    <a href="<?php echo esc_url(home_url('/process-builder')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
-                  </div>
-                  <div class="box lightGreen">
-                    <h3><?php esc_html_e('AI Engines', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Rapidly build and deploy machine learning pipelines, domain-specific algorithms, and flexible AI/ML models into decision workflows.', 'aera'); ?></p>
-                    <a href="<?php echo esc_url(home_url('/cortex-ai-ml')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
-                  </div>
-                  <div class="box lightGreen">
-                    <h3><?php esc_html_e('Data Workbench', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Harmonize data across internal and external systems, and orchestrate data workloads to build and maintain the Decision Data Model.', 'aera'); ?></p>
-                    <a href="<?php echo esc_url(home_url('/data-workbench')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
-                  </div>
-                  <div class="box lightGreen">
-                    <h3><?php esc_html_e('Learning Engines', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Continuously improve decision quality by learning from feedback and context to adapt to changing business conditions in real time.', 'aera'); ?></p>
-                  </div>
-                </div>
+                  <?php echo wp_kses(__('Comprehensive <strong>decision engines</strong> support all types of decisions, from advised to assisted to fully automated. Together, they quickly analyze data, apply logic, run simulations, and generate recommendations and actions.', 'aera'), array('strong' => array())); ?>
                 </p>
+                <div class="box lightGreen">
+                  <h3><?php esc_html_e('AI Engines', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Rapidly build and deploy machine learning pipelines, domain-specific algorithms, and flexible AI/ML models into decision workflows.', 'aera'); ?></p>
+                  <a href="<?php echo esc_url(home_url('/cortex-ai-ml')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
+                </div>
+                <div class="box lightGreen">
+                  <h3><?php esc_html_e('Learning Engines', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Continuously improve decision quality as Aera learns from feedback and context, adapting in real time to changing business conditions.', 'aera'); ?></p>
+                </div>
+                <div class="box lightGreen">
+                  <h3><?php esc_html_e('Advanced Modeling', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Compose analytical, graph, mathematical, AI/ML, scenarios, simulations, and decision models to generate context-rich recommendations.', 'aera'); ?></p>
+                </div>
+                <div class="section-link">
+                  <a href="<?php echo esc_url(home_url('/decision-engines')); ?>" class="text-section-link"><?php esc_html_e('Learn More', 'aera'); ?></a>
+                </div>
               </div>
             </div>
 
@@ -207,29 +200,28 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
                   <?php esc_html_e('Agentic Ambient Orchestration™', 'aera'); ?>
                 </h5>
                 <p>
-                  <?php echo wp_kses(__('<strong>Agentic Ambient Orchestration</strong> lets you blend structured and unstructured data, your expertise, and the reasoning power of AI agents (through LLMs) in your decision processes. Instead of coding decision rules, you can simply prompt and guide agents to automate decisions.', 'aera'), array('strong' => array())); ?>
-                  <br />
-                  <a href="<?php echo esc_url(home_url('/agentic-ambient-orchestration')); ?>" class="text-section-link"><?php esc_html_e('Learn More', 'aera'); ?></a>
-                  <a href="javascript:;" class="toggleBtn"><?php esc_html_e('Show Details', 'aera'); ?> <span class="icon">&darr;</span></a>
-                <div class="accordion-content">
-                  <div class="box AAO">
-                    <h3><?php esc_html_e('Agent & Agent Team Creation', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Define, configure, embed, and publish individual agents with defined roles, and organize them into teams to coordinate decision tasks.', 'aera'); ?></p>
-                  </div>
-                  <div class="box AAO">
-                    <h3><?php esc_html_e('Agent Functions', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Convert specific decision processes and external logic into reusable, executable components that agents can leverage (as tools) to reason and orchestrate tasks.', 'aera'); ?></p>
-                  </div>
-                  <div class="box AAO">
-                    <h3><?php esc_html_e('Integrated Decision Flows', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Embed agents seamlessly into end-to-end decision flows to drive increased levels of agency and automation.', 'aera'); ?></p>
-                  </div>
-                  <div class="box AAO">
-                    <h3><?php esc_html_e('LLM Integration Management', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Configure and manage secure connections to large language models of your choice and map them to specific agents.', 'aera'); ?></p>
-                  </div>
-                </div>
+                  <?php echo wp_kses(__('<strong>Agentic Ambient Orchestration</strong> combines structured and unstructured data, human expertise, and the reasoning power of AI agents (through LLMs) in your decision processes.  Instead of coding decision rules, you can simply prompt and guide agents to automate decisions.', 'aera'), array('strong' => array())); ?>
                 </p>
+                <div class="box AAO">
+                  <h3><?php esc_html_e('Decision Composition and Execution', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Visually compose and model decision processes by embedding business rules, scenarios, optimization logic, AI/ML models, and agent teams.​', 'aera'); ?></p>
+                  <a href="<?php echo esc_url(home_url('/process-builder')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
+                </div>
+                <div class="box AAO">
+                  <h3><?php esc_html_e('Agent & Agent Team Creation', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Define, configure, embed, and publish individual agents with defined roles, and organize them into teams to coordinate decision tasks.​', 'aera'); ?></p>
+                </div>
+                <div class="box AAO">
+                  <h3><?php esc_html_e('Agent Functions', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Convert specific decision processes and external logic into reusable, executable components that agents can leverage as tools to reason and orchestrate tasks.​', 'aera'); ?></p>
+                </div>
+                <div class="box AAO">
+                  <h3><?php esc_html_e('LLM Integration Management', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Configure and manage secure connections to large language models of your choice and map them to specific agents with defined roles.', 'aera'); ?></p>
+                </div>
+                <div class="section-link">
+                  <a href="<?php echo esc_url(home_url('/agentic-ambient-orchestration')); ?>" class="text-section-link"><?php esc_html_e('Learn More', 'aera'); ?></a>
+                </div>
               </div>
             </div>
 
@@ -254,37 +246,36 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
                   <?php esc_html_e('Decision Engagement', 'aera'); ?>
                 </h5>
                 <p>
-                  <?php echo wp_kses(__('<strong>Decision Engagement</strong> enables you to interact with Aera through an intuitive, natural language interface, available via chat, voice, desktop, or mobile. You can explore data, get timely guidance, and act on real-time recommendations.', 'aera'), array('strong' => array())); ?><br />
-                  <a href="<?php echo esc_url(home_url('/decision-engagement')); ?>" class="text-section-link"><?php esc_html_e('Learn More', 'aera'); ?></a>
-                  <a href="javascript:;" class="toggleBtn"><?php esc_html_e('Show Details', 'aera'); ?> <span class="icon">&darr;</span></a>
-                <div class="accordion-content">
-                  <div class="box DE">
-                    <h3><?php esc_html_e('Chat', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Ask open-ended questions and receive instant, explainable, personalized answers supported by dynamic visualizations and contextual actions.', 'aera'); ?></p>
-                    <a href="<?php echo esc_url(home_url('/aera-chat')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
-                  </div>
-                  <div class="box DE">
-                    <h3><?php esc_html_e('Inbox', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Receive prescriptive, explainable, and personalized recommendations in real-time. Understand context, impact, trade-offs, and take immediate action.', 'aera'); ?></p>
-                    <a href="<?php echo esc_url(home_url('/aera-inbox')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
-                  </div>
-                  <div class="box DE">
-                    <h3><?php esc_html_e('Discovery', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Explore and analyze data (from your DDM) through a visual, drillable interface designed to uncover new insights and embed them in recommendations.', 'aera'); ?></p>
-                    <a href="<?php echo esc_url(home_url('/aera-discovery')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
-                  </div>
-                  <div class="box DE">
-                    <h3><?php esc_html_e('Workspaces', 'aera'); ?></h3>
-                    <p><?php esc_html_e('A unified, secure space for teams to collaborate, organize, and manage decision intelligence. Ask questions, analyze data, run simulations, and publish insights and Skills.', 'aera'); ?></p>
-                    <a href="<?php echo esc_url(home_url('/aera-workspaces')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
-                  </div>
-                  <div class="box DE">
-                    <h3><?php esc_html_e('Control Room', 'aera'); ?></h3>
-                    <p><?php esc_html_e('Monitor the activity, performance, and impacts of your decisions. Identify and continually fine-tune decision logic to optimize decision-making across your enterprise (your decision intelligence network).', 'aera'); ?></p>
-                    <a href="<?php echo esc_url(home_url('/aera-control-room')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
-                  </div>
-                </div>
+                  <?php echo wp_kses(__('<strong>Decision Engagement</strong> enables you to interact with Aera through an intuitive, natural language interface, available via chat, voice, desktop, or mobile. You can explore data, get timely guidance, and act on real-time recommendations.', 'aera'), array('strong' => array())); ?>
                 </p>
+                <div class="box DE">
+                  <h3><?php esc_html_e('Chat', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Ask open-ended questions and receive instant, explainable, personalized answers supported by dynamic visualizations and contextual actions.', 'aera'); ?></p>
+                  <a href="<?php echo esc_url(home_url('/aera-chat')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
+                </div>
+                <div class="box DE">
+                  <h3><?php esc_html_e('Inbox', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Receive prescriptive, explainable recommendations ​in real-time. Understand context, impact, trade-offs, and take immediate action.', 'aera'); ?></p>
+                  <a href="<?php echo esc_url(home_url('/aera-inbox')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
+                </div>
+                <div class="box DE">
+                  <h3><?php esc_html_e('Discovery', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Explore and analyze data from your Decision Data Model through a visual, drillable interface designed to uncover new insights and embed them in recommendations.', 'aera'); ?></p>
+                  <a href="<?php echo esc_url(home_url('/aera-discovery')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
+                </div>
+                <div class="box DE">
+                  <h3><?php esc_html_e('Workspaces', 'aera'); ?></h3>
+                  <p><?php esc_html_e('A unified, secure space for teams to collaborate, organize, and manage decision intelligence. Ask questions, analyze data, run simulations, and publish insights and Skills.', 'aera'); ?></p>
+                  <a href="<?php echo esc_url(home_url('/aera-workspaces')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
+                </div>
+                <div class="box DE">
+                  <h3><?php esc_html_e('Control Room', 'aera'); ?></h3>
+                  <p><?php esc_html_e('Monitor the activity, performance, and impact of your decisions. Identify and continually fine-tune decision logic to optimize decision-making across your enterprise.', 'aera'); ?></p>
+                  <a href="<?php echo esc_url(home_url('/aera-control-room')); ?>"><?php esc_html_e('Explore', 'aera'); ?> <img src="<?php echo esc_url($explore_arrow); ?>" alt="" loading="lazy" /></a>
+                </div>
+                <div class="section-link">
+                  <a href="<?php echo esc_url(home_url('/decision-engagement')); ?>" class="text-section-link"><?php esc_html_e('Learn More', 'aera'); ?></a>
+                </div>
               </div>
             </div>
           </div>
@@ -573,35 +564,6 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
         }
       });
 
-      // Accordion functionality
-      const toggleBtns = document.querySelectorAll('.toggleBtn');
-      toggleBtns.forEach(function(btn) {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          const content = this.nextElementSibling;
-
-          if (!content || !content.classList.contains('accordion-content')) {
-            return;
-          }
-
-          // Toggle display
-          if (content.classList.contains('is-open')) {
-            content.classList.remove('is-open');
-            this.querySelector('.icon').innerHTML = '&darr;';
-            const textNode = this.childNodes[0];
-            if (textNode && textNode.nodeType === 3) {
-              textNode.textContent = 'Show Details ';
-            }
-          } else {
-            content.classList.add('is-open');
-            this.querySelector('.icon').innerHTML = '&uarr;';
-            const textNode = this.childNodes[0];
-            if (textNode && textNode.nodeType === 3) {
-              textNode.textContent = 'Hide Details ';
-            }
-          }
-        });
-      });
     }
   })();
 </script>
