@@ -3,6 +3,24 @@
     "title": "Resource Card",
     "fields": [
         {
+            "key": "field_resource_card_title",
+            "label": "Card Title",
+            "name": "resource_card_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Custom title displayed on the resource card. If not set, the post title will be used.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "100",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_resource_author",
             "label": "Author",
             "name": "resource_author",

@@ -14,7 +14,20 @@ $is_demo = ! empty($args['is_demo']);
 $post_id = $args['post_id'] ?? get_the_ID();
 $post_type = $args['post_type'] ?? get_post_type($post_id) ?? 'resource';
 
-$title = $args['title'] ?? get_the_title($post_id);
+// Get title: ACF field first, then args, then WordPress title
+$title = '';
+if (!$is_demo && function_exists('get_field')) {
+  $acf_title = get_field('resource_card_title', $post_id);
+  if (!empty($acf_title)) {
+    $title = $acf_title;
+  }
+}
+if (empty($title) && isset($args['title'])) {
+  $title = $args['title'];
+}
+if (empty($title)) {
+  $title = get_the_title($post_id);
+}
 
 // Get excerpt: ACF field first, then args, then WordPress excerpt
 $excerpt = '';
