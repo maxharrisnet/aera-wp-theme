@@ -140,8 +140,8 @@ function register_post_types(): void
       'menu_icon' => 'dashicons-groups',
       'supports'  => array('title', 'editor', 'thumbnail', 'revisions'),
       'public'    => true,
-      'has_archive' => false,
-      'publicly_queryable' => false,
+      'has_archive' => true,
+      'publicly_queryable' => true,
     ),
     'skill'         => array(
       'singular'  => __('Skill', 'aera'),

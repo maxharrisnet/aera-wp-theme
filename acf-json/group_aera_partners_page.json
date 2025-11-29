@@ -42,9 +42,9 @@
     "location": [
         [
             {
-                "param": "page_template",
+                "param": "options_page",
                 "operator": "==",
-                "value": "page-partners.php"
+                "value": "acf-options-company-options"
             }
         ]
     ],

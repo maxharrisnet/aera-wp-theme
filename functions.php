@@ -257,3 +257,18 @@ require get_template_directory() . '/inc/customizer.php';
 if (defined('JETPACK__VERSION')) {
   require get_template_directory() . '/inc/jetpack.php';
 }
+
+/**
+ * Modify partner archive query to order by menu_order.
+ *
+ * @param WP_Query $query The WordPress query object.
+ */
+function aera_technology_partner_archive_order($query)
+{
+  if (!is_admin() && $query->is_main_query() && is_post_type_archive('partner')) {
+    $query->set('orderby', 'menu_order');
+    $query->set('order', 'ASC');
+    $query->set('posts_per_page', -1);
+  }
+}
+add_action('pre_get_posts', 'aera_technology_partner_archive_order');
