@@ -1,0 +1,285 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+
+/* FEATURE CARD - Complex information cards (e.g., Customer cards) */
+.feature-card {
+	width: 100%;
+
+	&__wrapper {
+		padding: 20px 70px 40px 70px;
+		max-width: 1440px;
+		margin: 0 auto;
+
+		h2 {
+			font-size: 50px;
+			font-family: $font-family-gilroy;
+
+			@media (max-width: $max-960) {
+				font-size: 28px;
+			}
+		}
+
+		@media (max-width: $max-960) {
+			padding: 20px 20px 40px 20px;
+		}
+	}
+
+	&__assetwrapper {
+		padding: 0 15px 15px 15px;
+
+		ul {
+			font-size: 15px;
+			margin: 0;
+			padding-left: 25px;
+		}
+	}
+
+	&__assettype {
+		color: #009d95;
+		font-family: $font-family-gilroy;
+		font-size: 16px;
+		margin-bottom: 5px;
+		font-style: normal;
+		font-weight: 600;
+		line-height: normal;
+
+		a {
+			color: #009d95;
+		}
+	}
+
+	&__companyType {
+		padding-left: 10px;
+		font-size: 22px;
+	}
+
+	&__linkwrapper {
+		display: flex;
+
+		a {
+			margin-right: 15px;
+		}
+	}
+
+	&__cardwrapper {
+		display: flex;
+		width: 100%;
+		margin: 0 auto;
+		flex-wrap: wrap;
+		flex-direction: row;
+
+		@media (max-width: $max-720) {
+			flex-direction: column;
+		}
+	}
+
+	&__card {
+		padding: 15px;
+		width: 33.3%;
+
+		@media (max-width: $max-1024) {
+			width: 50%;
+		}
+
+		@media (max-width: $max-960) {
+			flex-direction: row;
+			width: 50%;
+		}
+
+		@media (max-width: $max-720) {
+			flex-direction: column;
+			width: 100%;
+		}
+	}
+
+	&__playReadBtn {
+		display: inline-block;
+		vertical-align: middle;
+		margin-left: 10px;
+		height: 18px;
+	}
+
+	&__components {
+		height: 530px;
+		box-shadow: 1px 1px 10px #e5e5e5;
+		border-radius: 10px;
+		overflow-y: hidden;
+		position: relative;
+		transition: 2s;
+
+		@media (max-width: $max-1024) {
+			//min-height: 710px;
+		}
+
+		@media (max-width: $max-960) {
+			height: 560px;
+		}
+
+		@media (max-width: $max-720) {
+			height: 510px;
+		}
+
+		@media (max-width: $max-480) {
+			height: 500px;
+		}
+
+		@media (max-width: $max-431) {
+			height: 520px;
+		}
+
+		&:hover {
+			img[alt="companyImage"] {
+				margin-top: -210px;
+
+				@media (max-width: $max-960) {
+					margin-top: -245px;
+				}
+			}
+
+			img[alt="companyLogo"] {
+				margin: 5px 0px 8px 0;
+
+				@media (max-width: $max-720) {
+					height: 25px;
+				}
+
+				@media (max-width: $max-480) {
+					height: 25px;
+				}
+			}
+		}
+	}
+
+	&__learnmore {
+		padding: 0 15px;
+		padding-bottom: 20px;
+		text-align: right;
+		font-family: $font-family-gilroy;
+		font-weight: 600;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		color: #009d95;
+		font-size: 14px;
+		text-transform: uppercase;
+
+		@media (max-width: $max-720) {
+			position: relative;
+		}
+	}
+
+	&__cosImage {
+		padding: 5px;
+
+		img {
+			transition: margin-top 1s;
+			display: block;
+			margin: 0 auto;
+
+			@media (max-width: $max-960) {
+				margin: 0 auto;
+			}
+		}
+	}
+
+	&__imageRow {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__companydetails {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0 15px;
+		color: #000;
+
+		img {
+			margin: 20px 0;
+			transition: margin 1s, height 1s;
+		}
+	}
+
+	&__businessproblem {
+		padding: 0 15px;
+		margin-bottom: 20px;
+		font-size: 21px;
+		line-height: 31px;
+		color: #023059;
+		font-family: $font-family-gilroy;
+		font-weight: 600;
+		min-height: 100px;
+	}
+
+	&__title {
+		font-family: $font-family-gilroy;
+		color: #8ac4e8;
+		font-size: 18px;
+		font-weight: 600;
+
+		img {
+			height: 30px;
+		}
+	}
+
+	&__companyText {
+		margin-top: 15px;
+		margin-bottom: 15px;
+	}
+
+	&__tags {
+		padding: 0px 15px;
+		margin-bottom: 20px;
+
+		span {
+			display: inline-block;
+			background-color: #f0f0f0;
+			border-radius: 15px;
+			color: #000;
+			padding: 2px 15px;
+			color: #023059;
+			font-family: $font-family-gilroy;
+			font-weight: 600;
+			font-size: 14px;
+		}
+	}
+
+	&__type {
+		font-size: 18px;
+		font-family: $font-family-gilroy;
+	}
+
+	&__details {
+		font-size: 18px;
+	}
+
+	&__cosText {
+		width: 100%;
+
+		h3 {
+			font-size: 24px;
+			font-family: $font-family-gilroy;
+			margin-bottom: 0px;
+
+			@media (max-width: $max-960) {
+				font-size: 20px;
+			}
+		}
+
+		p {
+			margin-top: 0;
+		}
+
+		@media (max-width: $max-960) {
+			width: 100%;
+		}
+	}
+
+	&__assetholder {
+		// Asset container styles
+	}
+}
+

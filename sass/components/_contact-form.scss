@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use '../variables' as *;
 @use '../mixins' as *;
 @use '../reset' as *;
@@ -61,7 +62,7 @@
 
 .makeContact {
 	@include segment-bottom;
-	padding-top: percentage(140px / $limit);
+	padding-top: math.percentage(math.div(140px, $limit));
 
 	@media (min-width: $limit) {
 		padding-top: 140px;
@@ -116,7 +117,7 @@
 		}
 
 		@media (min-width: $min-tablet) {
-			width: calc(50% - #{(35/18) * 1em});
+			width: calc(50% - #{math.div(35, 18) * 1em});
 		}
 
 		@media (min-width: $min-desktop) {
@@ -149,7 +150,7 @@
 
 	&__title {
 		@include reset-heading;
-		margin: 0 0 $gutter / 2;
+		margin: 0 0 math.div($gutter, 2);
 
 		@include responsive-font(20, 24);
 		font-family: $font-family-gilroy;
