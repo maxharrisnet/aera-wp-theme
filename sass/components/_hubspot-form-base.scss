@@ -1,0 +1,184 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../reset' as *;
+@use '../grid' as *;
+
+// Shared base styles for all HubSpot forms
+// These styles are applied to form wrappers that contain HubSpot forms
+
+@mixin hubspot-form-base {
+	&.hs_error_rollup {
+		display: none;
+	}
+
+	div {
+		position: relative;
+	}
+
+	ul {
+		margin: 0;
+		padding-left: 0px;
+		position: relative;
+		bottom: 0px;
+		left: 0;
+		font-size: 12px;
+		color: red;
+		li {
+			list-style-type: none;
+		}
+	}
+
+	fieldset {
+		max-width: 100% !important;
+
+		div {
+			margin-bottom: 20px !important;
+			position: relative;
+			padding-right: 5px;
+			width: 100% !important;
+
+			@media (max-width: $min-720) {
+				width: 100% !important;
+				margin-bottom: 20px !important;
+				padding-right: 0px;
+			}
+		}
+	}
+
+	// Common input styles
+	input[type='text'],
+	input[type='email'],
+	input[type='tel'] {
+		border: 0;
+		max-width: 100%;
+		width: 100% !important;
+		line-height: 3;
+		font-family: 'FreightSans Pro', sans-serif;
+		font-size: 16px;
+		color: rgb(92, 100, 118);
+		background-color: transparent;
+
+		&:focus {
+			outline: 0 !important;
+		}
+
+		@media (max-width: $min-720) {
+			max-width: 100%;
+		}
+	}
+
+	// Common submit button styles
+	input[type='submit'],
+	.hs-button {
+		font-size: 14px;
+		line-height: 3.71429;
+		border: 0;
+		background-color: #dee8fb;
+		background-image: linear-gradient(rgba(224, 249, 255, 0), #e0f9ff 90%);
+		margin: 0;
+		vertical-align: baseline;
+		appearance: none;
+		display: inline-flex;
+		justify-content: center;
+		position: relative;
+		padding: 0 2.85714em;
+		height: 3.57143em;
+		color: #1a1a1a;
+		font-family: Gilroy, sans-serif;
+		font-weight: 600;
+		line-height: 3.57143;
+		letter-spacing: 0.025em;
+		text-transform: uppercase;
+		text-decoration: none;
+		white-space: nowrap;
+		border-radius: 999px;
+		cursor: pointer;
+		transition: 0.18s;
+		transition-property: border-color, background-color, color, opacity;
+		margin-top: 20px;
+
+		&:hover {
+			background-color: #e0f9ff;
+			background-image: linear-gradient(rgba(222, 232, 251, 0), #dee8fb 90%);
+		}
+	}
+
+	// Common select styles
+	select {
+		width: 100%;
+		margin-top: 10px;
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+		vertical-align: baseline;
+		border: 0;
+		background: 0 0;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		display: block;
+		max-width: 100%;
+		text-transform: inherit;
+		color: #1a1a1a;
+		border-color: #bee9f3;
+		position: relative;
+		border-radius: 999px;
+		border: 1px solid #bee9f3;
+		vertical-align: baseline;
+		display: inline-flex;
+
+		&:focus {
+			outline: 0 !important;
+		}
+
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		background: transparent;
+		background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+		background-repeat: no-repeat;
+		background-position-x: 95%;
+		background-position-y: 10px;
+		position: relative;
+	}
+
+	// Common textarea styles
+	textarea {
+		padding: 0.8em 0;
+		line-height: 1.33333;
+		resize: none;
+		border: 0;
+		border-radius: 0;
+		vertical-align: baseline;
+		width: 100% !important;
+		font-family: 'FreightSans Pro', sans-serif;
+		font-size: 16px;
+		background-color: transparent;
+
+		&:focus {
+			outline: 0 !important;
+		}
+	}
+
+	// Common HubSpot specific elements
+	div {
+		&[class='grecaptcha-badge'] {
+			transform: scale(0.7);
+			transform-origin: 0;
+		}
+
+		&[class='legal-consent-container'] {
+			margin-bottom: 0 !important;
+
+			p {
+				font-size: 10px;
+				line-height: 15px;
+			}
+		}
+
+		&[class='hs-richtext'] {
+			margin-bottom: 0 !important;
+		}
+	}
+}
+

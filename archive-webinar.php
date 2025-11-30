@@ -113,7 +113,7 @@ $on_demand_query = new WP_Query($on_demand_args);
             <p><?php esc_html_e('Sign up for updates in your inbox.', 'aera'); ?></p>
           </div>
           <div class="news__formWrapper">
-            <div id="webinarForm"></div>
+            <div id="webinarForm" class="webinar-form"></div>
           </div>
         </div>
       </div>

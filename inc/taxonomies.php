@@ -49,7 +49,7 @@ function register_taxonomies(): void
       'args'     => array(
         'hierarchical' => true,
       ),
-      'post_types' => array_merge($resourceTypes, array('webinar')),
+      'post_types' => $resourceTypes, // Already includes webinar
     ),
     'team_group'        => array(
       'singular' => __('Team Group', 'aera'),

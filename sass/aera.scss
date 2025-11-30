@@ -12,18 +12,22 @@ Custom Aera website styles compiled from SCSS
 
 /* COMPONENTS */
 @use 'components/buttons';
+@use 'components/background';
+@use 'components/loading';
+@use 'components/social';
+
+/* FORMS */
 @use 'components/forms';
+@use 'components/hubspot-form-base';
 @use 'components/contact-form';
 @use 'components/demo-form';
 @use 'components/hubspot-forms';
-@use 'components/background';
-@use 'components/loading';
-@use 'components/hero';
 
+/* LAYOUT */
 @use 'components/header';
 @use 'components/navigation';
+@use 'components/hero';
 @use 'components/footer';
-@use 'components/social';
 
 /* Resources */
 @use 'components/resource-card';

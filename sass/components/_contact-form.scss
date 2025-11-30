@@ -2,260 +2,57 @@
 @use '../mixins' as *;
 @use '../reset' as *;
 @use '../grid' as *;
+@use 'hubspot-form-base' as *;
 
-.fred {
-	width: 100%;
-	padding-top: 120px;
-
-	&__container {
-		@include container;
-	}
-	&__left {
-		padding-left: 55px;
-		margin-top: 50px;
-		@media (max-width: $min-720) {
-			padding-left: 0;
-			margin-top: 0;
-		}
-	}
-	&__name {
-		font-family: Gilroy;
-		font-size: 26px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: 38px;
-		letter-spacing: 0em;
-		text-align: left;
-		margin: 0 0 10px 0;
-	}
-	&__title {
-		font-family: FreightSans Pro;
-		font-size: 18px;
-		line-height: 31px;
-		letter-spacing: 0em;
-		text-align: left;
-		margin: 0 0 20px 0;
-	}
-	&__socialIcons {
-		a {
-			display: inline-block;
-			margin-right: 20px;
-		}
-	}
+// Contact Form Styles
+.contact-form {
 	&__contentwrapper {
-		//background-color: #F7F8FA;
+		@include hubspot-form-base;
 		max-width: 850px;
 		margin: 0 auto;
 		position: relative;
-		&.hs_error_rollup {
-			display: none;
-		}
-		div {
-			position: relative;
-		}
-		ul {
-			margin: 0;
-			padding-left: 0px;
-			position: relative;
-			bottom: 0px;
-			left: 0;
-			font-size: 12px;
-			color: red;
-			li {
-				list-style-type: none;
-			}
-		}
-		input {
-			border: 0;
+
+		// Contact form specific input styles - increased specificity to override .makeContact styles
+		// Match specificity of .makeContact .hs-form input (0,2,1) with .contact-form__contentwrapper .hs-form input
+		.hs-form input[type='text'],
+		.hs-form input[type='email'],
+		.hs-form input[type='tel'],
+		input[type='text'],
+		input[type='email'],
+		input[type='tel'] {
 			border-bottom: 1px solid #85daca;
-			max-width: 100%;
-			width: 100% !important;
-			line-height: 3;
-			font-family: 'FreightSans Pro', sans-serif;
 			font-weight: 200;
-			font-size: 16px;
-			color: rgb(92, 100, 118);
-			&:focus {
-				outline: 0 !important;
-			}
+		}
+
+		input[type='submit'] {
+			max-width: 25%;
+
 			@media (max-width: $min-720) {
-				max-width: 100%;
-			}
-			&[type='submit'] {
-				max-width: 25%;
-				font-size: 14px;
-				line-height: 3.71429;
-				border: 0;
-				background-color: #dee8fb;
-				background-image: linear-gradient(rgba(224, 249, 255, 0), #e0f9ff 90%);
-				margin: 0;
-				vertical-align: baseline;
-				appearance: none;
-				display: inline-flex;
-				justify-content: center;
-				position: relative;
-				padding: 0 2.85714em;
-				height: 3.57143em;
-				color: #1a1a1a;
-				font-family: Gilroy, sans-serif;
-				font-weight: 600;
-				line-height: 3.57143;
-				letter-spacing: 0.025em;
-				text-transform: uppercase;
-				text-decoration: none;
-				white-space: nowrap;
-				border-radius: 999px;
-				//border: 1px solid #bee9f3;
-				cursor: pointer;
-				// background: hsla(0,0%,100%,.5);
-				transition: 0.18s;
-				transition-property: border-color, background-color, color, opacity;
-				margin-top: 20px;
-				&:hover {
-					background-color: #e0f9ff;
-					background-image: linear-gradient(rgba(222, 232, 251, 0), #dee8fb 90%);
-				}
-				@media (max-width: $min-720) {
-					max-width: 60%;
-				}
+				max-width: 60%;
 			}
 		}
-		fieldset {
-			max-width: 100% !important;
-			//margin-bottom: 60px !important;
-			div {
-				margin-bottom: 20px !important;
-				position: relative;
-				padding-right: 5px;
-				width: 100% !important;
-				@media (max-width: $min-720) {
-					width: 100% !important;
-					margin-bottom: 20px !important;
-					padding-right: 0px;
-				}
-			}
-		}
+
 		select {
-			width: 100%;
-			margin-top: 10px;
-			font-family: inherit;
-			font-size: inherit;
-			font-weight: inherit;
-			line-height: inherit;
-			vertical-align: baseline;
-			border: 0;
-			background: 0 0;
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			appearance: none;
-			display: block;
 			padding-left: 2.85714em;
 			padding-right: 9.77143em;
-			max-width: 100%;
-			text-transform: inherit;
-			color: #1a1a1a;
-			border-color: #bee9f3;
-			position: relative;
-			max-width: 100%;
-			border-radius: 999px;
-			border: 1px solid #bee9f3;
 			height: 2.5em;
-			vertical-align: baseline;
-			display: inline-flex;
-			&:focus {
-				outline: 0 !important;
-			}
-			-webkit-appearance: none;
-			-moz-appearance: none;
-			background: transparent;
-			background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-			background-repeat: no-repeat;
-			background-position-x: 95%;
-			background-position-y: 10px;
 
-			position: relative;
 			&[name='department'] {
 				width: 45% !important;
+
 				@media (max-width: $min-720) {
 					width: 100% !important;
 				}
 			}
-			// &:before{
-			//     content: '&or;';
-			//     position: absolute;
-			//     top: 0;
-			//     right: 0;
-			// }
 		}
+
 		textarea {
-			padding: 0.8em 0;
 			height: 200px;
-			line-height: 1.33333;
-			resize: none;
-			border: 0;
 			border-bottom: 1px solid #85daca;
-			border-radius: 0;
-			vertical-align: baseline;
-			width: 100% !important;
-			&:focus {
-				outline: 0 !important;
-			}
 		}
+
 		@media (max-width: $min-720) {
 			padding: 0 30px;
-		}
-	}
-	&__contentrow {
-		display: flex;
-		position: relative;
-		flex-wrap: wrap;
-	}
-	&__contentleft {
-		font-family: FreightSans Pro;
-		font-size: 18px;
-		font-style: italic;
-		font-weight: 600;
-		line-height: 29px;
-		color: #000;
-		padding-right: 20px;
-		width: 50%;
-		padding-left: 50px;
-		@media (max-width: $min-720) {
-			padding-left: 0px;
-			width: 100%;
-			padding-right: 0;
-		}
-	}
-	&__imageright {
-		position: absolute;
-		right: 0;
-		top: -185px;
-		img {
-			width: 480px;
-		}
-		@media (max-width: $min-720) {
-			position: relative;
-			top: 0;
-			img {
-				width: 100%;
-			}
-		}
-	}
-	&__maincontent {
-		padding: 30px 0px 0 50px;
-		color: #000;
-		@media (max-width: $min-720) {
-			padding: 30px 0 0 0;
-		}
-	}
-	&__buttonwrapper {
-		text-align: center;
-		padding: 100px 0px;
-	}
-	div {
-		&[class='grecaptcha-badge'] {
-			transform: scale(0.7);
-			transform-origin: 0;
 		}
 	}
 }

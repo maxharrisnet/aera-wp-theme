@@ -20,7 +20,7 @@
             "type": "taxonomy",
             "instructions": "Select the industry or industries for this customer.",
             "required": false,
-            "taxonomy": "resource_industry",
+            "taxonomy": "industry",
             "field_type": "multi_select",
             "allow_null": false,
             "return_format": "id",

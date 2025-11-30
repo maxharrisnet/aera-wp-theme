@@ -14,8 +14,10 @@ get_header();
 
 <div class="makeContact">
   <div class="makeContact__container">
-    <div id="contactFormWrapper" class="makeContact__inner">
-      <?php the_content(); ?>
+    <div class="makeContact__inner">
+      <div id="contactFormWrapper" class="contact-form__contentwrapper">
+        <?php the_content(); ?>
+      </div>
     </div>
   </div>
 </div>
