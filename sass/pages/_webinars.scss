@@ -457,10 +457,12 @@
 }
 
 // Webinar Form Styles (separate from news styles)
+// Applied to .webinar-form class inside .news__formWrapper
 .webinar-form {
 	@include hubspot-form-base;
 	position: relative;
 	text-align: left;
+	width: 100%;
 
 	// 2-column layout for form fields
 	.hs-form {
@@ -470,20 +472,33 @@
 
 		.hs-form-field {
 			margin-bottom: $gutter;
+			width: 100%;
 
 			@media (min-width: $min-mobile) {
 				width: calc(50% - 1em);
 				display: inline-block;
 				vertical-align: top;
+				margin-right: 0;
+
+				&:nth-child(odd) {
+					margin-right: 2em;
+				}
 
 				&:nth-child(even) {
-					margin-left: 2em;
+					margin-left: 0;
 				}
 
 				&.hs-form-field--full-width {
 					width: 100%;
 					margin-left: 0;
+					margin-right: 0;
 				}
+			}
+
+			@media (max-width: $max-720) {
+				width: 100% !important;
+				margin-left: 0 !important;
+				margin-right: 0 !important;
 			}
 		}
 	}
@@ -495,21 +510,46 @@
 		border-bottom: 2px solid #85daca;
 		line-height: 2;
 		font-family: $font-family;
+		width: 100% !important;
 
 		&::placeholder {
 			color: #000000;
 		}
 	}
 
-	input[type='submit'] {
+	input[type='submit'],
+	.hs-button {
 		width: auto !important;
+		font-size: 14px;
+		line-height: 3.71429;
+		border: 0;
 		background-color: transparent;
-		border: 1px solid #bee9f3;
+		margin: 0;
+		vertical-align: baseline;
+		appearance: none;
+		display: inline-flex;
+		justify-content: center;
+		position: relative;
+		padding: 0 2.85714em;
+		height: 3.57143em;
+		color: #1a1a1a;
 		font-family: $font-family-heading;
+		font-weight: 600;
+		line-height: 3.57143;
+		letter-spacing: 0.025em;
+		text-transform: uppercase;
+		text-decoration: none;
+		white-space: nowrap;
+		border-radius: 999px;
+		cursor: pointer;
+		border: 1px solid #bee9f3;
+		margin-top: 20px;
 
 		&:hover {
 			outline: none;
 			border-color: #e0f9ff rgba(255, 255, 255, 0) #dee8fb;
+			background-color: #e0f9ff;
+			background-image: linear-gradient(rgba(222, 232, 251, 0) 0%, #dee8fb 90%);
 		}
 
 		@media (max-width: $max-720) {
@@ -525,18 +565,28 @@
 			font-size: 16px;
 			text-align: left;
 			line-height: 20px;
+			margin-right: 0 !important;
+
+			@media (max-width: $max-720) {
+				width: 100% !important;
+				margin-bottom: 20px !important;
+				padding-right: 5px;
+			}
 		}
 	}
 
 	select {
 		width: 90%;
+		margin-top: 10px;
 		padding-left: 1.85714em;
 		padding-right: 1.77143em;
 		height: 2.5em;
 	}
 
 	textarea {
+		padding: 0.8em 0;
 		height: 50px;
+		width: 100% !important;
 		color: #000000;
 		border-bottom: 2px solid #85daca;
 
