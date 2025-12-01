@@ -19,6 +19,10 @@
 		visibility 0.3s ease-out;
 	visibility: visible;
 	overflow-y: auto;
+	text-align: center;
+	display: flex;
+	justify-content: cneter;
+	align-itemms: center;
 
 	&.is-hidden {
 		opacity: 0;

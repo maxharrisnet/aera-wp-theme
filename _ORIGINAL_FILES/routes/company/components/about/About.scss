@@ -1,9 +1,0 @@
-@import '~styles/config';
-
-.about {
-  margin-top: $gutter * 2;
-
-  @media (min-width: $min-720) {
-    margin-top: $gutter * 4;
-  }
-}
