@@ -188,6 +188,20 @@ function aera_technology_scripts()
       );
     }
   }
+
+  // Enqueue AeraHub 2025 page scripts
+  if (is_page_template('page-aerahub-2025.php')) {
+    $aerahub_2025_js_path = get_template_directory() . '/js/aerahub-2025.js';
+    if (file_exists($aerahub_2025_js_path)) {
+      wp_enqueue_script(
+        'aera-aerahub-2025',
+        get_template_directory_uri() . '/js/aerahub-2025.js',
+        array(),
+        filemtime($aerahub_2025_js_path),
+        true
+      );
+    }
+  }
 }
 add_action('wp_enqueue_scripts', 'aera_technology_scripts');
 
