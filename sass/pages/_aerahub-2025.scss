@@ -5,8 +5,10 @@
 
 /* AERAHUB 2025 PAGE */
 
-#headnav {
-	display: none !important;
+body.page-aerahub-2025 {
+	#headnav {
+		display: none !important;
+	}
 }
 
 .aerahub-2025 {
@@ -644,25 +646,244 @@
 		}
 	}
 
+	&__formwrapper,
 	&__formBox {
 		background: #fff;
 		padding: 15px;
 		border-radius: 8px;
-		margin-top: 20px;
 
 		@media (max-width: $max-720) {
 			width: 100%;
 			padding: 15px;
 			margin-top: 20px;
 		}
+
+		form {
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: space-around;
+		}
+
+		&.hs_error_rollup {
+			display: none;
+		}
+
+		div {
+			position: relative;
+			margin-bottom: 10px;
+
+			@media (max-width: $min-720) {
+				width: 100% !important;
+			}
+
+			&[class='actions'] {
+				text-align: left;
+			}
+		}
+
+		ul {
+			margin: 0;
+			padding-left: 0px;
+			position: relative;
+			bottom: 0px;
+			left: 0;
+			font-size: 12px;
+			color: red;
+			text-align: left;
+
+			li {
+				list-style-type: none;
+			}
+		}
+
+		li[class='hs-form-booleancheckbox'] {
+			margin: 30px 0px;
+
+			input[type='checkbox'] {
+				display: inline-block;
+				width: auto;
+				vertical-align: middle;
+				margin-right: 10px;
+				transform: scale(1.5);
+			}
+
+			span {
+				display: inline-block;
+				color: #5c6476;
+				font-size: 16px;
+				vertical-align: middle;
+				font-weight: 500;
+			}
+		}
+
+		div[class='legal-consent-container'] {
+			font-size: 10px;
+			line-height: 15px;
+			text-align: left;
+			color: #5c6475;
+		}
+
+		fieldset div {
+			margin-bottom: 20px !important;
+			position: relative;
+			padding-right: 5px;
+			color: #5c6475;
+			font-weight: 300;
+			font-size: 12px;
+			line-height: 20px;
+			margin-right: 0 !important;
+		}
+
+		input {
+			border: 0;
+			border-bottom: 1px solid #4b8bb5;
+			max-width: 100%;
+			width: 100% !important;
+			line-height: 3;
+			font-family: $font-family-freight;
+			font-weight: 600;
+			font-size: 16px;
+			color: #1a1a1a;
+			border-radius: 0;
+
+			&:focus {
+				outline: 0 !important;
+			}
+
+			@media (max-width: $min-720) {
+				max-width: 100%;
+			}
+
+			&[type='placeholder'] {
+				color: #1a1a1a !important;
+			}
+
+			&[type='submit'] {
+				font-size: 14px;
+				line-height: 3.71429;
+				border: 0;
+				background-color: #00619e;
+				margin: 0;
+				vertical-align: baseline;
+				appearance: none;
+				display: flex;
+				justify-content: center;
+				padding: 0 2.85714em;
+				height: 3.57143em;
+				color: #ffffff;
+				font-family: $font-family-gilroy;
+				font-weight: 600;
+				line-height: 3.57143;
+				letter-spacing: 0.025em;
+				text-transform: uppercase;
+				text-decoration: none;
+				white-space: nowrap;
+				border-radius: 999px;
+				cursor: pointer;
+				transition: 0.18s;
+				transition-property: border-color, background-color, color, opacity;
+				max-width: 400px;
+			}
+		}
+
+		fieldset {
+			max-width: 100% !important;
+
+			div {
+				margin-bottom: 8px !important;
+				position: relative;
+
+				@media (max-width: $min-720) {
+					width: 100% !important;
+					margin-bottom: 5px !important;
+				}
+			}
+		}
+
+		select {
+			width: 100% !important;
+			margin-top: 10px;
+			font-family: inherit;
+			font-size: 16px;
+			font-weight: inherit;
+			line-height: inherit;
+			border: 0;
+			background: 0 0;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			display: block;
+			max-width: 100%;
+			text-transform: inherit;
+			border-color: #4b8bb5;
+			position: relative;
+			max-width: 100%;
+			font-family: $font-family-freight;
+			font-weight: 400;
+			border-bottom: 1px solid #4b8bb5;
+			border-radius: 0;
+			height: 2.5em;
+			display: inline-flex;
+
+			&:focus {
+				outline: 0 !important;
+			}
+
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			background: transparent;
+			background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+			background-repeat: no-repeat;
+			background-position-x: 95%;
+			background-position-y: 10px;
+
+			position: relative;
+
+			&[type='placeholder'] {
+				color: #1a1a1a !important;
+			}
+		}
+	}
+
+	&__formBox {
+		padding: 0;
+
+		input {
+			&[type='submit'] {
+				font-size: 14px;
+				line-height: 3.71429;
+				border: 0;
+				margin: 0 auto;
+				vertical-align: baseline;
+				appearance: none;
+				display: flex;
+				justify-content: center;
+				position: relative;
+				padding: 0 2.85714em;
+				height: 3.57143em;
+				color: #000;
+				font-family: $font-family-gilroy;
+				font-weight: 600;
+				line-height: 3.57143;
+				letter-spacing: 0.025em;
+				text-transform: uppercase;
+				text-decoration: none;
+				white-space: nowrap;
+				border-radius: 999px;
+				border: 1px solid #bee9f3;
+				cursor: pointer;
+				transition: 0.18s;
+				transition-property: border-color, background-color, color, opacity;
+				margin-top: 10px;
+				background-color: #dee8fb;
+				border-color: #dee8fb rgba(255, 255, 255, 0) #e0f9ff;
+				background-image: linear-gradient(rgba(224, 249, 255, 0) 0%, #e0f9ff 90%);
+			}
+		}
 	}
 
 	&__bluroverlay {
 		filter: blur(8px);
-	}
-
-	&__header {
-		// Header styles if needed
 	}
 
 	// HubSpot Form Custom Styles
