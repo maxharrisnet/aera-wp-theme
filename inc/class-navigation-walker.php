@@ -155,6 +155,9 @@ class Navigation_Walker extends \Walker_Nav_Menu
      */
     $atts = apply_filters('nav_menu_link_attributes', $atts, $item, $args, $depth);
 
+    // Remove React-specific props that shouldn't be on DOM elements
+    unset($atts['activeClassName']);
+
     // Add navigation__link class to anchor, merging with existing class if present
     if (isset($atts['class'])) {
       $existing_classes = is_array($atts['class']) ? $atts['class'] : explode(' ', $atts['class']);

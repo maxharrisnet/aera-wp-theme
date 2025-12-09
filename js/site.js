@@ -179,9 +179,7 @@
 		const hiddenPaths = ['/AI-for-decision-automation', '/aerahub-2024', '/aerahub-2025', '/aerahub-2025-london', '/aerahub'];
 
 		if (hiddenPaths.indexOf(pathname) === -1) {
-			if (typeof $ !== 'undefined' && $('#headnav').length) {
-				$('#headnav').show();
-			} else if (header) {
+			if (header) {
 				header.style.display = '';
 			}
 		}
@@ -194,57 +192,55 @@
 	let scrollHandler = null;
 
 	function initScrollHandler() {
-		if (typeof $ === 'undefined' || !$('#headnav').length) {
+		if (!header) {
 			return;
 		}
-		console.log('headernav', $('#headnav'));
+
 		const windowWidth = window.innerWidth;
 		if (windowWidth >= 1000) {
-			scrollPosition = $(window).scrollTop();
+			scrollPosition = window.scrollY || window.pageYOffset;
 
 			if (scrollHandler) {
-				$(window).off('scroll', scrollHandler);
+				window.removeEventListener('scroll', scrollHandler);
 			}
 
 			scrollHandler = function () {
-				const scroll = $(window).scrollTop();
+				const scroll = window.scrollY || window.pageYOffset;
 
 				if (scroll <= 0 && scrollPosition <= 0) {
-					$('#headnav').css('background-color', 'transparent');
-					$('#headnav').css('position', 'absolute');
-					$('#headnav').css('top', '0');
-				} else if (scroll > scrollPosition && scroll != 0) {
-					$('#headnav').css('background-color', 'transparent');
-					$('#headnav').css('position', 'absolute');
-					$('#headnav').css('top', '-175px');
-				} else if (scroll == 0) {
-					$('#headnav').css('background-color', 'transparent');
-					$('#headnav').css('position', 'absolute');
-					$('#headnav').css('top', '0px');
+					header.style.backgroundColor = 'transparent';
+					header.style.position = 'absolute';
+					header.style.top = '0';
+				} else if (scroll > scrollPosition && scroll !== 0) {
+					header.style.backgroundColor = 'transparent';
+					header.style.position = 'absolute';
+					header.style.top = '-175px';
+				} else if (scroll === 0) {
+					header.style.backgroundColor = 'transparent';
+					header.style.position = 'absolute';
+					header.style.top = '0px';
 				} else if (scroll <= 100) {
-					$('#headnav').css('background-color', 'transparent');
-					$('#headnav').css('position', 'fixed');
-					$('#headnav').css('top', '0px');
+					header.style.backgroundColor = 'transparent';
+					header.style.position = 'fixed';
+					header.style.top = '0px';
 				} else {
-					$('#headnav').css('background-color', '#fff');
-					$('#headnav').css('position', 'fixed');
-					$('#headnav').css('top', '0px');
+					header.style.backgroundColor = '#fff';
+					header.style.position = 'fixed';
+					header.style.top = '0px';
 				}
 				scrollPosition = scroll;
 			};
 
-			$(window).on('scroll', scrollHandler);
+			window.addEventListener('scroll', scrollHandler);
 		} else if (scrollHandler) {
-			$(window).off('scroll', scrollHandler);
+			window.removeEventListener('scroll', scrollHandler);
 			scrollHandler = null;
 		}
 	}
 
-	// Initialize scroll handler if jQuery is available
-	if (typeof $ !== 'undefined') {
-		initScrollHandler();
-		$(window).on('resize', initScrollHandler);
-	}
+	// Initialize scroll handler
+	initScrollHandler();
+	window.addEventListener('resize', initScrollHandler);
 
 	// Simple scroll handler for header--scrolled class (fallback if jQuery scroll handler not used)
 	const handleScroll = () => {
