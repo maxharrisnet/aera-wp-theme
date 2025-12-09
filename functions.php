@@ -157,8 +157,17 @@ function aera_technology_scripts()
   wp_style_add_data('aera-technology-style', 'rtl', 'replace');
   wp_enqueue_style('aera-theme-components', get_template_directory_uri() . '/assets/css/aera.css', array('aera-technology-style'), _S_VERSION);
 
+  // Enqueue GSAP from CDN (jsDelivr)
+  wp_enqueue_script(
+    'gsap',
+    'https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js',
+    array(),
+    '3.12.2',
+    false // Load in header so it's available for site.js
+  );
+
   wp_enqueue_script('aera-technology-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
-  wp_enqueue_script('aera-theme-site', get_template_directory_uri() . '/js/site.js', array(), _S_VERSION, true);
+  wp_enqueue_script('aera-theme-site', get_template_directory_uri() . '/js/site.js', array('gsap'), _S_VERSION, true);
 
   $background_bundle_path = get_template_directory() . '/assets/js/dist/background.js';
   if (file_exists($background_bundle_path)) {

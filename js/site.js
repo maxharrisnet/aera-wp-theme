@@ -53,6 +53,7 @@
 
 	// Check if GSAP is available
 	const gsapAvailable = typeof gsap !== 'undefined';
+	console.log('gsapAvailable', gsapAvailable);
 	const TimelineLite = gsapAvailable ? gsap.timeline : null;
 
 	// Toggle animation functions
