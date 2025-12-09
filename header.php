@@ -46,6 +46,18 @@
     <div class="<?php echo esc_attr($background_classes); ?>" data-background data-background-active="<?php echo $background_active ? 'true' : 'false'; ?>" aria-hidden="true"></div>
 
     <header class="header" id="headnav" data-header>
+      <div class="header__topBanner">
+        <span>
+          <b>Complimentary Report: Gartner's Hype Cycle for Artificial Intelligence, 2025</b>
+        </span>
+        <span>
+          <a
+            href='https://meet.aeratechnology.com/aera-technology-recognized-in-the-2025-gartner-hype-cycle-for-artificial-intelligence?utm_source=website&utm_medium=banner&utm_campaign=184122082-FY26_Q4_Web_ResourceDownload_Gartner_Hype_Cycle_Report'
+            target='_blank'>
+            Read Now
+          </a>
+        </span>
+      </div>
       <div class="header__container">
         <div class="header__content">
           <div class="header__bar" id="logo">
