@@ -195,7 +195,6 @@ $cta = wp_parse_args(
                   <video autoplay muted loop playsinline preload="metadata" src="<?php echo esc_url($video); ?>"></video>
                 <?php endif; ?>
               </div>
-              <span class="technology__badge"><?php printf(esc_html__('0%d', 'aera'), $index + 1); ?></span>
               <h2 class="technologyItem__title"><?php echo esc_html($title); ?></h2>
               <div class="technologyItem__text">
                 <?php echo wp_kses_post($description); ?>
