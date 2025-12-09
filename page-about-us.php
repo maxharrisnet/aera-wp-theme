@@ -10,10 +10,34 @@ get_header();
 
 $assets_base = trailingslashit(get_template_directory_uri()) . 'assets/';
 
-// About section content
-$about_challenge = function_exists('get_field') ? get_field('about_challenge') : __('The digital economy has created a paradox. Enterprises now have more data than ever before, which should make decision-making easier. Yet the volume, velocity, and complexity of information have outpaced human capacity to act with the speed and precision the digital era demands. That\'s why, in the age of AI, the ability to make high-quality decisions rapidly has become a competitive necessity.', 'aera');
-$about_solution = function_exists('get_field') ? get_field('about_solution') : __('The answer is decision intelligence, empowering enterprises to optimize and automate decisions at scale. It marks a profound shift: from people making decisions supported by machines to machines making decisions guided by people. Aera makes this shift possible, delivering an enterprise-wide decision intelligence agent that drives consistent, real-time decisions.', 'aera');
-$about_people = function_exists('get_field') ? get_field('about_people') : __('Behind Aera is a team of product innovators, industry experts, and experienced leaders, supported by an accomplished board. United by a common mission, we\'re shaping a future where decision intelligence becomes the operating system of global enterprises. The AI era has arrived — and the future of decision-making starts now.', 'aera');
+// Get columns content from ACF
+$column_1_title = function_exists('get_field') ? get_field('column_1_title') : '';
+$column_1_content = function_exists('get_field') ? get_field('column_1_content') : '';
+$column_2_title = function_exists('get_field') ? get_field('column_2_title') : '';
+$column_2_content = function_exists('get_field') ? get_field('column_2_content') : '';
+$column_3_title = function_exists('get_field') ? get_field('column_3_title') : '';
+$column_3_content = function_exists('get_field') ? get_field('column_3_content') : '';
+
+// Build columns array - only include columns that have at least a title
+$columns_content = array();
+if (!empty($column_1_title)) {
+  $columns_content[] = array(
+    'column_title' => $column_1_title,
+    'column_content' => $column_1_content,
+  );
+}
+if (!empty($column_2_title)) {
+  $columns_content[] = array(
+    'column_title' => $column_2_title,
+    'column_content' => $column_2_content,
+  );
+}
+if (!empty($column_3_title)) {
+  $columns_content[] = array(
+    'column_title' => $column_3_title,
+    'column_content' => $column_3_content,
+  );
+}
 
 // Fetch leadership team members
 $leadership_args = array(
@@ -68,7 +92,7 @@ if (empty($investors)) {
     ),
     array(
       'name' => 'Silver Lake Waterman',
-      'logo' => $assets_base . 'images/partners/SilverLakeWaterman.jpg',
+      'logo' => $assets_base . 'images/company/investors/SilverLakeWaterman.jpg',
       'description' => __('Silver Lake Waterman focuses on providing flexible expansion capital to later-stage growth companies in the technology and technology-enabled industries. For more information, visit', 'aera'),
       'link' => 'http://silverlake.com/',
     ),
@@ -165,34 +189,17 @@ $offices_map_image = $assets_base . 'images/company/offices-map.png';
   <?php get_template_part('template-parts/components/hero'); ?>
 
   <!-- About Section -->
-  <section class="about">
-    <div class="columnContent">
-      <div class="columnContent__container">
-        <div class="columnContent__row">
-          <div class="columnContent__col">
-            <div class="columnContentItem">
-              <h2 class="columnContentItem__title"><?php esc_html_e('The Challenge', 'aera'); ?></h2>
-              <p><?php echo esc_html($about_challenge); ?></p>
-            </div>
-          </div>
-
-          <div class="columnContent__col">
-            <div class="columnContentItem">
-              <h2 class="columnContentItem__title"><?php esc_html_e('The Solution', 'aera'); ?></h2>
-              <p><?php echo esc_html($about_solution); ?></p>
-            </div>
-          </div>
-
-          <div class="columnContent__col">
-            <div class="columnContentItem">
-              <h2 class="columnContentItem__title"><?php esc_html_e('The People', 'aera'); ?></h2>
-              <p><?php echo esc_html($about_people); ?></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <?php if (!empty($columns_content)) : ?>
+    <?php
+    get_template_part(
+      'template-parts/components/columns-content',
+      null,
+      array(
+        'columns' => $columns_content,
+      )
+    );
+    ?>
+  <?php endif; ?>
 
   <!-- Leadership Section -->
   <?php if ($leadership_query->have_posts()) : ?>

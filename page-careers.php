@@ -10,38 +10,63 @@ get_header();
 
 $assets_base = trailingslashit(get_template_directory_uri()) . 'assets/';
 
-// Culture section
-$culture_title = function_exists('get_field') ? get_field('careers_culture_title') : __('The big ideas behind our culture.', 'aera');
+// Intro section
+$intro_title = function_exists('get_field') ? get_field('careers_intro_title') : '';
+$intro_text = function_exists('get_field') ? get_field('careers_intro_text') : '';
 
-// Values section - using ACF repeater or defaults
-$values = function_exists('get_field') ? get_field('careers_values') : array();
-if (empty($values)) {
-  // Default values
-  $values = array(
-    array(
-      'title' => __('Excellence', 'aera'),
-      'text' => __('We shoot for the best<br />We don\'t compromise', 'aera'),
-    ),
-    array(
-      'title' => __('Integrity', 'aera'),
-      'text' => __('We do the right thing<br />We take the high road', 'aera'),
-    ),
-    array(
-      'title' => __('Accountability', 'aera'),
-      'text' => __('We deliver what we promise<br />As individuals and as a team', 'aera'),
-    ),
-    array(
-      'title' => __('Speed', 'aera'),
-      'text' => __('We decide with data<br />We fail and succeed fast', 'aera'),
-    ),
-    array(
-      'title' => __('Disruption', 'aera'),
-      'text' => __('We take risks<br />We think on our feet', 'aera'),
-    ),
-    array(
-      'title' => __('Inclusion', 'aera'),
-      'text' => __('We proactively build a diverse<br />community. We advance together', 'aera'),
-    ),
+// Culture section
+$culture_title = function_exists('get_field') ? get_field('careers_culture_title') : '';
+
+// Get columns content from ACF (columns 1-6 for two rows of three)
+$column_1_title = function_exists('get_field') ? get_field('column_1_title') : '';
+$column_1_content = function_exists('get_field') ? get_field('column_1_content') : '';
+$column_2_title = function_exists('get_field') ? get_field('column_2_title') : '';
+$column_2_content = function_exists('get_field') ? get_field('column_2_content') : '';
+$column_3_title = function_exists('get_field') ? get_field('column_3_title') : '';
+$column_3_content = function_exists('get_field') ? get_field('column_3_content') : '';
+$column_4_title = function_exists('get_field') ? get_field('column_4_title') : '';
+$column_4_content = function_exists('get_field') ? get_field('column_4_content') : '';
+$column_5_title = function_exists('get_field') ? get_field('column_5_title') : '';
+$column_5_content = function_exists('get_field') ? get_field('column_5_content') : '';
+$column_6_title = function_exists('get_field') ? get_field('column_6_title') : '';
+$column_6_content = function_exists('get_field') ? get_field('column_6_content') : '';
+
+// Build columns array - only include columns that have at least a title
+$columns_content = array();
+if (!empty($column_1_title)) {
+  $columns_content[] = array(
+    'title' => $column_1_title,
+    'text' => $column_1_content,
+  );
+}
+if (!empty($column_2_title)) {
+  $columns_content[] = array(
+    'title' => $column_2_title,
+    'text' => $column_2_content,
+  );
+}
+if (!empty($column_3_title)) {
+  $columns_content[] = array(
+    'title' => $column_3_title,
+    'text' => $column_3_content,
+  );
+}
+if (!empty($column_4_title)) {
+  $columns_content[] = array(
+    'title' => $column_4_title,
+    'text' => $column_4_content,
+  );
+}
+if (!empty($column_5_title)) {
+  $columns_content[] = array(
+    'title' => $column_5_title,
+    'text' => $column_5_content,
+  );
+}
+if (!empty($column_6_title)) {
+  $columns_content[] = array(
+    'title' => $column_6_title,
+    'text' => $column_6_content,
   );
 }
 
@@ -85,6 +110,20 @@ $jobs = function_exists('get_field') ? get_field('careers_jobs') : array();
 <main id="primary" class="site-main site-main--careers">
   <?php get_template_part('template-parts/components/hero'); ?>
 
+  <!-- Intro Section -->
+  <?php if (!empty($intro_title) || !empty($intro_text)) : ?>
+    <section class="intro">
+      <div class="intro__container">
+        <?php if (!empty($intro_title)) : ?>
+          <h1 class="intro__title"><?php echo esc_html($intro_title); ?></h1>
+        <?php endif; ?>
+        <?php if (!empty($intro_text)) : ?>
+          <div class="intro__text"><?php echo wp_kses_post($intro_text); ?></div>
+        <?php endif; ?>
+      </div>
+    </section>
+  <?php endif; ?>
+
   <!-- Office Image Section -->
   <?php if (!empty($office_image['url'])) : ?>
     <section class="image-block">
@@ -107,31 +146,19 @@ $jobs = function_exists('get_field') ? get_field('careers_jobs') : array();
   <?php endif; ?>
 
   <!-- Values Section -->
-  <?php if (!empty($values)) : ?>
-    <section class="column-content">
-      <div class="columnContent__container">
-        <div class="columnContent__row">
-          <?php foreach ($values as $value) : ?>
-            <?php
-            $value_title = $value['title'] ?? '';
-            $value_text = $value['text'] ?? '';
-            ?>
-            <div class="columnContent__col">
-              <div class="columnContentItem">
-                <?php if (!empty($value_title)) : ?>
-                  <h3 class="columnContentItem__title"><?php echo esc_html($value_title); ?></h3>
-                <?php endif; ?>
-                <?php if (!empty($value_text)) : ?>
-                  <div class="columnContentItem__text">
-                    <p><?php echo wp_kses_post(nl2br($value_text)); ?></p>
-                  </div>
-                <?php endif; ?>
-              </div>
-            </div>
-          <?php endforeach; ?>
-        </div>
-      </div>
-    </section>
+  <?php if (!empty($columns_content)) : ?>
+    <?php
+    get_template_part(
+      'template-parts/components/columns-content',
+      null,
+      array(
+        'columns' => $columns_content,
+        'heading_level' => 'h3',
+        'section_class' => 'column-content',
+        'content_class' => 'columnContentItem__text',
+      )
+    );
+    ?>
   <?php endif; ?>
 
   <!-- Gallery Section -->
@@ -189,34 +216,49 @@ $jobs = function_exists('get_field') ? get_field('careers_jobs') : array();
             <h2 class="roles__title"><?php echo esc_html($roles_title); ?></h2>
           <?php endif; ?>
           <?php if (!empty($roles_text)) : ?>
-            <p class="roles__text"><?php echo esc_html($roles_text); ?></p>
+            <div class="roles__text"><?php echo wp_kses_post($roles_text); ?></div>
           <?php endif; ?>
           <?php if (!empty($roles_bold_text)) : ?>
-            <p class="roles__boldtext"><strong><?php echo esc_html($roles_bold_text); ?></strong></p>
+            <div class="roles__boldtext"><strong><?php echo wp_kses_post($roles_bold_text); ?></strong></div>
           <?php endif; ?>
 
           <!-- Job Filters -->
           <form class="roles__filter" id="jobFilters">
             <div class="roles__filterItem">
-              <label for="filter-role"><?php esc_html_e('Role', 'aera'); ?></label>
-              <select id="filter-role" name="role" class="roles__select">
-                <option value="all"><?php esc_html_e('All teams', 'aera'); ?></option>
-                <!-- Options will be populated dynamically from jobs -->
-              </select>
+              <div class="select">
+                <label class="select__label" for="filter-role"><?php esc_html_e('Role', 'aera'); ?></label>
+                <select id="filter-role" name="role" class="select__el">
+                  <option value="all"><?php esc_html_e('All teams', 'aera'); ?></option>
+                  <!-- Options will be populated dynamically from jobs -->
+                </select>
+                <svg class="select__chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
             </div>
             <div class="roles__filterItem">
-              <label for="filter-countries"><?php esc_html_e('Country', 'aera'); ?></label>
-              <select id="filter-countries" name="country" class="roles__select">
-                <option value="all"><?php esc_html_e('All countries', 'aera'); ?></option>
-                <!-- Options will be populated dynamically from jobs -->
-              </select>
+              <div class="select">
+                <label class="select__label" for="filter-countries"><?php esc_html_e('Country', 'aera'); ?></label>
+                <select id="filter-countries" name="country" class="select__el">
+                  <option value="all"><?php esc_html_e('All countries', 'aera'); ?></option>
+                  <!-- Options will be populated dynamically from jobs -->
+                </select>
+                <svg class="select__chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
             </div>
             <div class="roles__filterItem" id="filter-cities-wrapper" style="display: none;">
-              <label for="filter-cities"><?php esc_html_e('City', 'aera'); ?></label>
-              <select id="filter-cities" name="city" class="roles__select">
-                <option value="all"><?php esc_html_e('All cities', 'aera'); ?></option>
-                <!-- Options will be populated dynamically from jobs -->
-              </select>
+              <div class="select">
+                <label class="select__label" for="filter-cities"><?php esc_html_e('City', 'aera'); ?></label>
+                <select id="filter-cities" name="city" class="select__el">
+                  <option value="all"><?php esc_html_e('All cities', 'aera'); ?></option>
+                  <!-- Options will be populated dynamically from jobs -->
+                </select>
+                <svg class="select__chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
             </div>
           </form>
         </div>

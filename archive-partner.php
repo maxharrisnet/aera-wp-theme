@@ -97,7 +97,7 @@ if (function_exists('get_field')) {
                 <h3><?php echo esc_html($partner_title); ?></h3>
               <?php endif; ?>
               <?php if (!empty($partner_text)) : ?>
-                <p><?php echo wp_kses_post($partner_text); ?></p>
+                <?php echo wp_kses_post($partner_text); ?>
               <?php endif; ?>
             </div>
           </div>
