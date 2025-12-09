@@ -51,15 +51,6 @@ function register_taxonomies(): void
       ),
       'post_types' => $resourceTypes, // Already includes webinar
     ),
-    'team_group'        => array(
-      'singular' => __('Team Group', 'aera'),
-      'plural'   => __('Team Groups', 'aera'),
-      'slug'     => 'team-group',
-      'args'     => array(
-        'hierarchical' => true,
-      ),
-      'post_types' => array('team_member'),
-    ),
     'webinar_solution_area' => array(
       'singular' => __('Solution Area', 'aera'),
       'plural'   => __('Solution Areas', 'aera'),

@@ -1,6 +1,6 @@
 {
     "key": "group_aera_team_member",
-    "title": "Leadership Fields",
+    "title": "Leadership & Board Member Fields",
     "fields": [
         {
             "key": "field_team_member_image",
@@ -56,6 +56,13 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "team_member"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "board_member"
             }
         ]
     ],

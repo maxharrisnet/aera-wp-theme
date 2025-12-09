@@ -15,10 +15,6 @@ $about_challenge = function_exists('get_field') ? get_field('about_challenge') :
 $about_solution = function_exists('get_field') ? get_field('about_solution') : __('The answer is decision intelligence, empowering enterprises to optimize and automate decisions at scale. It marks a profound shift: from people making decisions supported by machines to machines making decisions guided by people. Aera makes this shift possible, delivering an enterprise-wide decision intelligence agent that drives consistent, real-time decisions.', 'aera');
 $about_people = function_exists('get_field') ? get_field('about_people') : __('Behind Aera is a team of product innovators, industry experts, and experienced leaders, supported by an accomplished board. United by a common mission, we\'re shaping a future where decision intelligence becomes the operating system of global enterprises. The AI era has arrived — and the future of decision-making starts now.', 'aera');
 
-// Get team members by group
-$leadership_group = get_term_by('slug', 'leadership', 'team_group');
-$board_group = get_term_by('slug', 'board-members', 'team_group');
-
 // Fetch leadership team members
 $leadership_args = array(
   'post_type'      => 'team_member',
@@ -28,36 +24,16 @@ $leadership_args = array(
   'post_status'    => 'publish',
 );
 
-if ($leadership_group) {
-  $leadership_args['tax_query'] = array(
-    array(
-      'taxonomy' => 'team_group',
-      'field'    => 'term_id',
-      'terms'    => $leadership_group->term_id,
-    ),
-  );
-}
-
 $leadership_query = new WP_Query($leadership_args);
 
 // Fetch board members
 $board_args = array(
-  'post_type'      => 'team_member',
+  'post_type'      => 'board_member',
   'posts_per_page' => -1,
   'orderby'        => 'menu_order',
   'order'          => 'ASC',
   'post_status'    => 'publish',
 );
-
-if ($board_group) {
-  $board_args['tax_query'] = array(
-    array(
-      'taxonomy' => 'team_group',
-      'field'    => 'term_id',
-      'terms'    => $board_group->term_id,
-    ),
-  );
-}
 
 $board_query = new WP_Query($board_args);
 

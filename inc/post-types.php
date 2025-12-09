@@ -39,10 +39,10 @@ function register_post_types(): void
     'media-item',
   );
 
-  // TODO: Update Team Member to Leader and migrate data
   $companyMenuSlug = 'aera-company-hub';
   $companyMenuTypes = array(
     'team_member',
+    'board_member',
     'partner',
     'customer',
   );
@@ -127,6 +127,16 @@ function register_post_types(): void
       'singular'  => __('Leader', 'aera'),
       'plural'    => __('Leadership', 'aera'),
       'rewrite'   => 'team',
+      'menu_icon' => 'dashicons-groups',
+      'supports'  => array('title', 'thumbnail', 'revisions'),
+      'public'    => true,
+      'has_archive' => false,
+      'publicly_queryable' => false,
+    ),
+    'board_member'  => array(
+      'singular'  => __('Board Member', 'aera'),
+      'plural'    => __('Board Members', 'aera'),
+      'rewrite'   => 'board',
       'menu_icon' => 'dashicons-groups',
       'supports'  => array('title', 'thumbnail', 'revisions'),
       'public'    => true,
