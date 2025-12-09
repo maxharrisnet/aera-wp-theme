@@ -245,6 +245,11 @@ require get_template_directory() . '/inc/taxonomies.php';
 require get_template_directory() . '/inc/resources.php';
 
 /**
+ * Lever API integration.
+ */
+require get_template_directory() . '/inc/lever.php';
+
+/**
  * Admin enhancements.
  */
 require get_template_directory() . '/inc/admin.php';

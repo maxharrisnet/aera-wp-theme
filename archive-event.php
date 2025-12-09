@@ -17,8 +17,7 @@ $hero = function_exists('get_field') ? (array) get_field('events_hero') : array(
 $hero = wp_parse_args(
   $hero,
   array(
-    'title'       => __('In-PersonEvents', 'aera'),
-    'description' => __('Discover upcoming in-person events and webinars, or explore our library of past sessions. Filter by event type, industry, or topic to find content most relevant to you.', 'aera'),
+    'title'       => __('In-PersonEvents', 'aera')
   )
 );
 
@@ -50,8 +49,6 @@ $all_resources_query = new WP_Query($all_resources_args);
   // Text/Description - from ACF or default
   if (!empty($hero['description'])) {
     $hero_args['hero_text'] = $hero['description'];
-  } else {
-    $hero_args['hero_text'] = __('Discover upcoming in-person events and webinars, or explore our library of past sessions. Filter by event type, industry, or topic to find content most relevant to you.', 'aera');
   }
 
   // Optional: Add subtitle if needed

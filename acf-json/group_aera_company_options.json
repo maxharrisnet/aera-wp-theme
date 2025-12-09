@@ -172,6 +172,25 @@
             "wrapper": {
                 "width": "50"
             }
+        },
+        {
+            "key": "field_company_careers_tab",
+            "label": "Careers",
+            "name": "company_careers",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_lever_api_url",
+            "label": "Lever API URL",
+            "name": "lever_api_url",
+            "type": "url",
+            "instructions": "Lever API endpoint URL for fetching job postings. Format: https://api.lever.co/v0/postings/{site}?mode=json",
+            "required": false,
+            "wrapper": {
+                "width": "100"
+            }
         }
     ],
     "location": [

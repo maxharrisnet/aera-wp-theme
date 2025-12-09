@@ -17,59 +17,6 @@ $intro_text = function_exists('get_field') ? get_field('careers_intro_text') : '
 // Culture section
 $culture_title = function_exists('get_field') ? get_field('careers_culture_title') : '';
 
-// Get columns content from ACF (columns 1-6 for two rows of three)
-$column_1_title = function_exists('get_field') ? get_field('column_1_title') : '';
-$column_1_content = function_exists('get_field') ? get_field('column_1_content') : '';
-$column_2_title = function_exists('get_field') ? get_field('column_2_title') : '';
-$column_2_content = function_exists('get_field') ? get_field('column_2_content') : '';
-$column_3_title = function_exists('get_field') ? get_field('column_3_title') : '';
-$column_3_content = function_exists('get_field') ? get_field('column_3_content') : '';
-$column_4_title = function_exists('get_field') ? get_field('column_4_title') : '';
-$column_4_content = function_exists('get_field') ? get_field('column_4_content') : '';
-$column_5_title = function_exists('get_field') ? get_field('column_5_title') : '';
-$column_5_content = function_exists('get_field') ? get_field('column_5_content') : '';
-$column_6_title = function_exists('get_field') ? get_field('column_6_title') : '';
-$column_6_content = function_exists('get_field') ? get_field('column_6_content') : '';
-
-// Build columns array - only include columns that have at least a title
-$columns_content = array();
-if (!empty($column_1_title)) {
-  $columns_content[] = array(
-    'title' => $column_1_title,
-    'text' => $column_1_content,
-  );
-}
-if (!empty($column_2_title)) {
-  $columns_content[] = array(
-    'title' => $column_2_title,
-    'text' => $column_2_content,
-  );
-}
-if (!empty($column_3_title)) {
-  $columns_content[] = array(
-    'title' => $column_3_title,
-    'text' => $column_3_content,
-  );
-}
-if (!empty($column_4_title)) {
-  $columns_content[] = array(
-    'title' => $column_4_title,
-    'text' => $column_4_content,
-  );
-}
-if (!empty($column_5_title)) {
-  $columns_content[] = array(
-    'title' => $column_5_title,
-    'text' => $column_5_content,
-  );
-}
-if (!empty($column_6_title)) {
-  $columns_content[] = array(
-    'title' => $column_6_title,
-    'text' => $column_6_content,
-  );
-}
-
 // Office image
 $office_image = function_exists('get_field') ? get_field('careers_office_image') : null;
 if (!$office_image) {
@@ -102,8 +49,20 @@ $roles_title = function_exists('get_field') ? get_field('careers_roles_title') :
 $roles_text = function_exists('get_field') ? get_field('careers_roles_text') : __('Headquartered in Mountain View, California, Aera is growing fast. We\'re building teams in San Francisco and Mountain View (California), Bucharest and Cluj-Napoca (Romania), Paris (France), Munich (Germany), London (UK), and Pune (India). We offer comprehensive healthcare plans, stock option grants, challenging work and the opportunity for professional growth.', 'aera');
 $roles_bold_text = function_exists('get_field') ? get_field('careers_roles_bold_text') : __('All official opportunities for Aera Technology careers will come from @aeratechnology.com email. Please report any suspicious emails or other communications to security@aeratechnology.com', 'aera');
 
-// Jobs - could be from ACF repeater or external API (Lever, etc.)
-$jobs = function_exists('get_field') ? get_field('careers_jobs') : array();
+// Jobs - fetch from Lever API or fallback to ACF field
+$jobs = array();
+if (function_exists('\Aera\get_careers_jobs')) {
+  $jobs = \Aera\get_careers_jobs();
+} elseif (function_exists('get_field')) {
+  // Fallback to ACF field if function not available
+  $acf_jobs = get_field('careers_jobs');
+  if (is_string($acf_jobs)) {
+    $decoded = json_decode($acf_jobs, true);
+    $jobs = is_array($decoded) ? $decoded : array();
+  } elseif (is_array($acf_jobs)) {
+    $jobs = $acf_jobs;
+  }
+}
 
 ?>
 
@@ -146,20 +105,18 @@ $jobs = function_exists('get_field') ? get_field('careers_jobs') : array();
   <?php endif; ?>
 
   <!-- Values Section -->
-  <?php if (!empty($columns_content)) : ?>
-    <?php
-    get_template_part(
-      'template-parts/components/columns-content',
-      null,
-      array(
-        'columns' => $columns_content,
-        'heading_level' => 'h3',
-        'section_class' => 'column-content',
-        'content_class' => 'columnContentItem__text',
-      )
-    );
-    ?>
-  <?php endif; ?>
+  <?php
+  get_template_part(
+    'template-parts/components/columns-content',
+    null,
+    array(
+      'fetch_from_acf' => true,
+      'heading_level' => 'h3',
+      'section_class' => 'column-content',
+      'content_class' => 'columnContentItem__text',
+    )
+  );
+  ?>
 
   <!-- Gallery Section -->
   <section class="gallery">
