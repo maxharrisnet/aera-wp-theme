@@ -38,77 +38,83 @@
 			margin-right: 0px;
 		}
 
-		&__col1 {
-			// logo
-			@include make-col(math.percentage(math.div(7, 12)));
+		// NOTE: The following classes (col1, col2, col3, logo, date) were part of the original
+		// React/Contentful template structure but are not currently used in the WordPress templates.
+		// The WordPress blog archive template (content-blog-item.php) uses a simplified structure
+		// with only: blogItem, blogItem__row, blogItem__boxWrapper, blogItem__author, blogItem__title.
+		// These are kept commented for reference in case the original layout needs to be restored.
 
-			@media (min-width: $min-720) {
-				width: math.percentage(math.div(3, 12));
-			}
+		// &__col1 {
+		// 	// logo
+		// 	@include make-col(math.percentage(math.div(7, 12)));
 
-			@media (min-width: $min-1200) {
-				width: math.percentage(math.div(3, 10));
-			}
-		}
+		// 	@media (min-width: $min-720) {
+		// 		width: math.percentage(math.div(3, 12));
+		// 	}
 
-		&__col2 {
-			// date
-			@include make-col(math.percentage(math.div(5, 12)));
+		// 	@media (min-width: $min-1200) {
+		// 		width: math.percentage(math.div(3, 10));
+		// 	}
+		// }
 
-			@media (min-width: $min-720) {
-				width: math.percentage(math.div(2, 12));
-				order: 3;
-			}
+		// &__col2 {
+		// 	// date
+		// 	@include make-col(math.percentage(math.div(5, 12)));
 
-			@media (min-width: $min-1200) {
-				width: math.percentage(math.div(2, 10));
-			}
+		// 	@media (min-width: $min-720) {
+		// 		width: math.percentage(math.div(2, 12));
+		// 		order: 3;
+		// 	}
 
-			@media (min-width: $min-1280) {
-				width: math.percentage(math.div(1, 10));
-			}
-		}
+		// 	@media (min-width: $min-1200) {
+		// 		width: math.percentage(math.div(2, 10));
+		// 	}
 
-		&__col3 {
-			// content
-			@include make-col(math.percentage(math.div(12, 12)));
+		// 	@media (min-width: $min-1280) {
+		// 		width: math.percentage(math.div(1, 10));
+		// 	}
+		// }
 
-			@media (min-width: $min-720) {
-				width: math.percentage(math.div(7, 12));
-			}
+		// &__col3 {
+		// 	// content
+		// 	@include make-col(math.percentage(math.div(12, 12)));
 
-			@media (min-width: $min-1200) {
-				width: math.percentage(math.div(5, 10));
-			}
+		// 	@media (min-width: $min-720) {
+		// 		width: math.percentage(math.div(7, 12));
+		// 	}
 
-			@media (min-width: $min-1280) {
-				width: math.percentage(math.div(6, 10));
-			}
-		}
+		// 	@media (min-width: $min-1200) {
+		// 		width: math.percentage(math.div(5, 10));
+		// 	}
 
-		&__logo {
-			margin-top: 20px;
-			max-width: 110px;
+		// 	@media (min-width: $min-1280) {
+		// 		width: math.percentage(math.div(6, 10));
+		// 	}
+		// }
 
-			@media (min-width: $min-720) {
-				margin-top: $gutter + 4px;
-			}
-		}
+		// &__logo {
+		// 	margin-top: 20px;
+		// 	max-width: 110px;
 
-		&__date {
-			margin-top: 18px;
+		// 	@media (min-width: $min-720) {
+		// 		margin-top: $gutter + 4px;
+		// 	}
+		// }
 
-			font-size: 14px;
-			font-weight: 500;
-			text-align: right;
-			color: $font-color-dark;
+		// &__date {
+		// 	margin-top: 18px;
 
-			@media (min-width: $min-720) {
-				float: right;
-				margin-top: $gutter;
-				white-space: nowrap;
-			}
-		}
+		// 	font-size: 14px;
+		// 	font-weight: 500;
+		// 	text-align: right;
+		// 	color: $font-color-dark;
+
+		// 	@media (min-width: $min-720) {
+		// 		float: right;
+		// 		margin-top: $gutter;
+		// 		white-space: nowrap;
+		// 	}
+		// }
 
 		&__boxWrapper {
 			border: 1px solid #c4c4c4;
@@ -166,4 +172,3 @@
 		}
 	}
 }
-

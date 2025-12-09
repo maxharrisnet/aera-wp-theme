@@ -478,10 +478,14 @@
 			setTimeout(hideLoading, 100);
 		} else {
 			// Wait for window load event (fires when all resources are loaded)
-			window.addEventListener('load', () => {
-				// Small delay to ensure smooth transition
-				setTimeout(hideLoading, 100);
-			}, { once: true });
+			window.addEventListener(
+				'load',
+				() => {
+					// Small delay to ensure smooth transition
+					setTimeout(hideLoading, 100);
+				},
+				{ once: true }
+			);
 		}
 	}
 })();
