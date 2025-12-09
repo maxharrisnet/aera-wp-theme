@@ -2,15 +2,15 @@
 	// Header navigation state management (replaces MobX)
 	const uiState = {
 		isNavigationOpen: false,
-		openNavigation: function () {
+		openNavigation() {
 			this.isNavigationOpen = true;
 			updateNavigationState();
 		},
-		closeNavigation: function () {
+		closeNavigation() {
 			this.isNavigationOpen = false;
 			updateNavigationState();
 		},
-		toggleNavigation: function (value) {
+		toggleNavigation(value) {
 			if (value !== undefined) {
 				this.isNavigationOpen = value;
 			} else {
@@ -53,41 +53,47 @@
 
 	// Check if GSAP is available
 	const gsapAvailable = typeof gsap !== 'undefined';
-	console.log('gsapAvailable', gsapAvailable);
-	const TimelineLite = gsapAvailable ? gsap.timeline : null;
 
 	// Toggle animation functions
 	function toggleIn() {
-		if (window.matchMedia('(min-width: 1024px)').matches) return;
-		if (!gsapAvailable || !toggleElement || !lineOne || !lineTwo || !lineThree) return;
+		if (window.matchMedia('(min-width: 1024px)').matches) {
+			return;
+		}
+		if (!gsapAvailable || !toggleElement || !lineOne || !lineTwo || !lineThree) {
+			return;
+		}
 
 		const t = gsap.timeline();
 		const duration = 0.35;
 
-		t.add('start').fromTo(toggleElement, duration, { rotation: 0 }, { rotation: 45 }, 'start').fromTo(lineOne, duration, { rotation: 0, y: 0 }, { rotation: 180, y: 5 }, 'start').fromTo(lineTwo, 0.2, { opacity: 1 }, { opacity: 0 }, 'start').fromTo(lineThree, duration, { rotation: 0, y: 0 }, { rotation: 90, y: -5 }, 'start');
+		t.add('start').fromTo(toggleElement, { rotation: 0 }, { rotation: 45, duration }, 'start').fromTo(lineOne, { rotation: 0, y: 0 }, { rotation: 180, y: 5, duration }, 'start').fromTo(lineTwo, { opacity: 1 }, { opacity: 0, duration: 0.2 }, 'start').fromTo(lineThree, { rotation: 0, y: 0 }, { rotation: 90, y: -5, duration }, 'start');
 	}
 
 	function toggleOut() {
-		if (!gsapAvailable || !toggleElement || !lineOne || !lineTwo || !lineThree) return;
+		if (!gsapAvailable || !toggleElement || !lineOne || !lineTwo || !lineThree) {
+			return;
+		}
 
 		const t = gsap.timeline();
 		const duration = 0.35;
 
-		t.add('start').to(toggleElement, duration, { rotation: 180, clearProps: 'all' }, 'start').to(lineOne, duration, { rotation: 180, y: 0, clearProps: 'all' }, 'start').to(lineTwo, 0.25, { opacity: 1, clearProps: 'all' }, 'start+=.15').to(lineThree, duration, { rotation: 180, y: 0, clearProps: 'all' }, 'start');
+		t.add('start').to(toggleElement, { rotation: 180, clearProps: 'all', duration }, 'start').to(lineOne, { rotation: 180, y: 0, clearProps: 'all', duration }, 'start').to(lineTwo, { opacity: 1, clearProps: 'all', duration: 0.25 }, 'start+=.15').to(lineThree, { rotation: 180, y: 0, clearProps: 'all', duration }, 'start');
 	}
 
 	function sidebarIn() {
-		if (!gsapAvailable || !sidebar) return;
+		if (!gsapAvailable || !sidebar) {
+			return;
+		}
 
 		const t = gsap.timeline();
 
-		t.add('start').to(sidebar, 0.3, { x: '0%' }, 'start');
+		t.add('start').to(sidebar, { x: '0%', duration: 0.3 }, 'start');
 
 		// MorphSVG animation (requires GSAP MorphSVG plugin)
 		if (bgWave && typeof gsap.registerPlugin !== 'undefined') {
 			// Check if MorphSVG plugin is available
 			try {
-				t.fromTo(bgWave, 0.4, { morphSVG: { shape: wavePath, shapeIndex: 6 } }, { morphSVG: { shape: boxPath, shapeIndex: 6 } }, 'start+=0.1');
+				t.fromTo(bgWave, { morphSVG: { shape: wavePath, shapeIndex: 6 } }, { morphSVG: { shape: boxPath, shapeIndex: 6 }, duration: 0.4 }, 'start+=0.1');
 			} catch (e) {
 				// MorphSVG plugin not available, skip morph animation
 				console.warn('GSAP MorphSVG plugin not available');
@@ -96,10 +102,12 @@
 	}
 
 	function sidebarOut() {
-		if (!gsapAvailable || !sidebar) return;
+		if (!gsapAvailable || !sidebar) {
+			return;
+		}
 
 		const t = gsap.timeline();
-		t.add('start').to(sidebar, 0.3, { x: '100%' }, 'start');
+		t.add('start').to(sidebar, { x: '100%', duration: 0.3 }, 'start');
 	}
 
 	// Update navigation state and animations
@@ -186,9 +194,11 @@
 	let scrollHandler = null;
 
 	function initScrollHandler() {
-		if (typeof $ === 'undefined' || !$('#headnav').length) return;
-
-		const windowWidth = $(window).width();
+		if (typeof $ === 'undefined' || !$('#headnav').length) {
+			return;
+		}
+		console.log('headernav', $('#headnav'));
+		const windowWidth = window.innerWidth;
 		if (windowWidth >= 1000) {
 			scrollPosition = $(window).scrollTop();
 
@@ -224,11 +234,9 @@
 			};
 
 			$(window).on('scroll', scrollHandler);
-		} else {
-			if (scrollHandler) {
-				$(window).off('scroll', scrollHandler);
-				scrollHandler = null;
-			}
+		} else if (scrollHandler) {
+			$(window).off('scroll', scrollHandler);
+			scrollHandler = null;
 		}
 	}
 
@@ -256,7 +264,9 @@
 	// Add menu type classes and arrow elements to dropdowns
 	document.querySelectorAll('.menu-item-has-children').forEach((item) => {
 		const link = item.querySelector('a');
-		if (!link) return;
+		if (!link) {
+			return;
+		}
 
 		const href = link.getAttribute('href') || '';
 
@@ -303,7 +313,8 @@
 	if (isDesktop) {
 		document.querySelectorAll('.menu-item-has-children a').forEach((link) => {
 			link.addEventListener('click', () => {
-				const submenu = link.closest('.menu-item-has-children')?.querySelector('.sub-menu');
+				const parentItem = link.closest('.menu-item-has-children');
+				const submenu = parentItem ? parentItem.querySelector('.sub-menu') : null;
 				if (submenu) {
 					// Small delay to allow navigation
 					setTimeout(() => {
