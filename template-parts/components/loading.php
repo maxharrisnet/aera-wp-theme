@@ -1,4 +1,4 @@
-<div class="loading" id="loading-overlay" aria-hidden="true">
+<div class="loading" id="loading-overlay" aria-hidden="true" style="display: flex; justify-content: center; align-items: center;">
   <div class="loading__container">
     <div class="loading__row">
       <div class="loading__col">

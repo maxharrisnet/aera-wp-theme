@@ -1,0 +1,197 @@
+{
+  "key": "group_aera_platform_detail",
+  "title": "Platform Detail Page Settings",
+  "fields": [
+    {
+      "key": "field_platform_intro_tab",
+      "label": "Intro Section",
+      "name": "platform_intro_tab",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_platform_intro_title",
+      "label": "Intro Title",
+      "name": "platform_intro_title",
+      "type": "text",
+      "instructions": "Main title for the intro section (appears after hero).",
+      "required": 0,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_platform_intro_text",
+      "label": "Intro Text",
+      "name": "platform_intro_text",
+      "type": "textarea",
+      "instructions": "Introductory text displayed below the title. Use line breaks to create multiple paragraphs.",
+      "required": 0,
+      "rows": 4,
+      "new_lines": "br",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_platform_not_found_tab",
+      "label": "Not Found Section",
+      "name": "platform_not_found_tab",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_platform_show_not_found",
+      "label": "Show Not Found Message",
+      "name": "platform_show_not_found",
+      "type": "true_false",
+      "instructions": "Enable to display a 'not found' message instead of the page content.",
+      "required": 0,
+      "default_value": 0,
+      "ui": 1,
+      "wrapper": {
+        "width": "100"
+      }
+    },
+    {
+      "key": "field_platform_not_found_title",
+      "label": "Not Found Title",
+      "name": "platform_not_found_title",
+      "type": "text",
+      "instructions": "Title for the not found message.",
+      "required": 0,
+      "default_value": "Page not found.",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_platform_show_not_found",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_platform_not_found_text",
+      "label": "Not Found Text",
+      "name": "platform_not_found_text",
+      "type": "textarea",
+      "instructions": "Text for the not found message.",
+      "required": 0,
+      "rows": 3,
+      "default_value": "It is possible that the page has moved or changed or may no longer be available. Please check the page address and try again.",
+      "conditional_logic": [
+        [
+          {
+            "field": "field_platform_show_not_found",
+            "operator": "==",
+            "value": "1"
+          }
+        ]
+      ],
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_platform_content_tab",
+      "label": "Content Section",
+      "name": "platform_content_tab",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_platform_featured_image",
+      "label": "Featured Image",
+      "name": "platform_featured_image",
+      "type": "image",
+      "instructions": "Featured image displayed alongside the body copy in the image/text section.",
+      "required": 0,
+      "return_format": "array",
+      "preview_size": "medium",
+      "library": "all",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_platform_body_copy",
+      "label": "Body Copy",
+      "name": "platform_body_copy",
+      "type": "wysiwyg",
+      "instructions": "Main body copy displayed in the image/text section (left side, 40% width).",
+      "required": 0,
+      "tabs": "all",
+      "toolbar": "full",
+      "media_upload": 1,
+      "delay": 0,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_platform_benefits_tab",
+      "label": "Benefits & Features",
+      "name": "platform_benefits_tab",
+      "type": "tab",
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_platform_benefits",
+      "label": "Benefits",
+      "name": "platform_benefits",
+      "type": "wysiwyg",
+      "instructions": "Benefits content displayed in the left column (50% width). Supports HTML and lists.",
+      "required": 0,
+      "tabs": "all",
+      "toolbar": "full",
+      "media_upload": 1,
+      "delay": 0,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_platform_features",
+      "label": "Features",
+      "name": "platform_features",
+      "type": "wysiwyg",
+      "instructions": "Features content displayed in the right column (50% width). Supports HTML and lists.",
+      "required": 0,
+      "tabs": "all",
+      "toolbar": "full",
+      "media_upload": 1,
+      "delay": 0,
+      "wrapper": {
+        "width": "50"
+      }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-platform-detail.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Fields for Platform Detail pages (sub-pages of Decision Cloud). Configure intro section, content, benefits, features, and featured image.",
+  "show_in_rest": 1,
+  "modified": 1735000000
+}
+

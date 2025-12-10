@@ -45,8 +45,13 @@ Custom Aera website styles compiled from SCSS
 @use 'components/technology';
 @use 'components/skills';
 
+/* Platform Detail Components */
+@use 'components/intro-platform-detail';
+@use 'components/module-not-found';
+@use 'components/module-template-page';
+
 /* Pages */
-// @use 'components/template-page';
+@use 'components/template-page';
 @use 'pages/home';
 @use 'pages/decision-cloud';
 @use 'pages/resources';
@@ -61,3 +66,4 @@ Custom Aera website styles compiled from SCSS
 @use 'pages/events';
 @use 'pages/decision-intelligence';
 @use 'pages/aerahub-2025';
+@use 'pages/platform-detail';
