@@ -21,9 +21,9 @@ $hero = wp_parse_args(
   )
 );
 
-// Query for all events and webinars
+// Query for all events
 $all_resources_args = array(
-  'post_type'      => array('event', 'webinar'),
+  'post_type'      => 'event',
   'posts_per_page' => -1, // Get all for display
   'post_status'    => 'publish',
   'orderby'        => 'date',
@@ -77,57 +77,34 @@ $all_resources_query = new WP_Query($all_resources_args);
             while ($all_resources_query->have_posts()) :
               $all_resources_query->the_post();
               $post_id = get_the_ID();
-              $post_type = get_post_type($post_id);
+              $post_type = 'event';
 
               // Determine event type label
-              $type_label = '';
-              $event_city = '';
+              $type_label = __('In-Person Event', 'aera');
+              $event_city = function_exists('get_field') ? get_field('event_city', $post_id) : '';
+              $event_start_date = function_exists('get_field') ? get_field('event_start_date', $post_id) : '';
               $event_date = '';
-
-              if ($post_type === 'event') {
-                $type_label = __('In-Person Event', 'aera');
-                $event_city = function_exists('get_field') ? get_field('event_city', $post_id) : '';
-                $event_start_date = function_exists('get_field') ? get_field('event_start_date', $post_id) : '';
-                if ($event_start_date) {
-                  $event_date = date_i18n(get_option('date_format'), strtotime($event_start_date));
-                } else {
-                  $event_date = get_the_date(get_option('date_format'), $post_id);
-                }
+              if ($event_start_date) {
+                $event_date = date_i18n(get_option('date_format'), strtotime($event_start_date));
               } else {
-                $type_label = __('Webinar', 'aera');
-                $webinar_date = function_exists('get_field') ? get_field('webinar_date', $post_id) : '';
-                if ($webinar_date) {
-                  $event_date = date_i18n(get_option('date_format'), strtotime($webinar_date));
-                } else {
-                  $event_date = get_the_date(get_option('date_format'), $post_id);
-                }
+                $event_date = get_the_date(get_option('date_format'), $post_id);
               }
 
               // Get CTA text
               $cta_text = '';
-              if ($post_type === 'event') {
-                $event_status = function_exists('get_field') ? get_field('event_status', $post_id) : '';
-                switch ($event_status) {
-                  case 'coming_soon':
-                    $cta_text = __('Coming Soon', 'aera');
-                    break;
-                  case 'register':
-                    $cta_text = __('Register', 'aera');
-                    break;
-                  case 'past':
-                    $cta_text = __('View', 'aera');
-                    break;
-                  default:
-                    $cta_text = __('Learn More', 'aera');
-                }
-              } else {
-                $today = current_time('Y-m-d');
-                $webinar_date = function_exists('get_field') ? get_field('webinar_date', $post_id) : '';
-                $is_upcoming = false;
-                if ($webinar_date) {
-                  $is_upcoming = strtotime($webinar_date) >= strtotime($today);
-                }
-                $cta_text = $is_upcoming ? __('Register', 'aera') : __('Watch Now', 'aera');
+              $event_status = function_exists('get_field') ? get_field('event_status', $post_id) : '';
+              switch ($event_status) {
+                case 'coming_soon':
+                  $cta_text = __('Coming Soon', 'aera');
+                  break;
+                case 'register':
+                  $cta_text = __('Register', 'aera');
+                  break;
+                case 'past':
+                  $cta_text = __('View', 'aera');
+                  break;
+                default:
+                  $cta_text = __('Learn More', 'aera');
               }
 
               get_template_part(
