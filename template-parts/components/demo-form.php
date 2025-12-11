@@ -61,8 +61,8 @@ if ($dashboard_image === null) {
 
 if ($background_image === null) {
   $background_image = function_exists('get_field') ? \get_field('demo_background_image') : '';
-  if (empty($background_image)) {
-    $background_image = get_template_directory_uri() . '/assets/images/background/aera-wave-bg-demo.jpg';
+if (empty($background_image)) {
+  $background_image = get_template_directory_uri() . '/assets/images/background/aera-wave-bg-demo.jpg';
   }
 }
 $background_style = !empty($background_image) ? 'background-image: url(' . esc_url($background_image) . ');' : '';
