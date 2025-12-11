@@ -65,13 +65,23 @@
 
 	&__cardwrapper {
 		display: flex;
-		width: 100%;
+		width: 90%;
 		margin: 0 auto;
 		flex-wrap: wrap;
 		flex-direction: row;
 
+		@media (max-width: $max-1024) {
+			width: 100%;
+		}
+
+		@media (max-width: $max-960) {
+			flex-direction: row;
+			width: 100%;
+		}
+
 		@media (max-width: $max-720) {
 			flex-direction: column;
+			width: 100%;
 		}
 	}
 

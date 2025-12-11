@@ -59,54 +59,54 @@ $hero = wp_parse_args(
   ?>
 
   <!-- Customers Listing Section -->
-  <div class="customers">
-    <?php if (have_posts()) : ?>
-      <div class="feature-card">
-        <div class="feature-card__wrapper">
-          <div class="feature-card__cardwrapper">
-            <?php
-            while (have_posts()) :
-              the_post();
-              get_template_part(
-                'template-parts/content',
-                'customer-card',
-                array(
-                  'post_id' => get_the_ID(),
-                )
-              );
-            endwhile;
-            ?>
-          </div>
+  <?php if (have_posts()) : ?>
+    <div class="feature-card">
+      <div class="feature-card__wrapper">
+        <div class="feature-card__cardwrapper">
+          <?php
+          while (have_posts()) :
+            the_post();
+            get_template_part(
+              'template-parts/content',
+              'customer-card',
+              array(
+                'post_id' => get_the_ID(),
+              )
+            );
+          endwhile;
+          ?>
         </div>
       </div>
+    </div>
 
-      <?php
-      $paged = max(1, get_query_var('paged') ?: get_query_var('page') ?: 1);
-      $pagination = paginate_links(
-        array(
-          'total'   => $GLOBALS['wp_query']->max_num_pages,
-          'current' => $paged,
-          'type'    => 'list',
-        )
-      );
-      if ($pagination) :
-      ?>
+    <?php
+    $paged = max(1, get_query_var('paged') ?: get_query_var('page') ?: 1);
+    $pagination = paginate_links(
+      array(
+        'total'   => $GLOBALS['wp_query']->max_num_pages,
+        'current' => $paged,
+        'type'    => 'list',
+      )
+    );
+    if ($pagination) :
+    ?>
+      <div class="customers">
         <div class="customers__container">
           <nav class="customers__pagination" aria-label="<?php esc_attr_e('Customers pagination', 'aera'); ?>">
             <?php echo wp_kses_post($pagination); ?>
           </nav>
         </div>
-      <?php endif; ?>
-    <?php else : ?>
-      <div class="feature-card">
-        <div class="feature-card__wrapper">
-          <div class="feature-card__cardwrapper">
-            <p><?php esc_html_e('No customers available at this time.', 'aera'); ?></p>
-          </div>
-        </div>
       </div>
     <?php endif; ?>
-  </div>
+  <?php else : ?>
+    <div class="feature-card">
+      <div class="feature-card__wrapper">
+        <div class="feature-card__cardwrapper">
+          <p><?php esc_html_e('No customers available at this time.', 'aera'); ?></p>
+        </div>
+      </div>
+    </div>
+  <?php endif; ?>
 
   <?php
   // CTA section - "See Aera in action"
