@@ -3,6 +3,22 @@
   "title": "Page Hero",
   "fields": [
     {
+      "key": "field_hero_content_tab",
+      "label": "Content",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
       "key": "field_hero_title",
       "label": "Hero Title",
       "name": "hero_title",
@@ -10,23 +26,23 @@
       "instructions": "Main hero title. Required for hero to display.",
       "required": 1,
       "wrapper": {
-        "width": "100"
+        "width": "50"
       }
     },
     {
       "key": "field_hero_title_line_two",
-      "label": "Hero Title Line Two",
+      "label": "Title Line Two",
       "name": "hero_title_line_two",
       "type": "text",
       "instructions": "Optional second line for the title (displayed on a new line).",
       "required": 0,
       "wrapper": {
-        "width": "100"
+        "width": "50"
       }
     },
     {
       "key": "field_hero_subtitle",
-      "label": "Hero Subtitle",
+      "label": "Subtitle",
       "name": "hero_subtitle",
       "type": "text",
       "instructions": "Optional subtitle displayed below the title.",
@@ -37,7 +53,7 @@
     },
     {
       "key": "field_hero_text",
-      "label": "Hero Text",
+      "label": "Description",
       "name": "hero_text",
       "type": "textarea",
       "instructions": "Hero description text. Use line breaks to create multiple paragraphs.",
@@ -49,11 +65,27 @@
       }
     },
     {
+      "key": "field_hero_button_tab",
+      "label": "Button",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
       "key": "field_hero_button_text",
       "label": "Button Text",
       "name": "hero_button_text",
       "type": "text",
-      "instructions": "Optional button text (e.g., 'Find a Career', 'Schedule Demo').",
+      "instructions": "Button label text (e.g., 'Find a Career', 'Schedule Demo').",
       "required": 0,
       "wrapper": {
         "width": "50"
@@ -61,10 +93,10 @@
     },
     {
       "key": "field_hero_button_link",
-      "label": "Button Link",
+      "label": "Button URL",
       "name": "hero_button_link",
       "type": "url",
-      "instructions": "Button link URL. Required if button text is provided.",
+      "instructions": "Button destination URL. Required if button text is provided.",
       "required": 0,
       "conditional_logic": [
         [
@@ -79,17 +111,20 @@
       }
     },
     {
-      "key": "field_hero_full_height",
-      "label": "Full Height",
-      "name": "hero_full_height",
-      "type": "true_false",
-      "instructions": "Make the hero section full viewport height with centered content.",
+      "key": "field_hero_style_tab",
+      "label": "Style",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
       "required": 0,
-      "default_value": 0,
-      "ui": 1,
+      "conditional_logic": 0,
       "wrapper": {
-        "width": "50"
-      }
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
     },
     {
       "key": "field_hero_variation",
@@ -108,6 +143,19 @@
       "default_value": "default",
       "allow_null": 0,
       "multiple": 0,
+      "ui": 1,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_hero_full_height",
+      "label": "Full Height",
+      "name": "hero_full_height",
+      "type": "true_false",
+      "instructions": "Make the hero section full viewport height with centered content.",
+      "required": 0,
+      "default_value": 0,
       "ui": 1,
       "wrapper": {
         "width": "50"
@@ -134,4 +182,3 @@
   "show_in_rest": 1,
   "modified": 1735000000
 }
-

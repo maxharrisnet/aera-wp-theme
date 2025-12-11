@@ -30,28 +30,28 @@ $hero_variation = $args['hero_variation'] ?? null;
 
 // Fallback to ACF page/post fields if arguments not provided
 if ($hero_title === null) {
-  $hero_title = get_field('hero_title');
+  $hero_title = function_exists('get_field') ? \get_field('hero_title') : null;
 }
 if ($hero_title_line_two === null) {
-  $hero_title_line_two = get_field('hero_title_line_two');
+  $hero_title_line_two = function_exists('get_field') ? \get_field('hero_title_line_two') : null;
 }
 if ($hero_subtitle === null) {
-  $hero_subtitle = get_field('hero_subtitle');
+  $hero_subtitle = function_exists('get_field') ? \get_field('hero_subtitle') : null;
 }
 if ($hero_text === null) {
-  $hero_text = get_field('hero_text');
+  $hero_text = function_exists('get_field') ? \get_field('hero_text') : null;
 }
 if ($hero_button_text === null) {
-  $hero_button_text = get_field('hero_button_text');
+  $hero_button_text = function_exists('get_field') ? \get_field('hero_button_text') : null;
 }
 if ($hero_button_link === null) {
-  $hero_button_link = get_field('hero_button_link');
+  $hero_button_link = function_exists('get_field') ? \get_field('hero_button_link') : null;
 }
 if ($hero_full_height === null) {
-  $hero_full_height = get_field('hero_full_height');
+  $hero_full_height = function_exists('get_field') ? \get_field('hero_full_height') : null;
 }
 if ($hero_variation === null) {
-  $hero_variation = get_field('hero_variation') ?: 'default';
+  $hero_variation = function_exists('get_field') ? (\get_field('hero_variation') ?: 'default') : 'default';
 }
 
 // Build classes

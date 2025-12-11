@@ -10,48 +10,60 @@ namespace Aera;
 
 defined('ABSPATH') || exit;
 
-// Accept demo form data as parameter, or get from ACF if not provided
-if (!isset($title)) {
-  $title = function_exists('get_field') ? get_field('hero_title') : '';
+// Initialize $args if not provided
+$args = $args ?? array();
+
+// Extract variables from args array
+$title = $args['title'] ?? null;
+$text = $args['text'] ?? null;
+$hubspot_portal_id = $args['hubspot_portal_id'] ?? null;
+$hubspot_form_id = $args['hubspot_form_id'] ?? null;
+$dashboard_image = $args['dashboard_image'] ?? null;
+$background_image = $args['background_image'] ?? null;
+
+// Fallback to ACF fields if arguments not provided
+if ($title === null) {
+  $title = function_exists('get_field') ? \get_field('hero_title') : '';
   if (empty($title)) {
     $title = __('Meet Aera: Schedule a demo today.', 'aera');
   }
 }
 
-if (!isset($text)) {
-  $text = function_exists('get_field') ? get_field('demo_text') : '';
+if ($text === null) {
+  $text = function_exists('get_field') ? \get_field('hero_text') : '';
   if (empty($text)) {
     $text = __('Learn why leaders in consumer goods, life sciences, technology, and beyond trust Aera to digitize and automate decisions. Schedule a personalized demo of Aera Decision Cloud and see how you can start to benefit from AI-powered insights in as little as 2 to 4 weeks.', 'aera');
   }
 }
 
-if (!isset($hubspot_portal_id)) {
-  $hubspot_portal_id = function_exists('get_field') ? get_field('hubspot_portal_id') : '';
+if ($hubspot_portal_id === null) {
+  $hubspot_portal_id = function_exists('get_field') ? \get_field('hubspot_portal_id') : '';
   // Fallback to default if empty
   if (empty($hubspot_portal_id)) {
     $hubspot_portal_id = '4455954';
   }
 }
 
-if (!isset($hubspot_form_id)) {
-  $hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form_id') : '';
+if ($hubspot_form_id === null) {
+  $hubspot_form_id = function_exists('get_field') ? \get_field('hubspot_form_id') : '';
   // Fallback to default if empty
   if (empty($hubspot_form_id)) {
     $hubspot_form_id = '9fa1d4a1-4c89-44d5-add1-37df812fc7bd';
   }
 }
 
-if (!isset($dashboard_image)) {
-  $dashboard_image = function_exists('get_field') ? get_field('demo_dashboard_image') : '';
+if ($dashboard_image === null) {
+  $dashboard_image = function_exists('get_field') ? \get_field('demo_dashboard_image') : '';
   if (empty($dashboard_image)) {
     $dashboard_image = get_template_directory_uri() . '/assets/images/demo/dashboards.png';
   }
 }
 
-// Background image
-$background_image = function_exists('get_field') ? get_field('demo_background_image') : '';
-if (empty($background_image)) {
-  $background_image = get_template_directory_uri() . '/assets/images/background/aera-wave-bg-demo.jpg';
+if ($background_image === null) {
+  $background_image = function_exists('get_field') ? \get_field('demo_background_image') : '';
+  if (empty($background_image)) {
+    $background_image = get_template_directory_uri() . '/assets/images/background/aera-wave-bg-demo.jpg';
+  }
 }
 $background_style = !empty($background_image) ? 'background-image: url(' . esc_url($background_image) . ');' : '';
 ?>

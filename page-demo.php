@@ -8,17 +8,17 @@
 
 get_header();
 
-// Get demo page fields from ACF
-$demo_title = function_exists('get_field') ? get_field('demo_title') : '';
-$demo_text = function_exists('get_field') ? get_field('demo_text') : '';
+// Get hero fields from shared page hero ACF fields
+$hero_title = function_exists('get_field') ? get_field('hero_title') : '';
+$hero_text = function_exists('get_field') ? get_field('hero_text') : '';
 
 // Set defaults
-if (empty($demo_title)) {
-  $demo_title = __('Meet Aera: Schedule a demo today.', 'aera');
+if (empty($hero_title)) {
+  $hero_title = __('Meet Aera: Schedule a demo today.', 'aera');
 }
 
-if (empty($demo_text)) {
-  $demo_text = __('Learn why leaders in consumer goods, life sciences, technology, and beyond trust Aera to digitize and automate decisions. Schedule a personalized demo of Aera Decision Cloud and see how you can start to benefit from AI-powered insights in as little as 2 to 4 weeks.', 'aera');
+if (empty($hero_text)) {
+  $hero_text = __('Learn why leaders in consumer goods, life sciences, technology, and beyond trust Aera to digitize and automate decisions. Schedule a personalized demo of Aera Decision Cloud and see how you can start to benefit from AI-powered insights in as little as 2 to 4 weeks.', 'aera');
 }
 
 // HubSpot form configuration
@@ -50,8 +50,8 @@ if (empty($background_image)) {
 
 <main id="primary" class="site-main site-main--demo">
   <?php get_template_part('template-parts/components/demo-form', null, array(
-    'title' => $demo_title,
-    'text' => $demo_text,
+    'title' => $hero_title,
+    'text' => $hero_text,
     'hubspot_portal_id' => $hubspot_portal_id,
     'hubspot_form_id' => $hubspot_form_id,
     'dashboard_image' => $dashboard_image,
