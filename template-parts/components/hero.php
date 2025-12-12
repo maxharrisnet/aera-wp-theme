@@ -106,8 +106,14 @@ if (empty($hero_title)) {
     <?php endif; ?>
 
     <?php if ($hero_button_text && $hero_button_link) : ?>
+      <?php
+      // Check if link is an anchor (starts with #)
+      // For anchor links, add ID for JavaScript handling (e.g., #open-roles -> findCareer)
+      $is_anchor = ! empty($hero_button_link) && strpos($hero_button_link, '#') === 0;
+      $button_id = $is_anchor ? 'findCareer' : '';
+      ?>
       <p class="hero__button">
-        <a href="<?php echo esc_url($hero_button_link); ?>" class="hero__button-link">
+        <a href="<?php echo esc_url($hero_button_link); ?>" class="hero__button-link" <?php echo $button_id ? ' id="' . esc_attr($button_id) . '"' : ''; ?>>
           <?php echo esc_html($hero_button_text); ?>
         </a>
       </p>

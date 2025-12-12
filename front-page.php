@@ -126,7 +126,7 @@ $cta = wp_parse_args(
     </button> */ ?>
   </section>
 
-  <section class="technology" id="sectionTechnology" data-technology>
+  <div class="technology" id="sectionTechnology" data-technology>
     <div class="technology__sceneWrapper" data-technology-scene-wrapper>
       <?php foreach ($technology_sections as $index => $section) : ?>
         <?php
@@ -207,13 +207,31 @@ $cta = wp_parse_args(
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="additionalsection">
+  <div class="additionalsection">
     <div class="additionalsection__container">
-      <p class="additionalsection__text"><?php echo esc_html($additional_text); ?></p>
+      <div class="additionalsection__wrapper">
+        <div class="additionalsection__row">
+          <div class="additionalsection__col">
+            <h2>
+              <?php
+              // Handle line break for responsive display
+              $text_parts = explode(' agile, scalable', $additional_text);
+              if (count($text_parts) === 2) {
+                echo wp_kses_post($text_parts[0] . '&nbsp;');
+                echo '<br class="additionalsection__hiddenxs" />';
+                echo wp_kses_post(' agile, scalable' . $text_parts[1]);
+              } else {
+                echo wp_kses_post($additional_text);
+              }
+              ?>
+            </h2>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 
   <?php
   get_template_part('template-parts/components/cta', null, array('cta' => $cta));

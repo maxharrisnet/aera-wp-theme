@@ -10,10 +10,6 @@ get_header();
 
 $assets_base = trailingslashit(get_template_directory_uri()) . 'assets/';
 
-// Intro section
-$intro_title = function_exists('get_field') ? get_field('careers_intro_title') : '';
-$intro_text = function_exists('get_field') ? get_field('careers_intro_text') : '';
-
 // Culture section
 $culture_title = function_exists('get_field') ? get_field('careers_culture_title') : '';
 
@@ -67,21 +63,13 @@ if (function_exists('\Aera\get_careers_jobs')) {
 ?>
 
 <main id="primary" class="site-main site-main--careers">
-  <?php get_template_part('template-parts/components/hero'); ?>
-
-  <!-- Intro Section -->
-  <?php if (!empty($intro_title) || !empty($intro_text)) : ?>
-    <section class="intro">
-      <div class="intro__container">
-        <?php if (!empty($intro_title)) : ?>
-          <h1 class="intro__title"><?php echo esc_html($intro_title); ?></h1>
-        <?php endif; ?>
-        <?php if (!empty($intro_text)) : ?>
-          <div class="intro__text"><?php echo wp_kses_post($intro_text); ?></div>
-        <?php endif; ?>
-      </div>
-    </section>
-  <?php endif; ?>
+  <?php
+  // Pass hero variation for careers styling
+  $hero_args = array(
+    'hero_variation' => 'careers',
+  );
+  get_template_part('template-parts/components/hero', null, $hero_args);
+  ?>
 
   <!-- Office Image Section -->
   <?php if (!empty($office_image['url'])) : ?>
@@ -282,12 +270,21 @@ if (function_exists('\Aera\get_careers_jobs')) {
       const openRolesSection = document.getElementById('open-roles');
 
       if (findCareerBtn && openRolesSection) {
-        findCareerBtn.addEventListener('click', function() {
-          const offsetTop = openRolesSection.offsetTop - 100;
-          window.scrollTo({
-            top: offsetTop,
-            behavior: 'smooth'
-          });
+        findCareerBtn.addEventListener('click', function(e) {
+          // Check if link is an anchor link
+          const href = this.getAttribute('href');
+          if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+              const offsetTop = targetElement.offsetTop - 100;
+              window.scrollTo({
+                top: offsetTop,
+                behavior: 'smooth'
+              });
+            }
+          }
         });
       }
     }

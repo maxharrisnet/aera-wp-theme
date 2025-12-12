@@ -1,6 +1,7 @@
 @use 'sass:math';
 @use '../variables' as *;
 @use '../mixins' as *;
+@use '../grid' as *;
 @use '../reset' as *;
 
 .intro {
@@ -9,7 +10,7 @@
 	padding: 50px 0 0;
 	text-align: center;
 
-	.request__container &.fullHeight {
+	&.fullHeight {
 		display: flex;
 		align-items: center;
 		padding: 0;
@@ -104,15 +105,76 @@
 }
 
 .additionalsection {
-	padding: 5rem 1.5rem;
-	background: $color-background;
+	padding-top: $gutter * 2;
 	text-align: center;
 
-	&__text {
-		font-size: clamp(1.5rem, 3vw, 2.5rem);
+	@media (max-width: $max-720) {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+
+	&__hiddenxs {
+		display: block;
+		@media (max-width: $max-720) {
+			display: none;
+		}
+	}
+
+	&__container {
+		@include container;
+		position: relative;
+	}
+
+	h2 {
+		font-size: 36px;
+		line-height: 46px;
 		font-family: $font-family-heading;
-		margin: 0 auto;
-		width: min(760px, 100%);
+		font-weight: 700;
+		@media (max-width: $max-720) {
+			font-size: 22px;
+			line-height: 32px;
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		z-index: 1;
+		margin-bottom: 0px;
+		padding: 0px 20px;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: -$gutter;
+			right: -$gutter;
+			bottom: -20px;
+			z-index: 1;
+			height: 0px;
+			background: $color-background-darker;
+
+			@media (min-width: $min-720) {
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+
+	&__row {
+		@media (min-width: $min-720) {
+			@include make-row;
+		}
+	}
+
+	&__col {
+		@media (min-width: $min-720) {
+			@include make-col(percentage(12/12));
+			align-items: center;
+			order: 1;
+		}
+		@media (min-width: $min-1080) {
+			width: percentage(12/12);
+		}
 	}
 }
 

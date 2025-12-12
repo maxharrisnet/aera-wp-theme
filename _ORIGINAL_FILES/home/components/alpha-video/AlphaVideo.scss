@@ -1,0 +1,13 @@
+@import '~styles/config';
+
+.alphaVideo {
+
+  &__canvasOutput {
+    display: none;
+
+    @media (min-width: $min-desktop) {
+      display: flex;
+      max-width: 50%;
+    }
+  }
+}
