@@ -89,15 +89,10 @@
 
 		t.add('start').to(sidebar, { x: '0%', duration: 0.3 }, 'start');
 
-		// MorphSVG animation (requires GSAP MorphSVG plugin)
-		if (bgWave && typeof gsap.registerPlugin !== 'undefined') {
-			// Check if MorphSVG plugin is available
-			try {
-				t.fromTo(bgWave, { morphSVG: { shape: wavePath, shapeIndex: 6 } }, { morphSVG: { shape: boxPath, shapeIndex: 6 }, duration: 0.4 }, 'start+=0.1');
-			} catch (e) {
-				// MorphSVG plugin not available, skip morph animation
-				console.warn('GSAP MorphSVG plugin not available');
-			}
+		// MorphSVG animation (requires GSAP MorphSVG plugin - premium plugin)
+		// Check if MorphSVG plugin is registered before using it
+		if (bgWave && gsap.plugins && gsap.plugins.MorphSVGPlugin) {
+			t.fromTo(bgWave, { morphSVG: { shape: wavePath, shapeIndex: 6 } }, { morphSVG: { shape: boxPath, shapeIndex: 6 }, duration: 0.4 }, 'start+=0.1');
 		}
 	}
 

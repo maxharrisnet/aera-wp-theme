@@ -168,12 +168,12 @@
 
 	&__col {
 		@media (min-width: $min-720) {
-			@include make-col(percentage(12/12));
+			@include make-col(math.percentage(math.div(12, 12)));
 			align-items: center;
 			order: 1;
 		}
 		@media (min-width: $min-1080) {
-			width: percentage(12/12);
+			width: math.percentage(math.div(12, 12));
 		}
 	}
 }
