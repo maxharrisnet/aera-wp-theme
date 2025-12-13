@@ -10,6 +10,14 @@ namespace Aera;
 
 defined('ABSPATH') || exit;
 
+// TODO: Consider refactoring for better flexibility:
+// - Move API URL to ACF Options page for site-wide reuse
+// - Add support for multiple job source APIs (not just Lever)
+// - Make field mapping configurable to support different API structures
+// - Add error handling UI feedback (currently only logs to error_log)
+// - Consider adding admin notice if API fails repeatedly
+// - Add option to manually refresh cache from admin
+
 /**
  * Fetches jobs from Lever API.
  *
