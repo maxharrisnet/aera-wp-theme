@@ -474,13 +474,10 @@
 
 		&__svg {
 			display: none;
-
 			position: absolute;
 			bottom: 0;
 			left: -5px;
-
 			width: 10px;
-
 			fill-rule: evenodd;
 
 			@media (min-width: $min-720) {
