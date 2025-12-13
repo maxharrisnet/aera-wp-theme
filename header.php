@@ -29,7 +29,7 @@
   $background_active = false;
   if (is_front_page()) {
     $background_active = true;
-    $background_classes .= ' background_isHome';
+    $background_classes .= ' isHome';
   } elseif (
     is_page_template('page-resources.php') ||
     is_page_template('page-aerahub-2025.php') ||

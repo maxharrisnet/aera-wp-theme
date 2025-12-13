@@ -81,12 +81,12 @@
 		font-weight: 400;
 
 		@media (min-width: $min-480) {
-			max-width: (840/20) * 1em;
+			max-width: math.div(840, 20) * 1em;
 			width: 100%;
 			margin-bottom: 0;
 
 			.fullHeight & {
-				max-width: (940/26) * 1em;
+				max-width: math.div(940, 26) * 1em;
 			}
 		}
 	}
