@@ -47,8 +47,9 @@ $roles_bold_text = function_exists('get_field') ? get_field('careers_roles_bold_
 
 // Jobs - fetch from Lever API or fallback to ACF field
 $jobs = array();
+$current_page_id = get_the_ID();
 if (function_exists('\Aera\get_careers_jobs')) {
-  $jobs = \Aera\get_careers_jobs();
+  $jobs = \Aera\get_careers_jobs($current_page_id);
 } elseif (function_exists('get_field')) {
   // Fallback to ACF field if function not available
   $acf_jobs = get_field('careers_jobs');

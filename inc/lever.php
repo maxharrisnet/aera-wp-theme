@@ -17,12 +17,23 @@ defined('ABSPATH') || exit;
  * Falls back to ACF field if API is unavailable or fails.
  *
  * @param bool $force_refresh Whether to bypass cache and force a fresh fetch.
+ * @param int|null $page_id Optional page ID to get API URL from page ACF field. If null, checks options.
  * @return array Array of job postings, each with: name, team, commitment, location, url.
  */
-function fetch_lever_jobs($force_refresh = false): array
+function fetch_lever_jobs($force_refresh = false, $page_id = null): array
 {
-  // Check for Lever API URL in ACF options
-  $lever_api_url = function_exists('get_field') ? get_field('lever_api_url', 'option') : '';
+  // Check for Lever API URL - try page field first, then options (for backwards compatibility)
+  $lever_api_url = '';
+  if (function_exists('get_field')) {
+    if ($page_id) {
+      // Check page field first
+      $lever_api_url = get_field('careers_lever_api_url', $page_id);
+    }
+    // Fallback to options if page field is empty (for backwards compatibility)
+    if (empty($lever_api_url)) {
+      $lever_api_url = get_field('lever_api_url', 'option');
+    }
+  }
 
   // If no API URL configured, return empty array
   if (empty($lever_api_url)) {
@@ -109,12 +120,19 @@ function fetch_lever_jobs($force_refresh = false): array
  *
  * Tries Lever API first, falls back to ACF field if API is unavailable.
  *
+ * @param int|null $page_id Optional page ID to get API URL from page ACF field.
  * @return array Array of job postings.
  */
-function get_careers_jobs(): array
+function get_careers_jobs($page_id = null): array
 {
+  // Get page ID if not provided
+  if ($page_id === null) {
+    global $post;
+    $page_id = $post ? $post->ID : null;
+  }
+
   // Try to fetch from Lever API
-  $lever_jobs = fetch_lever_jobs();
+  $lever_jobs = fetch_lever_jobs(false, $page_id);
 
   // If we have jobs from Lever, use them
   if (!empty($lever_jobs)) {
@@ -122,7 +140,7 @@ function get_careers_jobs(): array
   }
 
   // Fallback to ACF field (for manual entry or JSON)
-  $acf_jobs = function_exists('get_field') ? get_field('careers_jobs') : array();
+  $acf_jobs = function_exists('get_field') ? get_field('careers_jobs', $page_id) : array();
 
   // If ACF field is a JSON string, decode it
   if (is_string($acf_jobs)) {

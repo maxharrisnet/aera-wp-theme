@@ -193,11 +193,22 @@
             "endpoint": 0
         },
         {
+            "key": "field_careers_lever_api_url",
+            "label": "Lever API URL",
+            "name": "careers_lever_api_url",
+            "type": "url",
+            "instructions": "Lever API endpoint URL for fetching job postings. Format: https://api.lever.co/v0/postings/{site}?mode=json",
+            "required": 0,
+            "wrapper": {
+                "width": "100"
+            }
+        },
+        {
             "key": "field_careers_jobs",
-            "label": "Jobs",
+            "label": "Jobs (Fallback)",
             "name": "careers_jobs",
             "type": "textarea",
-            "instructions": "Jobs data (could be JSON from external API like Lever, or manually entered).",
+            "instructions": "Jobs data fallback (JSON from external API like Lever, or manually entered). Only used if Lever API URL is not set or fails.",
             "required": 0,
             "rows": 6,
             "wrapper": {

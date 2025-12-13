@@ -480,6 +480,10 @@
 			width: 10px;
 			fill-rule: evenodd;
 
+			path {
+				fill: inherit;
+			}
+
 			@media (min-width: $min-720) {
 				display: block;
 			}
