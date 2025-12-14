@@ -153,3 +153,40 @@ div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cook
 		left: 10% !important;
 	}
 }
+
+// WordPress Admin Bar - Move to bottom
+#wpadminbar {
+	position: fixed !important;
+	top: auto !important;
+	bottom: 0 !important;
+	left: 0;
+	right: 0;
+	z-index: 99999;
+}
+
+// Remove top padding WordPress adds when admin bar is at top
+html.admin-bar {
+	margin-top: 0 !important;
+}
+
+body.admin-bar {
+	padding-top: 0 !important;
+}
+
+// Adjust body padding for bottom admin bar
+body.admin-bar {
+	padding-bottom: 32px;
+
+	@media screen and (max-width: 782px) {
+		padding-bottom: 46px;
+	}
+}
+
+// Fix admin bar positioning on mobile
+@media screen and (max-width: 782px) {
+	#wpadminbar {
+		position: fixed !important;
+		bottom: 0 !important;
+		top: auto !important;
+	}
+}

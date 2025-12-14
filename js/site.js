@@ -491,4 +491,58 @@
 			);
 		}
 	}
+
+	// WordPress Admin Bar - Ensure it stays at bottom
+	// This handles WordPress's dynamic inline styles that try to position it at the top
+	const fixAdminBarPosition = () => {
+		const adminBar = document.getElementById('wpadminbar');
+		const html = document.documentElement;
+		const body = document.body;
+
+		if (adminBar) {
+			// Ensure admin bar is at bottom
+			adminBar.style.top = 'auto';
+			adminBar.style.bottom = '0';
+			adminBar.style.position = 'fixed';
+
+			// Remove top margin/padding WordPress adds
+			if (html.classList.contains('admin-bar')) {
+				html.style.marginTop = '0';
+			}
+			if (body.classList.contains('admin-bar')) {
+				body.style.paddingTop = '0';
+			}
+		}
+	};
+
+	// Run on DOM ready and after window load (WordPress adds styles after load)
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', fixAdminBarPosition);
+	} else {
+		fixAdminBarPosition();
+	}
+	window.addEventListener('load', fixAdminBarPosition);
+
+	// Also watch for any style changes WordPress might make
+	if (window.MutationObserver) {
+		const observer = new MutationObserver(() => {
+			fixAdminBarPosition();
+		});
+
+		const adminBar = document.getElementById('wpadminbar');
+		if (adminBar) {
+			observer.observe(adminBar, {
+				attributes: true,
+				attributeFilter: ['style'],
+			});
+			observer.observe(document.documentElement, {
+				attributes: true,
+				attributeFilter: ['style', 'class'],
+			});
+			observer.observe(document.body, {
+				attributes: true,
+				attributeFilter: ['style', 'class'],
+			});
+		}
+	}
 })();

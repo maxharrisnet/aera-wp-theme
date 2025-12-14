@@ -169,3 +169,23 @@ function redirect_to_customizer(): void
   exit;
 }
 
+/**
+ * Removes WordPress admin bar top padding/margin when admin bar is moved to bottom.
+ *
+ * @return void
+ */
+function remove_admin_bar_top_padding(): void
+{
+  if (is_admin_bar_showing()) {
+    // Remove inline styles WordPress adds for top padding
+    add_filter('show_admin_bar', '__return_true');
+    add_action('wp_head', function () {
+      echo '<style type="text/css">' . "\n";
+      echo '  html { margin-top: 0 !important; }' . "\n";
+      echo '  body.admin-bar { padding-top: 0 !important; }' . "\n";
+      echo '</style>' . "\n";
+    }, 100);
+  }
+}
+add_action('init', __NAMESPACE__ . '\\remove_admin_bar_top_padding', 100);
+
