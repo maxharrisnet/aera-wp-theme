@@ -7,53 +7,55 @@
 /* CAREERS PAGE */
 
 /* Intro Section */
-.intro {
-	position: relative;
-	padding: 50px 0 0;
-	text-align: center;
-
-	&.fullHeight {
-		display: flex;
-		align-items: center;
-		padding: 0;
-		height: 500px;
-		min-height: 100vh;
-	}
-
-	@media (min-width: $min-768) {
+.page-careers {
+	.intro {
+		position: relative;
 		padding: 50px 0 0;
-	}
+		text-align: center;
 
-	@media (min-width: $min-1024) {
-		padding-top: 0;
-	}
-
-	&__container {
-		@include container;
-	}
-
-	&__title {
-		@include responsive-font(28, 66);
-		margin-bottom: 20px;
-		font-family: $font-family-heading;
-		font-weight: 700;
-		line-height: 76px;
-		letter-spacing: -0.025em;
-		color: $font-color-dark;
-
-		@media (max-width: $min-720) {
-			line-height: 40px;
+		&.fullHeight {
+			display: flex;
+			align-items: center;
+			padding: 0;
+			height: 500px;
+			min-height: 100vh;
 		}
-	}
 
-	&__text {
-		@include reset-paragraph;
-		@include responsive-font(18, 26);
-		margin: 0 auto 1em;
-		font-weight: 400;
+		@media (min-width: $min-768) {
+			padding: 50px 0 0;
+		}
 
-		@media (min-width: $min-480) {
-			max-width: math.div(840, 26) * 1em;
+		@media (min-width: $min-1024) {
+			padding-top: 0;
+		}
+
+		&__container {
+			@include container;
+		}
+
+		&__title {
+			@include responsive-font(28, 66);
+			margin-bottom: 20px;
+			font-family: $font-family-heading;
+			font-weight: 700;
+			line-height: 76px;
+			letter-spacing: -0.025em;
+			color: $font-color-dark;
+
+			@media (max-width: $min-720) {
+				line-height: 40px;
+			}
+		}
+
+		&__text {
+			@include reset-paragraph;
+			@include responsive-font(18, 26);
+			margin: 0 auto 1em;
+			font-weight: 400;
+
+			@media (min-width: $min-480) {
+				max-width: math.div(840, 26) * 1em;
+			}
 		}
 	}
 }
