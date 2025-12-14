@@ -256,3 +256,50 @@
 		}
 	}
 }
+
+// Partners variation
+.hero--partners {
+	height: 550px;
+	display: flex;
+	align-items: center;
+	padding: 150px 0 0 !important;
+
+	@media (max-width: $min-720) {
+		padding: 0px 0 0;
+		display: flex;
+		align-items: center;
+	}
+
+	@media (min-width: $min-768) {
+		padding: 0px 0 0;
+	}
+
+	@media (min-width: $min-1024) {
+		padding: 0px 0 0;
+	}
+
+	&--full-height {
+		display: flex;
+		align-items: center;
+		padding: 0;
+	}
+
+	.hero__title {
+		margin-bottom: 20px;
+		padding-top: 0px;
+		margin-top: 20px;
+	}
+
+	.hero__text {
+		@include responsive-font(16, 24);
+
+		@media (min-width: $min-480) {
+			max-width: math.div(840, 21) * 1em;
+			width: 100%;
+
+			.hero--full-height & {
+				max-width: math.div(940, 26) * 1em;
+			}
+		}
+	}
+}

@@ -26,7 +26,7 @@ if (function_exists('get_field')) {
   }
 }
 
-$hero_full_height = true;
+$hero_full_height = false;
 
 // CTA section - try ACF first, then use defaultsloading
 $cta_title = __('Interested in becoming a partner?', 'aera');
@@ -58,6 +58,7 @@ if (function_exists('get_field')) {
     'hero_title' => $hero_title,
     'hero_text' => $hero_text,
     'hero_full_height' => $hero_full_height,
+    'hero_variation' => 'partners',
   );
   get_template_part('template-parts/components/hero', null, $hero_args);
   ?>
