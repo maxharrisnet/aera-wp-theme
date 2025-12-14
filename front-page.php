@@ -197,11 +197,11 @@ $cta = wp_parse_args(
               </div>
               <h2 class="technologyItem__title"><?php echo esc_html($title); ?></h2>
               <div class="technologyItem__text">
-                <?php echo wp_kses_post($description); ?>
+                <p><?php echo esc_html($description); ?></p>
+                <?php if ($cta_link && $cta_label) : ?>
+                  <a class="technology__link" href="<?php echo esc_url($cta_link); ?>"><?php echo esc_html($cta_label); ?></a>
+                <?php endif; ?>
               </div>
-              <?php if ($cta_link && $cta_label) : ?>
-                <a class="technology__link" href="<?php echo esc_url($cta_link); ?>"><?php echo esc_html($cta_label); ?></a>
-              <?php endif; ?>
             </article>
           <?php endforeach; ?>
         </div>
