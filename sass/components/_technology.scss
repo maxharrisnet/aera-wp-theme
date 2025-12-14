@@ -7,10 +7,9 @@ $sceneScaleHeight: 850px;
 $sceneScale: 1.4;
 
 .technology {
-	position: relative;
-	z-index: 3;
-
 	@media (max-width: $max-768) {
+		position: relative;
+		z-index: 3;
 		padding-top: $gutter * 4;
 		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 1) 150px);
 		background-repeat: repeat-x;
