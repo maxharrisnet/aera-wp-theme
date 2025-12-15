@@ -61,15 +61,16 @@ if ($dashboard_image === null) {
 
 if ($background_image === null) {
   $background_image = function_exists('get_field') ? \get_field('demo_background_image') : '';
-if (empty($background_image)) {
-  $background_image = get_template_directory_uri() . '/assets/images/background/aera-wave-bg-demo.jpg';
+  if (empty($background_image)) {
+    $background_image = get_template_directory_uri() . '/assets/images/background/aera-wave-bg-demo.jpg';
   }
 }
 $background_style = !empty($background_image) ? 'background-image: url(' . esc_url($background_image) . ');' : '';
 ?>
 
 <div class="demo-form">
-  <div class="demo-form__formSectionWrapper">
+  <!-- <div class="demo-form__formSectionWrapper"> -->
+  <div>
     <div class="demo-form__formSection" style="<?php echo esc_attr($background_style); ?>">
       <div class="demo-form__formContainer">
         <div class="demo-form__formRow">
