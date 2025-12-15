@@ -31,11 +31,17 @@
 	fieldset {
 		max-width: 100% !important;
 
+		// Apply width 100% only to forms WITHOUT column layouts
+		&:not(.form-columns-1):not(.form-columns-2):not(.form-columns-3) {
+			div {
+				width: 100% !important;
+			}
+		}
+
 		div {
 			margin-bottom: 20px !important;
 			position: relative;
 			padding-right: 5px;
-			width: 100% !important;
 
 			@media (max-width: $min-720) {
 				width: 100% !important;
@@ -181,4 +187,3 @@
 		}
 	}
 }
-
