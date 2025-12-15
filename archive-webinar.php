@@ -24,15 +24,15 @@ $hero = wp_parse_args(
 $today = current_time('Y-m-d');
 
 // Query for featured webinars (featured = true) - show first 3
+// Sort by menu_order (Intuitive CPO) then by date
 $featured_args = array(
   'post_type'      => 'webinar',
   'posts_per_page' => 3,
   'post_status'    => 'publish',
   'orderby'        => array(
-    'meta_value' => 'DESC',
+    'menu_order' => 'ASC',
     'date'       => 'DESC',
   ),
-  'meta_key'       => 'webinar_date',
   'meta_query'     => array(
     array(
       'key'     => 'webinar_featured',
@@ -44,7 +44,15 @@ $featured_args = array(
 
 $featured_query = new WP_Query($featured_args);
 
-// Query for all on-demand webinars for the grid
+// Get IDs of featured webinars to exclude from main grid
+$featured_ids = array();
+if ($featured_query->have_posts()) {
+  foreach ($featured_query->posts as $featured_post) {
+    $featured_ids[] = $featured_post->ID;
+  }
+}
+
+// Query for all on-demand webinars for the grid (excluding featured)
 $on_demand_args = array(
   'post_type'      => 'webinar',
   'posts_per_page' => -1, // Get all for filtering
@@ -54,6 +62,7 @@ $on_demand_args = array(
     'date'       => 'DESC',
   ),
   'meta_key'       => 'webinar_date',
+  'post__not_in'   => $featured_ids, // Exclude featured webinars
 );
 
 $on_demand_query = new WP_Query($on_demand_args);

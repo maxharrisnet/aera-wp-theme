@@ -40,9 +40,17 @@ if ($webinar_date) {
   $event_type = $is_upcoming ? __('Upcoming Webinar', 'aera') : __('On-Demand', 'aera');
 }
 
-// Determine link and CTA
-$link = get_permalink($post_id);
-$cta_text = $is_upcoming ? __('Register Now', 'aera') : __('Watch Now', 'aera');
+// Get external URL from resource fields, fallback to permalink
+$external_url = function_exists('get_field') ? get_field('resource_external_url', $post_id) : '';
+$link = !empty($external_url) ? $external_url : get_permalink($post_id);
+
+// Get custom CTA text from resource fields, fallback to default
+$resource_cta_text = function_exists('get_field') ? get_field('resource_cta_text', $post_id) : '';
+if (!empty($resource_cta_text)) {
+  $cta_text = $resource_cta_text;
+} else {
+  $cta_text = $is_upcoming ? __('Register Now', 'aera') : __('Watch Now', 'aera');
+}
 
 // Get featured image
 $image_url = '';
