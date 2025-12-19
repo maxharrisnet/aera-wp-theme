@@ -1,0 +1,1623 @@
+<?xml version="1.0" ?>
+<rss xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/" version="2.0">
+  <channel>
+    <title>Aera Technology Customers - All Remaining</title>
+    <link>https://aeratechnology.com</link>
+    <description>All remaining customer data import from Contentful</description>
+    <pubDate>Fri, 19 Dec 2025 08:07:12 +0000</pubDate>
+    <language>en-US</language>
+    <wp:wxr_version>1.2</wp:wxr_version>
+    <item>
+      <title>Deacero</title>
+      <link>https://aeratechnology.com/customer/deacero</link>
+      <pubDate>Thu, 20 Jun 2024 12:21:17 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2001</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2001</wp:post_id>
+      <wp:post_date>2024-06-20 12:21:17</wp:post_date>
+      <wp:post_date_gmt>2024-06-20 12:21:17</wp:post_date_gmt>
+      <wp:post_modified>2024-06-20 12:21:17</wp:post_modified>
+      <wp:post_modified_gmt>2024-06-20 12:21:17</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>deacero</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Deacero</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Deacero</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Creating a customer-centric organization using Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Deacero_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/10vP4ATq4QtGSVE3YnV9g0/ed5293bcb83a5b204095418978ec4ad8/Deacero_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/DEACERO.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/20Rs1GrKUH15f6VZ1TK2ML/09eef7591e64a2523be7b2c52d5c5c64/DEACERO.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Manufacturing</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Deacero transforms customer service using Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/hubfs/Deacero%20case%20study.pdf</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_title</wp:meta_key>
+        <wp:meta_value>Deacero selected Aera Decision Cloud™ to elevate customer service</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/summit/deacero-torre-de-control</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_title</wp:meta_key>
+        <wp:meta_value>Sustainable steel producer Deacero chooses Aera Decision Cloud to automate decision making and create a customer-centric business</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_url</wp:meta_key>
+        <wp:meta_value>https://www.aeratechnology.com/news/sustainable-steel-producer-deacero-chooses-aera-decision-cloud-to-automate-decision-making-and-create-customer-centric-business</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>J.D. Irving</title>
+      <link>https://aeratechnology.com/customer/jd-irving</link>
+      <pubDate>Tue, 26 Nov 2024 12:48:58 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2002</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2002</wp:post_id>
+      <wp:post_date>2024-11-26 12:48:58</wp:post_date>
+      <wp:post_date_gmt>2024-11-26 12:48:58</wp:post_date_gmt>
+      <wp:post_modified>2024-11-26 12:48:58</wp:post_modified>
+      <wp:post_modified_gmt>2024-11-26 12:48:58</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>jd-irving</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>J.D. Irving</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>J.D. Irving</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>From Vision to Execution: J.D. Irving's Decision Intelligence Journey</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/JDI_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/1yj3IObTiWiJyc9RFmD2o9/a70647ea231dbb733af63f0adf1414c7/JDI_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/jdirving.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/47hmxdmu5lL4qMHb4M4IuO/3d5ed6a4888a28d7c89bd4efc4c6110a/jdirving.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>CPG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Decision intelligence at J.D. Irving</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/aerahub24/decision-intelligence-at-jdi</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Kraft Heinz</title>
+      <link>https://aeratechnology.com/customer/kraft-heinz</link>
+      <pubDate>Tue, 26 Nov 2024 09:24:44 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2003</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2003</wp:post_id>
+      <wp:post_date>2024-11-26 09:24:44</wp:post_date>
+      <wp:post_date_gmt>2024-11-26 09:24:44</wp:post_date_gmt>
+      <wp:post_modified>2024-11-26 09:24:44</wp:post_modified>
+      <wp:post_modified_gmt>2024-11-26 09:24:44</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>kraft-heinz</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Kraft Heinz</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Kraft Heinz</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>The Real Impact of Decision Intelligence at The Kraft Heinz Company</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/KRAFT_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/70X1G49EzEetuWSbKpUBfU/d24ca9bb4fee9a7f60fadae06bbed211/KRAFT_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/KraftHeinz_Logonew__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/1Rs0VAk66PFeZSfoalybPq/8373d3dec8d084cdc605efe8b36a818b/KraftHeinz_Logonew__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>CPG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>The Real Impact of Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/aerahub24/the-real-impact-of-decision-intelligence-at-the-kraft-heinz-company</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>InfraBuild</title>
+      <link>https://aeratechnology.com/customer/infrabuild</link>
+      <pubDate>Tue, 26 Nov 2024 13:17:08 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2004</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2004</wp:post_id>
+      <wp:post_date>2024-11-26 13:17:08</wp:post_date>
+      <wp:post_date_gmt>2024-11-26 13:17:08</wp:post_date_gmt>
+      <wp:post_modified>2024-11-26 13:17:08</wp:post_modified>
+      <wp:post_modified_gmt>2024-11-26 13:17:08</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>infrabuild</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>InfraBuild</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>InfraBuild</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Transforming service &amp; inventory management with decision intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/INFRABUILD_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/67MOT3SZXEOfFGO8SvymES/8a7e8a090e1e04ee5b2d205be6faf6bd/INFRABUILD_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/infrabuild_1__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/6L2a5FYyfHdoN7ETQmwVZQ/8ba935dc9c3810fd69d57c342707cac0/infrabuild_1__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Manufacturing</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Transforming service &amp; inventory management with decision intelligence with InfraBuild</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/aerahub24/transforming-service-and-inventory-management-with-decision-intelligence-with-infrabuild</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Baxter</title>
+      <link>https://aeratechnology.com/customer/baxter</link>
+      <pubDate>Tue, 26 Nov 2024 13:05:55 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2005</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2005</wp:post_id>
+      <wp:post_date>2024-11-26 13:05:55</wp:post_date>
+      <wp:post_date_gmt>2024-11-26 13:05:55</wp:post_date_gmt>
+      <wp:post_modified>2024-11-26 13:05:55</wp:post_modified>
+      <wp:post_modified_gmt>2024-11-26 13:05:55</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>baxter</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Baxter</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Baxter</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Baxter Healthcare: Elevating healthcare with decision intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/BAXTER_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/3hiQaUCYxWDxkzCV2bCWkY/addb5003f959239f2bf2cb0cee0ea189/BAXTER_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Baxter.jpg</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/6jxpCamFfp9c0zQUIYAC16/97759c0768cac83912dd318dd2094c3f/Baxter.jpg</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Life Sciences</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Elevating healthcare with decision intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/aerahub24/baxter-healthcare-elevating-healthcare-with-decision-intelligence</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Becle</title>
+      <link>https://aeratechnology.com/customer/becle</link>
+      <pubDate>Thu, 20 Jun 2024 13:03:14 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2006</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2006</wp:post_id>
+      <wp:post_date>2024-06-20 13:03:14</wp:post_date>
+      <wp:post_date_gmt>2024-06-20 13:03:14</wp:post_date_gmt>
+      <wp:post_modified>2024-06-20 13:03:14</wp:post_modified>
+      <wp:post_modified_gmt>2024-06-20 13:03:14</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>becle</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Becle</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Becle</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Scaling Decision Intelligence globally</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Proximo_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/YaVpDBRlVur1KU2Fq4csI/db3dc067e43f44b0541ffc599b66c85c/Proximo_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/becle.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/vOCjmeMmr3AxI2EWMQ1Sg/e460a7da1b7bce24175dd6ae36cf3622/becle.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>CPG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>The Real Impact of Decision Intelligence at Becle - Luis Gonzalez</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/aerahub24/the-real-impact-of-decision-intelligence-at-becle</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_title</wp:meta_key>
+        <wp:meta_value>Proximo Spirits' journey to Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_url</wp:meta_key>
+        <wp:meta_value>https://www.supplychainbrain.com/articles/37443-watch-proximo-spirits-journey-to-decision-intelligence-a-case-study?oly_enc_id=6911J8531289A5A</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_title</wp:meta_key>
+        <wp:meta_value>Proximo Spirits expanding use of Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_url</wp:meta_key>
+        <wp:meta_value>https://consumergoods.com/proximo-spirits-expanding-use-decision-intelligence-across-globe</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_4_title</wp:meta_key>
+        <wp:meta_value>World's largest tequila producer partners with Aera Technology to deploy Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_4_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_4_url</wp:meta_key>
+        <wp:meta_value>https://www.aeratechnology.com/news/worlds-largest-tequila-producer-partners-with-aera-technology-to-deploy-decision-intelligence</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Merck Animal Health</title>
+      <link>https://aeratechnology.com/customer/merck-animal-health</link>
+      <pubDate>Wed, 03 Jul 2024 07:04:44 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2007</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2007</wp:post_id>
+      <wp:post_date>2024-07-03 07:04:44</wp:post_date>
+      <wp:post_date_gmt>2024-07-03 07:04:44</wp:post_date_gmt>
+      <wp:post_modified>2024-07-03 07:04:44</wp:post_modified>
+      <wp:post_modified_gmt>2024-07-03 07:04:44</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>merck-animal-health</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Merck Animal Health</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Merck Animal Health</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Transforming contract manufacturing processes with Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Merck_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/335d5VQVyEE2hCANq3flId/4382dbab90033be9b87d0bcc887beead/Merck_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/MERCK_ANIMAL_HEALTH.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/5zcgQZv3BTKmvv5YpL2rYs/2f90a6327f48cf7d92f7682dee1c31a9/MERCK_ANIMAL_HEALTH.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Life Sciences</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>The Real Impact of Decision Intelligence at Merck</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/aerahub24/the-real-impact-of-decision-intelligence-at-merck</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_title</wp:meta_key>
+        <wp:meta_value>Transforming procurement processes with Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/summit/aera-technology-customer-success-merck-animal-health</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Western Governors University</title>
+      <link>https://aeratechnology.com/customer/western-governors-university</link>
+      <pubDate>Tue, 27 Aug 2024 05:17:20 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2008</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2008</wp:post_id>
+      <wp:post_date>2024-08-27 05:17:20</wp:post_date>
+      <wp:post_date_gmt>2024-08-27 05:17:20</wp:post_date_gmt>
+      <wp:post_modified>2024-08-27 05:17:20</wp:post_modified>
+      <wp:post_modified_gmt>2024-08-27 05:17:20</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>western-governors-university</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Western Governors University</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Western Governors University</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Creating an industry-first model for personalized student support</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/WGO_thumb__1_.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/3oTxb9W1t0Qxd5dRuOW93x/80af7cb0173e2991a98e46e10f5a1b85/WGO_thumb__1_.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Western_Governors_University__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/uwFtjCA2KuNJRbmmllaUh/268fe2e8158293750aca7cf03b7e7526/Western_Governors_University__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Higher Education</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Preparing for Decision Intelligence at Work: Helping People Succeed &amp; Upskilling Teams</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/aerahub24/keynote-session-with-joe-dery-of-wgu</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_title</wp:meta_key>
+        <wp:meta_value>The new frontier: Unleashing student success with decision intelligence with WGU</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/aerahub24/the-new-frontier-unleashing-student-success-with-decision-intelligence-with-wgu</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_title</wp:meta_key>
+        <wp:meta_value>WGU selects Aera Technology to create industry-first Decision Intelligence ecosystem</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_url</wp:meta_key>
+        <wp:meta_value>https://www.aeratechnology.com/news/western-governors-university-selects-aera-technology-to-create-industry-first-decision-intelligence-ecosystem-for-student-success</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Dell</title>
+      <link>https://aeratechnology.com/customer/dell</link>
+      <pubDate>Thu, 20 Jun 2024 07:47:17 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2009</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2009</wp:post_id>
+      <wp:post_date>2024-06-20 07:47:17</wp:post_date>
+      <wp:post_date_gmt>2024-06-20 07:47:17</wp:post_date_gmt>
+      <wp:post_modified>2024-06-20 07:47:17</wp:post_modified>
+      <wp:post_modified_gmt>2024-06-20 07:47:17</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>dell</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Dell</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Dell</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Creating a frictionless self-driving supply chain</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Dell_thuimb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/45pGBoK8Q1nt53jWVmx8Gh/959f26d25dbcc39b3327fae1bd9276cb/Dell_thuimb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/DELL_LOGO.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/5YU25NRtoW4QeqUJtuvB68/04b5ee381133527ea2683c62fc76bd1b/DELL_LOGO.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>The Real Impact of Decision Intelligence at Dell Technologies</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/aerahub24/keynote-session-with-sasha-koff-of-dell</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_title</wp:meta_key>
+        <wp:meta_value>AeraHUB 2023 video: The power of Decision Intelligence in a frictonless supply chain</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/summit/dell-technologies-the-power-of-decision-automation-in-a-frictionless-supply-chain</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Mars</title>
+      <link>https://aeratechnology.com/customer/mars</link>
+      <pubDate>Wed, 03 Jul 2024 05:44:07 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2010</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2010</wp:post_id>
+      <wp:post_date>2024-07-03 05:44:07</wp:post_date>
+      <wp:post_date_gmt>2024-07-03 05:44:07</wp:post_date_gmt>
+      <wp:post_modified>2024-07-03 05:44:07</wp:post_modified>
+      <wp:post_modified_gmt>2024-07-03 05:44:07</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>mars</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Mars</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Mars</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Achieving sweet success in service, logistics and sustainability</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Mars_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/5Mu90HXMpLYc9ybjOwZ5V0/32b9f04d31381f64337a4042efa51895/Mars_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/logoMars.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/7yY2oLTqjgkTavLcFCocuS/9d6d6f6e8a77d150e36094596bea4b34/logoMars.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>CPG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Mars Wrigley's highly successful supply chain digital transformation</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://www.forbes.com/sites/stevebanker/2023/06/20/mars-wrigleys-highly-successful-supply-chain-digital-transformation/?sh=44a3fecf562e</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_title</wp:meta_key>
+        <wp:meta_value>Guillaume Doriry of Mars on how Decision Intelligence drives supply chain visibility</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_2_url</wp:meta_key>
+        <wp:meta_value>https://consumergoods.com/guillaume-doriry-mars-how-decision-intelligence-drives-supply-chain-visibility</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_title</wp:meta_key>
+        <wp:meta_value>The Future of Decisions Now: Mars CIO Will Beery takes the stage at NASCES</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_asset_3_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/video1/fireside-chat-with-will-beery</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Mitsubishi Chemical Group</title>
+      <link>https://aeratechnology.com/customer/mitsubishi-chemical-group</link>
+      <pubDate>Thu, 20 Jun 2024 12:32:37 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2011</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2011</wp:post_id>
+      <wp:post_date>2024-06-20 12:32:37</wp:post_date>
+      <wp:post_date_gmt>2024-06-20 12:32:37</wp:post_date_gmt>
+      <wp:post_modified>2024-06-20 12:32:37</wp:post_modified>
+      <wp:post_modified_gmt>2024-06-20 12:32:37</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>mitsubishi-chemical-group</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Mitsubishi Chemical Group</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Mitsubishi Chemical Group</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Turning insights into action</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Mitzubishi_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/5NhomXILJTrpcBlA1Ab4Vu/638162d6ea3a2dc4eecb1fdec30e5931/Mitzubishi_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/The_Mitsubishi_Chemical_Group-0_1.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/3iIO8i3hkBHojcKwswdBXt/4220130a18f5d4bf1da0360a3d9fac0f/The_Mitsubishi_Chemical_Group-0_1.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Chemicals</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Aera Technology Customer Success: Mitsubishi Chemical Group</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/summit/aera-technology-customer-success-mitsubishi-chemical-group</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Lucid</title>
+      <link>https://aeratechnology.com/customer/lucid</link>
+      <pubDate>Wed, 03 Jul 2024 07:22:35 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2012</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2012</wp:post_id>
+      <wp:post_date>2024-07-03 07:22:35</wp:post_date>
+      <wp:post_date_gmt>2024-07-03 07:22:35</wp:post_date_gmt>
+      <wp:post_modified>2024-07-03 07:22:35</wp:post_modified>
+      <wp:post_modified_gmt>2024-07-03 07:22:35</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>lucid</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Lucid</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Lucid</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Accelerating your impact with Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/LUCID_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/2YdeYBjE4uhi9Eiv2Nr1Wm/563e32fcd778add2c8baccb07c28e62d/LUCID_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/blank__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/7tsMcbDT8v1LpnaDwi2k2P/883ee93c4bd0bfe7be40678c542ef1c1/blank__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Automotive</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Accelerating your impact with Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://drive.google.com/file/d/1BeedKky9pMlqQdQ9t4hVdbQzLSLeMU1c/view</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>GSK</title>
+      <link>https://aeratechnology.com/customer/gsk</link>
+      <pubDate>Thu, 20 Jun 2024 12:56:38 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2013</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2013</wp:post_id>
+      <wp:post_date>2024-06-20 12:56:38</wp:post_date>
+      <wp:post_date_gmt>2024-06-20 12:56:38</wp:post_date_gmt>
+      <wp:post_modified>2024-06-20 12:56:38</wp:post_modified>
+      <wp:post_modified_gmt>2024-06-20 12:56:38</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>gsk</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>GSK</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>GSK</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Driving innovation with Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/GSK_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/4b0JPNsfiEuJqpTQ9zeCVT/0bf223fa6b318202ff1bc98579805c84/GSK_thumb_v2.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/GSK_Color_1.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/165b07y5cb60pJnIOmf2zp/38c0f05d165316db13638e89f926ba9c/GSK_Color_1.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Pharmaceutical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Driving innovation with Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/summit/aera-technology-customer-success-gsk</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Global CPG</title>
+      <link>https://aeratechnology.com/customer/global-cpg</link>
+      <pubDate>Wed, 03 Jul 2024 09:14:01 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2014</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2014</wp:post_id>
+      <wp:post_date>2024-07-03 09:14:01</wp:post_date>
+      <wp:post_date_gmt>2024-07-03 09:14:01</wp:post_date_gmt>
+      <wp:post_modified>2024-07-03 09:14:01</wp:post_modified>
+      <wp:post_modified_gmt>2024-07-03 09:14:01</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>global-cpg</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Global CPG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Global CPG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>CPG company partners with Aera to improve customer service levels</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/CPG_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/7aRbMyaNqyLXI2sr63KmPk/b56898d2566cf95fea87853afd264760/CPG_THUMB.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>CPG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>CPG company partners with Aera to improve customer service levels</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://www.aeratechnology.com/customer/ahp2</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Health &amp; Hygiene</title>
+      <link>https://aeratechnology.com/customer/health-hygiene</link>
+      <pubDate>Wed, 03 Jul 2024 09:22:47 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2015</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2015</wp:post_id>
+      <wp:post_date>2024-07-03 09:22:47</wp:post_date>
+      <wp:post_date_gmt>2024-07-03 09:22:47</wp:post_date_gmt>
+      <wp:post_modified>2024-07-03 09:22:47</wp:post_modified>
+      <wp:post_modified_gmt>2024-07-03 09:22:47</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>health-hygiene</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Health &amp; Hygiene</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Health &amp; Hygiene</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>CPG company partners with Aera to improve forecasting and supply chain performance</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/HEALTH_HYGIENE_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/2rHEI6WSouzBvJTJRY9zzB/b4095a333d4153729dba3c5810097924/HEALTH_HYGIENE_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Health &amp; Hygiene</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Aera to improve forecasting and supply chain performance</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://www.aeratechnology.com/customer/fmcg2</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Animal Health Products</title>
+      <link>https://aeratechnology.com/customer/animal-health-products</link>
+      <pubDate>Wed, 03 Jul 2024 09:27:26 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2016</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2016</wp:post_id>
+      <wp:post_date>2024-07-03 09:27:26</wp:post_date>
+      <wp:post_date_gmt>2024-07-03 09:27:26</wp:post_date_gmt>
+      <wp:post_modified>2024-07-03 09:27:26</wp:post_modified>
+      <wp:post_modified_gmt>2024-07-03 09:27:26</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>animal-health-products</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Animal Health Products</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Animal Health Products</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™ to improve forecasting, safety stock levels, and lead times</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/ANIMAL_HEALTHCARE_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/5e2yygU4cXp8k7Pk93wSNF/6b4247350765d8d94ea2a34cf99d5744/ANIMAL_HEALTHCARE_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Animal Health Products</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™ to improve forecasting, safety stock levels, and lead times</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://www.aeratechnology.com/customer/ahp1</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Petrochemical</title>
+      <link>https://aeratechnology.com/customer/petrochemical</link>
+      <pubDate>Wed, 03 Jul 2024 09:30:24 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2017</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2017</wp:post_id>
+      <wp:post_date>2024-07-03 09:30:24</wp:post_date>
+      <wp:post_date_gmt>2024-07-03 09:30:24</wp:post_date_gmt>
+      <wp:post_modified>2024-07-03 09:30:24</wp:post_modified>
+      <wp:post_modified_gmt>2024-07-03 09:30:24</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>petrochemical</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Petrochemical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Petrochemical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Global Leader in Energy Selects Aera Decision Cloud™ to improve Supply Chain visibility</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/PETROCHEM_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/9SkYQlgxFPvSGYDoNxZfc/ccd66e507ce96cc327eef31f8ac523af/PETROCHEM_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Petrochemical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™  to Improve Supply Chain Visibility and Shipping Performance</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://www.aeratechnology.com/customer/petrochemical</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Global FMCG</title>
+      <link>https://aeratechnology.com/customer/global-fmcg</link>
+      <pubDate>Wed, 03 Jul 2024 09:18:23 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2018</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2018</wp:post_id>
+      <wp:post_date>2024-07-03 09:18:23</wp:post_date>
+      <wp:post_date_gmt>2024-07-03 09:18:23</wp:post_date_gmt>
+      <wp:post_modified>2024-07-03 09:18:23</wp:post_modified>
+      <wp:post_modified_gmt>2024-07-03 09:18:23</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>global-fmcg</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Global FMCG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Global FMCG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™ to drive supply chain transformation</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/FMCG_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/5fDuShonDSEUmK0XV3Bdkn/407f2b4d0ac91c73a292a92df63e3296/FMCG_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>FMCG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™ to drive supply chain transformation</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://www.aeratechnology.com/customer/fmcg3</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Pharmaceutical</title>
+      <link>https://aeratechnology.com/customer/pharmaceutical</link>
+      <pubDate>Thu, 20 Jun 2024 13:10:56 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2019</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2019</wp:post_id>
+      <wp:post_date>2024-06-20 13:10:56</wp:post_date>
+      <wp:post_date_gmt>2024-06-20 13:10:56</wp:post_date_gmt>
+      <wp:post_modified>2024-06-20 13:10:56</wp:post_modified>
+      <wp:post_modified_gmt>2024-06-20 13:10:56</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>pharmaceutical</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Pharmaceutical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Pharmaceutical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Healthcare leader uses Aera Decision Cloud™ to improve the customer experience</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/PHARMA_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/qF9Rf9aTl3c8rljQXQdOO/92ca63c38197552f0d7a42914e93636a/PHARMA_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Pharmaceutical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Global healthcare leader uses Aera Decision Cloud™ to improve the customer experience</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://www.aeratechnology.com/customer/pharmaceutical</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Science &amp; Technology</title>
+      <link>https://aeratechnology.com/customer/science-technology</link>
+      <pubDate>Thu, 20 Jun 2024 12:52:30 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2020</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2020</wp:post_id>
+      <wp:post_date>2024-06-20 12:52:30</wp:post_date>
+      <wp:post_date_gmt>2024-06-20 12:52:30</wp:post_date_gmt>
+      <wp:post_modified>2024-06-20 12:52:30</wp:post_modified>
+      <wp:post_modified_gmt>2024-06-20 12:52:30</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>science-technology</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Science &amp; Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Science &amp; Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™ improves forecast accuracy, and service levels</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/SCIENCE_TECH_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/56PDdaSTTetgIZ2zVkIYET/ecda5bfa05de29e8edbd100708a80304/SCIENCE_TECH_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Science &amp; Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™ improves forecast accuracy, time to market, and service levels</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://www.aeratechnology.com/customer/gstco</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Global FMCG</title>
+      <link>https://aeratechnology.com/customer/global-fmcg</link>
+      <pubDate>Thu, 20 Jun 2024 12:26:25 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2021</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2021</wp:post_id>
+      <wp:post_date>2024-06-20 12:26:25</wp:post_date>
+      <wp:post_date_gmt>2024-06-20 12:26:25</wp:post_date_gmt>
+      <wp:post_modified>2024-06-20 12:26:25</wp:post_modified>
+      <wp:post_modified_gmt>2024-06-20 12:26:25</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>global-fmcg</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Global FMCG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Global FMCG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Global consumer goods company chooses Aera Decision Cloud™</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/GLOBAL_FMCG_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/7dj1CiF3Gqym56Esf1sgXc/06b5771906aa75c3ab22845614ab683a/GLOBAL_FMCG_CASESTUDY.webp</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Global FMCG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™ to improve people effectiveness through Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Read Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://www.aeratechnology.com/customer/fmcg1</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Alcon</title>
+      <link>https://aeratechnology.com/customer/alcon</link>
+      <pubDate>Thu, 20 Jun 2024 13:05:13 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2022</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2022</wp:post_id>
+      <wp:post_date>2024-06-20 13:05:13</wp:post_date>
+      <wp:post_date_gmt>2024-06-20 13:05:13</wp:post_date_gmt>
+      <wp:post_modified>2024-06-20 13:05:13</wp:post_modified>
+      <wp:post_modified_gmt>2024-06-20 13:05:13</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>alcon</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Alcon</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Alcon</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>Decision Intelligence: A Conversation with Alcon and EY</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/ALCON_EY_THUMB.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/6kv20bqti7D8j8Dqgt0mN8/289f0ad44d3bdcc44af0ff6b276fd406/ALCON_EY_THUMB.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_logo</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/EY_1.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_logo_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/67fN5yqxYybANtIa9SJzTi/c9d802ce72b7608fb9071a72c27971d3/EY_1.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Pharmaceutical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_title</wp:meta_key>
+        <wp:meta_value>Decision Intelligence: A Conversation with Alcon and EY</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_cta</wp:meta_key>
+        <wp:meta_value>Watch Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_asset_1_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/summit/decision-intelligence-a-conversation-with-alcon-and-ey</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Manufacturing</title>
+      <link>https://aeratechnology.com/customer/manufacturing</link>
+      <pubDate>Thu, 20 Jun 2024 13:00:46 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=customer&amp;p=2023</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded/>
+      <wp:post_id>2023</wp:post_id>
+      <wp:post_date>2024-06-20 13:00:46</wp:post_date>
+      <wp:post_date_gmt>2024-06-20 13:00:46</wp:post_date_gmt>
+      <wp:post_modified>2024-06-20 13:00:46</wp:post_modified>
+      <wp:post_modified_gmt>2024-06-20 13:00:46</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>manufacturing</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>customer</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>customer_card_title</wp:meta_key>
+        <wp:meta_value>Manufacturing</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_company_name</wp:meta_key>
+        <wp:meta_value>Manufacturing</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_title</wp:meta_key>
+        <wp:meta_value>The Power of Decision Automation in a Frictionless Supply Chain</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_hero_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/MANUFACTURING_CASESTUDY.jpg</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_customer_hero_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/3alLnWk4qtYLl88qnFFK60/ff21d1c369dd24f129b89fdd6f4ef7ee/MANUFACTURING_CASESTUDY.jpg</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>customer_type</wp:meta_key>
+        <wp:meta_value>Manufacturing</wp:meta_value>
+      </wp:postmeta>
+    </item>
+  </channel>
+</rss>
