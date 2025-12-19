@@ -27,7 +27,18 @@
 
   // Determine if background should be active based on WordPress conditionals
   $background_active = false;
-  if (is_front_page()) {
+
+  // Explicitly exclude demo, contact-us, and partners pages
+  if (
+    is_page_template('page-demo.php') ||
+    is_page_template('page-contact-us.php') ||
+    (is_page() && get_page_template_slug() === 'page-demo.php') ||
+    (is_page() && get_page_template_slug() === 'page-contact-us.php') ||
+    is_page('contact-us') ||
+    is_post_type_archive('partner')
+  ) {
+    $background_active = false;
+  } elseif (is_front_page()) {
     $background_active = true;
     $background_classes .= ' isHome';
   } elseif (
@@ -35,7 +46,7 @@
     is_page_template('page-aerahub-2025.php') ||
     (is_page() && get_page_template_slug() === 'page-resources.php') ||
     (is_page() && get_page_template_slug() === 'page-aerahub-2025.php') ||
-    is_page(array('resources', 'about-us', 'careers', 'webinars', 'aera-decision-cloud', 'test-drive', 'demo', 'aerahub-2025'))
+    is_page(array('resources', 'about-us', 'careers', 'webinars', 'aera-decision-cloud', 'test-drive', 'aerahub-2025'))
   ) {
     $background_active = true;
   }

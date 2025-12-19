@@ -26,8 +26,9 @@ $all_resources_args = array(
   'post_type'      => 'event',
   'posts_per_page' => -1, // Get all for display
   'post_status'    => 'publish',
-  'orderby'        => 'date',
-  'order'          => 'DESC',
+  'meta_key'       => 'event_start_date',
+  'orderby'        => 'meta_value',
+  'order'          => 'ASC', // Most recent events first
 );
 
 $all_resources_query = new WP_Query($all_resources_args);

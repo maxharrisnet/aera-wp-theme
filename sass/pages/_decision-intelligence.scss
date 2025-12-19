@@ -101,7 +101,7 @@
 	position: relative;
 
 	&::before {
-		content: "";
+		content: '';
 		position: absolute;
 		top: 0;
 		left: 13px;
@@ -116,12 +116,12 @@
 	}
 
 	&::after {
-		content: "";
+		content: '';
 		position: absolute;
 		top: 0;
 		left: 13px;
 		width: 2px;
-		background: #00619E;
+		background: #00619e;
 		z-index: 1;
 		transition: height 0.3s ease;
 		height: 0;
@@ -150,7 +150,7 @@
 }
 
 .contentLink {
-	font-family: "FreightSans Pro", sans-serif;
+	font-family: 'FreightSans Pro', sans-serif;
 	font-weight: 700;
 	font-size: 18px;
 }
@@ -207,14 +207,14 @@
 
 		&.active {
 			font-weight: bold;
-			color: #00619E;
+			color: #00619e;
 		}
 	}
 
 	&.main {
 		> a {
 			&::before {
-				content: "";
+				content: '';
 				position: absolute;
 				left: -21px;
 				top: 50%;
@@ -222,10 +222,12 @@
 				width: 10px;
 				height: 10px;
 				border-radius: 50%;
-				border: 2px solid #5C6475;
-				background-color: #5C6475;
+				border: 2px solid #5c6475;
+				background-color: #5c6475;
 				z-index: 3;
-				transition: background-color 0.3s, border-color 0.3s;
+				transition:
+					background-color 0.3s,
+					border-color 0.3s;
 
 				@media (max-width: $max-768) {
 					display: none;
@@ -233,8 +235,8 @@
 			}
 
 			&.filled::before {
-				background-color: #00619E;
-				border-color: #00619E;
+				background-color: #00619e;
+				border-color: #00619e;
 			}
 		}
 	}
@@ -253,7 +255,7 @@
 
 	li {
 		a {
-			font-family: "FreightSans Pro", sans-serif;
+			font-family: 'FreightSans Pro', sans-serif;
 			font-weight: 400;
 			font-size: 16px;
 			margin-left: 40px;
@@ -263,7 +265,7 @@
 			}
 
 			&.active {
-				color: #00619E;
+				color: #00619e;
 				font-weight: 400;
 			}
 		}
@@ -304,7 +306,7 @@
 	right: 7px;
 	top: 13px;
 	font-size: 12px;
-	color: #5C6475;
+	color: #5c6475;
 
 	@media (min-width: $min-768) {
 		display: none !important;
@@ -317,13 +319,13 @@
 
 #toggleIcon {
 	font-size: 12px;
-	color: #5C6475;
+	color: #5c6475;
 }
 
 .mainLeft {
 	margin-top: 300px;
 	padding: 20px;
-	font-family: "FreightSans Pro", sans-serif;
+	font-family: 'FreightSans Pro', sans-serif;
 	font-weight: 400;
 
 	@media (min-width: $min-768) {
@@ -385,7 +387,7 @@ h3 {
 // Table styles
 .tableWrapper {
 	width: 100%;
-	background-color: #F5F7FA;
+	background-color: #f5f7fa;
 	border-collapse: collapse;
 	overflow-x: auto;
 
@@ -403,7 +405,7 @@ h3 {
 			content: '';
 			width: 100%;
 			height: 1px;
-			background-color: #B2BCCC;
+			background-color: #b2bccc;
 			position: absolute;
 			left: 0;
 			top: 0;
@@ -424,7 +426,7 @@ h3 {
 }
 
 .fontFreight {
-	font-family: "FreightSans Pro", sans-serif;
+	font-family: 'FreightSans Pro', sans-serif;
 	font-weight: 200;
 }
 
@@ -455,7 +457,7 @@ h3 {
 	left: 0;
 	width: 0%;
 	height: 4px;
-	background-color: #9AE6B4;
+	background-color: #9ae6b4;
 	z-index: 1000;
 	transition: width 0.25s ease-out;
 }
@@ -470,4 +472,3 @@ h3 {
 .site-main--decision-intelligence {
 	overflow-x: hidden;
 }
-

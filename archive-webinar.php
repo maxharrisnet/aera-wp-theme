@@ -117,7 +117,7 @@ $on_demand_query = new WP_Query($on_demand_args);
     <div class="news__container">
       <div class="news__col">
         <div class="news__formRow">
-          <div class="news__formText">
+    <div class="news__formText">
             <h3><?php esc_html_e('Get the latest resources, blog posts, and updates from Aera Technology.', 'aera'); ?></h3>
             <p><?php esc_html_e('Sign up for updates in your inbox.', 'aera'); ?></p>
           </div>
