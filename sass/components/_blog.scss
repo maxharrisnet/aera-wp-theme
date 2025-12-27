@@ -12,6 +12,7 @@
 
 	&__container {
 		@include container;
+    
 	}
 
 	@media (max-width: $max-960) {
