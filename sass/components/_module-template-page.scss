@@ -4,7 +4,7 @@
 @use '../grid' as *;
 @use '../mixins' as *;
 
-.skills {
+.module-template {
 	&__detailWrapper {
 		padding: 50px 20px;
 
@@ -281,7 +281,7 @@
 		padding: 0 2.85714em;
 		height: 3.57143em;
 		color: #1a1a1a;
-		font-family: "Gilroy", sans-serif;
+		font-family: 'Gilroy', sans-serif;
 		font-weight: 600;
 		line-height: 3.57143;
 		letter-spacing: 0.025em;

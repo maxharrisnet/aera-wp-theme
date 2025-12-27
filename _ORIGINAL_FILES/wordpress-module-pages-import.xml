@@ -1,0 +1,1310 @@
+<?xml version="1.0" ?>
+<rss xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/" version="2.0">
+  <channel>
+    <title>Aera Technology Module Template Pages</title>
+    <link>https://aeratechnology.com</link>
+    <description>Module Template Pages import from Contentful</description>
+    <pubDate>Fri, 19 Dec 2025 09:53:42 +0000</pubDate>
+    <language>en-US</language>
+    <wp:wxr_version>1.2</wp:wxr_version>
+    <item>
+      <title>Aera Workspaces</title>
+      <link>https://aeratechnology.com/aera-workspaces</link>
+      <pubDate>Mon, 18 Nov 2024 06:45:02 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3001</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Empowering End Users with Self-Service Decision Intelligence</excerpt:encoded>
+      <wp:post_id>3001</wp:post_id>
+      <wp:post_date>2024-11-18 06:45:02</wp:post_date>
+      <wp:post_date_gmt>2024-11-18 06:45:02</wp:post_date_gmt>
+      <wp:post_modified>2024-11-18 06:45:02</wp:post_modified>
+      <wp:post_modified_gmt>2024-11-18 06:45:02</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>aera-workspaces</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Empowering End Users with Self-Service Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Aera Workspaces brings a powerful, collaborative environment where users can seamlessly create, manage, and execute business models. This feature is designed to empower decision-makers with enhanced control over their data and insights. Workspaces puts advanced simulation and action capabilities directly into the hands of end users, transforming how they plan, simulate, and act on business decisions.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- __Calc Engine for Advanced Simulations:__ A multi-dimensional modeling engine that enables real-time scenario planning. Users can simulate complex business scenarios with zero lag, using up-to-date live data for accurate, strategic decisions.
+- __Direct Action Initiation:__ Move beyond recommendations—users can now directly execute actions within the workspace with a single click, accelerating the decision-to-action process.
+- __Self-Service Modeling:__ Build models independently without needing advanced technical expertise. The intuitive, Excel-like interface allows users to modify and adjust models on the go, empowering them to drive decisions with agility.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Real-Time Data &amp; Simulations:__ Leverage real-time data to run what-if scenarios and quickly adjust to changing business conditions.
+- __User-Friendly Control:__ Easily accessible modeling capabilities mean users no longer need to rely on technical teams to build or adjust models.
+- __AI-Enhanced Insights:__ Continuous feedback from AI-driven models keeps decisions current, enabling better outcomes with every interaction.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/aeraworkspaces.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/1sA8x0aMRTKVLV5gYWEKS8/8f33bf847813b82ee3a4bad420ca067d/aeraworkspaces.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Aera Technology | Aera Workspaces</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Aera Workspaces brings a powerful, collaborative environment where users can seamlessly create, manage, and execute business models.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>aera-workspaces</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Agentic Ambient Orchestration</title>
+      <link>https://aeratechnology.com/agentic-ambient-orchestration</link>
+      <pubDate>Mon, 18 Nov 2024 07:09:11 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3002</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Activate and manage autonomous agents to streamline complex decision processes.</excerpt:encoded>
+      <wp:post_id>3002</wp:post_id>
+      <wp:post_date>2024-11-18 07:09:11</wp:post_date>
+      <wp:post_date_gmt>2024-11-18 07:09:11</wp:post_date_gmt>
+      <wp:post_modified>2024-11-18 07:09:11</wp:post_modified>
+      <wp:post_modified_gmt>2024-11-18 07:09:11</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>agentic-ambient-orchestration</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Activate and manage autonomous agents to streamline complex decision processes.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>With Agentic Ambient Orchestration, you gain new levels of speed and agility in decision-making. You can blend structured and unstructured data, your expertise, and the reasoning power of large language models (LLMs) — all to build richer decision context and unlock broader use cases. From the frontlines to the back office, you can activate AI agents and create [Aera Skills™](https://www.aeratechnology.com/skills) using natural language prompting.
+Because Aera enables you to create decision flows with embedded agents, your role shifts from analyzing data to designing decision automation and guiding its execution. With that shift, you can focus your time and expertise on where it matters most.
+</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;AI agents embedded in decision flows&lt;/strong&gt;&lt;br/&gt;
+Quickly build Aera Skills™ using embedded AI agents that follow natural language prompts to reason and take action. Built-in guardrails ensure every step stays transparent, accountable, and well-governed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Any data, any format&lt;/strong&gt;&lt;br/&gt;
+Aera can work with both structured and unstructured data — from transactional systems to PDFs and emails —  to power complex processes like claims management, procurement negotiations, and contract compliance.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Flexible LLM integration&lt;/strong&gt;&lt;br/&gt;
+The platform lets you easily and securely configure and manage connections to large language models (LLMs), which Aera can then leverage to reason, furnish insights, and generate content dynamically.&lt;/li&gt;
+&lt;/ul&gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Rapid Skill creation — from coding to oversight&lt;/strong&gt;&lt;br/&gt;
+Define decision intent using natural language, eliminating technical barriers to creating decision flows. Agentic AI takes it from there — reasoning through the problem and generating the decision logic to match, so you get to value faster.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Autonomous, scalable collaboration&lt;/strong&gt;&lt;br/&gt;
+Automate communication and coordination across people, systems, and vendors, such as negotiating order changes with vendors.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Faster time-to-action&lt;/strong&gt;&lt;br/&gt;
+Get faster and more precise outcomes with the help of decision trigger detection, alternative simulations, and autonomous actions.&lt;/li&gt;
+&lt;/ul&gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Agentic_Ambient_Orchestration.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/3Co483qnGwi4b0H0bks5O9/c63830ba306444f8d5561471f5d077dc/Agentic_Ambient_Orchestration.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Aera Technology | Agentic Ambient Orchestration</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Aera's Agentic Ambient Orchestration is a game-changing capability that extends across the entire platform, enhancing decision-making processes with intelligent automation, natural language interactions, and seamless engagement.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>agentic-ambient-orchestration</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Decision Engines</title>
+      <link>https://aeratechnology.com/decision-engines</link>
+      <pubDate>Thu, 03 Jul 2025 13:34:23 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3003</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Automate and optimize decisions across the full spectrum of decision-making.</excerpt:encoded>
+      <wp:post_id>3003</wp:post_id>
+      <wp:post_date>2025-07-03 13:34:23</wp:post_date>
+      <wp:post_date_gmt>2025-07-03 13:34:23</wp:post_date_gmt>
+      <wp:post_modified>2025-07-03 13:34:23</wp:post_modified>
+      <wp:post_modified_gmt>2025-07-03 13:34:23</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>decision-engines</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Automate and optimize decisions across the full spectrum of decision-making.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™ contains a comprehensive set of interconnected engines built to support all types of decisions. Together, these engines deliver the intelligence and precision to drive business decisions at scale. Analytics, modeling, optimization, and machine learning are seamlessly orchestrated into explainable, efficient decision flows.
+Whether you're calculating available-to-promise inventory, simulating complex scenarios, or optimizing trade-offs, Aera applies the right engine to each decision — no black boxes, no silos, and fully auditable decision logic embedded in every step.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Low-code decision modeling&lt;/strong&gt;&lt;br/&gt;
+Using the drag-and-drop Process Builder, you can combine engines and define logic with a visual, low-code interface that’s easy to use.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Business rules guardrails&lt;/strong&gt;&lt;br/&gt;
+Set clear rules to guide when and how certain actions should be automated. With defined thresholds, Aera Skills can move decisions forward or trigger processes automatically.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Agent-ready orchestration&lt;/strong&gt;&lt;br/&gt;
+All engines are natively accessible by AI agents, so they can reason, act, and make decisions on their own — without waiting for manual input.&lt;/li&gt;
+&lt;/ul&gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Right engine for the right decision&lt;/strong&gt;&lt;br/&gt;
+Select from a wide range of engines — analytical SQL, scenario modeling, optimization, and machine learning — so every decision uses the method (or mix of methods) that fits best.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Explainable, auditable logic&lt;/strong&gt;&lt;br/&gt;
+Every recommendation is fully traceable to the data, model, and logic behind it — giving you transparency and building trust with users, approvers, and auditors.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Continuous improvement at scale&lt;/strong&gt;&lt;br/&gt;
+Built-in learning and feedback loops help your decisions get smarter over time as conditions, data, and outcomes evolve.&lt;/li&gt;
+&lt;/ul&gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Decision_Engines__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/oNpafmFoSptnbxQO1Z69v/69f8cf88480ca85d3771461016174598/Decision_Engines__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Aera Technology | Decision Engines</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Automate and optimize decisions across the full spectrum of decision-making.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>decision-engines</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Data Workbench™</title>
+      <link>https://aeratechnology.com/data-workbench</link>
+      <pubDate>Tue, 15 Jun 2021 07:49:07 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3004</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Transform and process billions of rows of data into a unified decision data model</excerpt:encoded>
+      <wp:post_id>3004</wp:post_id>
+      <wp:post_date>2021-06-15 07:49:07</wp:post_date>
+      <wp:post_date_gmt>2021-06-15 07:49:07</wp:post_date_gmt>
+      <wp:post_modified>2021-06-15 07:49:07</wp:post_modified>
+      <wp:post_modified_gmt>2021-06-15 07:49:07</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>data-workbench</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Transform and process billions of rows of data into a unified decision data model</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Data Workbench enables you to access internal and external data, refine, harmonize, and publish readily consumable data in the Decision Data Model. With Data Workbench, you can leverage predefined content from a rich library of crawlers and data models and adapt them to your environment, extend them or create new content to build the Decision Data Model.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- Domain-specific calculations and scripts run automatically to populate an algorithmic library of business data models, key metrics, dimensions, and metadata. It provides embedded domain expertise not available in enterprise transactional systems or data lakes.
+- Information is processed and enriched at the most granular level, enabling analysis of enterprise data at any level of detail, from high-level KPIs to transactional data points.
+- A columnar database stores all processed data, allowing users to “zoom” in and out of the data set on the fly.
+- Aera’s patented depth-first processing orchestrates the data refinement and enrichment specific to the type and subject of the data being processed. Complete data visibility and traceability are possible at each node of the data processing journey, ensuring accurate and complete data.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Data Harmonization:__ With Data Workbench, you can model the sequence of business processes and orchestrate data transformation accordingly, from cleansing and deduplication of data to correlating and linking each new record with existing records in the system to harmonize data.
+- __Context for decision making:__ Measures and key metrics, such as Inventory Turns, OTIF, and Cycle Time are available out of the box. Real-time augmented and automated decision-making is achievable by providing context for business data models that populate the Decision Data Model.
+- __Explainable models at scale:__ By leveraging Aera’s patented Depth-First Processing technology, Data Workbench can model complex relationships in millions of rows of transactional data, regardless of data volume.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/datastreams_2x.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/5yASGBFISb2SAvOyDE1LkX/770f5da61e50784ed2cd5338a834d1c6/datastreams_2x.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Data Workbench™ - Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Transform and process billions of rows of data into a unified decision data model</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>data-workbench</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Aera Control Room</title>
+      <link>https://aeratechnology.com/aera-control-room</link>
+      <pubDate>Thu, 21 Nov 2024 13:09:16 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3005</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Centralized Command for Enhanced Decision Intelligence</excerpt:encoded>
+      <wp:post_id>3005</wp:post_id>
+      <wp:post_date>2024-11-21 13:09:16</wp:post_date>
+      <wp:post_date_gmt>2024-11-21 13:09:16</wp:post_date_gmt>
+      <wp:post_modified>2024-11-21 13:09:16</wp:post_modified>
+      <wp:post_modified_gmt>2024-11-21 13:09:16</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>aera-control-room</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Centralized Command for Enhanced Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>The Aera Control Room serves as the central command center within the Aera Decision Cloud™, offering administrators and decision architects a comprehensive, real-time view of the entire decision intelligence network. This platform provides full visibility across data crawlers, processes, data science workflows, users, and, most critically, both structured and situational decisions. By proactively monitoring activities and issuing notifications when issues arise, the Control Room ensures that administrators and decision architects have complete oversight of every job and its status. This includes tracking user activity, identifying which insights are actively utilized, and monitoring data storage. For decision architects, understanding the performance of Aera Skills™ and user interactions is essential for continuously improving decision-making throughout the organization. The Control Room enables tracking of recommendations, assessment of automation levels, and measurement of impact, empowering decision architects to refine processes and enhance system responsiveness over time. This holistic approach cultivates a fully integrated, adaptive network that drives smarter business at every level.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- __Real-Time Dashboards:__ Access intuitive dashboards displaying live data on processes, workflows, and decision statuses.
+- __User Activity Tracking:__ Monitor user engagement and identify which insights are actively used, facilitating better resource allocation and training.
+- __Data Storage Monitoring:__ Keep track of data storage metrics to ensure optimal performance and compliance with data governance policies.
+- __Recommendation Tracking:__ Analyze the lifecycle of recommendations, from generation to execution, to assess effectiveness and areas for improvement.
+- __Automation Assessment:__ Evaluate the levels of automation within decision processes to identify opportunities for increased efficiency.
+- __Impact Measurement:__ Quantify the outcomes of decisions to understand their impact on business objectives and inform future strategies.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Comprehensive Visibility:__ Gain a real-time, holistic view of all decision-making activities across the enterprise, ensuring transparency and informed oversight.
+- __Proactive Monitoring:__ Receive immediate notifications of any issues, allowing for swift corrective actions to maintain seamless operations.
+- __Enhanced Decision-Making:__ Leverage insights into user interactions and Aera Skills™ performance to continuously refine and improve decision processes.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/aeracontrolroom__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/7xdVy13XfdirhdQHDOAbd9/3b4e151eb461eb7638728a46642a954c/aeracontrolroom__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Aera Control Room</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>The Aera Control Room serves as the central command center within the Aera Decision Cloud™.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>aera-control-room</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Aera Chat</title>
+      <link>https://aeratechnology.com/aera-chat</link>
+      <pubDate>Mon, 18 Nov 2024 07:05:20 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3006</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Simplifying Access to Insights with Conversational Engagement</excerpt:encoded>
+      <wp:post_id>3006</wp:post_id>
+      <wp:post_date>2024-11-18 07:05:20</wp:post_date>
+      <wp:post_date_gmt>2024-11-18 07:05:20</wp:post_date_gmt>
+      <wp:post_modified>2024-11-18 07:05:20</wp:post_modified>
+      <wp:post_modified_gmt>2024-11-18 07:05:20</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>aera-chat</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Simplifying Access to Insights with Conversational Engagement</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Aera Chat transforms how users access insights and make decisions. Leveraging the power of Agentic AI, Aera Chat provides a conversational interface that delivers personalized, real-time answers. Users can interact naturally, ask complex questions, and get immediate responses tailored to their business context. Aera Chat bridges the gap between insights and actions, enabling users to go from data to decision seamlessly.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- __Conversational Querying:__ Understands user context and retrieves relevant data, offering instant answers and actionable insights.
+- __Aera Discovery Integration:__ Directly interact with data outputs, similar to a traditional BI tool, allowing users to dive deeper into their analyses.
+- __Actionable Insights:__ Move seamlessly from insights to execution by accessing Aera Discovery to analyze, refine, and act on the data.
+- __Threads for Frequent Analyses:__ Save and refresh threads with a single click to get updated results based on the latest data. No need to re-enter common queries—get continuous updates on demand.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Personalized, Immediate Responses:__ Aera Chat uses business context to deliver accurate, meaningful answers, improving decision-making efficiency.
+- __Interactive Decision-Making:__ Provides a smooth experience for users to ask questions, explore data, and take actions—all within the chat interface.
+- __Continuous Optimization:__ The ability to save and refresh threads means analyses stay current, saving time and ensuring decisions are always based on the latest insights.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/aerachat.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/2yLZwJOpkVScuTns6b3Fft/1a4760644dcf566a9dc2f8574378deac/aerachat.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Aera Technology | Aera Chat</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Simplifying Access to Insights with Conversational Engagement. Aera Chat transforms how users access insights and make decisions.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>aera-chat</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Aera Inbox</title>
+      <link>https://aeratechnology.com/aera-inbox</link>
+      <pubDate>Wed, 01 Nov 2023 08:16:22 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3007</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>View, explore, and act on data-driven recommendations</excerpt:encoded>
+      <wp:post_id>3007</wp:post_id>
+      <wp:post_date>2023-11-01 08:16:22</wp:post_date>
+      <wp:post_date_gmt>2023-11-01 08:16:22</wp:post_date_gmt>
+      <wp:post_modified>2023-11-01 08:16:22</wp:post_modified>
+      <wp:post_modified_gmt>2023-11-01 08:16:22</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>aera-inbox</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>View, explore, and act on data-driven recommendations</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Aera Inbox is an intuitive interface within Aera Decision Cloud™ that delivers prioritized and personalized recommendations for each user within your organization. As Aera Skills™ process data, apply intelligence, and identify opportunities, Aera Inbox delivers Aera’s recommendations to users in real time. Users can easily understand each recommendation’s context, evaluate trade-offs with powerful analytics, and take immediate action.
+Aera Inbox also keeps a complete record of all the decisions made – that is, whether each recommendation was accepted, modified, or rejected – and stores that information in the Decision Data Model™. Capturing information about every decision allows relevant Aera Skills to learn and improve continuously over time, while also revealing opportunities to automate decisions for increased agility.
+</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- Sort and prioritize recommendations by a variety of facets, including importance, financial impact, and urgency.
+- User-configurable interface can be personalized by role, responsibility, and user preferences.
+- Prescriptive, time-sensitive, and contextual recommendations present the impact of decisions and guidance for users
+- Transparent “glass box” AI shows you how each recommendation is calculated, from the predictive analytics to the machine learning algorithms used for forecasting.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Easily explainable recommendations:__ Each recommendation provides the best course of action from among available options analyzed by AI, allowing users to accept, modify, or reject the recommendation as circumstances demand. This explainability increases users’ trust in Decision Intelligence and leads to increased adoption.
+- __View each recommendation’s projected impact:__ Each recommendation includes a summary of projected impact in terms of revenue, cost, and units – with the option to view a detailed analysis of how this impact is calculated. This transparency allows users to explore options, evaluate impacts, and weigh trade-offs before making a decision.
+- __Rapid execution:__ Once a decision is made, Aera can write changes back into your transactional systems of record in order to execute the decision at the moment of maximum impact.
+- __Continuous learning and improvement:__ Aera Inbox captures users’ end-to-end activity including the steps that were completed while rejecting or accepting recommendations. Aera continuously learns from this audit trail in order to improve recommendations over time.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Decision-Workbench_v001.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/3PUk7dbN67ews2WM0vDc6y/e217ed8192e55054ac318b6b7d6b6659/Decision-Workbench_v001.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Aera Inbox - Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>View, explore, and act on data-driven recommendations</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>aera-inbox</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Aera Discovery™</title>
+      <link>https://aeratechnology.com/aera-discovery</link>
+      <pubDate>Thu, 02 Nov 2023 04:06:03 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3008</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Powerful analytics visualization with real-time data</excerpt:encoded>
+      <wp:post_id>3008</wp:post_id>
+      <wp:post_date>2023-11-02 04:06:03</wp:post_date>
+      <wp:post_date_gmt>2023-11-02 04:06:03</wp:post_date_gmt>
+      <wp:post_modified>2023-11-02 04:06:03</wp:post_modified>
+      <wp:post_modified_gmt>2023-11-02 04:06:03</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>aera-discovery</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Powerful analytics visualization with real-time data</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Within Aera Decision Cloud™, Aera Discovery provides analytical and visualization tools with real-time access to the [Decision Data Model™](https://www.aeratechnology.com/decision-data-model) – a cross-functional, “beyond the four walls” data model for decision making that harmonizes data from across your ecosystem. 
+Discovery’s data and analytics visualizations show the context behind Aera’s recommendations. Designed for scale with on-the-fly compute and query optimization, Discovery delivers both high-level views and the ability to drill down into transaction-level details. Discovery helps you create and share custom visualizations built on live data, revealing the insights your business needs to drive better, faster decision making. </wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- __Visualizations –__ Choose from different types of customizable visualizations, with both out-of-the-box and user-created customizable options for illustrating data and trends with charts, KPIs and metrics, tables, and more.
+- __Analysis Map –__ Gain a deeper understanding of data or trends via root cause analysis and the ability to drill down from summary metrics.
+- __Monitors –__ Notify users when specific conditions are met, or via regularly-scheduled alerts.
+- __Collaboration –__ Share reports and dashboards among users and teams, enabling them to share insights and communicate more effectively.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Easily create and share custom visualizations:__ Discovery’s drag-and-drop interface makes it easy to build visuals that support decision making – with live KPIs, charts, tables, and custom elements – then share them across your business to improve communication and collaboration.
+- __Designed for decision making at scale:__ Aera Discovery offers a query optimizer and on-the-fly compute to support digitized decision making across your enterprise.
+- __Blend your own data sets:__ Use drag-and-drop processes and filter definitions to blend data from separate parent systems, then build KPIs on top of these to create reports, charts, and pivot grids.
+- __Supports decision automation:__ Across the platform, Discovery enables your teams to leverage analytics on a journey to digitize, augment, and automate decision making. For example, drilling down into a recommendation in Decision Workbench reveals embedded analytics and a visualization of the context behind that decision.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/DISCOVERY_02_3__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/5womnaYOJtlUTwK6niHx1U/1600be78124d4211079db1559c4ad8e7/DISCOVERY_02_3__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Aera Discovery™ - Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Powerful analytics visualization with real-time data</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>aera-discovery</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Decision Data Model™</title>
+      <link>https://aeratechnology.com/decision-data-model</link>
+      <pubDate>Fri, 27 Oct 2023 03:47:16 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3009</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Fully aggregated, harmonized data from across your enterprise</excerpt:encoded>
+      <wp:post_id>3009</wp:post_id>
+      <wp:post_date>2023-10-27 03:47:16</wp:post_date>
+      <wp:post_date_gmt>2023-10-27 03:47:16</wp:post_date_gmt>
+      <wp:post_modified>2023-10-27 03:47:16</wp:post_modified>
+      <wp:post_modified_gmt>2023-10-27 03:47:16</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>decision-data-model</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Fully aggregated, harmonized data from across your enterprise</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>The Aera Decision Data Model (DDM) is designed to drastically reduce the time and effort spent on data wrangling. This innovative approach provides fully aggregated, harmonized, and labeled datasets, available right down to the transaction level for training models. Data available via the DDM is automatically refreshed in near-real-time – made possible by Aera’s patented Data Crawler technology and internet-scale data architecture. 
+Every decision made in Aera Decision Cloud is recorded in the DDM, along with the context in which the decision was made, a record of actions taken, and the resulting outcome. This complete audit trail enables real-time monitoring of decisions across your enterprise. It also forms the foundation for Aera’s learning capabilities, enabling Aera Skills to improve with each user interaction and adapt to your ever-changing business environment.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- Provides a self-service interface and the full set of tools to:
+1. Create Data Crawlers
+2. Create data sets
+3. Create dimensions
+4. Create Subject Areas in the Aera data model
+5. Create data streams
+6. Create extraction schedules and jobs
+7. Work with predefined Subjects in the Aera data model
+8. Publish content for other teams to use
+9. Monitor for errors
+- The Decision Data Model Is the master repository of your enterprise, represented in a single data model, fed by real-time data streams with thousands of predefined data sets available in the following major subject areas:
+1. Master Data
+2. Finance
+3. Purchasing
+4. Production
+5. Quality
+6. Inventory
+7. Sales and Shipments
+8. Warehouse
+9. Customer Management
+10. Custom Data Sets
+- __Low System Impact:__ Delivers high performance multi-node processing and extraction scheduling to deliver high performance with minimal impact on underlying systems.
+- __Touchless Monitoring:__ Aera monitors day-to-day data flows and proactively recommends solutions to issues that arise so you can focus on the rest of the business.
+</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Real-time enterprise visibility:__ The Decision Data Model provides a unified view of your enterprise, aggregating and harmonizing data from disparate systems into a single data model.
+- __External information in context:__ The Decision Data Model provides the flexibility to incorporate external and physical data, from IoT sensor data to point-of-sale data and real-time weather information, to ensure decisions are made within the right context. 
+- __Open architecture:__ Using Aera’s Data API, enriched and refined data in the DDM can be accessed by enterprise data lakes, data warehouses, and other third-party enterprise applications.
+- __No more data wrangling:__ By making it easy to access aggregated and harmonized data, your data scientists will be able to spend more time operationalizing AI/ML models.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Decision-Data-Model_v001.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/2vBk3M0Or9Lz9X8vkM3P4f/939b03ce2d45a209c42b3771096f9f87/Decision-Data-Model_v001.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Decision Data Model™ - Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Fully aggregated, harmonized data from across your enterprise</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>decision-data-model</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Aera Cortex™</title>
+      <link>https://aeratechnology.com/cortex-ai-ml</link>
+      <pubDate>Mon, 20 Sep 2021 11:43:55 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3010</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Develop, train, and operationalize AI and machine learning models for decision making</excerpt:encoded>
+      <wp:post_id>3010</wp:post_id>
+      <wp:post_date>2021-09-20 11:43:55</wp:post_date>
+      <wp:post_date_gmt>2021-09-20 11:43:55</wp:post_date_gmt>
+      <wp:post_modified>2021-09-20 11:43:55</wp:post_modified>
+      <wp:post_modified_gmt>2021-09-20 11:43:55</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>cortex-ai-ml</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Develop, train, and operationalize AI and machine learning models for decision making</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Aera Cortex™ is the AI engine purpose-built to enable Decision Intelligence, allowing you to operationalize AI in a business decision-making context. Aera Cortex is an open ModelOps platform where you can build your own or leverage models built and trained elsewhere. Cortex offers direct integration to live data sets, domain-specific algorithms, optimization techniques, and the ability to leverage data science models built anywhere. This gives your business the flexibility to use off-the-shelf AI/ML models, customized and tuned to your needs, or to bring and manage your own models. 
+With Aera Cortex, users can build plans, run scenarios, and automate previously manual decisions with flexibility – and without in-depth knowledge of coding. Aera Cortex gives you the ability to create and customize ML models at any level, along with the tools to monitor their application, and a rich set of tools to improve them over time. Aera Cortex allows your business to leverage the full power of AI to digitize and automate critical business decisions.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- Fully-harmonized training data sets available at your fingertips
+- Comprehensive MLOps / ModelOps platform to build, train, and maintain models or leverage models built elsewhere
+- Automated model training infrastructure with built-in AutoML and Auto Forecast
+- Automatically learns from decisions made and improves outcomes with Confidence Scoring</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __No more data wrangling:__ Because Cortex connects directly to the Aera Decision Data Model™, data scientists always have access to the most up-to-date data
+- __Operationalize your models:__ Aera Cortex makes models available within a decision-making context, and allows you to maximize your investment in existing models trained in other MLOps tools
+- __Continuous learning:__ Leverages the full context of decisions made and their impacts to improve future recommendations
+- __Purpose-built for Decision Intelligence:__ Aera Cortex is designed to deliver the intelligence needed to digitize, augment, and automate decision making at scale</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Comprehensive-Model-Ops_v001.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/1uhXCHkKIPQwLgcV4xrYem/84a0a238f8f4fcd8b8095f1c45a0322a/Comprehensive-Model-Ops_v001.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Aera Cortex™ - Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Develop, train, and operationalize AI and machine learning models for decision making.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>cortex-ai-ml</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Business Rules</title>
+      <link>https://aeratechnology.com/business-rules</link>
+      <pubDate>Tue, 15 Jun 2021 07:26:35 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3011</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Operationalize and manage decision automation rules</excerpt:encoded>
+      <wp:post_id>3011</wp:post_id>
+      <wp:post_date>2021-06-15 07:26:35</wp:post_date>
+      <wp:post_date_gmt>2021-06-15 07:26:35</wp:post_date_gmt>
+      <wp:post_modified>2021-06-15 07:26:35</wp:post_modified>
+      <wp:post_modified_gmt>2021-06-15 07:26:35</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>business-rules</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Operationalize and manage decision automation rules</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Business Rules allow you to accelerate decision-making processes by digitizing decision logic within Aera Skills™. These automation rules are flexible enough to address a wide range of conditions, from localization and organizational rules to category- and product-level factors. 
+Create as many rules, conditions, sub-conditions, and actions as you need to fit your specific requirements. Business rules can be localized for particular regions, facilities, or products – users can even create different rules for different conditions on the same product.
+With a visual representation to provide a palette of business data, actions, and events, these rules are automatically layered onto the Skill to determine what actions will take place in any scenario.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- Layer automation rules on top of Aera Skills, guiding the system on when to automate certain activities. With defined thresholds, Skills can progress through processes or make decisions based on user-defined thresholds, only asking for user intervention when defined thresholds are met.
+- Rules can be triggered in multiple ways as your organization requires – on demand, on a schedule, or whenever requested by a process.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Digitize complex business policies:__ As you build trust in Aera’s recommendations, you can define business rules so that routine or high-confidence decisions can be executed automatically.
+- __No complex technical knowledge needed:__ Business Rules are designed for non-technical users, with a low-code graphical environment for intuitive process design that’s accessible to those with limited coding experience.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/AutomationRules__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/6r71yNQaKMBfmEhxOCZrlS/ff33af56e1587b4b2af44531711d4363/AutomationRules__1_.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Business Rules - Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Operationalize and manage decision automation rules.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>business-rules</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Data Crawlers</title>
+      <link>https://aeratechnology.com/data-crawlers</link>
+      <pubDate>Thu, 10 Jun 2021 09:39:54 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3012</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Automatically discover and extract data from enterprise systems</excerpt:encoded>
+      <wp:post_id>3012</wp:post_id>
+      <wp:post_date>2021-06-10 09:39:54</wp:post_date>
+      <wp:post_date_gmt>2021-06-10 09:39:54</wp:post_date_gmt>
+      <wp:post_modified>2021-06-10 09:39:54</wp:post_modified>
+      <wp:post_modified_gmt>2021-06-10 09:39:54</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>data-crawlers</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Automatically discover and extract data from enterprise systems</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Aera’s [patented](https://patents.google.com/patent/US8504609B2/en) Data Crawlers automatically discover and extract disparate data from internal systems and external sources required for decision making. Data Crawlers are how the Decision Data Model™ is built.
+Data Crawlers are optimized for frequent use to extract hundreds of millions of rows of transactional data on a continuous basis, with minimal impact on the performance of the underlying source systems. For on-premise systems, an integration agent provides secure connections to the Aera Decision Cloud™ platform.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- Examples of commonly used pre-defined crawlers:
+1. SAP ECC and SAP S/4HANA
+2. Oracle EBS and JDE
+3. Salesforce
+4. SAP APO
+5. SAP BW
+6. Blue Yonder/JDA
+7. HDFS
+8. Teradata
+9. Excel
+10. MySQL
+11. Oracle DB
+12. SQL Server
+- Aera’s pre-defined Data Crawlers enable you to modify rules (table specific, system specific, column specific, and more) to fit your own enterprise environment.  
+- You can create your own custom Data Crawlers for your proprietary systems or as part of the development of new Skill(s) unique to your business. 
+- Aera supports utilizing the connection, extraction logic, extraction streams, and troubleshooting to create custom data sets.
+</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Rapid deployment:__ Predefined Data Crawlers are available out-of-the-box, with mappings for enterprise systems and external sources to achieve enterprise-wide visibility in weeks.
+- __Low impact:__ Data Crawlers are designed to minimize the resource and network impact while maintaining high levels of security, enabling frequent updates. This architecture ensures up-to-date data is available for real-time decision making.
+- __Easy to use:__ Aera provides a full self-service environment for you to create and monitor automated data extraction from their systems. Once configured, Data Crawlers run autonomously, making cleaned and harmonized data available across your enterprise.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/datacrawlers_2x.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/4ZVI0FemVmxys7W1Qeu9by/6c7423bc35f5cc77a8420cd52e0950b8/datacrawlers_2x.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Data Crawlers - Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Automatically discover and extract data from enterprise systems</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>data-crawlers</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Decision Board</title>
+      <link>https://aeratechnology.com/decision-board</link>
+      <pubDate>Wed, 01 Nov 2023 08:12:48 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3013</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>A clear view of decision making across your enterprise</excerpt:encoded>
+      <wp:post_id>3013</wp:post_id>
+      <wp:post_date>2023-11-01 08:12:48</wp:post_date>
+      <wp:post_date_gmt>2023-11-01 08:12:48</wp:post_date_gmt>
+      <wp:post_modified>2023-11-01 08:12:48</wp:post_modified>
+      <wp:post_modified_gmt>2023-11-01 08:12:48</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>decision-board</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>A clear view of decision making across your enterprise</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Decision Board offers both a high-level view and a deep understanding of how decisions are being made across your enterprise. A key component of the Aera Decision Cloud™ platform for decision automation, Decision Board helps you understand the impact that data-driven AI recommendations are having across your business, and empowers you to improve the effectiveness of those recommendations as your business and market evolve. 
+By contextualizing decisions made, managers have better insight into how teams operate and prioritize open issues, and how AI recommendations are impacting key metrics. Decision Board allows you to measure the average time required to act on a recommendation, helping to identify potential bottlenecks and take corrective action. This visibility gives you the insights to improve the effectiveness of recommendations, develop best practices for decision making throughout your organization, and reveal opportunities to automate decisions.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- Analyze open recommendations by Aera Skill, owner, mode, priority, and overall impact.
+- Measure Skill performance across recommendations actioned by users and decisions automated according to defined Business Rules.
+- View team actions on recommendations, status, and impact on revenue, cost, and cash.
+- Highly-configurable UX – Decision Board is role-driven, with user roles and permissions defined using an intuitive web interface.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Ensures timely and effective decisions:__ Decision Board shows all open recommendations by priority along with projected impact – highlighting trends to help you understand performance and identify potential bottlenecks or issues.
+- __Improves Aera Skills™ accuracy and performance:__ Decision Board provides a complete summary of closed recommendations, and tracks both user response to recommendations and the impact of automated decisions made by the Skill, showing trends over time. 
+- __Tools to understand team performance:__ Decision Board provides the perspective and oversight to understand and offer guidance for ongoing improvement. Review team performance, analyze team member productivity, and share best practices among teams.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Decision-Board_v001.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/4Y8MzJ17nkOtkHFR3EXHGv/07c7eacc74dd79de96911f99591b8e13/Decision-Board_v001.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Decision Board - Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Decision Board</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>decision-board</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Decision Engagement</title>
+      <link>https://aeratechnology.com/decision-engagement</link>
+      <pubDate>Tue, 15 Jun 2021 07:59:39 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3014</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>The UX for AI-powered decision making</excerpt:encoded>
+      <wp:post_id>3014</wp:post_id>
+      <wp:post_date>2021-06-15 07:59:39</wp:post_date>
+      <wp:post_date_gmt>2021-06-15 07:59:39</wp:post_date_gmt>
+      <wp:post_modified>2021-06-15 07:59:39</wp:post_modified>
+      <wp:post_modified_gmt>2021-06-15 07:59:39</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>decision-engagement</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>The UX for AI-powered decision making</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Aera’s user experience is dynamic – available across devices and locations, whenever you need real-time, end-to-end visibility of your business.
+We’ve created a user experience that speeds trust and adoption of digitized and automated decision making; delivers global visibility into decision-making processes and outcomes; and provides better alignment to ensure decisions across your enterprise are in sync with goals and KPIs.
+__Generative AI:__ We launched Aera with an intuitive voice interface that allows you to gain deeper insights and execute decisions. Today, we are building the GenAI engine for business decision making. Ask Aera open-ended questions about your business, and our interface will guide you to the contextual results you need, quickly</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- Set alerts to trigger at predefined thresholds and metrics, allowing different roles to be made aware of key changes or developments and proactively address them.
+- With our mobile app for iOS and Android devices, make decisions at any time, from virtually any location, and take actions on recommendations immediately while getting insights and analytics on the go.
+- Interact with Aera through a multilingual, conversational voice UI powered by Natural Language Processing, designed to learn from your organization’s region- or industry-specific terminology and nuances.
+- Voice Console allows developers to configure intents and metadata to your own business requirements, enabling you to add terminology or localizations that best suit your organization.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Speed adoption of Decision Intelligence:__ With a trusted, easy-to-understand UX, Aera Decision Cloud supports Decision Intelligence best practices and improved outcomes across your enterprise
+- __Global visibility into decision making at your enterprise:__ Aera Decision Cloud makes it easy to track all decisions being made, the context in which they were made, and the resulting outcomes – all monitored and logged for continuous learning and process improvement
+- __Better decision-making alignment:__ A single system of intelligence helps ensure that decisions everywhere are in sync with your company-wide goals and KPIs</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/Decision-Engagement_v001.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/2owS0hyZXsh9gRdRkvQLk8/d8c139243c48acdd097d8a4c501a9473/Decision-Engagement_v001.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Decision Engagement - Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>The UX for AI-powered decision making</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>decision-engagement</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Process Builder</title>
+      <link>https://aeratechnology.com/process-builder</link>
+      <pubDate>Tue, 15 Jun 2021 08:05:10 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3015</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Model cognitive processes in Aera Skills™</excerpt:encoded>
+      <wp:post_id>3015</wp:post_id>
+      <wp:post_date>2021-06-15 08:05:10</wp:post_date>
+      <wp:post_date_gmt>2021-06-15 08:05:10</wp:post_date_gmt>
+      <wp:post_modified>2021-06-15 08:05:10</wp:post_modified>
+      <wp:post_modified_gmt>2021-06-15 08:05:10</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>process-builder</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Model cognitive processes in Aera Skills™</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Process Builder is the low-code graphical environment for Aera Developer™ that allows Skills Builders to use Aera’s patented visual programming framework to connect, compose, and orchestrate all of the data, services, engines, and user experiences required to operationalize a Cognitive Skill.
+Process Builder is a purpose-built, flexible environment, where logic captured within nodes can be arranged and configured to define orchestration and order of execution of the various Skill capabilities. This approach allows you to digitize decision-making processes and coordinate everything in an easy-to-use, point-and-click user interface.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- Depth-first visual programming, allowing you to stitch together any data, system tasks, and human interaction, and interweave these with decision logic. Through this, you can digitize the complex, iterative nature of real-life business processes. 
+- Manage the Cognitive Skills lifecycle in a complete development environment, where you can develop and test on your own branch before merging to the master Cognitive Skill. It comes with an embedded debugger and supports full versioning with rollback.
+- Skills Builders have full, integrated access to the full capabilities of the Aera Decision Cloud, from the real-time, harmonized data in the Cognitive Data Layer to the data science capabilities of Cortex and Write-Back integration to automate decision execution.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Digitizing the decision process:__ Decision augmentation and automation is an iterative process that goes beyond simple if-then logic. Process Builder captures the complexity of decision making by making it easy to integrate data science, analytics, and what-if scenarios into the Cognitive Skills that make real-time recommendations.
+- __Scale your transformation initiatives:__ Process Builder is part of Aera Developer, a fully Integrated Development Environment (IDE), that allows you to manage the lifecycle of Cognitive Skills. Capabilities can be easily updated, reused, and repurposed as you scale beyond your original use cases.
+- __For developers of all types:__ With a low-code, drag-and-drop graphical toolkit and responsive layout framework for decision augmentation and automation, both experienced and citizen Skill Builders have access to all the tools needed to build a rich, dynamic, and interactive user experience for a Skill.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/processbuilder_2x.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/5Mc78qy9neFX9uDobTw14v/cba8b5a9faa2e1b638f12228873216bb/processbuilder_2x.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Process Builder - Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Model cognitive processes in Aera Skills™.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>process-builder</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Simulation &amp; Planning</title>
+      <link>https://aeratechnology.com/simulation-and-planning</link>
+      <pubDate>Thu, 02 Nov 2023 04:08:39 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?page_id=3016</guid>
+      <description/>
+      <content:encoded/>
+      <excerpt:encoded>Tools to build live, multi-dimensional models using real-time data and ML</excerpt:encoded>
+      <wp:post_id>3016</wp:post_id>
+      <wp:post_date>2023-11-02 04:08:39</wp:post_date>
+      <wp:post_date_gmt>2023-11-02 04:08:39</wp:post_date_gmt>
+      <wp:post_modified>2023-11-02 04:08:39</wp:post_modified>
+      <wp:post_modified_gmt>2023-11-02 04:08:39</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>simulation-and-planning</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value>page-platform-detail.php</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_lead</wp:meta_key>
+        <wp:meta_value>Tools to build live, multi-dimensional models using real-time data and ML</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_body_copy</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™ includes Simulation &amp; Planning tools that allow you to embed what-if analysis, simulation, and planning capability into Aera Skills™ – with no coding or in-depth technical knowledge required. With our AI platform for Decision Intelligence and automation, your team has flexible ways to build plans and run scenarios – automating time-consuming manual processes while giving you access to the most up-to-date data and ML models available.
+Manage uncertainty by incorporating scenarios to model the impact of macro- and micro-economic events, as well as recovery strategies. You can perform what-if analysis based on adjustments to your drivers and assumptions, and create scenarios on the fly from within the Aera UI.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_features</wp:meta_key>
+        <wp:meta_value>- Intuitive UI and formulas that require no coding or technical knowledge to use.
+- Real-time access to the harmonized Decision Data Model™ allowing you to use live data, measures, and KPIs – models stay in sync with the underlying master data.
+- Models and grids are automatically generated within the UI – no coding required, and no more SQL for table creation, resulting in less technical debt and reduced script maintenance.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_benefits</wp:meta_key>
+        <wp:meta_value>- __Seamlessly integrated with Aera Cortex™:__ Source data directly from Aera Cortex using Derive Measure to bring in ML forecasting results at any level of granularity. Scenario modeling with Aera Cortex auto-generates time series forecasts and creates touchless plans by consulting dozens of algorithms to assemble optimal models.
+- __Visualized scenarios:__ Process Builder allows embedding of a grid, the visual representation of a model’s data and calculation engine, within an interface with which users can interact. You can connect these visual grids to processes to automate your decision making.
+- __Bridge the planning and execution gap:__ Build your own Aera Skills with Simulation &amp; Planning to connect planning outputs with inputs of other Skills and operational decisions.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_featured_image</wp:meta_key>
+        <wp:meta_value>{MEDIA_PATH}/SIMULATION_02.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_platform_featured_image_url</wp:meta_key>
+        <wp:meta_value>https://images.ctfassets.net/mh1amgo8m7ts/5QeYne2eBxMDiO7iqL9P5n/358c92354427e86d5eb08b291f69cfde/SIMULATION_02.png</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Simulation &amp; Planning - Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Tools to build live, multi-dimensional models using real-time data and ML</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_original_contentful_slug</wp:meta_key>
+        <wp:meta_value>simulation-and-planning</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>page_show_date</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>platform_show_not_found</wp:meta_key>
+        <wp:meta_value>0</wp:meta_value>
+      </wp:postmeta>
+    </item>
+  </channel>
+</rss>
