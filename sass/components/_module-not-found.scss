@@ -16,13 +16,13 @@
 	}
 
 	&__col {
-		display: flex;
-		align-items: center;
+		text-align: center;
+		width: 100%;
+		padding: $container-gutter-desktop;
 
-		@include make-col(math.percentage(math.div(8, 12)));
-		margin-left: math.percentage(math.div(2, 12));
-
-		min-height: 100vh;
+		@media (max-width: $max-720) {
+			padding: $container-gutter-mobile;
+		}
 	}
 
 	&__content {
@@ -31,15 +31,15 @@
 
 	&__title {
 		@include reset-all;
-		@include responsive-font(24, 80);
+		@include responsive-font(20, 40);
 		font-family: $font-family-heading;
 		font-weight: 700;
 		color: $color-codgray;
+		line-height: $line-height;
 	}
 
 	&__subline {
 		@include reset-all;
-		@include responsive-font(16, 28);
-		font-weight: 200;
+		@include responsive-font(14, 20);
 	}
 }
