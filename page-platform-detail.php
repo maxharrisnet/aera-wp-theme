@@ -13,13 +13,6 @@ get_header();
 while (have_posts()) :
   the_post();
 
-  // Get ACF fields for platform detail page
-  $intro_title = function_exists('get_field') ? get_field('platform_intro_title') : '';
-  $intro_text = function_exists('get_field') ? get_field('platform_intro_text') : '';
-  $show_not_found = function_exists('get_field') ? get_field('platform_show_not_found') : false;
-  $not_found_title = function_exists('get_field') ? get_field('platform_not_found_title') : '';
-  $not_found_text = function_exists('get_field') ? get_field('platform_not_found_text') : '';
-
   // Get optional lead text from ACF field
   $lead_text = function_exists('get_field') ? (string) get_field('page_lead') : '';
   $lead_paragraphs = array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $lead_text ?? ''))));
@@ -28,43 +21,26 @@ while (have_posts()) :
   $show_date = function_exists('get_field') ? get_field('page_show_date') : true;
   $date_value = get_the_date('c');
   $display_date = get_the_date();
+
+  // Get module template page fields
+  $body_copy = function_exists('get_field') ? get_field('platform_body_copy') : '';
+  $benefits = function_exists('get_field') ? get_field('platform_benefits') : '';
+  $features = function_exists('get_field') ? get_field('platform_features') : '';
+  $featured_image = function_exists('get_field') ? get_field('platform_featured_image') : null;
+
+  // Determine if we should show not found message (no content exists)
+  $has_content = !empty($body_copy) || !empty($benefits) || !empty($features) || !empty($featured_image) || !empty(get_the_content());
 ?>
 
 	<main id="primary" class="site-main site-main--platform-detail">
 		<?php get_template_part('template-parts/components/hero'); ?>
 
-		<?php if ($show_not_found && (!empty($not_found_title) || !empty($not_found_text))) : ?>
+		<?php if (!$has_content) : ?>
 			<?php
-			get_template_part(
-				'template-parts/components/module-not-found',
-				null,
-				array(
-					'title' => $not_found_title,
-					'text'  => $not_found_text,
-				)
-			);
+			get_template_part('template-parts/components/module-not-found');
 			?>
 		<?php else : ?>
-			<?php if (!empty($intro_title) || !empty($intro_text)) : ?>
-				<?php
-				get_template_part(
-					'template-parts/components/intro-platform-detail',
-					null,
-					array(
-						'title' => $intro_title,
-						'text'  => $intro_text,
-					)
-				);
-				?>
-			<?php endif; ?>
-
 			<?php
-			// Get module template page fields
-			$body_copy = function_exists('get_field') ? get_field('platform_body_copy') : '';
-			$benefits = function_exists('get_field') ? get_field('platform_benefits') : '';
-			$features = function_exists('get_field') ? get_field('platform_features') : '';
-			$featured_image = function_exists('get_field') ? get_field('platform_featured_image') : null;
-
 			// Use module template page if we have the required fields, otherwise use standard template-page
 			if (!empty($body_copy) || !empty($benefits) || !empty($features) || !empty($featured_image)) :
 			?>
