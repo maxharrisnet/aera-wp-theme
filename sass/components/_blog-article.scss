@@ -5,14 +5,6 @@
 @use '../mixins' as *;
 
 .blog-article {
-	&__container {
-		@include container;
-
-		@media (min-width: $min-1080) {
-			max-width: 1200px;
-		}
-	}
-
 	&__row {
 		@include make-row;
 	}

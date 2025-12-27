@@ -62,7 +62,7 @@ if (! $has_content) {
         <?php if (! empty($author_paragraphs)) : ?>
           <?php foreach ($author_paragraphs as $paragraph) : ?>
             <p class="article-author__lead">
-              <span class="article-author__leadName"><?php echo esc_html($paragraph); ?></span>
+              <span class="article-author__leadName"><?php echo wp_kses_post($paragraph); ?></span>
             </p>
           <?php endforeach; ?>
         <?php endif; ?>
