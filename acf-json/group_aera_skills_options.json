@@ -1,0 +1,51 @@
+{
+    "key": "group_aera_skills_options",
+    "title": "Skills Archive Options",
+    "fields": [
+        {
+            "key": "field_skills_archive_title",
+            "label": "Archive Page Title",
+            "name": "skills_archive_title",
+            "type": "text",
+            "instructions": "Hero title for the skills archive page",
+            "required": 0,
+            "default_value": "Aera Skills™",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_skills_archive_description",
+            "label": "Archive Page Description",
+            "name": "skills_archive_description",
+            "type": "textarea",
+            "instructions": "Hero description for the skills archive page",
+            "required": 0,
+            "rows": 3,
+            "default_value": "Explore our comprehensive suite of business decision skills powered by the Aera Decision Cloud™.",
+            "wrapper": {
+                "width": "50"
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "skills-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Options for the Skills archive page",
+    "show_in_rest": 0,
+    "modified": 1735000000
+}
+

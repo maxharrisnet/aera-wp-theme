@@ -1,0 +1,516 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+
+/* SKILLS DETAIL (SINGLE) PAGE */
+.site-main--skill-detail {
+	padding-top: 0;
+}
+
+// Hero Section for Skill Detail
+.skill-detail-hero {
+	background-color: $color-aquahaze;
+	padding: 80px 0 60px;
+	text-align: center;
+
+	@media (max-width: $max-720) {
+		padding: 60px 0 40px;
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		font-size: 48px;
+		font-family: $font-family-heading;
+		font-weight: 700;
+		line-height: 1.2;
+		color: $color-codgray;
+		margin: 0 0 20px;
+
+		@media (max-width: $max-720) {
+			font-size: 36px;
+		}
+	}
+
+	&__description {
+		font-size: 18px;
+		line-height: 28px;
+		color: $color-shuttlegray;
+		margin: 0 auto;
+		max-width: 800px;
+
+		@media (max-width: $max-720) {
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+}
+
+// Tab Navigation
+.skill-tabs {
+	background-color: $color-white;
+	border-bottom: 2px solid $color-hawkesblue;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+
+	&__container {
+		@include container;
+	}
+
+	&__list {
+		display: flex;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		gap: 5px;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+
+		@media (max-width: $max-720) {
+			gap: 0;
+		}
+	}
+
+	&__item {
+		flex-shrink: 0;
+	}
+
+	&__link {
+		display: block;
+		padding: 15px 25px;
+		font-family: $font-family-heading;
+		font-size: 14px;
+		font-weight: 600;
+		color: $color-shuttlegray;
+		text-decoration: none;
+		text-transform: uppercase;
+		letter-spacing: 0.025em;
+		border-bottom: 3px solid transparent;
+		transition: all 0.2s ease;
+
+		&:hover {
+			color: $color-bahamablue;
+		}
+
+		&.active {
+			color: $color-bahamablue;
+			border-bottom-color: $color-bahamablue;
+		}
+
+		@media (max-width: $max-720) {
+			padding: 12px 15px;
+			font-size: 12px;
+		}
+	}
+}
+
+// Skill Detail Content
+.skill-detail {
+	padding: 60px 0;
+
+	@media (max-width: $max-720) {
+		padding: 40px 0;
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__layout {
+		display: flex;
+		gap: 40px;
+
+		@media (max-width: $max-1024) {
+			gap: 30px;
+		}
+
+		@media (max-width: $max-720) {
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
+	// Sidebar Navigation
+	&__sidebar {
+		width: 200px;
+		flex-shrink: 0;
+		position: sticky;
+		top: 120px;
+		align-self: flex-start;
+
+		@media (max-width: $max-720) {
+			display: none;
+		}
+	}
+
+	&__sidebar-title {
+		font-family: $font-family-heading;
+		font-size: 16px;
+		font-weight: 700;
+		color: $color-codgray;
+		margin: 0 0 15px;
+		text-transform: uppercase;
+		letter-spacing: 0.025em;
+	}
+
+	&__sidebar-nav {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		li {
+			margin-bottom: 10px;
+		}
+
+		a {
+			display: block;
+			padding: 8px 0;
+			font-size: 14px;
+			line-height: 1.5;
+			color: $color-shuttlegray;
+			text-decoration: none;
+			transition: color 0.2s ease;
+
+			&:hover,
+			&.active {
+				color: $color-bahamablue;
+			}
+		}
+	}
+
+	// Main Content
+	&__main {
+		flex: 1;
+		min-width: 0;
+	}
+}
+
+// Video Card Component
+.video-card {
+	background-color: $color-white;
+	border: 3px solid $color-bahamablue;
+	border-radius: 8px;
+	margin-bottom: 30px;
+	overflow: hidden;
+
+	@media (max-width: $max-720) {
+		margin-bottom: 20px;
+	}
+
+	&__thumbnail {
+		position: relative;
+		width: 100%;
+		padding-top: 56.25%; // 16:9 aspect ratio
+		background-color: $color-aquahaze;
+		background-size: cover;
+		background-position: center;
+		cursor: pointer;
+
+		&:hover .video-card__play-button {
+			transform: translate(-50%, -50%) scale(1.1);
+		}
+	}
+
+	&__play-button {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 70px;
+		height: 70px;
+		background-color: rgba($color-bahamablue, 0.9);
+		border-radius: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: transform 0.2s ease;
+		cursor: pointer;
+
+		&:after {
+			content: '';
+			width: 0;
+			height: 0;
+			border-style: solid;
+			border-width: 12px 0 12px 20px;
+			border-color: transparent transparent transparent $color-white;
+			margin-left: 4px;
+		}
+
+		@media (max-width: $max-720) {
+			width: 60px;
+			height: 60px;
+
+			&:after {
+				border-width: 10px 0 10px 16px;
+			}
+		}
+	}
+
+	&__content {
+		padding: 25px;
+
+		@media (max-width: $max-720) {
+			padding: 20px;
+		}
+	}
+
+	&__title {
+		font-family: $font-family-heading;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 1.3;
+		color: $color-codgray;
+		margin: 0 0 12px;
+
+		@media (max-width: $max-720) {
+			font-size: 18px;
+		}
+	}
+
+	&__description {
+		font-size: 15px;
+		line-height: 22px;
+		color: $color-shuttlegray;
+		margin: 0 0 15px;
+	}
+
+	&__details {
+		margin-top: 15px;
+		padding-top: 15px;
+		border-top: 1px solid $color-aluminium;
+	}
+
+	&__details-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 20px;
+
+		@media (max-width: $max-720) {
+			grid-template-columns: 1fr;
+			gap: 15px;
+		}
+	}
+
+	&__detail-item {
+		h4 {
+			font-family: $font-family-heading;
+			font-size: 13px;
+			font-weight: 700;
+			color: $color-codgray;
+			margin: 0 0 6px;
+			text-transform: uppercase;
+			letter-spacing: 0.025em;
+		}
+
+		p {
+			font-size: 14px;
+			line-height: 20px;
+			color: $color-shuttlegray;
+			margin: 0;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				font-size: 14px;
+				line-height: 20px;
+				color: $color-shuttlegray;
+				padding: 3px 0;
+				position: relative;
+				padding-left: 15px;
+
+				&:before {
+					content: '•';
+					position: absolute;
+					left: 0;
+					color: $color-bahamablue;
+				}
+			}
+		}
+	}
+
+	&__toggle {
+		display: inline-block;
+		margin-top: 15px;
+		padding: 8px 20px;
+		font-family: $font-family-heading;
+		font-size: 13px;
+		font-weight: 600;
+		color: $color-bahamablue;
+		background-color: transparent;
+		border: 1px solid $color-bahamablue;
+		border-radius: 20px;
+		cursor: pointer;
+		transition: all 0.2s ease;
+
+		&:hover {
+			background-color: $color-bahamablue;
+			color: $color-white;
+		}
+
+		&:after {
+			content: ' ▼';
+			font-size: 11px;
+			margin-left: 6px;
+		}
+
+		&.active:after {
+			content: ' ▲';
+		}
+
+		@media (max-width: $max-720) {
+			font-size: 12px;
+			padding: 6px 16px;
+		}
+	}
+
+	&__expandable {
+		max-height: 0;
+		overflow: hidden;
+		transition: max-height 0.3s ease;
+
+		&.active {
+			max-height: 1000px;
+		}
+	}
+}
+
+// How Aera Helps Section
+.how-aera-helps {
+	background-color: $color-aquahaze;
+	padding: 60px 0;
+	margin-top: 40px;
+
+	@media (max-width: $max-720) {
+		padding: 40px 0;
+		margin-top: 30px;
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		font-size: 36px;
+		font-family: $font-family-heading;
+		font-weight: 700;
+		line-height: 1.2;
+		color: $color-codgray;
+		text-align: center;
+		margin: 0 0 40px;
+
+		@media (max-width: $max-720) {
+			font-size: 28px;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 30px;
+
+		@media (max-width: $max-720) {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+	}
+
+	&__item {
+		background-color: $color-white;
+		padding: 25px;
+		border-radius: 8px;
+		text-align: center;
+
+		@media (max-width: $max-720) {
+			padding: 20px;
+		}
+	}
+
+	&__icon {
+		margin-bottom: 15px;
+
+		img {
+			max-width: 60px;
+			max-height: 60px;
+		}
+	}
+
+	&__item-title {
+		font-family: $font-family-heading;
+		font-size: 18px;
+		font-weight: 700;
+		line-height: 1.3;
+		color: $color-codgray;
+		margin: 0 0 10px;
+	}
+
+	&__item-text {
+		font-size: 14px;
+		line-height: 20px;
+		color: $color-shuttlegray;
+		margin: 0;
+	}
+}
+
+// Explore Other Functions Section
+.explore-functions {
+	padding: 60px 0;
+
+	@media (max-width: $max-720) {
+		padding: 40px 0;
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		font-size: 36px;
+		font-family: $font-family-heading;
+		font-weight: 700;
+		line-height: 1.2;
+		color: $color-codgray;
+		text-align: center;
+		margin: 0 0 40px;
+
+		@media (max-width: $max-720) {
+			font-size: 28px;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
+
+		@media (max-width: $max-1024) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media (max-width: $max-720) {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
+	}
+
+	&__item {
+		display: block;
+		text-decoration: none;
+		color: inherit;
+		transition: transform 0.2s ease;
+
+		&:hover {
+			transform: translateY(-4px);
+		}
+	}
+}
+

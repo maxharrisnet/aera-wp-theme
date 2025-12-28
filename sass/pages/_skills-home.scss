@@ -1,0 +1,313 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+
+/* SKILLS HOME PAGE */
+.site-main--skills-home {
+	padding-top: 0;
+}
+
+.skills-home {
+	padding-top: 0;
+
+	&__container {
+		@include container;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+	&__intro {
+		text-align: center;
+		max-width: 900px;
+		margin: 0 auto 60px;
+
+		@media (max-width: $max-720) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__title {
+		font-size: 48px;
+		font-family: $font-family-heading;
+		font-weight: 700;
+		line-height: 1.2;
+		color: $color-codgray;
+		margin: 0 0 20px;
+
+		@media (max-width: $max-720) {
+			font-size: 36px;
+		}
+	}
+
+	&__subtitle {
+		font-size: 20px;
+		line-height: 30px;
+		font-family: $font-family;
+		color: $color-shuttlegray;
+		margin: 0 auto;
+		max-width: 800px;
+
+		@media (max-width: $max-720) {
+			font-size: 18px;
+			line-height: 26px;
+		}
+	}
+
+	&__grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		margin: 0 -10px;
+		margin-bottom: 40px;
+
+		@media (max-width: $max-720) {
+			margin: 0;
+		}
+	}
+
+	&__featured-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 0 -10px 20px;
+
+		@media (max-width: $max-720) {
+			margin: 0 0 20px 0;
+		}
+	}
+
+	&__regular-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		margin: 0 -10px;
+
+		@media (max-width: $max-720) {
+			margin: 0;
+		}
+	}
+
+	&__cta {
+		text-align: center;
+		padding: 40px 0;
+	}
+
+	&__cta-button {
+		@include link;
+		display: inline-block;
+		padding: 12px 40px;
+		font-family: $font-family-heading;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1.5;
+		text-transform: uppercase;
+		letter-spacing: 0.025em;
+		color: $color-codgray;
+		background-color: $color-hawkesblue;
+		border: 1px solid rgba(138, 196, 232, 0.5);
+		border-radius: 999px;
+		text-decoration: none;
+		transition: all 0.18s ease;
+
+		&:hover {
+			background-color: $color-oysterbay;
+			background-image: linear-gradient(rgba(222, 232, 251, 0) 0%, $color-hawkesblue 90%);
+			text-decoration: none;
+		}
+
+		@media (max-width: $max-720) {
+			padding: 10px 30px;
+			font-size: 13px;
+		}
+	}
+
+	// Icon Grid Section (4 columns with icons and text)
+	&__icon-section {
+		background-color: $color-aquahaze;
+		padding: 60px 0;
+		margin-top: 40px;
+
+		@media (max-width: $max-720) {
+			padding: 40px 0;
+		}
+	}
+
+	&__icon-title {
+		font-size: 42px;
+		font-family: $font-family-heading;
+		font-weight: 700;
+		line-height: 1.2;
+		color: $color-codgray;
+		text-align: center;
+		margin: 0 0 40px;
+
+		@media (max-width: $max-720) {
+			font-size: 32px;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__icon-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 0 -15px;
+
+		@media (max-width: $max-720) {
+			margin: 0;
+		}
+	}
+
+	&__icon-item {
+		width: calc(25% - 30px);
+		padding: 0 15px;
+		margin-bottom: 30px;
+		text-align: center;
+
+		@media (max-width: $max-1024) {
+			width: calc(50% - 30px);
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding: 0;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__icon-image {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 20px;
+		min-height: 80px;
+
+		img {
+			max-width: 70px;
+			max-height: 70px;
+			width: auto;
+			height: auto;
+		}
+	}
+
+	&__icon-item-title {
+		font-size: 18px;
+		font-family: $font-family-heading;
+		font-weight: 700;
+		line-height: 1.3;
+		color: $color-codgray;
+		margin: 0 0 10px;
+	}
+
+	&__icon-item-text {
+		font-size: 14px;
+		line-height: 20px;
+		color: $color-shuttlegray;
+		margin: 0;
+	}
+
+	// Resources Section
+	&__resources-section {
+		padding: 60px 0;
+
+		@media (max-width: $max-720) {
+			padding: 40px 0;
+		}
+	}
+
+	&__resources-title {
+		font-size: 42px;
+		font-family: $font-family-heading;
+		font-weight: 700;
+		line-height: 1.2;
+		color: $color-codgray;
+		text-align: center;
+		margin: 0 0 40px;
+
+		@media (max-width: $max-720) {
+			font-size: 32px;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__resources-grid {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 30px;
+
+		@media (max-width: $max-720) {
+			gap: 20px;
+		}
+	}
+
+	// Action Section
+	&__action-section {
+		background-color: $color-aquahaze;
+		padding: 60px 0;
+		text-align: center;
+
+		@media (max-width: $max-720) {
+			padding: 40px 0;
+		}
+	}
+
+	&__action-title {
+		font-size: 42px;
+		font-family: $font-family-heading;
+		font-weight: 700;
+		line-height: 1.2;
+		color: $color-codgray;
+		margin: 0 0 30px;
+
+		@media (max-width: $max-720) {
+			font-size: 32px;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__action-buttons {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+		flex-wrap: wrap;
+
+		@media (max-width: $max-720) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__action-button {
+		@include link;
+		display: inline-block;
+		padding: 12px 40px;
+		font-family: $font-family-heading;
+		font-size: 14px;
+		font-weight: 600;
+		line-height: 1.5;
+		text-transform: uppercase;
+		letter-spacing: 0.025em;
+		color: $color-codgray;
+		background-color: $color-hawkesblue;
+		border: 1px solid rgba(138, 196, 232, 0.5);
+		border-radius: 999px;
+		text-decoration: none;
+		transition: all 0.18s ease;
+
+		&:hover {
+			background-color: $color-oysterbay;
+			background-image: linear-gradient(rgba(222, 232, 251, 0) 0%, $color-hawkesblue 90%);
+			text-decoration: none;
+		}
+
+		@media (max-width: $max-720) {
+			padding: 10px 30px;
+			font-size: 13px;
+			width: 250px;
+			max-width: 100%;
+		}
+	}
+}
+

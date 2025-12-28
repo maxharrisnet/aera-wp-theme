@@ -480,6 +480,143 @@
                     "mime_types": ""
                 }
             ]
+        },
+        {
+            "key": "field_skill_videos",
+            "label": "Skill Videos",
+            "name": "skill_videos",
+            "type": "repeater",
+            "instructions": "Video cards for the detail page. Note: Repeater fields require ACF Pro.",
+            "required": false,
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Video",
+            "sub_fields": [
+                {
+                    "key": "field_video_title",
+                    "label": "Video Title",
+                    "name": "video_title",
+                    "type": "text",
+                    "instructions": "Title of the video/skill"
+                },
+                {
+                    "key": "field_video_description",
+                    "label": "Description",
+                    "name": "video_description",
+                    "type": "textarea",
+                    "instructions": "Short description",
+                    "rows": 3
+                },
+                {
+                    "key": "field_video_thumbnail",
+                    "label": "Thumbnail",
+                    "name": "video_thumbnail",
+                    "type": "image",
+                    "instructions": "Video thumbnail image",
+                    "return_format": "array",
+                    "preview_size": "medium"
+                },
+                {
+                    "key": "field_video_url",
+                    "label": "Video URL",
+                    "name": "video_url",
+                    "type": "url",
+                    "instructions": "YouTube or Vimeo URL"
+                },
+                {
+                    "key": "field_video_overview",
+                    "label": "Overview",
+                    "name": "overview",
+                    "type": "textarea",
+                    "instructions": "Overview text for expandable section",
+                    "rows": 3
+                },
+                {
+                    "key": "field_video_capabilities",
+                    "label": "Capabilities",
+                    "name": "capabilities",
+                    "type": "textarea",
+                    "instructions": "Capabilities text",
+                    "rows": 3
+                },
+                {
+                    "key": "field_video_use_cases",
+                    "label": "Use Cases",
+                    "name": "use_cases",
+                    "type": "textarea",
+                    "instructions": "Use cases text (one per line)",
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "key": "field_how_aera_helps_items",
+            "label": "How Aera Helps Items",
+            "name": "how_aera_helps_items",
+            "type": "repeater",
+            "instructions": "Items for the 'How Aera Helps' section. Note: Repeater fields require ACF Pro.",
+            "required": false,
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Item",
+            "sub_fields": [
+                {
+                    "key": "field_help_item_icon",
+                    "label": "Icon",
+                    "name": "icon",
+                    "type": "image",
+                    "instructions": "Icon image",
+                    "return_format": "array",
+                    "preview_size": "thumbnail"
+                },
+                {
+                    "key": "field_help_item_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Title text"
+                },
+                {
+                    "key": "field_help_item_description",
+                    "label": "Description",
+                    "name": "description",
+                    "type": "textarea",
+                    "instructions": "Description text",
+                    "rows": 3
+                }
+            ]
+        },
+        {
+            "key": "field_skill_list_items",
+            "label": "Card List Items",
+            "name": "skill_list_items",
+            "type": "repeater",
+            "instructions": "Short list items to display on skill cards (max 4 will show). Note: Repeater fields require ACF Pro.",
+            "required": false,
+            "min": 0,
+            "max": 4,
+            "layout": "table",
+            "button_label": "Add Item",
+            "sub_fields": [
+                {
+                    "key": "field_list_item_text",
+                    "label": "Text",
+                    "name": "item_text",
+                    "type": "text",
+                    "instructions": "List item text"
+                }
+            ]
+        },
+        {
+            "key": "field_featured_skill",
+            "label": "Featured Skill",
+            "name": "featured_skill",
+            "type": "true_false",
+            "instructions": "Mark this skill as featured to show on the Skills Home page",
+            "default_value": 0,
+            "ui": 1
         }
     ],
     "location": [

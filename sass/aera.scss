@@ -32,6 +32,7 @@ Custom Aera website styles compiled from SCSS
 /* Resources */
 @use 'components/resource-card';
 @use 'components/feature-card';
+@use 'components/skill-card';
 
 /* Blog Components */
 @use 'components/blog';
@@ -66,3 +67,6 @@ Custom Aera website styles compiled from SCSS
 @use 'pages/decision-intelligence';
 @use 'pages/aerahub-2025';
 @use 'pages/platform-detail';
+@use 'pages/skills-home';
+@use 'pages/skills-archive';
+@use 'pages/skills-detail';
