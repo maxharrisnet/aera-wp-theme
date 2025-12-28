@@ -1,0 +1,619 @@
+,,,,,,,,
+,,,,,,,,
+,,,,,,,,
+,Function,Categories,Skill,Website Content,Card Definitions,Demo Video Link/ Screenshot Link,Screenshots Recommendation Content,"Attachements (One Pager, Whitepaper, Blog, Case study)"
+,"
+Supply Chain",Demand,Touchless Demand Forecasting,"Improve forecast accuracy and reduce demand-led losses with automated, AI-driven forecasting.
+
+Understands Evaluates historical demand patterns and external factors to forecast future demand.
+Recommends Provides precise demand forecasts and adjusts in real time to market changes.
+Acts Automatically generates demand plans and executes updates, reducing manual effort.
+Learns Continuously improves forecast accuracy by learning from outcomes to minimize demand-driven losses, optimize inventory levels, and improve service reliability.",Improve forecast accuracy and reduce demand-led losses with automated forecasting.,Current Website Video,NA,"Blog: Improving demand forecasting
+
+Impact at Becle"
+,,,Short-Term Demand Sensing,"React quickly to real-time changes in demand, reducing planner effort and enhancing responsiveness.
+
+Understands: Monitors short-term demand fluctuations using real-time data inputs.
+Recommends: Adjusts forecasts and plans to align with current demand signals.
+Acts: Automates changes to operational plans, reducing manual effort.
+Learns: Continuously improves short-term sensing by learning from outcomes to save planner time, enhance responsiveness, and boost operational efficiency.","React quickly to real-time demand changes, reducing planner effort and improving responsiveness.",Current Website Video,NA,Unilver: How DI is revolutionising Demand Sensing
+,,,Mid-Term Demand Planning,"Optimize mid-term planning by automating demand re-evaluation and scenario analysis.
+
+Understands Evaluates sales patterns, production capacity, and market signals to assess mid-term demand shifts.
+Recommends Provides adjusted demand plans with scenario evaluations and supply recommendations.
+Acts Automatically updates mid-term plans and triggers reviews when critical changes occur.
+Learns Continuously improves planning accuracy by learning from outcomes to improve service levels, reduce operational disruptions, and increase visibility into mid-term risks and mitigation opportunities.",Optimize mid-term planning by automating demand re-evaluation and scenario analysis.,New video created,NA,"Blog: Demand Planning with Agents
+
+Merck Animal Health Video"
+,,,Product Lifecycle Forecasting,"Optimize long-term planning across the product lifecycle, minimizing excess inventory and waste.
+
+Understands Analyzes product lifecycle stages and sales patterns to forecast demand accurately.
+Recommends Suggests optimal production and inventory strategies for each lifecycle stage.
+Acts Adjusts plans dynamically to align with changing lifecycle phases.
+Learns Continuously improves lifecycle forecasts by learning from outcomes to reduce excess inventory, improve profitability, and minimize waste.","Optimize long-term planning across the product lifecycle, minimizing excess inventory and waste.",Screenshot 4 - Generic,NA,Blog: Demand Planning
+,,,SKU Transition and Activation,"Ensure seamless demand and supply continuity during SKU transitions, avoiding disruptions and lost sales.
+
+Understands Identifies upcoming SKU introductions, retirements, and replacements across the portfolio.
+Recommends Suggests transition plans for phasing out old SKUs and activating new ones.
+Acts Executes SKU mapping, adjusts forecasts, and coordinates supply.
+Learns Continuously improves transition accuracy by learning from outcomes to minimize stockouts and excess inventory of old SKUs, accelerate adoption of new SKUs, and maintain service levels.","Ensure seamless demand and supply continuity during SKU transitions, avoiding disruptions and lost sales.",Screenshot 3 - Generic,NA,Blog: Planning in high tech supply chains
+,,,New Product Introduction,"Accelerate successful product launches by forecasting demand and aligning supply for new SKUs to maximize revenue.
+
+Understands Analyzes market signals, historical analogs, and demand drivers to anticipate adoption curves for new products.
+Recommends Suggests launch volumes, phased ramp-up, and channel allocation strategies.
+Acts Adjusts production, inventory placement, and promotional levers to support product availability.
+Learns Continuously improves introduction forecasts by learning from outcomes to reduce launch-related stockouts, minimize overproduction, and maximize revenue capture.",Accelerate product launches by forecasting demand and aligning supply for new SKUs.,New video created,NA,Video: Aera Agent
+,,Inventory,Dynamic Inventory Management,"Optimize inventory levels across the network by dynamically adjusting to demand and supply variability.
+
+Understands Analyzes historical and real-time demand patterns to set optimal stock levels.
+Recommends Identifies inventory surplus or shortages and provides actionable rebalancing strategies.
+Acts Automates stock reallocation to high-demand areas, maintaining desired service levels.
+Learns Continuously improves inventory forecasts and rebalancing decisions by learning from outcomes to reduce excess inventory, prevent stockouts, and enhance service levels.",Optimize inventory levels across the network by dynamically adjusting to demand and supply variability.,Current Website Video,NA,"Blog: Optimizing inventory
+
+GSK video"
+,,,Stock Rebalancing,"Redistribute inventory across locations to reduce carrying costs and improve availability.
+
+Understands Detects overstocked and understocked locations using network-wide visibility.
+Recommends Proposes optimal transfers to balance inventory across the network.
+Acts Automates stock transfers so critical products are available where they are needed most.
+Learns Continuously improves rebalancing accuracy by learning from outcomes to lower carrying costs, reduce unnecessary stock build-ups, and improve network efficiency.","Redistribute inventory across locations to reduce carrying costs and improve availability.
+",Current Website Video,NA,"Blog: Inventory in F&B
+
+Castrol video"
+,,,Ageing Inventory Management (In place of Production Scheduling),"Minimize waste and optimize usage by proactively managing aging inventory.
+
+Understands Monitors inventory age, demand velocity, expiration dates, and obsolescence risk across SKUs and locations.
+Recommends Identifies at-risk inventory with suggested actions including markdowns, transfers, liquidation, or production adjustments.
+Acts Automatically triggers disposal workflows, markdown approvals, and inventory reallocation processes.
+Learns Continuously improves inventory risk management by learning from outcomes to reduce write-offs and obsolescence costs, improve working-capital efficiency, and enhance inventory turnover.",Minimize waste and optimize usage by proactively managing aging inventory.,Screenshot 2,NA,"WP:E&O
+
+
+Video: E&O"
+,,,Supply Chain Loss Prevention,"Minimize future losses by taking preventive action on projected excess production.
+
+Understands Identifies potential overproduction by analyzing projected volumes against anticipated demand.
+Recommends Suggests preventive measures including production plan reductions, schedule adjustments, or order cancellations.
+Acts Generates proactive prevention plans before resources are committed to unnecessary production.
+Learns Continuously improves forecasting logic by learning from outcomes to decrease inventory waste, optimize resource allocation, and reduce supply chain costs.",Minimize future losses by taking preventive action on projected excess production.,Screenshot 3 - Generic,NA,"Webinar: Waste in SC
+
+Hershey video from the event: Hershey used this skill"
+,,,Supply Chain Loss Mitigation,"Prevent inventory losses by proactively managing at-risk stock before it becomes waste.
+
+Understands Identifies short-dated, blocked, and excess inventory by matching supply and demand at the order-line and batch level.
+Recommends Suggests optimal mitigation actions including redeployment, promotions, liquidation, marketplace listing, donation, or scrap.
+Acts Generates ready-to-execute plans for each identified stock situation, enabling immediate action.
+Learns Continuously improves inventory management by learning from outcomes to reduce stock waste, improve inventory turnover rates, and enhance sustainability outcomes.",Prevent inventory losses by proactively managing at-risk stock before it becomes waste.,Screenshot 2,NA,"Blog: Smarter waste mitigation
+
+Video: Managing SC waste
+
+Hershey video from the event: Hershey used this skill"
+,,,Stockout Prevention,"Maintain service levels by proactively addressing potential stockouts.
+
+Understands
+Monitors demand signals, inventory levels, and supply constraints to identify stockout risks across locations and channels.
+Recommends
+Provides optimal procurement, transfer, or production solutions to prevent stock interruptions and maintain service targets.
+Acts
+Automatically executes replenishment actions, triggers expedited orders, and initiates inventory transfers.
+Learns
+Continuously improves stockout prevention by learning from outcomes to reduce lost sales, improve inventory availability, and enhance customer satisfaction.",Maintain service levels by proactively addressing potential stockouts.,Screenshot 1,NA,
+,,,Dynamic Norm Setting,"Set inventory norms dynamically, aligned with service-level objectives.
+
+Understands Analyzes demand variability, lead times, and service-level requirements to determine optimal inventory parameters.
+Recommends Suggests target stock levels, safety stock, and reorder points based on current market conditions.
+Acts Automatically updates inventory norms and alerts teams when parameters need adjustment.
+Learns Continuously improves norm-setting logic by learning from outcomes to optimize inventory investment efficiency, maintain desired service levels, and reduce excess safety stock requirements.","Set inventory norms dynamically, aligned with service-level objectives.",New video created - Dynamic Safety Stock,NA,Unilever used this skill - Video
+,,,Dynamic Replenishment & Deployment,"Manage replenishment timing and quantities while optimizing stock distribution across the network.
+
+Understands Monitors demand signals, lead times, and inventory norms to identify replenishment needs and deployment opportunities.
+Recommends Provides optimal reorder timing, quantities, and distribution strategies across locations.
+Acts Automatically triggers replenishment orders and coordinates deployment to high-demand areas.
+Learns Continuously improves replenishment accuracy by learning from outcomes to ensure right-quantity ordering, optimize network stock distribution, and minimize stockouts and excess inventory.",Manage replenishment timing and quantities while optimizing stock distribution across the network.,Screenshot 1,NA,Video: SC waste
+,,Order,Available to Promise,"Enhance customer satisfaction with accurate, real-time order availability commitments.
+
+Understands Analyzes supply chain data, inventory levels, and lead times to determine order availability.
+Recommends Suggests fulfillment options based on stock availability and delivery capabilities.
+Acts Confirms orders instantly, ensuring accuracy and reliability.
+Learns
+Continuously improves ATP accuracy by learning from outcomes to reduce order management effort, enhance customer trust, and minimize backorders.","Enhance customer satisfaction with accurate, real-time order availability commitments.",Current Website Video,NA,Webinar: Frictionless order fulfillment
+,,,Dynamic Order Fulfillment,"Optimize order fulfillment by dynamically selecting the best network options.
+
+Understands Evaluates order details, location, and inventory across the network.
+Recommends Identifies the optimal fulfillment center or warehouse for each order.
+Acts Allocates orders to the best location, balancing cost, speed, and service levels.
+Learns
+Continuously improves network selection by learning from outcomes to improve fulfillment efficiency, reduce delivery times, and minimize costs.",Optimize order fulfillment by dynamically selecting the best network options.,Screenshot 5,NA,"Webinar: Order fulfillment
+
+Gallo video from the event: Gallo used this skill"
+,,,Dynamic Supply Response,"Quickly adapt to changing supply conditions to meet order demands.
+
+Understands Analyzes supply chain constraints and demand fluctuations.
+Recommends Suggests dynamic reallocation of supply to meet priority orders.
+Acts Automates supply adjustments to optimize availability and minimize delays.
+Learns
+Continuously improves response times and accuracy by learning from outcomes to increase fulfillment speed, reduce missed orders, and enhance supply chain resilience.",Quickly adapt to changing supply conditions to meet order demands.,Screenshot 6,NA,Blog: Service Levels in High Tech SUpply Chains
+,,,Backorder Management,"Improve service levels and revenue realization by resolving and preventing backorders.
+
+Understands Analyzes open orders, available supply, and replenishment timelines to assess backorder impact.
+Recommends Proposes optimal inventory allocations and fulfillment actions based on customer importance and SLA commitments.
+Acts Executes reallocation, partial fulfillment, or substitution to minimize customer wait times and lost sales.
+Learns
+Continuously improves prioritization logic by learning from outcomes to reduce backorder incidence, improve fulfillment responsiveness, and maximize customer satisfaction.",Improve service levels and revenue realization by resolving and preventing backorders.,Screenshot 3 - Generic,NA,Blog: Smarter claims processing
+,,,Claims Management,"Accelerate dispute resolution by automating the claims validation and settlement process.
+
+Understands Consolidates data from logistics, finance, and sales systems to detect and classify claim types — shortages, damages, and pricing errors.
+Recommends Validates claims against contracts and shipment data, recommending approval, rejection, or further investigation.
+Acts Automates approval workflows and triggers credit or replacement actions.
+Learns
+Continuously improves claims accuracy by learning from outcomes to shorten resolution cycles, reduce financial leakage, and improve customer trust.",Accelerate dispute resolution by automating the claims validation and settlement process.,Screenshot 8 - Generic,NA,Blog: Smarter claims processing
+,,,Order Lifecycle Management,"Track and optimize orders across their entire lifecycle to ensure seamless execution.
+
+Understands Monitors each order’s status from placement through delivery.
+Recommends Surfaces insights to resolve delays and address discrepancies before they escalate.
+Acts Automates updates and adjustments to keep orders on schedule.
+Learns
+Continuously improves lifecycle management by learning from outcomes to prevent disruptions and strengthen operational reliability.",Track and optimize orders across their entire lifecycle to ensure seamless execution.,Screenshot 7 - Generic,NA,Webinar: Frictionless order fulfillment
+,,Logistics,Efficient Shipping Plan,"Optimize shipment design and scheduling to reduce logistics costs and delivery delays.
+
+Understands
+Analyzes demand, supply, and transportation constraints to identify optimal shipping windows and modes.
+Recommends
+Proposes efficient shipment plans, consolidations, and mode selections.
+Acts
+Executes shipment plans automatically to ensure timely dispatch.
+Learns
+Continuously improves shipment planning by learning from outcomes to lower transportation costs, reduce delivery lead times, and enhance on-time performance.","Optimize shipment design and scheduling to reduce logistics costs and delivery delays.
+",Current Website Video,NA,"
+Shipping case study"
+,,,Slot Scheduling,"Optimize dock slot allocations to streamline loading and unloading operations.
+
+Understands
+Monitors order schedules, carrier arrivals, and dock availability across plants and distribution centers.
+Recommends
+Suggests optimal slot assignments to prevent congestion and balance operational load.
+Acts
+Automates slot bookings and updates in real time based on carrier and facility changes.
+Learns
+Continuously improves scheduling accuracy by learning from outcomes to minimize wait times, improve dock utilization, and increase carrier efficiency.",Optimize dock slot allocations to streamline loading and unloading operations.,Screenshot 12 - Generic,NA,"
+
+Blog logistics cost "
+,,,Container Utilization,"Maximize shipment efficiency by optimizing container fill rates and minimizing logistics waste.
+
+Understands
+Analyzes shipment volumes, package dimensions, and mode capacities to identify underutilized containers.
+Recommends
+Suggests optimal load configurations and consolidation opportunities to improve capacity usage.
+Acts
+Automates container planning and allocation to ensure every shipment moves with maximum efficiency.
+Learns
+Continuously improves utilization logic by learning from outcomes to lower freight costs, reduce empty space, and improve overall logistics productivity.",Maximize shipment efficiency by optimizing container fill rates and minimizing logistics waste.,Screenshot 9 - Generic,NA,Logistics Webinar 
+,,,Direct Shipment,"Optimize shipment plans seamlessly from origin to destination.
+
+Understands
+Monitors planned shipments, dispatch schedules, and carrier assignments in real time.
+Recommends
+Validates shipment readiness to ensure execution aligns with optimized logistics plans.
+Acts
+Triggers dispatches, updates shipment statuses, and coordinates with carriers.
+Learns
+Continuously improves shipment reliability by learning from outcomes to improve on-time delivery performance, reduce manual execution errors, and strengthen end-to-end logistics control.",Optimize shipment plans seamlessly from origin to destination.,Screenshot 11,NA,"
+Shipping case study"
+,,,Logistics Event Management,"Gain full visibility into shipment progress and proactively manage logistics disruptions.
+
+Understands
+Tracks in-transit shipments, carrier milestones, and event updates across the logistics network.
+Recommends
+Identifies potential delays or risks and suggests corrective actions.
+Acts
+Notifies stakeholders and triggers response workflows when exceptions occur.
+Learns
+Continuously improves event resolution by learning from outcomes to increase supply chain resilience, reduce delivery delays, and enhance customer service levels.",Gain full visibility into shipment progress and proactively manage logistics disruptions.,Screenshot 10,NA,Blog Logistics Mgt
+,,,Dynamic Lead Time,"Optimize lead times through continuous monitoring and predictive analytics.
+
+Understands
+Captures detailed transport performance data across lanes, carriers, and routes.
+Recommends
+Provides dynamic lead-time estimates based on historical trends and current performance.
+Acts
+Updates planning systems with revised lead times to improve forecast accuracy and scheduling.
+Learns
+Continuously improves predictive models by learning from outcomes to reduce lead-time variability, improve carrier selection decisions, and enhance planning accuracy.",Optimize lead times through continuous monitoring and predictive analytics.,Screenshot 13 - Generic,NA,Case study: Improving lead times
+,,,Reverse Logistics Management,"Optimize collection, consolidation, and return to accelerate reverse-flow cycles.
+
+Understands
+Analyzes return requests, transportation networks, and consolidation opportunities.
+Recommends
+Suggests optimal collection routes, consolidation points, and return pathways.
+Acts
+Automatically schedules pickups, coordinates consolidation activities, and initiates return processes.
+Learns
+Continuously improves reverse logistics efficiency by learning from outcomes to reduce cycle times, lower transportation costs, and improve asset recovery rates.","Optimize collection, consolidation, and return to accelerate reverse-flow cycles.",Screenshot 9 - Generic,NA,Generic
+,,Control Tower,Supply Chain Control Tower: Order Lifecycle Management,"Gain end-to-end visibility across the order journey for proactive issue resolution and better customer service.
+
+Understands
+Monitors order status, milestones, and dependencies across the supply chain in real time.
+Recommends
+Identifies potential delays, bottlenecks, and risk factors with suggested corrective actions.
+Acts
+Automatically triggers alerts, escalates critical issues, and initiates resolution.
+Learns
+Continuously improves order management by learning from outcomes to improve on-time performance, reduce exceptions and delays, and improve service reliability.",Gain end-to-end visibility across the order journey for proactive issue resolution and better customer service.,Screenshot 15,NA,"Blog: Control tower
+
+Webinar: Control Tower"
+,,,Root Cause Analysis & Prediction,"Identify anomalies and root causes of supply chain disruptions using historical and real-time data.
+
+Understands
+Analyzes historical patterns, real-time events, and operational data to identify disruption triggers.
+Recommends
+Provides root-cause insights with prioritized actions to address underlying issues.
+Acts
+Automatically flags critical anomalies and initiates diagnostic workflows.
+Learns
+Continuously improves detection accuracy by learning from outcomes to minimize recurring supply chain issues and enhance operational resilience.",Identify anomalies and root causes of supply chain disruptions using historical and real-time data.,Screenshot 8 - Generic,NA,"Blog: Control tower
+
+Webinar: Control Tower"
+,,,Supply Scorecard and Ranking,"Evaluate and rank supply chain performance to optimize inventory and service levels.
+Understands
+Analyzes supplier performance, inventory levels, and delivery timelines.
+Recommends
+Suggests strategies to improve supplier reliability and inventory optimization.
+Acts
+Automates supplier performance tracking and inventory adjustments based on scorecard data.
+Learns
+Continuously improves ranking accuracy and optimization strategies by learning from outcomes to reduce inventory costs, improve service levels, and enhance supplier collaboration.",Evaluate and rank supply chain performance to optimize inventory and service levels.,Screenshot 14,NA,"Blog: Control tower
+
+Webinar: Control Tower"
+,,Master Data Management,Master Data Management,"Ensure accurate, consistent business data across systems to enable reliable decision-making.
+
+Understands
+Monitors master data quality, consistency, and completeness across multiple systems and data sources.
+Recommends
+Identifies data discrepancies and quality issues with suggested corrections.
+Acts
+Automatically validates, cleanses, and synchronizes master data across systems.
+Learns
+Continuously improves data quality by learning from outcomes to improve data accuracy, reduce transactional errors, and increase automation success rates.","Ensure accurate, consistent business data across systems to enable reliable decision-making.",Screenshot 21,NA,Merck Animal Health Video from the Event: They used this skill
+,,,End-to-End Lead Time Visibility,"Get real-time insights into end-to-end lead times to identify delays and improve delivery performance.
+
+Understands
+Tracks lead-time components across procurement, production, and distribution networks in real time.
+Recommends
+Highlights bottlenecks, extended lead times, and opportunities for cycle-time reduction.
+Acts
+Automatically alerts stakeholders to lead-time deviations and triggers mitigation actions.
+Learns
+Continuously improves lead-time accuracy by learning from outcomes to enhance planning precision, reduce delivery delays, and improve supplier performance.",Get real-time insights into end-to-end lead times to identify delays and improve delivery performance.,Screenshot 16 - Generic,NA,Alcon webinar: They used this skill
+,Procurement,Procurement,Spend Optimization (In place of Spend visibility),"Gain visibility into procurement spend to uncover savings and drive efficiency.
+
+Understands 
+Analyzes spend across categories, suppliers, and regions to detect inefficiencies.
+Recommends 
+Identifies consolidation, cost-saving, and negotiation opportunities.
+Acts 
+Automates spending adjustments, sourcing decisions, and prioritization of savings initiatives.
+Learns Continuously improves optimization logic by learning from outcomes to reduce total procurement costs, improve category-level efficiency, and maximize ROI on supplier spend.",Gain visibility into procurement spend to uncover savings and drive efficiency.,Current Video,NA,Blog: Smarter price forecasting
+,,,Best Supplier Selection,"Identify the most reliable and cost-effective suppliers for every procurement need.
+
+Understands 
+Evaluates supplier data, including price, lead time, performance, and risk indicators.
+Recommends 
+Suggests the optimal supplier mix for each item or category based on cost and reliability.
+Acts 
+Automates supplier selection, onboarding, and contract negotiation workflows.
+Learns 
+Continuously improves supplier scoring by learning from outcomes to improve sourcing consistency, reduce supplier-related risks, and strengthen procurement performance.",Identify the most reliable and cost-effective suppliers for every procurement need.,Screenshot 18,NA,Video: CPO trends
+,,,Supply Resilience,"Build a resilient supplier ecosystem by anticipating disruptions and securing alternatives.
+
+Understands 
+Monitors supplier performance, dependencies, and external risk indicators.
+Recommends 
+Proposes alternate sourcing or safety-stock strategies to mitigate potential disruptions.
+Acts 
+Automates supply chain adjustments to maintain continuity during unplanned events.
+Learns 
+Continuously improves resilience models by learning from outcomes to prevent supply interruptions, improve operational stability, and strengthen risk-management readiness.",Build a resilient supplier ecosystem by anticipating disruptions and securing alternatives.,Screenshot 17,NA,Blog: Supply optimization
+,,,Supplier Buyer Collaboration,"Enhance visibility and alignment between buyers and suppliers for seamless execution.
+
+Understands 
+Tracks supplier performance, forecast accuracy, and delivery commitments.
+Recommends 
+Identifies collaboration opportunities to synchronize supply with demand.
+Acts 
+Automates forecast sharing, PO confirmations, and delivery updates to ensure alignment.
+Learns 
+Continuously improves collaboration models by learning from outcomes to reduce material shortages, increase service levels, and improve supplier partnerships.",Enhance visibility and alignment between buyers and suppliers for seamless execution.,Screenshot 20,NA,Webinar: Supplier constraints
+,,,PO Lifecycle Automation,"Streamline procurement operations by automating purchase order lifecycle.
+
+Understands 
+Analyzes procurement patterns and approval workflows to identify inefficiencies.
+Recommends 
+Suggests workflow optimizations and approval thresholds for faster processing.
+Acts 
+Automates PO creation, validation, routing, and updates to minimize manual effort.
+Learns 
+Continuously improves PO logic by learning from outcomes to reduce processing errors, improve operational agility, and enhance procurement productivity.",Streamline procurement operations by automating purchase order lifecycle.,Screenshot 19,NA,Video: Payment terms
+,,,Four-Way Match,"Accelerate invoice processing and eliminate payment discrepancies with automated matching.
+
+Understands 
+Compares invoices with purchase orders, goods receipts, and payment records to detect mismatches.
+Recommends 
+Highlights prioritized exceptions with financial impact and resolution options.
+Acts 
+Executes automated matching and payment actions, including credit-note creation and approvals.
+Learns 
+Continuously improves matching accuracy by learning from outcomes to prevent overpayments, reduce exception-handling time, and strengthen supplier trust.",Accelerate invoice processing and eliminate payment discrepancies with automated matching.,Current Video,NA,Video: Payment terms
+,,,Purchase Price Variance,"Gain transparency into purchase price deviations and drive corrective procurement actions.
+
+Understands 
+Compares actual purchase prices against standard or contracted rates.
+Recommends 
+Flags anomalies and proposes corrective actions or renegotiation opportunities.
+Acts 
+Triggers alerts and automates price-adjustment workflows for faster resolution.
+Learns 
+Continuously improves variance detection by learning from outcomes to improve pricing discipline, reduce cost leakage, and strengthen contract compliance.",Gain transparency into purchase price deviations and drive corrective procurement actions.,Procurement video,NA,Webinar: Procurement and SC
+,,,Contract Coverage,"Optimize procurement efficiency by ensuring comprehensive contract coverage.
+
+Understands
+Identifies gaps in contract coverage for critical categories by analyzing spend patterns and supplier relationships.
+Recommends
+Proposes contract updates or new agreements to mitigate risks and optimize procurement terms.
+Acts
+Automates contract creation and renewal processes, triggering negotiations and approval workflows.
+Learns
+Continuously improves contract optimization strategies by learning from outcomes to reduce procurement delays, improve compliance and contract adherence, and ensure consistent supplier performance.",Optimize procurement efficiency by ensuring comprehensive contract coverage.,Screenshot 16 - Generic,NA,
+,,,Material Risk Management,"Mitigate supply risks proactively to ensure material availability and quality.
+
+Understands 
+Monitors risk factors such as delays, quality issues, and geopolitical events impacting supply.
+Recommends 
+Suggests mitigation plans including alternate sourcing or safety-stock adjustments.
+Acts 
+Executes contingency actions to maintain production continuity.
+Learns 
+Continuously improves risk prediction by learning from outcomes to reduce supply disruptions, enhance reliability, and strengthen overall supply resilience.",Mitigate supply risks proactively to ensure material availability and quality.,Created by Archana,NA,WP: Material planning with agents
+,Sales & Marketing,S&OP,Sales & Operations Planning (S&OP),"Align demand, supply, and financial plans through integrated, data-driven collaboration.
+
+Understands
+Evaluates demand forecasts, supply capacity, inventory positions, and financial targets.
+Recommends
+Provides balanced plan scenarios with trade-off analysis between service, cost, and working-capital objectives.
+Acts
+Automatically consolidates cross-functional inputs and generates aligned S&OP plans.
+Learns
+Continuously improves planning alignment by learning from outcomes to improve forecast and plan accuracy, reduce demand–supply mismatches, and enhance cross-functional collaboration.","Align demand, supply, and financial plans through integrated, data-driven collaboration.",Screenshot 22,NA,None available: Generic supply chain blog
+,,Revenue Optimization,Trade Promotion Optimization,"Optimize trade spend and ensure real-time compliance across channels to maximize promotional ROI.
+
+Understands
+Monitors trade promotion plans, execution data, and market performance across regions, customers, and SKUs.
+Recommends
+Identifies deviations, inefficiencies, and non-compliance, suggesting corrective actions.
+Acts
+Automatically adjusts promotional spending, flags compliance issues, and triggers intervention workflows.
+Learns
+Continuously improves promotional effectiveness by learning from outcomes to maximize trade-promotion ROI, reduce budget overruns, and enhance channel partner performance.",Optimize trade spend and ensure real-time compliance across channels to maximize promotional ROI.,Screenshot 24,NA,Blog: Trade promotions
+,,,Price Optimization,"Set optimal pricing strategies to maximize revenue and market share.
+
+Understands
+Analyzes competitive pricing, market demand, customer preferences, and elasticity to identify pricing opportunities.
+Recommends
+Suggests pricing adjustments to balance revenue growth, margin targets, and competitive positioning.
+Acts
+Automates real-time pricing updates across channels to respond to market changes, including scenario-tested pricing options.
+Learns
+Continuously improves pricing models by learning from outcomes to enhance profitability and margin realization, improve customer satisfaction, and strengthen market competitiveness.",Set optimal pricing strategies to maximize revenue and market share.,Screenshot 23,NA,Blog: Competitive pricing
+,,Marketing Management,Demand Shaping,"Influence demand through pricing, promotions, incentives, and product mix to balance business priorities.
+
+Understands
+Analyzes demand patterns, supply constraints, pricing elasticity, and promotional effectiveness across products and channels.
+Recommends
+Suggests optimal pricing adjustments, promotional strategies, and product-mix changes to shape demand.
+Acts
+Automatically triggers demand-shaping actions based on supply–demand imbalances and business objectives.
+Learns
+Continuously improves demand-shaping effectiveness by learning from outcomes to maximize revenue and margin realization, balance demand with supply, and reduce excess inventory and stockouts.","Influence demand through pricing, promotions, incentives, and product mix to balance business priorities.",Screenshot 25,NA,Dell video from the event: Dell used this skill
+,,,Media Optimization,"Allocate media spend effectively to maximize campaign impact and audience reach.
+
+Understands
+Evaluates performance metrics, audience insights, and market conditions to identify top-performing channels.
+Recommends
+Suggests budget allocations that maximize ROI and engagement.
+Acts
+Automates adjustments to media plans for real-time campaign optimization using scenario-based budget reallocations.
+Learns
+Continuously improves media–supply synchronization by learning from outcomes to increase brand visibility, enhance customer engagement, and improve overall marketing efficiency.",Allocate media spend effectively to maximize campaign impact and audience reach.,Screenshot 26,NA,Blog: Media decisions
+,,,Marketing Performance Management,"Connect marketing budgets, plans, and outcomes in a single decision model to improve performance.
+
+Understands
+Monitors marketing spend, campaign execution, pipeline metrics, and business outcomes across programs and channels.
+Recommends
+Identifies performance gaps, inefficient spending, and optimization opportunities.
+Acts
+Automatically adjusts budget allocations, triggers performance reviews, and initiates corrective workflows.
+Learns
+Continuously improves marketing effectiveness by learning from outcomes to improve marketing ROI, reduce resource waste, and improve pipeline.","Connect marketing budgets, plans, and outcomes in a single decision model to improve performance.",No screen available - Screenshot to be created with the recomendation on the right,"Reallocate $245K Q1 trade spend from underperforming in-store displays to digital coupons across 847 SKUs in Southeast region.
+Aera's analysis shows in-store displays delivering 31% below target lift while digital coupons are 43% above forecast across 1,240 locations. Reallocating $245K in trade spend can recover $1.8M in lost volume and reduce excess inventory by 67K cases. This is expected to improve promotional ROI from 2.1x to 3.4x.
+",None available
+,,Sales Planning,Sales Forecasting,"Detect demand shifts, recalibrate forecasts, and surface revenue risks and opportunities for proactive decisions.
+
+Understands
+Monitors sales pipeline, historical trends, market signals, and CRM data to identify demand shifts and forecast variances.
+Recommends
+Provides recalibrated revenue forecasts with risk assessments and opportunity insights, enhanced with scenario-driven forecast variations.
+Acts
+Automatically updates forecasts, triggers alerts for significant deviations, and initiates cross-functional planning reviews.
+Learns
+Continuously improves forecast precision by learning from outcomes to enhance revenue predictability and accuracy, reduce planning volatility, and improve sales and operations alignment.","Detect demand shifts, recalibrate forecasts, and surface revenue risks and opportunities for proactive decisions.",No screen available - Screenshot to be created with the recomendation on the right,"Revise Q1 volume forecast down by 2.3M cases across Beverage category due to retailer destocking in Top 3 accounts.
+Aera's forecast detects 18% inventory reduction across Walmart, Target, and Kroger impacting 342 SKUs, while POS shows stable consumption. Revised forecast triggers production adjustments across 4 plants, expected to avoid $890K in obsolescence and reduce finished goods inventory by 15%.",None available
+,,,Sales Incentives,"Continuously analyze performance signals to refine sales incentives that drive the highest-value actions.
+
+Understands
+Evaluates performance metrics, deal quality, and incentive-plan effectiveness across the sales force.
+Recommends
+Suggests incentive structure adjustments, payout optimizations, and behavioral nudges.
+Acts
+Automatically recalibrates incentive parameters, triggers payout simulations, and alerts teams.
+Learns
+Continuously improves incentive effectiveness by learning from outcomes to improve the cost-to-revenue ratio of incentive programs, and increase sales effectiveness.",Continuously analyze performance signals to refine sales incentives that drive the highest-value actions.,No screen available - Screenshot to be created with the recomendation on the right,"Increase new product placement incentives from 1.2x to 2.0x across 450 reps to achieve 12K distribution points by 2026-02-15.
+Aera's analysis shows new Snacks line tracking 34% behind with only 4,200 of 12,000 distribution points secured. Adjusted accelerators are expected to drive 7,800 additional placements across retail accounts within 6 weeks, generating $4.2M incremental revenue while maintaining 9.2% incentive ratio.",None available
+,,GTM Strategy,Sales Resource Planning,"Continuously sense demand, pipeline shifts, and rep performance to recalibrate resources and maximize revenue.
+
+Understands
+Analyzes demand forecasts, pipeline velocity, rep productivity, and resource allocation across sales teams.
+Recommends
+Identifies capacity gaps, underutilized resources, and optimal headcount or deployment adjustments, including scenario-based resource plans.
+Acts
+Automatically triggers capacity reviews and resource reallocation recommendations using scenario-driven sales resource projections.
+Learns
+Continuously improves sales resource planning to maximize revenue per rep, reduce capacity shortfalls and coverage gaps, and enhance overall resource deployment efficiency.","Continuously sense demand, pipeline shifts, and rep performance to recalibrate resources and maximize revenue.",No screen available - Screenshot to be created with the recomendation on the right,"Redeploy 12 sales reps from Midwest to Southeast region and accelerate 8 new hires to cover $18M pipeline gap across 340 high-velocity accounts.
+Aera's resource analysis shows Southeast region tracking 42% above forecast with only 67% coverage of high-potential accounts, while Midwest utilization is at 73%. Based on pipeline velocity across 840 accounts and 90-day close rates, redeploying 12 existing reps and accelerating 8 planned Q2 hires to Q1 can capture $18M in at-risk opportunities. This is expected to improve revenue per rep by 23% and reduce account coverage gaps from 340 to 85 locations.",None available
+,,,Territory Planning,"Continuously sense market shifts, account potential, and rep capacity to recalibrate territories.
+
+Understands
+Evaluates market potential, account distribution, and rep workload across sales territories.
+Recommends
+Suggests territory realignments, account reassignments, and coverage adjustments based on scenario-driven territory outcomes.
+Acts
+Automatically flags territory imbalances and triggers redesign workflows.
+Learns
+Continuously improves territory effectiveness by learning from outcomes to improve revenue per territory and rep utilization, reduce coverage overlap, and increase account penetration and win rates.","Continuously sense market shifts, account potential, and rep capacity to recalibrate territories.",Screenshot 31,NA,None available
+,,,Quota Planning,"Identify demand, coverage, and rep effectiveness changes to adapt quotas proactively and align growth goals.
+
+Understands
+Monitors market demand, territory potential, historical performance, and rep capacity to assess quota feasibility.
+Recommends
+Provides balanced quota allocations with achievability assessments and adjustment suggestions aligned to business goals.
+Acts
+Automatically recalibrates quotas, flags unrealistic targets, and triggers planning review cycles.
+Learns
+Continuously improves quota setting by learning from outcomes to improve quota attainment rates and accuracy, and enhance forecast reliability and revenue predictability.","Identify demand, coverage, and rep effectiveness changes to adapt quotas proactively and align growth goals.",No screen available - Screenshot to be created with the recomendation on the right,"Reduce Q1 quotas by 15% across 28 reps in Northeast region due to retailer consolidation impacting 230 accounts worth $12M.
+Aera's quota analysis detects three major retail bankruptcies eliminating 230 distribution points in Northeast territory, reducing addressable market by $12M. Current quota allocation shows 28 reps now carrying 142% of achievable target based on remaining account potential. Recalibrating quotas from $8.2M to $7.0M for affected reps maintains 95% achievability while protecting forecast accuracy and reducing attrition risk by an estimated 18%.",None available
+,Finance,IBP,Integrated Business Planning,"Align strategic, financial, and operational plans to drive consensus, improve forecasts, and enhance performance.
+
+Understands
+Evaluates strategic goals, financial targets, demand forecasts, supply capacity, and inventory positions.
+Recommends
+Provides integrated plan scenarios with trade-off analysis across revenue, cost, cash, and service-level objectives.
+Acts
+Automatically consolidates cross-functional plans, highlights misalignments, and generates executive decision packages.
+Learns
+Continuously improves planning integration by learning from outcomes to enhance plan accuracy, reduce strategic–operational gaps, and improve cross-functional alignment and decision quality.","Align strategic, financial, and operational plans to drive consensus, improve forecasts, and enhance performance.",Screenshot 28,NA,Blog: IBP
+,,,Financial Supply Planning,"Synchronize supply chain decisions with financial targets to optimize working capital and operational costs.
+
+Understands
+Analyzes supply chain spend, working-capital requirements, cash-flow impacts, and operational constraints across the network.
+Recommends
+Provides cost-optimized supply plans with trade-offs between inventory investment, service levels, and operational efficiency.
+Acts
+Automatically adjusts procurement timing, production schedules, and inventory positions to meet financial objectives.
+Learns
+Continuously improves financial–operational alignment by learning from outcomes to optimize working capital and cash-conversion cycles, reduce inefficiencies, and improve profitability.",Synchronize supply chain decisions with financial targets to optimize working capital and operational costs.,Screenshot 27,NA,None available
+,,,Cash & Liquidity Forecasting,"Continuously sense cash movements and operational signals to generate adaptive liquidity forecasts and protect cash.
+
+Understands
+Monitors cash flows, receivables, payables, working-capital trends, and operational events impacting liquidity.
+Recommends
+Provides dynamic cash forecasts with risk alerts and suggested actions to optimize liquidity positions.
+Acts
+Automatically updates cash projections, triggers collection or payment actions, and alerts teams to liquidity shortfalls.
+Learns
+Continuously improves cash forecasting by learning from outcomes to improve liquidity-forecast accuracy, reduce cash-flow volatility, and enhance payment timing and collection effectiveness.",Continuously sense cash movements and operational signals to generate adaptive liquidity forecasts and protect cash.,No screen available - Screenshot to be created with the recomendation on the right,"Accelerate collections on $4.3M receivables from 18 key accounts and delay $2.1M in non-critical supplier payments to avoid projected cash shortfall by 2026-01-15.
+Aera's liquidity forecast detects a $3.8M cash gap in week 3 due to delayed payments from major retailers and peak raw material procurement cycle. Based on aging analysis showing $4.3M in receivables 5-10 days overdue across 18 accounts and $2.1M in flexible payment terms with 45 suppliers, executing targeted collections and extending non-critical payables maintains minimum cash balance of $8.5M. This is expected to avoid $125K in emergency financing costs while maintaining supplier relationships.",None available
+,,P&L,Profit and Loss Planning and Forecasting,"Generate adaptive P&L forecasts that connect operational reality with financial outcomes in real time.
+
+Understands
+Integrates sales performance, demand patterns, cost structures, and market dynamics to build a comprehensive financial baseline.
+Recommends
+Provides rolling P&L forecasts with profitability insights by customer, category, and SKU, highlighting margin risks and revenue opportunities.
+Acts
+Automatically recalibrates financial projections, triggers variance investigations, and alerts stakeholders to material P&L deviations.
+Learns
+Continuously improves forecasting accuracy by learning from outcomes to improve revenue and margin predictability, accelerate planning cycles, and enable proactive profitability management.",Generate adaptive P&L forecasts that connect operational reality with financial outcomes in real time.,Screenshot 29,NA,None available
+,,,Tariff Risk Mitigation (In place of tariff mitigation),"Monitor trade policies and tariffs to identify risks and recommend sourcing or routing adjustments.
+
+Understands
+Tracks trade policies, tariff regulations, sourcing patterns, and shipping routes to assess exposure and compliance risks.
+Recommends
+Suggests sourcing alternatives, routing changes, and cost-mitigation strategies to protect margins and supply continuity.
+Acts
+Automatically runs scenario analyses, triggers sourcing reviews, and initiates procurement or logistics adjustments.
+Learns
+Continuously improves risk mitigation by learning from outcomes to reduce tariff-related margin erosion and improve supply chain resilience to trade disruptions, all while maintaining compliance.",Monitor trade policies and tariffs to identify risks and recommend sourcing or routing adjustments.,Current Website Video,NA,"Blog: Tariffs
+
+Webinar: Tariffs"
+,,FP&A,Budget Planning,"Continuously sense performance, demand shifts, and cost drivers to recalibrate budgets and guide decisions.
+
+Understands
+Monitors actual spend, revenue performance, demand changes, and cost variances across departments and cost centers.
+Recommends
+Identifies budget gaps, reallocation opportunities, and optimal spending adjustments supported by scenario-based budget outlooks.
+Acts
+Automatically recalibrates budgets, triggers approval workflows, and alerts stakeholders to material variances.
+Learns
+Continuously improves budget accuracy by learning from outcomes to enhance forecast precision, reduce budget cycles and planning iterations, and improve resource allocation.","Continuously sense performance, demand shifts, and cost drivers to recalibrate budgets and guide decisions.",No screen available - Screenshot to be created with the recomendation on the right,"Reallocate $1.8M from Q1 marketing budget to expedited freight and co-packer capacity to cover 340K case demand spike across Snacks portfolio.
+Aera's budget analysis detects 28% above-forecast demand across 67 Snacks SKUs driven by competitor stockouts, while marketing spend is tracking 15% below plan due to delayed campaign launches. Based on current production constraints and 12-day lead times, reallocating $1.8M to secure co-packer capacity and premium logistics can capture $6.4M incremental revenue opportunity. This maintains overall P&L targets while improving contribution margin by 4.2% through higher-margin volume mix.",None available
+,,,Long Range Planning,"Analyze macro trends, portfolio performance, and resource dynamics to generate evolving long-range scenarios.
+
+Understands
+Evaluates market trends, strategic initiatives, portfolio performance, and resource capabilities across multi-year horizons.
+Recommends
+Provides scenario-based long-range plans with strategic options and investment priorities aligned to business objectives.
+Acts
+Automatically updates strategic scenarios, triggers portfolio reviews, and initiates resource planning cycles.
+Learns
+Continuously improves strategic planning by learning from outcomes to improve long-term forecast accuracy, reduce strategic blind spots, and enhance investment decisions.","Analyze macro trends, portfolio performance, and resource dynamics to generate evolving long-range scenarios.",Screenshot 31,NA,None available
+,,,Zero Based Budgeting,"Analyze cost patterns, activity requirements, and value contribution to recalibrate budgets from the ground up.
+
+Understands
+Analyzes cost structures, activity drivers, value-creation metrics, and resource utilization across all budget categories.
+Recommends
+Identifies cost-optimization opportunities and value-driven spending allocations, incorporating scenario-based budget baselines.
+Acts
+Automatically builds zero-based budget models, flags low-value spend, and triggers justification workflows.
+Learns
+Continuously improves cost optimization by learning from outcomes to maximize savings, reduce wasteful spending and low-value activities, and improve cost transparency.","Analyze cost patterns, activity requirements, and value contribution to recalibrate budgets from the ground up.
+",No screen available - Screenshot to be created with the recomendation on the right,"Eliminate $3.2M in non-essential spending across 14 cost centers including $890K in redundant trade show presence and $740K in overlapping analytics subscriptions.Aera's zero-based analysis identifies $3.2M in low-ROI activities across Sales and Marketing with value scores below 2.5x threshold. Based on activity-to-outcome mapping across 847 cost items, consolidating 8 regional trade shows into 3 national events and eliminating 12 redundant data subscriptions maintains 94% of current business impact. This reallocation funds critical SKU innovation and co-packer capacity expansion while improving cost efficiency by 11%.",None available
+,,Strategic Finance,Product & Customer Profitability,"Continuously sense cost, configuration, labor, and FX signals to protect margins and optimize profitability.
+
+Understands
+Continuously monitors cost structures, pricing, configurations, labor trends, customer behavior, and FX impacts affecting margins.
+Recommends
+Surfaces margin risks and opportunities with scenario-driven profitability outcomes and recommended pricing, mix, or cost actions.
+Acts
+Automatically updates profitability models, triggers pricing or configuration adjustments, and alerts teams to margin thresholds at risk.
+Learns
+Learns from outcomes to improve margin forecasts, refine recommendations, and reduce unprofitable transactions over time.","Continuously sense cost, configuration, labor, and FX signals to protect margins and optimize profitability.",No screen available - Screenshot to be created with the recomendation on the right,"Increase pricing 4-7% across 128 SKUs in Premium Beverages portfolio and discontinue 34 low-margin SKUs to protect Q1 margins from 18% cocoa cost inflation.
+Aera's profitability analysis shows cocoa and packaging costs up 18% and 12% respectively, eroding margins by 3.2 points across 128 Premium SKUs. Based on price elasticity modeling and customer profitability data, selective price increases on high-loyalty items and discontinuing 34 SKUs with negative contribution can recover $2.4M in margin. This is expected to maintain 89% volume retention while improving portfolio margin from 14.2% to 16.8%.",None available
+,HR,Workforce Planning,Headcount/Capacity Planning,"Analyze workload patterns and growth signals to generate adaptive capacity plans and balance workforce spend.
+
+Understands
+Monitors workload demands, productivity metrics, and growth projections across departments and functions.
+Recommends
+Identifies capacity gaps, overstaffing risks, and optimal hiring or restructuring actions.
+Acts
+Automatically triggers hiring requests, reallocation workflows, and budget adjustments guided by scenario-based workforce needs.
+Learns
+Continuously improves workforce planning by learning from outcomes to optimize productivity, reduce capacity shortfalls and excess headcount costs, and enhance workforce agility.",Analyze workload patterns and growth signals to generate adaptive capacity plans and balance workforce spend.,Screenshot 31,NA,None available
+,ESG,ESG,Carbon-Footprint optimization,"Monitor supply chain activities in real time to flag deviations from carbon targets and trigger corrective actions.
+
+Understands
+Tracks emissions across transportation routes, manufacturing processes, and distribution networks against sustainability targets.
+Recommends
+Identifies high-emission activities, alternative sourcing options, and route or mode changes to reduce carbon footprint.
+Acts
+Automatically flags carbon-target violations, triggers sustainability reviews, and initiates low-carbon alternative workflows.
+Learns
+Continuously improves carbon optimization by learning from outcomes to reduce overall carbon emissions, improve compliance with sustainability commitments, and trigger decarbonization strategies.",Monitor supply chain activities in real time to flag deviations from carbon targets and trigger corrective actions.,Screenshot 30,NA,None available
+,,,Circular Economy Scenario Planning,"Analyze product design and reverse flows to recommend circular logistics models that improve sustainability.
+
+Understands
+Evaluates product lifecycles, reverse logistics flows, refurbishment potential, and circularity opportunities across the value chain.
+Recommends
+Provides circular economy scenarios with trade-off analysis between cost, service levels, and environmental impact.
+Acts
+Automatically generates circularity models, design reviews, and optimization workflows enhanced with multi-scenario circular outcomes.
+Learns
+Continuously improves circular strategies by learning from outcomes to maximize material recovery and product reuse rates, and reduce waste and environmental footprint sustainably.",Analyze product design and reverse flows to recommend circular logistics models that improve sustainability.,Screenshot 30,NA,Blog: ESG
+,,,"Add these 3 skills from Inventory in ESG as well: Ageing Inventory Management (Excess and Obsolescence Management)
+Supply Chain Loss Prevention
+Supply Chain Loss Mitigation",NA,,NA,NA,

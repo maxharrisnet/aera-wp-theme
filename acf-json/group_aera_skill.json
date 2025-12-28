@@ -3,14 +3,50 @@
     "title": "Skill Fields",
     "fields": [
         {
+            "key": "field_skill_basic_tab",
+            "label": "Basic Info",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_skill_icon",
+            "label": "Skill Icon",
+            "name": "skill_icon",
+            "type": "image",
+            "instructions": "Icon image for the skill (displayed on cards and in hero)",
+            "required": false,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "wrapper": {
+                "width": "33"
+            }
+        },
+        {
             "key": "field_skill_tagline",
             "label": "Tagline",
             "name": "skill_tagline",
             "type": "text",
-            "instructions": "Short tagline displayed below the title",
+            "instructions": "Short tagline displayed below the title in hero",
             "required": false,
             "wrapper": {
-                "width": "50"
+                "width": "33"
+            }
+        },
+        {
+            "key": "field_featured_skill",
+            "label": "Featured on Home Page",
+            "name": "featured_skill",
+            "type": "true_false",
+            "instructions": "Mark this skill as featured to show in the top 2 large cards on Skills Home page",
+            "default_value": 0,
+            "ui": 1,
+            "wrapper": {
+                "width": "33"
             }
         },
         {
@@ -18,68 +54,32 @@
             "label": "Description",
             "name": "skill_description",
             "type": "textarea",
-            "instructions": "Main description text for the skill. Supports multiple paragraphs (separate with line breaks).",
+            "instructions": "Main description text for the skill (used in hero and cards)",
             "required": false,
-            "rows": 5,
+            "rows": 4,
             "new_lines": "br",
-            "wrapper": {
-                "width": "50"
-            }
-        },
-        {
-            "key": "field_skill_icon",
-            "label": "Skill Icon",
-            "name": "skill_icon",
-            "type": "image",
-            "instructions": "Icon image for the skill",
-            "required": false,
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
             "wrapper": {
                 "width": "100"
             }
         },
         {
-            "key": "field_benefits_section",
-            "label": "Benefits Section",
-            "name": "benefits_section",
-            "type": "group",
-            "instructions": "Benefits displayed in the benefits section",
+            "key": "field_skill_list_items",
+            "label": "Card List Items",
+            "name": "skill_list_items",
+            "type": "repeater",
+            "instructions": "Short bullet points to display on skill cards (max 4 will show). Requires ACF Pro.",
             "required": false,
-            "layout": "block",
+            "min": 0,
+            "max": 4,
+            "layout": "table",
+            "button_label": "Add Item",
             "sub_fields": [
                 {
-                    "key": "field_benefit_1_percentage",
-                    "label": "Benefit 1 - Percentage",
-                    "name": "benefit_1_percentage",
+                    "key": "field_list_item_text",
+                    "label": "Text",
+                    "name": "item_text",
                     "type": "text",
-                    "instructions": "Percentage or number for first benefit (e.g., '72%')",
-                    "required": false
-                },
-                {
-                    "key": "field_benefit_1_title",
-                    "label": "Benefit 1 - Title",
-                    "name": "benefit_1_title",
-                    "type": "text",
-                    "instructions": "Title for first benefit",
-                    "required": false
-                },
-                {
-                    "key": "field_benefit_2_percentage",
-                    "label": "Benefit 2 - Percentage",
-                    "name": "benefit_2_percentage",
-                    "type": "text",
-                    "instructions": "Percentage or number for second benefit (e.g., '72%')",
-                    "required": false
-                },
-                {
-                    "key": "field_benefit_2_title",
-                    "label": "Benefit 2 - Title",
-                    "name": "benefit_2_title",
-                    "type": "text",
-                    "instructions": "Title for second benefit",
-                    "required": false
+                    "instructions": "List item text"
                 }
             ],
             "wrapper": {
@@ -87,406 +87,21 @@
             }
         },
         {
-            "key": "field_featured_skills",
-            "label": "Featured Skills",
-            "name": "featured_skills",
-            "type": "repeater",
-            "instructions": "Featured skills displayed in the slider. Note: Repeater fields require ACF Pro.",
-            "required": false,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Featured Skill",
-            "sub_fields": [
-                {
-                    "key": "field_featured_skill_title",
-                    "label": "Title",
-                    "name": "featured_skill_title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_featured_skill_description",
-                    "label": "Description",
-                    "name": "featured_skill_description",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 3,
-                    "new_lines": ""
-                },
-                {
-                    "key": "field_featured_skill_image_video",
-                    "label": "Image or Video",
-                    "name": "featured_skill_image_video",
-                    "type": "image",
-                    "instructions": "Image to display. If not set, demo video will be shown instead.",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                },
-                {
-                    "key": "field_featured_skill_demo_link",
-                    "label": "Demo Video Link",
-                    "name": "featured_skill_demo_link",
-                    "type": "url",
-                    "instructions": "URL for demo video (YouTube embed, etc.). Used if image is not set.",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_featured_skill_body_content",
-                    "label": "Body Content",
-                    "name": "featured_skill_body_content",
-                    "type": "wysiwyg",
-                    "instructions": "Main content for this featured skill",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0
-                }
-            ]
-        },
-        {
-            "key": "field_key_decisions_needed",
-            "label": "Key Decisions Needed",
-            "name": "key_decisions_needed",
-            "type": "wysiwyg",
-            "instructions": "Content for the 'Key Decisions Needed' section",
-            "required": false,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0,
-            "wrapper": {
-                "width": "50"
-            }
-        },
-        {
-            "key": "field_how_aera_helps",
-            "label": "How Aera Helps",
-            "name": "how_aera_helps",
-            "type": "wysiwyg",
-            "instructions": "Content for the 'How Aera Helps' section",
-            "required": false,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0,
-            "wrapper": {
-                "width": "50"
-            }
-        },
-        {
-            "key": "field_needed_decisions_mobile",
-            "label": "Key Decisions Needed (Mobile)",
-            "name": "needed_decisions_and_aera_helps_mobile",
-            "type": "wysiwyg",
-            "instructions": "Mobile-specific content combining both sections. Used on mobile devices instead of the two-column layout.",
-            "required": false,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0,
-            "wrapper": {
-                "width": "100"
-            }
-        },
-        {
-            "key": "field_demo_video_form",
-            "label": "Demo Video Form",
-            "name": "demo_video_form",
-            "type": "wysiwyg",
-            "instructions": "Form HTML/embed code for gated demo videos",
-            "required": false,
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 0,
-            "delay": 0,
-            "wrapper": {
-                "width": "100"
-            }
-        },
-        {
-            "key": "field_related_skills",
-            "label": "Related Skills",
-            "name": "related_skills",
-            "type": "repeater",
-            "instructions": "Related skills to display. Note: Repeater fields require ACF Pro.",
-            "required": false,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Related Skill",
-            "sub_fields": [
-                {
-                    "key": "field_related_skill_title",
-                    "label": "Title",
-                    "name": "related_skill_title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_related_skill_description",
-                    "label": "Description",
-                    "name": "related_skill_description",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 3,
-                    "new_lines": ""
-                },
-                {
-                    "key": "field_related_skills_link",
-                    "label": "Link",
-                    "name": "related_skills_link",
-                    "type": "url",
-                    "instructions": "URL to the related skill page",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_skills_icon",
-                    "label": "Icon",
-                    "name": "skills_icon",
-                    "type": "image",
-                    "instructions": "Icon image for the related skill",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                }
-            ]
-        },
-        {
-            "key": "field_related_resources",
-            "label": "Related Resources",
-            "name": "related_resources",
-            "type": "repeater",
-            "instructions": "Related resources to display. Note: Repeater fields require ACF Pro.",
-            "required": false,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Related Resource",
-            "sub_fields": [
-                {
-                    "key": "field_resource_title",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_resource_text",
-                    "label": "Text",
-                    "name": "text",
-                    "type": "textarea",
-                    "instructions": "Description text",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": 3,
-                    "new_lines": ""
-                },
-                {
-                    "key": "field_resource_link",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "url",
-                    "instructions": "URL to the resource",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_resource_type",
-                    "label": "Type",
-                    "name": "type",
-                    "type": "text",
-                    "instructions": "Resource type (e.g., 'Case Study', 'Whitepaper')",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_resource_image",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "Image for the resource card",
-                    "required": false,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                }
-            ]
+            "key": "field_skill_videos_tab",
+            "label": "Videos",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
         },
         {
             "key": "field_skill_videos",
             "label": "Skill Videos",
             "name": "skill_videos",
             "type": "repeater",
-            "instructions": "Video cards for the detail page. Note: Repeater fields require ACF Pro.",
+            "instructions": "Video cards displayed in the Overview tab on skill detail page. Requires ACF Pro.",
             "required": false,
             "min": 0,
             "max": 0,
@@ -506,7 +121,7 @@
                     "name": "video_description",
                     "type": "textarea",
                     "instructions": "Short description",
-                    "rows": 3
+                    "rows": 2
                 },
                 {
                     "key": "field_video_thumbnail",
@@ -537,7 +152,7 @@
                     "label": "Capabilities",
                     "name": "capabilities",
                     "type": "textarea",
-                    "instructions": "Capabilities text",
+                    "instructions": "Capabilities text for expandable section",
                     "rows": 3
                 },
                 {
@@ -551,11 +166,33 @@
             ]
         },
         {
+            "key": "field_how_aera_helps_tab",
+            "label": "How Aera Helps",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_how_aera_helps_title",
+            "label": "Section Title",
+            "name": "how_aera_helps_title",
+            "type": "text",
+            "instructions": "Title for the 'How Aera Helps' section (optional, defaults to 'How Aera Helps')",
+            "required": false,
+            "default_value": "",
+            "wrapper": {
+                "width": "100"
+            }
+        },
+        {
             "key": "field_how_aera_helps_items",
             "label": "How Aera Helps Items",
             "name": "how_aera_helps_items",
             "type": "repeater",
-            "instructions": "Items for the 'How Aera Helps' section. Note: Repeater fields require ACF Pro.",
+            "instructions": "Icon/title/description items for the 'How Aera Helps' section. Requires ACF Pro.",
             "required": false,
             "min": 0,
             "max": 0,
@@ -589,34 +226,121 @@
             ]
         },
         {
-            "key": "field_skill_list_items",
-            "label": "Card List Items",
-            "name": "skill_list_items",
-            "type": "repeater",
-            "instructions": "Short list items to display on skill cards (max 4 will show). Note: Repeater fields require ACF Pro.",
-            "required": false,
-            "min": 0,
-            "max": 4,
-            "layout": "table",
-            "button_label": "Add Item",
-            "sub_fields": [
-                {
-                    "key": "field_list_item_text",
-                    "label": "Text",
-                    "name": "item_text",
-                    "type": "text",
-                    "instructions": "List item text"
-                }
-            ]
+            "key": "field_related_skills_tab",
+            "label": "Related Skills",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
         },
         {
-            "key": "field_featured_skill",
-            "label": "Featured Skill",
-            "name": "featured_skill",
-            "type": "true_false",
-            "instructions": "Mark this skill as featured to show on the Skills Home page",
-            "default_value": 0,
-            "ui": 1
+            "key": "field_related_skills_title",
+            "label": "Section Title",
+            "name": "related_skills_title",
+            "type": "text",
+            "instructions": "Title for the related skills section (optional, defaults to 'Explore Other Business Functions')",
+            "required": false,
+            "default_value": "",
+            "wrapper": {
+                "width": "100"
+            }
+        },
+        {
+            "key": "field_related_skills",
+            "label": "Related Skills",
+            "name": "related_skills",
+            "type": "relationship",
+            "instructions": "Select related skills to display in the 'Explore Other Business Functions' section",
+            "required": false,
+            "post_type": ["skill"],
+            "filters": ["search"],
+            "max": 0,
+            "return_format": "object",
+            "wrapper": {
+                "width": "100"
+            }
+        },
+        {
+            "key": "field_resources_tab",
+            "label": "Resources",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_resources_title",
+            "label": "Section Title",
+            "name": "resources_title",
+            "type": "text",
+            "instructions": "Title for the resources section (optional, defaults to 'Resources')",
+            "required": false,
+            "default_value": "",
+            "wrapper": {
+                "width": "100"
+            }
+        },
+        {
+            "key": "field_related_resources",
+            "label": "Related Resources",
+            "name": "related_resources",
+            "type": "repeater",
+            "instructions": "Resources to display on the skill detail page (supports external links). Requires ACF Pro.",
+            "required": false,
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Resource",
+            "sub_fields": [
+                {
+                    "key": "field_resource_title",
+                    "label": "Title",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "Resource title",
+                    "required": false
+                },
+                {
+                    "key": "field_resource_text",
+                    "label": "Description",
+                    "name": "text",
+                    "type": "textarea",
+                    "instructions": "Resource description",
+                    "required": false,
+                    "rows": 3
+                },
+                {
+                    "key": "field_resource_type",
+                    "label": "Type Label",
+                    "name": "type",
+                    "type": "text",
+                    "instructions": "Resource type (e.g., 'Case Study', 'Whitepaper', 'Video')",
+                    "required": false
+                },
+                {
+                    "key": "field_resource_link",
+                    "label": "URL",
+                    "name": "link",
+                    "type": "url",
+                    "instructions": "URL to the resource (internal or external)",
+                    "required": false
+                },
+                {
+                    "key": "field_resource_image",
+                    "label": "Image",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "Image for the resource card",
+                    "required": false,
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all"
+                }
+            ]
         }
     ],
     "location": [
@@ -635,8 +359,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Fields for Skills custom post type. Note: Repeater fields (Featured Skills, Related Skills, Related Resources) require ACF Pro. Benefits are set up as a group with two placeholder fields.",
+    "description": "Custom fields for Skills. Note: Repeater fields require ACF Pro. Use tabs to organize different sections of content.",
     "show_in_rest": 1,
     "modified": 1735000000
 }
-

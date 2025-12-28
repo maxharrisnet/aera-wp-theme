@@ -2,6 +2,43 @@
 
 This document outlines the new Skills pages implementation for the Aera Technology website, based on the provided Figma designs.
 
+## ✨ Recent Updates
+
+### Skills Fields Cleanup
+The Skills ACF fields have been cleaned up to match the current Figma designs. The following old/unused fields have been removed:
+
+**Removed Fields:**
+- Benefits Section (group with percentage/title fields) - not in current design
+- Featured Skills (repeater) - not used in current design
+- Key Decisions Needed (WYSIWYG) - replaced with new layout
+- How Aera Helps (WYSIWYG) - replaced with repeater items
+- Needed Decisions & Aera Helps Mobile (WYSIWYG) - not needed
+- Demo Video Form (WYSIWYG) - not in current design
+
+**Updated Fields:**
+- Related Skills - Changed from repeater to relationship field (no longer requires ACF Pro)
+- How Aera Helps - Now uses repeater items with icon/title/description
+- Added customizable section titles for How Aera Helps, Related Skills, and Resources
+- Organized fields into tabs for better UX
+
+## 🎨 Skill Tile Background Images
+
+Skill cards automatically display background images based on the post slug. Images are stored in `/assets/images/skills/` and follow the naming convention: `skill-tile-{post-slug}.png`
+
+**Available images:**
+- skill-tile-supply-chain.png
+- skill-tile-procurement.png
+- skill-tile-manufacturing-operations.png
+- skill-tile-product-management.png
+- skill-tile-sales-marketing.png
+- skill-tile-customer-success.png
+- skill-tile-finance.png
+- skill-tile-hr.png
+- skill-tile-it.png
+- skill-tile-esg.png
+
+**Note:** When creating new skills, ensure the post slug matches an existing image filename, or add a new image following the naming convention.
+
 ## 📁 Files Created
 
 ### SCSS Files (Styles)
@@ -68,13 +105,28 @@ Individual skill page with:
 
 **Setup:**
 Configure these ACF fields when editing a skill:
-- Basic: Icon, Tagline, Description
-- Skill Videos: Add video cards with thumbnails, titles, descriptions, and expandable details
-- How Aera Helps Items: Add help items with icons
-- Card List Items: Add up to 4 bullet points for card display
-- Related Skills: Link to other skills
-- Related Resources: Link to resources
-- Featured Skill: Check to show on home page
+
+**Basic Info Tab:**
+- **Skill Icon**: Icon image (displayed on cards and in hero)
+- **Tagline**: Short tagline below the title
+- **Featured on Home Page**: Checkbox to mark skill for display in top 2 large cards on Skills Home page
+- **Description**: Main description text (used in hero and cards)
+- **Card List Items**: Up to 4 bullet points for card display *(Requires ACF Pro)*
+
+**Videos Tab:**
+- **Skill Videos**: Video cards with thumbnail, title, description, URL, and expandable sections (Overview, Capabilities, Use Cases) *(Requires ACF Pro)*
+
+**How Aera Helps Tab:**
+- **Section Title**: Optional custom title (defaults to "How Aera Helps")
+- **How Aera Helps Items**: Icon/title/description items *(Requires ACF Pro)*
+
+**Related Skills Tab:**
+- **Section Title**: Optional custom title (defaults to "Explore Other Business Functions")
+- **Related Skills**: Relationship field to select other skills
+
+**Resources Tab:**
+- **Section Title**: Optional custom title (defaults to "Resources")
+- **Related Resources**: Manually add resources with title, description, type label, URL, and image. Supports external links *(Requires ACF Pro)*
 
 ## 🔧 Required Setup
 
@@ -121,11 +173,18 @@ npm run build:css
 
 ### Skills Home Page Fields
 - **Icon Section Title** (text)
-- **Icon Items** (repeater) - icon, title, description
+- **Icon Section Description** (textarea) - paragraph that appears under the title
+- **Icon Items** - 4 individual icon sets (Icon 1-4). Each has:
+  - Icon (image)
+  - Title (text)
+  - Description (textarea)
 - **Resources Section Title** (text)
-- **Featured Resources** (relationship) - select 3 posts
-- **Action Section Title** (text)
-- **Action Buttons** (text + URL for 2 buttons)
+- **Featured Resources** - 3 individual resource fields (Resource 1, 2, 3). For each, choose resource type:
+  - **Post/Resource**: Select from existing posts (news, video, whitepaper, case-study, blog, etc.) - pulls featured image, title, excerpt automatically
+  - **Page**: Select from existing pages - pulls featured image, title, excerpt/content automatically
+  - **External Link**: Manually enter title (50% width), type label (50% width), description, URL, and image
+- **Action Section Title** (text) - used for the CTA component
+- **Action Button 2 Text & URL** - primary CTA button (Button 1 fields are deprecated)
 
 ### Single Skill Fields (New)
 - **Skill Videos** (repeater):

@@ -164,7 +164,10 @@ while (have_posts()) :
 		<?php if ($how_aera_helps_items && is_array($how_aera_helps_items)) : ?>
 			<section class="how-aera-helps">
 				<div class="how-aera-helps__container">
-					<h2 class="how-aera-helps__title"><?php esc_html_e('How Aera Helps', 'aera'); ?></h2>
+					<?php
+					$how_aera_helps_title = get_field('how_aera_helps_title') ?: __('How Aera Helps', 'aera');
+					?>
+					<h2 class="how-aera-helps__title"><?php echo esc_html($how_aera_helps_title); ?></h2>
 					<div class="how-aera-helps__grid">
 						<?php foreach ($how_aera_helps_items as $item) : ?>
 							<div class="how-aera-helps__item">
@@ -190,7 +193,10 @@ while (have_posts()) :
 		<?php if ($related_skills && is_array($related_skills)) : ?>
 			<section class="explore-functions">
 				<div class="explore-functions__container">
-					<h2 class="explore-functions__title"><?php esc_html_e('Explore Other Business Functions', 'aera'); ?></h2>
+					<?php
+					$related_skills_title = get_field('related_skills_title') ?: __('Explore Other Business Functions', 'aera');
+					?>
+					<h2 class="explore-functions__title"><?php echo esc_html($related_skills_title); ?></h2>
 					<div class="explore-functions__grid">
 						<?php
 						foreach ($related_skills as $related_skill) :
@@ -215,15 +221,55 @@ while (have_posts()) :
 		<?php if ($related_resources && is_array($related_resources)) : ?>
 			<section class="skills-home__resources-section">
 				<div class="skills-home__container">
-					<h2 class="skills-home__resources-title"><?php esc_html_e('Resources', 'aera'); ?></h2>
+					<?php
+					$resources_title = get_field('resources_title') ?: __('Resources', 'aera');
+					?>
+					<h2 class="skills-home__resources-title"><?php echo esc_html($resources_title); ?></h2>
 					<div class="skills-home__resources-grid">
 						<?php
 						foreach ($related_resources as $resource) :
-							if (is_object($resource) && isset($resource->ID)) :
-								$post_id = $resource->ID;
-								setup_postdata($resource);
-								get_template_part('template-parts/content', 'resource-card');
-								wp_reset_postdata();
+							$title = $resource['title'] ?? '';
+							$text = $resource['text'] ?? '';
+							$link = $resource['link'] ?? '';
+							$type = $resource['type'] ?? '';
+							$image = $resource['image'] ?? '';
+
+							if ($title && $link) :
+								?>
+								<div class="resource-card">
+									<div class="resource-card__wrapper">
+										<a href="<?php echo esc_url($link); ?>" <?php echo strpos($link, home_url()) === false ? 'target="_blank" rel="noopener noreferrer"' : ''; ?>>
+											<?php if ($image) : ?>
+												<figure class="resource-card__figure">
+													<div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url('<?php echo esc_url($image['url']); ?>');"></div>
+												</figure>
+											<?php endif; ?>
+
+											<div class="resource-card__content">
+												<?php if ($type) : ?>
+													<div class="resource-card__row">
+														<span class="resource-card__type"><?php echo esc_html($type); ?></span>
+													</div>
+												<?php endif; ?>
+
+												<h3 class="resource-card__title"><?php echo esc_html($title); ?></h3>
+
+												<?php if ($text) : ?>
+													<p class="resource-card__text"><?php echo esc_html($text); ?></p>
+												<?php endif; ?>
+
+												<div class="resource-card__lastRow">
+													<div class="resource-card__row">
+														<span class="resource-card__link">
+															<?php esc_html_e('View Resource', 'aera'); ?>
+														</span>
+													</div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+								<?php
 							endif;
 						endforeach;
 						?>

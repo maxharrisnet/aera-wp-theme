@@ -52,7 +52,7 @@
 // Tab Navigation
 .skill-tabs {
 	background-color: $color-white;
-	border-bottom: 2px solid $color-hawkesblue;
+	border-bottom: 2px solid $color-btn-background;
 	position: sticky;
 	top: 0;
 	z-index: 100;
@@ -90,15 +90,15 @@
 		text-transform: uppercase;
 		letter-spacing: 0.025em;
 		border-bottom: 3px solid transparent;
-		transition: all 0.2s ease;
+		transition: all $transition-enter ease;
 
 		&:hover {
-			color: $color-bahamablue;
+			color: $color-link;
 		}
 
 		&.active {
-			color: $color-bahamablue;
-			border-bottom-color: $color-bahamablue;
+			color: $color-link;
+			border-bottom-color: $color-link;
 		}
 
 		@media (max-width: $max-720) {
@@ -192,9 +192,9 @@
 // Video Card Component
 .video-card {
 	background-color: $color-white;
-	border: 3px solid $color-bahamablue;
+	border: 3px solid $color-link;
 	border-radius: 8px;
-	margin-bottom: 30px;
+	margin-bottom: $gutter;
 	overflow: hidden;
 
 	@media (max-width: $max-720) {
@@ -205,7 +205,7 @@
 		position: relative;
 		width: 100%;
 		padding-top: 56.25%; // 16:9 aspect ratio
-		background-color: $color-aquahaze;
+		background-color: $color-background-darker;
 		background-size: cover;
 		background-position: center;
 		cursor: pointer;
@@ -222,12 +222,12 @@
 		transform: translate(-50%, -50%);
 		width: 70px;
 		height: 70px;
-		background-color: rgba($color-bahamablue, 0.9);
+		background-color: rgba($color-link, 0.9);
 		border-radius: 50%;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		transition: transform 0.2s ease;
+		transition: transform $transition-enter ease;
 		cursor: pointer;
 
 		&:after {
@@ -330,7 +330,7 @@
 					content: '•';
 					position: absolute;
 					left: 0;
-					color: $color-bahamablue;
+					color: $color-link;
 				}
 			}
 		}
@@ -343,15 +343,15 @@
 		font-family: $font-family-heading;
 		font-size: 13px;
 		font-weight: 600;
-		color: $color-bahamablue;
+		color: $color-link;
 		background-color: transparent;
-		border: 1px solid $color-bahamablue;
+		border: 1px solid $color-link;
 		border-radius: 20px;
 		cursor: pointer;
-		transition: all 0.2s ease;
+		transition: all $transition-enter ease;
 
 		&:hover {
-			background-color: $color-bahamablue;
+			background-color: $color-link;
 			color: $color-white;
 		}
 
@@ -374,7 +374,7 @@
 	&__expandable {
 		max-height: 0;
 		overflow: hidden;
-		transition: max-height 0.3s ease;
+		transition: max-height $transition-enter ease;
 
 		&.active {
 			max-height: 1000px;
@@ -506,7 +506,7 @@
 		display: block;
 		text-decoration: none;
 		color: inherit;
-		transition: transform 0.2s ease;
+		transition: transform $transition-enter ease;
 
 		&:hover {
 			transform: translateY(-4px);

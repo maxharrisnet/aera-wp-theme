@@ -76,10 +76,10 @@
 			display: flex;
 			align-items: center;
 			font-size: 14px;
-			line-height: 1.5;
+			line-height: $line-height;
 			color: $color-shuttlegray;
 			cursor: pointer;
-			transition: color 0.2s ease;
+			transition: color $transition-enter ease;
 
 			&:hover {
 				color: $color-codgray;
@@ -101,8 +101,8 @@
 		@media (max-width: $max-720) {
 			display: block;
 			padding: 12px 20px;
-			background-color: $color-hawkesblue;
-			border: 1px solid rgba(138, 196, 232, 0.5);
+			background-color: $color-btn-background;
+			border: 1px solid $color-btn-default;
 			border-radius: 8px;
 			font-family: $font-family-heading;
 			font-size: 14px;
@@ -186,7 +186,7 @@
 			border-radius: 6px;
 			font-size: 14px;
 			font-family: $font-family;
-			background-color: $color-white;
+			background-color: $color-background;
 			background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
 			background-repeat: no-repeat;
 			background-position-x: calc(100% - 5px);
@@ -196,7 +196,7 @@
 			cursor: pointer;
 
 			&:focus {
-				outline: 2px solid $color-bahamablue;
+				outline: 2px solid $color-link;
 				outline-offset: 2px;
 			}
 		}
@@ -259,21 +259,21 @@
 		font-family: $font-family-heading;
 		font-weight: 600;
 		color: $color-codgray;
-		background-color: $color-white;
+		background-color: $color-background;
 		border: 1px solid $color-aluminium;
 		border-radius: 6px;
 		text-decoration: none;
-		transition: all 0.2s ease;
+		transition: all $transition-enter ease;
 
 		&:hover {
-			background-color: $color-hawkesblue;
-			border-color: rgba(138, 196, 232, 0.5);
+			background-color: $color-btn-background;
+			border-color: $color-btn-default;
 			color: $color-codgray;
 		}
 
 		&.current {
-			background-color: $color-bahamablue;
-			border-color: $color-bahamablue;
+			background-color: $color-link;
+			border-color: $color-link;
 			color: $color-white;
 			cursor: default;
 		}

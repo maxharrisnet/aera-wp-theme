@@ -104,15 +104,15 @@
 		text-transform: uppercase;
 		letter-spacing: 0.025em;
 		color: $color-codgray;
-		background-color: $color-hawkesblue;
-		border: 1px solid rgba(138, 196, 232, 0.5);
-		border-radius: 999px;
+		background-color: $color-btn-background;
+		border: 1px solid $color-btn-default;
+		border-radius: $btn-border-radius;
 		text-decoration: none;
-		transition: all 0.18s ease;
+		transition: all $transition-enter ease;
 
 		&:hover {
-			background-color: $color-oysterbay;
-			background-image: linear-gradient(rgba(222, 232, 251, 0) 0%, $color-hawkesblue 90%);
+			background-color: $color-btn-gradient;
+			background-image: linear-gradient(rgba($color-hawkesblue, 0) 0%, $color-hawkesblue 90%);
 			text-decoration: none;
 		}
 
@@ -144,6 +144,20 @@
 
 		@media (max-width: $max-720) {
 			font-size: 32px;
+			margin-bottom: 30px;
+		}
+	}
+
+	&__icon-description {
+		font-size: $font-size;
+		line-height: $line-height;
+		color: $color-shuttlegray;
+		text-align: center;
+		margin: 0 auto 40px;
+		max-width: 900px;
+
+		@media (max-width: $max-720) {
+			font-size: 16px;
 			margin-bottom: 30px;
 		}
 	}
@@ -235,11 +249,11 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		gap: 30px;
+		// gap: 30px;
 
-		@media (max-width: $max-720) {
-			gap: 20px;
-		}
+		// @media (max-width: $max-720) {
+		// 	gap: 20px;
+		// }
 	}
 
 	// Action Section
@@ -290,15 +304,15 @@
 		text-transform: uppercase;
 		letter-spacing: 0.025em;
 		color: $color-codgray;
-		background-color: $color-hawkesblue;
-		border: 1px solid rgba(138, 196, 232, 0.5);
-		border-radius: 999px;
+		background-color: $color-btn-background;
+		border: 1px solid $color-btn-default;
+		border-radius: $btn-border-radius;
 		text-decoration: none;
-		transition: all 0.18s ease;
+		transition: all $transition-enter ease;
 
 		&:hover {
-			background-color: $color-oysterbay;
-			background-image: linear-gradient(rgba(222, 232, 251, 0) 0%, $color-hawkesblue 90%);
+			background-color: $color-btn-gradient;
+			background-image: linear-gradient(rgba($color-hawkesblue, 0) 0%, $color-hawkesblue 90%);
 			text-decoration: none;
 		}
 
@@ -310,4 +324,3 @@
 		}
 	}
 }
-

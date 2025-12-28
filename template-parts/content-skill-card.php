@@ -14,10 +14,17 @@ $card_class = $is_featured ? 'skill-card skill-card--featured' : 'skill-card';
 $skill_icon = get_field('skill_icon');
 $skill_description = get_field('skill_description') ?: get_the_excerpt();
 $skill_list_items = get_field('skill_list_items'); // Optional: list items for the card
+
+// Get tile background image based on post slug
+$post_slug = get_post_field('post_name', get_the_ID());
+$tile_image_path = get_template_directory_uri() . '/assets/images/skills/skill-tile-' . $post_slug . '.png';
 ?>
 
 <div class="<?php echo esc_attr($card_class); ?>">
 	<div class="skill-card__wrapper">
+		<?php if ($tile_image_path) : ?>
+			<div class="skill-card__bg-image" style="background-image: url('<?php echo esc_url($tile_image_path); ?>');"></div>
+		<?php endif; ?>
 		<a href="<?php the_permalink(); ?>">
 			<?php if ($skill_icon) : ?>
 				<div class="skill-card__icon">
