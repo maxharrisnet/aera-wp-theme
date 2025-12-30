@@ -3,8 +3,8 @@
     "title": "Skill Fields",
     "fields": [
         {
-            "key": "field_skill_basic_tab",
-            "label": "Basic Info",
+            "key": "field_skill_card_tab",
+            "label": "Card",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -13,28 +13,31 @@
             "endpoint": 0
         },
         {
-            "key": "field_skill_icon",
-            "label": "Skill Icon",
-            "name": "skill_icon",
+            "key": "field_skill_card_image",
+            "label": "Card Image",
+            "name": "skill_card_image",
             "type": "image",
-            "instructions": "Icon image for the skill (displayed on cards and in hero)",
+            "instructions": "Full-width image for the skill card on the home page",
             "required": false,
             "return_format": "array",
             "preview_size": "medium",
             "library": "all",
             "wrapper": {
-                "width": "33"
+                "width": "50"
             }
         },
         {
-            "key": "field_skill_tagline",
-            "label": "Tagline",
-            "name": "skill_tagline",
-            "type": "text",
-            "instructions": "Short tagline displayed below the title in hero",
+            "key": "field_skill_icon",
+            "label": "Icon",
+            "name": "skill_icon",
+            "type": "image",
+            "instructions": "Icon image for the skill (displayed on archive cards and in hero)",
             "required": false,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
             "wrapper": {
-                "width": "33"
+                "width": "25"
             }
         },
         {
@@ -46,7 +49,7 @@
             "default_value": 0,
             "ui": 1,
             "wrapper": {
-                "width": "33"
+                "width": "25"
             }
         },
         {
@@ -54,116 +57,13 @@
             "label": "Description",
             "name": "skill_description",
             "type": "textarea",
-            "instructions": "Main description text for the skill (used in hero and cards)",
+            "instructions": "Main description text for the skill (used in hero and archive cards)",
             "required": false,
             "rows": 4,
             "new_lines": "br",
             "wrapper": {
                 "width": "100"
             }
-        },
-        {
-            "key": "field_skill_list_items",
-            "label": "Card List Items",
-            "name": "skill_list_items",
-            "type": "repeater",
-            "instructions": "Short bullet points to display on skill cards (max 4 will show). Requires ACF Pro.",
-            "required": false,
-            "min": 0,
-            "max": 4,
-            "layout": "table",
-            "button_label": "Add Item",
-            "sub_fields": [
-                {
-                    "key": "field_list_item_text",
-                    "label": "Text",
-                    "name": "item_text",
-                    "type": "text",
-                    "instructions": "List item text"
-                }
-            ],
-            "wrapper": {
-                "width": "100"
-            }
-        },
-        {
-            "key": "field_skill_videos_tab",
-            "label": "Videos",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_skill_videos",
-            "label": "Skill Videos",
-            "name": "skill_videos",
-            "type": "repeater",
-            "instructions": "Video cards displayed in the Overview tab on skill detail page. Requires ACF Pro.",
-            "required": false,
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Video",
-            "sub_fields": [
-                {
-                    "key": "field_video_title",
-                    "label": "Video Title",
-                    "name": "video_title",
-                    "type": "text",
-                    "instructions": "Title of the video/skill"
-                },
-                {
-                    "key": "field_video_description",
-                    "label": "Description",
-                    "name": "video_description",
-                    "type": "textarea",
-                    "instructions": "Short description",
-                    "rows": 2
-                },
-                {
-                    "key": "field_video_thumbnail",
-                    "label": "Thumbnail",
-                    "name": "video_thumbnail",
-                    "type": "image",
-                    "instructions": "Video thumbnail image",
-                    "return_format": "array",
-                    "preview_size": "medium"
-                },
-                {
-                    "key": "field_video_url",
-                    "label": "Video URL",
-                    "name": "video_url",
-                    "type": "url",
-                    "instructions": "YouTube or Vimeo URL"
-                },
-                {
-                    "key": "field_video_overview",
-                    "label": "Overview",
-                    "name": "overview",
-                    "type": "textarea",
-                    "instructions": "Overview text for expandable section",
-                    "rows": 3
-                },
-                {
-                    "key": "field_video_capabilities",
-                    "label": "Capabilities",
-                    "name": "capabilities",
-                    "type": "textarea",
-                    "instructions": "Capabilities text for expandable section",
-                    "rows": 3
-                },
-                {
-                    "key": "field_video_use_cases",
-                    "label": "Use Cases",
-                    "name": "use_cases",
-                    "type": "textarea",
-                    "instructions": "Use cases text (one per line)",
-                    "rows": 3
-                }
-            ]
         },
         {
             "key": "field_how_aera_helps_tab",
@@ -226,8 +126,8 @@
             ]
         },
         {
-            "key": "field_related_skills_tab",
-            "label": "Related Skills",
+            "key": "field_related_content_tab",
+            "label": "Related Content",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -237,7 +137,7 @@
         },
         {
             "key": "field_related_skills_title",
-            "label": "Section Title",
+            "label": "Related Skills Section Title",
             "name": "related_skills_title",
             "type": "text",
             "instructions": "Title for the related skills section (optional, defaults to 'Explore Other Business Functions')",
@@ -252,7 +152,7 @@
             "label": "Related Skills",
             "name": "related_skills",
             "type": "relationship",
-            "instructions": "Select related skills to display in the 'Explore Other Business Functions' section",
+            "instructions": "Select related skills to display",
             "required": false,
             "post_type": ["skill"],
             "filters": ["search"],
@@ -263,18 +163,8 @@
             }
         },
         {
-            "key": "field_resources_tab",
-            "label": "Resources",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
             "key": "field_resources_title",
-            "label": "Section Title",
+            "label": "Resources Section Title",
             "name": "resources_title",
             "type": "text",
             "instructions": "Title for the resources section (optional, defaults to 'Resources')",
@@ -359,7 +249,7 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
-    "description": "Custom fields for Skills. Note: Repeater fields require ACF Pro. Use tabs to organize different sections of content.",
+    "description": "Custom fields for Skills. Note: Repeater fields require ACF Pro.",
     "show_in_rest": 1,
     "modified": 1735000000
 }

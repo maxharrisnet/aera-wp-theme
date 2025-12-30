@@ -4,28 +4,71 @@ This document outlines the new Skills pages implementation for the Aera Technolo
 
 ## ✨ Recent Updates
 
-### Skills Fields Cleanup
-The Skills ACF fields have been cleaned up to match the current Figma designs. The following old/unused fields have been removed:
+### Skills Fields Simplification
+Streamlined the Skills ACF field structure:
 
-**Removed Fields:**
-- Benefits Section (group with percentage/title fields) - not in current design
-- Featured Skills (repeater) - not used in current design
-- Key Decisions Needed (WYSIWYG) - replaced with new layout
-- How Aera Helps (WYSIWYG) - replaced with repeater items
-- Needed Decisions & Aera Helps Mobile (WYSIWYG) - not needed
-- Demo Video Form (WYSIWYG) - not in current design
+**Removed:**
+- Tagline field (not needed)
+- Card List Items field (not used)
+- Videos tab and all video fields (content should be inline)
 
-**Updated Fields:**
-- Related Skills - Changed from repeater to relationship field (no longer requires ACF Pro)
-- How Aera Helps - Now uses repeater items with icon/title/description
-- Added customizable section titles for How Aera Helps, Related Skills, and Resources
-- Organized fields into tabs for better UX
+**Reorganized:**
+- Renamed "Basic Info" tab → "Card"
+- Card layout: Card Image (50%), Icon (25%), Featured (25%)
+- Combined "Related Skills" and "Resources" tabs → "Related Content"
 
-## 🎨 Skill Tile Background Images
+**Result:** Cleaner, more focused admin interface with only the fields needed for the current design.
 
-Skill cards automatically display background images based on the post slug. Images are stored in `/assets/images/skills/` and follow the naming convention: `skill-tile-{post-slug}.png`
+### Card Types Redesign
+The Skills pages now use two distinct card types based on their context:
 
-**Available images:**
+**Skill Card (Home Page):**
+- Simplified design with full-width image, color stripe, and title only
+- Images are now sourced from the `skill_card_image` ACF field
+- Replaced background-image approach with inline images
+- Featured cards (top 2) are 2x width
+
+**Icon Card (Archive Page):**
+- New dedicated template for archive listing
+- Shows icon (light blue tint), title, and short excerpt
+- Top stripe adds visual distinction
+- Optimized for 4-column grid layout
+
+### Initial Fields Cleanup
+The Skills ACF fields were initially cleaned up to match the current Figma designs:
+
+**Removed old fields:**
+- Benefits Section, Featured Skills repeater, Key Decisions Needed, Demo Video Form
+- Old WYSIWYG fields replaced with structured repeater items
+
+**Key improvements:**
+- Related Skills changed from repeater to relationship field (no longer requires ACF Pro)
+- Added customizable section titles
+- Organized into logical tabs
+
+## 🃏 Two Card Types
+
+### Skill Card (Home Page)
+Used on the Skills Home page (`page-skills-home.php`):
+- **Design**: Full-width image at top, 8px dark blue stripe divider, white content section with left-aligned title
+- **Layout**: 4 columns, with top 2 cards twice as wide (creating a 2-column featured row)
+- **Dimensions**: Cards are responsive with drop shadow and rounded corners (6px)
+- **Image Source**: `skill_card_image` ACF field
+- **Template**: `template-parts/content-skill-card.php`
+
+### Icon Card (Archive Page)
+Used on the All Skills archive (`archive-skill.php`):
+- **Design**: 8px dark blue top stripe, light blue icon, centered heading, short excerpt
+- **Layout**: 4 columns (215 x 328 px target size)
+- **Dimensions**: Drop shadow and rounded corners (8px)
+- **Image Source**: `skill_icon` ACF field (with light blue filter applied)
+- **Template**: `template-parts/content-icon-card.php`
+
+## 🎨 Skill Tile Background Images (Deprecated)
+
+~~Skill cards used to display background images based on the post slug.~~ This approach has been replaced with the `skill_card_image` ACF field for better flexibility.
+
+The tile images are still available in `/assets/images/skills/` if needed for migration or reference:
 - skill-tile-supply-chain.png
 - skill-tile-procurement.png
 - skill-tile-manufacturing-operations.png
@@ -37,12 +80,11 @@ Skill cards automatically display background images based on the post slug. Imag
 - skill-tile-it.png
 - skill-tile-esg.png
 
-**Note:** When creating new skills, ensure the post slug matches an existing image filename, or add a new image following the naming convention.
-
 ## 📁 Files Created
 
 ### SCSS Files (Styles)
-- `sass/components/_skill-card.scss` - Skill card component styles (used in archive and home)
+- `sass/components/_skill-card.scss` - Skill card component styles (home page - with image, stripe, title)
+- `sass/components/_icon-card.scss` - Icon card component styles (archive page - with icon, title, excerpt)
 - `sass/pages/_skills-home.scss` - Skills Home landing page styles
 - `sass/pages/_skills-archive.scss` - All Skills archive page styles
 - `sass/pages/_skills-detail.scss` - Single Skill detail page styles
@@ -51,7 +93,8 @@ Skill cards automatically display background images based on the post slug. Imag
 - `page-skills-home.php` - Skills Home landing page template
 - `archive-skill.php` - Updated All Skills archive template with sidebar filters
 - `single-skill.php` - Updated Single Skill detail page template
-- `template-parts/content-skill-card.php` - Skill card template part (supports regular and featured variants)
+- `template-parts/content-skill-card.php` - Skill card template part for home page (supports regular and featured variants)
+- `template-parts/content-icon-card.php` - Icon card template part for archive page
 
 ### ACF JSON Files
 - `acf-json/group_aera_skills_home.json` - Fields for Skills Home page
@@ -106,26 +149,20 @@ Individual skill page with:
 **Setup:**
 Configure these ACF fields when editing a skill:
 
-**Basic Info Tab:**
-- **Skill Icon**: Icon image (displayed on cards and in hero)
-- **Tagline**: Short tagline below the title
-- **Featured on Home Page**: Checkbox to mark skill for display in top 2 large cards on Skills Home page
-- **Description**: Main description text (used in hero and cards)
-- **Card List Items**: Up to 4 bullet points for card display *(Requires ACF Pro)*
-
-**Videos Tab:**
-- **Skill Videos**: Video cards with thumbnail, title, description, URL, and expandable sections (Overview, Capabilities, Use Cases) *(Requires ACF Pro)*
+**Card Tab:**
+- **Card Image** (50% width): Full-width image for the skill card on the home page
+- **Icon** (25% width): Icon image (displayed on archive cards and in hero)
+- **Featured on Home Page** (25% width): Checkbox to mark skill for display in top 2 large cards on Skills Home page
+- **Description**: Main description text (used in hero and archive cards)
 
 **How Aera Helps Tab:**
 - **Section Title**: Optional custom title (defaults to "How Aera Helps")
 - **How Aera Helps Items**: Icon/title/description items *(Requires ACF Pro)*
 
-**Related Skills Tab:**
-- **Section Title**: Optional custom title (defaults to "Explore Other Business Functions")
+**Related Content Tab:**
+- **Related Skills Section Title**: Optional custom title (defaults to "Explore Other Business Functions")
 - **Related Skills**: Relationship field to select other skills
-
-**Resources Tab:**
-- **Section Title**: Optional custom title (defaults to "Resources")
+- **Resources Section Title**: Optional custom title (defaults to "Resources")
 - **Related Resources**: Manually add resources with title, description, type label, URL, and image. Supports external links *(Requires ACF Pro)*
 
 ## 🔧 Required Setup

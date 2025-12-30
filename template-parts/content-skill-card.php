@@ -11,60 +11,21 @@
 $is_featured = isset($args['featured']) && $args['featured'];
 $card_class = $is_featured ? 'skill-card skill-card--featured' : 'skill-card';
 
-$skill_icon = get_field('skill_icon');
-$skill_description = get_field('skill_description') ?: get_the_excerpt();
-$skill_list_items = get_field('skill_list_items'); // Optional: list items for the card
-
-// Get tile background image based on post slug
-$post_slug = get_post_field('post_name', get_the_ID());
-$tile_image_path = get_template_directory_uri() . '/assets/images/skills/skill-tile-' . $post_slug . '.png';
+$skill_card_image = get_field('skill_card_image');
 ?>
 
 <div class="<?php echo esc_attr($card_class); ?>">
-	<div class="skill-card__wrapper">
-		<?php if ($tile_image_path) : ?>
-			<div class="skill-card__bg-image" style="background-image: url('<?php echo esc_url($tile_image_path); ?>');"></div>
-		<?php endif; ?>
-		<a href="<?php the_permalink(); ?>">
-			<?php if ($skill_icon) : ?>
-				<div class="skill-card__icon">
-					<img src="<?php echo esc_url($skill_icon['url']); ?>" alt="<?php echo esc_attr($skill_icon['alt'] ?: get_the_title()); ?>" />
-				</div>
-			<?php endif; ?>
+  <a href="<?php the_permalink(); ?>" class="skill-card__link">
+    <?php if ($skill_card_image) : ?>
+      <div class="skill-card__image">
+        <img src="<?php echo esc_url($skill_card_image['url']); ?>" alt="<?php echo esc_attr($skill_card_image['alt'] ?: get_the_title()); ?>" />
+      </div>
+    <?php endif; ?>
 
-			<div class="skill-card__content">
-				<h3 class="skill-card__title"><?php the_title(); ?></h3>
+    <div class="skill-card__stripe"></div>
 
-				<?php if ($skill_description) : ?>
-					<p class="skill-card__description">
-						<?php
-						// Limit description to 100 characters for regular cards, 150 for featured
-						$limit = $is_featured ? 150 : 100;
-						$description = wp_strip_all_tags($skill_description);
-						if (strlen($description) > $limit) {
-							echo esc_html(substr($description, 0, $limit) . '...');
-						} else {
-							echo esc_html($description);
-						}
-						?>
-					</p>
-				<?php endif; ?>
-
-				<?php if ($skill_list_items && is_array($skill_list_items) && !$is_featured) : ?>
-					<ul class="skill-card__list">
-						<?php
-						// Show max 4 items on cards
-						$items_to_show = array_slice($skill_list_items, 0, 4);
-						foreach ($items_to_show as $item) :
-							if (!empty($item['item_text'])) :
-								?>
-								<li><?php echo esc_html($item['item_text']); ?></li>
-							<?php endif; ?>
-						<?php endforeach; ?>
-					</ul>
-				<?php endif; ?>
-			</div>
-		</a>
-	</div>
+    <div class="skill-card__content">
+      <h3 class="skill-card__title"><?php the_title(); ?></h3>
+    </div>
+  </a>
 </div>
-
