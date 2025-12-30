@@ -1,0 +1,41 @@
+{
+  "export_date": "2025-12-30",
+  "total_skills": 64,
+  "featured_skills": [
+    "Touchless Demand Forecasting",
+    "Spend Optimization (In place of Spend visibility)",
+    "Sales & Operations Planning (S&OP)",
+    "Integrated Business Planning",
+    "Headcount/Capacity Planning",
+    "Carbon-Footprint optimization"
+  ],
+  "functions": [
+    "ESG",
+    "Finance",
+    "HR",
+    "Procurement",
+    "Sales & Marketing",
+    "Supply Chain"
+  ],
+  "categories": [
+    "Control Tower",
+    "Demand",
+    "ESG",
+    "FP&A",
+    "GTM Strategy",
+    "IBP",
+    "Inventory",
+    "Logistics",
+    "Marketing Management",
+    "Master Data Management",
+    "Order",
+    "P&L",
+    "Procurement",
+    "Revenue Optimization",
+    "S&OP",
+    "Sales Planning",
+    "Strategic Finance",
+    "Workforce Planning"
+  ],
+  "post_ids": "4001-4064"
+}

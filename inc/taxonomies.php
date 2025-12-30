@@ -78,12 +78,23 @@ function register_taxonomies(): void
       ),
       'post_types' => array('skill'),
     ),
-    'skill_category' => array(
-      'singular' => __('Skill Category', 'aera'),
-      'plural'   => __('Skill Categories', 'aera'),
-      'slug'     => 'skill-category',
+    'skill_function' => array(
+      'singular' => __('Function', 'aera'),
+      'plural'   => __('Functions', 'aera'),
+      'slug'     => 'function',
       'args'     => array(
         'hierarchical' => true,
+        'show_admin_column' => true,
+      ),
+      'post_types' => array('skill'),
+    ),
+    'skill_category' => array(
+      'singular' => __('Category', 'aera'),
+      'plural'   => __('Categories', 'aera'),
+      'slug'     => 'category',
+      'args'     => array(
+        'hierarchical' => true,
+        'show_admin_column' => true,
       ),
       'post_types' => array('skill'),
     ),

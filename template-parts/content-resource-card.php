@@ -47,7 +47,7 @@ if (empty($excerpt)) {
 $type_label = $args['type_label'] ?? get_resource_label_for_post_type($post_type);
 $city = $args['city'] ?? '';
 $date_value = $args['date'] ?? get_the_date('c', $post_id);
-$display_date = $date_value ? date_i18n(get_option('date_format'), strtotime($date_value)) : '';
+$display_date = $date_value ? date_i18n('Y-m-d', strtotime($date_value)) : '';
 
 $external_url = $args['external_url'] ?? (function_exists('get_field') ? get_field('resource_external_url', $post_id) : '');
 $link = $args['link'] ?? ($external_url ?: get_permalink($post_id));
