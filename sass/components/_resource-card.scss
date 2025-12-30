@@ -115,6 +115,20 @@
 		text-transform: uppercase;
 	}
 
+	&__city {
+		font-family: $font-family-gilroy;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 20px;
+		display: inline-block;
+		color: $color-codgray;
+		position: relative;
+		white-space: nowrap;
+		margin-left: auto;
+		text-align: right;
+	}
+
 	&__title {
 		@include subheading;
 		font-family: $font-family-gilroy;

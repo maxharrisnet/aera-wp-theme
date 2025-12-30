@@ -4,6 +4,28 @@ This document outlines the new Skills pages implementation for the Aera Technolo
 
 ## ✨ Recent Updates
 
+### Dynamic Navigation System
+The skill detail page now features a flexible, dynamic navigation system similar to the Decision Intelligence page:
+
+**Key Features:**
+- **Dynamic Content Sections**: Add unlimited sections via ACF repeater with custom labels and content
+- **Dual Navigation**: Top tabs AND sidebar navigation automatically generated from sections
+- **Scroll Tracking**: Active state updates as user scrolls through content
+- **Smooth Scrolling**: Click any tab/sidebar link to smoothly scroll to that section
+- **Auto-anchors**: Anchor IDs auto-generated from labels (or manually specified)
+- **WYSIWYG Content**: Full editor for each section with media upload support
+
+**New Files:**
+- `js/skill-detail.js` - Navigation scroll tracking and smooth scrolling
+- Updated `single-skill.php` to use dynamic sections
+- New "Content Sections" tab in ACF with repeater field (requires ACF Pro)
+
+**Benefits:**
+- Content editors can customize navigation labels and content structure
+- Flexible section layout per skill
+- Consistent with site navigation patterns (matches decision intelligence page)
+- Better UX with automatic scroll tracking and active states
+
 ### Skills Fields Simplification
 Streamlined the Skills ACF field structure:
 
@@ -138,9 +160,9 @@ Archive page with:
 ### 3. Skill Detail/Single (`single-skill.php`)
 Individual skill page with:
 - Hero with skill name and description
-- Tab navigation (Overview, Skills, Use Cases, Product Demo, Analyst Coverage)
-- Left sidebar content navigation
-- Video cards with expandable details
+- Dynamic tab navigation (generated from Content Sections)
+- Left sidebar content navigation (synced with tabs)
+- Scrollable sections with automatic active state tracking
 - "How Aera Helps" section
 - "Explore Other Business Functions" section
 - Resources section
@@ -154,6 +176,12 @@ Configure these ACF fields when editing a skill:
 - **Icon** (25% width): Icon image (displayed on archive cards and in hero)
 - **Featured on Home Page** (25% width): Checkbox to mark skill for display in top 2 large cards on Skills Home page
 - **Description**: Main description text (used in hero and archive cards)
+
+**Content Sections Tab:**
+- **Content Sections** (repeater): Define the main content sections for this skill *(Requires ACF Pro)*
+  - **Navigation Label**: Label shown in tabs and sidebar (e.g., "Overview", "Use Cases")
+  - **Anchor ID**: Unique anchor ID (optional, auto-generated from label if empty)
+  - **Content**: WYSIWYG editor with full formatting and media upload support
 
 **How Aera Helps Tab:**
 - **Section Title**: Optional custom title (defaults to "How Aera Helps")

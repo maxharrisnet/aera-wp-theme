@@ -14,10 +14,16 @@ while (have_posts()) :
   the_post();
 
   $skill_description = get_field('skill_description') ?: get_the_excerpt();
-  $skill_videos = get_field('skill_videos'); // Repeater field for video cards
+  $content_sections = get_field('content_sections'); // Dynamic content sections
   $how_aera_helps_items = get_field('how_aera_helps_items'); // Repeater for help items
   $related_skills = get_field('related_skills');
   $related_resources = get_field('related_resources');
+
+  // Helper function to sanitize anchor IDs
+  function generate_anchor_id($text)
+  {
+    return sanitize_title($text);
+  }
 ?>
 
   <main id="primary" class="site-main site-main--skill-detail">
@@ -35,130 +41,75 @@ while (have_posts()) :
     ?>
 
     <!-- Tab Navigation -->
-    <nav class="skill-tabs">
-      <div class="skill-tabs__container">
-        <ul class="skill-tabs__list">
-          <li class="skill-tabs__item">
-            <a href="#overview" class="skill-tabs__link active"><?php esc_html_e('Overview', 'aera'); ?></a>
-          </li>
-          <li class="skill-tabs__item">
-            <a href="#skills" class="skill-tabs__link"><?php esc_html_e('Skills', 'aera'); ?></a>
-          </li>
-          <li class="skill-tabs__item">
-            <a href="#use-cases" class="skill-tabs__link"><?php esc_html_e('Use Cases', 'aera'); ?></a>
-          </li>
-          <li class="skill-tabs__item">
-            <a href="#product-demo" class="skill-tabs__link"><?php esc_html_e('Product Demo', 'aera'); ?></a>
-          </li>
-          <li class="skill-tabs__item">
-            <a href="#analyst-coverage" class="skill-tabs__link"><?php esc_html_e('Analyst Coverage', 'aera'); ?></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <?php if ($content_sections && is_array($content_sections) && count($content_sections) > 0) : ?>
+      <nav class="skill-tabs">
+        <div class="skill-tabs__container">
+          <ul class="skill-tabs__list">
+            <?php foreach ($content_sections as $index => $section) :
+              $anchor = !empty($section['anchor']) ? sanitize_title($section['anchor']) : generate_anchor_id($section['label']);
+              $is_first = ($index === 0);
+            ?>
+              <li class="skill-tabs__item">
+                <a href="#<?php echo esc_attr($anchor); ?>" class="skill-tabs__link<?php echo $is_first ? ' active' : ''; ?>">
+                  <?php echo esc_html($section['label']); ?>
+                </a>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
+      </nav>
+    <?php endif; ?>
 
     <!-- Main Content Section -->
-    <section class="skill-detail" id="overview">
-      <div class="skill-detail__container">
-        <div class="skill-detail__layout">
+    <?php if ($content_sections && is_array($content_sections) && count($content_sections) > 0) : ?>
+      <div class="skill-detail">
+        <div class="skill-detail__container">
+          <div class="skill-detail__layout">
 
-          <!-- Sidebar Navigation -->
-          <aside class="skill-detail__sidebar">
-            <h3 class="skill-detail__sidebar-title"><?php esc_html_e('Content', 'aera'); ?></h3>
-            <ul class="skill-detail__sidebar-nav">
-              <?php if ($skill_videos && is_array($skill_videos)) : ?>
-                <?php foreach ($skill_videos as $index => $video) : ?>
+            <!-- Sidebar Navigation -->
+            <aside class="skill-detail__sidebar">
+              <h3 class="skill-detail__sidebar-title"><?php esc_html_e('On This Page', 'aera'); ?></h3>
+              <ul class="skill-detail__sidebar-nav">
+                <?php foreach ($content_sections as $index => $section) :
+                  $anchor = !empty($section['anchor']) ? sanitize_title($section['anchor']) : generate_anchor_id($section['label']);
+                  $is_first = ($index === 0);
+                ?>
                   <li>
-                    <a href="#video-<?php echo esc_attr($index); ?>" class="<?php echo $index === 0 ? 'active' : ''; ?>">
-                      <?php echo esc_html($video['video_title'] ?: sprintf(__('Video %d', 'aera'), $index + 1)); ?>
+                    <a href="#<?php echo esc_attr($anchor); ?>" class="<?php echo $is_first ? 'active' : ''; ?>">
+                      <?php echo esc_html($section['label']); ?>
                     </a>
                   </li>
                 <?php endforeach; ?>
-              <?php endif; ?>
-            </ul>
-          </aside>
+              </ul>
+            </aside>
 
-          <!-- Main Content -->
-          <div class="skill-detail__main">
-
-            <!-- Video Cards -->
-            <?php if ($skill_videos && is_array($skill_videos)) : ?>
-              <?php foreach ($skill_videos as $index => $video) : ?>
-                <article class="video-card" id="video-<?php echo esc_attr($index); ?>">
-                  <?php if (!empty($video['video_thumbnail'])) : ?>
-                    <div class="video-card__thumbnail" style="background-image: url('<?php echo esc_url($video['video_thumbnail']['url']); ?>');">
-                      <div class="video-card__play-button"></div>
-                    </div>
-                  <?php endif; ?>
-
-                  <div class="video-card__content">
-                    <?php if (!empty($video['video_title'])) : ?>
-                      <h2 class="video-card__title"><?php echo esc_html($video['video_title']); ?></h2>
-                    <?php endif; ?>
-
-                    <?php if (!empty($video['video_description'])) : ?>
-                      <p class="video-card__description"><?php echo esc_html($video['video_description']); ?></p>
-                    <?php endif; ?>
-
-                    <?php
-                    $has_details = !empty($video['overview']) || !empty($video['capabilities']) || !empty($video['use_cases']);
-
-                    if ($has_details) :
-                    ?>
-                      <button class="video-card__toggle" data-target="details-<?php echo esc_attr($index); ?>">
-                        <?php esc_html_e('View Details', 'aera'); ?>
-                      </button>
-
-                      <div class="video-card__expandable" id="details-<?php echo esc_attr($index); ?>">
-                        <div class="video-card__details">
-                          <div class="video-card__details-grid">
-                            <?php if (!empty($video['overview'])) : ?>
-                              <div class="video-card__detail-item">
-                                <h4><?php esc_html_e('Overview', 'aera'); ?></h4>
-                                <p><?php echo esc_html($video['overview']); ?></p>
-                              </div>
-                            <?php endif; ?>
-
-                            <?php if (!empty($video['capabilities'])) : ?>
-                              <div class="video-card__detail-item">
-                                <h4><?php esc_html_e('Capabilities', 'aera'); ?></h4>
-                                <p><?php echo esc_html($video['capabilities']); ?></p>
-                              </div>
-                            <?php endif; ?>
-
-                            <?php if (!empty($video['use_cases'])) : ?>
-                              <div class="video-card__detail-item">
-                                <h4><?php esc_html_e('Use Cases', 'aera'); ?></h4>
-                                <?php if (is_array($video['use_cases'])) : ?>
-                                  <ul>
-                                    <?php foreach ($video['use_cases'] as $use_case) : ?>
-                                      <li><?php echo esc_html($use_case['text']); ?></li>
-                                    <?php endforeach; ?>
-                                  </ul>
-                                <?php else : ?>
-                                  <p><?php echo esc_html($video['use_cases']); ?></p>
-                                <?php endif; ?>
-                              </div>
-                            <?php endif; ?>
-                          </div>
-                        </div>
-                      </div>
-                    <?php endif; ?>
+            <!-- Main Content with Sections -->
+            <div class="skill-detail__main" id="skillMainContent">
+              <?php foreach ($content_sections as $index => $section) :
+                $anchor = !empty($section['anchor']) ? sanitize_title($section['anchor']) : generate_anchor_id($section['label']);
+              ?>
+                <section class="skill-detail__section" id="<?php echo esc_attr($anchor); ?>">
+                  <h2 class="skill-detail__section-title"><?php echo esc_html($section['label']); ?></h2>
+                  <div class="skill-detail__section-content">
+                    <?php echo wp_kses_post($section['content']); ?>
                   </div>
-                </article>
+                </section>
               <?php endforeach; ?>
-            <?php else : ?>
-              <!-- Fallback: Use the post content -->
-              <div class="skill-detail__content">
-                <?php the_content(); ?>
-              </div>
-            <?php endif; ?>
+            </div>
 
           </div>
-
         </div>
       </div>
-    </section>
+    <?php else : ?>
+      <!-- Fallback: Use the post content if no sections defined -->
+      <div class="skill-detail">
+        <div class="skill-detail__container">
+          <div class="skill-detail__content">
+            <?php the_content(); ?>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
 
     <!-- How Aera Helps Section -->
     <?php if ($how_aera_helps_items && is_array($how_aera_helps_items)) : ?>
@@ -295,77 +246,6 @@ while (have_posts()) :
 
   </main>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Video card expand/collapse
-      const toggleButtons = document.querySelectorAll('.video-card__toggle');
-
-      toggleButtons.forEach(function(button) {
-        button.addEventListener('click', function() {
-          const targetId = this.getAttribute('data-target');
-          const expandable = document.getElementById(targetId);
-
-          if (expandable) {
-            this.classList.toggle('active');
-            expandable.classList.toggle('active');
-          }
-        });
-      });
-
-      // Tab navigation
-      const tabLinks = document.querySelectorAll('.skill-tabs__link');
-
-      tabLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-
-          // Remove active class from all tabs
-          tabLinks.forEach(function(l) {
-            l.classList.remove('active');
-          });
-
-          // Add active class to clicked tab
-          this.classList.add('active');
-
-          // Scroll to section (optional)
-          const targetId = this.getAttribute('href');
-          const targetSection = document.querySelector(targetId);
-          if (targetSection) {
-            targetSection.scrollIntoView({
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
-      // Sidebar navigation
-      const sidebarLinks = document.querySelectorAll('.skill-detail__sidebar-nav a');
-
-      sidebarLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
-          e.preventDefault();
-
-          // Remove active class from all links
-          sidebarLinks.forEach(function(l) {
-            l.classList.remove('active');
-          });
-
-          // Add active class to clicked link
-          this.classList.add('active');
-
-          // Scroll to video card
-          const targetId = this.getAttribute('href');
-          const targetCard = document.querySelector(targetId);
-          if (targetCard) {
-            targetCard.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          }
-        });
-      });
-    });
-  </script>
 
 <?php endwhile; ?>
 

@@ -117,6 +117,7 @@ $all_resources_query = new WP_Query($all_resources_args);
                   'type_label'  => $type_label,
                   'date'        => $event_date,
                   'cta_label'   => $cta_text,
+                  'city'        => $event_city,
                 )
               );
             endwhile;

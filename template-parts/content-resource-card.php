@@ -45,6 +45,7 @@ if (empty($excerpt)) {
 }
 
 $type_label = $args['type_label'] ?? get_resource_label_for_post_type($post_type);
+$city = $args['city'] ?? '';
 $date_value = $args['date'] ?? get_the_date('c', $post_id);
 $display_date = $date_value ? date_i18n(get_option('date_format'), strtotime($date_value)) : '';
 
@@ -148,6 +149,9 @@ foreach ($link_attrs as $attr => $value) {
       <div class="resource-card__row">
         <?php if ($type_label) : ?>
           <div class="resource-card__type"><?php echo esc_html($type_label); ?></div>
+        <?php endif; ?>
+        <?php if ($city && $post_type === 'event') : ?>
+          <div class="resource-card__city"><?php echo esc_html($city); ?></div>
         <?php endif; ?>
       </div>
 

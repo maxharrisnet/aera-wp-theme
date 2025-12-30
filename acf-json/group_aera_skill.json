@@ -66,6 +66,63 @@
             }
         },
         {
+            "key": "field_content_sections_tab",
+            "label": "Content Sections",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_content_sections",
+            "label": "Content Sections",
+            "name": "content_sections",
+            "type": "repeater",
+            "instructions": "Define the main content sections for this skill. These will appear in both the top tabs and sidebar navigation. Requires ACF Pro.",
+            "required": false,
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Section",
+            "sub_fields": [
+                {
+                    "key": "field_section_label",
+                    "label": "Navigation Label",
+                    "name": "label",
+                    "type": "text",
+                    "instructions": "Label for tabs and sidebar navigation",
+                    "required": true,
+                    "wrapper": {
+                        "width": "50"
+                    }
+                },
+                {
+                    "key": "field_section_anchor",
+                    "label": "Anchor ID",
+                    "name": "anchor",
+                    "type": "text",
+                    "instructions": "Unique anchor ID (e.g., 'overview', 'use-cases'). Will be auto-generated from label if left empty.",
+                    "required": false,
+                    "wrapper": {
+                        "width": "50"
+                    }
+                },
+                {
+                    "key": "field_section_content",
+                    "label": "Content",
+                    "name": "content",
+                    "type": "wysiwyg",
+                    "instructions": "Content for this section",
+                    "required": false,
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1
+                }
+            ]
+        },
+        {
             "key": "field_how_aera_helps_tab",
             "label": "How Aera Helps",
             "name": "",

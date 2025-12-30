@@ -198,6 +198,20 @@ function aera_technology_scripts()
     }
   }
 
+  // Enqueue Skill Detail page scripts
+  if (is_singular('skill')) {
+    $skill_detail_js_path = get_template_directory() . '/js/skill-detail.js';
+    if (file_exists($skill_detail_js_path)) {
+      wp_enqueue_script(
+        'aera-skill-detail',
+        get_template_directory_uri() . '/js/skill-detail.js',
+        array(),
+        filemtime($skill_detail_js_path),
+        true
+      );
+    }
+  }
+
   // Enqueue AeraHub 2025 page scripts
   if (is_page_template('page-aerahub-2025.php')) {
     $aerahub_2025_js_path = get_template_directory() . '/js/aerahub-2025.js';
