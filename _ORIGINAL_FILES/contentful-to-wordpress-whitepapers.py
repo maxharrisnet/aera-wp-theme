@@ -45,6 +45,10 @@ print("\n📄 Extracting whitepaper entries...")
 for entry in data.get('entries', []):
     content_type = entry.get('sys', {}).get('contentType', {}).get('sys', {}).get('id', '')
 
+    # Only process published entries
+    if not entry.get('sys', {}).get('publishedAt'):
+        continue
+
     if content_type == 'events':
         fields = entry.get('fields', {})
         entry_type = fields.get('type', {}).get('en-US', '')

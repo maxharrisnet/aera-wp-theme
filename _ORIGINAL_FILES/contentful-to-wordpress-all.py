@@ -35,6 +35,11 @@ print(f"✅ Loaded {len(assets_lookup)} assets")
 customer_entries = []
 for entry in data.get('entries', []):
     ct_id = entry.get('sys', {}).get('contentType', {}).get('sys', {}).get('id', '')
+
+    # Only process published entries
+    if not entry.get('sys', {}).get('publishedAt'):
+        continue
+
     if ct_id == 'customerPageCards':
         customer_entries.append(entry)
 
