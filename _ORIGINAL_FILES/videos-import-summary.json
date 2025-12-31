@@ -1,0 +1,192 @@
+{
+  "export_date": "2025-12-30",
+  "total_videos": 26,
+  "with_external_links": 24,
+  "with_dates": 26,
+  "with_images": 26,
+  "post_ids": "6001-6026",
+  "videos": [
+    {
+      "title": "Beyond Buzzwords: Where Are Companies Getting Value with AI Today and What\u2019s Ahead?",
+      "date": "2024-11-07",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub24/keynote-session-with-ray-wang-of-constellation-research",
+      "has_image": true
+    },
+    {
+      "title": "The Real Impact of Decision Intelligence at Dell Technologies",
+      "date": "2024-11-07",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub24/keynote-session-with-sasha-koff-of-dell",
+      "has_image": true
+    },
+    {
+      "title": "The Real Impact of Decision Intelligence at The Kraft Heinz Company",
+      "date": "2024-11-07",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub24/the-real-impact-of-decision-intelligence-at-the-kraft-heinz-company",
+      "has_image": true
+    },
+    {
+      "title": "The Real Impact of Decision Intelligence at Becle",
+      "date": "2024-11-07",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub24/the-real-impact-of-decision-intelligence-at-becle",
+      "has_image": true
+    },
+    {
+      "title": "The evolution of Aera and Decision Intelligence",
+      "date": "2024-11-07",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub24/the-evolution-of-aera-and-decision-intelligence",
+      "has_image": true
+    },
+    {
+      "title": "Decision Intelligence in the Age of Agentic AI",
+      "date": "2024-11-07",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub24/aera-ui-and-customer-experience",
+      "has_image": true
+    },
+    {
+      "title": "Speed, Simplicity, Value: Innovations in Aera Decision Cloud\u2122",
+      "date": "2024-11-07",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub24/product-demonstration-lalitha-mustafa",
+      "has_image": true
+    },
+    {
+      "title": "The Real Impact of Decision Intelligence at Merck",
+      "date": "2024-11-07",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub24/the-real-impact-of-decision-intelligence-at-merck",
+      "has_image": true
+    },
+    {
+      "title": "Prepare for the Future of Decision Intelligence at Work: Helping People Succeed and Upskilling Teams",
+      "date": "2024-11-07",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub24/keynote-session-with-joe-dery-of-wgu",
+      "has_image": true
+    },
+    {
+      "title": "Starting and scaling with Aera - Laurent Lefouet",
+      "date": "2024-11-07",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub24/starting-and-scaling-with-aera-laurent-lefouet",
+      "has_image": true
+    },
+    {
+      "title": "Disambiguation Podcast: \"The Use of AI in Decision Intelligence\"",
+      "date": "2024-07-17",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/video1/disambiguation-podcast-the-use-of-ai-in-decision-intelligence",
+      "has_image": true
+    },
+    {
+      "title": "Getting Started with Aera: Test Drive",
+      "date": "2024-05-02",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/test-drive/see-aera-in-action",
+      "has_image": true
+    },
+    {
+      "title": "Scaling Decision Intelligence Success: Delivering Sustained Value Over Time",
+      "date": "2023-11-09",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub/scaling-decision-intelligence-success-delivering-sustained-value-over-time",
+      "has_image": true
+    },
+    {
+      "title": "An Overview of Aera Decision Cloud\u2122",
+      "date": "2023-11-09",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub/an-overview-of-aera-decision-cloud",
+      "has_image": true
+    },
+    {
+      "title": "Setting up for DI Success: Accelerating time to value",
+      "date": "2023-11-09",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub/setting-up-for-di-success-accelerating-time-to-value",
+      "has_image": true
+    },
+    {
+      "title": "Accelerating Time to Value with Decision Intelligence: Results in Weeks, Not Months",
+      "date": "2023-11-09",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub/accelerating-time-to-value-with-decision-intelligence-results-in-weeks-not-months",
+      "has_image": true
+    },
+    {
+      "title": "Decision Intelligence Impact, Value, and Learning: Closing the Loop with a Real-Life Example        ",
+      "date": "2023-11-09",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub/decision-intelligence-impact-value-and-learning-closing-the-loop-with-a-real-life-example",
+      "has_image": true
+    },
+    {
+      "title": "Introduction to the Aera Skills\u2122 Library",
+      "date": "2023-11-09",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub/introduction-to-the-aera-skills-library",
+      "has_image": true
+    },
+    {
+      "title": "A Framework for Delivering Business Value with Decision Intelligence",
+      "date": "2023-11-09",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/aerahub/a-framework-for-delivering-business-value-with-decision-intelligence",
+      "has_image": true
+    },
+    {
+      "title": "inNOWvate 2022: \"Future Fit Supply Chain Decision Making at Unilever\"",
+      "date": "2023-01-04",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/video1/innowvate-2022-uture-fit-supply-chain-decision-making-at-unilever",
+      "has_image": true
+    },
+    {
+      "title": "Decision Intelligence for the CPG Industry",
+      "date": "2023-01-04",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/asset/-decision-intelligence-for-the-cpg-industry",
+      "has_image": true
+    },
+    {
+      "title": "Supply Chain Matters Podcast Episode 21: Decision Intelligence- The Next Frontier In Digital Transformation",
+      "date": "2023-01-03",
+      "type": "Video",
+      "link": "https://theferrarigroup.com/supply-chain-matters-podcast-episode-21-decision-intelligence-the-next-frontier-in-digital-transformation/",
+      "has_image": true
+    },
+    {
+      "title": "Agility trumps planning in fast-moving industries",
+      "date": "2021-01-07",
+      "type": "On-Demand",
+      "link": "https://meet.aeratechnology.com/agility-trumps-planning-in-fast-moving-industries",
+      "has_image": true
+    },
+    {
+      "title": "Welcome to the Self-Driving Enterprise",
+      "date": "2020-11-04",
+      "type": "Video",
+      "link": "https://meet.aeratechnology.com/asset/welcome-to-the-self-driving-enterprise",
+      "has_image": true
+    },
+    {
+      "title": "CXO Talk with Aera's Fred Laluyaux and People-Centered Internet's David Bray: Cognitive Automation and AI in Business",
+      "date": "2019-06-26",
+      "type": "Video",
+      "link": "",
+      "has_image": true
+    },
+    {
+      "title": "CXO Talk with Reckitt's Saqib Mehmood: Cognitive Automation in Pricing, Promotions, and Forecasting",
+      "date": "2019-06-26",
+      "type": "Video",
+      "link": "",
+      "has_image": true
+    }
+  ]
+}
