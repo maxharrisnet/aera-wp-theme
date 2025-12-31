@@ -26,7 +26,7 @@
 
 	&__container {
 		padding: 0 70px;
-		max-width: 1420px;
+		// max-width: 1046px;
 		margin: 0 auto;
 
 		@media (max-width: $max-1024) {
@@ -60,7 +60,9 @@
 		text-decoration: none;
 		color: inherit;
 		display: block;
-		transition: transform 0.3s ease, box-shadow 0.3s ease;
+		transition:
+			transform 0.3s ease,
+			box-shadow 0.3s ease;
 
 		&:hover {
 			transform: translateY(-4px);
@@ -106,4 +108,3 @@
 		margin: 10px 0 0px 0;
 	}
 }
-

@@ -117,12 +117,24 @@ get_header();
               $title = get_field("icon_{$i}_title");
               $description = get_field("icon_{$i}_description");
 
+              // Handle both image array (old) and URL string (new select field)
+              $icon_url = '';
+              $icon_alt = $title;
+              if ($icon) {
+                if (is_array($icon)) {
+                  $icon_url = $icon['url'];
+                  $icon_alt = $icon['alt'] ?: $title;
+                } else {
+                  $icon_url = $icon;
+                }
+              }
+
               if ($title) :
             ?>
                 <div class="skills-home__icon-item">
-                  <?php if ($icon) : ?>
+                  <?php if ($icon_url) : ?>
                     <div class="skills-home__icon-image">
-                      <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt'] ?: $title); ?>" />
+                      <img src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>" />
                     </div>
                   <?php endif; ?>
                   <h3 class="skills-home__icon-item-title"><?php echo esc_html($title); ?></h3>

@@ -14,6 +14,20 @@ $skill_description = get_field('skill_description') ?: get_the_excerpt();
 // Get the first function (skill_function taxonomy) for color coding
 $functions = get_the_terms(get_the_ID(), 'skill_function');
 $function_slug = (!empty($functions) && !is_wp_error($functions)) ? $functions[0]->slug : '';
+
+// Handle both image array (old) and URL string (new select field)
+$icon_url = '';
+$icon_alt = get_the_title();
+if ($skill_icon) {
+	if (is_array($skill_icon)) {
+		// Old format: ACF image field returns array
+		$icon_url = $skill_icon['url'];
+		$icon_alt = $skill_icon['alt'] ?: get_the_title();
+	} else {
+		// New format: ACF select field returns URL string
+		$icon_url = $skill_icon;
+	}
+}
 ?>
 
 <div class="icon-card" data-function="<?php echo esc_attr($function_slug); ?>">
@@ -21,9 +35,9 @@ $function_slug = (!empty($functions) && !is_wp_error($functions)) ? $functions[0
 		<div class="icon-card__top-stripe"></div>
 
 		<div class="icon-card__content">
-			<?php if ($skill_icon) : ?>
+			<?php if ($icon_url) : ?>
 				<div class="icon-card__icon">
-					<img src="<?php echo esc_url($skill_icon['url']); ?>" alt="<?php echo esc_attr($skill_icon['alt'] ?: get_the_title()); ?>" />
+					<img src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>" />
 				</div>
 			<?php endif; ?>
 

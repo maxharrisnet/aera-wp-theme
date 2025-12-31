@@ -314,3 +314,122 @@ function aera_technology_partner_archive_order($query)
   }
 }
 add_action('pre_get_posts', 'aera_technology_partner_archive_order');
+
+/**
+ * ============================================
+ * ICON SELECTOR FUNCTIONALITY
+ * ============================================
+ * Populates ACF select fields with icons from assets/images/icons/ folder
+ * and adds preview functionality
+ */
+
+/**
+ * Populate icon select fields with icons from assets folder
+ *
+ * @param array $field The ACF field array
+ * @return array Modified field array with icon choices
+ */
+function aera_populate_icon_choices($field)
+{
+  // Reset choices
+  $field['choices'] = array();
+
+  // Path to icons folder
+  $icons_dir = get_template_directory() . '/assets/images/icons/';
+  $icons_url = get_template_directory_uri() . '/assets/images/icons/';
+
+  // Get all SVG and PNG icons
+  $icons = glob($icons_dir . '*.{svg,png}', GLOB_BRACE);
+
+  if ($icons) {
+    // Sort alphabetically
+    sort($icons);
+
+    foreach ($icons as $icon_path) {
+      $filename = basename($icon_path);
+      $icon_url = $icons_url . $filename;
+
+      // Create readable label from filename
+      $label = ucwords(str_replace(['-', '_', '.svg', '.png'], [' ', ' ', '', ''], $filename));
+
+      // Use URL as value, readable name as label
+      $field['choices'][$icon_url] = $label;
+    }
+  }
+
+  return $field;
+}
+
+// Apply to skill icon fields
+add_filter('acf/load_field/name=skill_icon', 'aera_populate_icon_choices');
+add_filter('acf/load_field/name=icon_1_icon', 'aera_populate_icon_choices');
+add_filter('acf/load_field/name=icon_2_icon', 'aera_populate_icon_choices');
+add_filter('acf/load_field/name=icon_3_icon', 'aera_populate_icon_choices');
+add_filter('acf/load_field/name=icon_4_icon', 'aera_populate_icon_choices');
+
+/**
+ * Add icon preview to select fields in ACF admin
+ *
+ * @param array $field The ACF field array
+ */
+function aera_add_icon_preview($field)
+{
+  // Only apply to icon fields
+  $icon_fields = array('skill_icon', 'icon_1_icon', 'icon_2_icon', 'icon_3_icon', 'icon_4_icon');
+
+  if (!in_array($field['name'], $icon_fields)) {
+    return;
+  }
+
+  // Only in admin
+  if (!is_admin()) {
+    return;
+  }
+
+  ?>
+  <style>
+    .acf-field[data-name="<?php echo esc_attr($field['name']); ?>"] .icon-preview-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .acf-field[data-name="<?php echo esc_attr($field['name']); ?>"] .icon-preview {
+      width: 60px;
+      height: 60px;
+      padding: 10px;
+      background: #f7f9fa;
+      border: 2px solid #ddd;
+      border-radius: 6px;
+      object-fit: contain;
+    }
+  </style>
+  <script>
+    (function($) {
+      $(document).ready(function() {
+        var $field = $('.acf-field[data-name="<?php echo esc_js($field['name']); ?>"]');
+        var $select = $field.find('select');
+
+        // Create preview container
+        var $previewContainer = $('<div class="icon-preview-container"></div>');
+        var $preview = $('<img class="icon-preview" style="display:none;">');
+        $previewContainer.append($preview);
+        $select.after($previewContainer);
+
+        // Update preview on change
+        $select.on('change', function() {
+          var iconUrl = $(this).val();
+
+          if (iconUrl) {
+            $preview.attr('src', iconUrl).show();
+          } else {
+            $preview.hide();
+          }
+        }).trigger('change');
+      });
+    })(jQuery);
+  </script>
+  <?php
+}
+
+add_action('acf/render_field/type=select', 'aera_add_icon_preview', 10, 1);

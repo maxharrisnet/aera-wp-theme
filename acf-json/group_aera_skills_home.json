@@ -42,11 +42,17 @@
       "key": "field_icon_1_icon",
       "label": "Icon 1 - Icon",
       "name": "icon_1_icon",
-      "type": "image",
-      "instructions": "Icon image",
-      "return_format": "array",
-      "preview_size": "thumbnail",
-      "library": "all",
+      "type": "select",
+      "instructions": "Select an icon from the library",
+      "required": 0,
+      "choices": [],
+      "default_value": "",
+      "allow_null": 1,
+      "multiple": 0,
+      "ui": 1,
+      "ajax": 0,
+      "return_format": "value",
+      "placeholder": "Select an icon...",
       "wrapper": {
         "width": "33"
       }
@@ -76,11 +82,17 @@
       "key": "field_icon_2_icon",
       "label": "Icon 2 - Icon",
       "name": "icon_2_icon",
-      "type": "image",
-      "instructions": "Icon image",
-      "return_format": "array",
-      "preview_size": "thumbnail",
-      "library": "all",
+      "type": "select",
+      "instructions": "Select an icon from the library",
+      "required": 0,
+      "choices": [],
+      "default_value": "",
+      "allow_null": 1,
+      "multiple": 0,
+      "ui": 1,
+      "ajax": 0,
+      "return_format": "value",
+      "placeholder": "Select an icon...",
       "wrapper": {
         "width": "33"
       }
@@ -110,11 +122,17 @@
       "key": "field_icon_3_icon",
       "label": "Icon 3 - Icon",
       "name": "icon_3_icon",
-      "type": "image",
-      "instructions": "Icon image",
-      "return_format": "array",
-      "preview_size": "thumbnail",
-      "library": "all",
+      "type": "select",
+      "instructions": "Select an icon from the library",
+      "required": 0,
+      "choices": [],
+      "default_value": "",
+      "allow_null": 1,
+      "multiple": 0,
+      "ui": 1,
+      "ajax": 0,
+      "return_format": "value",
+      "placeholder": "Select an icon...",
       "wrapper": {
         "width": "33"
       }
@@ -144,11 +162,17 @@
       "key": "field_icon_4_icon",
       "label": "Icon 4 - Icon",
       "name": "icon_4_icon",
-      "type": "image",
-      "instructions": "Icon image",
-      "return_format": "array",
-      "preview_size": "thumbnail",
-      "library": "all",
+      "type": "select",
+      "instructions": "Select an icon from the library",
+      "required": 0,
+      "choices": [],
+      "default_value": "",
+      "allow_null": 1,
+      "multiple": 0,
+      "ui": 1,
+      "ajax": 0,
+      "return_format": "value",
+      "placeholder": "Select an icon...",
       "wrapper": {
         "width": "33"
       }
@@ -425,5 +449,5 @@
   "active": true,
   "description": "Fields for the Skills Home page template",
   "show_in_rest": 1,
-  "modified": 1735000000
+  "modified": 1735608000
 }

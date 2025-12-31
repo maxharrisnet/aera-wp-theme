@@ -79,7 +79,6 @@
 
 @mixin container() {
 	margin: 0 auto;
-
 	padding: 0 $container-gutter-mobile;
 	max-width: $page-width + $container-gutter-mobile * 1;
 

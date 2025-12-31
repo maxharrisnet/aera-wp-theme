@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'sass:color';
 @use '../variables' as *;
 @use '../mixins' as *;
 @use '../grid' as *;
@@ -139,7 +140,7 @@
 		transition: background-color $transition-enter ease;
 
 		&:hover {
-			background-color: darken($color-aquahaze, 3%);
+			background-color: color.adjust($color-aquahaze, $lightness: -3%);
 		}
 
 		&.active {
@@ -240,8 +241,8 @@
 		transition: all $transition-enter ease;
 
 		&:hover {
-			background-color: darken($color-link, 10%);
-			border-color: darken($color-link, 10%);
+			background-color: color.adjust($color-link, $lightness: -10%);
+			border-color: color.adjust($color-link, $lightness: -10%);
 		}
 	}
 
