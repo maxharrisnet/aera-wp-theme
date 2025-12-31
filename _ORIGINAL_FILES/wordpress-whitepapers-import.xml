@@ -1,0 +1,1357 @@
+<?xml version="1.0" ?>
+<rss xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/" version="2.0">
+  <channel>
+    <title>Aera Technology Whitepapers</title>
+    <link>https://aeratechnology.com</link>
+    <description>Whitepaper imports from Contentful</description>
+    <pubDate>Tue, 30 Dec 2025 22:08:35 +0000</pubDate>
+    <language>en-US</language>
+    <wp:wxr_version>1.2</wp:wxr_version>
+    <item>
+      <title>Accelerating Enterprise Decision Intelligence with AI Agents</title>
+      <link>https://aeratechnology.com/whitepaper/accelerating-enterprise-decision-intelligence-with-ai-agents</link>
+      <pubDate>Fri, 07 Nov 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7001</guid>
+      <description/>
+      <content:encoded>Based on new global research from IDC, this paper examines how organizations are advancing their decision-making maturity by connecting data, analytics, execution, and learning within a unified, intelligent framework. The findings show how decision intelligence has evolved from AI-assisted insights to AI-agent-enabled action, driving measurable gains in speed, consistency, and business impact. </content:encoded>
+      <excerpt:encoded>Based on new global research from IDC, this paper examines how organizations are advancing their decision-making maturity by connecting data, analytics, execution, and learning within a unified, intel</excerpt:encoded>
+      <wp:post_id>7001</wp:post_id>
+      <wp:post_date>2025-11-07 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-11-07 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-11-07 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-11-07 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>accelerating-enterprise-decision-intelligence-with-ai-agents</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/whitepapers/accelerating-enterprise-decision-intelligence-with-ai-agents</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Based on new global research from IDC, this paper examines how organizations are advancing their decision-making maturity by connecting data, analytics, execution, and learning within a unified, intelligent framework. The findings show how decision intelligence has evolved from AI-assisted insights to AI-agent-enabled action, driving measurable gains in speed, consistency, and business impact. </wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Accelerating Enterprise Decision Intelligence with AI Agents | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Based on new global research from IDC, this paper examines how organizations are advancing their decision-making maturity by connecting data, analytics, ex</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Reimagining Material Planning with AI Agents</title>
+      <link>https://aeratechnology.com/whitepaper/reimagining-material-planning-with-ai-agents</link>
+      <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7002</guid>
+      <description/>
+      <content:encoded>Download our whitepaper to discover how AI-powered decision intelligence turns material planning from a manual, reactive task into a proactive, intelligent process — reducing costs, preventing disruptions, and strengthening supply chain resilience.</content:encoded>
+      <excerpt:encoded>Download our whitepaper to discover how AI-powered decision intelligence turns material planning from a manual, reactive task into a proactive, intelligent process — reducing costs, preventing disrupt</excerpt:encoded>
+      <wp:post_id>7002</wp:post_id>
+      <wp:post_date>2025-10-10 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-10-10 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-10-10 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-10-10 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>reimagining-material-planning-with-ai-agents</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/reimagining-material-planning-with-ai-agents</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to discover how AI-powered decision intelligence turns material planning from a manual, reactive task into a proactive, intelligent process — reducing costs, preventing disruptions, and strengthening supply chain resilience.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Reimagining Material Planning with AI Agents | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to discover how AI-powered decision intelligence turns material planning from a manual, reactive task into a proactive, intelligent</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Transforming the Clinical Trial Journey with Decision Intelligence</title>
+      <link>https://aeratechnology.com/whitepaper/transforming-the-clinical-trial-journey-with-decision-intelligence</link>
+      <pubDate>Wed, 20 Aug 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7003</guid>
+      <description/>
+      <content:encoded>Download our whitepaper to discover how decision intelligence is transforming clinical supply chains — enabling life sciences organizations to detect risks earlier, respond more intelligently, and safeguard global trial execution.</content:encoded>
+      <excerpt:encoded>Download our whitepaper to discover how decision intelligence is transforming clinical supply chains — enabling life sciences organizations to detect risks earlier, respond more intelligently, and saf</excerpt:encoded>
+      <wp:post_id>7003</wp:post_id>
+      <wp:post_date>2025-08-20 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-08-20 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-08-20 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-08-20 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>transforming-the-clinical-trial-journey-with-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/transforming-the-clinical-trial-journey-with-decision-intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to discover how decision intelligence is transforming clinical supply chains — enabling life sciences organizations to detect risks earlier, respond more intelligently, and safeguard global trial execution.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Transforming the Clinical Trial Journey with Decision Intelligence | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to discover how decision intelligence is transforming clinical supply chains — enabling life sciences organizations to detect risks</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>From Waste, Excess, and Obsolescence to Intelligent Inventory Management</title>
+      <link>https://aeratechnology.com/whitepaper/from-waste-excess-and-obsolescence-to-intelligent-inventory-management</link>
+      <pubDate>Tue, 12 Aug 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7004</guid>
+      <description/>
+      <content:encoded>Download our whitepaper to discover how enterprises are transforming inventory management with decision intelligence — preventing waste, excess, and obsolescence before they erode margins, disrupt service, or undermine sustainability goals.</content:encoded>
+      <excerpt:encoded>Download our whitepaper to discover how enterprises are transforming inventory management with decision intelligence — preventing waste, excess, and obsolescence before they erode margins, disrupt ser</excerpt:encoded>
+      <wp:post_id>7004</wp:post_id>
+      <wp:post_date>2025-08-12 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-08-12 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-08-12 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-08-12 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>from-waste-excess-and-obsolescence-to-intelligent-inventory-management</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/from-waste-excess-and-obsolescence-to-intelligent-inventory-management</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to discover how enterprises are transforming inventory management with decision intelligence — preventing waste, excess, and obsolescence before they erode margins, disrupt service, or undermine sustainability goals.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>From Waste, Excess, and Obsolescence to Intelligent Inventory Management | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to discover how enterprises are transforming inventory management with decision intelligence — preventing waste, excess, and obsole</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>The AI Advantage: Powering the Future of High-Tech Supply Chains</title>
+      <link>https://aeratechnology.com/whitepaper/the-ai-advantage-powering-the-future-of-high-tech-supply-chains</link>
+      <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7005</guid>
+      <description/>
+      <content:encoded>Download our whitepaper to explore how high-tech leaders are transforming their supply chain strategies with real-time, AI-driven decision intelligence</content:encoded>
+      <excerpt:encoded>Download our whitepaper to explore how high-tech leaders are transforming their supply chain strategies with real-time, AI-driven decision intelligence</excerpt:encoded>
+      <wp:post_id>7005</wp:post_id>
+      <wp:post_date>2025-05-30 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-05-30 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-05-30 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-05-30 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>the-ai-advantage-powering-the-future-of-high-tech-supply-chains</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/the-ai-advantage-powering-the-future-of-high-tech-supply-chains</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to explore how high-tech leaders are transforming their supply chain strategies with real-time, AI-driven decision intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>The AI Advantage: Powering the Future of High-Tech Supply Chains | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to explore how high-tech leaders are transforming their supply chain strategies with real-time, AI-driven decision intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Aera with Agentic AI: The Next Phase of Decision Intelligence</title>
+      <link>https://aeratechnology.com/whitepaper/aera-with-agentic-ai-the-next-phase-of-decision-intelligence</link>
+      <pubDate>Wed, 30 Apr 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7006</guid>
+      <description/>
+      <content:encoded>Download our whitepaper to learn how Aera with agentic AI is transforming enterprise decision-making by integrating dynamic reasoning, multi-agent collaboration, natural-language interfaces, and autonomous execution into decision intelligence.</content:encoded>
+      <excerpt:encoded>Download our whitepaper to learn how Aera with agentic AI is transforming enterprise decision-making by integrating dynamic reasoning, multi-agent collaboration, natural-language interfaces, and auton</excerpt:encoded>
+      <wp:post_id>7006</wp:post_id>
+      <wp:post_date>2025-04-30 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-04-30 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-04-30 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-04-30 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>aera-with-agentic-ai-the-next-phase-of-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/e-book/aera-with-agentic-ai-the-next-phase-of-decision-intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to learn how Aera with agentic AI is transforming enterprise decision-making by integrating dynamic reasoning, multi-agent collaboration, natural-language interfaces, and autonomous execution into decision intelligence.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Aera with Agentic AI: The Next Phase of Decision Intelligence | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to learn how Aera with agentic AI is transforming enterprise decision-making by integrating dynamic reasoning, multi-agent collabor</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>The AI Formula for the Future of Supply Chain Management</title>
+      <link>https://aeratechnology.com/whitepaper/the-ai-formula-for-the-future-of-supply-chain-management</link>
+      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7007</guid>
+      <description/>
+      <content:encoded>Download our whitepaper to learn how top companies across industries are transforming their supply chain operations through AI-powered decision-making, uncovering new revenue streams and driving substantial cost reductions.</content:encoded>
+      <excerpt:encoded>Download our whitepaper to learn how top companies across industries are transforming their supply chain operations through AI-powered decision-making, uncovering new revenue streams and driving subst</excerpt:encoded>
+      <wp:post_id>7007</wp:post_id>
+      <wp:post_date>2025-03-28 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-03-28 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-03-28 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-03-28 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>the-ai-formula-for-the-future-of-supply-chain-management</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/e-book/the-ai-formula-for-the-future-of-supply-chain-management</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to learn how top companies across industries are transforming their supply chain operations through AI-powered decision-making, uncovering new revenue streams and driving substantial cost reductions.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>The AI Formula for the Future of Supply Chain Management | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Download our whitepaper to learn how top companies across industries are transforming their supply chain operations through AI-powered decision-making, unc</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Prescription for Excellence: Decision Intelligence in Modern Pharmaceutical Operations</title>
+      <link>https://aeratechnology.com/whitepaper/prescription-for-excellence-decision-intelligence-in-modern-pharmaceutical-operations</link>
+      <pubDate>Thu, 13 Feb 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7008</guid>
+      <description/>
+      <content:encoded>Discover how leading pharmaceutical and life sciences companies are revolutionizing their supply chain operations with AI-driven decision-making, building more agile and efficient operations and driving better outcomes for organizations and patients.</content:encoded>
+      <excerpt:encoded>Discover how leading pharmaceutical and life sciences companies are revolutionizing their supply chain operations with AI-driven decision-making, building more agile and efficient operations and drivi</excerpt:encoded>
+      <wp:post_id>7008</wp:post_id>
+      <wp:post_date>2025-02-13 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-02-13 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-02-13 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-02-13 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>prescription-for-excellence-decision-intelligence-in-modern-pharmaceutical-operations</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/e-book/prescription-for-excellence-decision-intelligence-in-modern-pharmaceutical-operations</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Discover how leading pharmaceutical and life sciences companies are revolutionizing their supply chain operations with AI-driven decision-making, building more agile and efficient operations and driving better outcomes for organizations and patients.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Prescription for Excellence: Decision Intelligence in Modern Pharmaceutical Operations | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Discover how leading pharmaceutical and life sciences companies are revolutionizing their supply chain operations with AI-driven decision-making, building </wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Frontier Technologies in Industrial Operations: The Rise of Artificial Intelligence Agents</title>
+      <link>https://aeratechnology.com/whitepaper/frontier-technologies-in-industrial-operations-the-rise-of-artificial-intelligence-agents</link>
+      <pubDate>Tue, 28 Jan 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7009</guid>
+      <description/>
+      <content:encoded>Published and featured at the World Economic Forum Annual Meeting in Davos — with a contribution from Aera Technology — this new report, Frontier Technologies in Industrial Operations: The Rise of AI Agents, highlights the impact of AI agents in industrial operations and their ability to shape the future of manufacturing and industrial operations. This report is part of a new WEF series, AI Transformation of Industries.</content:encoded>
+      <excerpt:encoded>Published and featured at the World Economic Forum Annual Meeting in Davos — with a contribution from Aera Technology — this new report, Frontier Technologies in Industrial Operations: The Rise of AI </excerpt:encoded>
+      <wp:post_id>7009</wp:post_id>
+      <wp:post_date>2025-01-28 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-01-28 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-01-28 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-01-28 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>frontier-technologies-in-industrial-operations-the-rise-of-artificial-intelligence-agents</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/hubfs/351156_Frontier_Technologies_in_Industrial_Operations_V9.pdf</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Published and featured at the World Economic Forum Annual Meeting in Davos — with a contribution from Aera Technology — this new report, Frontier Technologies in Industrial Operations: The Rise of AI Agents, highlights the impact of AI agents in industrial operations and their ability to shape the future of manufacturing and industrial operations. This report is part of a new WEF series, AI Transformation of Industries.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Frontier Technologies in Industrial Operations: The Rise of Artificial Intelligence Agents | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Published and featured at the World Economic Forum Annual Meeting in Davos — with a contribution from Aera Technology — this new report, Frontier Technolog</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>The AI Recipe for the Future of Food and Beverage Supply Chains</title>
+      <link>https://aeratechnology.com/whitepaper/the-ai-recipe-for-the-future-of-food-and-beverage-supply-chains</link>
+      <pubDate>Mon, 23 Dec 2024 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7010</guid>
+      <description/>
+      <content:encoded>Discover how leading food and beverage companies are revolutionizing their supply chain operations with AI-driven decision-making, unlocking new revenue opportunities and achieving significant cost savings.</content:encoded>
+      <excerpt:encoded>Discover how leading food and beverage companies are revolutionizing their supply chain operations with AI-driven decision-making, unlocking new revenue opportunities and achieving significant cost sa</excerpt:encoded>
+      <wp:post_id>7010</wp:post_id>
+      <wp:post_date>2024-12-23 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2024-12-23 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2024-12-23 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2024-12-23 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>the-ai-recipe-for-the-future-of-food-and-beverage-supply-chains</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/e-book/the_ai_recipe_for_the_future_of_food_beverage_supply_chains</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Discover how leading food and beverage companies are revolutionizing their supply chain operations with AI-driven decision-making, unlocking new revenue opportunities and achieving significant cost savings.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>The AI Recipe for the Future of Food and Beverage Supply Chains | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Discover how leading food and beverage companies are revolutionizing their supply chain operations with AI-driven decision-making, unlocking new revenue op</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Aera Company Overview </title>
+      <link>https://aeratechnology.com/whitepaper/aera-company-overview</link>
+      <pubDate>Fri, 06 Sep 2024 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7011</guid>
+      <description/>
+      <content:encoded>Learn why Aera Technology is a pioneer in the growing category of Decision Intelligence.</content:encoded>
+      <excerpt:encoded>Learn why Aera Technology is a pioneer in the growing category of Decision Intelligence.</excerpt:encoded>
+      <wp:post_id>7011</wp:post_id>
+      <wp:post_date>2024-09-06 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2024-09-06 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2024-09-06 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2024-09-06 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>aera-company-overview</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://assets.ctfassets.net/mh1amgo8m7ts/1TxYfa2DiHAIIqZidA9ZOM/c4118b6df4f8c5d4cbfc9a354986580c/Aera_Company_Overview_-_FY25.pdf</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Learn why Aera Technology is a pioneer in the growing category of Decision Intelligence.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Aera Company Overview  | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Learn why Aera Technology is a pioneer in the growing category of Decision Intelligence.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>IDC MarketScape: Worldwide Decision Intelligence Platforms 2024</title>
+      <link>https://aeratechnology.com/whitepaper/idc-marketscape-worldwide-decision-intelligence-platforms-2024</link>
+      <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7012</guid>
+      <description/>
+      <content:encoded>Aera Technology has been named a Leader in the IDC MarketScape for Decision Intelligence Platforms 2024.</content:encoded>
+      <excerpt:encoded>Aera Technology has been named a Leader in the IDC MarketScape for Decision Intelligence Platforms 2024.</excerpt:encoded>
+      <wp:post_id>7012</wp:post_id>
+      <wp:post_date>2024-08-30 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2024-08-30 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2024-08-30 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2024-08-30 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>idc-marketscape-worldwide-decision-intelligence-platforms-2024</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/whitepaper/idc-marketscape-worldwide-decision-intelligence-platforms-2024</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Aera Technology has been named a Leader in the IDC MarketScape for Decision Intelligence Platforms 2024.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>IDC MarketScape: Worldwide Decision Intelligence Platforms 2024 | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Aera Technology has been named a Leader in the IDC MarketScape for Decision Intelligence Platforms 2024.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Faster, Better Decisions in CPG:  The Top 5 Decision Intelligence Use Cases</title>
+      <link>https://aeratechnology.com/whitepaper/faster-better-decisions-in-cpg-the-top-5-decision-intelligence-use-cases</link>
+      <pubDate>Thu, 29 Aug 2024 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7013</guid>
+      <description/>
+      <content:encoded>Introduction to AI for decision making, including an overview of Aera Decision Cloud™ and AI skills that digitize and automate decision making</content:encoded>
+      <excerpt:encoded>Introduction to AI for decision making, including an overview of Aera Decision Cloud™ and AI skills that digitize and automate decision making</excerpt:encoded>
+      <wp:post_id>7013</wp:post_id>
+      <wp:post_date>2024-08-29 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2024-08-29 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2024-08-29 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2024-08-29 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>faster-better-decisions-in-cpg-the-top-5-decision-intelligence-use-cases</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/e-book/the-top-5-decision-intelligence-use-cases</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Introduction to AI for decision making, including an overview of Aera Decision Cloud™ and AI skills that digitize and automate decision making</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Faster, Better Decisions in CPG:  The Top 5 Decision Intelligence Use Cases | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Introduction to AI for decision making, including an overview of Aera Decision Cloud™ and AI skills that digitize and automate decision making</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Arion Research – Decision Intelligence Research Report</title>
+      <link>https://aeratechnology.com/whitepaper/arion-research-decision-intelligence-research-report</link>
+      <pubDate>Wed, 17 Jul 2024 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7014</guid>
+      <description/>
+      <content:encoded>AI enables companies to unlock new sources of value and gain a competitive advantage by making better decisions.</content:encoded>
+      <excerpt:encoded>AI enables companies to unlock new sources of value and gain a competitive advantage by making better decisions.</excerpt:encoded>
+      <wp:post_id>7014</wp:post_id>
+      <wp:post_date>2024-07-17 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2024-07-17 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2024-07-17 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2024-07-17 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>arion-research-decision-intelligence-research-report</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/whitepaper/arion-research-decision-intelligence-research-report</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>AI enables companies to unlock new sources of value and gain a competitive advantage by making better decisions.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Arion Research – Decision Intelligence Research Report | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>AI enables companies to unlock new sources of value and gain a competitive advantage by making better decisions.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>IDC: “What Every Executive Needs to Know About AI-Powered Decision Intelligence”</title>
+      <link>https://aeratechnology.com/whitepaper/idc-what-every-executive-needs-to-know-about-ai-powered-decision-intelligence</link>
+      <pubDate>Thu, 09 Nov 2023 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7015</guid>
+      <description/>
+      <content:encoded>Every day, employees and business leaders make hundreds, if not thousands, of decisions ...</content:encoded>
+      <excerpt:encoded>Every day, employees and business leaders make hundreds, if not thousands, of decisions ...</excerpt:encoded>
+      <wp:post_id>7015</wp:post_id>
+      <wp:post_date>2023-11-09 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2023-11-09 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2023-11-09 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2023-11-09 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>idc-what-every-executive-needs-to-know-about-ai-powered-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/whitepaper/idc-what-every-executive-needs-to-know-ai</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Every day, employees and business leaders make hundreds, if not thousands, of decisions ...</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>IDC: “What Every Executive Needs to Know About AI-Powered Decision Intelligence” | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Every day, employees and business leaders make hundreds, if not thousands, of decisions ...</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>IDC: “A Case for Decision Intelligence: From ‘What Data Is Needed?’ to ‘What Decisions Need to Be Made?’”</title>
+      <link>https://aeratechnology.com/whitepaper/idc-a-case-for-decision-intelligence-from-what-data-is-needed-to-what-decisions-need-to-be-made</link>
+      <pubDate>Tue, 18 Jul 2023 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7016</guid>
+      <description/>
+      <content:encoded>Decision Intelligence is an emerging technology that is driving proven, quantifiable benefits across the enterprise …</content:encoded>
+      <excerpt:encoded>Decision Intelligence is an emerging technology that is driving proven, quantifiable benefits across the enterprise …</excerpt:encoded>
+      <wp:post_id>7016</wp:post_id>
+      <wp:post_date>2023-07-18 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2023-07-18 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2023-07-18 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2023-07-18 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>idc-a-case-for-decision-intelligence-from-what-data-is-needed-to-what-decisions-need-to-be-made</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/idc-perspective-a-case-for-decision-intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Decision Intelligence is an emerging technology that is driving proven, quantifiable benefits across the enterprise …</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>IDC: “A Case for Decision Intelligence: From ‘What Data Is Needed?’ to ‘What Decisions Need to Be Made?’” | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Decision Intelligence is an emerging technology that is driving proven, quantifiable benefits across the enterprise …</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Gartner® Maverick* Research:  It Is Time to Move Beyond Traditional S&amp;OP – Introducing Decision-Centric Planning</title>
+      <link>https://aeratechnology.com/whitepaper/gartner-maverick-research-it-is-time-to-move-beyond-traditional-sop-introducing-decision-centric-planning</link>
+      <pubDate>Mon, 12 Jun 2023 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7017</guid>
+      <description/>
+      <content:encoded>Sales and Operations Planning was meant to align an entire organization to one plan, one process, and one vision ...</content:encoded>
+      <excerpt:encoded>Sales and Operations Planning was meant to align an entire organization to one plan, one process, and one vision ...</excerpt:encoded>
+      <wp:post_id>7017</wp:post_id>
+      <wp:post_date>2023-06-12 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2023-06-12 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2023-06-12 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2023-06-12 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>gartner-maverick-research-it-is-time-to-move-beyond-traditional-sop-introducing-decision-centric-planning</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/introducing-decision-centric-planning</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Sales and Operations Planning was meant to align an entire organization to one plan, one process, and one vision ...</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Gartner® Maverick* Research:  It Is Time to Move Beyond Traditional S&amp;OP – Introducing Decision-Centric Planning | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Sales and Operations Planning was meant to align an entire organization to one plan, one process, and one vision ...</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Decision Intelligence: Unlocking the Full Potential of AI for the Enterprise</title>
+      <link>https://aeratechnology.com/whitepaper/decision-intelligence-unlocking-the-full-potential-of-ai-for-the-enterprise</link>
+      <pubDate>Wed, 22 Mar 2023 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7018</guid>
+      <description/>
+      <content:encoded>To realize the full promise of artificial intelligence (AI) and machine learning (ML), many organizations need to overcome significant challenges</content:encoded>
+      <excerpt:encoded>To realize the full promise of artificial intelligence (AI) and machine learning (ML), many organizations need to overcome significant challenges</excerpt:encoded>
+      <wp:post_id>7018</wp:post_id>
+      <wp:post_date>2023-03-22 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2023-03-22 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2023-03-22 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2023-03-22 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>decision-intelligence-unlocking-the-full-potential-of-ai-for-the-enterprise</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/decision-intelligence-unlocking-the-full-potential-of-ai-for-the-enterprise</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>To realize the full promise of artificial intelligence (AI) and machine learning (ML), many organizations need to overcome significant challenges</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Decision Intelligence: Unlocking the Full Potential of AI for the Enterprise | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>To realize the full promise of artificial intelligence (AI) and machine learning (ML), many organizations need to overcome significant challenges</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Build Decision Agility Now</title>
+      <link>https://aeratechnology.com/whitepaper/build-decision-agility-now</link>
+      <pubDate>Mon, 31 Oct 2022 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7019</guid>
+      <description/>
+      <content:encoded>This whitepaper shows how Decision Intelligence is helping companies embed resilience and responsiveness at every level of decision making.</content:encoded>
+      <excerpt:encoded>This whitepaper shows how Decision Intelligence is helping companies embed resilience and responsiveness at every level of decision making.</excerpt:encoded>
+      <wp:post_id>7019</wp:post_id>
+      <wp:post_date>2022-10-31 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2022-10-31 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2022-10-31 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2022-10-31 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>build-decision-agility-now</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/en/build-decision-agility-now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>This whitepaper shows how Decision Intelligence is helping companies embed resilience and responsiveness at every level of decision making.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Build Decision Agility Now | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>This whitepaper shows how Decision Intelligence is helping companies embed resilience and responsiveness at every level of decision making.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Why AI-Managed Supply Chains Have Fallen Short and How to Fix Them</title>
+      <link>https://aeratechnology.com/whitepaper/why-ai-managed-supply-chains-have-fallen-short-and-how-to-fix-them</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7020</guid>
+      <description/>
+      <content:encoded>Our study with BCG highlights why companies have struggled to maximize value from AI in supply chains – and how today’s technology provides a solution.</content:encoded>
+      <excerpt:encoded>Our study with BCG highlights why companies have struggled to maximize value from AI in supply chains – and how today’s technology provides a solution.</excerpt:encoded>
+      <wp:post_id>7020</wp:post_id>
+      <wp:post_date>2022-09-19 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2022-09-19 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2022-09-19 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2022-09-19 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>why-ai-managed-supply-chains-have-fallen-short-and-how-to-fix-them</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/en/why-ai-managed-supply-chains-have-fallen-short-and-how-to-fix-them</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Our study with BCG highlights why companies have struggled to maximize value from AI in supply chains – and how today’s technology provides a solution.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Why AI-Managed Supply Chains Have Fallen Short and How to Fix Them | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Our study with BCG highlights why companies have struggled to maximize value from AI in supply chains – and how today’s technology provides a solution.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Live Your Best Brand Now: Deliver Unmatched Customer Experience, Risk Mitigation, and Profit with Decision Intelligence</title>
+      <link>https://aeratechnology.com/whitepaper/live-your-best-brand-now-deliver-unmatched-customer-experience-risk-mitigation-and-profit-with-decision-intelligence</link>
+      <pubDate>Thu, 08 Sep 2022 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7021</guid>
+      <description/>
+      <content:encoded>This white paper shows how CPG companies can evolve their decision-making processes to best deliver what customers demand.</content:encoded>
+      <excerpt:encoded>This white paper shows how CPG companies can evolve their decision-making processes to best deliver what customers demand.</excerpt:encoded>
+      <wp:post_id>7021</wp:post_id>
+      <wp:post_date>2022-09-08 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2022-09-08 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2022-09-08 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2022-09-08 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>live-your-best-brand-now-deliver-unmatched-customer-experience-risk-mitigation-and-profit-with-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/deliver-unmatched-customer-experience-risk-mitigation-and-profit-with-decision-intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>This white paper shows how CPG companies can evolve their decision-making processes to best deliver what customers demand.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Live Your Best Brand Now: Deliver Unmatched Customer Experience, Risk Mitigation, and Profit with Decision Intelligence | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>This white paper shows how CPG companies can evolve their decision-making processes to best deliver what customers demand.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Regain Control of Order Fulfillment Processes with Decision Intelligence</title>
+      <link>https://aeratechnology.com/whitepaper/regain-control-of-order-fulfillment-processes-with-decision-intelligence</link>
+      <pubDate>Wed, 06 Jul 2022 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7022</guid>
+      <description/>
+      <content:encoded>This white paper details how you can overcome market volatility by gaining the ability to make decisions in real time.</content:encoded>
+      <excerpt:encoded>This white paper details how you can overcome market volatility by gaining the ability to make decisions in real time.</excerpt:encoded>
+      <wp:post_id>7022</wp:post_id>
+      <wp:post_date>2022-07-06 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2022-07-06 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2022-07-06 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2022-07-06 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>regain-control-of-order-fulfillment-processes-with-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/regain-control-of-order-fulfillment-processes-with-decision-intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>This white paper details how you can overcome market volatility by gaining the ability to make decisions in real time.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Regain Control of Order Fulfillment Processes with Decision Intelligence | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>This white paper details how you can overcome market volatility by gaining the ability to make decisions in real time.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Reinventing Sourcing and Procurement with Decision Intelligence</title>
+      <link>https://aeratechnology.com/whitepaper/reinventing-sourcing-and-procurement-with-decision-intelligence</link>
+      <pubDate>Mon, 30 May 2022 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7023</guid>
+      <description/>
+      <content:encoded>This paper reveals how Decision Intelligence platforms enable procurement organizations to orchestrate the end-to-end decision-making process</content:encoded>
+      <excerpt:encoded>This paper reveals how Decision Intelligence platforms enable procurement organizations to orchestrate the end-to-end decision-making process</excerpt:encoded>
+      <wp:post_id>7023</wp:post_id>
+      <wp:post_date>2022-05-30 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2022-05-30 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2022-05-30 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2022-05-30 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>reinventing-sourcing-and-procurement-with-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/reinventing-sourcing-and-procurement-with-decision-intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>This paper reveals how Decision Intelligence platforms enable procurement organizations to orchestrate the end-to-end decision-making process</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Reinventing Sourcing and Procurement with Decision Intelligence | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>This paper reveals how Decision Intelligence platforms enable procurement organizations to orchestrate the end-to-end decision-making process</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Re-imagining Inventory Optimization with Decision Intelligence</title>
+      <link>https://aeratechnology.com/whitepaper/re-imagining-inventory-optimization-with-decision-intelligence</link>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7024</guid>
+      <description/>
+      <content:encoded>For decades large enterprises have been seeking to operate with the minimum amount of inventory without sacrificing customer service. But that is a very delicate balance and most have simply succeeded in managing inventory, not optimizing it.</content:encoded>
+      <excerpt:encoded>For decades large enterprises have been seeking to operate with the minimum amount of inventory without sacrificing customer service. But that is a very delicate balance and most have simply succeeded</excerpt:encoded>
+      <wp:post_id>7024</wp:post_id>
+      <wp:post_date>2022-03-16 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2022-03-16 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2022-03-16 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2022-03-16 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>re-imagining-inventory-optimization-with-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/re-imagining-inventory-optimization-with-cognitive-technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>For decades large enterprises have been seeking to operate with the minimum amount of inventory without sacrificing customer service. But that is a very delicate balance and most have simply succeeded in managing inventory, not optimizing it.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Re-imagining Inventory Optimization with Decision Intelligence | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>For decades large enterprises have been seeking to operate with the minimum amount of inventory without sacrificing customer service. But that is a very de</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>How Decision Intelligence Unlocks the Future of the Enterprise</title>
+      <link>https://aeratechnology.com/whitepaper/how-decision-intelligence-unlocks-the-future-of-the-enterprise</link>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7025</guid>
+      <description/>
+      <content:encoded>The transformative power of digital technology is redefining the enterprise. For established businesses, it’s not just a matter of catching up to where the leaders are today. Survival depends on leaping ahead to where they’ll be tomorrow.</content:encoded>
+      <excerpt:encoded>The transformative power of digital technology is redefining the enterprise. For established businesses, it’s not just a matter of catching up to where the leaders are today. Survival depends on leapi</excerpt:encoded>
+      <wp:post_id>7025</wp:post_id>
+      <wp:post_date>2022-03-16 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2022-03-16 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2022-03-16 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2022-03-16 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>how-decision-intelligence-unlocks-the-future-of-the-enterprise</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/how-cognitive-automation-unlocks-the-future-enterprise</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>The transformative power of digital technology is redefining the enterprise. For established businesses, it’s not just a matter of catching up to where the leaders are today. Survival depends on leaping ahead to where they’ll be tomorrow.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>How Decision Intelligence Unlocks the Future of the Enterprise | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>The transformative power of digital technology is redefining the enterprise. For established businesses, it’s not just a matter of catching up to where the</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Strategic Agility and Absorbing Supply Chain Shocks</title>
+      <link>https://aeratechnology.com/whitepaper/strategic-agility-and-absorbing-supply-chain-shocks</link>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7026</guid>
+      <description/>
+      <content:encoded>Decision Intelligence is a new model that is being brought into play to help supply chains during a crisis and prepare for the future.</content:encoded>
+      <excerpt:encoded>Decision Intelligence is a new model that is being brought into play to help supply chains during a crisis and prepare for the future.</excerpt:encoded>
+      <wp:post_id>7026</wp:post_id>
+      <wp:post_date>2022-03-16 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2022-03-16 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2022-03-16 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2022-03-16 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>strategic-agility-and-absorbing-supply-chain-shocks</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/en/strategicagility_supplychain</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Decision Intelligence is a new model that is being brought into play to help supply chains during a crisis and prepare for the future.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Strategic Agility and Absorbing Supply Chain Shocks | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Decision Intelligence is a new model that is being brought into play to help supply chains during a crisis and prepare for the future.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>A CIO's Guide to Leveraging Decision Intelligence as a Strategic Asset</title>
+      <link>https://aeratechnology.com/whitepaper/a-cios-guide-to-leveraging-decision-intelligence-as-a-strategic-asset</link>
+      <pubDate>Wed, 16 Mar 2022 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7027</guid>
+      <description/>
+      <content:encoded>Successfully adopting disruptive technologies is one of the biggest yet rewarding efforts of CIOs and IT leaders. </content:encoded>
+      <excerpt:encoded>Successfully adopting disruptive technologies is one of the biggest yet rewarding efforts of CIOs and IT leaders. </excerpt:encoded>
+      <wp:post_id>7027</wp:post_id>
+      <wp:post_date>2022-03-16 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2022-03-16 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2022-03-16 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2022-03-16 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>a-cios-guide-to-leveraging-decision-intelligence-as-a-strategic-asset</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/cioguide</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Successfully adopting disruptive technologies is one of the biggest yet rewarding efforts of CIOs and IT leaders. </wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>A CIO's Guide to Leveraging Decision Intelligence as a Strategic Asset | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Successfully adopting disruptive technologies is one of the biggest yet rewarding efforts of CIOs and IT leaders. </wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Cognitive Automation Makes Touchless Demand Planning a Reality</title>
+      <link>https://aeratechnology.com/whitepaper/cognitive-automation-makes-touchless-demand-planning-a-reality</link>
+      <pubDate>Thu, 03 Oct 2019 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=whitepaper&amp;p=7028</guid>
+      <description/>
+      <content:encoded>Forecasting and demand planning has always been difficult and fraught with guesswork, but it’s only going to get worse. Today planners struggle to incorporate real-time data to improve models. With the amount of global real-time data set to explode, that challenge is about to skyrocket.
+</content:encoded>
+      <excerpt:encoded>Forecasting and demand planning has always been difficult and fraught with guesswork, but it’s only going to get worse. Today planners struggle to incorporate real-time data to improve models. With th</excerpt:encoded>
+      <wp:post_id>7028</wp:post_id>
+      <wp:post_date>2019-10-03 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2019-10-03 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2019-10-03 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2019-10-03 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>cognitive-automation-makes-touchless-demand-planning-a-reality</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>whitepaper</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/cognitive-automation-makes-touchless-demand-planning-a-reality</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Download</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Forecasting and demand planning has always been difficult and fraught with guesswork, but it’s only going to get worse. Today planners struggle to incorporate real-time data to improve models. With the amount of global real-time data set to explode, that challenge is about to skyrocket.
+</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Cognitive Automation Makes Touchless Demand Planning a Reality | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Forecasting and demand planning has always been difficult and fraught with guesswork, but it’s only going to get worse. Today planners struggle to incorpor</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence whitepaper</wp:meta_value>
+      </wp:postmeta>
+    </item>
+  </channel>
+</rss>

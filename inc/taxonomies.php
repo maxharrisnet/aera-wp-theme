@@ -69,15 +69,6 @@ function register_taxonomies(): void
       ),
       'post_types' => array('webinar'),
     ),
-    'skillset'      => array(
-      'singular' => __('Skillset', 'aera'),
-      'plural'   => __('Skillsets', 'aera'),
-      'slug'     => 'skillset',
-      'args'     => array(
-        'hierarchical' => true,
-      ),
-      'post_types' => array('skill'),
-    ),
     'skill_function' => array(
       'singular' => __('Function', 'aera'),
       'plural'   => __('Functions', 'aera'),
