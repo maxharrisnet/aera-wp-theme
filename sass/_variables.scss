@@ -25,14 +25,22 @@ $color-ecruwhite: #f7f5e9;
 
 // functional
 $color-govenorbay: #4237b8;
-$color-bahamablue: #00619e;
-$color-deepcerulean: #00819e;
-$color-persiangreen: #009d95;
+$color-bahamablue: #00619e; //aera 1
+$color-deepcerulean: #00818e; // brand 2
+$color-persiangreen: #009d95; // brand 3
 
-$color-poloblue: #96b1d8;
+$color-poloblue: #96b1d8; //brand 4
 $color-cornflower: #8ac4e8;
-$color-seagull: #7dd4e8;
-$color-bemuda: #85daca;
+$color-seagull: #7dd4e8; //brand 6
+$color-bemuda: #85daca; // brand 7
+
+// Brand color variables
+$color-aera-1: $color-bahamablue;
+$color-brand-2: $color-deepcerulean;
+$color-brand-3: $color-persiangreen;
+$color-brand-4: $color-poloblue;
+$color-brand-6: $color-seagull;
+$color-brand-7: $color-bemuda;
 
 $color-periwinklegray: #b6c8e3;
 $color-lightsteelblue: #b6d2e3;

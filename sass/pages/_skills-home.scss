@@ -312,4 +312,51 @@
 			max-width: 100%;
 		}
 	}
+
+	// Function card stripe color variations (based on function slug)
+	&__grid .skill-card,
+	&__skills-grid .skill-card {
+		// Supply Chain
+		&[data-function*='supply-chain'] .skill-card__stripe {
+			background-color: $color-aera-1;
+		}
+
+		// Procurement
+		&[data-function*='procurement'] .skill-card__stripe {
+			background-color: $color-brand-2;
+		}
+
+		// Manufacturing
+		&[data-function*='manufacturing'] .skill-card__stripe {
+			background-color: $color-brand-3;
+		}
+
+		// Finance
+		&[data-function*='finance'] .skill-card__stripe {
+			background-color: $color-brand-4;
+		}
+
+		// Sales / Marketing
+		&[data-function*='sales'],
+		&[data-function*='marketing'] .skill-card__stripe {
+			background-color: $color-brand-6;
+		}
+
+		// HR / IT / Other
+		&[data-function*='hr'],
+		&[data-function*='it'],
+		&[data-function*='customer'] .skill-card__stripe {
+			background-color: $color-brand-7;
+		}
+
+		// Product / ESG (fallback colors)
+		&[data-function*='product'] .skill-card__stripe {
+			background-color: $color-poloblue;
+		}
+
+		&[data-function*='esg'],
+		&[data-function*='sustainability'] .skill-card__stripe {
+			background-color: $color-bemuda;
+		}
+	}
 }

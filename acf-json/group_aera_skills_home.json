@@ -198,96 +198,23 @@
       }
     },
     {
-      "key": "field_resource_1_type",
-      "label": "Resource 1 - Type",
-      "name": "resource_1_type",
-      "type": "select",
-      "instructions": "Choose the type of the first resource",
-      "required": 0,
-      "choices": {
-        "post": "Post/Resource",
-        "page": "Page",
-        "external": "External Link"
-      },
-      "default_value": "post",
-      "allow_null": 0,
-      "ui": 1,
-      "return_format": "value"
-    },
-    {
-      "key": "field_resource_1_post",
-      "label": "Resource 1 - Select Post",
-      "name": "resource_1_post",
-      "type": "relationship",
-      "instructions": "Select a post or resource",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_1_type",
-            "operator": "==",
-            "value": "post"
-          }
-        ]
-      ],
-      "post_type": [
-        "news",
-        "video",
-        "whitepaper",
-        "case-study",
-        "blog",
-        "podcast",
-        "event",
-        "webinar"
-      ],
-      "filters": [
-        "search",
-        "post_type"
-      ],
-      "max": 1,
-      "return_format": "object"
-    },
-    {
-      "key": "field_resource_1_page",
-      "label": "Resource 1 - Select Page",
-      "name": "resource_1_page",
-      "type": "relationship",
-      "instructions": "Select a page",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_1_type",
-            "operator": "==",
-            "value": "page"
-          }
-        ]
-      ],
-      "post_type": [
-        "page"
-      ],
-      "filters": [
-        "search"
-      ],
-      "max": 1,
-      "return_format": "object"
-    },
-    {
       "key": "field_resource_1_title",
       "label": "Resource 1 - Title",
       "name": "resource_1_title",
       "type": "text",
-      "instructions": "External resource title",
+      "instructions": "Resource title",
       "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_1_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ],
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_resource_1_url",
+      "label": "Resource 1 - URL",
+      "name": "resource_1_url",
+      "type": "url",
+      "instructions": "Resource URL (internal or external)",
+      "required": 0,
       "wrapper": {
         "width": "50"
       }
@@ -297,167 +224,45 @@
       "label": "Resource 1 - Description",
       "name": "resource_1_description",
       "type": "textarea",
-      "instructions": "External resource description",
+      "instructions": "Resource description",
       "required": 0,
       "rows": 3,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_1_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_resource_1_url",
-      "label": "Resource 1 - URL",
-      "name": "resource_1_url",
-      "type": "url",
-      "instructions": "External link URL",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_1_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ]
+      "wrapper": {
+        "width": "100"
+      }
     },
     {
       "key": "field_resource_1_image",
       "label": "Resource 1 - Image",
       "name": "resource_1_image",
       "type": "image",
-      "instructions": "External resource image",
+      "instructions": "Resource image",
       "required": 0,
       "return_format": "array",
       "preview_size": "medium",
       "library": "all",
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_1_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_resource_1_type_label",
-      "label": "Resource 1 - Type Label",
-      "name": "resource_1_type_label",
-      "type": "text",
-      "instructions": "Resource type label (e.g., 'Article', 'Whitepaper')",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_1_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ],
       "wrapper": {
-        "width": "50"
+        "width": "100"
       }
-    },
-    {
-      "key": "field_resource_2_type",
-      "label": "Resource 2 - Type",
-      "name": "resource_2_type",
-      "type": "select",
-      "instructions": "Choose the type of the second resource",
-      "required": 0,
-      "choices": {
-        "post": "Post/Resource",
-        "page": "Page",
-        "external": "External Link"
-      },
-      "default_value": "post",
-      "allow_null": 0,
-      "ui": 1,
-      "return_format": "value"
-    },
-    {
-      "key": "field_resource_2_post",
-      "label": "Resource 2 - Select Post",
-      "name": "resource_2_post",
-      "type": "relationship",
-      "instructions": "Select a post or resource",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_2_type",
-            "operator": "==",
-            "value": "post"
-          }
-        ]
-      ],
-      "post_type": [
-        "news",
-        "video",
-        "whitepaper",
-        "case-study",
-        "blog",
-        "podcast",
-        "event",
-        "webinar"
-      ],
-      "filters": [
-        "search",
-        "post_type"
-      ],
-      "max": 1,
-      "return_format": "object"
-    },
-    {
-      "key": "field_resource_2_page",
-      "label": "Resource 2 - Select Page",
-      "name": "resource_2_page",
-      "type": "relationship",
-      "instructions": "Select a page",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_2_type",
-            "operator": "==",
-            "value": "page"
-          }
-        ]
-      ],
-      "post_type": [
-        "page"
-      ],
-      "filters": [
-        "search"
-      ],
-      "max": 1,
-      "return_format": "object"
     },
     {
       "key": "field_resource_2_title",
       "label": "Resource 2 - Title",
       "name": "resource_2_title",
       "type": "text",
-      "instructions": "External resource title",
+      "instructions": "Resource title",
       "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_2_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ],
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_resource_2_url",
+      "label": "Resource 2 - URL",
+      "name": "resource_2_url",
+      "type": "url",
+      "instructions": "Resource URL (internal or external)",
+      "required": 0,
       "wrapper": {
         "width": "50"
       }
@@ -467,167 +272,45 @@
       "label": "Resource 2 - Description",
       "name": "resource_2_description",
       "type": "textarea",
-      "instructions": "External resource description",
+      "instructions": "Resource description",
       "required": 0,
       "rows": 3,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_2_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_resource_2_url",
-      "label": "Resource 2 - URL",
-      "name": "resource_2_url",
-      "type": "url",
-      "instructions": "External link URL",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_2_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ]
+      "wrapper": {
+        "width": "100"
+      }
     },
     {
       "key": "field_resource_2_image",
       "label": "Resource 2 - Image",
       "name": "resource_2_image",
       "type": "image",
-      "instructions": "External resource image",
+      "instructions": "Resource image",
       "required": 0,
       "return_format": "array",
       "preview_size": "medium",
       "library": "all",
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_2_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_resource_2_type_label",
-      "label": "Resource 2 - Type Label",
-      "name": "resource_2_type_label",
-      "type": "text",
-      "instructions": "Resource type label (e.g., 'Article', 'Whitepaper')",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_2_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ],
       "wrapper": {
-        "width": "50"
+        "width": "100"
       }
-    },
-    {
-      "key": "field_resource_3_type",
-      "label": "Resource 3 - Type",
-      "name": "resource_3_type",
-      "type": "select",
-      "instructions": "Choose the type of the third resource",
-      "required": 0,
-      "choices": {
-        "post": "Post/Resource",
-        "page": "Page",
-        "external": "External Link"
-      },
-      "default_value": "post",
-      "allow_null": 0,
-      "ui": 1,
-      "return_format": "value"
-    },
-    {
-      "key": "field_resource_3_post",
-      "label": "Resource 3 - Select Post",
-      "name": "resource_3_post",
-      "type": "relationship",
-      "instructions": "Select a post or resource",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_3_type",
-            "operator": "==",
-            "value": "post"
-          }
-        ]
-      ],
-      "post_type": [
-        "news",
-        "video",
-        "whitepaper",
-        "case-study",
-        "blog",
-        "podcast",
-        "event",
-        "webinar"
-      ],
-      "filters": [
-        "search",
-        "post_type"
-      ],
-      "max": 1,
-      "return_format": "object"
-    },
-    {
-      "key": "field_resource_3_page",
-      "label": "Resource 3 - Select Page",
-      "name": "resource_3_page",
-      "type": "relationship",
-      "instructions": "Select a page",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_3_type",
-            "operator": "==",
-            "value": "page"
-          }
-        ]
-      ],
-      "post_type": [
-        "page"
-      ],
-      "filters": [
-        "search"
-      ],
-      "max": 1,
-      "return_format": "object"
     },
     {
       "key": "field_resource_3_title",
       "label": "Resource 3 - Title",
       "name": "resource_3_title",
       "type": "text",
-      "instructions": "External resource title",
+      "instructions": "Resource title",
       "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_3_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ],
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_resource_3_url",
+      "label": "Resource 3 - URL",
+      "name": "resource_3_url",
+      "type": "url",
+      "instructions": "Resource URL (internal or external)",
+      "required": 0,
       "wrapper": {
         "width": "50"
       }
@@ -637,74 +320,25 @@
       "label": "Resource 3 - Description",
       "name": "resource_3_description",
       "type": "textarea",
-      "instructions": "External resource description",
+      "instructions": "Resource description",
       "required": 0,
       "rows": 3,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_3_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_resource_3_url",
-      "label": "Resource 3 - URL",
-      "name": "resource_3_url",
-      "type": "url",
-      "instructions": "External link URL",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_3_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ]
+      "wrapper": {
+        "width": "100"
+      }
     },
     {
       "key": "field_resource_3_image",
       "label": "Resource 3 - Image",
       "name": "resource_3_image",
       "type": "image",
-      "instructions": "External resource image",
+      "instructions": "Resource image",
       "required": 0,
       "return_format": "array",
       "preview_size": "medium",
       "library": "all",
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_3_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ]
-    },
-    {
-      "key": "field_resource_3_type_label",
-      "label": "Resource 3 - Type Label",
-      "name": "resource_3_type_label",
-      "type": "text",
-      "instructions": "Resource type label (e.g., 'Article', 'Whitepaper')",
-      "required": 0,
-      "conditional_logic": [
-        [
-          {
-            "field": "field_resource_3_type",
-            "operator": "==",
-            "value": "external"
-          }
-        ]
-      ],
       "wrapper": {
-        "width": "50"
+        "width": "100"
       }
     },
     {

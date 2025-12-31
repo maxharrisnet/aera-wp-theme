@@ -1,0 +1,109 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+
+/* RESOURCES SECTION COMPONENT */
+.resources-section {
+	width: 100%;
+	padding: 50px 0px;
+
+	h2 {
+		font-size: 42px;
+		line-height: 52px;
+		color: #000;
+		margin-top: 0;
+		text-align: center;
+		margin-bottom: 50px;
+		font-family: 'Gilroy', sans-serif;
+		font-weight: 700;
+
+		@media (max-width: $max-720) {
+			font-size: 28px;
+			line-height: 38px;
+		}
+	}
+
+	&__container {
+		padding: 0 70px;
+		max-width: 1420px;
+		margin: 0 auto;
+
+		@media (max-width: $max-1024) {
+			padding: 0 50px;
+		}
+
+		@media (max-width: $max-720) {
+			padding: 0 20px;
+		}
+	}
+
+	&__row {
+		display: flex;
+
+		@media (max-width: $max-960) {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+		}
+
+		@media (max-width: $max-720) {
+			flex-direction: column;
+		}
+	}
+
+	&__card {
+		width: 33.3%;
+		margin: 0 20px;
+		border-radius: 10px 10px 10px 10px;
+		box-shadow: 0px 0px 15px 2px #ccc;
+		text-decoration: none;
+		color: inherit;
+		display: block;
+		transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+		&:hover {
+			transform: translateY(-4px);
+			box-shadow: 0px 4px 20px 2px rgba(0, 0, 0, 0.15);
+			text-decoration: none;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+			border-radius: 10px 10px 0px 0;
+		}
+
+		@media (max-width: $max-960) {
+			width: 40%;
+			margin: 0 20px 20px 20px;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			margin: 0 0 20px 0;
+		}
+	}
+
+	&__cardWrapper {
+		padding: 10px 20px 20px 20px;
+	}
+
+	&__cardTitle {
+		font-size: 22px;
+		line-height: 30px;
+		font-family: 'Gilroy', sans-serif;
+		margin: 15px 0 0 0;
+		color: #1a1a1a;
+	}
+
+	&__cardDescription {
+		color: #5c6476;
+		font-size: 18px;
+		line-height: 28px;
+		font-weight: 400;
+		margin: 10px 0 0px 0;
+	}
+}
+

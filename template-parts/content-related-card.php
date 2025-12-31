@@ -21,32 +21,33 @@ if (!$title || !$url) {
 $target = $external ? ' target="_blank" rel="noopener noreferrer"' : '';
 ?>
 
-<div class="resource-card resource-card--horizontal">
+<div class="resource-card">
   <div class="resource-card__wrapper">
-    <a href="<?php echo esc_url($url); ?>" class="resource-card__link-wrapper"<?php echo $target; ?>>
-      <div class="resource-card__inner">
-        <?php if ($image_url) : ?>
-          <div class="resource-card__image-col">
-            <figure class="resource-card__figure">
-              <div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url('<?php echo esc_url($image_url); ?>');"></div>
-            </figure>
-          </div>
-        <?php endif; ?>
+    <?php if ($image_url) : ?>
+      <div class="resource-card__figure">
+        <a href="<?php echo esc_url($url); ?>"<?php echo $target; ?>>
+          <div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url('<?php echo esc_url($image_url); ?>');"></div>
+        </a>
+      </div>
+    <?php endif; ?>
 
-        <div class="resource-card__content-col">
-          <div class="resource-card__content">
-            <h3 class="resource-card__title"><?php echo esc_html($title); ?></h3>
+    <a href="<?php echo esc_url($url); ?>"<?php echo $target; ?>>
+      <div class="resource-card__row">
+        <div class="resource-card__content">
+          <h3 class="resource-card__title"><?php echo esc_html($title); ?></h3>
 
-            <?php if ($description) : ?>
-              <p class="resource-card__text"><?php echo esc_html($description); ?></p>
-            <?php endif; ?>
+          <?php if ($description) : ?>
+            <p class="resource-card__text"><?php echo esc_html($description); ?></p>
+          <?php endif; ?>
+        </div>
+      </div>
 
-            <div class="resource-card__lastRow">
-              <span class="resource-card__link">
-                <?php echo $external ? esc_html__('View Resource', 'aera') : esc_html__('Learn More', 'aera'); ?>
-              </span>
-            </div>
-          </div>
+      <div class="resource-card__lastRow">
+        <div class="resource-card__row">
+          <div class="resource-card__line"></div>
+          <span class="resource-card__link">
+            <?php echo $external ? esc_html__('View Resource', 'aera') : esc_html__('Learn More', 'aera'); ?>
+          </span>
         </div>
       </div>
     </a>

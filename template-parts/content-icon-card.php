@@ -10,9 +10,13 @@
 
 $skill_icon = get_field('skill_icon');
 $skill_description = get_field('skill_description') ?: get_the_excerpt();
+
+// Get the first function (skill_function taxonomy) for color coding
+$functions = get_the_terms(get_the_ID(), 'skill_function');
+$function_slug = (!empty($functions) && !is_wp_error($functions)) ? $functions[0]->slug : '';
 ?>
 
-<div class="icon-card">
+<div class="icon-card" data-function="<?php echo esc_attr($function_slug); ?>">
 	<a href="<?php the_permalink(); ?>" class="icon-card__link">
 		<div class="icon-card__top-stripe"></div>
 

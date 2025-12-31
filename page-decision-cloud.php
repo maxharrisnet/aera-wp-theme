@@ -402,34 +402,7 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
     </div>
 
     <!-- Related Resources Section -->
-    <div class="decisioncloud__relatedResources">
-      <div class="decisioncloud__relatedResourcesContainer">
-        <h2><?php esc_html_e('Resources', 'aera'); ?></h2>
-        <div class="decisioncloud__relatedResourcesRow">
-          <a href="<?php echo esc_url(home_url('/what-is-decision-intelligence')); ?>" target="_blank" class="decisioncloud__relatedResourceCard">
-            <img src="<?php echo esc_url($what_is_di_image); ?>" alt="<?php esc_attr_e('What is Decision Intelligence', 'aera'); ?>" loading="lazy" />
-            <div class="decisioncloud__relatedResourcesCardWrapper">
-              <h3 class="decisioncloud__relatedResourceTitle"><?php esc_html_e('What is Decision Intelligence', 'aera'); ?></h3>
-              <p class="decisioncloud__relatedResourceDescription"><?php esc_html_e('This guide introduces decision intelligence — what it does, why it\'s different, and where it delivers value across the enterprise.', 'aera'); ?></p>
-            </div>
-          </a>
-          <a href="https://meet.aeratechnology.com/whitepaper/idc-marketscape-worldwide-decision-intelligence-platforms-2024" target="_blank" class="decisioncloud__relatedResourceCard">
-            <img src="<?php echo esc_url($idc_image); ?>" alt="<?php esc_attr_e('IDC Marketscape for Decision Intelligence Platforms', 'aera'); ?>" loading="lazy" />
-            <div class="decisioncloud__relatedResourcesCardWrapper">
-              <h3 class="decisioncloud__relatedResourceTitle"><?php esc_html_e('IDC Marketscape for Decision Intelligence Platforms', 'aera'); ?></h3>
-              <p class="decisioncloud__relatedResourceDescription"><?php esc_html_e('Aera Technology has been named a Leader in the IDC MarketScape for Decision Intelligence Platforms 2024.', 'aera'); ?></p>
-            </div>
-          </a>
-          <a href="<?php echo esc_url(home_url('/customers')); ?>" target="_blank" class="decisioncloud__relatedResourceCard">
-            <img src="<?php echo esc_url($customers_tile_image); ?>" alt="<?php esc_attr_e('Aera Technology Customers', 'aera'); ?>" loading="lazy" />
-            <div class="decisioncloud__relatedResourcesCardWrapper">
-              <h3 class="decisioncloud__relatedResourceTitle"><?php esc_html_e('Aera Technology Customers', 'aera'); ?></h3>
-              <p class="decisioncloud__relatedResourceDescription"><?php esc_html_e('Leaders at some of the world\'s biggest and fastest-growing companies trust Aera to digitize and automate thousands of decisions every day.', 'aera'); ?></p>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
+    <?php get_template_part('template-parts/components/resources-section'); ?>
 
     <!-- Request/CTA Section -->
     <div class="request">

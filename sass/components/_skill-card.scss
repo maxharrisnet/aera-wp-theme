@@ -24,7 +24,9 @@
 		background-color: $color-white;
 		text-decoration: none;
 		color: inherit;
-		transition: box-shadow $transition-enter ease, transform $transition-enter ease;
+		transition:
+			box-shadow $transition-enter ease,
+			transform $transition-enter ease;
 		overflow: hidden;
 
 		&:hover {
@@ -38,6 +40,7 @@
 		width: 100%;
 		padding-top: 56.25%; // 16:9 aspect ratio
 		overflow: hidden;
+		margin-bottom: 0;
 	}
 
 	&__image {
@@ -81,4 +84,3 @@
 		}
 	}
 }
-

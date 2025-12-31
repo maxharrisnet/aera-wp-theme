@@ -169,65 +169,12 @@ while (have_posts()) :
     <?php endif; ?>
 
     <!-- Resources Section -->
-    <?php if ($related_resources && is_array($related_resources)) : ?>
-      <section class="skills-home__resources-section">
-        <div class="skills-home__container">
-          <?php
-          $resources_title = get_field('resources_title') ?: __('Resources', 'aera');
-          ?>
-          <h2 class="skills-home__resources-title"><?php echo esc_html($resources_title); ?></h2>
-          <div class="skills-home__resources-grid">
-            <?php
-            foreach ($related_resources as $resource) :
-              $title = $resource['title'] ?? '';
-              $text = $resource['text'] ?? '';
-              $link = $resource['link'] ?? '';
-              $type = $resource['type'] ?? '';
-              $image = $resource['image'] ?? '';
-
-              if ($title && $link) :
-            ?>
-                <div class="resource-card">
-                  <div class="resource-card__wrapper">
-                    <a href="<?php echo esc_url($link); ?>" <?php echo strpos($link, home_url()) === false ? 'target="_blank" rel="noopener noreferrer"' : ''; ?>>
-                      <?php if ($image) : ?>
-                        <figure class="resource-card__figure">
-                          <div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url('<?php echo esc_url($image['url']); ?>');"></div>
-                        </figure>
-                      <?php endif; ?>
-
-                      <div class="resource-card__content">
-                        <?php if ($type) : ?>
-                          <div class="resource-card__row">
-                            <span class="resource-card__type"><?php echo esc_html($type); ?></span>
-                          </div>
-                        <?php endif; ?>
-
-                        <h3 class="resource-card__title"><?php echo esc_html($title); ?></h3>
-
-                        <?php if ($text) : ?>
-                          <p class="resource-card__text"><?php echo esc_html($text); ?></p>
-                        <?php endif; ?>
-
-                        <div class="resource-card__lastRow">
-                          <div class="resource-card__row">
-                            <span class="resource-card__link">
-                              <?php esc_html_e('View Resource', 'aera'); ?>
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-            <?php
-              endif;
-            endforeach;
-            ?>
-          </div>
-        </div>
-      </section>
-    <?php endif; ?>
+    <?php
+    $resources_title = get_field('resources_title') ?: __('Resources', 'aera');
+    get_template_part('template-parts/components/resources-section', null, array(
+      'section_title' => $resources_title,
+    ));
+    ?>
 
     <!-- See Aera in Action CTA -->
     <section class="skills-home__action-section">

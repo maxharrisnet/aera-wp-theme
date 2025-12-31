@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The template for displaying skill archive pages
+ * The template for displaying skill function (taxonomy) archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -10,16 +10,16 @@
 
 get_header();
 
-// Get hero content - try ACF from options page
-$hero_title = function_exists('get_field') ? get_field('skills_archive_title', 'option') : '';
-$hero_description = function_exists('get_field') ? get_field('skills_archive_description', 'option') : '';
+// Get current taxonomy term
+$current_term = get_queried_object();
 
-if (empty($hero_title)) {
-  $hero_title = __('Aera Skills™', 'aera');
-}
-if (empty($hero_description)) {
-  $hero_description = __('Explore our comprehensive suite of business decision skills powered by the Aera Decision Cloud™.', 'aera');
-}
+// Get hero content from taxonomy term or fallback
+$hero_title = $current_term->name;
+$hero_description = $current_term->description ?: sprintf(
+  /* translators: %s: function name */
+  __('Explore %s skills powered by the Aera Decision Cloud™.', 'aera'),
+  $current_term->name
+);
 
 // Get skill categories/taxonomies for filtering
 $skill_categories = get_terms(array(
@@ -32,16 +32,9 @@ $current_search = isset($_GET['skill_search']) ? sanitize_text_field($_GET['skil
 $current_skills = isset($_GET['skill']) ? array_map('intval', (array)$_GET['skill']) : array();
 $current_sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'menu_order';
 
-// Check if we're on a taxonomy archive (when clicking function cards from home)
-$current_category = '';
-if (is_tax('skill_function')) {
-  $current_term = get_queried_object();
-  $current_category = $current_term->slug;
-}
-
 // Modify the main query to add our filters
 add_action('pre_get_posts', function ($query) use ($current_search, $current_skills, $current_sort) {
-  if (!is_admin() && $query->is_main_query() && (is_post_type_archive('skill') || is_tax('skill_function'))) {
+  if (!is_admin() && $query->is_main_query() && is_tax('skill_function')) {
 
     // Add search filter
     if (!empty($current_search)) {
@@ -99,7 +92,7 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
 
             <!-- Search Bar -->
             <div class="skills-filter__search">
-              <form role="search" method="get" action="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" id="skillsSearchForm">
+              <form role="search" method="get" action="<?php echo esc_url(get_term_link($current_term)); ?>" id="skillsSearchForm">
                 <input type="search" name="skill_search" placeholder="<?php esc_attr_e('Search skills...', 'aera'); ?>" value="<?php echo esc_attr($current_search); ?>" class="skills-filter__search-input">
                 <button type="submit" class="skills-filter__search-button">
                   <?php esc_html_e('Search', 'aera'); ?>
@@ -109,7 +102,7 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
 
             <!-- Functions Filter -->
             <?php if (!empty($skill_categories) && !is_wp_error($skill_categories)) : ?>
-              <form method="get" action="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" id="skillsFilterForm">
+              <form method="get" action="<?php echo esc_url(get_term_link($current_term)); ?>" id="skillsFilterForm">
                 <!-- Preserve search parameter -->
                 <?php if (!empty($current_search)) : ?>
                   <input type="hidden" name="skill_search" value="<?php echo esc_attr($current_search); ?>">
@@ -140,14 +133,17 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
                     ));
 
                     if (empty($skills_in_category)) continue;
+
+                    // Auto-expand current function
+                    $is_current = ($category->term_id === $current_term->term_id);
                   ?>
                     <div class="skills-filter__function">
-                      <div class="skills-filter__function-header" data-function="<?php echo esc_attr($category->slug); ?>">
-                        <span class="skills-filter__function-icon">+</span>
+                      <div class="skills-filter__function-header <?php echo $is_current ? 'active' : ''; ?>" data-function="<?php echo esc_attr($category->slug); ?>">
+                        <span class="skills-filter__function-icon"><?php echo $is_current ? '−' : '+'; ?></span>
                         <span class="skills-filter__function-name"><?php echo esc_html($category->name); ?></span>
                         <span class="skills-filter__function-count">(<?php echo count($skills_in_category); ?>)</span>
                       </div>
-                      <div class="skills-filter__function-skills" id="function-<?php echo esc_attr($category->slug); ?>">
+                      <div class="skills-filter__function-skills <?php echo $is_current ? 'active' : ''; ?>" id="function-<?php echo esc_attr($category->slug); ?>">
                         <?php foreach ($skills_in_category as $skill) :
                           $is_checked = in_array($skill->ID, $current_skills);
                         ?>
@@ -166,7 +162,7 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
                   <button type="submit" class="skills-filter__apply-button">
                     <?php esc_html_e('Apply Filters', 'aera'); ?>
                   </button>
-                  <a href="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" class="skills-filter__clear-button">
+                  <a href="<?php echo esc_url(get_term_link($current_term)); ?>" class="skills-filter__clear-button">
                     <?php esc_html_e('Clear All', 'aera'); ?>
                   </a>
                 </div>
@@ -322,3 +318,4 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
 
 <?php
 get_footer();
+

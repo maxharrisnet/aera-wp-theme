@@ -4,20 +4,25 @@ This document outlines the new Skills pages implementation for the Aera Technolo
 
 ## ✨ Recent Updates
 
-### Function-Based Home Page
-**Major change:** The Skills Home page now displays **Functions** (taxonomy terms) instead of individual skill posts.
+### Function-Based Home Page & Taxonomy Archives
+**Major change:** The Skills Home page now displays **Functions** (taxonomy terms) instead of individual skill posts, and each function gets its own archive page.
 
 **What Changed:**
-- Home page grid shows all "skill-category" taxonomy terms as cards
+- Home page grid shows all "skill_function" taxonomy terms as cards
 - Each function has its own image (managed via ACF taxonomy fields)
-- Clicking a function card filters the archive to show only skills in that function
+- Clicking a function card takes you to a dedicated function archive page (e.g., `/skill-function/supply-chain/`)
+- New `taxonomy-skill_function.php` template provides function-specific archive pages with:
+  - Dynamic hero (function name and description from taxonomy term)
+  - Same filtering/search functionality as main archive
+  - Auto-expanded current function in sidebar filter
 - Removed: `skill_card_image` and `featured_skill` fields from individual skills
-- Added: `function_image` field to the skill-category taxonomy
+- Added: `function_image` field to the `skill_function` taxonomy
 
 **Benefits:**
 - Simpler content management (one image per function, not per skill)
 - Better information architecture (users browse by function, then drill down to specific skills)
-- Archive automatically filters by function when clicking from home page
+- Each function gets a dedicated URL and archive page
+- SEO-friendly taxonomy archives with custom hero content
 - Native WordPress taxonomy functionality (no custom code needed)
 
 ### Dynamic Navigation System
@@ -130,8 +135,9 @@ The tile images are still available in `/assets/images/skills/` if needed for mi
 ### PHP Templates
 - `page-skills-home.php` - Skills Home landing page template
 - `archive-skill.php` - Updated All Skills archive template with sidebar filters
+- `taxonomy-skill_function.php` - **NEW**: Function-specific archive page (e.g., `/skill-function/supply-chain/`)
 - `single-skill.php` - Updated Single Skill detail page template
-- `template-parts/content-skill-card.php` - Skill card template part for home page (supports regular and featured variants)
+- `template-parts/content-skill-card.php` - Skill card template part for home page (displays functions)
 - `template-parts/content-icon-card.php` - Icon card template part for archive page
 
 ### ACF JSON Files
@@ -169,18 +175,22 @@ Landing page featuring:
    - Edit the term in WordPress admin
    - Add a "Function Image" via ACF (will display on home page cards)
 
-### 2. All Skills Archive (`archive-skill.php`)
+### 2. All Skills Archive (`archive-skill.php` & `taxonomy-skill_function.php`)
 Archive page with:
 - Hero section
-- Left sidebar with category filters
+- Left sidebar with expandable function filters and search
 - Filterable/sortable skills grid (4 columns)
 - Pagination
+
+**Two Archive Types:**
+1. **Main Archive** (`archive-skill.php`): Shows ALL skills at `/skill/`
+2. **Function Archive** (`taxonomy-skill_function.php`): Shows skills filtered by function (e.g., `/skill-function/supply-chain/`)
 
 **Setup:**
 1. Skills automatically appear on archive at `/skill/`
 2. Configure archive hero in ACF Options > Skills Archive Options
-3. Create taxonomy `skill-category` for filtering (optional)
-4. Mark skills as "Featured" to show on home page
+3. Create `skill_function` taxonomy terms (Functions) - each term gets its own archive page
+4. Clicking a function card from the home page takes you to that function's archive
 
 ### 3. Skill Detail/Single (`single-skill.php`)
 Individual skill page with:
@@ -235,19 +245,21 @@ if (function_exists('acf_add_options_page')) {
 }
 ```
 
-### 2. Register Taxonomy (Optional)
-If you want category filtering on the archive, register this taxonomy:
+### 2. Register Taxonomy
+The `skill_function` taxonomy is required for the function-based home page and archive filtering:
 
 ```php
-register_taxonomy('skill-category', 'skill', array(
+register_taxonomy('skill_function', 'skill', array(
     'labels' => array(
-        'name' => __('Skill Categories', 'aera'),
-        'singular_name' => __('Skill Category', 'aera'),
+        'name' => __('Skill Functions', 'aera'),
+        'singular_name' => __('Skill Function', 'aera'),
+        'menu_name' => __('Functions', 'aera'),
     ),
     'public' => true,
     'hierarchical' => true,
     'show_in_rest' => true,
     'show_admin_column' => true,
+    'rewrite' => array('slug' => 'skill-function'),
 ));
 ```
 
@@ -318,6 +330,23 @@ To populate demo content:
    - Link 3 related resources
 
 ## 🎨 Design Notes
+
+### Function Color Coding
+Each skill function is associated with a specific brand color for visual consistency. The color appears on:
+- **Skills Home Page**: Function card stripes
+- **Archive Pages**: Individual skill card top stripes
+
+**Color Mapping:**
+- **Supply Chain**: Bahama Blue (`$color-aera-1` - #00619e)
+- **Procurement**: Deep Cerulean (`$color-brand-2` - #00818e)
+- **Manufacturing**: Persian Green (`$color-brand-3` - #009d95)
+- **Finance**: Polo Blue (`$color-brand-4` - #96b1d8)
+- **Sales/Marketing**: Seagull (`$color-brand-6` - #7dd4e8)
+- **HR/IT/Customer Success**: Bermuda (`$color-brand-7` - #85daca)
+- **Product Management**: Polo Blue (`$color-poloblue` - #96b1d8)
+- **ESG/Sustainability**: Bermuda (`$color-bemuda` - #85daca)
+
+Colors are applied automatically based on the function slug using `data-function` attributes.
 
 ### Colors Used
 - Primary: `$color-bahamablue` (#00619e)

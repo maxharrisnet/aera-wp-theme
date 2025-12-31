@@ -50,6 +50,7 @@
     (is_page() && get_page_template_slug() === 'page-skills-home.php') ||
     is_page(array('resources', 'about-us', 'careers', 'webinars', 'aera-decision-cloud', 'test-drive', 'aerahub-2025', 'skills')) ||
     is_post_type_archive('skill') ||
+    is_tax('skill_function') ||
     is_singular('skill')
   ) {
     $background_active = true;

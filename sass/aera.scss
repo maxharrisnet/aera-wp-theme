@@ -51,6 +51,7 @@ Custom Aera website styles compiled from SCSS
 /* Platform Detail Components */
 @use 'components/module-not-found';
 @use 'components/module-template-page';
+@use 'components/resources-section';
 
 /* Pages */
 @use 'components/template-page';

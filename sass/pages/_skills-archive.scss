@@ -41,6 +41,9 @@
 .skills-filter {
 	width: 250px;
 	flex-shrink: 0;
+	position: sticky;
+	top: 60px;
+	align-self: flex-start;
 
 	@media (max-width: $max-720) {
 		width: 100%;
@@ -505,4 +508,3 @@
 		}
 	}
 }
-

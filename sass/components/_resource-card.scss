@@ -248,6 +248,11 @@
 
 	// Horizontal layout for Skills Home resources
 	&--horizontal {
+		width: 100%;
+		display: block;
+		margin-top: 0;
+		padding: 0;
+
 		.resource-card__wrapper {
 			min-height: auto;
 		}

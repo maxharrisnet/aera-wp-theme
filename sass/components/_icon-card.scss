@@ -100,3 +100,49 @@
 	}
 }
 
+/* Function-based stripe colors */
+.icon-card {
+	// Supply Chain
+	&[data-function*="supply-chain"] .icon-card__top-stripe {
+		background-color: $color-aera-1;
+	}
+
+	// Procurement
+	&[data-function*="procurement"] .icon-card__top-stripe {
+		background-color: $color-brand-2;
+	}
+
+	// Manufacturing
+	&[data-function*="manufacturing"] .icon-card__top-stripe {
+		background-color: $color-brand-3;
+	}
+
+	// Finance
+	&[data-function*="finance"] .icon-card__top-stripe {
+		background-color: $color-brand-4;
+	}
+
+	// Sales / Marketing
+	&[data-function*="sales"],
+	&[data-function*="marketing"] .icon-card__top-stripe {
+		background-color: $color-brand-6;
+	}
+
+	// HR / IT / Customer Success
+	&[data-function*="hr"],
+	&[data-function*="it"],
+	&[data-function*="customer"] .icon-card__top-stripe {
+		background-color: $color-brand-7;
+	}
+
+	// Product / ESG (fallback colors)
+	&[data-function*="product"] .icon-card__top-stripe {
+		background-color: $color-poloblue;
+	}
+
+	&[data-function*="esg"],
+	&[data-function*="sustainability"] .icon-card__top-stripe {
+		background-color: $color-bemuda;
+	}
+}
+
