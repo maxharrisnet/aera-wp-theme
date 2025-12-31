@@ -27,9 +27,48 @@ $skill_categories = get_terms(array(
   'hide_empty' => true,
 ));
 
-// Get current filters
-$current_category = isset($_GET['skill-category']) ? sanitize_text_field($_GET['skill-category']) : '';
+// Get current filters from URL
+$current_search = isset($_GET['skill_search']) ? sanitize_text_field($_GET['skill_search']) : '';
+$current_skills = isset($_GET['skill']) ? array_map('intval', (array)$_GET['skill']) : array();
 $current_sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'menu_order';
+
+// Check if we're on a taxonomy archive (when clicking function cards from home)
+$current_category = '';
+if (is_tax('skill-category')) {
+  $current_term = get_queried_object();
+  $current_category = $current_term->slug;
+}
+
+// Modify the main query to add our filters
+add_action('pre_get_posts', function ($query) use ($current_search, $current_skills, $current_sort) {
+  if (!is_admin() && $query->is_main_query() && (is_post_type_archive('skill') || is_tax('skill-category'))) {
+
+    // Add search filter
+    if (!empty($current_search)) {
+      $query->set('s', $current_search);
+    }
+
+    // Add specific skill IDs filter
+    if (!empty($current_skills)) {
+      $query->set('post__in', $current_skills);
+    }
+
+    // Add sorting
+    switch ($current_sort) {
+      case 'title':
+        $query->set('orderby', 'title');
+        $query->set('order', 'ASC');
+        break;
+      case 'date':
+        $query->set('orderby', 'date');
+        $query->set('order', 'DESC');
+        break;
+      default:
+        $query->set('orderby', 'menu_order');
+        $query->set('order', 'ASC');
+    }
+  }
+});
 ?>
 
 <main id="primary" class="site-main site-main--skills">
@@ -53,32 +92,87 @@ $current_sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'men
         <!-- Sidebar Filter -->
         <aside class="skills-filter">
           <div class="skills-filter__toggle" id="filterToggle">
-            <?php esc_html_e('Filter By Category', 'aera'); ?>
+            <?php esc_html_e('Filter Skills', 'aera'); ?>
           </div>
 
           <div class="skills-filter__content" id="filterContent">
-            <h3 class="skills-filter__title"><?php esc_html_e('By Skills', 'aera'); ?></h3>
 
+            <!-- Search Bar -->
+            <div class="skills-filter__search">
+              <form role="search" method="get" action="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" id="skillsSearchForm">
+                <input type="search" name="skill_search" placeholder="<?php esc_attr_e('Search skills...', 'aera'); ?>" value="<?php echo esc_attr($current_search); ?>" class="skills-filter__search-input">
+                <button type="submit" class="skills-filter__search-button">
+                  <?php esc_html_e('Search', 'aera'); ?>
+                </button>
+              </form>
+            </div>
+
+            <!-- Functions Filter -->
             <?php if (!empty($skill_categories) && !is_wp_error($skill_categories)) : ?>
               <form method="get" action="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" id="skillsFilterForm">
-                <ul class="skills-filter__list">
-                  <li class="skills-filter__item">
-                    <label>
-                      <input type="checkbox" name="skill-category" value="" <?php checked($current_category, ''); ?>>
-                      <?php esc_html_e('All Skills', 'aera'); ?>
-                    </label>
-                  </li>
-                  <?php foreach ($skill_categories as $category) : ?>
-                    <li class="skills-filter__item">
-                      <label>
-                        <input type="checkbox" name="skill-category" value="<?php echo esc_attr($category->slug); ?>" <?php checked($current_category, $category->slug); ?>>
-                        <?php echo esc_html($category->name); ?>
-                      </label>
-                    </li>
+                <!-- Preserve search parameter -->
+                <?php if (!empty($current_search)) : ?>
+                  <input type="hidden" name="skill_search" value="<?php echo esc_attr($current_search); ?>">
+                <?php endif; ?>
+
+                <!-- Preserve sort parameter -->
+                <?php if (!empty($current_sort) && $current_sort !== 'menu_order') : ?>
+                  <input type="hidden" name="sort" value="<?php echo esc_attr($current_sort); ?>">
+                <?php endif; ?>
+
+                <div class="skills-filter__functions">
+                  <h3 class="skills-filter__title"><?php esc_html_e('By Function', 'aera'); ?></h3>
+
+                  <?php foreach ($skill_categories as $category) :
+                    // Get skills in this category
+                    $skills_in_category = get_posts(array(
+                      'post_type' => 'skill',
+                      'posts_per_page' => -1,
+                      'tax_query' => array(
+                        array(
+                          'taxonomy' => 'skill-category',
+                          'field' => 'term_id',
+                          'terms' => $category->term_id,
+                        ),
+                      ),
+                      'orderby' => 'title',
+                      'order' => 'ASC',
+                    ));
+
+                    if (empty($skills_in_category)) continue;
+                  ?>
+                    <div class="skills-filter__function">
+                      <div class="skills-filter__function-header" data-function="<?php echo esc_attr($category->slug); ?>">
+                        <span class="skills-filter__function-icon">+</span>
+                        <span class="skills-filter__function-name"><?php echo esc_html($category->name); ?></span>
+                        <span class="skills-filter__function-count">(<?php echo count($skills_in_category); ?>)</span>
+                      </div>
+                      <div class="skills-filter__function-skills" id="function-<?php echo esc_attr($category->slug); ?>">
+                        <?php foreach ($skills_in_category as $skill) :
+                          $is_checked = in_array($skill->ID, $current_skills);
+                        ?>
+                          <label class="skills-filter__skill-item">
+                            <input type="checkbox" name="skill[]" value="<?php echo esc_attr($skill->ID); ?>" class="skills-filter__checkbox" <?php checked($is_checked); ?>>
+                            <span><?php echo esc_html($skill->post_title); ?></span>
+                          </label>
+                        <?php endforeach; ?>
+                      </div>
+                    </div>
                   <?php endforeach; ?>
-                </ul>
+                </div>
+
+                <!-- Filter Actions -->
+                <div class="skills-filter__actions">
+                  <button type="submit" class="skills-filter__apply-button">
+                    <?php esc_html_e('Apply Filters', 'aera'); ?>
+                  </button>
+                  <a href="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" class="skills-filter__clear-button">
+                    <?php esc_html_e('Clear All', 'aera'); ?>
+                  </a>
+                </div>
               </form>
             <?php endif; ?>
+
           </div>
         </aside>
 
@@ -160,30 +254,67 @@ $current_sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'men
       });
     }
 
-    // Filter form submission
-    const filterForm = document.getElementById('skillsFilterForm');
-    const filterCheckboxes = filterForm ? filterForm.querySelectorAll('input[type="checkbox"]') : [];
+    // Function expand/collapse
+    const functionHeaders = document.querySelectorAll('.skills-filter__function-header');
+    functionHeaders.forEach(function(header) {
+      header.addEventListener('click', function() {
+        const functionSlug = this.getAttribute('data-function');
+        const skillsList = document.getElementById('function-' + functionSlug);
+        const icon = this.querySelector('.skills-filter__function-icon');
 
-    filterCheckboxes.forEach(function(checkbox) {
-      checkbox.addEventListener('change', function() {
-        // Uncheck all other checkboxes
-        filterCheckboxes.forEach(function(cb) {
-          if (cb !== checkbox) {
-            cb.checked = false;
-          }
-        });
-        // Submit the form
-        filterForm.submit();
+        if (skillsList) {
+          skillsList.classList.toggle('active');
+          this.classList.toggle('active');
+          icon.textContent = skillsList.classList.contains('active') ? '−' : '+';
+        }
       });
+    });
+
+    // Auto-expand functions that have checked skills
+    const checkedCheckboxes = document.querySelectorAll('.skills-filter__checkbox:checked');
+    checkedCheckboxes.forEach(function(checkbox) {
+      const functionSkills = checkbox.closest('.skills-filter__function-skills');
+      const functionHeader = functionSkills ? functionSkills.previousElementSibling : null;
+
+      if (functionSkills && functionHeader) {
+        functionSkills.classList.add('active');
+        functionHeader.classList.add('active');
+        const icon = functionHeader.querySelector('.skills-filter__function-icon');
+        if (icon) {
+          icon.textContent = '−';
+        }
+      }
     });
 
     // Sort dropdown
     const sortSelect = document.getElementById('skillSort');
     if (sortSelect) {
       sortSelect.addEventListener('change', function() {
+        const form = document.createElement('form');
+        form.method = 'GET';
+        form.action = window.location.pathname;
+
+        // Preserve existing parameters
         const url = new URL(window.location.href);
-        url.searchParams.set('sort', this.value);
-        window.location.href = url.toString();
+        url.searchParams.forEach(function(value, key) {
+          if (key !== 'sort') {
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = key;
+            input.value = value;
+            form.appendChild(input);
+          }
+        });
+
+        // Add sort parameter
+        const sortInput = document.createElement('input');
+        sortInput.type = 'hidden';
+        sortInput.name = 'sort';
+        sortInput.value = this.value;
+        form.appendChild(sortInput);
+
+        document.body.appendChild(form);
+        form.submit();
       });
     }
   });

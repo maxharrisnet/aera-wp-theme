@@ -54,37 +54,21 @@
 		}
 	}
 
-	&__grid {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		margin: 0 -10px;
+	&__grid,
+	&__skills-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
 		margin-bottom: 40px;
 
-		@media (max-width: $max-720) {
-			margin: 0;
+		@media (max-width: $max-1024) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 25px;
 		}
-	}
-
-	&__featured-grid {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-		margin: 0 -10px 20px;
 
 		@media (max-width: $max-720) {
-			margin: 0 0 20px 0;
-		}
-	}
-
-	&__regular-grid {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: flex-start;
-		margin: 0 -10px;
-
-		@media (max-width: $max-720) {
-			margin: 0;
+			grid-template-columns: 1fr;
+			gap: 20px;
 		}
 	}
 
@@ -246,14 +230,19 @@
 	}
 
 	&__resources-grid {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		// gap: 30px;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 30px;
 
-		// @media (max-width: $max-720) {
-		// 	gap: 20px;
-		// }
+		@media (max-width: $max-1024) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 25px;
+		}
+
+		@media (max-width: $max-720) {
+			grid-template-columns: 1fr;
+			gap: 20px;
+		}
 	}
 
 	// Action Section

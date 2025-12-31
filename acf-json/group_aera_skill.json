@@ -3,53 +3,17 @@
     "title": "Skill Fields",
     "fields": [
         {
-            "key": "field_skill_card_tab",
-            "label": "Card",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_skill_card_image",
-            "label": "Card Image",
-            "name": "skill_card_image",
-            "type": "image",
-            "instructions": "Full-width image for the skill card on the home page",
-            "required": false,
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "wrapper": {
-                "width": "50"
-            }
-        },
-        {
             "key": "field_skill_icon",
             "label": "Icon",
             "name": "skill_icon",
             "type": "image",
-            "instructions": "Icon image for the skill (displayed on archive cards and in hero)",
+            "instructions": "Icon image for the skill (displayed on archive cards)",
             "required": false,
             "return_format": "array",
             "preview_size": "medium",
             "library": "all",
             "wrapper": {
-                "width": "25"
-            }
-        },
-        {
-            "key": "field_featured_skill",
-            "label": "Featured on Home Page",
-            "name": "featured_skill",
-            "type": "true_false",
-            "instructions": "Mark this skill as featured to show in the top 2 large cards on Skills Home page",
-            "default_value": 0,
-            "ui": 1,
-            "wrapper": {
-                "width": "25"
+                "width": "100"
             }
         },
         {

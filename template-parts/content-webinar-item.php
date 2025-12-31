@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Webinar card partial (ResourceItem style - for grid display).
  *
@@ -95,4 +96,3 @@ $right_arrow = $assets_base . 'images/rightArrow.jpg';
     </a>
   </div>
 </div>
-

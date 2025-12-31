@@ -31,80 +31,46 @@ get_header();
     get_template_part('template-parts/components/hero', null, $hero_args);
   ?>
 
-    <!-- Skills Grid Section -->
+    <!-- Functions Grid Section -->
     <section class="skills-home">
       <div class="skills-home__container">
 
-        <!-- Featured Skills Grid (Top 2 large cards) -->
-        <div class="skills-home__featured-grid">
+        <!-- Functions Grid (taxonomy terms in 3-column layout) -->
+        <div class="skills-home__grid">
           <?php
-          // Query for featured skills
-          $featured_skills_args = array(
-            'post_type' => 'skill',
-            'posts_per_page' => 2,
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
-            'meta_query' => array(
-              array(
-                'key' => 'featured_skill',
-                'compare' => 'EXISTS',
-              ),
-            ),
-          );
+          // Get all skill functions (skill-category taxonomy)
+          $functions = get_terms(array(
+            'taxonomy' => 'skill_function',
+            'hide_empty' => true,
+            'orderby' => 'term_order',
+            'order' => 'DESC',
+          ));
 
-          $featured_skills = new WP_Query($featured_skills_args);
-          $featured_skill_ids = array();
-
-          if ($featured_skills->have_posts()) :
-            while ($featured_skills->have_posts()) :
-              $featured_skills->the_post();
-              $featured_skill_ids[] = get_the_ID(); // Store IDs to exclude later
-              get_template_part('template-parts/content', 'skill-card', array('featured' => true));
-            endwhile;
-            wp_reset_postdata();
-          else :
-            // Fallback: show first 2 skills if no featured skills
-            $fallback_args = array(
-              'post_type' => 'skill',
-              'posts_per_page' => 2,
-              'orderby' => 'menu_order',
-              'order' => 'ASC',
-            );
-
-            $fallback_query = new WP_Query($fallback_args);
-
-            if ($fallback_query->have_posts()) :
-              while ($fallback_query->have_posts()) :
-                $fallback_query->the_post();
-                $featured_skill_ids[] = get_the_ID(); // Store IDs to exclude later
-                get_template_part('template-parts/content', 'skill-card', array('featured' => true));
-              endwhile;
-              wp_reset_postdata();
-            endif;
-          endif;
+          if (!empty($functions) && !is_wp_error($functions)) :
+            foreach ($functions as $function) :
+              // Get function image from ACF
+              $function_image = function_exists('get_field') ? get_field('featured_image', 'skill_function_' . $function->term_id) : null;
+              $function_url = get_term_link($function);
           ?>
-        </div>
+              <div class="skill-card">
+                <div class="skill-card__wrapper">
+                  <a href="<?php echo esc_url($function_url); ?>">
+                    <?php if ($function_image) : ?>
+                      <figure class="skill-card__image-container">
+                        <img src="<?php echo esc_url($function_image['url']); ?>" alt="<?php echo esc_attr($function_image['alt'] ?: $function->name); ?>" class="skill-card__image" />
+                      </figure>
+                    <?php endif; ?>
 
-        <!-- Regular Skills Grid (Next 8 cards, excluding featured) -->
-        <div class="skills-home__regular-grid">
+                    <div class="skill-card__stripe"></div>
+
+                    <div class="skill-card__content">
+                      <h3 class="skill-card__title"><?php echo esc_html($function->name); ?></h3>
+                    </div>
+                  </a>
+                </div>
+              </div>
           <?php
-          // Query for regular skills, excluding the featured ones
-          $regular_skills_args = array(
-            'post_type' => 'skill',
-            'posts_per_page' => 8,
-            'orderby' => 'menu_order',
-            'order' => 'ASC',
-            'post__not_in' => $featured_skill_ids, // Exclude featured skills
-          );
-
-          $regular_skills = new WP_Query($regular_skills_args);
-
-          if ($regular_skills->have_posts()) :
-            while ($regular_skills->have_posts()) :
-              $regular_skills->the_post();
-              get_template_part('template-parts/content', 'skill-card');
-            endwhile;
-            wp_reset_postdata();
+            endforeach;
           endif;
           ?>
         </div>
@@ -206,48 +172,27 @@ get_header();
                 if ($post_obj) :
                   $post_obj = is_array($post_obj) ? $post_obj[0] : $post_obj;
                   if (is_object($post_obj) && isset($post_obj->ID)) :
-                    $the_post = $post_obj;
-                    $post_id = $the_post->ID;
+                    $post_id = $post_obj->ID;
                     $post_title = get_the_title($post_id);
                     $post_excerpt = get_the_excerpt($post_id);
                     $post_url = get_permalink($post_id);
-                    $post_type = get_post_type_object(get_post_type($post_id));
-                    $type_label = $post_type ? $post_type->labels->singular_name : __('Resource', 'aera');
-                    $thumbnail_id = get_post_thumbnail_id($post_id);
-                    $image_url = $thumbnail_id ? wp_get_attachment_image_url($thumbnail_id, 'medium') : '';
-            ?>
-                    <div class="resource-card">
-                      <div class="resource-card__wrapper">
-                        <a href="<?php echo esc_url($post_url); ?>">
-                          <?php if ($image_url) : ?>
-                            <figure class="resource-card__figure">
-                              <div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url('<?php echo esc_url($image_url); ?>');"></div>
-                            </figure>
-                          <?php endif; ?>
 
-                          <div class="resource-card__content">
-                            <div class="resource-card__row">
-                              <span class="resource-card__type"><?php echo esc_html($type_label); ?></span>
-                            </div>
+                    // Check for custom image first, fall back to featured image
+                    $custom_image = get_field("resource_{$i}_image");
+                    if ($custom_image) {
+                      $image_url = $custom_image['url'];
+                    } else {
+                      $thumbnail_id = get_post_thumbnail_id($post_id);
+                      $image_url = $thumbnail_id ? wp_get_attachment_image_url($thumbnail_id, 'medium') : '';
+                    }
 
-                            <h3 class="resource-card__title"><?php echo esc_html($post_title); ?></h3>
-
-                            <?php if ($post_excerpt) : ?>
-                              <p class="resource-card__text"><?php echo esc_html($post_excerpt); ?></p>
-                            <?php endif; ?>
-
-                            <div class="resource-card__lastRow">
-                              <div class="resource-card__row">
-                                <span class="resource-card__link">
-                                  <?php esc_html_e('View Resource', 'aera'); ?>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  <?php
+                    get_template_part('template-parts/content', 'related-card', array(
+                      'title' => $post_title,
+                      'description' => $post_excerpt,
+                      'url' => $post_url,
+                      'image_url' => $image_url,
+                      'external' => false,
+                    ));
                   endif;
                 endif;
 
@@ -256,46 +201,27 @@ get_header();
                 if ($page_obj) :
                   $page_obj = is_array($page_obj) ? $page_obj[0] : $page_obj;
                   if (is_object($page_obj) && isset($page_obj->ID)) :
-                    $the_post = $page_obj;
-                    $post_id = $the_post->ID;
+                    $post_id = $page_obj->ID;
                     $post_title = get_the_title($post_id);
-                    $post_excerpt = has_excerpt($post_id) ? get_the_excerpt($post_id) : wp_trim_words(get_the_content(null, false, $the_post), 20);
+                    $post_excerpt = has_excerpt($post_id) ? get_the_excerpt($post_id) : wp_trim_words(get_the_content(null, false, $page_obj), 20);
                     $post_url = get_permalink($post_id);
-                    $thumbnail_id = get_post_thumbnail_id($post_id);
-                    $image_url = $thumbnail_id ? wp_get_attachment_image_url($thumbnail_id, 'medium') : '';
-                  ?>
-                    <div class="resource-card">
-                      <div class="resource-card__wrapper">
-                        <a href="<?php echo esc_url($post_url); ?>">
-                          <?php if ($image_url) : ?>
-                            <figure class="resource-card__figure">
-                              <div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url('<?php echo esc_url($image_url); ?>');"></div>
-                            </figure>
-                          <?php endif; ?>
 
-                          <div class="resource-card__content">
-                            <div class="resource-card__row">
-                              <span class="resource-card__type"><?php esc_html_e('Page', 'aera'); ?></span>
-                            </div>
+                    // Check for custom image first, fall back to featured image
+                    $custom_image = get_field("resource_{$i}_image");
+                    if ($custom_image) {
+                      $image_url = $custom_image['url'];
+                    } else {
+                      $thumbnail_id = get_post_thumbnail_id($post_id);
+                      $image_url = $thumbnail_id ? wp_get_attachment_image_url($thumbnail_id, 'medium') : '';
+                    }
 
-                            <h3 class="resource-card__title"><?php echo esc_html($post_title); ?></h3>
-
-                            <?php if ($post_excerpt) : ?>
-                              <p class="resource-card__text"><?php echo esc_html($post_excerpt); ?></p>
-                            <?php endif; ?>
-
-                            <div class="resource-card__lastRow">
-                              <div class="resource-card__row">
-                                <span class="resource-card__link">
-                                  <?php esc_html_e('Learn More', 'aera'); ?>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
-                  <?php
+                    get_template_part('template-parts/content', 'related-card', array(
+                      'title' => $post_title,
+                      'description' => $post_excerpt,
+                      'url' => $post_url,
+                      'image_url' => $image_url,
+                      'external' => false,
+                    ));
                   endif;
                 endif;
 
@@ -304,42 +230,17 @@ get_header();
                 $description = get_field("resource_{$i}_description");
                 $url = get_field("resource_{$i}_url");
                 $image = get_field("resource_{$i}_image");
-                $type_label = get_field("resource_{$i}_type_label") ?: __('Resource', 'aera');
 
                 if ($title && $url) :
-                  ?>
-                  <div class="resource-card">
-                    <div class="resource-card__wrapper">
-                      <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer">
-                        <?php if ($image) : ?>
-                          <figure class="resource-card__figure">
-                            <div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url('<?php echo esc_url($image['url']); ?>');"></div>
-                          </figure>
-                        <?php endif; ?>
+                  $image_url = $image ? $image['url'] : '';
 
-                        <div class="resource-card__content">
-                          <div class="resource-card__row">
-                            <span class="resource-card__type"><?php echo esc_html($type_label); ?></span>
-                          </div>
-
-                          <h3 class="resource-card__title"><?php echo esc_html($title); ?></h3>
-
-                          <?php if ($description) : ?>
-                            <p class="resource-card__text"><?php echo esc_html($description); ?></p>
-                          <?php endif; ?>
-
-                          <div class="resource-card__lastRow">
-                            <div class="resource-card__row">
-                              <span class="resource-card__link">
-                                <?php esc_html_e('View Resource', 'aera'); ?>
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-            <?php
+                  get_template_part('template-parts/content', 'related-card', array(
+                    'title' => $title,
+                    'description' => $description,
+                    'url' => $url,
+                    'image_url' => $image_url,
+                    'external' => true,
+                  ));
                 endif;
               endif;
             endfor;

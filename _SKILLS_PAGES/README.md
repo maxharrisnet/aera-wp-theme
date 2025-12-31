@@ -4,6 +4,22 @@ This document outlines the new Skills pages implementation for the Aera Technolo
 
 ## ✨ Recent Updates
 
+### Function-Based Home Page
+**Major change:** The Skills Home page now displays **Functions** (taxonomy terms) instead of individual skill posts.
+
+**What Changed:**
+- Home page grid shows all "skill-category" taxonomy terms as cards
+- Each function has its own image (managed via ACF taxonomy fields)
+- Clicking a function card filters the archive to show only skills in that function
+- Removed: `skill_card_image` and `featured_skill` fields from individual skills
+- Added: `function_image` field to the skill-category taxonomy
+
+**Benefits:**
+- Simpler content management (one image per function, not per skill)
+- Better information architecture (users browse by function, then drill down to specific skills)
+- Archive automatically filters by function when clicking from home page
+- Native WordPress taxonomy functionality (no custom code needed)
+
 ### Dynamic Navigation System
 The skill detail page now features a flexible, dynamic navigation system similar to the Decision Intelligence page:
 
@@ -121,19 +137,25 @@ The tile images are still available in `/assets/images/skills/` if needed for mi
 ### ACF JSON Files
 - `acf-json/group_aera_skills_home.json` - Fields for Skills Home page
 - `acf-json/group_aera_skills_options.json` - Options page fields for archive
-- `acf-json/group_aera_skill.json` - Updated with new fields for videos, help items, list items, and featured flag
+- `acf-json/group_aera_skill.json` - Fields for individual skills (icon, description, content sections, etc.)
+- `acf-json/group_aera_skill_category.json` - **NEW**: Taxonomy fields for Functions (function_image)
 
 ## 🎨 Three Page Types
 
 ### 1. Skills Home Page (`page-skills-home.php`)
 Landing page featuring:
 - Hero section with title and description
-- 2 large featured skill cards at top
-- 8 regular skill cards below
+- **6 Function cards in 3-column grid** (displays taxonomy terms, not individual skills)
 - "View All Skills" CTA button
 - Icon section with 4 columns
 - Resources section (3 featured resources)
-- "See Aera in Action" CTA section with 2 buttons
+- "See Aera in Action" CTA section
+
+**How It Works:**
+- Displays all "Functions" (skill-category taxonomy terms) as cards
+- Each function card shows an image and the function name
+- Clicking a function card takes you to the archive filtered by that function
+- Images are managed per-function via ACF taxonomy fields
 
 **Setup:**
 1. Create a new page in WordPress
@@ -142,7 +164,10 @@ Landing page featuring:
    - Use Page Hero fields for hero section
    - Set Icon Section Title and Icon Items (4 items recommended)
    - Select 3 Featured Resources
-   - Configure Action Section title and buttons
+   - Configure Action Section title and button
+4. For each Function (skill-category term):
+   - Edit the term in WordPress admin
+   - Add a "Function Image" via ACF (will display on home page cards)
 
 ### 2. All Skills Archive (`archive-skill.php`)
 Archive page with:
@@ -171,10 +196,8 @@ Individual skill page with:
 **Setup:**
 Configure these ACF fields when editing a skill:
 
-**Card Tab:**
-- **Card Image** (50% width): Full-width image for the skill card on the home page
-- **Icon** (25% width): Icon image (displayed on archive cards and in hero)
-- **Featured on Home Page** (25% width): Checkbox to mark skill for display in top 2 large cards on Skills Home page
+**Basic Info:**
+- **Icon**: Icon image (displayed on archive cards)
 - **Description**: Main description text (used in hero and archive cards)
 
 **Content Sections Tab:**

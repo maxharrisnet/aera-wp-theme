@@ -5,42 +5,27 @@
 
 /* ICON CARD (Archive Page) */
 .icon-card {
-	width: calc(25% - 20px);
-	display: inline-flex;
-	padding: 10px;
-	margin-bottom: 20px;
-
-	@media (max-width: $max-1024) {
-		width: calc(33.33% - 20px);
-	}
-
-	@media (max-width: $max-720) {
-		width: 100%;
-		padding: 0;
-		margin: 0 auto;
-		display: block;
-		margin-bottom: 20px;
-	}
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 
 	&__link {
 		display: block;
 		width: 100%;
 		box-shadow: 0px 2px 10px rgba($color-codgray, 0.1);
 		border-radius: 8px;
-		min-height: 328px;
 		background-color: $color-white;
 		text-decoration: none;
 		color: inherit;
 		transition: box-shadow $transition-enter ease, transform $transition-enter ease;
 		overflow: hidden;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
 
 		&:hover {
 			box-shadow: 0px 4px 20px rgba($color-codgray, 0.15);
 			transform: translateY(-4px);
-		}
-
-		@media (max-width: $max-720) {
-			min-height: auto;
 		}
 	}
 
@@ -50,28 +35,35 @@
 		width: 100%;
 	}
 
+	&__content {
+		padding: 20px;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+
+		@media (max-width: $max-720) {
+			padding: 15px;
+		}
+	}
+
 	&__icon {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		align-items: center;
-		padding: 30px 20px 20px;
-		min-height: 120px;
+		margin-bottom: 15px;
 
 		img {
-			max-width: 80px;
-			max-height: 80px;
+			max-width: 60px;
+			max-height: 60px;
 			width: auto;
 			height: auto;
 			filter: brightness(0) saturate(100%) invert(64%) sepia(47%) saturate(1055%) hue-rotate(157deg) brightness(95%) contrast(90%); // Light blue tint
 		}
 
 		@media (max-width: $max-720) {
-			min-height: 100px;
-			padding: 20px 15px 15px;
-
 			img {
-				max-width: 70px;
-				max-height: 70px;
+				max-width: 50px;
+				max-height: 50px;
 			}
 		}
 	}
@@ -84,14 +76,12 @@
 		font-size: 18px;
 		line-height: 24px;
 		color: $color-codgray;
-		margin: 0 0 12px;
-		text-align: center;
-		padding: 0 20px;
+		margin: 0 0 10px;
+		text-align: left;
 
 		@media (max-width: $max-720) {
 			font-size: 16px;
 			line-height: 22px;
-			padding: 0 15px;
 		}
 	}
 
@@ -101,13 +91,11 @@
 		line-height: 20px;
 		color: $color-shuttlegray;
 		margin: 0;
-		text-align: center;
-		padding: 0 20px 20px;
+		text-align: left;
 
 		@media (max-width: $max-720) {
 			font-size: 13px;
 			line-height: 19px;
-			padding: 0 15px 15px;
 		}
 	}
 }
