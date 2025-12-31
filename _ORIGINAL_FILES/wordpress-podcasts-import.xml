@@ -1,0 +1,723 @@
+<?xml version="1.0" ?>
+<rss xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/" version="2.0">
+  <channel>
+    <title>Aera Technology Podcasts</title>
+    <link>https://aeratechnology.com</link>
+    <description>Podcast imports from Contentful</description>
+    <pubDate>Tue, 30 Dec 2025 20:29:43 +0000</pubDate>
+    <language>en-US</language>
+    <wp:wxr_version>1.2</wp:wxr_version>
+    <item>
+      <title>Avantor: Building Smarter Life Science Supply Chains with Decision Intelligence</title>
+      <link>https://aeratechnology.com/podcast/avantor-building-smarter-life-science-supply-chains-with-decision-intelligence</link>
+      <pubDate>Fri, 14 Nov 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5001</guid>
+      <description/>
+      <content:encoded>Avantor is beginning its decision intelligence journey — setting the stage to transform how life sciences supply chains operate by rebalancing inventory, streamlining procurement, and strengthening resilience. </content:encoded>
+      <excerpt:encoded>Avantor is beginning its decision intelligence journey — setting the stage to transform how life sciences supply chains operate by rebalancing inventory, streamlining procurement, and strengthening re</excerpt:encoded>
+      <wp:post_id>5001</wp:post_id>
+      <wp:post_date>2025-11-14 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-11-14 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-11-14 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-11-14 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>avantor-building-smarter-life-science-supply-chains-with-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/di-podcast-avantor</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Avantor is beginning its decision intelligence journey — setting the stage to transform how life sciences supply chains operate by rebalancing inventory, streamlining procurement, and strengthening resilience. </wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Avantor: Building Smarter Life Science Supply Chains with Decision Intelligence | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Avantor is beginning its decision intelligence journey — setting the stage to transform how life sciences supply chains operate by rebalancing inventory, s</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Fred Laluyaux: How Decision Intelligence &amp; AI Agents Are Redefining Enterprise Operations</title>
+      <link>https://aeratechnology.com/podcast/fred-laluyaux-how-decision-intelligence-ai-agents-are-redefining-enterprise-operations</link>
+      <pubDate>Thu, 13 Nov 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5002</guid>
+      <description/>
+      <content:encoded>Fred Laluyaux, CEO of Aera Technology, will unpack how organizations can move from dashboards and ad hoc workflows to a system that senses, decides, and acts. He will also explain why this is becoming the operating backbone of the modern enterprise and how it accelerates the shift toward autonomous, self-driving businesses.</content:encoded>
+      <excerpt:encoded>Fred Laluyaux, CEO of Aera Technology, will unpack how organizations can move from dashboards and ad hoc workflows to a system that senses, decides, and acts. He will also explain why this is becoming</excerpt:encoded>
+      <wp:post_id>5002</wp:post_id>
+      <wp:post_date>2025-11-13 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-11-13 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-11-13 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-11-13 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>fred-laluyaux-how-decision-intelligence-ai-agents-are-redefining-enterprise-operations</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://www.youtube.com/watch?v=dMmVXj9lMts&amp;list=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9&amp;index=3</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Fred Laluyaux, CEO of Aera Technology, will unpack how organizations can move from dashboards and ad hoc workflows to a system that senses, decides, and acts. He will also explain why this is becoming the operating backbone of the modern enterprise and how it accelerates the shift toward autonomous, self-driving businesses.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Fred Laluyaux: How Decision Intelligence &amp; AI Agents Are Redefining Enterprise Operations | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Fred Laluyaux, CEO of Aera Technology, will unpack how organizations can move from dashboards and ad hoc workflows to a system that senses, decides, and ac</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Fred Laluyaux on Decision Intelligence, AI Adoption, and the Future of Work</title>
+      <link>https://aeratechnology.com/podcast/fred-laluyaux-on-decision-intelligence-ai-adoption-and-the-future-of-work</link>
+      <pubDate>Tue, 28 Oct 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5003</guid>
+      <description/>
+      <content:encoded>Fred Laluyaux, CEO of Aera Technology, joins AI Today to explore how decision intelligence helps enterprises scale AI, transform operations, and navigate the future of work.</content:encoded>
+      <excerpt:encoded>Fred Laluyaux, CEO of Aera Technology, joins AI Today to explore how decision intelligence helps enterprises scale AI, transform operations, and navigate the future of work.</excerpt:encoded>
+      <wp:post_id>5003</wp:post_id>
+      <wp:post_date>2025-10-28 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-10-28 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-10-28 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-10-28 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>fred-laluyaux-on-decision-intelligence-ai-adoption-and-the-future-of-work</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://www.pmi.org/ai-today-podcast/fred-laluyaux-on-decision-intelligence-ai-adoption-and-the-future-of-work</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Fred Laluyaux, CEO of Aera Technology, joins AI Today to explore how decision intelligence helps enterprises scale AI, transform operations, and navigate the future of work.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Fred Laluyaux on Decision Intelligence, AI Adoption, and the Future of Work | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Fred Laluyaux, CEO of Aera Technology, joins AI Today to explore how decision intelligence helps enterprises scale AI, transform operations, and navigate t</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Decision Intelligence and AI with Frederic Laluyuax of Aera Technology, Leaders in Tech and Ecommerce Podcast</title>
+      <link>https://aeratechnology.com/podcast/decision-intelligence-and-ai-with-frederic-laluyuax-of-aera-technology-leaders-in-tech-and-ecommerce-podcast</link>
+      <pubDate>Thu, 14 Aug 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5004</guid>
+      <description/>
+      <content:encoded>What if machines, not people, were making your company’s most critical supply chain decisions? In this episode, I interviewed Frederic Laluyaux, President and CEO of Aera Technology, to unpack how decision intelligence is reshaping enterprise operations.</content:encoded>
+      <excerpt:encoded>What if machines, not people, were making your company’s most critical supply chain decisions? In this episode, I interviewed Frederic Laluyaux, President and CEO of Aera Technology, to unpack how dec</excerpt:encoded>
+      <wp:post_id>5004</wp:post_id>
+      <wp:post_date>2025-08-14 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-08-14 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-08-14 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-08-14 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>decision-intelligence-and-ai-with-frederic-laluyuax-of-aera-technology-leaders-in-tech-and-ecommerce-podcast</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://alcottglobal.com/podcast/leaders-in-tech-and-ecommerce-podcast/93-decision-intelligence-and-ai-with-frederic-laluyaux-of-aera-technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>What if machines, not people, were making your company’s most critical supply chain decisions? In this episode, I interviewed Frederic Laluyaux, President and CEO of Aera Technology, to unpack how decision intelligence is reshaping enterprise operations.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Decision Intelligence and AI with Frederic Laluyuax of Aera Technology, Leaders in Tech and Ecommerce Podcast | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>What if machines, not people, were making your company’s most critical supply chain decisions? In this episode, I interviewed Frederic Laluyaux, President </wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>How AI is Remaking Decision-Making Systems</title>
+      <link>https://aeratechnology.com/podcast/how-ai-is-remaking-decision-making-systems</link>
+      <pubDate>Thu, 19 Jun 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5005</guid>
+      <description/>
+      <content:encoded>Decision-making systems draw heavily on the data that organisations hold and have been a key beneficiary of advances in analytics over more than three decades.</content:encoded>
+      <excerpt:encoded>Decision-making systems draw heavily on the data that organisations hold and have been a key beneficiary of advances in analytics over more than three decades.</excerpt:encoded>
+      <wp:post_id>5005</wp:post_id>
+      <wp:post_date>2025-06-19 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-06-19 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-06-19 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-06-19 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>how-ai-is-remaking-decision-making-systems</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://podcasts.apple.com/us/podcast/how-ai-is-remaking-decision-making-systems/id1731347884?i=1000713625322</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Decision-making systems draw heavily on the data that organisations hold and have been a key beneficiary of advances in analytics over more than three decades.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>How AI is Remaking Decision-Making Systems | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Decision-making systems draw heavily on the data that organisations hold and have been a key beneficiary of advances in analytics over more than three deca</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>The Rise of the Autonomous Enterprise: Tom Davenport on AI-Driven Decision Making</title>
+      <link>https://aeratechnology.com/podcast/the-rise-of-the-autonomous-enterprise-tom-davenport-on-ai-driven-decision-making</link>
+      <pubDate>Wed, 09 Apr 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5006</guid>
+      <description/>
+      <content:encoded>On this episode of the Decision Intelligence podcast, Tom Davenport discusses the drivers, the hurdles, and what’s standing in the way of becoming data-driven, self-driving organizations.</content:encoded>
+      <excerpt:encoded>On this episode of the Decision Intelligence podcast, Tom Davenport discusses the drivers, the hurdles, and what’s standing in the way of becoming data-driven, self-driving organizations.</excerpt:encoded>
+      <wp:post_id>5006</wp:post_id>
+      <wp:post_date>2025-04-09 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-04-09 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-04-09 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-04-09 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>the-rise-of-the-autonomous-enterprise-tom-davenport-on-ai-driven-decision-making</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/the-rise-of-the-autonomous-enterprise-tom-davenport-on-ai-driven-decision-making</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>On this episode of the Decision Intelligence podcast, Tom Davenport discusses the drivers, the hurdles, and what’s standing in the way of becoming data-driven, self-driving organizations.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>The Rise of the Autonomous Enterprise: Tom Davenport on AI-Driven Decision Making | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>On this episode of the Decision Intelligence podcast, Tom Davenport discusses the drivers, the hurdles, and what’s standing in the way of becoming data-dri</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Revolutionizing Higher Ed: How Decision Intelligence is Shaping Student Success at WGU</title>
+      <link>https://aeratechnology.com/podcast/revolutionizing-higher-ed-how-decision-intelligence-is-shaping-student-success-at-wgu</link>
+      <pubDate>Mon, 10 Mar 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5007</guid>
+      <description/>
+      <content:encoded>Fred sits down with Dr. Jennie Sanders and Dr. Joe Dery from Western Governors University (WGU) to explore how decision intelligence is transforming the student experience.</content:encoded>
+      <excerpt:encoded>Fred sits down with Dr. Jennie Sanders and Dr. Joe Dery from Western Governors University (WGU) to explore how decision intelligence is transforming the student experience.</excerpt:encoded>
+      <wp:post_id>5007</wp:post_id>
+      <wp:post_date>2025-03-10 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-03-10 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-03-10 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-03-10 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>revolutionizing-higher-ed-how-decision-intelligence-is-shaping-student-success-at-wgu</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/revolutionizing-higher-ed-how-decision-intelligence-is-shaping-student-success-at-wgu</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Fred sits down with Dr. Jennie Sanders and Dr. Joe Dery from Western Governors University (WGU) to explore how decision intelligence is transforming the student experience.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Revolutionizing Higher Ed: How Decision Intelligence is Shaping Student Success at WGU | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Fred sits down with Dr. Jennie Sanders and Dr. Joe Dery from Western Governors University (WGU) to explore how decision intelligence is transforming the st</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Reason Driven™ decision-making</title>
+      <link>https://aeratechnology.com/podcast/reason-driven-decision-making</link>
+      <pubDate>Mon, 24 Feb 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5008</guid>
+      <description/>
+      <content:encoded>Brian Evergreen, technologist, strategist, author, keynote speaker and CEO of The Future Solving Company, discusses his framework for reason-driven™ decision-making.</content:encoded>
+      <excerpt:encoded>Brian Evergreen, technologist, strategist, author, keynote speaker and CEO of The Future Solving Company, discusses his framework for reason-driven™ decision-making.</excerpt:encoded>
+      <wp:post_id>5008</wp:post_id>
+      <wp:post_date>2025-02-24 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-02-24 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-02-24 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-02-24 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>reason-driven-decision-making</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/brian-evergreen-the-future-solving-company-reason-driven-decision-making</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Brian Evergreen, technologist, strategist, author, keynote speaker and CEO of The Future Solving Company, discusses his framework for reason-driven™ decision-making.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Reason Driven™ decision-making | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Brian Evergreen, technologist, strategist, author, keynote speaker and CEO of The Future Solving Company, discusses his framework for reason-driven™ decisi</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Baxter Healthcare: Elevating Service and Care with Decision Intelligence</title>
+      <link>https://aeratechnology.com/podcast/baxter-healthcare-elevating-service-and-care-with-decision-intelligence</link>
+      <pubDate>Sun, 09 Feb 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5009</guid>
+      <description/>
+      <content:encoded>Baxter Healthcare’s Paul Ives, Director of Integrated Supply Chain, discusses the massive potential of decision intelligence in enabling its planners and customer service team to predict and manage critical inventory, logistics, and more, while reducing working capital — through smarter, faster decisions.</content:encoded>
+      <excerpt:encoded>Baxter Healthcare’s Paul Ives, Director of Integrated Supply Chain, discusses the massive potential of decision intelligence in enabling its planners and customer service team to predict and manage cr</excerpt:encoded>
+      <wp:post_id>5009</wp:post_id>
+      <wp:post_date>2025-02-09 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-02-09 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-02-09 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-02-09 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>baxter-healthcare-elevating-service-and-care-with-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/baxter-healthcare-elevating-service-and-care-with-decision-intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Baxter Healthcare’s Paul Ives, Director of Integrated Supply Chain, discusses the massive potential of decision intelligence in enabling its planners and customer service team to predict and manage critical inventory, logistics, and more, while reducing working capital — through smarter, faster decisions.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Baxter Healthcare: Elevating Service and Care with Decision Intelligence | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Baxter Healthcare’s Paul Ives, Director of Integrated Supply Chain, discusses the massive potential of decision intelligence in enabling its planners and c</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Unlocking AI’s ROI Potential: Insights from Ray Wang</title>
+      <link>https://aeratechnology.com/podcast/unlocking-ais-roi-potential-insights-from-ray-wang</link>
+      <pubDate>Mon, 27 Jan 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5010</guid>
+      <description/>
+      <content:encoded>R “Ray” Wang discusses why agentic-powered decision intelligence is the exponential advantage in the marketplace.</content:encoded>
+      <excerpt:encoded>R “Ray” Wang discusses why agentic-powered decision intelligence is the exponential advantage in the marketplace.</excerpt:encoded>
+      <wp:post_id>5010</wp:post_id>
+      <wp:post_date>2025-01-27 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-01-27 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-01-27 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-01-27 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>unlocking-ais-roi-potential-insights-from-ray-wang</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/unlocking-ai-roi-potential-insights-from-ray-wang</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>R “Ray” Wang discusses why agentic-powered decision intelligence is the exponential advantage in the marketplace.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Unlocking AI’s ROI Potential: Insights from Ray Wang | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>R “Ray” Wang discusses why agentic-powered decision intelligence is the exponential advantage in the marketplace.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Reshaping the Future of Work with Decision Intelligence</title>
+      <link>https://aeratechnology.com/podcast/reshaping-the-future-of-work-with-decision-intelligence</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5011</guid>
+      <description/>
+      <content:encoded>Joe Fuller, Harvard Business School Professor and Co-Leader of Harvard’s Managing the Future of Work Project, shares how technologies like AI and decision intelligence are empowering workforces and providing the ultimate competitive advantage for enterprises.</content:encoded>
+      <excerpt:encoded>Joe Fuller, Harvard Business School Professor and Co-Leader of Harvard’s Managing the Future of Work Project, shares how technologies like AI and decision intelligence are empowering workforces and pr</excerpt:encoded>
+      <wp:post_id>5011</wp:post_id>
+      <wp:post_date>2025-01-06 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-01-06 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2025-01-06 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2025-01-06 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>reshaping-the-future-of-work-with-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/reshaping-the-future-of-work-with-decision-intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Joe Fuller, Harvard Business School Professor and Co-Leader of Harvard’s Managing the Future of Work Project, shares how technologies like AI and decision intelligence are empowering workforces and providing the ultimate competitive advantage for enterprises.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Reshaping the Future of Work with Decision Intelligence | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Joe Fuller, Harvard Business School Professor and Co-Leader of Harvard’s Managing the Future of Work Project, shares how technologies like AI and decision </wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Philip Morris International: Scaling Decision Intelligence to Improve Supply Chain Agility and Efficiency</title>
+      <link>https://aeratechnology.com/podcast/philip-morris-international-scaling-decision-intelligence-to-improve-supply-chain-agility-and-efficiency</link>
+      <pubDate>Mon, 16 Dec 2024 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5012</guid>
+      <description/>
+      <content:encoded>PMI’s Gualtiero Cerrato shares how decision intelligence is fundamental to PMI’s global supply chain.</content:encoded>
+      <excerpt:encoded>PMI’s Gualtiero Cerrato shares how decision intelligence is fundamental to PMI’s global supply chain.</excerpt:encoded>
+      <wp:post_id>5012</wp:post_id>
+      <wp:post_date>2024-12-16 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2024-12-16 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2024-12-16 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2024-12-16 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>philip-morris-international-scaling-decision-intelligence-to-improve-supply-chain-agility-and-efficiency</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/philip-morris-international-scaling-decision-intelligence-to-improve-supply-chain-agility-and-efficiency</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>PMI’s Gualtiero Cerrato shares how decision intelligence is fundamental to PMI’s global supply chain.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Philip Morris International: Scaling Decision Intelligence to Improve Supply Chain Agility and Efficiency | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>PMI’s Gualtiero Cerrato shares how decision intelligence is fundamental to PMI’s global supply chain.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Unilever: How Decision Intelligence is Revolutionizing Demand Sensing for the CPG Market</title>
+      <link>https://aeratechnology.com/podcast/unilever-how-decision-intelligence-is-revolutionizing-demand-sensing-for-the-cpg-market</link>
+      <pubDate>Wed, 04 Dec 2024 00:00:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5013</guid>
+      <description/>
+      <content:encoded>Unilever’s Juan Carlos Parada, Executive Vice President of Global Customer Operations, reveals how decision intelligence is powering Project Sky – a market-changing, intelligent demand fulfillment system.</content:encoded>
+      <excerpt:encoded>Unilever’s Juan Carlos Parada, Executive Vice President of Global Customer Operations, reveals how decision intelligence is powering Project Sky – a market-changing, intelligent demand fulfillment sys</excerpt:encoded>
+      <wp:post_id>5013</wp:post_id>
+      <wp:post_date>2024-12-04 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2024-12-04 00:00:00</wp:post_date_gmt>
+      <wp:post_modified>2024-12-04 00:00:00</wp:post_modified>
+      <wp:post_modified_gmt>2024-12-04 00:00:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>unilever-how-decision-intelligence-is-revolutionizing-demand-sensing-for-the-cpg-market</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_external_url</wp:meta_key>
+        <wp:meta_value>https://meet.aeratechnology.com/unilever-how-decision-intelligence-is-revolutionizing-demand-sensing-for-the-cpg-market</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Unilever’s Juan Carlos Parada, Executive Vice President of Global Customer Operations, reveals how decision intelligence is powering Project Sky – a market-changing, intelligent demand fulfillment system.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Unilever: How Decision Intelligence is Revolutionizing Demand Sensing for the CPG Market | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Unilever’s Juan Carlos Parada, Executive Vice President of Global Customer Operations, reveals how decision intelligence is powering Project Sky – a market</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>J.D. Irving: Enabling a competitive advantage through Decision Intelligence</title>
+      <link>https://aeratechnology.com/podcast/jd-irving-enabling-a-competitive-advantage-through-decision-intelligence</link>
+      <pubDate>Tue, 30 Dec 2025 20:29:43 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5014</guid>
+      <description/>
+      <content:encoded>Georges Tetegan, Corporate Vice President, Project Control Tower at J.D. Irving shares how decision intelligence provides “oxygen” to its front line team and provides new capabilities to create value and a competitive advantage.</content:encoded>
+      <excerpt:encoded>Georges Tetegan, Corporate Vice President, Project Control Tower at J.D. Irving shares how decision intelligence provides “oxygen” to its front line team and provides new capabilities to create value </excerpt:encoded>
+      <wp:post_id>5014</wp:post_id>
+      <wp:post_date>2025-12-30 20:29:43</wp:post_date>
+      <wp:post_date_gmt>2025-12-30 20:29:43</wp:post_date_gmt>
+      <wp:post_modified>2025-12-30 20:29:43</wp:post_modified>
+      <wp:post_modified_gmt>2025-12-30 20:29:43</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>jd-irving-enabling-a-competitive-advantage-through-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Georges Tetegan, Corporate Vice President, Project Control Tower at J.D. Irving shares how decision intelligence provides “oxygen” to its front line team and provides new capabilities to create value and a competitive advantage.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>J.D. Irving: Enabling a competitive advantage through Decision Intelligence | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Georges Tetegan, Corporate Vice President, Project Control Tower at J.D. Irving shares how decision intelligence provides “oxygen” to its front line team a</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>InfraBuild: Transforming Service &amp; Inventory Management with Decision Intelligence</title>
+      <link>https://aeratechnology.com/podcast/infrabuild-transforming-service-inventory-management-with-decision-intelligence</link>
+      <pubDate>Tue, 30 Dec 2025 20:29:43 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=podcast&amp;p=5015</guid>
+      <description/>
+      <content:encoded>InfraBuild’s Head of Supply Chain Evgeny Krapovnitskiy discusses how InfraBuild will use Decision Intelligence to “unlock the productivity of its people,” solve today’s and tomorrow’s business challenges, achieve high service levels, and unlock new opportunities.</content:encoded>
+      <excerpt:encoded>InfraBuild’s Head of Supply Chain Evgeny Krapovnitskiy discusses how InfraBuild will use Decision Intelligence to “unlock the productivity of its people,” solve today’s and tomorrow’s business challen</excerpt:encoded>
+      <wp:post_id>5015</wp:post_id>
+      <wp:post_date>2025-12-30 20:29:43</wp:post_date>
+      <wp:post_date_gmt>2025-12-30 20:29:43</wp:post_date_gmt>
+      <wp:post_modified>2025-12-30 20:29:43</wp:post_modified>
+      <wp:post_modified_gmt>2025-12-30 20:29:43</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>infrabuild-transforming-service-inventory-management-with-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>podcast</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_cta_text</wp:meta_key>
+        <wp:meta_value>Listen Now</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>InfraBuild’s Head of Supply Chain Evgeny Krapovnitskiy discusses how InfraBuild will use Decision Intelligence to “unlock the productivity of its people,” solve today’s and tomorrow’s business challenges, achieve high service levels, and unlock new opportunities.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>InfraBuild: Transforming Service &amp; Inventory Management with Decision Intelligence | Aera Technology</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>InfraBuild’s Head of Supply Chain Evgeny Krapovnitskiy discusses how InfraBuild will use Decision Intelligence to “unlock the productivity of its people,” </wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>decision intelligence podcast</wp:meta_value>
+      </wp:postmeta>
+    </item>
+  </channel>
+</rss>

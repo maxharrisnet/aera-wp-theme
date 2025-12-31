@@ -1,0 +1,100 @@
+{
+  "export_date": "2025-12-30",
+  "total_podcasts": 15,
+  "with_external_links": 13,
+  "with_dates": 13,
+  "with_images": 15,
+  "post_ids": "5001-5015",
+  "podcasts": [
+    {
+      "title": "Avantor: Building Smarter Life Science Supply Chains with Decision Intelligence",
+      "date": "2025-11-14",
+      "link": "https://meet.aeratechnology.com/di-podcast-avantor",
+      "has_image": true
+    },
+    {
+      "title": "Fred Laluyaux: How Decision Intelligence & AI Agents Are Redefining Enterprise Operations",
+      "date": "2025-11-13",
+      "link": "https://www.youtube.com/watch?v=dMmVXj9lMts&list=PLacDrP-7Ys6IsnPRN0ToTfjH8gQ4s6mL9&index=3",
+      "has_image": true
+    },
+    {
+      "title": "Fred Laluyaux on Decision Intelligence, AI Adoption, and the Future of Work",
+      "date": "2025-10-28",
+      "link": "https://www.pmi.org/ai-today-podcast/fred-laluyaux-on-decision-intelligence-ai-adoption-and-the-future-of-work",
+      "has_image": true
+    },
+    {
+      "title": "Decision Intelligence and AI with Frederic Laluyuax of Aera Technology, Leaders in Tech and Ecommerce Podcast",
+      "date": "2025-08-14",
+      "link": "https://alcottglobal.com/podcast/leaders-in-tech-and-ecommerce-podcast/93-decision-intelligence-and-ai-with-frederic-laluyaux-of-aera-technology",
+      "has_image": true
+    },
+    {
+      "title": "How AI is Remaking Decision-Making Systems",
+      "date": "2025-06-19",
+      "link": "https://podcasts.apple.com/us/podcast/how-ai-is-remaking-decision-making-systems/id1731347884?i=1000713625322",
+      "has_image": true
+    },
+    {
+      "title": "The Rise of the Autonomous Enterprise: Tom Davenport on AI-Driven Decision Making",
+      "date": "2025-04-09",
+      "link": "https://meet.aeratechnology.com/the-rise-of-the-autonomous-enterprise-tom-davenport-on-ai-driven-decision-making",
+      "has_image": true
+    },
+    {
+      "title": "Revolutionizing Higher Ed: How Decision Intelligence is Shaping Student Success at WGU",
+      "date": "2025-03-10",
+      "link": "https://meet.aeratechnology.com/revolutionizing-higher-ed-how-decision-intelligence-is-shaping-student-success-at-wgu",
+      "has_image": true
+    },
+    {
+      "title": "Reason Driven\u2122 decision-making",
+      "date": "2025-02-24",
+      "link": "https://meet.aeratechnology.com/brian-evergreen-the-future-solving-company-reason-driven-decision-making",
+      "has_image": true
+    },
+    {
+      "title": "Baxter Healthcare: Elevating Service and Care with Decision Intelligence",
+      "date": "2025-02-09",
+      "link": "https://meet.aeratechnology.com/baxter-healthcare-elevating-service-and-care-with-decision-intelligence",
+      "has_image": true
+    },
+    {
+      "title": "Unlocking AI\u2019s ROI Potential: Insights from Ray Wang",
+      "date": "2025-01-27",
+      "link": "https://meet.aeratechnology.com/unlocking-ai-roi-potential-insights-from-ray-wang",
+      "has_image": true
+    },
+    {
+      "title": "Reshaping the Future of Work with Decision Intelligence",
+      "date": "2025-01-06",
+      "link": "https://meet.aeratechnology.com/reshaping-the-future-of-work-with-decision-intelligence",
+      "has_image": true
+    },
+    {
+      "title": "Philip Morris International: Scaling Decision Intelligence to Improve Supply Chain Agility and Efficiency",
+      "date": "2024-12-16",
+      "link": "https://meet.aeratechnology.com/philip-morris-international-scaling-decision-intelligence-to-improve-supply-chain-agility-and-efficiency",
+      "has_image": true
+    },
+    {
+      "title": "Unilever: How Decision Intelligence is Revolutionizing Demand Sensing for the CPG Market",
+      "date": "2024-12-04",
+      "link": "https://meet.aeratechnology.com/unilever-how-decision-intelligence-is-revolutionizing-demand-sensing-for-the-cpg-market",
+      "has_image": true
+    },
+    {
+      "title": "J.D. Irving: Enabling a competitive advantage through Decision Intelligence",
+      "date": "",
+      "link": "",
+      "has_image": true
+    },
+    {
+      "title": "InfraBuild: Transforming Service & Inventory Management with Decision Intelligence",
+      "date": "",
+      "link": "",
+      "has_image": true
+    }
+  ]
+}

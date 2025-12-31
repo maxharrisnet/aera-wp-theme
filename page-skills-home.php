@@ -51,6 +51,9 @@ get_header();
               // Get function image from ACF
               $function_image = function_exists('get_field') ? get_field('featured_image', 'skill_function_' . $function->term_id) : null;
               $function_url = get_term_link($function);
+
+              // Debug: Output what we're getting
+              // error_log('🔍 Function: ' . $function->name . ' | Term ID: ' . $function->term_id . ' | Image: ' . print_r($function_image, true));
           ?>
               <div class="skill-card" data-function="<?php echo esc_attr($function->slug); ?>">
                 <div class="skill-card__wrapper">
