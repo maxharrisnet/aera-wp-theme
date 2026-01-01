@@ -10,7 +10,7 @@ $title = get_the_title($post_id);
 
 // Get ACF fields
 $webinar_date = function_exists('get_field') ? get_field('webinar_date', $post_id) : '';
-$webinar_featured_image = function_exists('get_field') ? get_field('webinar_featured_image', $post_id) : '';
+$resource_card_image = function_exists('get_field') ? get_field('resource_card_image', $post_id) : '';
 $webinar_featured = function_exists('get_field') ? get_field('webinar_featured', $post_id) : false;
 $webinar_excerpt = function_exists('get_field') ? get_field('webinar_excerpt', $post_id) : '';
 
@@ -52,10 +52,10 @@ if (!empty($resource_cta_text)) {
   $cta_text = $is_upcoming ? __('Register Now', 'aera') : __('Watch Now', 'aera');
 }
 
-// Get featured image
+// Get featured or card image
 $image_url = '';
-if ($webinar_featured_image && !empty($webinar_featured_image['url'])) {
-  $image_url = $webinar_featured_image['url'];
+if ($resource_card_image && !empty($resource_card_image['url'])) {
+  $image_url = $resource_card_image['url'];
 } else {
   $thumbnail_id = get_post_thumbnail_id($post_id);
   if ($thumbnail_id) {

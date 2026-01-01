@@ -10,7 +10,7 @@ $title = get_the_title($post_id);
 
 // Get ACF fields
 $webinar_date = function_exists('get_field') ? get_field('webinar_date', $post_id) : '';
-$webinar_featured_image = function_exists('get_field') ? get_field('webinar_featured_image', $post_id) : '';
+$resource_card_image = function_exists('get_field') ? get_field('resource_card_image', $post_id) : '';
 $webinar_video = function_exists('get_field') ? get_field('webinar_video', $post_id) : '';
 $webinar_form_or_video = function_exists('get_field') ? get_field('webinar_form_or_video', $post_id) : '';
 $webinar_type = function_exists('get_field') ? get_field('webinar_type', $post_id) : '';
@@ -48,13 +48,13 @@ $cta_label = __('Register', 'aera'); // Featured upcoming webinars use "Register
 
 // Get featured image
 $featured_image_markup = '';
-if ($webinar_featured_image && !empty($webinar_featured_image['url'])) {
+if ($resource_card_image && !empty($resource_card_image['url'])) {
   $featured_image_markup = sprintf(
     '<img src="%1$s" alt="%2$s" class="webinar-featured-card__image" loading="lazy" width="%3$d" height="%4$d" />',
-    esc_url($webinar_featured_image['url']),
-    esc_attr($webinar_featured_image['alt'] ?? $title),
-    esc_attr($webinar_featured_image['width'] ?? ''),
-    esc_attr($webinar_featured_image['height'] ?? '')
+    esc_url($resource_card_image['url']),
+    esc_attr($resource_card_image['alt'] ?? $title),
+    esc_attr($resource_card_image['width'] ?? ''),
+    esc_attr($resource_card_image['height'] ?? '')
   );
 } else {
   // Fallback to post thumbnail

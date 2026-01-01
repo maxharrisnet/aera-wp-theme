@@ -30,20 +30,6 @@
             }
         },
         {
-            "key": "field_webinar_featured_image",
-            "label": "Featured Image",
-            "name": "webinar_featured_image",
-            "type": "image",
-            "instructions": "Large featured image for the webinar. Used in the featured section of the webinars page.",
-            "required": false,
-            "return_format": "array",
-            "preview_size": "large",
-            "library": "all",
-            "wrapper": {
-                "width": "33.34"
-            }
-        },
-        {
             "key": "field_webinar_excerpt",
             "label": "Excerpt",
             "name": "webinar_excerpt",
