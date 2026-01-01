@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Featured webinar card partial (FeatEventsItem style - large horizontal cards).
  *
@@ -96,4 +97,3 @@ if ($resource_card_image && !empty($resource_card_image['url'])) {
     </div>
   <?php endif; ?>
 </a>
-

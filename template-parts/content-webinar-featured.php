@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Featured webinar card partial (large display for upcoming webinars).
  *
@@ -104,9 +105,10 @@ foreach ($link_attrs as $attr => $value) {
     <div class="webinar-featured-card__row">
       <div class="webinar-featured-card__content">
         <h3 class="webinar-featured-card__title">
-          <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+          <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+            ?>>
             <?php echo esc_html($title); ?>
-          </a>
+            </a>
         </h3>
       </div>
     </div>
@@ -116,7 +118,8 @@ foreach ($link_attrs as $attr => $value) {
         <?php if ($featured_image_markup) : ?>
           <div class="webinar-featured-card__col1">
             <div class="webinar-featured-card__figure">
-              <?php echo $featured_image_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+              <?php echo $featured_image_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+              ?>
             </div>
           </div>
         <?php endif; ?>
@@ -126,13 +129,13 @@ foreach ($link_attrs as $attr => $value) {
             <p class="webinar-featured-card__text"><?php echo esc_html($excerpt); ?></p>
           <?php endif; ?>
 
-          <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> class="webinar-featured-card__link">
+          <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+            ?> class="webinar-featured-card__link">
             <?php echo esc_html($cta_label); ?>
-          </a>
+            </a>
         </div>
         <div class="webinar-featured-card__clearfix"></div>
       </div>
     <?php endif; ?>
   </div>
 </article>
-

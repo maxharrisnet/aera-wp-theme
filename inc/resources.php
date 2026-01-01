@@ -96,7 +96,7 @@ function build_resource_query_args(string $slug, int $paged = 1): array
 
   return array(
     'post_type'      => $postTypes,
-    'posts_per_page' => 12,
+    'posts_per_page' => -1,
     'paged'          => max(1, $paged),
     'post_status'    => 'publish',
     'orderby'        => 'date',

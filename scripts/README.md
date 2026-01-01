@@ -25,5 +25,6 @@ node scripts/download-webinar-images.js
 Images will be saved to `_ORIGINAL_FILES/webinar-images/`.
 
 Notes:
+
 - The script places the original meeting link in a custom field `original_link` and the image URL in `image_url`.
 - Adjust the `<link>` value in the script header (`https://your-site.example/`) to match your site before importing if needed.
