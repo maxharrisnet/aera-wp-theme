@@ -44,7 +44,8 @@ $resource_cta_text = function_exists('get_field') ? get_field('resource_cta_text
 if (!empty($resource_cta_text)) {
   $cta_text = $resource_cta_text;
 } else {
-  $cta_text = $is_upcoming ? __('Register', 'aera') : __('WATCH NOW', 'aera');
+  // Default CTA for webinars should be "Watch Now" (use same wording for upcoming and on-demand)
+  $cta_text = __('Watch Now', 'aera');
 }
 
 // Get featured or card image

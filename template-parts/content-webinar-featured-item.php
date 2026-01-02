@@ -50,7 +50,8 @@ $resource_cta_text = function_exists('get_field') ? get_field('resource_cta_text
 if (!empty($resource_cta_text)) {
   $cta_text = $resource_cta_text;
 } else {
-  $cta_text = $is_upcoming ? __('Register Now', 'aera') : __('Watch Now', 'aera');
+  // Default CTA for webinars should be "Watch Now"
+  $cta_text = __('Watch Now', 'aera');
 }
 
 // Get featured or card image
@@ -87,7 +88,14 @@ if ($resource_card_image && !empty($resource_card_image['url'])) {
     </div>
 
     <div class="news__buttonWrapper">
-      <span class="newsItem__highlight highlighted"><?php echo esc_html($cta_text); ?></span>
+      <span class="newsItem__highlight highlighted"><?php echo esc_html($cta_text); ?>
+        <?php
+        $assets_base = trailingslashit(get_template_directory_uri()) . 'assets/';
+        $right_arrow = $assets_base . 'images/rightArrow.jpg';
+        if (file_exists(get_template_directory() . '/assets/images/rightArrow.jpg')) : ?>
+          <img src="<?php echo esc_url($right_arrow); ?>" alt="<?php esc_attr_e('right arrow', 'aera'); ?>" />
+        <?php endif; ?>
+      </span>
     </div>
   </div>
 
