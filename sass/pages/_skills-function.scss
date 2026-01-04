@@ -1,0 +1,425 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// ============================================================================
+// Skills Function Detail Page
+// ============================================================================
+
+.skills-function {
+  padding: 60px 0 80px;
+  background-color: $color-white;
+
+  @media (max-width: $max-720) {
+    padding: 40px 0 60px;
+  }
+
+  // Container
+  &__container {
+    @include container;
+  }
+
+  // Tab Navigation
+  &__tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-bottom: 40px;
+    border-bottom: 2px solid $color-aluminium;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    @media (max-width: $max-1024) {
+      justify-content: flex-start;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tab {
+    padding: 16px 32px;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: $color-mineshaft;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+    bottom: -2px;
+
+    @media (max-width: $max-720) {
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+
+    &:hover {
+      color: $color-link;
+      background-color: rgba($color-link, 0.05);
+    }
+
+    &.active {
+      color: $color-link;
+      border-bottom-color: $color-link;
+      background-color: rgba($color-link, 0.05);
+    }
+  }
+
+  // Content Wrapper
+  &__content-wrapper {
+    position: relative;
+  }
+
+  // Panel (Tab Content)
+  &__panel {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__panel-inner {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 60px;
+    align-items: start;
+
+    @media (max-width: $max-1024) {
+      grid-template-columns: 240px 1fr;
+      gap: 40px;
+    }
+
+    @media (max-width: $max-720) {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  // Sidebar Navigation
+  &__sidebar {
+    @media (max-width: $max-720) {
+      order: 2;
+      position: sticky;
+      top: 80px;
+      background: $color-white;
+      border: 1px solid $color-aluminium;
+      border-radius: 8px;
+      padding: 20px;
+      z-index: 10;
+    }
+  }
+
+  &__sidebar-sticky {
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding-right: 10px;
+
+    @media (max-width: $max-720) {
+      position: static;
+      max-height: none;
+      overflow-y: visible;
+      padding-right: 0;
+    }
+
+    // Custom scrollbar
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: $color-aluminium;
+      border-radius: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $color-shuttlegray;
+      border-radius: 3px;
+
+      &:hover {
+        background: $color-mineshaft;
+      }
+    }
+  }
+
+  &__sidebar-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: $color-mineshaft;
+    margin: 0 0 20px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid $color-aluminium;
+
+    @media (max-width: $max-720) {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+  }
+
+  &__sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__sidebar-link {
+    display: block;
+    padding: 10px 16px;
+    color: $color-mineshaft;
+    font-size: 14px;
+    line-height: 1.4;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+
+    @media (max-width: $max-720) {
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    &:hover {
+      background-color: rgba($color-link, 0.08);
+      color: $color-link;
+      border-left-color: $color-link;
+    }
+
+    &.active {
+      background-color: rgba($color-link, 0.12);
+      color: $color-link;
+      font-weight: 600;
+      border-left-color: $color-link;
+    }
+  }
+
+  // Main Content Area
+  &__main {
+    @media (max-width: $max-720) {
+      order: 1;
+    }
+  }
+
+  // Empty State
+  &__empty {
+    text-align: center;
+    padding: 80px 20px;
+
+    p {
+      font-size: 18px;
+      color: $color-shuttlegray;
+    }
+  }
+}
+
+// ============================================================================
+// Individual Skill Content Blocks
+// ============================================================================
+
+.skill-content {
+  padding: 40px 0;
+  border-bottom: 1px solid $color-aluminium;
+  scroll-margin-top: 100px; // Offset for fixed header
+
+  @media (max-width: $max-720) {
+    padding: 30px 0;
+  }
+
+  &:first-child {
+    padding-top: 0;
+  }
+
+  &:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  // Header
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 24px;
+
+    @media (max-width: $max-720) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba($color-link, 0.08);
+    border-radius: 8px;
+    padding: 12px;
+
+    @media (max-width: $max-720) {
+      width: 50px;
+      height: 50px;
+      padding: 10px;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+    color: $color-mineshaft;
+    line-height: 1.2;
+
+    @media (max-width: $max-1024) {
+      font-size: 28px;
+    }
+
+    @media (max-width: $max-720) {
+      font-size: 24px;
+    }
+  }
+
+  // Description
+  &__description {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: $color-mineshaft;
+
+    @media (max-width: $max-720) {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    strong {
+      font-weight: 700;
+      color: $color-link;
+    }
+  }
+
+  // Body Content
+  &__body {
+    margin-bottom: 24px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: $color-mineshaft;
+
+    @media (max-width: $max-720) {
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    h3,
+    h4,
+    h5 {
+      margin-top: 24px;
+      margin-bottom: 12px;
+      color: $color-mineshaft;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 24px;
+
+      @media (max-width: $max-720) {
+        font-size: 20px;
+      }
+    }
+
+    h4 {
+      font-size: 20px;
+
+      @media (max-width: $max-720) {
+        font-size: 18px;
+      }
+    }
+
+    ul,
+    ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+
+      li {
+        margin-bottom: 8px;
+      }
+    }
+
+    a {
+      color: $color-link;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  // Custom Sections
+  &__sections {
+    margin-top: 32px;
+  }
+
+  &__section {
+    margin-bottom: 24px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: $color-mineshaft;
+    margin: 0 0 12px 0;
+
+    @media (max-width: $max-720) {
+      font-size: 18px;
+    }
+  }
+
+  &__section-content {
+    font-size: 16px;
+    line-height: 1.7;
+    color: $color-mineshaft;
+
+    @media (max-width: $max-720) {
+      font-size: 15px;
+    }
+
+    p {
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
