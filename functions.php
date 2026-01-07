@@ -212,6 +212,20 @@ function aera_technology_scripts()
     }
   }
 
+  // Enqueue Skills Video Modal scripts for skill function taxonomy pages
+  if (is_tax('skill_function')) {
+    $skills_video_modal_js_path = get_template_directory() . '/js/skills-video-modal.js';
+    if (file_exists($skills_video_modal_js_path)) {
+      wp_enqueue_script(
+        'aera-skills-video-modal',
+        get_template_directory_uri() . '/js/skills-video-modal.js',
+        array(),
+        filemtime($skills_video_modal_js_path),
+        true
+      );
+    }
+  }
+
   // Enqueue AeraHub 2025 page scripts
   if (is_page_template('page-aerahub-2025.php')) {
     $aerahub_2025_js_path = get_template_directory() . '/js/aerahub-2025.js';

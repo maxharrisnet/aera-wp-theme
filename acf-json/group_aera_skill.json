@@ -35,6 +35,52 @@
             }
         },
         {
+            "key": "field_video_tab",
+            "label": "Video",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_video_thumbnail",
+            "label": "Video Thumbnail",
+            "name": "video_thumbnail",
+            "type": "image",
+            "instructions": "Thumbnail image displayed in content. Clicking opens the gated video modal.",
+            "required": false,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_video_url",
+            "label": "Video URL",
+            "name": "video_url",
+            "type": "url",
+            "instructions": "Full embed URL for the video (Vimeo or YouTube). Example: https://player.vimeo.com/video/123456789",
+            "required": false,
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_hubspot_form_id",
+            "label": "HubSpot Form ID",
+            "name": "hubspot_form_id",
+            "type": "text",
+            "instructions": "HubSpot form ID to gate the video. Leave empty for ungated video. Example: 097ee201-0440-4b59-a68e-d682966a8e08",
+            "required": false,
+            "wrapper": {
+                "width": "100"
+            }
+        },
+        {
             "key": "field_content_sections_tab",
             "label": "Content Sections",
             "name": "",
@@ -277,5 +323,5 @@
     "active": true,
     "description": "Custom fields for Skills. Note: Repeater fields require ACF Pro.",
     "show_in_rest": 1,
-    "modified": 1735608000
+    "modified": 1736280000
 }

@@ -21,10 +21,12 @@ if (empty($hero_description)) {
   $hero_description = __('Explore our comprehensive suite of business decision skills powered by the Aera Decision Cloud™.', 'aera');
 }
 
-// Get skill categories/taxonomies for filtering
+// Get skill categories for filtering
 $skill_categories = get_terms(array(
-  'taxonomy' => 'skill_function',
+  'taxonomy' => 'skill_category',
   'hide_empty' => true,
+  'orderby' => 'name',
+  'order' => 'ASC',
 ));
 
 // Get current filters from URL
@@ -32,16 +34,9 @@ $current_search = isset($_GET['skill_search']) ? sanitize_text_field($_GET['skil
 $current_skills = isset($_GET['skill']) ? array_map('intval', (array)$_GET['skill']) : array();
 $current_sort = isset($_GET['sort']) ? sanitize_text_field($_GET['sort']) : 'menu_order';
 
-// Check if we're on a taxonomy archive (when clicking function cards from home)
-$current_category = '';
-if (is_tax('skill_function')) {
-  $current_term = get_queried_object();
-  $current_category = $current_term->slug;
-}
-
 // Modify the main query to add our filters
 add_action('pre_get_posts', function ($query) use ($current_search, $current_skills, $current_sort) {
-  if (!is_admin() && $query->is_main_query() && (is_post_type_archive('skill') || is_tax('skill_function'))) {
+  if (!is_admin() && $query->is_main_query() && is_post_type_archive('skill')) {
 
     // Add search filter
     if (!empty($current_search)) {
@@ -107,7 +102,7 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
               </form>
             </div>
 
-            <!-- Functions Filter -->
+            <!-- Categories Filter -->
             <?php if (!empty($skill_categories) && !is_wp_error($skill_categories)) : ?>
               <form method="get" action="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" id="skillsFilterForm">
                 <!-- Preserve search parameter -->
@@ -121,7 +116,7 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
                 <?php endif; ?>
 
                 <div class="skills-filter__functions">
-                  <h3 class="skills-filter__title"><?php esc_html_e('By Function', 'aera'); ?></h3>
+                  <h3 class="skills-filter__title"><?php esc_html_e('By Category', 'aera'); ?></h3>
 
                   <?php foreach ($skill_categories as $category) :
                     // Get skills in this category
@@ -130,7 +125,7 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
                       'posts_per_page' => -1,
                       'tax_query' => array(
                         array(
-                          'taxonomy' => 'skill_function',
+                          'taxonomy' => 'skill_category',
                           'field' => 'term_id',
                           'terms' => $category->term_id,
                         ),
@@ -140,11 +135,26 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
                     ));
 
                     if (empty($skills_in_category)) continue;
+
+                    // Get parent function name if available
+                    $parent_function_id = function_exists('get_field') ? get_field('parent_function', 'skill_category_' . $category->term_id) : null;
+                    $parent_function_name = '';
+                    if ($parent_function_id) {
+                      $parent_function = get_term($parent_function_id, 'skill_function');
+                      if ($parent_function && !is_wp_error($parent_function)) {
+                        $parent_function_name = $parent_function->name;
+                      }
+                    }
                   ?>
                     <div class="skills-filter__function">
                       <div class="skills-filter__function-header" data-function="<?php echo esc_attr($category->slug); ?>">
                         <span class="skills-filter__function-icon">+</span>
-                        <span class="skills-filter__function-name"><?php echo esc_html($category->name); ?></span>
+                        <span class="skills-filter__function-name">
+                          <?php echo esc_html($category->name); ?>
+                          <?php if ($parent_function_name) : ?>
+                            <small class="skills-filter__parent-function">(<?php echo esc_html($parent_function_name); ?>)</small>
+                          <?php endif; ?>
+                        </span>
                         <span class="skills-filter__function-count">(<?php echo count($skills_in_category); ?>)</span>
                       </div>
                       <div class="skills-filter__function-skills" id="function-<?php echo esc_attr($category->slug); ?>">

@@ -75,13 +75,13 @@ function register_taxonomies(): void
       'slug'     => 'function',
       'args'     => array(
         'hierarchical' => true,
-        'show_admin_column' => true,
+        'show_admin_column' => false,
       ),
-      'post_types' => array('skill'),
+      'post_types' => array(), // Not directly attached to skills, used only for archive pages
     ),
     'skill_category' => array(
-      'singular' => __('Category', 'aera'),
-      'plural'   => __('Categories', 'aera'),
+      'singular' => __('Skill Category', 'aera'),
+      'plural'   => __('Skill Categories', 'aera'),
       'slug'     => 'category',
       'args'     => array(
         'hierarchical' => true,
@@ -127,7 +127,6 @@ function register_taxonomies(): void
       register_taxonomy_for_object_type($taxonomy, $type);
     }
   }
-
 }
 
 add_action('init', __NAMESPACE__ . '\\register_taxonomies', 11);
@@ -169,3 +168,59 @@ function nest_industry_taxonomy_menu(): void
 }
 add_action('admin_menu', __NAMESPACE__ . '\\nest_industry_taxonomy_menu', 20);
 
+/**
+ * Set the number of skills to display per page in admin.
+ *
+ * @param int $per_page Number of posts per page.
+ * @return int Modified number of posts per page.
+ */
+function set_skills_per_page(int $per_page): int
+{
+  return 100;
+}
+add_filter('edit_skill_per_page', __NAMESPACE__ . '\\set_skills_per_page');
+
+/**
+ * Add custom column to skill_category admin to show parent function.
+ *
+ * @param array $columns Existing columns.
+ * @return array Modified columns.
+ */
+function add_skill_category_parent_function_column(array $columns): array
+{
+  // Insert after the 'name' column
+  $new_columns = array();
+  foreach ($columns as $key => $value) {
+    $new_columns[$key] = $value;
+    if ($key === 'name') {
+      $new_columns['parent_function'] = __('Parent Function', 'aera');
+    }
+  }
+  return $new_columns;
+}
+add_filter('manage_edit-skill_category_columns', __NAMESPACE__ . '\\add_skill_category_parent_function_column');
+
+/**
+ * Populate the parent function column in skill_category admin.
+ *
+ * @param string $content Column content.
+ * @param string $column_name Column name.
+ * @param int $term_id Term ID.
+ * @return string Column content.
+ */
+function populate_skill_category_parent_function_column(string $content, string $column_name, int $term_id): string
+{
+  if ($column_name === 'parent_function') {
+    $parent_function_id = function_exists('get_field') ? get_field('parent_function', 'skill_category_' . $term_id) : null;
+
+    if ($parent_function_id) {
+      $parent_function = get_term($parent_function_id, 'skill_function');
+      if ($parent_function && !is_wp_error($parent_function)) {
+        return esc_html($parent_function->name);
+      }
+    }
+    return '—';
+  }
+  return $content;
+}
+add_filter('manage_skill_category_custom_column', __NAMESPACE__ . '\\populate_skill_category_parent_function_column', 10, 3);
