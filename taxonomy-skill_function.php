@@ -139,26 +139,6 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
                       id="skill-<?php echo esc_attr($skill->post_name); ?>"
                       class="skill-content">
 
-                      <div class="skill-content__header">
-                        <?php if ($skill_icon) :
-                          // Handle both old (image array) and new (icon path string) formats
-                          $icon_url = is_array($skill_icon) ? $skill_icon['url'] : $skill_icon;
-                          if ($icon_url && !filter_var($icon_url, FILTER_VALIDATE_URL)) {
-                            $icon_url = get_template_directory_uri() . '/' . ltrim($icon_url, '/');
-                          }
-                          if ($icon_url) :
-                        ?>
-                            <div class="skill-content__icon">
-                              <img src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($skill->post_title); ?>" />
-                            </div>
-                        <?php endif;
-                        endif; ?>
-
-                        <h2 class="skill-content__title">
-                          <?php echo esc_html($skill->post_title); ?>
-                        </h2>
-                      </div>
-
                       <?php if ($video_thumbnail && is_array($video_thumbnail) && !empty($video_thumbnail['url']) && $video_url) : ?>
                         <div class="skill-content__video">
                           <button
@@ -176,13 +156,18 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
                             </span>
                           </button>
                         </div>
-                      <?php endif; ?>
+                      <?php endif; ?> <div class="skill-content__header">
 
-                      <?php if ($skill_description) : ?>
-                        <div class="skill-content__description">
-                          <?php echo wp_kses_post(wpautop($skill_description)); ?>
-                        </div>
-                      <?php endif; ?>
+                        <h2 class="skill-content__title">
+                          <?php echo esc_html($skill->post_title); ?>
+                        </h2>
+
+                        <?php if ($skill_description) : ?>
+                          <div class="skill-content__description">
+                            <?php echo wp_kses_post(wpautop($skill_description)); ?>
+                          </div>
+                        <?php endif; ?>
+                      </div>
 
                       <?php
                       // Display Content Sections (from ACF repeater field)
@@ -193,18 +178,11 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
                       }
                       if (!empty($content_sections)) :
                       ?>
-                        <div class="skill-content__sections">
+                        <div class="skill-content__body">
                           <?php foreach ($content_sections as $section) : ?>
-                            <div class="skill-content__section">
-                              <?php if (!empty($section['label'])) : ?>
-                                <h3 class="skill-content__section-title"><?php echo esc_html($section['label']); ?></h3>
-                              <?php endif; ?>
-                              <?php if (!empty($section['content'])) : ?>
-                                <div class="skill-content__section-content">
-                                  <?php echo wp_kses_post(wpautop($section['content'])); ?>
-                                </div>
-                              <?php endif; ?>
-                            </div>
+                            <?php if (!empty($section['content'])) : ?>
+                              <?php echo wp_kses_post(wpautop($section['content'])); ?>
+                            <?php endif; ?>
                           <?php endforeach; ?>
                         </div>
                       <?php endif; ?>
