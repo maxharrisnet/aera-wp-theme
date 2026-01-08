@@ -80,9 +80,9 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
   ?>
 
   <!-- Skills Archive Section -->
-    <section class="skills skills--archive">
-      <div class="skills__container">
-        <div class="skills__row">
+  <section class="skills skills--archive">
+    <div class="skills__container">
+      <div class="skills__row">
 
         <!-- Sidebar Filter -->
         <aside class="skills-filter">
@@ -148,14 +148,10 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
                   ?>
                     <div class="skills-filter__function">
                       <div class="skills-filter__function-header" data-function="<?php echo esc_attr($category->slug); ?>">
-                        <span class="skills-filter__function-icon">+</span>
                         <span class="skills-filter__function-name">
                           <?php echo esc_html($category->name); ?>
-                          <?php if ($parent_function_name) : ?>
-                            <small class="skills-filter__parent-function">(<?php echo esc_html($parent_function_name); ?>)</small>
-                          <?php endif; ?>
                         </span>
-                        <span class="skills-filter__function-count">(<?php echo count($skills_in_category); ?>)</span>
+                        <span class="skills-filter__function-icon">+</span>
                       </div>
                       <div class="skills-filter__function-skills" id="function-<?php echo esc_attr($category->slug); ?>">
                         <?php foreach ($skills_in_category as $skill) :
@@ -212,12 +208,12 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
 
           <?php if (have_posts()) : ?>
             <div class="skills-grid__list">
-          <?php
-          while (have_posts()) :
-            the_post();
+              <?php
+              while (have_posts()) :
+                the_post();
                 get_template_part('template-parts/content', 'icon-card');
-          endwhile;
-          ?>
+              endwhile;
+              ?>
             </div>
 
             <!-- Pagination -->
@@ -247,8 +243,8 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
         </div>
 
       </div>
-      </div>
-    </section>
+    </div>
+  </section>
 </main>
 
 <script>
