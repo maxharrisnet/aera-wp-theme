@@ -208,6 +208,29 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
   <!-- Resources Section -->
   <?php get_template_part('template-parts/components/resources-section'); ?>
 
+  <!-- CTA Section -->
+  <?php
+  $cta_title = function_exists('get_field') ? get_field('skills_cta_title', 'option') : '';
+  $cta_buttons = function_exists('get_field') ? get_field('skills_cta_buttons', 'option') : array();
+
+  if ($cta_title && !empty($cta_buttons)) :
+  ?>
+    <section class="skills-cta">
+      <div class="skills-cta__container">
+        <h2 class="skills-cta__title"><?php echo esc_html($cta_title); ?></h2>
+        <div class="skills-cta__buttons">
+          <?php foreach ($cta_buttons as $button) : ?>
+            <?php if (!empty($button['button_text']) && !empty($button['button_url'])) : ?>
+              <a href="<?php echo esc_url($button['button_url']); ?>" class="button button--primary">
+                <?php echo esc_html($button['button_text']); ?>
+              </a>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        </div>
+      </div>
+    </section>
+  <?php endif; ?>
+
   <!-- Video Modal -->
   <div id="skillVideoModal" class="skill-video-modal" style="display: none;">
     <div class="skill-video-modal__overlay"></div>

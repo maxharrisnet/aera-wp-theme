@@ -168,6 +168,72 @@
       "wrapper": {
         "width": "100"
       }
+    },
+    {
+      "key": "field_skills_options_cta_section",
+      "label": "CTA Section",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_skills_cta_title",
+      "label": "CTA Section Title",
+      "name": "skills_cta_title",
+      "type": "text",
+      "instructions": "Title for the CTA section",
+      "required": 0,
+      "default_value": "See Aera in Action",
+      "placeholder": "",
+      "wrapper": {
+        "width": "100"
+      }
+    },
+    {
+      "key": "field_skills_cta_buttons",
+      "label": "CTA Buttons",
+      "name": "skills_cta_buttons",
+      "type": "repeater",
+      "instructions": "Add CTA buttons (recommended: 1-2 buttons)",
+      "required": 0,
+      "conditional_logic": 0,
+      "collapsed": "",
+      "min": 0,
+      "max": 2,
+      "layout": "block",
+      "button_label": "Add Button",
+      "sub_fields": [
+        {
+          "key": "field_skills_cta_button_text",
+          "label": "Button Text",
+          "name": "button_text",
+          "type": "text",
+          "instructions": "",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "e.g., Schedule Demo",
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_skills_cta_button_url",
+          "label": "Button URL",
+          "name": "button_url",
+          "type": "url",
+          "instructions": "",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
     }
   ],
   "location": [
@@ -186,7 +252,7 @@
   "instruction_placement": "label",
   "hide_on_screen": "",
   "active": true,
-  "description": "Global settings for Skills pages - resources section",
+  "description": "Global settings for Skills pages - resources section and CTA",
   "show_in_rest": 1,
-  "modified": 1736400000
+  "modified": 1736402000
 }

@@ -39,6 +39,19 @@
       }
     },
     {
+      "key": "field_icon_section_subheading",
+      "label": "Icon Section Subheading",
+      "name": "icon_section_subheading",
+      "type": "text",
+      "instructions": "Subheading for the icon section (displayed as H3 between description and icons)",
+      "required": 0,
+      "default_value": "How Aera Helps",
+      "placeholder": "",
+      "wrapper": {
+        "width": "100"
+      }
+    },
+    {
       "key": "field_icon_1_icon",
       "label": "Icon 1 - Icon",
       "name": "icon_1_icon",
@@ -449,5 +462,5 @@
   "active": true,
   "description": "Fields for the Skills Home page template",
   "show_in_rest": 1,
-  "modified": 1735608000
+  "modified": 1736403000
 }

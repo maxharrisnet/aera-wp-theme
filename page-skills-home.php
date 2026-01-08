@@ -91,6 +91,7 @@ get_header();
     <?php
     $icon_section_title = get_field('icon_section_title');
     $icon_section_description = get_field('icon_section_description');
+    $icon_section_subheading = get_field('icon_section_subheading');
 
     // Check if any icons are configured
     $has_icons = false;
@@ -110,6 +111,9 @@ get_header();
           <?php endif; ?>
           <?php if ($icon_section_description) : ?>
             <p class="skills-home__icon-description"><?php echo esc_html($icon_section_description); ?></p>
+          <?php endif; ?>
+          <?php if ($icon_section_subheading) : ?>
+            <h3 class="skills-home__icon-subheading"><?php echo esc_html($icon_section_subheading); ?></h3>
           <?php endif; ?>
           <div class="skills-home__icon-grid">
             <?php for ($i = 1; $i <= 4; $i++) :
