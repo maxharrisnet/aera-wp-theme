@@ -68,12 +68,12 @@
             "wrapper": {
                 "width": "50"
             }
-        },
-        {
+                },
+                {
             "key": "field_hubspot_form_id",
             "label": "HubSpot Form ID",
             "name": "hubspot_form_id",
-            "type": "text",
+                    "type": "text",
             "instructions": "HubSpot form ID to gate the video. Leave empty for ungated video. Example: 097ee201-0440-4b59-a68e-d682966a8e08",
             "required": false,
             "wrapper": {
@@ -230,19 +230,19 @@
             "filters": ["search"],
             "max": 0,
             "return_format": "object",
-            "wrapper": {
+                    "wrapper": {
                 "width": "100"
             }
-        },
-        {
+                },
+                {
             "key": "field_resources_title",
             "label": "Resources Section Title",
             "name": "resources_title",
             "type": "text",
             "instructions": "Title for the resources section (optional, defaults to 'Resources')",
-            "required": false,
-            "default_value": "",
-            "wrapper": {
+                    "required": false,
+                    "default_value": "",
+                    "wrapper": {
                 "width": "100"
             }
         },

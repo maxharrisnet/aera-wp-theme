@@ -148,10 +148,11 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
                           }
                           if ($icon_url) :
                         ?>
-                          <div class="skill-content__icon">
-                            <img src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($skill->post_title); ?>" />
-                          </div>
-                        <?php endif; endif; ?>
+                            <div class="skill-content__icon">
+                              <img src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($skill->post_title); ?>" />
+                            </div>
+                        <?php endif;
+                        endif; ?>
 
                         <h2 class="skill-content__title">
                           <?php echo esc_html($skill->post_title); ?>
@@ -169,8 +170,8 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
                             <img src="<?php echo esc_url($video_thumbnail['url']); ?>" alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video'); ?>" />
                             <span class="skill-content__video-play-icon">
                               <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.7)"/>
-                                <path d="M32 26L56 40L32 54V26Z" fill="white"/>
+                                <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.7)" />
+                                <path d="M32 26L56 40L32 54V26Z" fill="white" />
                               </svg>
                             </span>
                           </button>
@@ -183,26 +184,24 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
                         </div>
                       <?php endif; ?>
 
-                      <?php if ($skill->post_content) : ?>
-                        <div class="skill-content__body">
-                          <?php echo apply_filters('the_content', $skill->post_content); ?>
-                        </div>
-                      <?php endif; ?>
-
-                      <!-- Optional: Add custom sections if they exist -->
                       <?php
+                      // Display Content Sections (from ACF repeater field)
                       $content_sections = function_exists('get_field') ? get_field('content_sections', $skill->ID) : array();
+                      // Ensure $content_sections is an array
+                      if (!is_array($content_sections)) {
+                        $content_sections = array();
+                      }
                       if (!empty($content_sections)) :
                       ?>
                         <div class="skill-content__sections">
                           <?php foreach ($content_sections as $section) : ?>
                             <div class="skill-content__section">
-                              <?php if (!empty($section['section_label'])) : ?>
-                                <h3 class="skill-content__section-title"><?php echo esc_html($section['section_label']); ?></h3>
+                              <?php if (!empty($section['label'])) : ?>
+                                <h3 class="skill-content__section-title"><?php echo esc_html($section['label']); ?></h3>
                               <?php endif; ?>
-                              <?php if (!empty($section['section_content'])) : ?>
+                              <?php if (!empty($section['content'])) : ?>
                                 <div class="skill-content__section-content">
-                                  <?php echo wp_kses_post(wpautop($section['section_content'])); ?>
+                                  <?php echo wp_kses_post(wpautop($section['content'])); ?>
                                 </div>
                               <?php endif; ?>
                             </div>

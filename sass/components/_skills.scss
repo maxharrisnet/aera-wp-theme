@@ -78,7 +78,7 @@
 
 // Main Skills Component
 .skills {
-	color: #000;
+	color: $color-codgray;
 
 	&__container {
 		padding: 0 70px;
@@ -136,10 +136,10 @@
 
 	&__benefitsBox {
 		text-align: center;
-		color: #039d96;
-		background-color: #fbfbfb;
+		color: $color-persiangreen;
+		background-color: $color-blackhaze;
 		border-radius: 20px;
-		box-shadow: 1px 1px 10px 2px #383838;
+		box-shadow: 1px 1px 10px 2px rgba($color-codgray, 0.5);
 		width: 20%;
 		min-height: 250px;
 		padding: 30px;
@@ -168,10 +168,10 @@
 		}
 
 		h2 {
-			font-family: Gilroy;
+			font-family: $font-family-heading;
 			font-size: 72px;
 			font-weight: 700;
-			color: #039d94;
+			color: $color-persiangreen;
 			line-height: 82px;
 			margin: 0;
 
@@ -181,7 +181,7 @@
 		}
 
 		p {
-			font-family: Gilroy;
+			font-family: $font-family-heading;
 			font-size: 18px;
 			line-height: 28px;
 			font-weight: bold;
@@ -234,16 +234,16 @@
 			max-width: none;
 			line-height: 26px;
 			border-radius: 20px;
-			background-color: #fff;
-			color: #1a1a1a;
+			background-color: $color-white;
+			color: $color-codgray;
 			font-size: 18px;
-			border: 2px solid #bee9f3;
-			border-color: rgba(138, 196, 232, 0.5);
+			border: 2px solid $color-btn-default;
+			border-color: $color-btn-default;
 			font-weight: 600;
 
 			&:hover {
-				background-color: #dee8fb !important;
-				background-image: linear-gradient(rgba(224, 249, 255, 0) 0%, #e0f9ff 90%) !important;
+				background-color: $color-hawkesblue !important;
+				background-image: linear-gradient(rgba($color-oysterbay, 0) 0%, $color-oysterbay 90%) !important;
 			}
 
 			@media (max-width: $max-1024) {
@@ -279,7 +279,7 @@
 
 	&__sliderRow {
 		display: flex;
-		background-color: #f9faff;
+		background-color: $color-aquahaze;
 		padding: 30px 20px;
 		margin-top: 30px;
 		border-radius: 20px;
@@ -304,7 +304,7 @@
 
 		b,
 		strong {
-			color: #00639e;
+			color: $color-bahamablue;
 			display: block;
 			font-size: 22px;
 			font-weight: 900;
@@ -330,7 +330,7 @@
 	&__sliderTitle {
 		font-size: 24px;
 		font-weight: 900;
-		font-family: Gilroy, sans-serif;
+		font-family: $font-family-heading;
 	}
 
 	&__sliderDescription {
@@ -344,7 +344,7 @@
 	}
 
 	&__overlay {
-		background-color: #f9faffa8;
+		background-color: rgba($color-aquahaze, 0.65);
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -373,7 +373,7 @@
 		background-position: bottom;
 
 		@media (max-width: $max-720) {
-			background-color: #eaf3f9;
+			background-color: $color-aquahaze;
 			background-image: none;
 		}
 	}
@@ -404,7 +404,7 @@
 				bottom: -10px;
 				width: 45%;
 				height: 2px;
-				background-color: #1f63a1;
+				background-color: $color-bahamablue;
 			}
 		}
 
@@ -424,7 +424,7 @@
 				position: absolute;
 				right: -40px;
 				bottom: 30px;
-				color: #1f63a1;
+				color: $color-bahamablue;
 				font-weight: bold;
 			}
 		}
@@ -433,7 +433,7 @@
 	&__listNeededMobile {
 		h2 {
 			display: inline-block;
-			border-bottom: 2px solid #1f63a1;
+			border-bottom: 2px solid $color-bahamablue;
 			margin-bottom: 30px;
 			margin-top: 0;
 		}
@@ -450,7 +450,7 @@
 				bottom: -10px;
 				width: 45%;
 				height: 2px;
-				background-color: #1f63a1;
+				background-color: $color-bahamablue;
 			}
 		}
 
@@ -491,7 +491,7 @@
 
 		h2 {
 			font-size: 32px;
-			color: #fff;
+			color: $color-white;
 			margin-top: 0;
 			text-align: center;
 		}
@@ -532,10 +532,10 @@
 	&__relatedSkillsBox {
 		display: block;
 		margin: 25px;
-		background-color: #ffffff;
+		background-color: $color-white;
 		padding: 15px;
 		border-radius: 20px;
-		box-shadow: 1px 5px 8px #2b2b2b;
+		box-shadow: 1px 5px 8px rgba($color-codgray, 0.3);
 		flex: 0 0 auto;
 		width: 350px;
 
@@ -551,13 +551,13 @@
 		}
 
 		h3 {
-			color: #1a1a1a;
+			color: $color-codgray;
 			font-size: 24px;
 			margin: 0;
 		}
 
 		p {
-			color: #000;
+			color: $color-codgray;
 		}
 	}
 
@@ -581,7 +581,7 @@
 
 		h2 {
 			font-size: 32px;
-			color: #000;
+			color: $color-codgray;
 			margin-top: 0;
 			text-align: center;
 			margin-bottom: 50px;
@@ -620,7 +620,7 @@
 		width: 33.3%;
 		margin: 0 20px;
 		border-radius: 10px 10px 10px 10px;
-		box-shadow: 0px 0px 15px 2px #ccc;
+		box-shadow: 0px 0px 15px 2px $color-aluminium;
 
 		@media (max-width: $max-960) {
 			width: 40%;
@@ -645,7 +645,7 @@
 		display: block;
 		border-radius: 10px 10px 0 0;
 		background-position: right;
-		border-bottom: 5px solid #003f68;
+		border-bottom: 5px solid $color-bahamablue;
 
 		@media (max-width: $max-960) {
 			height: 85px;
@@ -657,16 +657,16 @@
 	}
 
 	&__relatedResourceType {
-		font-family: Gilroy;
+		font-family: $font-family-heading;
 		font-style: normal;
 		font-weight: 600;
 		font-size: 14px;
 		line-height: 18px;
 		display: inline-block;
-		color: #000;
+		color: $color-codgray;
 		position: relative;
 		white-space: nowrap;
-		background-color: #ccc;
+		background-color: $color-aluminium;
 		padding: 5px 15px;
 		border-radius: 20px;
 	}
@@ -674,11 +674,11 @@
 	&__relatedResourceTitle {
 		font-size: 22px;
 		line-height: 30px;
-		font-family: 'Gilroy';
+		font-family: $font-family-heading;
 	}
 
 	&__relatedResourceDescription {
-		color: #000;
+		color: $color-codgray;
 		font-size: 16px;
 		line-height: 26px;
 	}
@@ -689,9 +689,9 @@
 
 		h2 {
 			font-size: 36px;
-			color: #000;
+			color: $color-codgray;
 			margin: 0;
-			font-family: Gilroy, sans-serif;
+			font-family: $font-family-heading;
 
 			@media (max-width: $max-720) {
 				font-size: 24px;
@@ -704,8 +704,8 @@
 		font-size: 14px;
 		line-height: 3.71429;
 		border: 0;
-		background-color: #dee8fb;
-		background-image: linear-gradient(rgba(224, 249, 255, 0), #e0f9ff 90%);
+		background-color: $color-hawkesblue;
+		background-image: linear-gradient(rgba($color-oysterbay, 0), $color-oysterbay 90%);
 		margin: 0;
 		vertical-align: baseline;
 		-webkit-appearance: none;
@@ -718,8 +718,8 @@
 		position: relative;
 		padding: 0 2.85714em;
 		height: 3.57143em;
-		color: #1a1a1a;
-		font-family: Gilroy, sans-serif;
+		color: $color-codgray;
+		font-family: $font-family-heading;
 		font-weight: 600;
 		line-height: 3.57143;
 		letter-spacing: 0.025em;
@@ -733,8 +733,8 @@
 		margin-top: 20px;
 
 		&:hover {
-			background-color: #e0f9ff;
-			background-image: linear-gradient(rgba(222, 232, 251, 0), #dee8fb 90%);
+			background-color: $color-oysterbay;
+			background-image: linear-gradient(rgba($color-hawkesblue, 0), $color-hawkesblue 90%);
 		}
 	}
 
@@ -751,9 +751,9 @@
 
 		h2 {
 			font-size: 32px;
-			color: #039d94;
+			color: $color-persiangreen;
 			margin-top: 0;
-			font-family: Gilroy, sans-serif;
+			font-family: $font-family-heading;
 		}
 
 		&.hs_error_rollup {
@@ -772,7 +772,7 @@
 			bottom: 0px;
 			left: 0;
 			font-size: 12px;
-			color: red;
+			color: #ff0000;
 
 			li {
 				list-style-type: none;
@@ -781,17 +781,17 @@
 
 		input {
 			border: 0;
-			border-bottom: 2px solid #85daca;
+			border-bottom: 2px solid $color-bemuda;
 			max-width: 100%;
 			width: 100% !important;
 			line-height: 2;
-			font-family: 'FreightSans Pro', sans-serif;
+			font-family: $font-family;
 			font-size: 16px;
-			color: rgb(92, 100, 118);
+			color: $color-shuttlegray;
 			background-color: transparent;
 
 			&::placeholder {
-				color: #000000;
+				color: $color-codgray;
 			}
 
 			&:focus {
@@ -807,8 +807,8 @@
 				font-size: 14px;
 				line-height: 3.71429;
 				border: 0;
-				background-color: #dee8fb;
-				background-image: linear-gradient(rgba(224, 249, 255, 0), #e0f9ff 90%);
+				background-color: $color-hawkesblue;
+				background-image: linear-gradient(rgba($color-oysterbay, 0), $color-oysterbay 90%);
 				margin: 0;
 				vertical-align: baseline;
 				appearance: none;
@@ -817,8 +817,8 @@
 				position: relative;
 				padding: 0 2.85714em;
 				height: 3.57143em;
-				color: #1a1a1a;
-				font-family: Gilroy, sans-serif;
+				color: $color-codgray;
+				font-family: $font-family-heading;
 				font-weight: 600;
 				line-height: 3.57143;
 				letter-spacing: 0.025em;
@@ -832,8 +832,8 @@
 				margin-top: 20px;
 
 				&:hover {
-					background-color: #e0f9ff;
-					background-image: linear-gradient(rgba(222, 232, 251, 0), #dee8fb 90%);
+					background-color: $color-oysterbay;
+					background-image: linear-gradient(rgba($color-hawkesblue, 0), $color-hawkesblue 90%);
 				}
 
 				@media (max-width: $min-720) {
@@ -860,12 +860,12 @@
 			padding-right: 1em;
 			max-width: 100%;
 			text-transform: inherit;
-			color: #1a1a1a;
-			border-color: #bee9f3;
+			color: $color-codgray;
+			border-color: $color-btn-default;
 			position: relative;
 			max-width: 100%;
 			border-radius: 999px;
-			border: 1px solid #bee9f3;
+			border: 1px solid $color-btn-default;
 			height: 2.5em;
 			vertical-align: baseline;
 			display: inline-flex;
@@ -891,16 +891,16 @@
 			line-height: 1.33333;
 			resize: none;
 			border: 0;
-			font-family: 'FreightSans Pro', sans-serif;
+			font-family: $font-family;
 			font-size: 16px;
-			color: #000000;
-			border-bottom: 2px solid #85daca;
+			color: $color-codgray;
+			border-bottom: 2px solid $color-bemuda;
 			background-color: transparent;
 			border-radius: 0;
 			vertical-align: baseline;
 
 			&::placeholder {
-				color: #000;
+				color: $color-codgray;
 			}
 
 			&:focus {
@@ -915,7 +915,7 @@
 				margin-bottom: 10px !important;
 				position: relative;
 				padding-right: 5px;
-				color: #1a1a1a;
+				color: $color-codgray;
 				font-weight: 400;
 				font-size: 16px;
 				text-align: left;
@@ -1011,9 +1011,9 @@
 	}
 
 	&__closebtn {
-		font-family: Gilroy, sans-serif;
+		font-family: $font-family-heading;
 		font-weight: bold;
-		color: #000;
+		color: $color-codgray;
 		cursor: pointer;
 		text-align: right;
 	}
@@ -1031,10 +1031,10 @@
 			font-weight: 600;
 			font-size: 42px;
 			line-height: 52px;
-			color: #1a1a1a;
+			color: $color-codgray;
 			margin-top: 0px;
 			margin-bottom: 0px;
-			font-family: Gilroy, sans-serif;
+			font-family: $font-family-heading;
 
 			@media (max-width: $max-720) {
 				font-size: 36px;
