@@ -205,6 +205,9 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
     </div>
   </section>
 
+  <!-- Resources Section -->
+  <?php get_template_part('template-parts/components/resources-section'); ?>
+
   <!-- Video Modal -->
   <div id="skillVideoModal" class="skill-video-modal" style="display: none;">
     <div class="skill-video-modal__overlay"></div>

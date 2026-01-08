@@ -142,7 +142,7 @@
 		background-color: $color-poloblue;
 	}
 
-	&[data-function*='esg'],
+	&[data-function*='esg'] .icon-card__top-stripe,
 	&[data-function*='sustainability'] .icon-card__top-stripe {
 		background-color: $color-bemuda;
 	}

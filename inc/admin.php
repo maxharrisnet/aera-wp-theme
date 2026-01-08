@@ -138,6 +138,16 @@ function register_acf_options_pages(): void
     'parent_slug' => 'aera-company-hub',
     'icon_url'   => 'dashicons-building',
   ));
+
+  // Skills Options
+  acf_add_options_page(array(
+    'page_title' => __('Skills Options', 'aera'),
+    'menu_title' => __('Skills Options', 'aera'),
+    'menu_slug'  => 'acf-options-skills-options',
+    'capability' => 'edit_posts',
+    'parent_slug' => 'edit.php?post_type=skill',
+    'icon_url'   => 'dashicons-awards',
+  ));
 }
 add_action('acf/init', __NAMESPACE__ . '\\register_acf_options_pages');
 

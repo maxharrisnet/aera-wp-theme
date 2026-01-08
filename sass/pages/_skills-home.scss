@@ -9,12 +9,12 @@
 }
 
 .skills-home {
-	padding-top: 0;
+	// padding-top: 0;
 
 	&__container {
 		@include container;
-		padding-top: 50px;
-		padding-bottom: 50px;
+		padding: 50px 0;
+		max-width: 1046px;
 	}
 
 	&__intro {
@@ -58,12 +58,12 @@
 	&__skills-grid {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		gap: 30px;
+		gap: 20px;
 		margin-bottom: 40px;
 
 		@media (max-width: $max-1024) {
 			grid-template-columns: repeat(2, 1fr);
-			gap: 25px;
+			// gap: 25px;
 		}
 
 		@media (max-width: $max-720) {
@@ -337,14 +337,14 @@
 		}
 
 		// Sales / Marketing
-		&[data-function*='sales'],
+		&[data-function*='sales'] .skill-card__stripe,
 		&[data-function*='marketing'] .skill-card__stripe {
 			background-color: $color-brand-6;
 		}
 
 		// HR / IT / Other
-		&[data-function*='hr'],
-		&[data-function*='it'],
+		&[data-function*='hr'] .skill-card__stripe,
+		&[data-function*='it'] .skill-card__stripe,
 		&[data-function*='customer'] .skill-card__stripe {
 			background-color: $color-brand-7;
 		}
@@ -354,7 +354,7 @@
 			background-color: $color-poloblue;
 		}
 
-		&[data-function*='esg'],
+		&[data-function*='esg'] .skill-card__stripe,
 		&[data-function*='sustainability'] .skill-card__stripe {
 			background-color: $color-bemuda;
 		}
