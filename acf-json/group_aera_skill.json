@@ -1,327 +1,160 @@
 {
-    "key": "group_aera_skill",
-    "title": "Skill Fields",
-    "fields": [
+  "key": "group_aera_skill",
+  "title": "Skill Fields",
+  "fields": [
+    {
+      "key": "field_skill_icon",
+      "label": "Icon",
+      "name": "skill_icon",
+      "type": "select",
+      "instructions": "Select an icon from the library (displayed on archive cards)",
+      "required": false,
+      "choices": [],
+      "default_value": "",
+      "allow_null": 1,
+      "multiple": 0,
+      "ui": 1,
+      "ajax": 0,
+      "return_format": "value",
+      "placeholder": "Select an icon...",
+      "wrapper": {
+        "width": "100"
+      }
+    },
+    {
+      "key": "field_skill_description",
+      "label": "Description",
+      "name": "skill_description",
+      "type": "textarea",
+      "instructions": "Main description text for the skill (used in hero and archive cards)",
+      "required": false,
+      "rows": 4,
+      "new_lines": "br",
+      "wrapper": {
+        "width": "100"
+      }
+    },
+    {
+      "key": "field_video_tab",
+      "label": "Video",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_video_thumbnail",
+      "label": "Video Thumbnail",
+      "name": "video_thumbnail",
+      "type": "image",
+      "instructions": "Thumbnail image displayed in content. Clicking opens the gated video modal.",
+      "required": false,
+      "return_format": "array",
+      "preview_size": "medium",
+      "library": "all",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_video_url",
+      "label": "Video URL",
+      "name": "video_url",
+      "type": "url",
+      "instructions": "Full embed URL for the video (Vimeo or YouTube). Example: https://player.vimeo.com/video/123456789",
+      "required": false,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_hubspot_form_id",
+      "label": "HubSpot Form ID",
+      "name": "hubspot_form_id",
+      "type": "text",
+      "instructions": "HubSpot form ID to gate the video. Leave empty for ungated video. Example: 097ee201-0440-4b59-a68e-d682966a8e08",
+      "required": false,
+      "wrapper": {
+        "width": "100"
+      }
+    },
+    {
+      "key": "field_content_sections_tab",
+      "label": "Content Sections",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_content_sections",
+      "label": "Content Sections",
+      "name": "content_sections",
+      "type": "repeater",
+      "instructions": "Define the main content sections for this skill. These will appear in both the top tabs and sidebar navigation. Requires ACF Pro.",
+      "required": false,
+      "min": 0,
+      "max": 0,
+      "layout": "block",
+      "button_label": "Add Section",
+      "sub_fields": [
         {
-            "key": "field_skill_icon",
-            "label": "Icon",
-            "name": "skill_icon",
-            "type": "select",
-            "instructions": "Select an icon from the library (displayed on archive cards)",
-            "required": false,
-            "choices": [],
-            "default_value": "",
-            "allow_null": 1,
-            "multiple": 0,
-            "ui": 1,
-            "ajax": 0,
-            "return_format": "value",
-            "placeholder": "Select an icon...",
-            "wrapper": {
-                "width": "100"
-            }
+          "key": "field_section_label",
+          "label": "Navigation Label",
+          "name": "label",
+          "type": "text",
+          "instructions": "Label for tabs and sidebar navigation",
+          "required": true,
+          "wrapper": {
+            "width": "50"
+          }
         },
         {
-            "key": "field_skill_description",
-            "label": "Description",
-            "name": "skill_description",
-            "type": "textarea",
-            "instructions": "Main description text for the skill (used in hero and archive cards)",
-            "required": false,
-            "rows": 4,
-            "new_lines": "br",
-            "wrapper": {
-                "width": "100"
-            }
+          "key": "field_section_anchor",
+          "label": "Anchor ID",
+          "name": "anchor",
+          "type": "text",
+          "instructions": "Unique anchor ID (e.g., 'overview', 'use-cases'). Will be auto-generated from label if left empty.",
+          "required": false,
+          "wrapper": {
+            "width": "50"
+          }
         },
         {
-            "key": "field_video_tab",
-            "label": "Video",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_video_thumbnail",
-            "label": "Video Thumbnail",
-            "name": "video_thumbnail",
-            "type": "image",
-            "instructions": "Thumbnail image displayed in content. Clicking opens the gated video modal.",
-            "required": false,
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "wrapper": {
-                "width": "50"
-            }
-        },
-        {
-            "key": "field_video_url",
-            "label": "Video URL",
-            "name": "video_url",
-            "type": "url",
-            "instructions": "Full embed URL for the video (Vimeo or YouTube). Example: https://player.vimeo.com/video/123456789",
-            "required": false,
-            "wrapper": {
-                "width": "50"
-            }
-                },
-                {
-            "key": "field_hubspot_form_id",
-            "label": "HubSpot Form ID",
-            "name": "hubspot_form_id",
-                    "type": "text",
-            "instructions": "HubSpot form ID to gate the video. Leave empty for ungated video. Example: 097ee201-0440-4b59-a68e-d682966a8e08",
-            "required": false,
-            "wrapper": {
-                "width": "100"
-            }
-        },
-        {
-            "key": "field_content_sections_tab",
-            "label": "Content Sections",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_content_sections",
-            "label": "Content Sections",
-            "name": "content_sections",
-            "type": "repeater",
-            "instructions": "Define the main content sections for this skill. These will appear in both the top tabs and sidebar navigation. Requires ACF Pro.",
-            "required": false,
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Section",
-            "sub_fields": [
-                {
-                    "key": "field_section_label",
-                    "label": "Navigation Label",
-                    "name": "label",
-                    "type": "text",
-                    "instructions": "Label for tabs and sidebar navigation",
-                    "required": true,
-                    "wrapper": {
-                        "width": "50"
-                    }
-                },
-                {
-                    "key": "field_section_anchor",
-                    "label": "Anchor ID",
-                    "name": "anchor",
-                    "type": "text",
-                    "instructions": "Unique anchor ID (e.g., 'overview', 'use-cases'). Will be auto-generated from label if left empty.",
-                    "required": false,
-                    "wrapper": {
-                        "width": "50"
-                    }
-                },
-                {
-                    "key": "field_section_content",
-                    "label": "Content",
-                    "name": "content",
-                    "type": "wysiwyg",
-                    "instructions": "Content for this section",
-                    "required": false,
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1
-                }
-            ]
-        },
-        {
-            "key": "field_how_aera_helps_tab",
-            "label": "How Aera Helps",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_how_aera_helps_title",
-            "label": "Section Title",
-            "name": "how_aera_helps_title",
-            "type": "text",
-            "instructions": "Title for the 'How Aera Helps' section (optional, defaults to 'How Aera Helps')",
-            "required": false,
-            "default_value": "",
-            "wrapper": {
-                "width": "100"
-            }
-        },
-        {
-            "key": "field_how_aera_helps_items",
-            "label": "How Aera Helps Items",
-            "name": "how_aera_helps_items",
-            "type": "repeater",
-            "instructions": "Icon/title/description items for the 'How Aera Helps' section. Requires ACF Pro.",
-            "required": false,
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Item",
-            "sub_fields": [
-                {
-                    "key": "field_help_item_icon",
-                    "label": "Icon",
-                    "name": "icon",
-                    "type": "image",
-                    "instructions": "Icon image",
-                    "return_format": "array",
-                    "preview_size": "thumbnail"
-                },
-                {
-                    "key": "field_help_item_title",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "Title text"
-                },
-                {
-                    "key": "field_help_item_description",
-                    "label": "Description",
-                    "name": "description",
-                    "type": "textarea",
-                    "instructions": "Description text",
-                    "rows": 3
-                }
-            ]
-        },
-        {
-            "key": "field_related_content_tab",
-            "label": "Related Content",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "placement": "top",
-            "endpoint": 0
-        },
-        {
-            "key": "field_related_skills_title",
-            "label": "Related Skills Section Title",
-            "name": "related_skills_title",
-            "type": "text",
-            "instructions": "Title for the related skills section (optional, defaults to 'Explore Other Business Functions')",
-            "required": false,
-            "default_value": "",
-            "wrapper": {
-                "width": "100"
-            }
-        },
-        {
-            "key": "field_related_skills",
-            "label": "Related Skills",
-            "name": "related_skills",
-            "type": "relationship",
-            "instructions": "Select related skills to display",
-            "required": false,
-            "post_type": ["skill"],
-            "filters": ["search"],
-            "max": 0,
-            "return_format": "object",
-                    "wrapper": {
-                "width": "100"
-            }
-                },
-                {
-            "key": "field_resources_title",
-            "label": "Resources Section Title",
-            "name": "resources_title",
-            "type": "text",
-            "instructions": "Title for the resources section (optional, defaults to 'Resources')",
-                    "required": false,
-                    "default_value": "",
-                    "wrapper": {
-                "width": "100"
-            }
-        },
-        {
-            "key": "field_related_resources",
-            "label": "Related Resources",
-            "name": "related_resources",
-            "type": "repeater",
-            "instructions": "Resources to display on the skill detail page (supports external links). Requires ACF Pro.",
-            "required": false,
-            "min": 0,
-            "max": 0,
-            "layout": "block",
-            "button_label": "Add Resource",
-            "sub_fields": [
-                {
-                    "key": "field_resource_title",
-                    "label": "Title",
-                    "name": "title",
-                    "type": "text",
-                    "instructions": "Resource title",
-                    "required": false
-                },
-                {
-                    "key": "field_resource_text",
-                    "label": "Description",
-                    "name": "text",
-                    "type": "textarea",
-                    "instructions": "Resource description",
-                    "required": false,
-                    "rows": 3
-                },
-                {
-                    "key": "field_resource_type",
-                    "label": "Type Label",
-                    "name": "type",
-                    "type": "text",
-                    "instructions": "Resource type (e.g., 'Case Study', 'Whitepaper', 'Video')",
-                    "required": false
-                },
-                {
-                    "key": "field_resource_link",
-                    "label": "URL",
-                    "name": "link",
-                    "type": "url",
-                    "instructions": "URL to the resource (internal or external)",
-                    "required": false
-                },
-                {
-                    "key": "field_resource_image",
-                    "label": "Image",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "Image for the resource card",
-                    "required": false,
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all"
-                }
-            ]
+          "key": "field_section_content",
+          "label": "Content",
+          "name": "content",
+          "type": "wysiwyg",
+          "instructions": "Content for this section",
+          "required": false,
+          "tabs": "all",
+          "toolbar": "full",
+          "media_upload": 1
         }
-    ],
-    "location": [
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "skill"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": true,
-    "description": "Custom fields for Skills. Note: Repeater fields require ACF Pro.",
-    "show_in_rest": 1,
-    "modified": 1736280000
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "skill"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Custom fields for Skills. Note: Repeater fields require ACF Pro.",
+  "show_in_rest": 1,
+  "modified": 1736280000
 }

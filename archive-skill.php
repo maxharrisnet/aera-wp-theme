@@ -94,11 +94,16 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
 
             <!-- Search Bar -->
             <div class="skills-filter__search">
-              <form role="search" method="get" action="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" id="skillsSearchForm">
-                <input type="search" name="skill_search" placeholder="<?php esc_attr_e('Search skills...', 'aera'); ?>" value="<?php echo esc_attr($current_search); ?>" class="skills-filter__search-input">
-                <button type="submit" class="skills-filter__search-button">
-                  <?php esc_html_e('Search', 'aera'); ?>
-                </button>
+              <form role="search" method="get" action="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" id="skillsSearchForm" class="skills-filter__search-form">
+                <div class="skills-filter__search-wrapper">
+                  <input type="search" name="skill_search" placeholder="<?php esc_attr_e('Search skills...', 'aera'); ?>" value="<?php echo esc_attr($current_search); ?>" class="skills-filter__search-input">
+                  <button type="submit" class="skills-filter__search-button" aria-label="<?php esc_attr_e('Search', 'aera'); ?>">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="2" />
+                      <path d="M14.5 14.5L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                  </button>
+                </div>
               </form>
             </div>
 

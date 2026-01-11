@@ -80,14 +80,13 @@
 
 	&__search-input {
 		width: 100%;
-		padding: 10px 12px;
+		padding: 10px 45px 10px 12px;
 		font-size: 14px;
 		line-height: 1.5;
 		color: $color-codgray;
 		background-color: $color-white;
 		border: 1px solid $color-aluminium;
 		border-radius: 4px;
-		margin-bottom: 8px;
 		transition: border-color $transition-enter ease;
 
 		&:focus {
@@ -100,25 +99,43 @@
 		}
 	}
 
+	&__search-form {
+		display: flex;
+	}
+
+	&__search-wrapper {
+		position: relative;
+		flex: 1;
+		display: flex;
+		align-items: center;
+	}
+
 	&__search-button {
-		width: 100%;
-		padding: 10px;
-		font-family: $font-family-heading;
-		font-size: 13px;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 0.025em;
-		color: $color-codgray;
-		background-color: $color-btn-background;
-		border: 1px solid $color-btn-default;
-		border-radius: 4px;
+		position: absolute;
+		right: 8px;
+		top: 50%;
+		transform: translateY(-50%);
+		padding: 6px;
+		background: none;
+		border: none;
 		cursor: pointer;
-		transition: all $transition-enter ease;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: $color-codgray;
+		transition: color $transition-enter ease;
+
+		svg {
+			display: block;
+		}
 
 		&:hover {
-			background-color: $color-link;
-			border-color: $color-link;
-			color: $color-white;
+			color: $color-link;
+		}
+
+		&:focus {
+			outline: 2px solid $color-link;
+			outline-offset: 2px;
 		}
 	}
 

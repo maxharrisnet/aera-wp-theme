@@ -139,7 +139,7 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
                       id="skill-<?php echo esc_attr($skill->post_name); ?>"
                       class="skill-content">
 
-                      <?php if ($video_thumbnail && is_array($video_thumbnail) && !empty($video_thumbnail['url']) && $video_url) : ?>
+                      <?php if ($video_thumbnail && is_array($video_thumbnail)) : ?>
                         <div class="skill-content__video">
                           <button
                             class="skill-content__video-thumbnail"
