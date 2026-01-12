@@ -12,6 +12,8 @@ $limit: $page-width + ($container-gutter-desktop * 2);
 // base
 $color-codgray: #1a1a1a;
 $color-shuttlegray: #5c6476;
+// Slightly different gray used in designs
+$color-steelgray: #5c6475;
 $color-aluminium: #aaacb2;
 $color-aquahaze: #f7f9fa;
 $color-white: #fff;
@@ -113,9 +115,11 @@ $color-input-border: $color-bemuda;
 
 // Fonts
 $font-family-freight: 'FreightSans Pro', sans-serif;
+$font-family-freight-bold: 'FreightSans Pro Bold', sans-serif;
 $font-family-gilroy: 'Gilroy', sans-serif;
 $font-family-gilroy-bold: 'Gilroy-Bold', sans-serif;
 $font-family: $font-family-freight;
+$font-family-bold: $font-family-freight-bold;
 $font-family-heading: $font-family-gilroy-bold;
 $font-size: 18px;
 $font-color: $color-shuttlegray;

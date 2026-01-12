@@ -111,7 +111,6 @@ $skills_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form
                 <?php if (count($skills_in_category) > 1) : ?>
                   <aside class="skills-function__sidebar">
                     <div class="skills-function__sidebar-sticky">
-                      <h3 class="skills-function__sidebar-title"><?php echo esc_html($category->name); ?></h3>
                       <nav class="skills-function__sidebar-nav">
                         <?php foreach ($skills_in_category as $skill_index => $skill) : ?>
                           <a

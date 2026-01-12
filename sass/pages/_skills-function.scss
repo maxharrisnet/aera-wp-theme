@@ -22,12 +22,15 @@
 	// Tab Navigation
 	&__tabs {
 		display: flex;
-		justify-content: center;
+		justify-content: space-between;
 		gap: 0;
 		margin-bottom: 40px;
-		border-bottom: 2px solid $color-aluminium;
 		overflow-x: auto;
 		-webkit-overflow-scrolling: touch;
+		width: 100vw;
+		position: relative;
+		left: 50%;
+		transform: translateX(-50%);
 
 		@media (max-width: $max-1024) {
 			justify-content: flex-start;
@@ -36,33 +39,55 @@
 	}
 
 	&__tab {
-		padding: 16px 32px;
+		padding: 20px;
 		background: transparent;
 		border: none;
-		border-bottom: 3px solid transparent;
-		color: $color-mineshaft;
-		font-size: 16px;
-		font-weight: 600;
+		border-bottom: 2px solid #c2ced7;
+		height: 80px;
+		display: flex;
+		flex: 1;
+		justify-content: center;
+		align-items: center;
+		color: $color-steelgray;
+		font-family: $font-family-freight;
+		font-size: 18px;
+		font-weight: 350;
 		cursor: pointer;
 		transition: all 0.3s ease;
 		white-space: nowrap;
 		position: relative;
-		bottom: -2px;
+
+		&::after {
+			transition: background-color 0.3s ease;
+			background-color: transparent;
+		}
 
 		@media (max-width: $max-720) {
 			padding: 12px 20px;
 			font-size: 14px;
 		}
 
-		&:hover {
-			color: $color-link;
-			background-color: rgba($color-link, 0.05);
-		}
-
+		&:hover,
 		&.active {
 			color: $color-link;
 			border-bottom-color: $color-link;
-			background-color: rgba($color-link, 0.05);
+
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 2px;
+				background-color: $color-link;
+				border-radius: 2px;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				opacity: 1;
+			}
+		}
+
+		&.active {
+			font-family: $font-family-freight-bold;
 		}
 	}
 
@@ -170,36 +195,34 @@
 	&__sidebar-nav {
 		display: flex;
 		flex-direction: column;
-		gap: 4px;
+		gap: 5px;
 	}
 
 	&__sidebar-link {
+		font-family: $font-family;
 		display: block;
-		padding: 10px 16px;
-		color: $color-mineshaft;
-		font-size: 14px;
+		padding: 10px 0;
+		color: $color-steelgray;
+		font-size: 18px;
 		line-height: 1.4;
 		text-decoration: none;
-		border-radius: 4px;
 		transition: all 0.2s ease;
-		border-left: 3px solid transparent;
 
 		@media (max-width: $max-720) {
 			padding: 8px 12px;
 			font-size: 13px;
 		}
 
-		&:hover {
-			background-color: rgba($color-link, 0.08);
+		&:hover,
+		&.active {
+			// font-family: $font-family-bold;
 			color: $color-link;
-			border-left-color: $color-link;
+			// font-weight: 700;
 		}
 
 		&.active {
-			background-color: rgba($color-link, 0.12);
-			color: $color-link;
-			font-weight: 600;
-			border-left-color: $color-link;
+			font-family: $font-family-bold;
+			font-weight: 700;
 		}
 	}
 
