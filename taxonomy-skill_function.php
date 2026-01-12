@@ -39,6 +39,9 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
     }
   }
 }
+
+// Get global HubSpot form ID for skills videos from options page
+$skills_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form_id', 'option') : '';
 ?>
 
 <main id="primary" class="site-main site-main--skills-function">
@@ -133,7 +136,6 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
                     // Get video data
                     $video_thumbnail = function_exists('get_field') ? get_field('video_thumbnail', $skill->ID) : null;
                     $video_url = function_exists('get_field') ? get_field('video_url', $skill->ID) : '';
-                    $hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form_id', $skill->ID) : '';
                   ?>
                     <article
                       id="skill-<?php echo esc_attr($skill->post_name); ?>"
@@ -144,7 +146,7 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
                           <button
                             class="skill-content__video-thumbnail"
                             data-video-url="<?php echo esc_attr($video_url); ?>"
-                            data-hubspot-form="<?php echo esc_attr($hubspot_form_id); ?>"
+                            data-hubspot-form="<?php echo esc_attr($skills_hubspot_form_id); ?>"
                             data-skill-id="<?php echo esc_attr($skill->ID); ?>"
                             aria-label="<?php esc_attr_e('Play video', 'aera'); ?>">
                             <img src="<?php echo esc_url($video_thumbnail['url']); ?>" alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video'); ?>" />
@@ -204,6 +206,56 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
 
     </div>
   </section>
+
+  <!-- Related Functions Section -->
+  <?php
+  // Get related skill functions from ACF repeater field
+  $related_functions = function_exists('get_field') ? get_field('related_skill_functions', 'skill_function_' . $current_function->term_id) : array();
+
+  if (!empty($related_functions) && is_array($related_functions)) :
+    // Convert repeater items to term objects
+    $related_function_terms = array();
+    foreach ($related_functions as $related_function) {
+      // Repeater returns an array with the sub-field key
+      $function_term = isset($related_function['related_skill_function']) ? $related_function['related_skill_function'] : $related_function;
+
+      // If it's already a term object, use it directly
+      if (is_object($function_term) && isset($function_term->term_id)) {
+        $related_function_terms[] = $function_term;
+      } elseif (is_numeric($function_term)) {
+        // If it's just an ID, get the term object
+        $term = get_term($function_term, 'skill_function');
+        if ($term && !is_wp_error($term)) {
+          $related_function_terms[] = $term;
+        }
+      }
+    }
+
+    if (!empty($related_function_terms)) :
+  ?>
+      <section class="skills-function__related">
+        <div class="skills-function__container">
+          <h2 class="skills-home__resources-title"><?php esc_html_e('Explore Other Business Functions', 'aera'); ?></h2>
+
+          <?php
+          get_template_part('template-parts/components/skill-functions-grid', null, array(
+            'functions' => $related_function_terms,
+            'grid_class' => 'skills-home__resources-grid',
+            'card_class' => 'skill-card',
+          ));
+          ?>
+
+          <div class="skills-home__cta">
+            <a href="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" class="button button--outline">
+              <?php esc_html_e('View All Skills', 'aera'); ?>
+            </a>
+          </div>
+        </div>
+      </section>
+  <?php
+    endif;
+  endif;
+  ?>
 
   <!-- Resources Section -->
   <?php get_template_part('template-parts/components/resources-section'); ?>

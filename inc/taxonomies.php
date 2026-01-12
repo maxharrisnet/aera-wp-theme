@@ -77,7 +77,7 @@ function register_taxonomies(): void
         'hierarchical' => true,
         'show_admin_column' => false,
       ),
-      'post_types' => array(), // Not directly attached to skills, used only for archive pages
+      'post_types' => array('skill'),
     ),
     'skill_category' => array(
       'singular' => __('Skill Category', 'aera'),

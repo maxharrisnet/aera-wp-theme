@@ -83,9 +83,12 @@ img {
 
 h1,
 h2,
-h3 {
+h3,
+h4 // TODO: double check
+{
 	// stylelint-disable-line
 	color: $font-color-dark;
+	font-family: $font-family-heading;
 }
 // div.grecaptcha-badge{
 //     visibility: hidden;

@@ -36,47 +36,21 @@ get_header();
       <div class="skills-home__container">
 
         <!-- Functions Grid (taxonomy terms in 3-column layout) -->
-        <div class="skills-home__grid">
-          <?php
-          // Get all skill functions (skill-category taxonomy)
-          $functions = get_terms(array(
-            'taxonomy' => 'skill_function',
-            'hide_empty' => true,
-            'orderby' => 'term_order',
-            'order' => 'DESC',
-          ));
+        <?php
+        // Get all skill functions (skill_function taxonomy)
+        $functions = get_terms(array(
+          'taxonomy' => 'skill_function',
+          'hide_empty' => true,
+          'orderby' => 'term_order',
+          'order' => 'DESC',
+        ));
 
-          if (!empty($functions) && !is_wp_error($functions)) :
-            foreach ($functions as $function) :
-              // Get function image from ACF
-              $function_image = function_exists('get_field') ? get_field('featured_image', 'skill_function_' . $function->term_id) : null;
-              $function_url = get_term_link($function);
-
-              // Debug: Output what we're getting
-              // error_log('🔍 Function: ' . $function->name . ' | Term ID: ' . $function->term_id . ' | Image: ' . print_r($function_image, true));
-          ?>
-              <div class="skill-card" data-function="<?php echo esc_attr($function->slug); ?>">
-                <div class="skill-card__wrapper">
-                  <a href="<?php echo esc_url($function_url); ?>">
-                    <?php if ($function_image) : ?>
-                      <figure class="skill-card__image-container">
-                        <img src="<?php echo esc_url($function_image['url']); ?>" alt="<?php echo esc_attr($function_image['alt'] ?: $function->name); ?>" class="skill-card__image" />
-                      </figure>
-                    <?php endif; ?>
-
-                    <div class="skill-card__stripe"></div>
-
-                    <div class="skill-card__content">
-                      <h3 class="skill-card__title"><?php echo esc_html($function->name); ?></h3>
-                    </div>
-                  </a>
-                </div>
-              </div>
-          <?php
-            endforeach;
-          endif;
-          ?>
-        </div>
+        get_template_part('template-parts/components/skill-functions-grid', null, array(
+          'functions' => $functions,
+          'grid_class' => 'skills-home__grid',
+          'card_class' => 'skill-card',
+        ));
+        ?>
 
         <!-- View All Skills CTA -->
         <div class="skills-home__cta">
