@@ -250,8 +250,7 @@
 // ============================================================================
 
 .skill-content {
-	padding: 40px 0;
-	border-bottom: 1px solid $color-aluminium;
+	padding: 30px 0;
 	scroll-margin-top: 100px; // Offset for fixed header
 
 	@media (max-width: $max-720) {
@@ -412,6 +411,33 @@
 
 			&:hover {
 				text-decoration: none;
+			}
+		}
+	}
+
+	// CTA Buttons
+	&__cta {
+		display: flex;
+		gap: 16px;
+		margin-top: 24px;
+		flex-wrap: wrap;
+
+		@media (max-width: $max-720) {
+			gap: 12px;
+			margin-top: 20px;
+		}
+
+		.button {
+			flex: 1;
+			min-width: 200px;
+
+			@media (max-width: $max-720) {
+				flex: 1 1 calc(50% - 6px);
+				min-width: auto;
+			}
+
+			@media (max-width: $max-480) {
+				flex: 1 1 100%;
 			}
 		}
 	}

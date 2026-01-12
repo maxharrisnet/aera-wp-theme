@@ -16,12 +16,25 @@ $functions = get_the_terms(get_the_ID(), 'skill_function');
 $function_slug = (!empty($functions) && !is_wp_error($functions)) ? $functions[0]->slug : '';
 $function_term = (!empty($functions) && !is_wp_error($functions)) ? $functions[0] : null;
 
-// Build the link URL - link to the skill function page with the skill anchor
+// Get the first category (skill_category taxonomy) for tab navigation
+$categories = get_the_terms(get_the_ID(), 'skill_category');
+$category_slug = '';
+if (!empty($categories) && !is_wp_error($categories)) {
+  $category_slug = $categories[0]->slug;
+}
+
+// Build the link URL - link to the skill function page with category param and skill anchor
 $card_link = '#';
 if ($function_term) {
   $function_link = get_term_link($function_term);
   if (!is_wp_error($function_link)) {
-    $card_link = $function_link . '#skill-' . get_post_field('post_name');
+    $card_link = $function_link;
+    // Add category parameter if available (for tab activation)
+    if (!empty($category_slug)) {
+      $card_link = add_query_arg('category', $category_slug, $card_link);
+    }
+    // Add anchor link to the skill
+    $card_link = $card_link . '#skill-' . get_post_field('post_name');
   }
 }
 

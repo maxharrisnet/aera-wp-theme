@@ -136,6 +136,38 @@
           "media_upload": 1
         }
       ]
+    },
+    {
+      "key": "field_cta_tab",
+      "label": "Call to Action",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_read_how_it_works_url",
+      "label": "Read how It Works URL",
+      "name": "read_how_it_works_url",
+      "type": "url",
+      "instructions": "Optional: URL for 'Read how It Works' button. Leave empty to hide the button.",
+      "required": false,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_explore_more_url",
+      "label": "Explore more URL",
+      "name": "explore_more_url",
+      "type": "url",
+      "instructions": "Optional: URL for 'Explore more' button. Leave empty to hide the button.",
+      "required": false,
+      "wrapper": {
+        "width": "50"
+      }
     }
   ],
   "location": [

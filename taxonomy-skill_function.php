@@ -13,6 +13,9 @@ get_header();
 // Get current taxonomy term (Function)
 $current_function = get_queried_object();
 
+// Get category parameter from URL (for tab activation)
+$active_category = isset($_GET['category']) ? sanitize_text_field($_GET['category']) : '';
+
 // Get hero content from taxonomy term or fallback
 $hero_title = $current_function->name;
 $hero_description = $current_function->description ?: sprintf(
@@ -65,11 +68,14 @@ $skills_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form
         <!-- Category Tab Navigation (only show if more than one category) -->
         <?php if (count($function_categories) > 1) : ?>
           <nav class="skills-function__tabs" role="tablist">
-            <?php foreach ($function_categories as $index => $category) : ?>
+            <?php foreach ($function_categories as $index => $category) :
+              // Check if this category matches the URL parameter or is the first category
+              $is_active = (!empty($active_category) && $active_category === $category->slug) || (empty($active_category) && $index === 0);
+            ?>
               <button
-                class="skills-function__tab <?php echo $index === 0 ? 'active' : ''; ?>"
+                class="skills-function__tab <?php echo $is_active ? 'active' : ''; ?>"
                 role="tab"
-                aria-selected="<?php echo $index === 0 ? 'true' : 'false'; ?>"
+                aria-selected="<?php echo $is_active ? 'true' : 'false'; ?>"
                 aria-controls="category-<?php echo esc_attr($category->slug); ?>"
                 id="tab-<?php echo esc_attr($category->slug); ?>"
                 data-category="<?php echo esc_attr($category->slug); ?>">
@@ -97,10 +103,13 @@ $skills_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form
             ));
 
             if (empty($skills_in_category)) continue;
+
+            // Check if this category should be active based on URL parameter or default to first
+            $is_panel_active = (!empty($active_category) && $active_category === $category->slug) || (empty($active_category) && $index === 0);
           ?>
             <!-- Category Content Panel -->
             <div
-              class="skills-function__panel <?php echo $index === 0 ? 'active' : ''; ?>"
+              class="skills-function__panel <?php echo $is_panel_active ? 'active' : ''; ?>"
               role="tabpanel"
               id="category-<?php echo esc_attr($category->slug); ?>"
               aria-labelledby="tab-<?php echo esc_attr($category->slug); ?>">
@@ -185,6 +194,28 @@ $skills_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form
                               <?php echo wp_kses_post(wpautop($section['content'])); ?>
                             <?php endif; ?>
                           <?php endforeach; ?>
+                        </div>
+                      <?php endif; ?>
+
+                      <?php
+                      // Display CTA buttons (optional)
+                      $read_how_url = function_exists('get_field') ? get_field('read_how_it_works_url', $skill->ID) : '';
+                      $explore_more_url = function_exists('get_field') ? get_field('explore_more_url', $skill->ID) : '';
+
+                      if ($read_how_url || $explore_more_url) :
+                      ?>
+                        <div class="skill-content__cta">
+                          <?php if ($read_how_url) : ?>
+                            <a href="<?php echo esc_url($read_how_url); ?>" class="button button--outline" target="_blank" rel="noopener noreferrer">
+                              <?php esc_html_e('Read how It Works', 'aera'); ?>
+                            </a>
+                          <?php endif; ?>
+
+                          <?php if ($explore_more_url) : ?>
+                            <a href="<?php echo esc_url($explore_more_url); ?>" class="button button--outline" target="_blank" rel="noopener noreferrer">
+                              <?php esc_html_e('Explore more', 'aera'); ?>
+                            </a>
+                          <?php endif; ?>
                         </div>
                       <?php endif; ?>
 
