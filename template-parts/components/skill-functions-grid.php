@@ -33,7 +33,9 @@ if (empty($functions) || is_wp_error($functions)) {
           <div class="<?php echo esc_attr($card_class); ?>__stripe"></div>
 
           <div class="<?php echo esc_attr($card_class); ?>__content">
-            <h3 class="<?php echo esc_attr($card_class); ?>__title"><?php echo esc_html($function->name); ?></h3>
+            <h3 class="<?php echo esc_attr($card_class); ?>__title"><?php echo esc_html($function->name); ?></h3> <?php if (!empty($function->description)) : ?>
+              <p class=\"<?php echo esc_attr($card_class); ?>__description\"><?php echo esc_html(wp_trim_words($function->description, 15)); ?></p>
+            <?php endif; ?>
           </div>
         </a>
       </div>

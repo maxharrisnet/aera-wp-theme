@@ -86,6 +86,8 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
 
         <!-- Sidebar Filter -->
         <aside class="skills-filter">
+          <h3 class="skills-filter__title"><?php esc_html_e('All Skills', 'aera'); ?></h3>
+
           <div class="skills-filter__toggle" id="filterToggle">
             <?php esc_html_e('Filter Skills', 'aera'); ?>
           </div>
@@ -121,7 +123,7 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
                 <?php endif; ?>
 
                 <div class="skills-filter__functions">
-                  <h3 class="skills-filter__title"><?php esc_html_e('By Category', 'aera'); ?></h3>
+
 
                   <?php foreach ($skill_categories as $category) :
                     // Get skills in this category
@@ -172,15 +174,7 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
                   <?php endforeach; ?>
                 </div>
 
-                <!-- Filter Actions -->
-                <div class="skills-filter__actions">
-                  <button type="submit" class="skills-filter__apply-button">
-                    <?php esc_html_e('Apply Filters', 'aera'); ?>
-                  </button>
-                  <a href="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" class="skills-filter__clear-button">
-                    <?php esc_html_e('Clear All', 'aera'); ?>
-                  </a>
-                </div>
+
               </form>
             <?php endif; ?>
 
@@ -189,28 +183,6 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
 
         <!-- Skills Grid -->
         <div class="skills-grid">
-          <div class="skills-grid__header">
-            <div class="skills-grid__count">
-              <?php
-              global $wp_query;
-              printf(
-                /* translators: %d: number of skills */
-                esc_html(_n('%d skill found', '%d skills found', $wp_query->found_posts, 'aera')),
-                esc_html(number_format_i18n($wp_query->found_posts))
-              );
-              ?>
-            </div>
-
-            <div class="skills-grid__sort">
-              <label for="skillSort"><?php esc_html_e('Sort by:', 'aera'); ?></label>
-              <select name="sort" id="skillSort">
-                <option value="menu_order" <?php selected($current_sort, 'menu_order'); ?>><?php esc_html_e('Default', 'aera'); ?></option>
-                <option value="title" <?php selected($current_sort, 'title'); ?>><?php esc_html_e('Name (A-Z)', 'aera'); ?></option>
-                <option value="date" <?php selected($current_sort, 'date'); ?>><?php esc_html_e('Recently Added', 'aera'); ?></option>
-              </select>
-            </div>
-          </div>
-
           <?php if (have_posts()) : ?>
             <div class="skills-grid__list">
               <?php
