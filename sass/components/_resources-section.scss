@@ -89,18 +89,19 @@
 	}
 
 	&__cardTitle {
-		font-size: 22px;
+		font-size: 20px;
 		line-height: 30px;
-		font-family: 'Gilroy', sans-serif;
-		margin: 15px 0 0 0;
-		color: #1a1a1a;
+		font-family: $font-family-gilroy-bold;
+		font-weight: 700;
+		margin: 20px 0 0 0;
+		// color: #1a1a1a;
 	}
 
 	&__cardDescription {
-		color: #5c6476;
+		color: $color-shuttlegray;
 		font-size: 18px;
 		line-height: 28px;
-		font-weight: 400;
+		font-weight: 350;
 		margin: 10px 0 0px 0;
 	}
 }

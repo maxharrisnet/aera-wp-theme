@@ -9,7 +9,6 @@
 	width: 32.9%; // TODO: Fix dumb flexbox widths
 	display: inline-flex;
 	padding: 20px;
-	height: 100%;
 
 	@media (max-width: $max-720) {
 		width: 85%;
@@ -17,7 +16,6 @@
 		margin: 0 auto;
 		display: block;
 		margin-bottom: 20px;
-		height: auto;
 	}
 
 	&__wrapper {
@@ -26,12 +24,6 @@
 		min-height: 450px;
 		position: relative;
 		width: 100%;
-		display: flex;
-		flex-direction: column;
-
-		@media (max-width: $max-960) {
-			min-height: 520px;
-		}
 
 		@media (max-width: $max-720) {
 			min-height: auto;
@@ -104,9 +96,6 @@
 
 	&__content {
 		min-height: 350px;
-		flex: 1;
-		display: flex;
-		flex-direction: column;
 
 		@media (max-width: $max-720) {
 			min-height: auto;
@@ -169,10 +158,6 @@
 		line-height: 26px;
 		min-height: 120px;
 		color: $color-codgray;
-
-		@media (max-width: $max-960) {
-			min-height: auto;
-		}
 	}
 
 	&__lastRow {
@@ -180,13 +165,11 @@
 		bottom: 15px;
 		left: 0;
 		width: 100%;
-		margin-top: auto;
 
 		@media (max-width: $max-720) {
 			bottom: 0;
 			position: relative;
 			padding-bottom: 20px;
-			margin-top: auto;
 		}
 	}
 

@@ -23,9 +23,6 @@
 	&__list {
 		@media (min-width: $min-1200) {
 			@include make-row;
-			display: flex;
-			flex-wrap: wrap;
-			align-items: stretch;
 		}
 	}
 

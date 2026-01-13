@@ -28,7 +28,6 @@ function get_resource_types(): array
         'blog',
         'case-study',
         'podcast',
-        'customer',
       ),
     ),
     'news'          => array(

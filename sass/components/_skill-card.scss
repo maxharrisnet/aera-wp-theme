@@ -69,12 +69,12 @@
 
 	&__title {
 		@include subheading;
-		font-family: $font-family-heading;
+		font-family: $font-family-gilroy-bold;
 		font-style: normal;
 		font-weight: 700;
 		font-size: 18px;
 		line-height: 24px;
-		color: $color-codgray;
+		// color: $color-codgray;
 		margin: 0;
 		text-align: left;
 
