@@ -88,10 +88,14 @@
 		flex-wrap: inherit;
 		margin-left: 0px;
 		margin-right: 0px;
-		padding: 15px 0 0x;
+		padding: 15px 15px 0 15px;
 		justify-content: space-between;
 		align-items: center;
 		gap: 10px; // Prevent type and city from overlapping
+
+		&--last {
+			padding: 15px 0 0;
+		}
 
 		@media (max-width: $max-960) {
 			flex-direction: column;

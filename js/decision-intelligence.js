@@ -197,6 +197,68 @@
 		});
 
 		/**
+		 * Hide/show header and announcement bar on scroll
+		 * Hide on scroll down, show on scroll up
+		 */
+		let lastScrollY = window.scrollY;
+		let ticking = false;
+
+		function handleHeaderScroll() {
+			const header = document.getElementById('headnav');
+			const topBanner = header ? header.querySelector('.header__topBanner') : null;
+			const currentScrollY = window.scrollY;
+
+			// Ensure header is fixed when scrolling (needed for transform to work properly)
+			if (header && currentScrollY > 0) {
+				header.style.position = 'fixed';
+				header.style.top = '0';
+				header.style.left = '0';
+				header.style.width = '100%';
+			}
+
+			// Only apply hide/show if scrolled past a threshold (e.g., 50px)
+			if (currentScrollY > 50) {
+				if (currentScrollY > lastScrollY) {
+					// Scrolling down - hide header and banner
+					if (header) {
+						header.classList.add('header--hidden');
+					}
+					if (topBanner) {
+						topBanner.classList.add('header__topBanner--hidden');
+					}
+				} else {
+					// Scrolling up - show header and banner
+					if (header) {
+						header.classList.remove('header--hidden');
+					}
+					if (topBanner) {
+						topBanner.classList.remove('header__topBanner--hidden');
+					}
+				}
+			} else {
+				// At top of page - always show and reset to absolute
+				if (header) {
+					header.classList.remove('header--hidden');
+					header.style.position = 'absolute';
+					header.style.top = '0';
+				}
+				if (topBanner) {
+					topBanner.classList.remove('header__topBanner--hidden');
+				}
+			}
+
+			lastScrollY = currentScrollY;
+			ticking = false;
+		}
+
+		window.addEventListener('scroll', () => {
+			if (!ticking) {
+				window.requestAnimationFrame(handleHeaderScroll);
+				ticking = true;
+			}
+		});
+
+		/**
 		 * Initial progress line update
 		 */
 		window.addEventListener('load', updateProgressLine);

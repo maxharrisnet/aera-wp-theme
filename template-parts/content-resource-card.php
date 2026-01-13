@@ -167,7 +167,7 @@ foreach ($link_attrs as $attr => $value) {
       </div>
 
       <div class="resource-card__lastRow">
-        <div class="resource-card__row">
+        <div class="resource-card__row resource-card__row--last">
           <?php if ($display_date) : ?>
             <div class="resource-card__date"><?php echo esc_html($display_date); ?></div>
           <?php endif; ?>

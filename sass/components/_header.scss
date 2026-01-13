@@ -10,7 +10,14 @@
 	left: 0;
 	z-index: 99;
 	width: 100%;
-	transition: 0.3s linear;
+	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+	// Hide header on scroll down (Decision Intelligence page)
+	&--hidden {
+		transform: translateY(-100%);
+		opacity: 0;
+		pointer-events: none;
+	}
 
 	&__headerfixed {
 		position: fixed;
@@ -19,7 +26,8 @@
 		background-color: #fff;
 	}
 
-	&.isOpen {
+	&.isOpen,
+	&.is-open {
 		@media (max-width: $max-1024) {
 			position: fixed;
 		}
@@ -45,14 +53,16 @@
 	&__bar {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 
 		position: relative;
 		z-index: 2;
 
-		padding: $container-gutter-mobile;
+		padding: 15px $container-gutter-mobile;
 
 		@media (max-width: $min-720) {
 			z-index: 999;
+			padding: 15px $container-gutter-mobile;
 		}
 
 		@media (min-width: $min-720) {
@@ -73,12 +83,15 @@
 
 		position: relative;
 		top: 0px;
-		right: -13px;
+		right: 0px;
 
 		width: 40px;
 		height: 40px;
+		min-width: 40px;
+		min-height: 40px;
 
 		cursor: pointer;
+		z-index: 1000;
 
 		transition: opacity 0.2s ease-in-out;
 
@@ -95,22 +108,46 @@
 
 			position: absolute;
 
-			top: 19px;
-			left: 13px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 
 			margin: 0 auto;
 
 			height: 2px;
-			width: 14px;
+			width: 18px;
 
 			background: $color-border;
+			transition: transform 0.3s ease, opacity 0.3s ease;
 
 			&:first-child {
-				top: 14px;
+				transform: translate(-50%, calc(-50% - 6px));
+			}
+
+			&:nth-child(2) {
+				transform: translate(-50%, -50%);
 			}
 
 			&:last-child {
-				top: 24px;
+				transform: translate(-50%, calc(-50% + 6px));
+			}
+		}
+	}
+
+	// Toggle button when menu is open (X shape)
+	&.isOpen &__toggle,
+	&.is-open &__toggle {
+		&Line {
+			&:first-child {
+				transform: translate(-50%, -50%) rotate(45deg);
+			}
+
+			&:nth-child(2) {
+				opacity: 0;
+			}
+
+			&:last-child {
+				transform: translate(-50%, -50%) rotate(-45deg);
 			}
 		}
 	}
@@ -135,9 +172,17 @@
 		left: 0;
 		right: 0;
 		bottom: 0;
+		background: rgba(0, 0, 0, 0.25);
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease-in-out;
+		z-index: 221;
 
-		.isOpen & {
+		.isOpen &,
+		.is-open & {
 			display: block;
+			opacity: 1;
+			pointer-events: auto;
 		}
 	}
 
@@ -146,7 +191,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
-		position: absolute;
+		position: fixed;
 		z-index: 1;
 		top: 0;
 		right: 0;
@@ -155,16 +200,22 @@
 		height: 100vh;
 		pointer-events: none;
 		transform: translate(100%, 0);
+		transition: transform 0.3s ease-in-out;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
 
 		@media (max-width: $min-720) {
 			background: #f6f9fa;
 			z-index: 222;
 			height: 100vh;
+			max-width: 420px;
 		}
 
-		.isOpen & {
+		.isOpen &,
+		.is-open & {
 			opacity: 1;
 			pointer-events: auto;
+			transform: translate(0, 0);
 		}
 
 		@media (min-width: $min-720) {
@@ -185,6 +236,7 @@
 			background: none;
 			transform: none;
 			transition: none;
+			overflow-y: visible;
 		}
 
 		&::before {
@@ -205,6 +257,12 @@
 		width: calc(100% + 50px);
 		//background: #f7f9fa;
 		background: linear-gradient(to left, $color-background-darker calc(100% - 99px), transparent calc(100% - 99px));
+		pointer-events: none;
+
+		@media (max-width: $min-720) {
+			display: none; // Hide on mobile to prevent extra shapes
+		}
+
 		@media (min-width: $min-1024) {
 			display: none;
 		}
@@ -312,6 +370,14 @@
 		top: 0%;
 		padding: 10px;
 		box-shadow: 0 0 8px #e5e5e5;
+		transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+		// Hide announcement bar on scroll down (Decision Intelligence page)
+		&--hidden {
+			transform: translateY(-100%);
+			opacity: 0;
+			pointer-events: none;
+		}
 
 		@media (max-width: $max-1024) {
 			position: relative;

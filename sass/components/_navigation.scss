@@ -712,6 +712,7 @@
 		display: flex;
 		justify-content: center;
 		flex-direction: column;
+		width: 100%;
 
 		@media (max-width: $min-960) {
 			padding: 85px 0px 50px 0px;

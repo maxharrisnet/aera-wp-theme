@@ -54,10 +54,10 @@
 
 /* Image Block Section */
 .image-block {
-	margin-top: $gutter * 2;
+	margin-top: $gutter;
 
 	@media (min-width: $min-720) {
-		margin-top: $gutter * 4;
+		margin-top: $gutter * 2;
 	}
 
 	&__container {
@@ -73,8 +73,8 @@
 
 /* Culture Section */
 .culture {
-	margin-bottom: $gutter * 3;
-	margin-top: $gutter * 3;
+	margin-bottom: $gutter * 1.5;
+	margin-top: $gutter * 1.5;
 
 	&__container {
 		@include container;
@@ -100,7 +100,7 @@
 /* Gallery Section */
 .page-careers {
 	.gallery {
-		margin-top: $gutter * 3;
+		margin-top: $gutter * 1.5;
 
 		&__container {
 			@include container;
@@ -157,7 +157,7 @@
 
 /* Roles Section */
 .roles {
-	margin-top: $gutter * 4;
+	margin-top: $gutter * 2;
 	@include segment-bottom;
 
 	&__container {

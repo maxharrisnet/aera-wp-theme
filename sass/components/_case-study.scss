@@ -110,7 +110,7 @@
 		}
 
 		@media (min-width: $min-1024) {
-			width: percentage(12/12);
+			width: math.percentage(math.div(12, 12));
 		}
 
 		@media (max-width: $max-720) {
