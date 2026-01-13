@@ -125,7 +125,7 @@ foreach ($link_attrs as $attr => $value) {
   <div class="resource-card__wrapper">
     <?php if ($has_image || $has_logo || !empty($fallback_media['url'])) : ?>
       <div class="resource-card__figure">
-        <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+        <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
           ?>>
           <?php if ($has_image && !$has_logo) : ?>
             <div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url(<?php echo esc_url($image_url); ?>);"></div>
@@ -146,8 +146,8 @@ foreach ($link_attrs as $attr => $value) {
       </div>
     <?php endif; ?>
 
-    <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
-      ?>>
+    <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+      ?> class="resource-card__link-wrapper">
       <div class="resource-card__row">
         <?php if ($type_label) : ?>
           <div class="resource-card__type"><?php echo esc_html($type_label); ?></div>
