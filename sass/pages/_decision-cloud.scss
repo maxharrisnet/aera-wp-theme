@@ -690,11 +690,10 @@
 	border: 2px solid #bbe1fa;
 	border-radius: 20px;
 	padding: 0px 40px;
+	text-transform: uppercase;
 
 	&:hover {
-		border-color: #e0f9ff rgba(255, 255, 255, 0) #dee8fb;
-		background-color: #e0f9ff;
-		background-image: linear-gradient(rgba(222, 232, 251, 0) 0%, #dee8fb 90%);
+		background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
 	}
 
 	img {
@@ -709,29 +708,6 @@
 	}
 }
 
-.scroll-btn {
-	position: sticky;
-	z-index: 1;
-	width: 40px;
-	height: 40px;
-	top: 200px;
-	right: 20px;
-	padding: 5px 0px;
-	text-align: center;
-	font-size: 22px;
-	background: #fff;
-	color: #bbe1fa;
-	border: 2px solid #bbe1fa;
-	border-radius: 10px;
-	cursor: pointer;
-	display: none;
-	transition: background 0.3s ease;
-	float: right;
-
-	&.is-visible {
-		display: inline-block;
-	}
-}
 
 // SVG panel styles
 .svg-panel {
@@ -888,13 +864,14 @@
 		border-radius: 999px;
 		border: 1px solid #bee9f3;
 		cursor: pointer;
-		background: rgba(255, 255, 255, 0.5);
+		background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
 		transition: 180ms;
 		transition-property: border-color, background-color, color, opacity;
-		background-color: #dee8fb;
-		border-color: #dee8fb rgba(255, 255, 255, 0) #e0f9ff;
-		background-image: linear-gradient(rgba(224, 249, 255, 0) 0%, #e0f9ff 90%);
 		margin-left: 15px;
+
+		&:hover {
+			background: linear-gradient(180deg, #DEE9FB 0%, #DFF9FF 100%);
+		}
 		@media (max-width: $max-720) {
 			margin-left: 0px;
 			margin-top: 15px;

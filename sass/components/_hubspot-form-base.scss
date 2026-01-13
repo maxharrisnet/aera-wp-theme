@@ -79,8 +79,7 @@
 		font-size: 14px;
 		line-height: 3.71429;
 		border: 0;
-		background-color: #dee8fb;
-		background-image: linear-gradient(rgba(224, 249, 255, 0), #e0f9ff 90%);
+		background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
 		margin: 0;
 		vertical-align: baseline;
 		appearance: none;
@@ -104,8 +103,7 @@
 		margin-top: 20px;
 
 		&:hover {
-			background-color: #e0f9ff;
-			background-image: linear-gradient(rgba(222, 232, 251, 0), #dee8fb 90%);
+			background: linear-gradient(180deg, #DEE9FB 0%, #DFF9FF 100%);
 		}
 	}
 

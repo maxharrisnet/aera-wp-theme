@@ -83,7 +83,7 @@ if (empty($technology_sections)) {
       'description' => __('Aera learns from decisions made and their outcomes in order to improve future recommendations.', 'aera'),
       'video'       => $assets_base . 'technology-loop-vpmanufacturing.mp4',
       'background_image' => '',
-      'cta_link'    => home_url('/aera-decision-cloud'),
+      'cta_link'    => home_url('/decision-cloud'),
       'cta_label'   => __('More About the technology', 'aera'),
       'messages'    => array(
         array(

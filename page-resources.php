@@ -91,16 +91,23 @@ $base_url = get_permalink();
             <?php
             while ($resource_query->have_posts()) :
               $resource_query->the_post();
-              get_template_part(
-                'template-parts/content',
-                'resource-card',
-                array(
-                  'post_id'     => get_the_ID(),
-                  'type_label'  => get_resource_label_for_post_type(get_post_type()),
-                  'external_url' => function_exists('get_field') ? get_field('resource_external_url') : '',
-                  'post_type'   => get_post_type(),
-                )
-              );
+              $post_type = get_post_type();
+
+              // Use case study card template for case-study post type
+              if ($post_type === 'case-study') {
+                get_template_part('template-parts/content', 'case-study-card');
+              } else {
+                get_template_part(
+                  'template-parts/content',
+                  'resource-card',
+                  array(
+                    'post_id'     => get_the_ID(),
+                    'type_label'  => get_resource_label_for_post_type($post_type),
+                    'external_url' => function_exists('get_field') ? get_field('resource_external_url') : '',
+                    'post_type'   => $post_type,
+                  )
+                );
+              }
             endwhile;
             ?>
           </div>

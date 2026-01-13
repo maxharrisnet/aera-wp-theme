@@ -108,8 +108,8 @@
 	h2 {
 		font-size: 36px;
 		line-height: 46px;
-		font-family: $font-family-heading;
 		font-weight: 700;
+
 		@media (max-width: $max-720) {
 			font-size: 22px;
 			line-height: 32px;
@@ -168,7 +168,8 @@
 	}
 
 	&__title {
-		@include heading($hasMargin: false);
+		// @include heading($hasMargin: false);
+		@extend %title-base;
 		margin-bottom: $gutter;
 	}
 }

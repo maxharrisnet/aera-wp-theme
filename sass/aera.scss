@@ -49,6 +49,8 @@ Custom Aera website styles compiled from SCSS
 
 @use 'components/technology';
 @use 'components/skills';
+@use 'components/case-study';
+@use 'components/case-study-card';
 
 /* Platform Detail Components */
 @use 'components/module-not-found';

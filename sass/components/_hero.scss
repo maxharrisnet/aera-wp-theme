@@ -54,6 +54,17 @@
 				max-width: math.div(940, 26) * 1em;
 			}
 		}
+
+		// Decision Cloud variation - wider text to prevent wrapping of "agent" and "realtime"
+		.site-main--decision-cloud & {
+			@media (min-width: $min-480) {
+				max-width: 100%;
+				width: 100%;
+			}
+			@media (min-width: $min-768) {
+				max-width: 1200px;
+			}
+		}
 	}
 
 	&__button {
@@ -84,9 +95,7 @@
 		transition-property: border-color, background-color, color, opacity;
 
 		&:hover {
-			background-color: #dee8fb;
-			border-color: #dee8fb rgba(255, 255, 255, 0) #e0f9ff;
-			background-image: linear-gradient(rgba(224, 249, 255, 0) 0%, #e0f9ff 90%);
+			background: linear-gradient(180deg, #dff9ff 0%, #dee9fb 100%);
 		}
 	}
 }

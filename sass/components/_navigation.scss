@@ -172,7 +172,7 @@
 	&__dropdown {
 		border-radius: 20px;
 		position: absolute;
-		z-index: 1000;
+		z-index: 999;
 		left: -40px;
 		top: -6px;
 		text-align: center;
@@ -213,7 +213,7 @@
 	&__dropdownValues {
 		border-radius: 20px;
 		position: absolute;
-		z-index: 1000;
+		z-index: 999;
 		left: -55px;
 		top: -2px;
 		text-align: center;
@@ -254,8 +254,8 @@
 	&__dropdownPlatform {
 		border-radius: 20px;
 		position: absolute;
-		z-index: 1000;
-		left: -100px;
+		z-index: 999;
+		left: -75px;
 
 		top: -2px;
 		text-align: left;
@@ -372,8 +372,8 @@
 	&__dropdownCompany {
 		border-radius: 20px;
 		position: absolute;
-		z-index: 1000;
-		left: -60px;
+		z-index: 999;
+		left: 0px;
 		top: -2px;
 		text-align: left;
 		padding-left: 15px;
@@ -412,8 +412,8 @@
 	&__dropdownCommunity {
 		border-radius: 20px;
 		position: absolute;
-		z-index: 1000;
-		left: -80px;
+		z-index: 999;
+		left: 0px;
 		top: -2px;
 		text-align: left;
 		padding-left: 15px;
@@ -452,8 +452,8 @@
 	&__dropdownEvent {
 		border-radius: 20px;
 		position: absolute;
-		z-index: 1000;
-		left: -55px;
+		z-index: 999;
+		left: 0px;
 		top: -2px;
 		text-align: left;
 		padding-left: 15px;
@@ -492,8 +492,8 @@
 	&__dropdownResource {
 		border-radius: 20px;
 		position: absolute;
-		z-index: 1000;
-		left: -110px;
+		z-index: 999;
+		left: 0px;
 		top: -2px;
 		text-align: left;
 		padding-left: 15px;
@@ -533,10 +533,11 @@
 	&__dropdownSkills {
 		border-radius: 20px;
 		position: absolute;
-		z-index: 1000;
-		left: -75px;
+		z-index: 999;
+		left: 0px;
 		top: -2px;
 		text-align: left;
+		/* padding-left: 20px; */
 		width: 250px;
 		background-color: #fff;
 		padding: 0;
@@ -629,6 +630,19 @@
 	&__dropdownShow:hover &__dropdownPlatform {
 		// opacity: 1;
 		// visibility: visible;
+		@media (min-width: $min-1024) {
+			display: block;
+		}
+	}
+
+	// Keep dropdown visible when hovering over it
+	&__dropdown:hover,
+	&__dropdownSkills:hover,
+	&__dropdownPlatform:hover,
+	&__dropdownCompany:hover,
+	&__dropdownCommunity:hover,
+	&__dropdownEvent:hover,
+	&__dropdownResource:hover {
 		@media (min-width: $min-1024) {
 			display: block;
 		}
@@ -787,6 +801,9 @@
 			&.values {
 				border-color: $color-technology;
 			}
+			&.events {
+				border-color: #96b1d8;
+			}
 			&.a[href='/contact'] {
 				border-color: #8ac4e8 !important;
 			}
@@ -855,4 +872,68 @@
 	#navigation a[href='/test-drive']:hover {
 		border-color: #8ac4e8 !important;
 	}
+}
+
+// Support for data-menu-type attribute on parent elements
+[data-menu-type='technology'] .navigation__link:hover {
+	border-color: $color-technology;
+}
+[data-menu-type='skills'] .navigation__link:hover {
+	border-color: $color-skills;
+}
+[data-menu-type='company'] .navigation__link:hover {
+	border-color: $color-company;
+}
+[data-menu-type='careers'] .navigation__link:hover {
+	border-color: $color-careers;
+}
+[data-menu-type='resources'] .navigation__link:hover {
+	border-color: $color-resources;
+}
+[data-menu-type='demo'] .navigation__link:hover {
+	border-color: $color-company;
+}
+[data-menu-type='platform'] .navigation__link:hover {
+	border-color: $color-technology;
+}
+[data-menu-type='values'] .navigation__link:hover {
+	border-color: $color-technology;
+}
+[data-menu-type='events'] .navigation__link:hover {
+	border-color: #96b1d8;
+}
+
+// Active state support for data-menu-type
+[data-menu-type='technology'] .navigation__link.active {
+	border-color: $color-technology;
+}
+[data-menu-type='skills'] .navigation__link.active {
+	border-color: $color-skills;
+}
+[data-menu-type='company'] .navigation__link.active {
+	border-color: $color-company;
+}
+[data-menu-type='careers'] .navigation__link.active {
+	border-color: $color-careers;
+}
+[data-menu-type='resources'] .navigation__link.active {
+	border-color: $color-resources;
+}
+[data-menu-type='demo'] .navigation__link.active {
+	border-color: $color-company;
+}
+[data-menu-type='news'] .navigation__link.active {
+	border-color: #96b1d8;
+}
+[data-menu-type='action'] .navigation__link.active {
+	border-color: #96b1d8;
+}
+[data-menu-type='events'] .navigation__link.active {
+	border-color: #96b1d8;
+}
+[data-menu-type='platform'] .navigation__link.active {
+	border-color: $color-technology;
+}
+[data-menu-type='values'] .navigation__link.active {
+	border-color: $color-technology;
 }

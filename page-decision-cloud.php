@@ -50,8 +50,6 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
           </div>
 
           <div class="text-container" id="scrollArea">
-            <div class="scroll-btn" id="scrollBtn">&darr;</div>
-
             <!-- Section 1: Introduction -->
             <div class="section-videoscroll" id="sec1">
               <div class="text-section">
@@ -435,11 +433,6 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
     function init() {
       const video = document.getElementById('scrollVideo');
       const scrollArea = document.getElementById('scrollArea');
-      const scrollBtn = document.getElementById('scrollBtn');
-      const middleSections = document.querySelectorAll('#sec1, #sec2, #sec3, #sec4, #sec5');
-
-      let index = 0;
-      let direction = 'down';
 
       // Scroll-triggered video playback
       if (video && scrollArea) {
@@ -465,78 +458,6 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
           }
         });
       }
-
-      // Helper: find nearest section to viewport top
-      function updateIndex() {
-        let closest = Infinity;
-        middleSections.forEach(function(sec, i) {
-          const offset = Math.abs(sec.getBoundingClientRect().top);
-          if (offset < closest) {
-            closest = offset;
-            index = i;
-          }
-        });
-      }
-
-      // Click logic for scroll button
-      if (scrollBtn) {
-        scrollBtn.addEventListener('click', function() {
-          if (direction === 'down') {
-            if (index < middleSections.length - 1) {
-              index++;
-              middleSections[index].scrollIntoView({
-                behavior: 'smooth'
-              });
-            }
-          } else {
-            if (index > 0) {
-              index--;
-              middleSections[index].scrollIntoView({
-                behavior: 'smooth'
-              });
-            }
-          }
-
-          // Update arrow after click
-          if (index === middleSections.length - 1) {
-            direction = 'up';
-            scrollBtn.innerHTML = '&uarr;';
-          } else if (index === 0) {
-            direction = 'down';
-            scrollBtn.innerHTML = '&darr;';
-          } else {
-            scrollBtn.innerHTML = direction === 'down' ? '&darr;' : '&uarr;';
-          }
-        });
-      }
-
-      // Scroll detection
-      window.addEventListener('scroll', function() {
-        if (scrollBtn && middleSections.length > 0) {
-          // Show button only if inside middle sections
-          const middleTop = middleSections[0].offsetTop;
-          const middleBottom = middleSections[middleSections.length - 1].offsetTop + middleSections[middleSections.length - 1].offsetHeight;
-
-          if (window.scrollY >= middleTop && window.scrollY < middleBottom) {
-            scrollBtn.classList.add('is-visible');
-          } else {
-            scrollBtn.classList.remove('is-visible');
-          }
-
-          // Update nearest index while scrolling
-          updateIndex();
-
-          // Update arrow direction
-          if (index === middleSections.length - 1) {
-            direction = 'up';
-            if (scrollBtn) scrollBtn.innerHTML = '&uarr;';
-          } else if (index === 0) {
-            direction = 'down';
-            if (scrollBtn) scrollBtn.innerHTML = '&darr;';
-          }
-        }
-      });
-
     }
   })();
 </script>

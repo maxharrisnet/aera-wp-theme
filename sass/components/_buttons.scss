@@ -57,32 +57,27 @@
 
 		@include hover {
 			border-color: #e0f9ff rgba(255, 255, 255, 0) #dee8fb;
-			background-color: #e0f9ff;
-			background-image: linear-gradient(rgba(#dee8fb, 0) 0%, #dee8fb 90%);
+			background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
 		}
 	}
 
 	&--solid {
 		line-height: math.div(52, 14);
 		border: 0;
-		background-color: #dee8fb;
-		background-image: linear-gradient(rgba(#e0f9ff, 0) 0%, #e0f9ff 90%);
+		background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
 
 		@include hover {
-			background-color: #e0f9ff;
-			background-image: linear-gradient(rgba(#dee8fb, 0) 0%, #dee8fb 90%);
+			background: linear-gradient(180deg, #DEE9FB 0%, #DFF9FF 100%);
 		}
 	}
 
 	&--submit {
 		line-height: math.div(52, 14);
 		border: 0;
-		background-color: #dee8fb;
-		background-image: linear-gradient(rgba(#e0f9ff, 0) 0%, #e0f9ff 90%);
+		background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
 
 		@include hover {
-			background-color: #e0f9ff;
-			background-image: linear-gradient(rgba(#dee8fb, 0) 0%, #dee8fb 90%);
+			background: linear-gradient(180deg, #DEE9FB 0%, #DFF9FF 100%);
 		}
 	}
 
