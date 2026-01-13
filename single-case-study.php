@@ -27,17 +27,22 @@ while (have_posts()) :
   $top_quote = get_field('case_study_top_quote');
   $quote = get_field('case_study_quote');
 
-  // Prepare hero data
-  $hero_args = array(
-    'hero_title' => get_the_title(),
-    'hero_text' => get_field('resource_excerpt') ?: get_the_excerpt(),
-  );
-
 ?>
 
   <main id="primary" class="site-main site-main--case-study">
 
-    <?php get_template_part('template-parts/components/hero', null, $hero_args); ?>
+    <?php
+    // Case study hero section
+    $hero_text = get_field('resource_excerpt') ?: get_the_excerpt();
+    ?>
+    <section class="hero hero--case-study">
+      <div class="hero__container">
+        <h1 class="hero__title"><?php echo esc_html(get_the_title()); ?></h1>
+        <?php if ($hero_text) : ?>
+          <p class="hero__text"><?php echo wp_kses_post($hero_text); ?></p>
+        <?php endif; ?>
+      </div>
+    </section>
 
     <div class="case-study">
       <div class="case-study__imagetext">
@@ -99,15 +104,28 @@ while (have_posts()) :
 
         <?php if ($top_quote) : ?>
           <div class="case-study__results case-study__noBorder case-study__topQuote">
-            <?php echo wp_kses_post($top_quote); ?>
+            <div class="case-study__container">
+              <div class="case-study__quote-text">
+                <?php
+                // Decode HTML entities first (in case content is double-escaped)
+                $decoded_quote = html_entity_decode($top_quote, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+                // Remove inline styles
+                $clean_quote = preg_replace('/style\s*=\s*["\'][^"\']*["\']/i', '', $decoded_quote);
+                // Output with proper sanitization - wp_kses_post will handle HTML properly
+                echo wp_kses_post($clean_quote);
+                ?>
+              </div>
+            </div>
           </div>
         <?php endif; ?>
 
         <?php if ($results) : ?>
           <div class="case-study__results">
-            <h3><?php esc_html_e('Results', 'aera'); ?></h3>
-            <div class="case-study__resultsContent">
-              <?php echo wp_kses_post($results); ?>
+            <div class="case-study__container">
+              <h3><?php esc_html_e('Results', 'aera'); ?></h3>
+              <div class="case-study__resultsContent">
+                <?php echo wp_kses_post($results); ?>
+              </div>
             </div>
           </div>
         <?php endif; ?>

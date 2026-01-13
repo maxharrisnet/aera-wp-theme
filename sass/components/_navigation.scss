@@ -296,7 +296,7 @@
 
 		li {
 			list-style-type: none;
-			border-bottom: 2px solid transparent;
+			border-bottom: 0; // Remove border from li, only a should have underline
 			font-weight: normal;
 			font-size: 12px;
 			//line-height: 15px;
@@ -453,7 +453,7 @@
 		border-radius: 20px;
 		position: absolute;
 		z-index: 999;
-		left: 0px;
+		left: -100px; // Shift left to prevent overlapping Schedule Demo button
 		top: -2px;
 		text-align: left;
 		padding-left: 15px;
@@ -657,7 +657,7 @@
 	&__dropdownSkills {
 		li {
 			list-style-type: none;
-			border-bottom: 2px solid transparent;
+			border-bottom: 0; // Remove border from li, only a should have underline
 			padding: 5px 0px;
 			@media (max-width: $min-1024) {
 				padding-bottom: 5px;

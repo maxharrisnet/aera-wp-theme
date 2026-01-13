@@ -26,12 +26,16 @@
 	&__navigationCol {
 		display: flex;
 		text-align: center;
+		flex-wrap: wrap; // Allow wrapping at all breakpoints
 
 		@media (min-width: $min-560) {
 			width: math.percentage(math.div(12, 12));
 		}
 		@media (max-width: $min-560) {
 			flex-wrap: wrap;
+		}
+		@media (min-width: $min-720) and (max-width: $max-960) {
+			flex-wrap: wrap; // Ensure wrapping at tablet breakpoint
 		}
 
 		ul {
@@ -98,9 +102,18 @@
 
 	&__w15 {
 		width: 15% !important;
+		@media (min-width: $min-720) and (max-width: $max-960) {
+			width: 20% !important; // Adjust width at tablet breakpoint to prevent cutoff
+			min-width: 0; // Allow flex shrinking
+		}
 		@media (max-width: $max-720) {
 			width: 100% !important;
 		}
+	}
+
+	// Support for footer__w15_2lLXd class (used in footer.php)
+	&__w15_2lLXd {
+		@extend .footer__w15;
 	}
 	&__w25 {
 		width: 25% !important;

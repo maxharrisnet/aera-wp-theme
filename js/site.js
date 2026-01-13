@@ -399,6 +399,7 @@
 			let closestIndex = 0;
 			let closestDistance = Number.POSITIVE_INFINITY;
 			const viewportCenter = window.innerHeight / 2;
+			const triggerOffset = viewportCenter * 0.5; // Trigger when item is 50% up the viewport
 
 			items.forEach((item) => {
 				const index = parseInt(item.dataset.technologyIndex, 10);
@@ -407,8 +408,11 @@
 				}
 				const rect = item.getBoundingClientRect();
 				const itemCenter = rect.top + rect.height / 2;
-				const distance = Math.abs(rect.top - viewportCenter);
-				if (distance < closestDistance && rect.top < viewportCenter + 200) {
+				// Check if item is in the upper portion of viewport (more lenient trigger)
+				const isInTriggerZone = rect.top < viewportCenter + triggerOffset && rect.bottom > 0;
+				const distance = Math.abs(itemCenter - viewportCenter);
+
+				if (isInTriggerZone && distance < closestDistance) {
 					closestDistance = distance;
 					closestIndex = index;
 				}

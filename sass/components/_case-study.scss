@@ -4,7 +4,7 @@
 @use '../grid' as *;
 
 .case-study {
-	color: #1a1a1a;
+	// color: #1a1a1a;
 
 	&__detailWrapper {
 		display: flex;
@@ -185,20 +185,42 @@
 	}
 
 	&__topQuote {
-		color: #00578f;
-		font-weight: bold;
-		margin: 0 auto;
-		max-width: 80%;
+		padding: 40px 0;
+
+		.case-study__quote-text {
+			font-size: 24px;
+			line-height: 34px;
+			font-family: Gilroy, sans-serif;
+			font-weight: 600;
+			color: #00578f;
+			margin: 0 auto;
+			max-width: 80%;
+			text-align: center;
+
+			p {
+				margin: 0;
+				color: #00578f;
+				font-weight: 600;
+			}
+
+			@media (max-width: $max-720) {
+				font-size: 20px;
+				line-height: 28px;
+				max-width: 100%;
+			}
+		}
 	}
 
 	&__resultsContent {
-		display: grid;
-		grid-template-columns: auto auto auto auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+		align-items: flex-start;
 		@media (max-width: $max-720) {
-			flex-wrap: wrap;
-			display: block;
+			flex-direction: column;
 		}
 		p {
+			width: 50%;
 			margin-right: 35px;
 			margin-bottom: 40px;
 			list-style-type: none;
@@ -218,6 +240,7 @@
 
 	&__results {
 		border-top: 1px solid #000;
+		padding: 40px 0;
 
 		ul {
 			display: flex;
