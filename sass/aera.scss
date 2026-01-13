@@ -11,6 +11,7 @@ Custom Aera website styles compiled from SCSS
 @use 'layout/column-content';
 
 /* COMPONENTS */
+@use 'components/typography';
 @use 'components/buttons';
 @use 'components/background';
 @use 'components/loading';

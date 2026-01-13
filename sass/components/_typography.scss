@@ -1,0 +1,68 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// ============================================================================
+// Consolidated Typography Styles
+// ============================================================================
+// Base title and subtitle styles shared across hero, intro, and other components
+// Components can extend these base styles and add component-specific overrides
+
+// Base Hero/Intro Title Pattern
+// Used by: .hero__title, .intro__title, and similar components
+%title-base {
+	@include responsive-font(28, 66);
+	margin-bottom: 0;
+	font-family: $font-family-gilroy-bold;
+	font-weight: 700;
+	line-height: 76px;
+	letter-spacing: -0.025em;
+	color: $font-color-dark;
+
+	@media (max-width: $max-720) {
+		line-height: 40px;
+	}
+}
+
+// Alternative Hero Title (slightly different sizing)
+%title-hero-base {
+	@include responsive-font(26, 70);
+	margin-bottom: 6px;
+	font-family: $font-family-gilroy-bold;
+	font-weight: 700;
+	line-height: 1.3;
+	letter-spacing: -0.025em;
+	color: $font-color-dark;
+}
+
+// Base Hero/Intro Subtitle Pattern
+// Used by: .hero__subtitle, .intro__subtitle, and similar components
+%subtitle-base {
+	@include responsive-font(18, 36);
+	margin: 5px 0 15px;
+	font-family: $font-family-heading;
+	font-weight: 100;
+	line-height: 46px;
+	letter-spacing: -0.025em;
+	color: $font-color-dark;
+
+	@media (max-width: $max-720) {
+		line-height: 18px;
+	}
+}
+
+// Alternative Subtitle (with different margin)
+%subtitle-hero-base {
+	@include responsive-font(18, 36);
+	margin: 0;
+	margin-bottom: 15px;
+	margin-top: 5px;
+	font-family: $font-family-heading;
+	font-weight: 100;
+	line-height: 46px;
+	letter-spacing: -0.025em;
+	color: $font-color-dark;
+
+	@media (max-width: $max-720) {
+		line-height: 18px;
+	}
+}

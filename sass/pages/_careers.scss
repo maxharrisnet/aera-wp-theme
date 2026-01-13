@@ -3,6 +3,7 @@
 @use '../mixins' as *;
 @use '../grid' as *;
 @use '../reset' as *;
+@use '../components/typography' as *;
 
 /* CAREERS PAGE */
 
@@ -34,17 +35,8 @@
 		}
 
 		&__title {
-			@include responsive-font(28, 66);
+			@extend %title-base;
 			margin-bottom: 20px;
-			font-family: $font-family-heading;
-			font-weight: 700;
-			line-height: 76px;
-			letter-spacing: -0.025em;
-			color: $font-color-dark;
-
-			@media (max-width: $min-720) {
-				line-height: 40px;
-			}
 		}
 
 		&__text {

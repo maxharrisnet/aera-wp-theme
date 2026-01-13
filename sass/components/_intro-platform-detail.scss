@@ -3,6 +3,7 @@
 @use '../variables' as *;
 @use '../grid' as *;
 @use '../mixins' as *;
+@use 'typography' as *;
 
 .intro-platform-detail {
 	position: relative;
@@ -39,15 +40,10 @@
 	}
 
 	&__title {
-		@include responsive-font(26, 70);
+		@extend %title-hero-base;
 		margin-bottom: 20px;
 		padding-top: 0px;
 		margin-top: 20px;
-		font-family: $font-family-heading;
-		font-weight: 700;
-		line-height: 1.3;
-		letter-spacing: -0.025em;
-		color: $font-color-dark;
 	}
 
 	&__link {

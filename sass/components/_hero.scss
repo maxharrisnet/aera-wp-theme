@@ -3,6 +3,7 @@
 @use '../mixins' as *;
 @use '../reset' as *;
 @use '../grid' as *;
+@use 'typography' as *;
 
 // Base hero styles - shared across all variations
 .hero {
@@ -32,29 +33,11 @@
 	}
 	// hero
 	&__title {
-		@include responsive-font(26, 70);
-		margin-bottom: 6px;
-		font-family: $font-family-gilroy-bold;
-		font-weight: 700;
-		line-height: 1.3;
-		letter-spacing: -0.025em;
-		color: $font-color-dark;
+		@extend %title-hero-base;
 	}
 
 	&__subtitle {
-		@include responsive-font(18, 36);
-		margin: 0;
-		margin-bottom: 15px;
-		margin-top: 5px;
-		font-family: $font-family-heading;
-		font-weight: 100;
-		line-height: 46px;
-		letter-spacing: -0.025em;
-		color: $font-color-dark;
-
-		@media (max-width: $min-720) {
-			line-height: 18px;
-		}
+		@extend %subtitle-hero-base;
 	}
 
 	&__text {
