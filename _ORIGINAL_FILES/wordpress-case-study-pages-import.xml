@@ -1,0 +1,902 @@
+<?xml version="1.0" ?>
+<rss xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/" version="2.0">
+  <channel>
+    <title>Aera Technology Case Studies</title>
+    <link>https://aeratechnology.com</link>
+    <description>Case study page imports from Contentful</description>
+    <pubDate>Mon, 12 Jan 2026 23:19:00 +0000</pubDate>
+    <language>en-US</language>
+    <wp:wxr_version>1.2</wp:wxr_version>
+    <item>
+      <title>Fast-moving Consumer Goods</title>
+      <link>https://aeratechnology.com/case-study/fmcg3</link>
+      <pubDate>Mon, 12 Jan 2026 23:19:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=case-study&amp;p=8001</guid>
+      <description/>
+      <content:encoded>&lt;p&gt;Global fast moving consumer goods company chooses Aera Decision Cloud™ to drive supply chain transformation&lt;/p&gt;
+One of the world’s leading international tobacco companies that produces five of the world’s top 15 international cigarette brands, with 150 million consumers worldwide. Apart from that, the company also produces smoke-free products and associated electronic devices and accessories as part of its commitment to building its future on replacing cigarettes with smoke-free products that — while not risk-free — are a far better choice than cigarette smoking.</content:encoded>
+      <excerpt:encoded>Global fast moving consumer goods company chooses Aera Decision Cloud™ to drive supply chain transformation</excerpt:encoded>
+      <wp:post_id>8001</wp:post_id>
+      <wp:post_date>2026-01-12 23:19:00</wp:post_date>
+      <wp:post_date_gmt>2026-01-12 23:19:00</wp:post_date_gmt>
+      <wp:post_modified>2026-01-12 23:19:00</wp:post_modified>
+      <wp:post_modified_gmt>2026-01-12 23:19:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>fmcg3</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>case-study</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Global fast moving consumer goods company chooses Aera Decision Cloud™ to drive supply chain transformation</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_card_title</wp:meta_key>
+        <wp:meta_value>Fast-moving Consumer Goods</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_company_name</wp:meta_key>
+        <wp:meta_value>Philip Morris International</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_industry</wp:meta_key>
+        <wp:meta_value>Fast-moving consumer goods (cigarette and tobacco)</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_body_copy</wp:meta_key>
+        <wp:meta_value>One of the world’s leading international tobacco companies that produces five of the world’s top 15 international cigarette brands, with 150 million consumers worldwide. Apart from that, the company also produces smoke-free products and associated electronic devices and accessories as part of its commitment to building its future on replacing cigarettes with smoke-free products that — while not risk-free — are a far better choice than cigarette smoking.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_business_need</wp:meta_key>
+        <wp:meta_value>The company needed a digitally enabled, end-to-end supply chain synchronized with many of its automated components to cater to its transformation from a traditional cigarette manufacturer to a maker of innovative, smoke-free products.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_short_result</wp:meta_key>
+        <wp:meta_value>- Increased speed of risk identification with additional mitigation option
+- Weekly review of the entire product portfolio
+- Increased visibility of all inventories at any location to eliminate inventory lost
+- Shift to the touchless mode for recommendations when the threshold is reached</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_challenges</wp:meta_key>
+        <wp:meta_value>The company was undergoing a complete transformation of its identity — from a traditional cigarette manufacturer to a maker of innovative, smoke-free products. The worldwide leader recognized that undergoing such a tremendous change would bring greater complexity, the need to react faster, and operate at a lower cost, all while maintaining exceptional service levels and the ability to respond to its customers’ needs rapidly and seamlessly.
+Previously, anticipating unexpected changes in demand required a slow, highly manual process to collect the needed information from various sources which lead to excess and obsolete (E&amp;amp;O). Subsequently, this was only done on an exception basis or triggered by a new product introduction, which meant higher costs and inefficiencies with inventory lost and opportunities missed. 
+To overcome this challenge and to ensure a successful transformation, flexibility and resilience were key.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_solution</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud — Aera Excess and Obsolete Skill &amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;/code&amp;gt; Aera Crawlers — SAP E2Open and flat files
+Identifying the need for a digitally enabled, end-to-end supply chain with automated components, the company adopted Decision Intelligence by focusing on E&amp;amp;O. 
+By implementing Aera Decision Cloud, it identified opportunities for both mitigation and automation. Delivering real-time recommendations and the ability to writeback changes into transactional systems resulted in a more extensive and holistic approach that helped avoid E&amp;amp;O and reduced operating costs. 
+Further, automation opportunities were identified with mundane tasks being turned over to Aera to execute, freeing up employees for more strategic work.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_results</wp:meta_key>
+        <wp:meta_value>The company shifted from labor-intensive report creation to actionable recommendations, some of which were automated. As a result, planners and other employees gained time to focus on more valuable work. This value was also delivered by recommendations coming in an easily understood context which helped adoption and buy-in of the product by employees. 
+Following its success with Decision Intelligence, the company is now expanding Aera's footprint to other areas of the business and improving its sustainability.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_top_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="color:#00578F; font-size:28px; line-height: 40px;"&amp;gt;“With Aera, we realized that it's possible to get information quickly, consolidate it, gain insight, and offer a recommendation to the planner. The planner gains time and can focus on what is important and what is the value created. Our hope became our reality.”&amp;lt;/p&amp;gt;
+&amp;lt;p style="text-align:right; color:#00578F; font-weight:normal; font-size:14px;"&amp;gt;-Head of Governance and CI Supply Chain Synchronization Hub&amp;lt;/p&amp;gt;
+</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_quote</wp:meta_key>
+        <wp:meta_value>“Our vision is to go after unprecedented granularity of insights, prediction of loss and outcomes, getting prescriptions in real time to remediate those losses, or drive any opportunity — be it financial or operational. In a sense, we want to go from more descriptive to more prescriptive, even more self-driving, or a touchless supply chain.”
+-Global Manager Innovation, Strategy and Results Delivery
+“Once you explain how Aera works to the user, it is very intuitive. We had some users that are known to be tough and difficult to change, and it was surprising to see how relaxed and easy they were after the first explanation of the logic and how the tool operates.”
+“With Aera, we realized that it's possible to get information quickly, consolidate it, gain insight, and offer a recommendation to the planner. The planner gains time and can focus on what is important and what is the value created. Our hope became our reality.”
+-Head of Governance and CI Supply Chain Synchronization Hub</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Fast-moving Consumer Goods</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Global fast moving consumer goods company chooses Aera Decision Cloud™ to drive supply chain transformation</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>case study decision intelligence</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Global Animal Health</title>
+      <link>https://aeratechnology.com/case-study/ahp1</link>
+      <pubDate>Mon, 12 Jan 2026 23:19:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=case-study&amp;p=8002</guid>
+      <description/>
+      <content:encoded>&lt;p&gt;Global animal healthcare company selects Aera Decision Cloud™ to improve forecasting, safety stock levels, and lead times.&lt;/p&gt;
+A global animal health company delivering quality medicines, vaccines, and diagnostic products, complemented by biodevices, genetic tests, and precision livestock farming. In addition to producing vaccines, anti-infectives, parasiticides, dermatology products, medicated feed additives, animal health diagnostics, and other pharmaceuticals, the company also offers services such as dairy data management, e-learning, and professional consulting.</content:encoded>
+      <excerpt:encoded>Global animal healthcare company selects Aera Decision Cloud™ to improve forecasting, safety stock levels, and lead times.</excerpt:encoded>
+      <wp:post_id>8002</wp:post_id>
+      <wp:post_date>2026-01-12 23:19:00</wp:post_date>
+      <wp:post_date_gmt>2026-01-12 23:19:00</wp:post_date_gmt>
+      <wp:post_modified>2026-01-12 23:19:00</wp:post_modified>
+      <wp:post_modified_gmt>2026-01-12 23:19:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>ahp1</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>case-study</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Global animal healthcare company selects Aera Decision Cloud™ to improve forecasting, safety stock levels, and lead times.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_card_title</wp:meta_key>
+        <wp:meta_value>Global Animal Health</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_company_name</wp:meta_key>
+        <wp:meta_value>Zoetis</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_industry</wp:meta_key>
+        <wp:meta_value>Animal health products</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_body_copy</wp:meta_key>
+        <wp:meta_value>A global animal health company delivering quality medicines, vaccines, and diagnostic products, complemented by biodevices, genetic tests, and precision livestock farming. In addition to producing vaccines, anti-infectives, parasiticides, dermatology products, medicated feed additives, animal health diagnostics, and other pharmaceuticals, the company also offers services such as dairy data management, e-learning, and professional consulting.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_business_need</wp:meta_key>
+        <wp:meta_value>Making the step change from a descriptive to a prescriptive supply chain to improve forecasting, safety stock levels, and lead times.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_short_result</wp:meta_key>
+        <wp:meta_value>- Improved forecast accuracy, especially in international markets
+- 10% forecast stability improvement, resulting in better control on the supply side
+- All C-class SKUs now have statistical forecast only, offering superior coverage 
+- A 1-2% reduction in carrying cost due to automation and digitization of the overall process 
+- Improved proactive recommendations to address responsible stakeholders for review and update lead time with variations</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_challenges</wp:meta_key>
+        <wp:meta_value>Although the company has continually endeavored to build and expand its own supply chain capabilities and tried to get all ERP and transactional systems aligned to provide regular improvements in forecast accuracy, it recognized that transformational improvement would require a step change that the existing systems lacked the flexibility or imagination to address. 
+The company’s forecast suffered from inaccurate safety stock levels and lead time, which required time-intensive, manual efforts to calculate, raising costs, and hurting service levels. 
+The company wanted to move from descriptive to prescriptive, and ultimately self-driving, finding augmented or automated approaches instead. It also wanted to reduce volatility as its portfolio grew and new businesses and products were integrated and introduced. Further the company also wanted to develop optimal, more responsive safety stock levels, and lead times. 
+Another challenge caused by its static headcount is its inability to free up time through augmentation to focus on higher value items.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_solution</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud — Aera Touchless Forecasting Skill &amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;/code&amp;gt; Aera Crawlers — SAP ECC and APO, JDBC, and flat files
+The animal health leader embarked on the Decision Intelligence journey with Aera to improve forecasting, safety stock levels, and lead time. 
+With the Aera Touchless Forecasting Skill implemented, the company saw a marked improvement in forecast stability and accuracy. It leveraged Aera’s augmentation to utilize supply chain formulas and Monte Carlo simulations to recommend optimal safety stock. 
+Further, adopting Decision Intelligence led to superior lead time analysis, and the ability to compare actual shipments to actual lead time with recommendations for adjustment and intervention when needed. 
+In all cases, the company was the final decision maker whether to accept or reject the recommendations, deciding on changes, and helping the system learn from decisions made. 
+Moving forward, it plans to automate some of these decisions due to high confidence in Aera Skills.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_results</wp:meta_key>
+        <wp:meta_value>Employing Decision Intelligence through Aera Touchless Forecasting Skill, the company enabled accurate demand forecasts, optimal safety stock, and lead time visibility creating time for planners to adopt, collaborate, and innovate. 
+Further, the improved savings and revenue gained from the new forecast had rapid return of investment, and the augmentation of the safety stock and lead time processes allowed shifting away from labor-intensive, time-consuming number crunching. 
+Collaborating with Aera, the company achieved its goal of more face time with customers and a more engaged workforce, who are actively seeking the next use cases for Aera within the organization, which aligns to senior leadership’s digital innovation goals.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_top_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="color:#00578F; font-size:28px; line-height: 40px;"&amp;gt;“Our supply chain users trust what Aera tells them right now and they've got great ideas about how we can leverage Aera to make our lives easier, delivering better results for the company. People work on these improvement projects on top of their day jobs because they believe in it and they can see the long-term benefit.”&amp;lt;/p&amp;gt;
+&amp;lt;p style="text-align:right; color:#00578F; font-weight:normal; font-size:14px;"&amp;gt;-Global Demand Leader of New Product Introduction&amp;lt;/p&amp;gt;
+</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_quote</wp:meta_key>
+        <wp:meta_value>“We partnered with Aera when we wanted to move the needle on where our people were focused. Our previous partners didn't offer that flexibility or imagination — forecasting was a closed black box solution.”
+“Our supply chain users trust what Aera tells them right now and they've got great ideas about how we can leverage Aera to make our lives easier, delivering better results for the company. People work on these improvement projects on top of their day jobs because they believe in it and they can see the long-term benefit.”
+-Global Demand Leader of New Product Introduction
+“As we had these strategic discussions with the team at Aera, we really gained a level of confidence that we were on the same wavelength about what the future of supply chain was going to be and where we wanted to be going.”
+-Global Supply Leader</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Global Animal Health</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Global animal healthcare company selects Aera Decision Cloud™ to improve forecasting, safety stock levels, and lead times.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>case study decision intelligence</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Global CPG</title>
+      <link>https://aeratechnology.com/case-study/ahp2</link>
+      <pubDate>Mon, 12 Jan 2026 23:19:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=case-study&amp;p=8003</guid>
+      <description/>
+      <content:encoded>&lt;p&gt;Consumer packaged goods company partners with Aera to improve customer service levels while optimizing financial performance&lt;/p&gt;
+A family-owned multinational manufacturer of confectionery, food, and pet care products and services with US$40 billion in annual sales.</content:encoded>
+      <excerpt:encoded>Consumer packaged goods company partners with Aera to improve customer service levels while optimizing financial performance</excerpt:encoded>
+      <wp:post_id>8003</wp:post_id>
+      <wp:post_date>2026-01-12 23:19:00</wp:post_date>
+      <wp:post_date_gmt>2026-01-12 23:19:00</wp:post_date_gmt>
+      <wp:post_modified>2026-01-12 23:19:00</wp:post_modified>
+      <wp:post_modified_gmt>2026-01-12 23:19:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>ahp2</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>case-study</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Consumer packaged goods company partners with Aera to improve customer service levels while optimizing financial performance</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_card_title</wp:meta_key>
+        <wp:meta_value>Global CPG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_company_name</wp:meta_key>
+        <wp:meta_value>Mars</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_industry</wp:meta_key>
+        <wp:meta_value>Confectionery, food, and pet care</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_body_copy</wp:meta_key>
+        <wp:meta_value>A family-owned multinational manufacturer of confectionery, food, and pet care products and services with US$40 billion in annual sales.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_business_need</wp:meta_key>
+        <wp:meta_value>Improve customer service levels and cash on hand by optimizing inventory and reducing overall supply chain costs while maintaining growth.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_short_result</wp:meta_key>
+        <wp:meta_value>- Enhanced visibility to users and driving adoption through Aera’s ‘glass box’ solution
+- Flexible open platform offering best-fit, in-house, or purchased algorithms to customers
+- Decision Intelligence added resiliency to the supply chain by offering greater agility, insight, and transparency to decision makers</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_challenges</wp:meta_key>
+        <wp:meta_value>With hundreds of supply chain partners, poor visibility, and COVID-19, the global food company aimed to transform its end-to-end supply chain from a lean model to an agile one to improve customer service levels and cash on hand by optimizing inventory and reducing overall supply chain cost, while still maintaining growth.
+To achieve this goal, it shifted its focus to its employees — to enable them to deliver greater value through better customer centricity. Specifically, the company focused on delivering educational opportunities to develop new skills, augmentation through digital twins, and automation of some human processes. These efforts were expected to allow the reinvestment of its people into more strategic areas, like advanced customer collaboration, which would help to improve its resiliency, especially when faced with the realities of the pandemic.
+The company identified that it would need certain technical components — a cloud PaaS architecture which offered plug-and-play integration, as well as real-time data visibility powering recommendations and informing decision making to ensure a successful transformation from a lean supply chain model to an agile one.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_solution</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud — Aera Stock Rebalancing Skill &amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;/code&amp;gt; Aera Crawlers — SAP ERP, SAP APO, and flat file
+Partnering with Aera, the company tapped into a new level of transparency and visibility into parts of its supply chain previously managed as a “black box.” 
+Utilizing Aera’s approach with Skills, the UX/UI was a key element to help employees understand what was going on, see other data being considered, and how the recommendations were being made, as well as what the potential impact was. These resulted in the adoption of digital twins and acceptance of Aera’s recommendations.
+The company started to concurrently plan and model more scenarios and tap into more opportunities than previously realized to get key decision makers involved, especially as COVID-19 impacted its supply chain. It also benefitted from accelerated decisions through to execution with Aera’s ability to writeback desired changes into its systems of record.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_results</wp:meta_key>
+        <wp:meta_value>The company started connecting harmonized data and real-time recommendations, exploring the flexibility of an open platform which can leverage both Aera’s and its algorithms, and the transparency it provides. It also moved from prediction to prescription, receiving trustworthy recommendations to what are the actions to take at a previously impossible speed and scale. 
+Moving forward, it has plans with Aera to work on a project accelerating S&amp;amp;OP process and better synchronization of the end-to-end supply chain, along with continued improvement to service levels and efficiency through automation.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_top_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="color:#00578F; font-size:28px; line-height: 40px;"&amp;gt;“Decision Intelligence is a very important component if we are to support the vision for our business to move from a lean supply chain to a more agile supply chain.”&amp;lt;/p&amp;gt;
+&amp;lt;p style="text-align:right; color:#00578F; font-weight:normal; font-size:14px;"&amp;gt;-Director of Digital Technologies and Supply Chain Transformation Lead&amp;lt;/p&amp;gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_quote</wp:meta_key>
+        <wp:meta_value>“We saw the limitation of RPA and now we are going to augment our customer service with digital twins that will leverage Decision Intelligence.” 
+“We are bringing light into areas of our supply chain previously managed as a black box. With Aera, we’re switching on the light and showing full transparency.”
+“Decision Intelligence is a very important component if we are to support the vision for our business to move from a lean supply chain to a more agile supply chain.”
+-Director of Digital Technologies and Supply Chain Transformation Lead</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Global CPG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Consumer packaged goods company partners with Aera to improve customer service levels while optimizing financial performance</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>case study decision intelligence</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Global FMCG</title>
+      <link>https://aeratechnology.com/case-study/fmcg1</link>
+      <pubDate>Mon, 12 Jan 2026 23:19:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=case-study&amp;p=8004</guid>
+      <description/>
+      <content:encoded>&lt;p&gt;Global consumer goods company chooses Aera Decision Cloud™ to improve people effectiveness through Decision Intelligence&lt;/p&gt;
+Established over 100 years ago, one of the world’s largest consumer goods companies known for its great brands, global footprint, and its belief in doing business the right way is driven to make sustainable living commonplace. Its products — beauty and personal care, foods and refreshment, and home care — are available in around 190 countries used by 3.4 billion people every day with a turnover of over US$56 billion in 2021. </content:encoded>
+      <excerpt:encoded>Global consumer goods company chooses Aera Decision Cloud™ to improve people effectiveness through Decision Intelligence</excerpt:encoded>
+      <wp:post_id>8004</wp:post_id>
+      <wp:post_date>2026-01-12 23:19:00</wp:post_date>
+      <wp:post_date_gmt>2026-01-12 23:19:00</wp:post_date_gmt>
+      <wp:post_modified>2026-01-12 23:19:00</wp:post_modified>
+      <wp:post_modified_gmt>2026-01-12 23:19:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>fmcg1</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>case-study</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Global consumer goods company chooses Aera Decision Cloud™ to improve people effectiveness through Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_card_title</wp:meta_key>
+        <wp:meta_value>Global FMCG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_company_name</wp:meta_key>
+        <wp:meta_value>Unilever</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_industry</wp:meta_key>
+        <wp:meta_value>Consumer goods (Health, hygiene, and home products)</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_body_copy</wp:meta_key>
+        <wp:meta_value>Established over 100 years ago, one of the world’s largest consumer goods companies known for its great brands, global footprint, and its belief in doing business the right way is driven to make sustainable living commonplace. Its products — beauty and personal care, foods and refreshment, and home care — are available in around 190 countries used by 3.4 billion people every day with a turnover of over US$56 billion in 2021. </wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_business_need</wp:meta_key>
+        <wp:meta_value>To ensure its immense production power would be a competitive advantage and to reduce the impact of the acceleration of consumer segmentation, hyper-personalization, and anytime demands of customers on its business.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_short_result</wp:meta_key>
+        <wp:meta_value>- Continuous demand evaluations with recommended changes
+- Over 10 machine learning models with an automated most accurate selection
+- Automated writeback of demand changes to internal systems
+- Complete accessibility to recommendation reasoning to all planners</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_challenges</wp:meta_key>
+        <wp:meta_value>With billions of dollars of revenue in the fast-moving consumer goods category, the company identified its challenges — the acceleration of consumer segmentation, hyper-personalization, and anytime demands of customers — impacting its business in an unprecedented way. 
+It wanted to use its immense production power as a competitive advantage and aimed to leapfrog beyond incremental improvement approaches centered around ERPs, planning systems, and other legacy transactional systems.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_solution</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud — Aera Demand Skills &amp;lt;code&amp;gt;&amp;lt;br/&amp;gt;&amp;lt;/code&amp;gt;
+Aera Crawlers — SAP ERP, SAP APO, and flat file
+The internal innovative leadership team worked with Aera leveraging Decision Intelligence — Aera’s patented crawlers and cognitive processing technologies which break data out of silos and accelerate that information into decisions — to enable continuous planning and agile response by creating time for planners to collaborate and innovate. 
+The company is now processing millions of records and gigabytes of data from ERP, planning, and transactional systems to enable real-time assessment of information, machine learning to make future predictions, and modeling decision outcomes to make touchless recommendations every day.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_results</wp:meta_key>
+        <wp:meta_value>Implementing Aera’s Decision Intelligence, planners estimated a reduction of time looking for information from 60-70% of their day to less than 20% of their day. Further, the planners were able to spend more time with each other looking for new solutions, maximized by simultaneously introducing agile methodologies with the project. 
+This deployment saw higher user adoption rates compared to other digital transformation projects because users could see all the data and logic that went into a recommendation, with Aera functioning as a glass box — understandable and transparent.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_top_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="color:#00578F; font-size:28px; line-height: 40px;"&amp;gt;“We moved from our monthly planning cycle to a weekly S&amp;amp;OP cycle, which is far more nimble, far more agile and we could reduce 50% of the time spent in the planning.”&amp;lt;/p&amp;gt;
+&amp;lt;p style="text-align:right; color:#00578F; font-weight:normal; font-size:14px;"&amp;gt;
+-Global VP of Planning, Analytics, and Customer Experience
+&amp;lt;/p&amp;gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="color:#00578F;font-weight: bold;"&amp;gt;“We moved from our monthly planning cycle to a weekly S&amp;amp;OP cycle, which is far more nimble, far more agile and we could reduce 50% of the time spent in the planning.”&amp;lt;/p&amp;gt;
+&amp;lt;p style="color:#00578F; font-weight: bold;"&amp;gt;“The most important thing is to find the early adopters and the innovators in this journey. People need to see the benefit that can help them to achieve their goal. It's important to develop people, and that is one of the key pillars.”&amp;lt;/p&amp;gt;
+&amp;lt;div style="text-align:right; color:#00578F; font-weight:normal; font-size:14px;"&amp;gt;
+-Hemant Badri, VP of Planning
+&amp;lt;/div&amp;gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Global FMCG</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Global consumer goods company chooses Aera Decision Cloud™ to improve people effectiveness through Decision Intelligence</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>case study decision intelligence</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Global Science &amp; Technology Company</title>
+      <link>https://aeratechnology.com/case-study/gstco</link>
+      <pubDate>Mon, 12 Jan 2026 23:19:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=case-study&amp;p=8005</guid>
+      <description/>
+      <content:encoded>&lt;p&gt;Aera Decision Cloud™ improves forecast accuracy, time to market, and service levels&lt;/p&gt;
+A leading science and technology company that produces healthcare therapeutics in oncology, immuno-oncology, neurology, and immunology. With a presence in 66 countries and a revenue of US$100 billion, the company is dedicated to finding solutions to some of today’s toughest challenges and creating more sustainable ways to live.</content:encoded>
+      <excerpt:encoded>Aera Decision Cloud™ improves forecast accuracy, time to market, and service levels</excerpt:encoded>
+      <wp:post_id>8005</wp:post_id>
+      <wp:post_date>2026-01-12 23:19:00</wp:post_date>
+      <wp:post_date_gmt>2026-01-12 23:19:00</wp:post_date_gmt>
+      <wp:post_modified>2026-01-12 23:19:00</wp:post_modified>
+      <wp:post_modified_gmt>2026-01-12 23:19:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>gstco</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>case-study</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™ improves forecast accuracy, time to market, and service levels</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_card_title</wp:meta_key>
+        <wp:meta_value>Global Science &amp;amp; Technology Company</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_company_name</wp:meta_key>
+        <wp:meta_value>Merck</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_industry</wp:meta_key>
+        <wp:meta_value>Science and technology (Healthcare, life science, and electronics)</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_body_copy</wp:meta_key>
+        <wp:meta_value>A leading science and technology company that produces healthcare therapeutics in oncology, immuno-oncology, neurology, and immunology. With a presence in 66 countries and a revenue of US$100 billion, the company is dedicated to finding solutions to some of today’s toughest challenges and creating more sustainable ways to live.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_business_need</wp:meta_key>
+        <wp:meta_value>Accelerating agility while building a self-driving supply chain to improve forecast accuracy and resilience.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_short_result</wp:meta_key>
+        <wp:meta_value>- Reduced inventory by 13.5%
+- 3% waste reduction across the supply chain
+- Significantly improve service levels to over 99%
+- Sales grew 3% because the supply chain became driven by what customers really want</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_challenges</wp:meta_key>
+        <wp:meta_value>The company’s humble journey began by analyzing insights from a single-siloed planning system, but over time grew to incorporate ERP and quality data as the company developed a Supply Chain Control Tower to produce dashboards and reports. 
+However, it recognized the limitations of its traditional planning system which offered little actionable reporting and had no ability to blend data sets – manually combining information was time-consuming, resulted in high forecast error rates, and delayed response to demand changes, which in turn meant excess inventory or shortfalls. 
+So, the company sought other solutions which could tap into machine learning to improve forecast accuracy and data harmonization and begin to move towards decision augmentation and automation.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_solution</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud — Aera Digital Control Tower Skill &amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;/code&amp;gt; Aera Crawlers — SAP, JDA, Hadoop, and flat files
+Picking platforms that are going to be innovative and grow with the company is critical to prevent the risk of being stuck with a system that may not be able to move the company forward due to its limiting past planning system. 
+The science and technology industry leader adopted Decision Intelligence through Aera and was able to realize an immediate improvement to its forecast through the data science capabilities of Aera Cortex. 
+With centralization of data, it was also able to bring products to market faster with time previously spent manually analyzing it and brought together previously siloed groups within the organization for better communication and understanding.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_results</wp:meta_key>
+        <wp:meta_value>The company made major gains in forecast accuracy and time to market, reducing costs, and increasing or maintaining service levels, even during the pandemic. 
+It also actively drove the change management around the new technology — highlighting it’s not just a new tool but also a new way of approaching a challenge and the importance of tracking user adoption which resulted in a successful collaboration with Aera. 
+Moving forward, the company plans to move from its current decision augmentation to no-touch automated execution, and wider rollout within its organization.
+</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_top_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="color:#00578F; font-size:28px; line-height: 40px;"&amp;gt;“You don’t want a more sophisticated Excel. That's not transformation, that’s a waste of technology, time, and effort. Don’t miss the opportunity - redesign the way you operate because of the technology. To do this really requires a different mindset and a different approach.”&amp;lt;/p&amp;gt;
+&amp;lt;p style="text-align:right; color:#00578F; font-weight:normal; font-size:14px;"&amp;gt;-Head of Information Technology Strategy and Transformation&amp;lt;/p&amp;gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Global Science &amp;amp; Technology Company</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud™ improves forecast accuracy, time to market, and service levels</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>case study decision intelligence</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Health &amp; Hygiene</title>
+      <link>https://aeratechnology.com/case-study/fmcg2</link>
+      <pubDate>Mon, 12 Jan 2026 23:19:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=case-study&amp;p=8006</guid>
+      <description/>
+      <content:encoded>&lt;p&gt;Multinational consumer packaged goods company partners with Aera to improve forecasting and supply chain performance&lt;/p&gt;
+A major multinational company that operates as three business units of health, hygiene, and nutrition with a relentless pursuit for a cleaner and healthier world. With revenue amounting to US$50 billion and a strong presence in 190 countries, its product range comprises cleaning agents, skincare, personal care, nutrition, and healthcare.</content:encoded>
+      <excerpt:encoded>Multinational consumer packaged goods company partners with Aera to improve forecasting and supply chain performance</excerpt:encoded>
+      <wp:post_id>8006</wp:post_id>
+      <wp:post_date>2026-01-12 23:19:00</wp:post_date>
+      <wp:post_date_gmt>2026-01-12 23:19:00</wp:post_date_gmt>
+      <wp:post_modified>2026-01-12 23:19:00</wp:post_modified>
+      <wp:post_modified_gmt>2026-01-12 23:19:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>fmcg2</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>case-study</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Multinational consumer packaged goods company partners with Aera to improve forecasting and supply chain performance</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_card_title</wp:meta_key>
+        <wp:meta_value>Health &amp;amp; Hygiene</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_company_name</wp:meta_key>
+        <wp:meta_value>Reckitt</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_industry</wp:meta_key>
+        <wp:meta_value>Fast-moving consumer goods (FMCG)</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_body_copy</wp:meta_key>
+        <wp:meta_value>A major multinational company that operates as three business units of health, hygiene, and nutrition with a relentless pursuit for a cleaner and healthier world. With revenue amounting to US$50 billion and a strong presence in 190 countries, its product range comprises cleaning agents, skincare, personal care, nutrition, and healthcare.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_business_need</wp:meta_key>
+        <wp:meta_value>To eliminate waste and non-value-add work while enabling new hires to perform at the same level on day one.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_short_result</wp:meta_key>
+        <wp:meta_value>- Improved forecast as much as a 1000 basis points 
+- Reduced service issues by 87%, previously attributed to bad forecasts
+- Increased long term visibility &amp;lt;25% MAD with a two-month lag
+- Reduction in weeks of cover to three weeks
+- Improved new hire onboarding</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_challenges</wp:meta_key>
+        <wp:meta_value>The global company faced a talent retention problem that was affecting their product forecasts — a global workforce switching jobs more frequently meant institutional knowledge was not being retained and new hires were not able to seamlessly step into vacant roles. 
+In addition, with commodity and transportation costs rising, as well as SKUs proliferating to meet the demand for greater personalization, the need to eliminate waste and non-value-add work while enabling new hires to perform at the same level day one became crucial.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_solution</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud — Aera Touchless Demand Forecasting Skill &amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;/code&amp;gt;Aera Crawlers — JDE, SAP, Nielsen, Siebel, JDBC, and flat files
+Partnering with Aera, the company embarked on its Decision Intelligence journey. It started segmenting its SKUs by revenue, volume, volatility, and other measures. Parts of the portfolio, like top sellers, special orders, and new products which lacked historic data were more closely managed by experienced planners using Aera’s recommendations as an augmentation. The remaining 40% of the SKUs were segmented into touchless forecasting — planning was fully handed over to Aera to run.  
+The Aera Touchless Forecasting Skills utilized a set of 20 algorithms, choosing best fits to generate high quality, error-free forecasts. Regular governance meetings were held to decide which way given SKUs can be managed with products moving from managed to touchless and back as needed.
+Through Decision Intelligence, the company enabled forecast accuracy improvement, knowledge retention, and automation opportunities.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_results</wp:meta_key>
+        <wp:meta_value>Planners were able to focus on much smaller part of the portfolio and rely on Aera for an increasingly larger share. This resulted in improved accuracy of the forecast on the machine-driven side, as well as on the human one as they had more time to have quality discussions with one another. With Decision Intelligence in place, the company targets to eventually have 70% of its SKUs running on touchless forecast, with little to no manual interference. 
+In addition, since its institutional knowledge is now available and utilized with Aera, new hires can hit the ground running with confidence based on the recommendations Aera offers. 
+Moving forward, the company has plans to deploy this same model to other areas of its business to gain more opportunities in supply chain, promotions, pricing, and marketing.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_top_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="color:#00578F; font-size:28px; line-height: 40px;"&amp;gt;“I truly believe that it's not so much about an exciting new thing anymore, it's almost like a point of survival. In about three to five years, I believe this will become as ubiquitous as an ERP today, and we enjoy the first-mover advantage with what we did with Aera.”&amp;lt;/p&amp;gt;
+&amp;lt;p style="text-align:right; color:#00578F; font-weight:normal; font-size:14px;"&amp;gt;-CIO, North America&amp;lt;/p&amp;gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Health &amp;amp; Hygiene</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Multinational consumer packaged goods company partners with Aera to improve forecasting and supply chain performance</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>case study decision intelligence</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Manufacturing</title>
+      <link>https://aeratechnology.com/case-study/deacero</link>
+      <pubDate>Mon, 12 Jan 2026 23:19:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=case-study&amp;p=8007</guid>
+      <description/>
+      <content:encoded>&lt;p&gt;Global steel producer chooses Aera Decision Cloud™ to transform supply chain and customer experience&lt;/p&gt;
+Since 1952, family-owned and operated international steel producer DeAcero has continued to drive innovation. With a production model relying on scrap, not CO2-producing iron ore, DeAcero has built a multi-billion dollar, integrated steel recycling and manufacturing company. Their product and services portfolio includes 9,000 product SKUs across six categories and seven vertical markets with 90 industrial sub-sectors.</content:encoded>
+      <excerpt:encoded>Global steel producer chooses Aera Decision Cloud™ to transform supply chain and customer experience</excerpt:encoded>
+      <wp:post_id>8007</wp:post_id>
+      <wp:post_date>2026-01-12 23:19:00</wp:post_date>
+      <wp:post_date_gmt>2026-01-12 23:19:00</wp:post_date_gmt>
+      <wp:post_modified>2026-01-12 23:19:00</wp:post_modified>
+      <wp:post_modified_gmt>2026-01-12 23:19:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>deacero</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>case-study</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Global steel producer chooses Aera Decision Cloud™ to transform supply chain and customer experience</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_card_title</wp:meta_key>
+        <wp:meta_value>Manufacturing</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_company_name</wp:meta_key>
+        <wp:meta_value>DeAcero</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_industry</wp:meta_key>
+        <wp:meta_value>Manufacturing</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_body_copy</wp:meta_key>
+        <wp:meta_value>Since 1952, family-owned and operated international steel producer DeAcero has continued to drive innovation. With a production model relying on scrap, not CO2-producing iron ore, DeAcero has built a multi-billion dollar, integrated steel recycling and manufacturing company. Their product and services portfolio includes 9,000 product SKUs across six categories and seven vertical markets with 90 industrial sub-sectors.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_business_need</wp:meta_key>
+        <wp:meta_value>A customer-centric, dynamic operations model to improve the perfect order metric and overall customer experience</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_short_result</wp:meta_key>
+        <wp:meta_value>- Improved perfect order service metric by 1-2 percentage points each month since December 2021
+- Gained end-to-end visibility across the order management process
+- Broke through functional silos with better visibility and access to quality data
+- Eliminated the manual effort and analysis required to identify risks and evaluate alternatives
+- Gained faster risk remediation through automatic writeback of key actions in DeAcero’s source system</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_challenges</wp:meta_key>
+        <wp:meta_value>DeAcero’s immediate goal was improving its order management process — specifically, any delayed orders and orders that were at risk of being delayed — and increasing its perfect order service metric. The company also wanted to improve its customer service through better, more immediate communications with customers throughout the order lifecycle. 
+Also, the company needed the ability to inform customers about order status, quickly determine whether there are product substitutes if inventory or logistic issues occur, and continue to align throughout the order lifecycle. At the same time, DeAcero was growing quickly, with independent and homegrown enterprise resource planning (ERP) solutions in place. A key challenge was access to reliable data and the ability to analyze and respond to issues proactively.
+DeAcero needed real-time visibility across internal processes and better, quicker access to data with the tools to manage data in a better way to improve planning and make faster decisions.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_solution</wp:meta_key>
+        <wp:meta_value>After considering multiple supply chain management and planning solutions, DeAcero chose Aera Decision Cloud. The first phase of the project focused on improving visibility and proactive response across sales orders in Mexico for the company’s Mesh &amp;amp; Wire division, one of DeAcero’s largest — representing nearly 60% of its total sales orders worldwide. 
+A tailored solution was created, built on the Aera Decision Cloud platform hosted on the Amazon Web Services (AWS) cloud infrastructure, and focused on preventing service risks and improving order management throughout the lifecycle of every customer order. This project included developing an Order Lifecycle Management Skill; building a digital control tower; and training a DeAcero team of Skill builders and business users to develop and advance both the Skill and these capabilities within the platform.
+The Order Lifecycle Management Skill is designed to sense when an order may be late due to inventory shortage. It then assigns a root cause of inventory availability to provide visibility to the inventory impact on a delayed shipment and recommend solutions. This Skill understands and considers specific events in DeAcero’s order-to-delivery process that can make a difference between on-time and late deliveries for each unique order and shipment.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_results</wp:meta_key>
+        <wp:meta_value>Through partnership with Aera, DeAcero has gained the technology and tools to become more agile and adaptable, and to align more closely with customers. Today, DeAcero can continually monitor estimates for customer delivery dates throughout an order’s lifecycle. Risks to on-time delivery are identified, and specific decisions can be automatically recommended to address the risk. DeAcero has also improved visibility into issues and has reduced the amount of time spent on addressing them. 
+At the same time, the company is becoming more resilient and reliable. DeAcero now has a trained team of Aera Skill builders, as well as business users leveraging the platform’s Discovery capability to build their own reports and dashboards.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_top_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="color:#00578F; font-size:28px; line-height: 40px;"&amp;gt;“We are just starting our digital journey to transform our supply chain processes and management. Through Aera Decision Cloud and the power of our collaborative DeAcero-Aera team, we are accelerating our learnings and improving our ability to be proactive and predictive.”&amp;lt;/p&amp;gt;
+&amp;lt;p style="text-align:right; color:#00578F; font-weight:normal; font-size:14px;"&amp;gt;
+- Raul Gutierrez, VP Supply Chain, DeAcero Group, CEO, DeAcero Logistics
+&amp;lt;/p&amp;gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="color:#00578F; font-size:28px; line-height: 40px;"&amp;gt;“We are just starting our digital journey to transform our supply chain processes and management. Through Aera Decision Cloud and the power of our collaborative DeAcero-Aera team, we are accelerating our learnings and improving our ability to be proactive and predictive.”&amp;lt;/p&amp;gt;
+&amp;lt;p style="text-align:right; color:#00578F; font-weight:normal; font-size:14px;"&amp;gt;
+- Raul Gutierrez, VP Supply Chain, DeAcero Group, CEO, DeAcero Logistics
+&amp;lt;/p&amp;gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Global steel producer chooses Aera Decision Cloud™  to transform supply chain and customer experience</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Global steel producer chooses Aera Decision Cloud™  to transform supply chain and customer experience</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>case study decision intelligence</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Petrochemical</title>
+      <link>https://aeratechnology.com/case-study/petrochemical</link>
+      <pubDate>Mon, 12 Jan 2026 23:19:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=case-study&amp;p=8008</guid>
+      <description/>
+      <content:encoded>&lt;p&gt;Global Leader in Energy Selects Aera Decision Cloud™ 
+to Improve Supply Chain Visibility and Shipping Performance&lt;/p&gt;
+One of the world’s largest publicly-traded energy providers and chemical manufacturers, the company markets fuels, lubricants, and chemicals. It also develops and applies next-generation technologies to help safely and responsibly meet the world’s growing needs for energy and high-quality chemical products.</content:encoded>
+      <excerpt:encoded>Global Leader in Energy Selects Aera Decision Cloud™ 
+to Improve Supply Chain Visibility and Shipping Performance</excerpt:encoded>
+      <wp:post_id>8008</wp:post_id>
+      <wp:post_date>2026-01-12 23:19:00</wp:post_date>
+      <wp:post_date_gmt>2026-01-12 23:19:00</wp:post_date_gmt>
+      <wp:post_modified>2026-01-12 23:19:00</wp:post_modified>
+      <wp:post_modified_gmt>2026-01-12 23:19:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>petrochemical</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>case-study</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Global Leader in Energy Selects Aera Decision Cloud™ 
+to Improve Supply Chain Visibility and Shipping Performance</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_card_title</wp:meta_key>
+        <wp:meta_value>Petrochemical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_company_name</wp:meta_key>
+        <wp:meta_value>Exxon Mobil</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_industry</wp:meta_key>
+        <wp:meta_value>Fuels, lubricants, chemical products</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_body_copy</wp:meta_key>
+        <wp:meta_value>One of the world’s largest publicly-traded energy providers and chemical manufacturers, the company markets fuels, lubricants, and chemicals. It also develops and applies next-generation technologies to help safely and responsibly meet the world’s growing needs for energy and high-quality chemical products.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_business_need</wp:meta_key>
+        <wp:meta_value>Gain real-time visibility across the company’s entire supply chain (including areas managed by third-party partners) in order to improve shipping performance.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_short_solution</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud — Aera Proactive Shipping Management Skill — Aera Crawlers — SAP ECC, TMS, and flat files</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_short_result</wp:meta_key>
+        <wp:meta_value>- Increased on-time delivery and customer satisfaction
+- Logistics and data network optimization
+- Improved ability to track execution vs. plan
+- Better communication with third-party partners
+</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_challenges</wp:meta_key>
+        <wp:meta_value>Worldwide demand for chemicals is expected to rise by 45% by the end of the decade, and rising living standards are driving demand for consumer goods and packaging – all of which require chemicals. As a result, leaders identified greater supply chain visibility as a crucial need in order to meet the expected growth in demand.
+However, existing issues with traditional IT solutions presented challenges for decision makers. These systems operated with batch updates instead of real-time data. In addition, data was siloed and not digitized, and there was a lack of effective communication between groups. 
+The company needed real-time integration utilizing new technology, as well as new processes for more efficient and effective coordination.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_solution</wp:meta_key>
+        <wp:meta_value>The company adopted Aera Decision Cloud™ and implemented the Outbound Operations Management Skill, which offers a workbench to track non-conformance in shipping in an exception dashboard, as well as the ability to execute corrections.
+As a result, data was harmonized from order to delivery on the platform – incorporating actual and planned data from third-party partners. Decision makers could now leverage historical data to train algorithm recommendations, and create risk categories to prioritize and drive proactive communications when shipments were delayed.
+Finally, the shipping process was overhauled to address issues that had caused visibility gaps. This redesign included addressing offline and ad-hoc communications with partners. The company selected champions and created a cross-functional community approach to improve communications.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_results</wp:meta_key>
+        <wp:meta_value>With improved visibility, shipments can now be monitored throughout the entire process – from order entry, to transportation planning, tendering, and shipment creation, over to slot booking, actual loading, and delivery of goods to customers. The decision trees the company implemented are driving the overall status and performance against the initial plan, as well as identifying critical cases that need to be managed.
+In the future, the Aera Outbound Operations Management Skill will be expanded by incorporating additional source data used to drive predictions and recommendations, such as real-time truck visibility data. Also, the company is looking at opportunities to improve and optimize supply chain performance across process areas for specific business lines and regions.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_top_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="font-size: 28px;line-height: 40px;"&amp;gt;“Our transportation specialist sees only the critical cases which are getting highlighted. Instead of spending time searching for issues, they are displayed based on predefined logic, comparing the plan versus actual performance and driving proactive communication with our customers.”&amp;lt;/p&amp;gt;
+&amp;lt;p style="font-size:14px; text-align:right; font-weight: normal"&amp;gt;- Logistics distribution process advisor, global petrochemical company&amp;lt;/p&amp;gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="color:#00578F; font-weight: bold;font-size: 24px;"&amp;gt;“It was quite clear that we needed not only a new tool that could adapt to our business priorities, but we also needed a more efficient and robust process to capture the opportunities in the market.”&amp;lt;/p&amp;gt;
+&amp;lt;div style="text-align:right;color:#00578F;font-weight:normal;font-size:14px;"&amp;gt;&amp;lt;p&amp;gt;-Logistics Distribution Process Advisor&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Petrochemical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Global leader in energy selects Aera Decision Cloud™ to improve supply chain visibility and improve shipping performance</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>case study decision intelligence</wp:meta_value>
+      </wp:postmeta>
+    </item>
+    <item>
+      <title>Pharmaceutical</title>
+      <link>https://aeratechnology.com/case-study/pharmaceutical</link>
+      <pubDate>Mon, 12 Jan 2026 23:19:00 +0000</pubDate>
+      <dc:creator>admin</dc:creator>
+      <guid isPermaLink="false">https://aeratechnology.com/?post_type=case-study&amp;p=8009</guid>
+      <description/>
+      <content:encoded>&lt;p&gt;Global healthcare leader uses Aera Decision Cloud™ to improve the customer experience&lt;/p&gt;
+This large and broadly based healthcare company has been striving to improve access and affordability, create healthier communities, and put a healthy mind, body, and environment within reach of everyone, everywhere for more than a 100 years. With products segment ranging from immunology, neuroscience, infectious disease, oncology, aesthetics, arrhythmias, diabetes care, ENT treatments, hernia surgery, surgical instruments, infection prevention, orthopedics, baby care, nutrition, oral healthcare, over-the-counter medicines, skin and hair care, vision care, to wound care, the company is present in over 150 countries with revenue over US$100 billion.</content:encoded>
+      <excerpt:encoded>Global healthcare leader uses Aera Decision Cloud™ to improve the customer experience</excerpt:encoded>
+      <wp:post_id>8009</wp:post_id>
+      <wp:post_date>2026-01-12 23:19:00</wp:post_date>
+      <wp:post_date_gmt>2026-01-12 23:19:00</wp:post_date_gmt>
+      <wp:post_modified>2026-01-12 23:19:00</wp:post_modified>
+      <wp:post_modified_gmt>2026-01-12 23:19:00</wp:post_modified_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>pharmaceutical</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>case-study</wp:post_type>
+      <wp:post_password/>
+      <wp:is_sticky>0</wp:is_sticky>
+      <wp:postmeta>
+        <wp:meta_key>resource_excerpt</wp:meta_key>
+        <wp:meta_value>Global healthcare leader uses Aera Decision Cloud™ to improve the customer experience</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>resource_card_title</wp:meta_key>
+        <wp:meta_value>Pharmaceutical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_company_name</wp:meta_key>
+        <wp:meta_value>Johnson &amp;amp; Johnson</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_industry</wp:meta_key>
+        <wp:meta_value>Medical devices, pharmaceutical, and consumer packaged goods</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_body_copy</wp:meta_key>
+        <wp:meta_value>This large and broadly based healthcare company has been striving to improve access and affordability, create healthier communities, and put a healthy mind, body, and environment within reach of everyone, everywhere for more than a 100 years. With products segment ranging from immunology, neuroscience, infectious disease, oncology, aesthetics, arrhythmias, diabetes care, ENT treatments, hernia surgery, surgical instruments, infection prevention, orthopedics, baby care, nutrition, oral healthcare, over-the-counter medicines, skin and hair care, vision care, to wound care, the company is present in over 150 countries with revenue over US$100 billion.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_business_need</wp:meta_key>
+        <wp:meta_value>To provide a seamless end-to-end customer experience, the company needed a platform in place that is flexible, agile, and could adapt in near real time to customers' needs.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_short_result</wp:meta_key>
+        <wp:meta_value>- Increased accuracy of delivery dates for a whole portfolio of diverse products
+- Increased customer satisfaction and retention 
+- Reduced supply inefficiencies with the elimination of activities not associated with any demand
+- Reduced excess inventory, improved stock turns, and shortened lead time</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_challenges</wp:meta_key>
+        <wp:meta_value>The company knew that in today’s business environment, customer perception is no longer just about the product alone, it’s the entire experience beyond the transaction. It holds itself to exacting customer experience promises of reliability, care, proactivity, and effortlessness for the customer. 
+One of the biggest challenges the company faced was to keep this promise with available-to-promise (ATP) estimations. Due to its wide and diverse portfolio of products, with different requirements, ways to place orders, and so on, it needed a platform in place that is cognitive, flexible, agile, and could adapt in near real time to customers’ needs. 
+The company also needed to improve its ATP fulfillment capabilities so that customers know when an order had been received, when it would be shipped, when it was on the way, and when it would be delivered. It recognized this level of customer service as both a competitive advantage and as the most important differentiator for its customers.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_solution</wp:meta_key>
+        <wp:meta_value>Aera Decision Cloud — Aera Available to Promise (ATP) Skill &amp;lt;code&amp;gt;&amp;lt;br /&amp;gt;&amp;lt;/code&amp;gt; Aera Crawlers — JDE, SAP JDBC, and flat files
+The company partnered with Aera to deliver an ATP capability which could offer a specific ETA for each product, customer, and their orders. The challenge was to gain access to its data — within the organization there were dozens of ERP systems that would need to be crawled to provide full visibility. 
+It leveraged the native crawlers and writeback capabilities of the Aera Available-to-Promise Skill which helped get fast access to the data and drove creative insights and cognitive capabilities. Once harmonized, this data facilitated many different models to drive optimal ATP date calculation. This accurate and reliable information was then communicated both internally as a single source of truth and through various customer portals for the customers to see.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_results</wp:meta_key>
+        <wp:meta_value>After implementing Aera Decision Cloud, the company’s ATP estimates and customer service levels have greatly improved becoming a competitive differentiator. 
+The company also saw an improved services levels and increased revenue generation by identifying supply shortfall, fixing through inventory reallocation to meet demand. Similarly, it reduced backorders through prioritization of orders based on supply availability.
+Moving forward, the company is now looking to expand past the initial rollout which was to the medical device business to both the pharmaceutical and consumer goods portfolios. It is also looking at opportunities to utilize its data to provide automated recommendations for inventory placement to improve efficiency for customers.</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_top_quote</wp:meta_key>
+        <wp:meta_value>&amp;lt;p style="color:#00578F; font-size:28px; line-height: 40px;"&amp;gt;“Aera identifies problem areas that need fixing or remediation, in order to drive accuracy higher and higher. It is not a matter of turning an algorithm on and getting 95% accuracy right away. This iterative process has been about driving continuous improvement.”&amp;lt;/p&amp;gt;
+&amp;lt;p style="text-align:right; color:#00578F; font-weight:normal; font-size:14px;"&amp;gt;-Product Line Leader, Autonomous Planning Products and Solutions&amp;lt;/p&amp;gt;
+</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>case_study_quote</wp:meta_key>
+        <wp:meta_value>“Our customer promise as an organization needs to be effortless for our customers. It needs to be reliable, not just in delivering the product, but in delivering service and information. We need to be caring, personalized, and specific to our customers. We also need to be proactive if something is going to go wrong, we need to be open and upfront about it.”
+-Global Process Owner, Product Availability
+“A big factor for us in choosing to move forward with this platform was really looking at leveraging the crawlers and native capabilities that Aera offered to us as basically an accelerator to help us get our hands on the data, bring it into the platform, and then drive creative insights and cognitive capabilities.”
+“Aera identifies problem areas that need fixing or remediation, in order to drive accuracy higher and higher. It is not a matter of turning an algorithm on and getting 95% accuracy right away. This iterative process has been about driving continuous improvement.”
+-Product Line Leader, Autonomous Planning Products and Solutions</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_title</wp:meta_key>
+        <wp:meta_value>Pharmaceutical</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_metadesc</wp:meta_key>
+        <wp:meta_value>Global healthcare leader uses Aera Decision Cloud™ to improve the customer experience</wp:meta_value>
+      </wp:postmeta>
+      <wp:postmeta>
+        <wp:meta_key>_yoast_wpseo_focuskw</wp:meta_key>
+        <wp:meta_value>case study decision intelligence</wp:meta_value>
+      </wp:postmeta>
+    </item>
+  </channel>
+</rss>

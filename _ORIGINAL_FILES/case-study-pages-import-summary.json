@@ -1,0 +1,62 @@
+{
+  "export_date": "2026-01-12",
+  "total_case_studies": 9,
+  "with_images": 9,
+  "post_ids": "8001-8009",
+  "case_studies": [
+    {
+      "title": "Fast-moving Consumer Goods",
+      "slug": "fmcg3",
+      "company_name": "Philip Morris International",
+      "has_image": true
+    },
+    {
+      "title": "Global Animal Health",
+      "slug": "ahp1",
+      "company_name": "Zoetis",
+      "has_image": true
+    },
+    {
+      "title": "Global CPG",
+      "slug": "ahp2",
+      "company_name": "Mars",
+      "has_image": true
+    },
+    {
+      "title": "Global FMCG",
+      "slug": "fmcg1",
+      "company_name": "Unilever",
+      "has_image": true
+    },
+    {
+      "title": "Global Science & Technology Company",
+      "slug": "gstco",
+      "company_name": "Merck",
+      "has_image": true
+    },
+    {
+      "title": "Health & Hygiene",
+      "slug": "fmcg2",
+      "company_name": "Reckitt",
+      "has_image": true
+    },
+    {
+      "title": "Manufacturing",
+      "slug": "deacero",
+      "company_name": "DeAcero",
+      "has_image": true
+    },
+    {
+      "title": "Petrochemical",
+      "slug": "petrochemical",
+      "company_name": "Exxon Mobil",
+      "has_image": true
+    },
+    {
+      "title": "Pharmaceutical",
+      "slug": "pharmaceutical",
+      "company_name": "Johnson & Johnson",
+      "has_image": true
+    }
+  ]
+}

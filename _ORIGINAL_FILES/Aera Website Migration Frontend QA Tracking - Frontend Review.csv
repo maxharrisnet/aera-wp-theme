@@ -1,0 +1,126 @@
+Page Name,Page Type,Page Status,Original URL,New URL (Staging),Design Review,Content Review,Last Reviewed,Notes,Screenshot Links,Performance – Desktop,Performance – Mobile
+Navigation & Footer,Core,Ready for Review,https://www.aeratechnology.com/,https://aerapreview.wpenginepowered.com/,Needs Fixes,Approved,,"LR - 12/16 - test comment
+Use CMD+ENT to add another row in the same cell
+
+Height of the nav bar is too long 
+Nav on tablet and mobile - the X close button looks off and there’s an extra shape on the left side of the menu; none of them are linked
+All nav menu items are missing the underline on hover state
+Drop down menu's underline color on hover state do not match the original
+Dropdown menu should be above Schedule Demo CTA
+Footer - Events get cut off in responsive tablet/medium breakpoint
+This is an issue of the current website but I’d like to use this chance to make the buttons consistent: Let’s make sure the text are all caps. For white buttons the hover state is a blue purple gradient. For color buttons the hover state is a purple blue gradient (flipped vertically). Figma - https://www.figma.com/design/QAKdHVfURrhpMKTsIlYtTy/Cognitive-Automation-Community-Library?node-id=656-88&t=BfhSUHNgLU6O1Qfb-4 Buttons that need updating: announcement bar on top, Aera Decision Cloud’s Learn More. All Schedule Demo buttons look good.
+iPhone - Design issues (all grey) + scroll issues + click issues - Screenhot shared - iPhone 2
+
+PK - Testing on Microsoft Edge Browser
+
+The dropdown menu under 'Events' in the navigation menu is overlapping the 'Schedule Demo' CTA button 
+
+RT  - Testing on safari 
+Same as above ^^ Event overlaps with CTA
+Should the header be frozen as it moves down the page for easier nav access? ",https://drive.google.com/drive/folders/15CMpAF3KAr5TozAOg3VfTdQ1uaj30_X3,,
+Home,Core,Ready for Review,https://www.aeratechnology.com/,https://aerapreview.wpenginepowered.com/,https://aerapreview.wpenginepowered.com/,Approved,,"When I scroll down in my browser (on a laptop) the ""Aera Understands"" statement does not come up along side the lady as it does in the current site, unless I keep scrolling
+When I click on the schedule a demo button, the site says ""LOADING"" really big for 1 second.  Is there anyway to make it load faster?  And or just emlimiate the ""LOADING"" message?
+Responsive tablet/medium breakpoint is only showing the guy from Aera learns and all the items have issues with overlapping
+Aera Acts - the first speech bubbles’s color does not match the original
+Mobile - all images are showing a black border
+Final CTA is missing hover state
+iPhone - Padding is off - Screenshot shared - Iphone 1
+
+PK - Testing on Microsoft Edge Browser
+
+1. On the home page, in the 'Aera Learns' section, when a user clicks on 'More About the Technology', they should be redirected to the Aera Decision Cloud webpage; however, it currently says 'Page not found'.""
+
+2. 'Aera Understands' text does not appear alongside the image unless the user continues scrolling. The same issue occurs with 'Aera Recommends', 'Aera Acts', and 'Aera Learns'.
+
+3. The 'Schedule Demo' CTA at the bottom of the homepage is missing its hover state.
+",https://drive.google.com/drive/folders/1Dzj3wLECUPEnqBI2iL1EClMxbLC6Rf4P ,,
+About Us,Core,Ready for Review,https://www.aeratechnology.com/about-us,https://aerapreview.wpenginepowered.com/about-us,Approved,Approved,,Reviewed in Safari; matches live page.,,,
+Partners,Core,Ready for Review,https://www.aeratechnology.com/partners,https://aerapreview.wpenginepowered.com/partners,Needs Fixes,Approved,,"Same comment as page above, when I click on schedule demo says ""LOADING""
+Final CTA is missing hover state
+
+
+PK - Testing on Microsoft Edge Browser
+
+The 'Schedule Demo' CTA at the bottom of the homepage is missing its hover state.
+
+RT - Testing on safari 
+No issues minus same as above, CTA missing its hover state",,,
+Careers,Core,Ready for Review,https://www.aeratechnology.com/careers,https://aerapreview.wpenginepowered.com/careers,Needs Fixes,Approved,,"There is too much whitespace between the words and the pictures: from Find a Career to the first picture.  From the first picture to ""The big ideas..."" from that to the list of values from the list of values to the next group of pictures and from that group of pictures to the open roles.  More whitespace than in the original.
+Let’s use the same down arrow icon on the Contact Us page for the All Teams and All Countries dropdown for consistency
+
+PK - Testing on Microsoft Edge Browser
+
+There is increased whitespace between the text and images compared to the original design. This occurs between the first image and 'The big ideas...' heading, and again between the 'Big Ideas' heading and the list of ideas/values below.",,,
+Contact,Core,Ready for Review,https://www.aeratechnology.com/contact,https://aerapreview.wpenginepowered.com/contact,Needs Fixes,Approved,,"Currently our form only shows email and comment fields by default. If it doesn’t recognize your email in the system then only will the names/company/etc fields appear. Could we replicate the same behavior?
+Background helix is a lot bigger and very blurry
+
+PK - Testing on Microsoft Edge Browser
+
+The current 'Contact Us' form displays only Email and Comment fields by default. Once the email is recognized, additional fields (Name,Job Title, etc.) appear dynamically. Please see if we should implement the same progressive form design.",https://drive.google.com/drive/folders/1bHx3ih5FY-WXG5f60xkgX0OVdvS8Au1T,,
+Customers,Core,In Development,https://www.aeratechnology.com/customers,https://aerapreview.wpenginepowered.com/customers,Not Started,Not Started,,"Content import pending
+iPhone - Padding looks a bit odd and blank spaces - Screenhot attached - iPhone 4 and iPhone 5
+
+PK - Testing on Microsoft Edge Browser
+
+The content appears to be outdated. Notable case studies are missing, including Hershey and Gallo. Additionally, the case study cards/boxes are missing their associated images (e.g., customer logos, industry/domain images, etc.).",,,
+Demo,Core,Ready for Review,https://www.aeratechnology.com/demo,https://aerapreview.wpenginepowered.com/demo,Needs Fixes,Approved,,"Same form issue as the Contact Us page
+
+PK - Testing on Microsoft Edge Browser
+
+Same issue as noted on the 'Contact Us' form page",,,
+What Is Decision Intelligence,Product,Ready for Review,https://www.aeratechnology.com/what-is-decision-intelligence,https://aerapreview.wpenginepowered.com/what-is-decision-intelligence/,Needs Fixes,Needs Fixes,,"Note: the customer page links within the text go to the current site, this will have to be updated once the customer page is ready
+The announcement bar and nav should disappear when you scroll down and reappears when you scroll up
+Desktop medium/tablet breakpoint - left menu responsive issue
+Desktop small/mobile breakpoint - Table of Contents responsive issue (should be fine once the nav issue is resolved)
+Desktop small/mobile breakpoint (this issue was in the original too) - the area for the content seems really small and you need to click on the right spot to go back to reading. Could you reference how other companies do this kind of pages? https://www.quantexa.com/resources/what-is-decision-intelligence-guide/  https://www.kinaxis.com/en/what-ai-supply-chain-management   
+iPhone: Too much white space and scroll issue - Screenshot attached - iPhone 7
+
+PK - Testing on Microsoft Edge Browser
+
+The platform and customer case studies page links currently redirect to the existing site. These will need to be updated once the new webpages are ready.",https://drive.google.com/drive/folders/1WNB3PiP3k7AhDMIEFlbmx253ZTrkaQW_,,
+Decision Cloud,Product,Ready for Review,https://www.aeratechnology.com/decision-cloud,https://aerapreview.wpenginepowered.com/decision-cloud/,Needs Fixes,Needs Fixes,,"The words at the top are wrappng, with agent and realtime ending up on another line.  Should not wrap.
+Remove the scroll arrow when entering into the Explore the Core Components section
+The IDC report link appears to be going to the current site, this will have to be updated.
+Final CTA about Aera Skills needs to be updated to the right button
+iPhone - Too much blank space - Screenhot shared - iPhone 3
+
+PK - Testing on Microsoft Edge Browser
+
+1. The text at the top is breaking incorrectly, with 'agent' and 'realtime' moving to a new line. This text should remain on a single line.
+2. The scroll up and down arrow appears when entering the 'Explore the Core Components' section. This should not be visible.
+3. The 'Learn About Aera Skills' CTA at the bottom of the page appears different from the original design.",,,
+Aera Chat,Product,Ready for Review,https://www.aeratechnology.com/aera-chat,https://aerapreview.wpenginepowered.com/aera-chat,Not Started,Not Started,,,,,
+Aera Workspaces,Product,Ready for Review,https://www.aeratechnology.com/aera-workspaces,https://aerapreview.wpenginepowered.com/aera-workspaces,Not Started,Not Started,,,,,
+Aera Inbox,Product,Ready for Review,https://www.aeratechnology.com/aera-inbox,https://aerapreview.wpenginepowered.com/aera-inbox,Not Started,Not Started,,,,,
+Aera Control Room,Product,Ready for Review,https://www.aeratechnology.com/aera-control-room,https://aerapreview.wpenginepowered.com/aera-control-room,Not Started,Not Started,,,,,
+Decision Engagement,Product,Ready for Review,https://www.aeratechnology.com/decision-engagement,https://aerapreview.wpenginepowered.com/decision-engagement,Not Started,Not Started,,,,,
+Process Builder,Product,Ready for Review,https://www.aeratechnology.com/process-builder,https://aerapreview.wpenginepowered.com/process-builder,Not Started,Not Started,,,,,
+Business Rules,Product,Deprecated,https://www.aeratechnology.com/business-rules,,Not Started,Not Started,,,,,
+Simulation and Planning,Product,Deprecated,https://www.aeratechnology.com/simulation-and-planning,,Not Started,Not Started,,,,,
+Agentic AI,Product,Ready for Review,https://www.aeratechnology.com/agentic-AI,https://aerapreview.wpenginepowered.com/agentic-ambient-orchestration/,Not Started,Not Started,,,,,
+Aera Discovery,Product,Ready for Review,https://www.aeratechnology.com/aera-discovery,https://aerapreview.wpenginepowered.com/aera-discovery,Not Started,Not Started,,,,,
+Cortex AI/ML,Product,Ready for Review,https://www.aeratechnology.com/cortex-ai-ml,https://aerapreview.wpenginepowered.com/cortex-ai-ml,Not Started,Not Started,,,,,
+Decision Data Model,Product,Ready for Review,https://www.aeratechnology.com/decision-data-model,https://aerapreview.wpenginepowered.com/decision-data-model,Not Started,Not Started,,,,,
+Data Workbench,Product,Ready for Review,https://www.aeratechnology.com/data-workbench,https://aerapreview.wpenginepowered.com/data-workbench,Not Started,Not Started,,,,,
+Data Crawlers,Product,Deprecated,https://www.aeratechnology.com/data-crawlers,,Not Started,Not Started,,,,,
+Aera Developer,Product,In Development,https://www.aeratechnology.com/aera-developer,https://aerapreview.wpenginepowered.com/aera-developer,Not Started,Not Started,,,,,
+Skills Overview,Skills,In Development,https://www.aeratechnology.com/skills,https://aerapreview.wpenginepowered.com/skills,Not Started,Not Started,,,,,
+Logistics Skills,Skills,In Development,https://www.aeratechnology.com/skills/logistics,https://aerapreview.wpenginepowered.com/skills/logistics,Not Started,Not Started,,,,,
+Demand Skills,Skills,In Development,https://www.aeratechnology.com/skills/demand,https://aerapreview.wpenginepowered.com/skills/demand,Not Started,Not Started,,,,,
+Inventory Skills,Skills,In Development,https://www.aeratechnology.com/skills/inventory,https://aerapreview.wpenginepowered.com/skills/inventory,Not Started,Not Started,,,,,
+Order Skills,Skills,In Development,https://www.aeratechnology.com/skills/order,https://aerapreview.wpenginepowered.com/skills/order,Not Started,Not Started,,,,,
+Control Tower Skills,Skills,In Development,https://www.aeratechnology.com/skills/controltower,https://aerapreview.wpenginepowered.com/skills/controltower,Not Started,Not Started,,,,,
+Procurement Skills,Skills,In Development,https://www.aeratechnology.com/skills/procurement,https://aerapreview.wpenginepowered.com/skills/procurement,Not Started,Not Started,,,,,
+Finance Skills,Skills,In Development,https://www.aeratechnology.com/skills/finance,https://aerapreview.wpenginepowered.com/skills/finance,Not Started,Not Started,,,,,
+Revenue Skills,Skills,In Development,https://www.aeratechnology.com/skills/revenue,https://aerapreview.wpenginepowered.com/skills/revenue,Not Started,Not Started,,,,,
+Resources,Resources,Ready for Review,https://www.aeratechnology.com/resources,https://aerapreview.wpenginepowered.com/resources/,Needs Fixes,Needs Fixes,,"Not sure if this page is ready for review.  Missing content, type overlapping in tiles, tiles not all the same size.
+Content import pending
+Need to ensure that the height of all cards are the same, truncate copy when needed
+iPhone - Even when I add generic filters webinars are not showing - Screenhot sttached - iPhone 6 and also date is hiding - iPhone 8",https://drive.google.com/drive/folders/1vDRuoxu1_bbSA5xIGy6M3gDWS0H_0YfC ,,
+Events (Archive Page),Events,In Development,https://www.aeratechnology.com/events,https://aerapreview.wpenginepowered.com/events,Not Started,Not Started,,,,,
+Webinars (Archive Page),Events,In Development,https://www.aeratechnology.com/webinars,https://aerapreview.wpenginepowered.com/webinars,Not Started,Not Started,,"Content import pending
+The whitespace above and beneath heading looks odd ",,,
+AeraHub 2025,Events,Ready for Review,https://www.aeratechnology.com/aerahub-2025,https://aerapreview.wpenginepowered.com/aerahub-2025,Needs Fixes,Approved,,"The ""watch on demand"" button at the top does not bring you down to the videos below as it does not the original page.",,,
+AeraHub 2025 London,Legacy,In Development,https://www.aeratechnology.com/aerahub-2025-london,https://aerapreview.wpenginepowered.com/aerahub-2025-london,Not Started,Not Started,,,,,
+AeraHub 2024,Legacy,In Development,https://www.aeratechnology.com/aerahub-2024,https://aerapreview.wpenginepowered.com/aerahub-2024,Not Started,Not Started,,,,,
+News (Legacy Detail Pages),Legacy,In Development,https://www.aeratechnology.com/news/aera-technology-recognized-as-a-2023-green-technology-partner-for-supply-chains,,Not Started,Not Started,,"Legacy internal news detail pages exist in sitemap. Current UX links externally. Client decision required: retain, redirect, or remove.",,,
