@@ -22,6 +22,20 @@
 			width: 100%;
 		}
 
+		// Hide HubSpot loading message
+		#hubspotForm {
+			&::before,
+			&::after {
+				display: none !important;
+			}
+
+			// Hide any loading text elements
+			*[class*='loading'],
+			*[id*='loading'] {
+				display: none !important;
+			}
+		}
+
 		// Demo form specific input styles
 		input[type='text'],
 		input[type='email'],

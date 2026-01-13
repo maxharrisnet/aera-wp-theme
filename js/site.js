@@ -335,7 +335,7 @@
 	});
 
 	const technology = document.querySelector('[data-technology]');
-	const desktopQuery = window.matchMedia('(min-width: 1024px)');
+	const desktopQuery = window.matchMedia('(min-width: 768px)'); // Match CSS breakpoint
 	let teardownTechnology;
 
 	const initTechnology = () => {
@@ -374,7 +374,9 @@
 			});
 		};
 
-		if (!desktopQuery.matches) {
+		// Only treat as mobile if sceneWrapper is hidden (max-width: 768px)
+		const isMobile = window.matchMedia('(max-width: 767px)').matches;
+		if (isMobile) {
 			scenes.forEach((scene) => scene.classList.add('isVisible'));
 			items.forEach((item, index) => {
 				item.classList.toggle('isActive', index === 0);

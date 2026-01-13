@@ -95,7 +95,7 @@ $background_style = !empty($background_image) ? 'background-image: url(' . esc_u
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  (function() {
     // Validate portal ID and form ID before loading
     const portalId = '<?php echo esc_js($hubspot_portal_id); ?>';
     const formId = '<?php echo esc_js($hubspot_form_id); ?>';
@@ -105,32 +105,49 @@ $background_style = !empty($background_image) ? 'background-image: url(' . esc_u
       return;
     }
 
-    // Check if script is already loaded
-    if (document.querySelector('script[src*="js.hsforms.net"]')) {
-      // Script already exists, create form directly
+    // Function to create the form
+    function createForm() {
       if (window.hbspt && window.hbspt.forms) {
         window.hbspt.forms.create({
           portalId: portalId,
           formId: formId,
-          target: '#hubspotForm'
+          target: '#hubspotForm',
+          onFormReady: function($form) {
+            // Form is ready, hide any loading states
+            const formContainer = document.getElementById('hubspotForm');
+            if (formContainer) {
+              formContainer.style.opacity = '1';
+            }
+          }
         });
+      }
+    }
+
+    // Check if script is already loaded
+    if (document.querySelector('script[src*="js.hsforms.net"]')) {
+      // Script already exists, create form directly
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', createForm);
+      } else {
+        createForm();
       }
       return;
     }
 
-    // Load HubSpot forms script
+    // Load HubSpot forms script immediately (don't wait for DOMContentLoaded)
     const script = document.createElement('script');
     script.src = 'https://js.hsforms.net/forms/embed/v2.js';
     script.charset = 'utf-8';
     script.type = 'text/javascript';
+    script.async = true;
 
     script.addEventListener('load', function() {
       if (window.hbspt && window.hbspt.forms) {
-        window.hbspt.forms.create({
-          portalId: portalId,
-          formId: formId,
-          target: '#hubspotForm'
-        });
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', createForm);
+        } else {
+          createForm();
+        }
       } else {
         console.error('🔴 HubSpot forms library failed to load');
       }
@@ -140,6 +157,8 @@ $background_style = !empty($background_image) ? 'background-image: url(' . esc_u
       console.error('🔴 Failed to load HubSpot forms script');
     });
 
-    document.body.appendChild(script);
-  });
+    // Insert script in head for faster loading
+    const head = document.head || document.getElementsByTagName('head')[0];
+    head.appendChild(script);
+  })();
 </script>

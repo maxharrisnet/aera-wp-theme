@@ -11,6 +11,26 @@
 		display: none;
 	}
 
+	// Hide HubSpot's default loading message and text
+	&.hs-form-loading,
+	&[class*='loading'] {
+		&::before,
+		&::after {
+			display: none !important;
+		}
+	}
+
+	// Hide any loading text elements
+	.hs-form-loading,
+	[class*='loading'],
+	[id*='loading'],
+	*[class*='loading'],
+	*[id*='loading'] {
+		display: none !important;
+		visibility: hidden !important;
+		opacity: 0 !important;
+	}
+
 	div {
 		position: relative;
 	}

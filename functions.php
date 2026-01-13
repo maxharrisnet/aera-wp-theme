@@ -239,6 +239,12 @@ function aera_technology_scripts()
       );
     }
   }
+
+  // Preload HubSpot forms script on all pages for faster form loading
+  // This prevents the "LOADING" message delay when clicking Schedule Demo buttons
+  add_action('wp_head', function() {
+    echo '<link rel="preload" href="https://js.hsforms.net/forms/embed/v2.js" as="script" crossorigin="anonymous">' . "\n";
+  }, 1);
 }
 add_action('wp_enqueue_scripts', 'aera_technology_scripts');
 

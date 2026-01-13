@@ -86,4 +86,14 @@
 			width: 100%;
 		}
 	}
+
+	&--outline {
+		background: transparent;
+		border: 1px solid #bee9f3;
+
+		@include hover {
+			border-color: #e0f9ff rgba(255, 255, 255, 0) #dee8fb;
+			background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
+		}
+	}
 }
