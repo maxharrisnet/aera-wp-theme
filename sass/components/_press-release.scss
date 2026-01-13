@@ -21,7 +21,7 @@
 
 	&__col {
 		@media (min-width: $min-1200) {
-			@include make-col(percentage(12/12));
+			@include make-col(math.percentage(math.div(12, 12)));
 			margin-left: 0;
 		}
 	}
@@ -43,18 +43,18 @@
 
 		&__col3 {
 			// content
-			@include make-col(percentage(12/12));
+			@include make-col(math.percentage(math.div(12, 12)));
 
 			@media (min-width: $min-720) {
-				width: percentage(7/12);
+				width: math.percentage(math.div(7, 12));
 			}
 
 			@media (min-width: $min-1200) {
-				width: percentage(5/10);
+				width: math.percentage(math.div(5, 10));
 			}
 
 			@media (min-width: $min-1280) {
-				width: percentage(6/10);
+				width: math.percentage(math.div(6, 10));
 			}
 		}
 
@@ -101,7 +101,7 @@
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
-		gap: $gutter / 2;
+		gap: math.div($gutter, 2);
 	}
 
 	&__link {
@@ -284,7 +284,7 @@
 			font-size: 20px;
 			font-weight: 600;
 			line-height: 1.4;
-			margin: $gutter 0 ($gutter / 2) 0;
+			margin: $gutter 0 math.div($gutter, 2) 0;
 			color: #1a1a1a;
 		}
 
@@ -294,7 +294,7 @@
 			padding-left: 40px;
 
 			li {
-				margin: ($gutter / 2) 0;
+				margin: math.div($gutter, 2) 0;
 			}
 		}
 
@@ -331,7 +331,7 @@
 
 			th,
 			td {
-				padding: $gutter / 2;
+				padding: math.div($gutter, 2);
 				text-align: left;
 				border: 1px solid #e0e0e0;
 			}
@@ -368,7 +368,7 @@
 			transform 0.2s ease;
 
 		&:hover {
-			background-color: darken($color-primary, 10%);
+			background-color: color.adjust($color-primary, $lightness: -10%);
 			transform: translateX(4px);
 		}
 	}
