@@ -151,20 +151,24 @@ $skills_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form
 
                       <?php if ($video_thumbnail && is_array($video_thumbnail)) : ?>
                         <div class="skill-content__video">
-                          <button
-                            class="skill-content__video-thumbnail"
-                            data-video-url="<?php echo esc_attr($video_url); ?>"
-                            data-hubspot-form="<?php echo esc_attr($skills_hubspot_form_id); ?>"
-                            data-skill-id="<?php echo esc_attr($skill->ID); ?>"
-                            aria-label="<?php esc_attr_e('Play video', 'aera'); ?>">
-                            <img src="<?php echo esc_url($video_thumbnail['url']); ?>" alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video'); ?>" />
-                            <span class="skill-content__video-play-icon">
-                              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.7)" />
-                                <path d="M32 26L56 40L32 54V26Z" fill="white" />
-                              </svg>
-                            </span>
-                          </button>
+                          <?php if ($video_url) : ?>
+                            <button
+                              class="skill-content__video-thumbnail"
+                              data-video-url="<?php echo esc_attr($video_url); ?>"
+                              data-hubspot-form="<?php echo esc_attr($skills_hubspot_form_id); ?>"
+                              data-skill-id="<?php echo esc_attr($skill->ID); ?>"
+                              aria-label="<?php esc_attr_e('Play video', 'aera'); ?>">
+                              <img src="<?php echo esc_url($video_thumbnail['url']); ?>" alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video'); ?>" />
+                              <span class="skill-content__video-play-icon">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.7)" />
+                                  <path d="M32 26L56 40L32 54V26Z" fill="white" />
+                                </svg>
+                              </span>
+                            </button>
+                          <?php else : ?>
+                            <img src="<?php echo esc_url($video_thumbnail['url']); ?>" alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title); ?>" />
+                          <?php endif; ?>
                         </div>
                       <?php endif; ?> <div class="skill-content__header">
 

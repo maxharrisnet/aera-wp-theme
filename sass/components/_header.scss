@@ -10,7 +10,9 @@
 	left: 0;
 	z-index: 99;
 	width: 100%;
-	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+	transition:
+		transform 0.3s ease-in-out,
+		opacity 0.3s ease-in-out;
 
 	// Hide header on scroll down (Decision Intelligence page)
 	&--hidden {
@@ -83,15 +85,12 @@
 
 		position: relative;
 		top: 0px;
-		right: 0px;
+		right: -13px;
 
 		width: 40px;
 		height: 40px;
-		min-width: 40px;
-		min-height: 40px;
 
 		cursor: pointer;
-		z-index: 1000;
 
 		transition: opacity 0.2s ease-in-out;
 
@@ -108,28 +107,29 @@
 
 			position: absolute;
 
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+			left: 13px;
 
 			margin: 0 auto;
 
 			height: 2px;
-			width: 18px;
+			width: 14px;
 
 			background: $color-border;
-			transition: transform 0.3s ease, opacity 0.3s ease;
+			transition:
+				transform 0.3s ease,
+				opacity 0.3s ease;
+			transform-origin: 7px center;
 
 			&:first-child {
-				transform: translate(-50%, calc(-50% - 6px));
+				top: 8px;
 			}
 
 			&:nth-child(2) {
-				transform: translate(-50%, -50%);
+				top: 19px;
 			}
 
 			&:last-child {
-				transform: translate(-50%, calc(-50% + 6px));
+				top: 30px;
 			}
 		}
 	}
@@ -139,7 +139,8 @@
 	&.is-open &__toggle {
 		&Line {
 			&:first-child {
-				transform: translate(-50%, -50%) rotate(45deg);
+				transform: rotate(45deg);
+				top: 19px;
 			}
 
 			&:nth-child(2) {
@@ -147,7 +148,8 @@
 			}
 
 			&:last-child {
-				transform: translate(-50%, -50%) rotate(-45deg);
+				transform: rotate(-45deg);
+				top: 19px;
 			}
 		}
 	}
@@ -191,31 +193,34 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: space-between;
-		position: fixed;
+
+		position: absolute;
+
 		z-index: 1;
+
 		top: 0;
 		right: 0;
 		width: 100%;
 		max-width: 100%;
-		height: 100vh;
-		pointer-events: none;
-		transform: translate(100%, 0);
-		transition: transform 0.3s ease-in-out;
-		overflow-y: auto;
-		-webkit-overflow-scrolling: touch;
 
+		height: 100vh;
+
+		pointer-events: none;
+
+		transform: translate(100%, 0);
 		@media (max-width: $min-720) {
+			//overflow-y: scroll;
 			background: #f6f9fa;
 			z-index: 222;
 			height: 100vh;
-			max-width: 420px;
+		}
+		@media (max-width: 420px) {
+			//max-width: 420px;
 		}
 
-		.isOpen &,
-		.is-open & {
+		.isOpen & {
 			opacity: 1;
 			pointer-events: auto;
-			transform: translate(0, 0);
 		}
 
 		@media (min-width: $min-720) {
@@ -228,15 +233,20 @@
 			position: static;
 			top: auto;
 			left: auto;
+
 			opacity: 1;
+
 			height: auto;
 			width: auto;
+
 			max-width: none;
+
 			pointer-events: auto;
+
 			background: none;
+
 			transform: none;
 			transition: none;
-			overflow-y: visible;
 		}
 
 		&::before {
@@ -370,7 +380,9 @@
 		top: 0%;
 		padding: 10px;
 		box-shadow: 0 0 8px #e5e5e5;
-		transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+		transition:
+			transform 0.3s ease-in-out,
+			opacity 0.3s ease-in-out;
 
 		// Hide announcement bar on scroll down (Decision Intelligence page)
 		&--hidden {

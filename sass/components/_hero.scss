@@ -209,10 +209,11 @@
 	padding: 150px 0 0 !important;
 
 	@media (max-width: $min-720) {
-		padding: 0px 0 0;
+		padding: 100px 0 0;
 		display: flex;
 		align-items: center;
-		height: 450px;
+		height: auto;
+		min-height: 300px;
 	}
 
 	@media (min-width: $min-768) {
