@@ -777,98 +777,7 @@
 
 		&:hover {
 			transition-duration: $transition-enter;
-
-			&.technology {
-				border-color: $color-technology;
-			}
-			&.skills {
-				border-color: $color-skills;
-			}
-			&.company {
-				border-color: $color-company;
-			}
-			&.careers {
-				border-color: $color-careers;
-			}
-			&.resources {
-				border-color: $color-resources;
-			}
-			&.demo {
-				border-color: $color-company;
-			}
-			&.platform {
-				border-color: $color-technology;
-			}
-			&.values {
-				border-color: $color-technology;
-			}
-			&.a[href='/contact'] {
-				border-color: #8ac4e8 !important;
-			}
-			&.a[href='/test-drive'] {
-				border-color: #8ac4e8 !important;
-			}
-			// &.a[href="/skills/logistics"]{
-			//   border-color: #8ac4e8 !important;
-			// }
 		}
-
-		&.active {
-			&.technology {
-				border-color: $color-technology;
-			}
-			&.skills {
-				border-color: $color-skills;
-			}
-			&.company {
-				border-color: $color-company;
-			}
-			&.careers {
-				border-color: $color-careers;
-			}
-			&.resources {
-				border-color: $color-resources;
-			}
-			&.demo {
-				border-color: $color-company;
-			}
-			&.news {
-				border-color: #96b1d8;
-			}
-			&.action {
-				border-color: #96b1d8;
-			}
-			&.events {
-				border-color: #96b1d8;
-			}
-			&.platform {
-				border-color: $color-technology;
-			}
-			&.values {
-				border-color: $color-technology;
-			}
-			&.a[href='/contact'] {
-				border-color: #8ac4e8 !important;
-			}
-			&.a[href='/test-drive'] {
-				border-color: #8ac4e8 !important;
-			}
-			&.a[href='/skills/logistics'] {
-				border-color: #8ac4e8 !important;
-			}
-		}
-	}
-	#navigation a[href='/contact'] {
-		border-color: transparent !important;
-	}
-	#navigation a[href='/test-drive'] {
-		border-color: transparent !important;
-	}
-	#navigation a[href='/contact']:hover {
-		border-color: #8ac4e8 !important;
-	}
-	#navigation a[href='/test-drive']:hover {
-		border-color: #8ac4e8 !important;
 	}
 }
 
@@ -902,36 +811,36 @@
 }
 
 // Active state support for data-menu-type
-[data-menu-type='technology'] .navigation__link.active {
+[data-menu-type='technology'].current-menu-item > a {
 	border-color: $color-technology;
 }
-[data-menu-type='skills'] .navigation__link.active {
+[data-menu-type='skills'].current-menu-item .navigation__link {
 	border-color: $color-skills;
 }
-[data-menu-type='company'] .navigation__link.active {
+[data-menu-type='company'].current-menu-item .navigation__link {
 	border-color: $color-company;
 }
-[data-menu-type='careers'] .navigation__link.active {
+[data-menu-type='careers'].current-menu-item .navigation__link {
 	border-color: $color-careers;
 }
-[data-menu-type='resources'] .navigation__link.active {
+[data-menu-type='resources'].current-menu-item > .navigation__link {
 	border-color: $color-resources;
 }
-[data-menu-type='demo'] .navigation__link.active {
+[data-menu-type='demo'].current-menu-item .navigation__link {
 	border-color: $color-company;
 }
-[data-menu-type='news'] .navigation__link.active {
+[data-menu-type='news'].current-menu-item .navigation__link {
 	border-color: #96b1d8;
 }
-[data-menu-type='action'] .navigation__link.active {
+[data-menu-type='action'].current-menu-item .navigation__link {
 	border-color: #96b1d8;
 }
-[data-menu-type='events'] .navigation__link.active {
+[data-menu-type='events'].current-menu-item .navigation__link {
 	border-color: #96b1d8;
 }
-[data-menu-type='platform'] .navigation__link.active {
+[data-menu-type='platform'].current-menu-item .navigation__link {
 	border-color: $color-technology;
 }
-[data-menu-type='values'] .navigation__link.active {
+[data-menu-type='values'].current-menu-item .navigation__link {
 	border-color: $color-technology;
 }
