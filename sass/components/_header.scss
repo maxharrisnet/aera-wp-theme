@@ -82,11 +82,9 @@
 
 	&__toggle {
 		@include reset-button;
-
 		position: relative;
 		top: 0px;
 		right: -13px;
-
 		width: 40px;
 		height: 40px;
 
@@ -107,6 +105,7 @@
 
 			position: absolute;
 
+			top: 19px;
 			left: 13px;
 
 			margin: 0 auto;
@@ -120,16 +119,16 @@
 				opacity 0.3s ease;
 			transform-origin: 7px center;
 
-			&:first-child {
-				top: 8px;
+			&:nth-child(1) {
+				top: 14px;
 			}
 
 			&:nth-child(2) {
 				top: 19px;
 			}
 
-			&:last-child {
-				top: 30px;
+			&:nth-child(3) {
+				top: 24px;
 			}
 		}
 	}
@@ -138,7 +137,7 @@
 	&.isOpen &__toggle,
 	&.is-open &__toggle {
 		&Line {
-			&:first-child {
+			&:nth-child(1) {
 				transform: rotate(45deg);
 				top: 19px;
 			}
@@ -147,7 +146,7 @@
 				opacity: 0;
 			}
 
-			&:last-child {
+			&:nth-child(3) {
 				transform: rotate(-45deg);
 				top: 19px;
 			}

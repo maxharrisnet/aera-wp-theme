@@ -158,12 +158,12 @@
 		position: relative;
 		@media (max-width: $min-1023) {
 			display: block;
-			// &:after {
-			//   content: "+";
-			//   position: absolute;
-			//   right: -5px;
-			//   top: 0px;
-			// }
+			&:after {
+				content: '+';
+				position: absolute;
+				right: -5px;
+				top: 0px;
+			}
 		}
 		@media (max-width: $min-960) {
 			display: inline-block;

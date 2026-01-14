@@ -66,7 +66,7 @@
 		const t = gsap.timeline();
 		const duration = 0.35;
 
-		t.add('start').fromTo(toggleElement, { rotation: 0 }, { rotation: 45, duration }, 'start').fromTo(lineOne, { rotation: 0, y: 0 }, { rotation: 180, y: 5, duration }, 'start').fromTo(lineTwo, { opacity: 1 }, { opacity: 0, duration: 0.2 }, 'start').fromTo(lineThree, { rotation: 0, y: 0 }, { rotation: 90, y: -5, duration }, 'start');
+		t.add('start').fromTo(toggleElement, { rotation: 0 }, { rotation: 45, duration }, 'start').fromTo(lineOne, { rotation: 0, y: 0 }, { rotation: 180, y: 0, duration }, 'start').fromTo(lineTwo, { opacity: 1 }, { opacity: 0, duration: 0.2 }, 'start').fromTo(lineThree, { rotation: 0, y: 0 }, { rotation: 90, y: 0, duration }, 'start');
 	}
 
 	function toggleOut() {
