@@ -269,6 +269,17 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
       }
     });
 
+    // Submit form when checkboxes change
+    const skillCheckboxes = document.querySelectorAll('.skills-filter__checkbox');
+    skillCheckboxes.forEach(function(checkbox) {
+      checkbox.addEventListener('change', function() {
+        const form = document.getElementById('skillsFilterForm');
+        if (form) {
+          form.submit();
+        }
+      });
+    });
+
     // Sort dropdown
     const sortSelect = document.getElementById('skillSort');
     if (sortSelect) {

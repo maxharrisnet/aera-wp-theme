@@ -9,8 +9,9 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 100vw; // Ensure full viewport width on mobile
 	height: 100vh;
+	height: 100dvh; // Use dynamic viewport height for mobile browsers (fallback to 100vh if not supported)
 	z-index: 9999;
 	background-color: #fff;
 	opacity: 1;
@@ -19,6 +20,7 @@
 		visibility 0.3s ease-out;
 	visibility: visible;
 	overflow-y: hidden;
+	overflow-x: hidden;
 	text-align: center;
 	display: flex;
 	justify-content: center;
@@ -29,7 +31,23 @@
 		visibility: hidden;
 		pointer-events: none;
 	}
+}
 
+// Prevent body scrolling when loading screen is visible
+body:has(.loading:not(.is-hidden)),
+body.loading-active {
+	overflow: hidden !important;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+html:has(.loading:not(.is-hidden)),
+html.loading-active {
+	overflow: hidden !important;
+}
+
+.loading {
 	&__container {
 		@include container;
 	}

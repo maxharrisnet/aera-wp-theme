@@ -150,6 +150,41 @@
 		overlay.addEventListener('click', toggleNav);
 	}
 
+	// Close navigation when clicking menu links on mobile (but not parent items with dropdowns)
+	// Only close for direct links without children
+	if (sidebar) {
+		sidebar.addEventListener('click', (e) => {
+			const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+			if (!isMobile) {
+				return; // Desktop handles this differently
+			}
+
+			// Prevent clicks on navigation panel from bubbling to overlay
+			e.stopPropagation();
+
+			// Check if clicking on a navigation link
+			const link = e.target.closest('a');
+			if (link) {
+				// Check if this link is inside a parent item with a dropdown
+				const parentItem = link.closest('.menu-item-has-children');
+				const hasSubmenu = parentItem && parentItem.querySelector('.sub-menu');
+
+				// Don't close if:
+				// 1. Clicking on the toggle button for submenu
+				// 2. Clicking on a parent item that has a submenu (let the toggle handle it)
+				const isToggleButton = e.target.closest('.navigation__submenuToggle');
+
+				if (!isToggleButton && !hasSubmenu) {
+					// Only close for direct links without children
+					// Small delay to allow navigation to happen
+					setTimeout(() => {
+						closeNav();
+					}, 100);
+				}
+			}
+		});
+	}
+
 	window.addEventListener('keyup', (event) => {
 		if (event.key === 'Escape') {
 			closeNav();
@@ -293,13 +328,32 @@
 			trigger.style.font = 'inherit';
 			trigger.innerHTML = '<span class="navigation__activeDropdown">+</span><span class="navigation__inactiveDropdown">-</span><span class="screen-reader-text">Toggle submenu</span>';
 
-			trigger.addEventListener('click', () => {
+			trigger.addEventListener('click', (e) => {
+				e.preventDefault();
+				e.stopPropagation(); // Prevent event from bubbling to sidebar click handler
 				const isOpen = item.classList.toggle('is-open');
 				trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
 			});
 
 			const link = item.querySelector('a');
 			if (link) {
+				// Prevent parent link from navigating when it has a submenu on mobile
+				link.addEventListener('click', (e) => {
+					// Only prevent default if clicking the link itself (not the toggle button)
+					if (!e.target.closest('.navigation__submenuToggle')) {
+						// On mobile, parent links with submenus should toggle the submenu, not navigate
+						const submenu = item.querySelector('.sub-menu');
+						if (submenu && window.matchMedia('(max-width: 1023px)').matches) {
+							e.preventDefault();
+							e.stopPropagation();
+							const isOpen = item.classList.toggle('is-open');
+							const toggleBtn = item.querySelector('.navigation__submenuToggle');
+							if (toggleBtn) {
+								toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+							}
+						}
+					}
+				});
 				link.after(trigger);
 			}
 		});
@@ -472,12 +526,35 @@
 	// This ensures the loading screen shows during initial page load and hides when everything is ready
 	const loadingOverlay = document.getElementById('loading-overlay');
 	if (loadingOverlay) {
+		// Prevent body scrolling when loading screen is visible
+		const preventBodyScroll = () => {
+			document.body.style.overflow = 'hidden';
+			document.body.style.position = 'fixed';
+			document.body.style.width = '100%';
+			document.body.style.height = '100%';
+			document.documentElement.style.overflow = 'hidden';
+			document.body.classList.add('loading-active');
+			document.documentElement.classList.add('loading-active');
+		};
+
+		const allowBodyScroll = () => {
+			document.body.style.overflow = '';
+			document.body.style.position = '';
+			document.body.style.width = '';
+			document.body.style.height = '';
+			document.documentElement.style.overflow = '';
+			document.body.classList.remove('loading-active');
+			document.documentElement.classList.remove('loading-active');
+		};
+
 		// Ensure loading overlay is visible initially
 		loadingOverlay.style.display = 'block';
 		loadingOverlay.classList.remove('is-hidden');
+		preventBodyScroll();
 
 		const hideLoading = () => {
 			loadingOverlay.classList.add('is-hidden');
+			allowBodyScroll();
 			// Remove from DOM after transition completes
 			setTimeout(() => {
 				if (loadingOverlay && loadingOverlay.parentNode) {

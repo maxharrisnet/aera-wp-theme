@@ -13,7 +13,7 @@
 	// padding-top: 50px;
 	padding-bottom: 60px;
 
-	@media (max-width: $max-720) {
+	@media (max-width: $max-1024) {
 		padding-top: 30px;
 		padding-bottom: 40px;
 	}
@@ -33,7 +33,7 @@
 			gap: 30px;
 		}
 
-		@media (max-width: $max-720) {
+		@media (max-width: $max-1024) {
 			flex-direction: column;
 			gap: 20px;
 		}
@@ -53,9 +53,6 @@
 	@media (max-width: $max-1024) {
 		width: 200px;
 		flex-basis: 200px;
-	}
-
-	@media (max-width: $max-720) {
 		width: 100%;
 		flex-basis: auto;
 		margin-bottom: 20px;
@@ -71,7 +68,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.025em;
 
-		@media (max-width: $max-720) {
+		@media (max-width: $max-1024) {
 			font-size: 14px;
 			margin-bottom: 12px;
 		}
@@ -319,7 +316,7 @@
 	&__toggle {
 		display: none;
 
-		@media (max-width: $max-720) {
+		@media (max-width: $max-1024) {
 			display: block;
 			padding: 12px 20px;
 			background-color: $color-btn-background;
@@ -346,7 +343,7 @@
 	}
 
 	&__content {
-		@media (max-width: $max-720) {
+		@media (max-width: $max-1024) {
 			display: none;
 			padding: 15px;
 			background-color: $color-aquahaze;
@@ -370,7 +367,7 @@
 		max-width: 100%;
 	}
 
-	@media (max-width: $max-720) {
+	@media (max-width: $max-1024) {
 		max-width: 100%;
 	}
 
@@ -380,7 +377,7 @@
 		align-items: center;
 		margin-bottom: 30px;
 
-		@media (max-width: $max-720) {
+		@media (max-width: $max-1024) {
 			flex-direction: column;
 			align-items: flex-start;
 			gap: 20px;
@@ -437,14 +434,12 @@
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 		gap: 20px;
 
-		@media (max-width: $max-1024) {
-			grid-template-columns: repeat(3, 1fr);
-			gap: 25px;
+		@media (max-width: $max-1200) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
 		}
 
-		@media (max-width: $max-720) {
-			grid-template-columns: 1fr;
-			gap: 20px;
+		@media (max-width: $max-640) {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
 		}
 	}
 
