@@ -27,6 +27,10 @@
 	}
 
 	&__col {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0;
+
 		@media (min-width: $min-1200) {
 			@include make-col(math.percentage(math.div(10.5, 12)));
 			margin: 0 auto;
