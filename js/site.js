@@ -286,7 +286,12 @@
 			trigger.className = 'navigation__submenuToggle';
 			trigger.type = 'button';
 			trigger.setAttribute('aria-expanded', 'false');
-			trigger.innerHTML = '<span class="screen-reader-text">Toggle submenu</span>';
+			trigger.style.background = 'none';
+			trigger.style.border = 'none';
+			trigger.style.padding = '0';
+			trigger.style.cursor = 'pointer';
+			trigger.style.font = 'inherit';
+			trigger.innerHTML = '<span class="navigation__activeDropdown">+</span><span class="navigation__inactiveDropdown">-</span><span class="screen-reader-text">Toggle submenu</span>';
 
 			trigger.addEventListener('click', () => {
 				const isOpen = item.classList.toggle('is-open');
