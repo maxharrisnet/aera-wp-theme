@@ -626,7 +626,6 @@
 		max-width: 900px;
 		max-height: 90vh;
 		margin: 5vh auto;
-		// background-color: $color-white;
 		border-radius: 8px;
 		z-index: 2;
 		overflow-y: auto;
@@ -641,23 +640,34 @@
 
 	&__close {
 		position: absolute;
-		top: 20px;
-		right: 20px;
+		top: 15px;
+		right: 15px;
+		width: 48px;
+		height: 48px;
 		border: none;
+		border-radius: 50%;
 		cursor: pointer;
-		padding: 8px;
-		color: $color-mineshaft;
-		transition: color 0.2s ease;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: #00619e;
+		transition: all 0.2s ease;
 		z-index: 3;
-		background: none;
 
 		&:hover {
-			color: $color-link;
+			background-color: darken(#00619e, 10%);
+			transform: scale(1.05);
 		}
 
 		svg {
-			width: 24px;
-			height: 24px;
+			width: 15px;
+			height: 15px;
+
+			path {
+				stroke: #ffffff;
+				stroke-width: 1.09px;
+			}
 		}
 	}
 
@@ -690,23 +700,21 @@
 	}
 
 	&__player {
-		.skill-video-modal__video-wrapper {
-			position: relative;
-			width: 100%;
-			padding-bottom: 56.25%; // 16:9 aspect ratio
-			height: 0;
-			overflow: hidden;
-			border-radius: 8px;
-			background-color: $color-white;
-			border: 15px solid $color-white;
+		position: relative;
+		width: 100%;
+		padding-bottom: 56.25%; // 16:9 aspect ratio
+		height: 0;
+		overflow: hidden;
+		border-radius: 8px;
+		background-color: $color-white;
+		border: 15px solid $color-white;
 
-			iframe {
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-			}
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 		}
 	}
 

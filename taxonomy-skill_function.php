@@ -326,22 +326,18 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
     <div class="skill-video-modal__overlay"></div>
     <div class="skill-video-modal__content">
       <button class="skill-video-modal__close" id="closeSkillVideoModal" aria-label="<?php esc_attr_e('Close video', 'aera'); ?>">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M13.5 2.5L2.5 13.5" stroke="#5C6475" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M2.5 2.5L13.5 13.5" stroke="#5C6475" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
       </button>
 
-      <!-- HubSpot Form Container (shown initially if gated) -->
-      <div id="skillVideoForm" class="skill-video-modal__form">
-        <h3 class="skill-video-modal__form-title"><?php esc_html_e('Watch This Video', 'aera'); ?></h3>
-        <p class="skill-video-modal__form-description"><?php esc_html_e('Please fill out the form below to access this content.', 'aera'); ?></p>
-        <div id="skillVideoHubspotForm"></div>
-      </div>
+      <div class="skill-video-modal__player">
+        <!-- HubSpot Form (shown initially if gated) -->
+        <div id="skillVideoForm" class="skill-video-modal__form" style="display: none;"></div>
 
-      <!-- Video Container (shown after form submission or immediately if ungated) -->
-      <div id="skillVideoPlayer" class="skill-video-modal__player" style="display: none;">
-        <div class="skill-video-modal__video-wrapper">
+        <!-- Video Container (shown after form submission or immediately if ungated) -->
+        <div id="skillVideoPlayer" class="skill-video-modal__video-wrapper" style="display: none;">
           <iframe
             id="skillVideoIframe"
             src=""
@@ -361,8 +357,8 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
     // Video Modal functionality
     const modal = document.getElementById('skillVideoModal');
     const closeBtn = document.getElementById('closeSkillVideoModal');
-    const videoPlayer = document.getElementById('skillVideoPlayer');
-    const videoForm = document.getElementById('skillVideoForm');
+    const videoPlayerWrapper = document.getElementById('skillVideoPlayer');
+    const videoFormWrapper = document.getElementById('skillVideoForm');
     const videoIframe = document.getElementById('skillVideoIframe');
     const hubspotFormContainer = document.getElementById('skillVideoHubspotForm');
 
@@ -381,8 +377,8 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
         // Check if video needs to be gated
         if (currentFormId && currentFormId.trim() !== '') {
           // Show form, hide video
-          videoForm.style.display = 'block';
-          videoPlayer.style.display = 'none';
+          videoFormWrapper.style.display = 'block';
+          videoPlayerWrapper.style.display = 'none';
 
           // Load HubSpot form if not already loaded
           if (hubspotFormContainer.innerHTML === '') {
@@ -395,8 +391,8 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                 onFormSubmit: function() {
                   // Show video after form submission
                   setTimeout(function() {
-                    videoForm.style.display = 'none';
-                    videoPlayer.style.display = 'block';
+                    videoFormWrapper.style.display = 'none';
+                    videoPlayerWrapper.style.display = 'block';
                     videoIframe.src = currentVideoUrl;
                   }, 500);
                 }
@@ -404,15 +400,15 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
             } else {
               console.error('HubSpot forms library not loaded');
               // Fallback: show video anyway
-              videoForm.style.display = 'none';
-              videoPlayer.style.display = 'block';
+              videoFormWrapper.style.display = 'none';
+              videoPlayerWrapper.style.display = 'block';
               videoIframe.src = currentVideoUrl;
             }
           }
         } else {
           // No gating, show video directly
-          videoForm.style.display = 'none';
-          videoPlayer.style.display = 'block';
+          videoFormWrapper.style.display = 'none';
+          videoPlayerWrapper.style.display = 'block';
           videoIframe.src = currentVideoUrl;
         }
       });
@@ -424,8 +420,8 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
       document.body.style.overflow = '';
       videoIframe.src = '';
       hubspotFormContainer.innerHTML = '';
-      videoForm.style.display = 'block';
-      videoPlayer.style.display = 'none';
+      videoFormWrapper.style.display = 'none';
+      videoPlayerWrapper.style.display = 'none';
     }
 
     if (closeBtn) {
