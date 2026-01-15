@@ -177,19 +177,25 @@ while (have_posts()) :
     ?>
 
     <!-- See Aera in Action CTA -->
-    <section class="skills-home__action-section">
-      <div class="skills-home__container">
-        <h2 class="skills-home__action-title"><?php esc_html_e('See Aera in Action', 'aera'); ?></h2>
-        <div class="skills-home__action-buttons">
-          <a href="<?php echo esc_url(home_url('/platform')); ?>" class="skills-home__action-button">
-            <?php esc_html_e('Learn About the Platform', 'aera'); ?>
-          </a>
-          <a href="<?php echo esc_url(home_url('/demo')); ?>" class="skills-home__action-button">
-            <?php esc_html_e('Schedule Demo', 'aera'); ?>
-          </a>
+    <?php
+    $cta_buttons = get_field('cta_buttons');
+    if ($cta_buttons && is_array($cta_buttons) && count($cta_buttons) > 0) :
+    ?>
+      <section class="skills-home__action-section">
+        <div class="skills-home__container">
+          <h2 class="skills-home__action-title"><?php esc_html_e('See Aera in Action', 'aera'); ?></h2>
+          <div class="skills-home__action-buttons">
+            <?php foreach ($cta_buttons as $button) : ?>
+              <?php if (!empty($button['url']) && !empty($button['label'])) : ?>
+                <a href="<?php echo esc_url($button['url']); ?>" class="skills-home__action-button">
+                  <?php echo esc_html($button['label']); ?>
+                </a>
+              <?php endif; ?>
+            <?php endforeach; ?>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    <?php endif; ?>
 
   </main>
 

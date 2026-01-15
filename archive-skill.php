@@ -34,11 +34,13 @@ $current_search = isset($_GET['skill_search']) ? sanitize_text_field(is_array($_
 $current_skills = isset($_GET['skill']) ? array_map('intval', (array)$_GET['skill']) : array();
 $current_sort = isset($_GET['sort']) ? sanitize_text_field(is_array($_GET['sort']) ? $_GET['sort'][0] : $_GET['sort']) : 'menu_order';
 
-// Remove custom filter parameters from WP query vars to prevent sanitization errors
-add_filter('query_vars', function ($vars) {
-  // Remove custom parameters from being processed by WordPress
-  $vars = array_diff($vars, array('skill', 'skill_search', 'sort'));
-  return $vars;
+// Prevent WordPress from processing our custom parameters as query vars
+add_filter('request', function ($query_vars) {
+  // Remove our custom parameters from WordPress's query processing
+  unset($query_vars['skill']);
+  unset($query_vars['skill_search']);
+  unset($query_vars['sort']);
+  return $query_vars;
 });
 
 // Modify the main query to add our filters

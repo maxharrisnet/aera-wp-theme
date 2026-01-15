@@ -4,7 +4,11 @@
 @use '../mixins' as *;
 
 .blog-share {
-	padding-top: 0;
+	padding-top: 200px;
+
+	@media (max-width: $max-960) {
+		padding-top: 0;
+	}
 
 	&__container {
 		margin: 0 70px;
