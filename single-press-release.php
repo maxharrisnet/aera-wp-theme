@@ -21,17 +21,22 @@ get_header();
         <div>
           <div class="blog-article__row">
             <div class="blog-article__left">
-              <?php get_template_part('template-parts/content', 'press-release'); ?>
+              <?php get_template_part('template-parts/content', get_post_type()); ?>
             </div>
             <div class="blog-article__right">
               <?php
               // Social sharing section
-              get_template_part('template-parts/content', 'press-release-share');
+              get_template_part('template-parts/content', 'blog-share');
               ?>
 
               <?php
-              // Sidebar with related resources
-              get_template_part('template-parts/content', 'press-release-sidebar');
+              // Related posts section (full list)
+              get_template_part('template-parts/content', 'blog-related');
+              ?>
+
+              <?php
+              // Related posts sidebar (just the "Other Resources" links)
+              get_template_part('template-parts/content', 'blog-related-sidebar');
               ?>
             </div>
           </div>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for blog social sharing.
  *
@@ -22,9 +23,9 @@ $share_title = get_the_title();
           rel="noopener noreferrer"
           class="blog-share__button"
           aria-label="<?php esc_attr_e('Share on Facebook', 'aera'); ?>">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="16" r="16" fill="#1877F2"/>
-            <path d="M17.5 16h-1.5v6h-2v-6h-1.5v-2h1.5v-1.5c0-1.5.5-2.5 2-2.5h2v2h-1.5c-.5 0-.5.2-.5.5V14h2l-.5 2z" fill="white"/>
+          <svg viewBox="0 0 64 64" width="32" height="32">
+            <circle cx="32" cy="32" r="31" fill="#3b5998"></circle>
+            <path d="M34.1,47V33.3h4.6l0.7-5.3h-5.3v-3.4c0-1.5,0.4-2.6,2.6-2.6l2.8,0v-4.8c-0.5-0.1-2.2-0.2-4.1-0.2 c-4.1,0-6.9,2.5-6.9,7V28H24v5.3h4.6V47H34.1z" fill="white"></path>
           </svg>
         </a>
       </div>
@@ -36,9 +37,9 @@ $share_title = get_the_title();
           rel="noopener noreferrer"
           class="blog-share__button"
           aria-label="<?php esc_attr_e('Share on X (Twitter)', 'aera'); ?>">
-          <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="31" height="31" rx="15.5" fill="black"/>
-            <path d="M20.5 9.5h-2.5l-3 3.5-3-3.5H9.5l4.5 5.5-4.5 5.5h2.5l3-3.5 3 3.5h2.5l-4.5-5.5 4.5-5.5z" fill="white"/>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="-480 -466.815 2160 2160">
+            <circle cx="600" cy="613.185" r="1080" />
+            <path fill="#fff" d="M306.615 79.694H144.011L892.476 1150.3h162.604ZM0 0h357.328l309.814 450.883L1055.03 0h105.86L714.15 519.295 1200 1226.37H842.672L515.493 750.215 105.866 1226.37H0l468.485-544.568Z" />
           </svg>
         </a>
       </div>
@@ -50,9 +51,9 @@ $share_title = get_the_title();
           rel="noopener noreferrer"
           class="blog-share__button"
           aria-label="<?php esc_attr_e('Share on LinkedIn', 'aera'); ?>">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="16" r="16" fill="#0077B5"/>
-            <path d="M12 10h8v8h-8v-8zm1 7h6v-6h-6v6zm3-8.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm-4 9.5h8v4h-8v-4zm2 3h4v-2h-4v2z" fill="white"/>
+          <svg viewBox="0 0 64 64" width="32" height="32">
+            <circle cx="32" cy="32" r="31" fill="#007fb1"></circle>
+            <path d="M20.4,44h5.4V26.6h-5.4V44z M23.1,18c-1.7,0-3.1,1.4-3.1,3.1c0,1.7,1.4,3.1,3.1,3.1 c1.7,0,3.1-1.4,3.1-3.1C26.2,19.4,24.8,18,23.1,18z M39.5,26.2c-2.6,0-4.4,1.4-5.1,2.8h-0.1v-2.4h-5.2V44h5.4v-8.6 c0-2.3,0.4-4.5,3.2-4.5c2.8,0,2.8,2.6,2.8,4.6V44H46v-9.5C46,29.8,45,26.2,39.5,26.2z" fill="white"></path>
           </svg>
         </a>
       </div>
@@ -62,13 +63,12 @@ $share_title = get_the_title();
           href="mailto:?subject=<?php echo esc_attr(rawurlencode($share_title)); ?>&body=<?php echo esc_attr(rawurlencode($share_url)); ?>"
           class="blog-share__button"
           aria-label="<?php esc_attr_e('Share via Email', 'aera'); ?>">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="16" cy="16" r="16" fill="#666"/>
-            <path d="M10 12h12v8H10v-8zm1 1v6h10v-6H11zm1 1h10v4H12v-4zm0 1v2h10v-2H12z" fill="white"/>
+          <svg viewBox="0 0 64 64" width="32" height="32">
+            <circle cx="32" cy="32" r="31" fill="#7f7f7f"></circle>
+            <path d="M17,22v20h30V22H17z M41.1,25L32,32.1L22.9,25H41.1z M20,39V26.6l12,9.3l12-9.3V39H20z" fill="white"></path>
           </svg>
         </a>
       </div>
     </div>
   </div>
 </section>
-
