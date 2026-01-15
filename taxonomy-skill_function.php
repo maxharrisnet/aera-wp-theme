@@ -43,8 +43,8 @@ if (!empty($all_categories) && !is_wp_error($all_categories)) {
   }
 }
 
-// Get global HubSpot form ID for skills videos from options page
-$skills_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form_id', 'option') : '';
+// Get default HubSpot form ID for this function's videos
+$default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form_id', 'skill_function_' . $current_function->term_id) : '';
 ?>
 
 <main id="primary" class="site-main site-main--skills-function">
@@ -144,6 +144,10 @@ $skills_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form
                     // Get video data
                     $video_thumbnail = function_exists('get_field') ? get_field('video_thumbnail', $skill->ID) : null;
                     $video_url = function_exists('get_field') ? get_field('video_url', $skill->ID) : '';
+
+                    // Get form ID for this skill (use skill-specific or default)
+                    $skill_form_id = function_exists('get_field') ? get_field('hubspot_form_id', $skill->ID) : '';
+                    $hubspot_form_id = !empty($skill_form_id) ? $skill_form_id : $default_hubspot_form_id;
                   ?>
                     <article
                       id="skill-<?php echo esc_attr($skill->post_name); ?>"
@@ -155,7 +159,7 @@ $skills_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form
                             <button
                               class="skill-content__video-thumbnail"
                               data-video-url="<?php echo esc_attr($video_url); ?>"
-                              data-hubspot-form="<?php echo esc_attr($skills_hubspot_form_id); ?>"
+                              data-hubspot-form="<?php echo esc_attr($hubspot_form_id); ?>"
                               data-skill-id="<?php echo esc_attr($skill->ID); ?>"
                               aria-label="<?php esc_attr_e('Play video', 'aera'); ?>">
                               <img src="<?php echo esc_url($video_thumbnail['url']); ?>" alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video'); ?>" />
@@ -354,6 +358,90 @@ $skills_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_form
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
+    // Video Modal functionality
+    const modal = document.getElementById('skillVideoModal');
+    const closeBtn = document.getElementById('closeSkillVideoModal');
+    const videoPlayer = document.getElementById('skillVideoPlayer');
+    const videoForm = document.getElementById('skillVideoForm');
+    const videoIframe = document.getElementById('skillVideoIframe');
+    const hubspotFormContainer = document.getElementById('skillVideoHubspotForm');
+
+    let currentVideoUrl = '';
+    let currentFormId = '';
+
+    // Open video modal
+    document.querySelectorAll('.skill-content__video-thumbnail').forEach(function(button) {
+      button.addEventListener('click', function() {
+        currentVideoUrl = this.getAttribute('data-video-url');
+        currentFormId = this.getAttribute('data-hubspot-form');
+
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+
+        // Check if video needs to be gated
+        if (currentFormId && currentFormId.trim() !== '') {
+          // Show form, hide video
+          videoForm.style.display = 'block';
+          videoPlayer.style.display = 'none';
+
+          // Load HubSpot form if not already loaded
+          if (hubspotFormContainer.innerHTML === '') {
+            if (typeof hbspt !== 'undefined') {
+              hbspt.forms.create({
+                region: 'na1',
+                portalId: '4455954',
+                formId: currentFormId,
+                target: '#skillVideoHubspotForm',
+                onFormSubmit: function() {
+                  // Show video after form submission
+                  setTimeout(function() {
+                    videoForm.style.display = 'none';
+                    videoPlayer.style.display = 'block';
+                    videoIframe.src = currentVideoUrl;
+                  }, 500);
+                }
+              });
+            } else {
+              console.error('HubSpot forms library not loaded');
+              // Fallback: show video anyway
+              videoForm.style.display = 'none';
+              videoPlayer.style.display = 'block';
+              videoIframe.src = currentVideoUrl;
+            }
+          }
+        } else {
+          // No gating, show video directly
+          videoForm.style.display = 'none';
+          videoPlayer.style.display = 'block';
+          videoIframe.src = currentVideoUrl;
+        }
+      });
+    });
+
+    // Close modal
+    function closeModal() {
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+      videoIframe.src = '';
+      hubspotFormContainer.innerHTML = '';
+      videoForm.style.display = 'block';
+      videoPlayer.style.display = 'none';
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Close on overlay click
+    modal.querySelector('.skill-video-modal__overlay').addEventListener('click', closeModal);
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.style.display === 'flex') {
+        closeModal();
+      }
+    });
+
     // Tab switching (only if tabs exist)
     const tabs = document.querySelectorAll('.skills-function__tab');
     const panels = document.querySelectorAll('.skills-function__panel');

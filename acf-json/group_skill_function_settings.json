@@ -3,6 +3,18 @@
   "title": "Skill Function Settings",
   "fields": [
     {
+      "key": "field_skill_function_hubspot_form_id",
+      "label": "HubSpot Form ID",
+      "name": "hubspot_form_id",
+      "type": "text",
+      "instructions": "HubSpot form ID for gating videos on this function's page. This will be used for all skills in this function unless a skill has its own form ID specified. Example: 097ee201-0440-4b59-a68e-d682966a8e08",
+      "required": 0,
+      "placeholder": "097ee201-0440-4b59-a68e-d682966a8e08",
+      "wrapper": {
+        "width": "100"
+      }
+    },
+    {
       "key": "field_skill_function_related",
       "label": "Related Skill Functions",
       "name": "related_skill_functions",
