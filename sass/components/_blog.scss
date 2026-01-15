@@ -12,7 +12,6 @@
 
 	&__container {
 		@include container;
-    
 	}
 
 	@media (max-width: $max-960) {
@@ -71,6 +70,10 @@
 				margin-left: 0;
 				margin-top: $gutter * 2;
 			}
+
+			h3 {
+				font-family: $font-family-gilroy;
+			}
 		}
 	}
 
@@ -86,6 +89,8 @@
 
 	&__title {
 		@include heading(false, 30, 50);
+		font-family: $font-family-gilroy-bold;
+		font-weight: 700;
 		border-bottom: 1px solid #000;
 		padding-bottom: 30px;
 	}
@@ -236,9 +241,7 @@
 
 		figure {
 			@include reset-all;
-			margin-top: $gutter * 2;
-			margin-left: -$gutter;
-			margin-right: -$gutter;
+			margin-top: $gutter;
 
 			figcaption {
 				padding: math.div($gutter, 2) $gutter;

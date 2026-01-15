@@ -57,22 +57,29 @@
 		// Additional styles can be added here if required
 	}
 
+	p {
+		margin: 0;
+		color: $color-codgray;
+		font-size: 14px;
+	}
+
 	&__lead {
 		// @include responsive-font(14, 16);
 		// margin-top: 0;
 		// margin-bottom: $gutter * 2;
 		text-align: center;
+		color: $color-codgray;
 
-		&:last-child {
-			@include responsive-font(14, 16);
-			@media (max-width: $min-720) {
-				margin-bottom: $gutter * 1.5;
-			}
-		}
+		// &:last-child {
+		// 	@include responsive-font(14, 16);
+		// 	@media (max-width: $min-720) {
+		// 		margin-bottom: $gutter * 1.5;
+		// 	}
+		// }
 
-		&Name {
-			color: #1a1a1a;
-			font-weight: 500;
-		}
+		// &Name {
+		// 	color: #1a1a1a;
+		// 	font-weight: 500;
+		// }
 	}
 }

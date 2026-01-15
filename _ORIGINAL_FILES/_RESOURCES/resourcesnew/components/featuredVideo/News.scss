@@ -1,0 +1,254 @@
+@import "~styles/config";
+
+.news {
+  margin-top: $gutter * 3;
+  //@include segment-bottom;
+
+  &__container {
+    @include container;
+  }
+
+  &__title {
+    @include heading;
+
+    @media (min-width: $min-1200) {
+      margin-left: percentage(1/12);
+    }
+  }
+
+  &__list {
+    @media (min-width: $min-1200) {
+      @include make-row;
+    }
+  }
+
+  &__col {
+    @media (min-width: $min-1200) {
+      @include make-col(percentage(10/12));
+      margin: 0 auto;
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+  }
+
+  &Item {
+    //margin-bottom: $gutter * 2;
+    width: 100%;
+    margin-bottom: 30px;
+
+    &__row {
+      @include make-row;
+      flex-wrap: inherit;
+      margin-left: 0px;
+      margin-right: 0px;
+      padding: 0px 30px;
+      @media (max-width: $min-720) {
+        display: block;
+      }
+    }
+
+    &__clearfix {
+      clear: both;
+    }
+
+    &__wrapper {
+      box-shadow: 0px 0px 8px #e5e5e5;
+      border-radius: 38px;
+      padding: 30px 0px;
+    }
+
+    &__col1 {
+      // logo
+      @include make-col(percentage(12/12));
+      padding: 0;
+
+      img {
+        padding-right: 20px;
+      }
+
+      @media (min-width: $min-720) {
+        width: percentage(5/12);
+        float: left;
+      }
+
+      @media (min-width: $min-1200) {
+        width: percentage(5/10);
+      }
+    }
+
+    &__col2 {
+      // date
+      @include make-col(percentage(5/12));
+
+      @media (min-width: $min-720) {
+        width: percentage(2/12);
+        order: 3;
+      }
+
+      @media (min-width: $min-1200) {
+        width: percentage(2/10);
+      }
+
+      @media (min-width: $min-1280) {
+        width: percentage(1/10);
+      }
+    }
+
+    &__col3 {
+      // content
+      @include make-col(percentage(12/12));
+      padding: 0;
+
+      @media (min-width: $min-720) {
+        width: percentage(5/12);
+        float: right;
+        p {
+          margin-top: 0px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+
+      @media (min-width: $min-1200) {
+        width: percentage(5/10);
+        p {
+          margin-top: 0px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+
+      @media (min-width: $min-1280) {
+        width: percentage(5/10);
+        p {
+          margin-top: 0px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    &__col12 {
+      // content
+      @include make-col(percentage(12/12));
+      padding: 0;
+
+      @media (min-width: $min-720) {
+        width: percentage(12/12);
+        float: right;
+        p {
+          margin-top: 0px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+
+      @media (min-width: $min-1200) {
+        width: percentage(12/12);
+        p {
+          margin-top: 0px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+
+      @media (min-width: $min-1280) {
+        width: percentage(12/12);
+        p {
+          margin-top: 0px;
+          font-size: 16px;
+          line-height: 20px;
+        }
+      }
+    }
+
+    &__logo {
+      margin-top: 20px;
+      max-width: 150px;
+
+      @media (min-width: $min-720) {
+        // margin-top: $gutter + 4px;
+        margin: 20px auto;
+      }
+    }
+
+    &__eventimage {
+      max-width: 90%;
+
+      // @media (min-width: $min-720) {
+      //   margin-top: $gutter + 4px;
+      // }
+    }
+
+    &__date {
+      font-size: 14px;
+      font-weight: 500;
+      text-align: right;
+      color: $font-color-dark;
+
+      @media (min-width: $min-720) {
+        float: right;
+
+        white-space: nowrap;
+      }
+      @media (max-width: $min-720) {
+        text-align: left;
+      }
+    }
+
+    &__title {
+      // @include subheading;
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 27px;
+      color: #1a1a1a;
+
+      a {
+        color: #1a1a1a;
+      }
+    }
+
+    &__link {
+      @include link;
+    }
+
+    &__type {
+      font-family: Gilroy;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      display: inline-block;
+      color: #00578f;
+      position: relative;
+      white-space: nowrap;
+    }
+    &__info {
+      font-family: FreightSans Pro;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: right;
+      float: right;
+      position: relative;
+      span {
+        display: inline-block;
+      }
+    }
+    &__line {
+      width: 100%;
+      height: 1px;
+      background-color: #000;
+      margin: 10px 10px;
+      @media (max-width: $min-720) {
+        margin: 10px 0px;
+      }
+    }
+  }
+}

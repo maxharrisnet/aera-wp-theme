@@ -6,12 +6,11 @@
 
 .blog-related {
 	margin-top: 0;
-	margin-bottom: $gutter * 2;
+	// margin-bottom: $gutter * 2;
 
 	&__container {
-		// Remove container since it's inside the sidebar
-		padding: 0;
-		margin: 0;
+		margin: 0 70px;
+		border-bottom: #000 1px solid;
 	}
 
 	h3 {
@@ -73,28 +72,28 @@
 	}
 
 	&__sidebar {
-		border-top: 1px solid #5c6476;
-		margin-top: 0;
-		padding-top: $gutter * 2;
+		// border-top: 1px solid #5c6476;
+		margin: 0 70px;
+		// padding-top: $gutter * 2;
 
 		h3 {
 			margin-top: 0;
-			margin-bottom: $gutter;
+			// margin-bottom: $gutter;
 		}
 
 		ul {
-			@include reset-list;
 			padding-left: 20px;
 			margin-top: 0;
+			color: $color-codgray;
 		}
 
 		a {
-			display: block;
-			color: #1a1a1a;
+			// display: block;
+			color: $color-codgray;
 			font-weight: 400;
 			font-size: 18px;
-			@include reset-anchor;
-			margin-bottom: 10px;
+			// @include reset-anchor;
+			// margin-bottom: 10px;
 
 			&:hover {
 				text-decoration: underline;

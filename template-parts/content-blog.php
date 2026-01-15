@@ -10,9 +10,8 @@ defined('ABSPATH') || exit;
 
 $lead_text = function_exists('get_field') ? (string) get_field('blog_lead') : '';
 $lead_paragraphs = array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $lead_text ?? ''))));
-
-$date_value = get_the_date('c');
-$display_date = get_the_date();
+$date_value = get_the_date('Y-m-d');
+$display_date = get_the_date('Y-m-d');
 
 $article_classes = array(
   'article-template',
