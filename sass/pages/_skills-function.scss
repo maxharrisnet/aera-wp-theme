@@ -628,7 +628,8 @@
 		margin: 5vh auto;
 		border-radius: 8px;
 		z-index: 2;
-		overflow-y: auto;
+		// overflow-y: auto;
+		overflow: visible;
 		padding: 15px;
 
 		@media (max-width: $max-720) {
@@ -642,31 +643,55 @@
 		position: absolute;
 		top: 15px;
 		right: 15px;
-		width: 48px;
-		height: 48px;
 		border: none;
-		border-radius: 50%;
 		cursor: pointer;
-		padding: 0;
+		padding: 8px;
+		background: none;
+		transition: all 0.2s ease;
+		z-index: 3;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		background-color: #00619e;
-		transition: all 0.2s ease;
-		z-index: 3;
 
 		&:hover {
-			background-color: darken(#00619e, 10%);
-			transform: scale(1.05);
+			opacity: 0.7;
 		}
 
 		svg {
-			width: 15px;
-			height: 15px;
+			width: 16px;
+			height: 16px;
 
 			path {
-				stroke: #ffffff;
-				stroke-width: 1.09px;
+				stroke: #5c6475;
+				stroke-width: 1px;
+				transition: stroke 0.2s ease;
+			}
+		}
+
+		// Blue circle style when video is showing
+		&--video {
+			width: 48px;
+			height: 48px;
+			border-radius: 50%;
+			padding: 0;
+			background-color: #00619e;
+			top: -10px;
+			right: -10px;
+
+			&:hover {
+				background-color: darken(#00619e, 10%);
+				transform: scale(1.05);
+				opacity: 1;
+			}
+
+			svg {
+				width: 15px;
+				height: 15px;
+
+				path {
+					stroke: #ffffff;
+					stroke-width: 1.09px;
+				}
 			}
 		}
 	}

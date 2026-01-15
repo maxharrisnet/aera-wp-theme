@@ -83,10 +83,13 @@
 		let currentVideoUrl = '';
 		let currentFormId = '';
 		let formSubmitted = false;
-		let hubspotAvailable = null; // null = unknown, true = available, false = blocked
+		const hubspotAvailable = null; // null = unknown, true = available, false = blocked
 
 		/**
 		 * Open modal with video
+		 *
+		 * @param  videoUrl
+		 * @param  hubspotFormId
 		 */
 		function openModal(videoUrl, hubspotFormId) {
 			currentVideoUrl = videoUrl;
@@ -141,6 +144,11 @@
 			if (videoPlayer) {
 				videoPlayer.style.display = 'none';
 			}
+
+			// Remove video styling from close button
+			if (closeBtn) {
+				closeBtn.classList.remove('skill-video-modal__close--video');
+			}
 		}
 
 		/**
@@ -153,6 +161,10 @@
 			if (videoPlayer) {
 				videoPlayer.style.display = 'none';
 			}
+			// Remove video styling from close button
+			if (closeBtn) {
+				closeBtn.classList.remove('skill-video-modal__close--video');
+			}
 		}
 
 		/**
@@ -164,6 +176,11 @@
 			}
 			if (videoPlayer) {
 				videoPlayer.style.display = 'block';
+			}
+
+			// Add video styling to close button (blue circle)
+			if (closeBtn) {
+				closeBtn.classList.add('skill-video-modal__close--video');
 			}
 
 			// Load video with autoplay
@@ -231,6 +248,8 @@
 
 		/**
 		 * Load HubSpot form with error handling
+		 *
+		 * @param  formId
 		 */
 		function loadHubSpotForm(formId) {
 			if (!window.hbspt) {
@@ -255,13 +274,13 @@
 
 				window.hbspt.forms.create({
 					portalId: '4455954', // Your HubSpot portal ID
-					formId: formId,
+					formId,
 					target: '#skillVideoHubspotForm',
-					onFormReady: function ($form) {
+					onFormReady($form) {
 						clearTimeout(formTimeout);
 						console.log('✅ HubSpot form ready');
 					},
-					onFormSubmit: function ($form) {
+					onFormSubmit($form) {
 						clearTimeout(formTimeout);
 						console.log('✅ Form submitted');
 						formSubmitted = true;
@@ -355,4 +374,3 @@
 		}
 	}
 })();
-

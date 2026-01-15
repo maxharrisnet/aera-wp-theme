@@ -334,7 +334,11 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
 
       <div class="skill-video-modal__player">
         <!-- HubSpot Form (shown initially if gated) -->
-        <div id="skillVideoForm" class="skill-video-modal__form" style="display: none;"></div>
+        <div id="skillVideoForm" class="skill-video-modal__form" style="display: none;">
+          <h3 class="skill-video-modal__form-title"><?php esc_html_e('Watch This Video', 'aera'); ?></h3>
+          <p class="skill-video-modal__form-description"><?php esc_html_e('Please fill out the form below to access this content.', 'aera'); ?></p>
+          <div id="skillVideoHubspotForm"></div>
+        </div>
 
         <!-- Video Container (shown after form submission or immediately if ungated) -->
         <div id="skillVideoPlayer" class="skill-video-modal__video-wrapper" style="display: none;">
@@ -381,7 +385,7 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
           videoPlayerWrapper.style.display = 'none';
 
           // Load HubSpot form if not already loaded
-          if (hubspotFormContainer.innerHTML === '') {
+          if (hubspotFormContainer && hubspotFormContainer.innerHTML === '') {
             if (typeof hbspt !== 'undefined') {
               hbspt.forms.create({
                 region: 'na1',
@@ -393,6 +397,7 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                   setTimeout(function() {
                     videoFormWrapper.style.display = 'none';
                     videoPlayerWrapper.style.display = 'block';
+                    closeBtn.classList.add('skill-video-modal__close--video');
                     videoIframe.src = currentVideoUrl;
                   }, 500);
                 }
@@ -402,6 +407,7 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
               // Fallback: show video anyway
               videoFormWrapper.style.display = 'none';
               videoPlayerWrapper.style.display = 'block';
+              closeBtn.classList.add('skill-video-modal__close--video');
               videoIframe.src = currentVideoUrl;
             }
           }
@@ -409,6 +415,7 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
           // No gating, show video directly
           videoFormWrapper.style.display = 'none';
           videoPlayerWrapper.style.display = 'block';
+          closeBtn.classList.add('skill-video-modal__close--video');
           videoIframe.src = currentVideoUrl;
         }
       });
@@ -419,9 +426,12 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
       modal.style.display = 'none';
       document.body.style.overflow = '';
       videoIframe.src = '';
-      hubspotFormContainer.innerHTML = '';
+      if (hubspotFormContainer) {
+        hubspotFormContainer.innerHTML = '';
+      }
       videoFormWrapper.style.display = 'none';
       videoPlayerWrapper.style.display = 'none';
+      closeBtn.classList.remove('skill-video-modal__close--video');
     }
 
     if (closeBtn) {
