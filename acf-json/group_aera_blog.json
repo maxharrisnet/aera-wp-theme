@@ -3,30 +3,16 @@
     "title": "Blog Post",
   "fields": [
     {
-            "key": "field_blog_author",
-            "label": "Author",
-            "name": "blog_author",
+            "key": "field_blog_lead",
+            "label": "Lead Text",
+            "name": "blog_lead",
             "type": "textarea",
-            "instructions": "Author name and details. Each line will create a new paragraph.",
+            "instructions": "Lead text displayed below the title. Each line will create a new paragraph.",
             "required": false,
             "rows": 4,
             "new_lines": "wpautop",
             "wrapper": {
-                "width": "50"
-            }
-        },
-        {
-            "key": "field_blog_author_image",
-            "label": "Author Image",
-            "name": "blog_author_image",
-            "type": "image",
-            "instructions": "Author photo or image.",
-            "required": false,
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "wrapper": {
-                "width": "50"
+                "width": "100"
             }
         }
   ],

@@ -1,0 +1,430 @@
+#!/usr/bin/env node
+/**
+ * Contentful Blogs to WordPress WXR Converter
+ *
+ * Converts Community Template Page entries from Contentful to WordPress WXR format
+ * for import into the 'blog' custom post type.
+ *
+ * Features:
+ * - Maps Community Template Page entries (main blog posts)
+ * - Maps Community Card entries (archive/card data)
+ * - Creates WordPress users for authors
+ * - Downloads and maps images (featured image from ogImageUrl, card image from card)
+ * - Preserves all markup and links
+ * - Maps to Yoast SEO fields
+ * - Filters deprecated posts
+ * - Only includes published posts
+ */
+
+const fs = require('fs');
+const path = require('path');
+const { marked } = require('marked');
+const striptags = require('striptags');
+
+const OUT = path.resolve(__dirname, '../_ORIGINAL_FILES/blogs-wxr.xml');
+const SRC = path.resolve(__dirname, '../export_blogs_sample/contentful-export-mh1amgo8m7ts-master-2025-11-25T03-16-19.json');
+const DEPRECATED_CSV = path.resolve(__dirname, '../_ORIGINAL_FILES/Website Cleanup - Nov 2025  - Aditya - Blogs.csv');
+const LIMIT = 12; // Start with 12 most recent for testing
+
+function escXml(s) {
+	if (s == null) return '';
+	return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+function firstLocalized(f) {
+	if (!f) return null;
+	if (typeof f === 'string') return f;
+	if (typeof f === 'object') {
+		const k = Object.keys(f)[0];
+		return f[k];
+	}
+	return null;
+}
+
+function extractAssetId(field) {
+	if (!field) return null;
+	if (field.sys && field.sys.type === 'Link' && field.sys.linkType === 'Asset') {
+		return field.sys.id;
+	}
+	if (typeof field === 'object') {
+		for (const locale of Object.keys(field)) {
+			const val = field[locale];
+			if (val && val.sys && val.sys.type === 'Link' && val.sys.linkType === 'Asset') {
+				return val.sys.id;
+			}
+		}
+	}
+	return null;
+}
+
+function loadDeprecatedPosts() {
+	const deprecated = new Set();
+	try {
+		const csv = fs.readFileSync(DEPRECATED_CSV, 'utf8');
+		const lines = csv.split('\n');
+		for (let i = 1; i < lines.length; i++) {
+			const line = lines[i];
+			if (!line.trim()) continue;
+			const cols = line.split(',');
+			if (cols.length >= 6) {
+				const decision = cols[5]?.trim();
+				const title = cols[1]?.trim();
+				if (decision === 'Retire' && title) {
+					deprecated.add(title.toLowerCase().trim());
+				}
+			}
+		}
+	} catch (e) {
+		console.error('Warning: Could not load deprecated posts CSV:', e.message);
+	}
+	return deprecated;
+}
+
+function buildWxr(blogPosts, cardsMap, assetsMap, authorsMap, deprecated) {
+	const now = new Date().toUTCString();
+	const DEFAULT_IMAGE_URL = 'https://images.ctfassets.net/mh1amgo8m7ts/4prFu00cABgTGVeGvbCo8b/a2ac7f09d24154c85cd0dee9ee72096b/Aera_tile.png';
+	let out = '';
+	out += '<?xml version="1.0" encoding="UTF-8"?>\n';
+	out += '<rss version="2.0" xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:wp="http://wordpress.org/export/1.2/">\n';
+	out += '<channel>\n';
+	out += '<title>Blogs Export</title>\n';
+	out += '<link>https://your-site.example/</link>\n';
+	out += `<wp:wxr_version>1.2</wp:wxr_version>\n`;
+
+	// Note: Authors will be created/mapped during WordPress import
+	// The dc:creator field will be used to match or create WordPress users
+
+	let postId = 200000;
+	let attachId = 300000;
+
+	blogPosts.forEach((blog, i) => {
+		const fields = blog.fields || {};
+		const title = firstLocalized(fields.title) || '(no title)';
+
+		// Skip deprecated posts
+		if (deprecated.has(title.toLowerCase().trim())) {
+			console.error(`Skipping deprecated post: ${title}`);
+			return;
+		}
+
+		// Get matching card if available
+		const card = cardsMap.get(blog.sys.id) || null;
+		const cardFields = card?.fields || {};
+
+		// Extract slug - remove "blogs/" prefix if present
+		let slug = firstLocalized(fields.slug) || firstLocalized(cardFields.link) || '';
+		if (slug.startsWith('blogs/')) {
+			slug = slug.replace(/^blogs\//, '');
+		}
+		if (slug.startsWith('/blogs/')) {
+			slug = slug.replace(/^\/blogs\//, '');
+		}
+		if (slug.startsWith('/')) {
+			slug = slug.substring(1);
+		}
+
+		// Get content - prefer richText, then content
+		let content = firstLocalized(fields.richText) || firstLocalized(fields.content) || '';
+		// Content is already in markup, don't convert with marked
+		// Just ensure it's properly escaped for XML
+
+		// Get excerpt from card text field
+		const excerpt = firstLocalized(cardFields.text) || firstLocalized(fields.metaDescription) || '';
+		const excerptPlain = striptags(excerpt);
+
+		// Get author info
+		const publisher = firstLocalized(fields.lead) || firstLocalized(cardFields.publication) || 'Aera Technology';
+		const authorRole = firstLocalized(fields.author) || firstLocalized(cardFields.authorTitle) || '';
+		const authorName = publisher; // Publisher is the author name
+
+		// Get dates
+		const postDate = firstLocalized(fields.date) || (blog.sys.createdAt ? new Date(blog.sys.createdAt).toISOString().split('T')[0] : new Date().toISOString().split('T')[0]);
+		const postDateTime = postDate + 'T12:00:00';
+
+		// Get images
+		// Featured image: prefer ogImageUrl, then image field, then first image from content
+		let featuredImageUrl = null;
+		let featuredImageId = null;
+
+		// Try ogImageUrl first (it's a URL string, not an asset reference)
+		const ogImageUrl = firstLocalized(fields.ogImageUrl);
+		if (ogImageUrl) {
+			featuredImageUrl = ogImageUrl.startsWith('//') ? 'https:' + ogImageUrl : ogImageUrl;
+		}
+
+		// If no ogImageUrl, try image field (asset reference)
+		if (!featuredImageUrl) {
+			const imageAssetId = extractAssetId(fields.image);
+			if (imageAssetId && assetsMap[imageAssetId]) {
+				featuredImageUrl = assetsMap[imageAssetId];
+				featuredImageId = imageAssetId;
+			}
+		}
+
+		// Fallback to default
+		if (!featuredImageUrl) {
+			featuredImageUrl = DEFAULT_IMAGE_URL;
+		}
+
+		// Card image (for archive/excerpt display)
+		let cardImageUrl = null;
+		const cardImageAssetId = extractAssetId(cardFields.image);
+		if (cardImageAssetId && assetsMap[cardImageAssetId]) {
+			cardImageUrl = assetsMap[cardImageAssetId];
+		}
+		// If no card image, use featured image
+		if (!cardImageUrl) {
+			cardImageUrl = featuredImageUrl;
+		}
+
+		// Meta fields
+		const metaTitle = firstLocalized(fields.metaTitle) || title;
+		const metaDescription = firstLocalized(fields.metaDescription) || excerptPlain || '';
+		const schemaArticle = firstLocalized(fields.schemaArticle) || '';
+
+		// Get author photo
+		const authorPhotoAssetId = extractAssetId(fields.authorPhoto);
+		const authorPhotoUrl = authorPhotoAssetId && assetsMap[authorPhotoAssetId] ? assetsMap[authorPhotoAssetId] : null;
+
+		// Build post item
+		const currentPostId = postId++;
+		const featuredAttachId = attachId++;
+		const cardAttachId = cardImageUrl !== featuredImageUrl ? attachId++ : featuredAttachId;
+		const authorPhotoAttachId = authorPhotoUrl ? attachId++ : null;
+
+		out += '<item>\n';
+		out += `<title><![CDATA[${title}]]></title>\n`;
+		out += `<link>/blogs/${escXml(slug)}</link>\n`;
+		out += `<pubDate>${now}</pubDate>\n`;
+		out += `<dc:creator>${escXml(authorName)}</dc:creator>\n`;
+		out += `<excerpt:encoded><![CDATA[${excerptPlain || ''}]]></excerpt:encoded>\n`;
+		out += `<wp:post_excerpt><![CDATA[${excerptPlain || ''}]]></wp:post_excerpt>\n`;
+		out += `<guid isPermaLink="false">blog-${blog.sys.id}</guid>\n`;
+		out += `<content:encoded><![CDATA[${content || ''}]]></content:encoded>\n`;
+		out += `<wp:post_id>${currentPostId}</wp:post_id>\n`;
+		out += `<wp:post_date>${postDateTime}</wp:post_date>\n`;
+		out += `<wp:post_date_gmt>${postDateTime}</wp:post_date_gmt>\n`;
+		out += `<wp:comment_status>closed</wp:comment_status>\n`;
+		out += `<wp:ping_status>closed</wp:ping_status>\n`;
+		out += `<wp:post_name>${escXml(slug || (title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')))}</wp:post_name>\n`;
+		out += `<wp:status>publish</wp:status>\n`;
+		out += `<wp:post_type>blog</wp:post_type>\n`;
+
+		// ACF and meta fields
+		function meta(k, v) {
+			if (v == null || v === '') return;
+			out += `<wp:postmeta>\n<wp:meta_key>${escXml(k)}</wp:meta_key>\n<wp:meta_value><![CDATA[${v}]]></wp:meta_value>\n</wp:postmeta>\n`;
+		}
+
+		// Featured image
+		meta('_thumbnail_id', featuredAttachId);
+
+		// Card image (for archive display)
+		if (cardImageUrl && cardAttachId !== featuredAttachId) {
+			meta('resource_card_image', cardAttachId);
+		} else {
+			meta('resource_card_image', featuredAttachId);
+		}
+
+		// Author fields (we'll use WordPress author, but keep ACF for backwards compatibility during transition)
+		if (excerpt) meta('resource_excerpt', excerpt);
+
+		// Yoast SEO fields
+		meta('_yoast_wpseo_title', metaTitle);
+		meta('_yoast_wpseo_metadesc', metaDescription);
+		if (schemaArticle) meta('_yoast_wpseo_schema_article', schemaArticle);
+
+		// Original Contentful ID for reference
+		meta('original_contentful_id', blog.sys.id);
+
+		out += '</item>\n';
+
+		// Featured image attachment
+		out += '<item>\n';
+		out += `<title><![CDATA[${title} featured image]]></title>\n`;
+		out += `<link>${escXml(featuredImageUrl)}</link>\n`;
+		out += `<pubDate>${now}</pubDate>\n`;
+		out += `<dc:creator>${escXml(authorName)}</dc:creator>\n`;
+		out += `<guid isPermaLink="false">attachment-${featuredAttachId}</guid>\n`;
+		out += `<wp:post_id>${featuredAttachId}</wp:post_id>\n`;
+		out += `<wp:post_date>${postDateTime}</wp:post_date>\n`;
+		out += `<wp:post_date_gmt>${postDateTime}</wp:post_date_gmt>\n`;
+		out += `<wp:post_status>inherit</wp:post_status>\n`;
+		out += `<wp:post_parent>${currentPostId}</wp:post_parent>\n`;
+		out += `<wp:post_type>attachment</wp:post_type>\n`;
+		out += `<wp:attachment_url>${escXml(featuredImageUrl)}</wp:attachment_url>\n`;
+		out += '</item>\n';
+
+		// Card image attachment (if different from featured)
+		if (cardImageUrl && cardAttachId !== featuredAttachId) {
+			out += '<item>\n';
+			out += `<title><![CDATA[${title} card image]]></title>\n`;
+			out += `<link>${escXml(cardImageUrl)}</link>\n`;
+			out += `<pubDate>${now}</pubDate>\n`;
+			out += `<dc:creator>${escXml(authorName)}</dc:creator>\n`;
+			out += `<guid isPermaLink="false">attachment-${cardAttachId}</guid>\n`;
+			out += `<wp:post_id>${cardAttachId}</wp:post_id>\n`;
+			out += `<wp:post_date>${postDateTime}</wp:post_date>\n`;
+			out += `<wp:post_date_gmt>${postDateTime}</wp:post_date_gmt>\n`;
+			out += `<wp:post_status>inherit</wp:post_status>\n`;
+			out += `<wp:post_parent>${currentPostId}</wp:post_parent>\n`;
+			out += `<wp:post_type>attachment</wp:post_type>\n`;
+			out += `<wp:attachment_url>${escXml(cardImageUrl)}</wp:attachment_url>\n`;
+			out += '</item>\n';
+		}
+
+		// Author photo attachment (if exists)
+		if (authorPhotoUrl && authorPhotoAttachId) {
+			out += '<item>\n';
+			out += `<title><![CDATA[${authorName} author photo]]></title>\n`;
+			out += `<link>${escXml(authorPhotoUrl)}</link>\n`;
+			out += `<pubDate>${now}</pubDate>\n`;
+			out += `<dc:creator>${escXml(authorName)}</dc:creator>\n`;
+			out += `<guid isPermaLink="false">attachment-${authorPhotoAttachId}</guid>\n`;
+			out += `<wp:post_id>${authorPhotoAttachId}</wp:post_id>\n`;
+			out += `<wp:post_date>${postDateTime}</wp:post_date>\n`;
+			out += `<wp:post_date_gmt>${postDateTime}</wp:post_date_gmt>\n`;
+			out += `<wp:post_status>inherit</wp:post_status>\n`;
+			out += `<wp:post_parent>0</wp:post_parent>\n`;
+			out += `<wp:post_type>attachment</wp:post_type>\n`;
+			out += `<wp:attachment_url>${escXml(authorPhotoUrl)}</wp:attachment_url>\n`;
+			out += '</item>\n';
+		}
+	});
+
+	out += '</channel>\n</rss>\n';
+	return out;
+}
+
+function run() {
+	const raw = fs.readFileSync(SRC, 'utf8');
+	const j = JSON.parse(raw);
+
+	// Find content types
+	const contentTypes = j.contentTypes || [];
+	const templatePageCt = contentTypes.find((ct) => ct.sys?.id === 'communityTemplatePage');
+	const cardCt = contentTypes.find((ct) => ct.sys?.id === 'communityCard');
+
+	if (!templatePageCt) {
+		console.error('Community Template Page content type not found');
+		process.exit(1);
+	}
+	if (!cardCt) {
+		console.error('Community Card content type not found');
+		process.exit(1);
+	}
+
+	// Load deprecated posts
+	const deprecated = loadDeprecatedPosts();
+	console.error('Deprecated posts loaded:', deprecated.size);
+
+	// Build assets map
+	const assets = j.assets || [];
+	const assetsMap = {};
+	assets.forEach((a) => {
+		const id = a.sys && a.sys.id;
+		if (!id) return;
+		const fileObj = (a.fields && a.fields.file) || null;
+		if (!fileObj) {
+			for (const k of Object.keys(a.fields || {})) {
+				if (a.fields[k] && a.fields[k].file) {
+					const file = a.fields[k].file;
+					const url = file.url || '';
+					assetsMap[id] = url.startsWith('//') ? 'https:' + url : url;
+					break;
+				}
+			}
+		} else {
+			const locale = Object.keys(fileObj)[0];
+			const file = fileObj[locale];
+			if (file && file.url) {
+				assetsMap[id] = file.url.startsWith('//') ? 'https:' + file.url : file.url;
+			}
+		}
+	});
+
+	// Get entries
+	const entries = j.entries || [];
+
+	// Filter blog template pages (published only)
+	const blogPosts = entries.filter((e) => {
+		return e.sys?.contentType?.sys?.id === 'communityTemplatePage' && e.sys?.publishedAt;
+	});
+
+	// Filter community cards
+	const cards = entries.filter((e) => {
+		return e.sys?.contentType?.sys?.id === 'communityCard' && e.sys?.publishedAt;
+	});
+
+	// Build card map - link cards to template pages by matching title or slug
+	const cardsMap = new Map();
+	cards.forEach((card) => {
+		const cardFields = card.fields || {};
+		const cardTitle = firstLocalized(cardFields.title);
+		const cardLink = firstLocalized(cardFields.link);
+
+		// Try to match by title first
+		blogPosts.forEach((blog) => {
+			const blogTitle = firstLocalized(blog.fields?.title);
+			if (blogTitle === cardTitle) {
+				cardsMap.set(blog.sys.id, card);
+			}
+		});
+
+		// If no match by title, try by link/slug
+		if (!cardsMap.has(card.sys.id)) {
+			blogPosts.forEach((blog) => {
+				const blogSlug = firstLocalized(blog.fields?.slug);
+				if (cardLink && blogSlug && (cardLink.includes(blogSlug) || blogSlug.includes(cardLink))) {
+					cardsMap.set(blog.sys.id, card);
+				}
+			});
+		}
+	});
+
+	// Build authors map
+	const authorsMap = new Map();
+	blogPosts.forEach((blog) => {
+		const fields = blog.fields || {};
+		const publisher = firstLocalized(fields.lead);
+		const authorRole = firstLocalized(fields.author);
+		const authorPhotoId = extractAssetId(fields.authorPhoto);
+
+		if (publisher) {
+			if (!authorsMap.has(publisher)) {
+				authorsMap.set(publisher, {
+					role: authorRole || '',
+					photoUrl: authorPhotoId && assetsMap[authorPhotoId] ? assetsMap[authorPhotoId] : null
+				});
+			}
+		}
+	});
+
+	// Sort by date (most recent first) and limit
+	blogPosts.sort((a, b) => {
+		const dateA = firstLocalized(a.fields?.date) || a.sys.updatedAt || a.sys.createdAt;
+		const dateB = firstLocalized(b.fields?.date) || b.sys.updatedAt || b.sys.createdAt;
+		return new Date(dateB) - new Date(dateA);
+	});
+
+	const limitedPosts = blogPosts.slice(0, LIMIT);
+
+	console.error('Community Template Page contentType:', templatePageCt.name, templatePageCt.sys?.id);
+	console.error('Community Card contentType:', cardCt.name, cardCt.sys?.id);
+	console.error('Total blog posts (published):', blogPosts.length);
+	console.error('Total cards (published):', cards.length);
+	console.error('Cards matched to posts:', cardsMap.size);
+	console.error('Unique authors found:', authorsMap.size);
+	console.error(`Processing ${limitedPosts.length} most recent posts (limit: ${LIMIT})`);
+
+	const wxr = buildWxr(limitedPosts, cardsMap, assetsMap, authorsMap, deprecated);
+	fs.writeFileSync(OUT, wxr, 'utf8');
+	console.log('WXR written to', OUT);
+	console.log(`\nNext steps:`);
+	console.log(`1. Review the WXR file: ${OUT}`);
+	console.log(`2. Import into WordPress: Tools → Import → WordPress`);
+	console.log(`3. Map authors to WordPress users (or create new users)`);
+	console.log(`4. Download images using: node scripts/download-blog-images.js`);
+}
+
+run();
