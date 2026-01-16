@@ -143,7 +143,7 @@ if (isset($args['link'])) {
     <?php endif; ?>
 
     <div class="feature-card__companydetails">
-      <?php if ($logo_url && !$company_name) : ?>
+      <?php if ($logo_url) : ?>
         <div class="feature-card__title">
           <img src="<?php echo esc_url($logo_url); ?>" alt="companyLogo" />
         </div>

@@ -11,8 +11,60 @@ namespace Aera;
 defined('ABSPATH') || exit;
 
 // Accept CTA data as parameter, or get from ACF if not provided
-if (!isset($cta) || empty($cta)) {
-  $cta = function_exists('get_field') ? (array) get_field('cta') : array();
+if (!isset($cta) || $cta === null) {
+  // Try to get CTA from ACF fields (cta_title and cta_buttons)
+  if (function_exists('get_field')) {
+    $cta_title = get_field('cta_title');
+    $cta_buttons = get_field('cta_buttons');
+
+    if (!empty($cta_title) || !empty($cta_buttons)) {
+      $cta = array(
+        'title' => $cta_title ?: '',
+        'buttons' => array(),
+      );
+
+      // Process buttons to resolve link types
+      if (!empty($cta_buttons)) {
+        foreach ($cta_buttons as $button) {
+          $link = '';
+          if (!empty($button['link_type']) && $button['link_type'] === 'internal' && !empty($button['link_internal'])) {
+            // Internal link - get permalink from post ID
+            $link = get_permalink($button['link_internal']);
+          } elseif (!empty($button['link_external'])) {
+            // External link or relative path
+            $link = $button['link_external'];
+          } elseif (!empty($button['link'])) {
+            // Legacy support for old 'link' field
+            $link = $button['link'];
+          }
+
+          if (!empty($button['text']) && !empty($link)) {
+            $cta['buttons'][] = array(
+              'text' => $button['text'],
+              'link' => $link,
+            );
+          }
+        }
+      }
+    } else {
+      $cta = array();
+    }
+  } else {
+    $cta = array();
+  }
+}
+
+// If $cta is already set (passed as param), use it as-is but process link types if needed
+if (!empty($cta) && !empty($cta['buttons'])) {
+  foreach ($cta['buttons'] as &$button) {
+    if (isset($button['link_type']) && $button['link_type'] === 'internal' && isset($button['link_internal'])) {
+      $button['link'] = get_permalink($button['link_internal']);
+      unset($button['link_type'], $button['link_internal'], $button['link_external']);
+    } elseif (isset($button['link_external'])) {
+      $button['link'] = $button['link_external'];
+      unset($button['link_type'], $button['link_internal'], $button['link_external']);
+    }
+  }
 }
 
 // Set defaults

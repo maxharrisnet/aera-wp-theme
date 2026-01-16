@@ -77,34 +77,34 @@
 		padding: 40px 0;
 	}
 
-	&__cta-button {
-		@include link;
-		display: inline-block;
-		padding: 12px 40px;
-		font-family: $font-family-gilroy;
-		font-size: 14px;
-		font-weight: 600;
-		line-height: 1.5;
-		text-transform: uppercase;
-		letter-spacing: 0.025em;
-		color: $color-codgray;
-		background-color: $color-btn-background;
-		border: 1px solid $color-btn-default;
-		border-radius: $btn-border-radius;
-		text-decoration: none;
-		transition: all $transition-enter ease;
+	// &__cta-button {
+	// 	@include link;
+	// 	display: inline-block;
+	// 	padding: 12px 40px;
+	// 	font-family: $font-family-gilroy;
+	// 	font-size: 14px;
+	// 	font-weight: 600;
+	// 	line-height: 1.5;
+	// 	text-transform: uppercase;
+	// 	letter-spacing: 0.025em;
+	// 	color: $color-codgray;
+	// 	background-color: $color-btn-background;
+	// 	border: 1px solid $color-btn-default;
+	// 	border-radius: $btn-border-radius;
+	// 	text-decoration: none;
+	// 	transition: all $transition-enter ease;
 
-		&:hover {
-			background-color: $color-btn-gradient;
-			background-image: linear-gradient(rgba($color-hawkesblue, 0) 0%, $color-hawkesblue 90%);
-			text-decoration: none;
-		}
+	// 	&:hover {
+	// 		background-color: $color-btn-gradient;
+	// 		background-image: linear-gradient(rgba($color-hawkesblue, 0) 0%, $color-hawkesblue 90%);
+	// 		text-decoration: none;
+	// 	}
 
-		@media (max-width: $max-720) {
-			padding: 10px 30px;
-			font-size: 13px;
-		}
-	}
+	// 	@media (max-width: $max-720) {
+	// 		padding: 10px 30px;
+	// 		font-size: 13px;
+	// 	}
+	// }
 
 	// Icon Grid Section (4 columns with icons and text)
 	&__icon-section {

@@ -54,7 +54,7 @@ get_header();
 
         <!-- View All Skills CTA -->
         <div class="skills-home__cta">
-          <a href="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" class="skills-home__cta-button">
+          <a href="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" class="button button--outline">
             <?php esc_html_e('View All Skills', 'aera'); ?>
           </a>
         </div>

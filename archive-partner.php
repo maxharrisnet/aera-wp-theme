@@ -28,24 +28,9 @@ if (function_exists('get_field')) {
 
 $hero_full_height = false;
 
-// CTA section - get from ACF page field group
-$cta = array();
-if (function_exists('get_field')) {
-  $cta = get_field('cta') ?: array();
-}
-
-// Fallback defaults if ACF not set
-if (empty($cta)) {
-  $cta = array(
-    'title' => __('Interested in becoming a partner?', 'aera'),
-    'buttons' => array(
-      array(
-        'text' => __('Schedule Demo', 'aera'),
-        'link' => home_url('/demo'),
-      )
-    ),
-  );
-}
+// CTA section - use the Page CTA field group attached to Company Options
+// If no buttons configured, fall back to defaults
+$cta = null; // Let the CTA component pull from ACF
 
 ?>
 
@@ -107,6 +92,7 @@ if (empty($cta)) {
 
   <!-- CTA Section -->
   <?php
+  // CTA component will read from Company Options CTA fields
   get_template_part('template-parts/components/cta', null, array('cta' => $cta));
   ?>
 </main>

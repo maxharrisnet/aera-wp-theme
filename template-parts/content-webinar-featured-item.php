@@ -38,7 +38,8 @@ $event_type = __('On-Demand', 'aera');
 
 if ($webinar_date) {
   $is_upcoming = strtotime($webinar_date) >= strtotime($today);
-  $event_type = $is_upcoming ? __('Upcoming Webinar', 'aera') : __('On-Demand', 'aera');
+  // TODO: Make this dynamic
+  $event_type = $is_upcoming ? __('Coming Soon', 'aera') : __('On-Demand', 'aera');
 }
 
 // Get external URL from resource fields, fallback to permalink

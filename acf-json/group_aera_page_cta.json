@@ -74,16 +74,75 @@
           "parent_repeater": "field_cta_buttons"
         },
         {
-          "key": "field_cta_button_link",
-          "label": "Button URL",
-          "name": "link",
-          "type": "url",
+          "key": "field_cta_button_link_type",
+          "label": "Link Type",
+          "name": "link_type",
+          "type": "button_group",
           "instructions": "",
-          "required": 1,
+          "required": 0,
+          "choices": {
+            "external": "External URL",
+            "internal": "Internal Page"
+          },
+          "default_value": "external",
+          "wrapper": {
+            "width": "30",
+            "class": "",
+            "id": ""
+          },
+          "parent_repeater": "field_cta_buttons"
+        },
+        {
+          "key": "field_cta_button_link_external",
+          "label": "External URL",
+          "name": "link_external",
+          "type": "text",
+          "instructions": "External URL or relative path (e.g., /demo)",
+          "required": 0,
+          "conditional_logic": [
+            [
+              {
+                "field": "field_cta_button_link_type",
+                "operator": "==",
+                "value": "external"
+              }
+            ]
+          ],
           "default_value": "",
           "placeholder": "https://example.com or /demo",
           "wrapper": {
-            "width": "60",
+            "width": "70",
+            "class": "",
+            "id": ""
+          },
+          "parent_repeater": "field_cta_buttons"
+        },
+        {
+          "key": "field_cta_button_link_internal",
+          "label": "Internal Page",
+          "name": "link_internal",
+          "type": "post_object",
+          "instructions": "Select an internal page",
+          "required": 0,
+          "conditional_logic": [
+            [
+              {
+                "field": "field_cta_button_link_type",
+                "operator": "==",
+                "value": "internal"
+              }
+            ]
+          ],
+          "post_type": [
+            "page",
+            "post"
+          ],
+          "taxonomy": "",
+          "allow_null": 0,
+          "multiple": 0,
+          "return_format": "id",
+          "wrapper": {
+            "width": "70",
             "class": "",
             "id": ""
           },
@@ -99,6 +158,13 @@
         "operator": "==",
         "value": "page"
       }
+    ],
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "acf-options-company-options"
+      }
     ]
   ],
   "menu_order": 1,
@@ -110,5 +176,5 @@
   "active": true,
   "description": "Call-to-action section settings for pages",
   "show_in_rest": 0,
-  "modified": 1737000000
+  "modified": 1737050000
 }

@@ -705,7 +705,6 @@
 		display: block;
 		align-items: center;
 		justify-content: center;
-
 		padding: 0 ($gutter / 2);
 		position: relative;
 		//margin-bottom: 10px;
@@ -733,9 +732,6 @@
 
 	&__link {
 		@include reset-anchor;
-
-		//padding: 5px 0 0;
-
 		font-family: $font-family-heading;
 		font-size: 16px;
 		font-weight: 600;
@@ -750,6 +746,7 @@
 		@media (min-width: $min-1024) {
 			font-size: 14px;
 		}
+
 		@media (max-width: $min-1200) {
 			font-size: 12px;
 			padding: 0 3px;
