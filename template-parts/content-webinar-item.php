@@ -88,9 +88,9 @@ $right_arrow = $assets_base . 'images/rightArrow.jpg';
         <div class="newsItem__row">
           <span class="newsItem__link">
             <?php echo esc_html($cta_text); ?>
-            <?php if (file_exists(get_template_directory() . '/assets/images/rightArrow.jpg')) : ?>
-              <img src="<?php echo esc_url($right_arrow); ?>" alt="<?php esc_attr_e('right arrow', 'aera'); ?>" />
-            <?php endif; ?>
+            <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; margin-left: 8px; vertical-align: middle;">
+              <path d="M8.5 1L13 5M13 5L8.5 9M13 5H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
           </span>
         </div>
       </div>
