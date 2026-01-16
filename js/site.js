@@ -109,21 +109,31 @@
 	function updateNavigationState() {
 		const isMobile = window.matchMedia('(max-width: 1023px)').matches;
 
-		if (isMobile && !uiState.isNavigationOpen) {
-			toggleOut();
-			sidebarOut();
+		if (isMobile) {
+			// Mobile: toggle based on isNavigationOpen state
+			if (uiState.isNavigationOpen) {
+				toggleIn();
+				sidebarIn();
+				header.classList.add('is-open');
+				if (toggle) {
+					toggle.setAttribute('aria-expanded', 'true');
+					toggle.setAttribute('aria-label', 'close menu');
+				}
+			} else {
+				toggleOut();
+				sidebarOut();
+				header.classList.remove('is-open');
+				if (toggle) {
+					toggle.setAttribute('aria-expanded', 'false');
+					toggle.setAttribute('aria-label', 'open menu');
+				}
+			}
+		} else {
+			// Desktop: navigation is always visible, no overlay
 			header.classList.remove('is-open');
 			if (toggle) {
 				toggle.setAttribute('aria-expanded', 'false');
 				toggle.setAttribute('aria-label', 'open menu');
-			}
-		} else {
-			toggleIn();
-			sidebarIn();
-			header.classList.add('is-open');
-			if (toggle) {
-				toggle.setAttribute('aria-expanded', 'true');
-				toggle.setAttribute('aria-label', 'close menu');
 			}
 		}
 	}

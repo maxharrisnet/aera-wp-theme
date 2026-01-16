@@ -93,12 +93,12 @@
             </button>
           </div>
 
-          <div class="header__overlay" data-nav-overlay></div>
+          <!-- <div class="header__overlay" data-nav-overlay></div> -->
 
           <nav class="header__navigation" aria-label="<?php esc_attr_e('Primary navigation', 'aera'); ?>" data-nav-panel>
             <div class="header__navBackground" aria-hidden="true">
-              <svg class="header__backgroundSvg" x="0" y="0" width="100%" height="100%" viewBox="0 0 100 1000" preserveAspectRatio="none">
-                <path class="header__backgroundPath" fill="#f7f9fa" d="M100,0C100,0,0,118,0,249c0,146,34,150,65,249c33.7,107.8,35,85,35,278c0,87.1,0,224,0,224l0,0V0L100,0z" />
+              <svg class="Header_svg_1A_1E" x="0" y="0" width="100%" height="100%" viewBox="0 0 100 1000" preserveAspectRatio="none">
+                <path fill="#f7f9fa" d="M100,0L100,0H0c0,0,0,118,0,249c0,146,0,138,0,249c0,112.9,0,85,0,278c0,87.1,0,224,0,224h100V0" data-original="M100,0C100,0,0,118,0,249c0,146,34,150,65,249c33.7,107.8,35,85,35,278c0,87.1,0,224,0,224l0,0V0L100,0z"></path>
               </svg>
             </div>
 
