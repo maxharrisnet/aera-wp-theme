@@ -210,20 +210,18 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                       $read_how_url = function_exists('get_field') ? get_field('read_how_it_works_url', $skill->ID) : '';
                       $explore_more_url = function_exists('get_field') ? get_field('explore_more_url', $skill->ID) : '';
 
-                      if ($read_how_url || $explore_more_url) :
+                      if (!$read_how_url && $explore_more_url) :
                       ?>
                         <div class="skill-content__cta">
-                          <?php if ($read_how_url) : ?>
-                            <a href="<?php echo esc_url($read_how_url); ?>" class="button button--outline" target="_blank" rel="noopener noreferrer">
-                              <?php esc_html_e('Read how It Works', 'aera'); ?>
-                            </a>
-                          <?php endif; ?>
-
-                          <?php if ($explore_more_url) : ?>
-                            <a href="<?php echo esc_url($explore_more_url); ?>" class="button button--outline" target="_blank" rel="noopener noreferrer">
-                              <?php esc_html_e('Explore more', 'aera'); ?>
-                            </a>
-                          <?php endif; ?>
+                          <a href="<?php echo esc_url($explore_more_url); ?>" class="button button--outline" target="_blank" rel="noopener noreferrer">
+                            <?php esc_html_e('Explore more', 'aera'); ?>
+                          </a>
+                        </div>
+                      <?php elseif ($read_how_url) : ?>
+                        <div class="skill-content__cta">
+                          <a href="<?php echo esc_url($read_how_url); ?>" class="button button--outline" target="_blank" rel="noopener noreferrer">
+                            <?php esc_html_e('Read how It Works', 'aera'); ?>
+                          </a>
                         </div>
                       <?php endif; ?>
 
@@ -517,10 +515,16 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
       if (sidebarLinks.length === 0 || skills.length === 0) return;
 
       let currentSkillIndex = 0;
-      const scrollPosition = window.scrollY + 150;
+      const viewportCenter = window.innerHeight / 2;
 
+      let closestDistance = Infinity;
       skills.forEach(function(skill, index) {
-        if (skill.offsetTop <= scrollPosition) {
+        const rect = skill.getBoundingClientRect();
+        const skillCenter = rect.top + rect.height / 2;
+        const distance = Math.abs(skillCenter - viewportCenter);
+        
+        if (distance < closestDistance) {
+          closestDistance = distance;
           currentSkillIndex = index;
         }
       });

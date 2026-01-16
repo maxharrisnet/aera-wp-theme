@@ -261,7 +261,9 @@
 
 .skill-content {
 	padding: 30px 0;
-	scroll-margin-top: 100px; // Offset for fixed header
+	scroll-margin-top: 100px;
+	opacity: 1;
+	transition: opacity 0.6s ease-out;
 
 	@media (max-width: $max-720) {
 		padding: 30px 0;
@@ -558,7 +560,7 @@
 
 .skills-cta {
 	padding: 80px 0;
-	background-color: $color-aquahaze;
+	background-color: $color-white;
 
 	&__container {
 		@include container;
@@ -589,7 +591,13 @@
 		}
 
 		.button {
-			min-width: 200px;
+			min-width: 220px;
+			flex: 1 1 auto;
+			
+			@media (min-width: 768px) {
+				flex: 0 1 auto;
+				max-width: 300px;
+			}
 		}
 	}
 }
