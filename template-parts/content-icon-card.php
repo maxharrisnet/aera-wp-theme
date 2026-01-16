@@ -68,15 +68,7 @@ if ($skill_icon) {
 
       <?php if ($skill_description) : ?>
         <p class="icon-card__excerpt">
-          <?php
-          // Limit description to 120 characters
-          $description = wp_strip_all_tags($skill_description);
-          if (strlen($description) > 120) {
-            echo esc_html(substr($description, 0, 120) . '...');
-          } else {
-            echo esc_html($description);
-          }
-          ?>
+          <?php echo esc_html(wp_strip_all_tags($skill_description)); ?>
         </p>
       <?php endif; ?>
     </div>

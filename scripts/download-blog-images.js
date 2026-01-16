@@ -90,8 +90,8 @@ function extractImageUrls(wxrContent) {
 	const urls = new Set();
 	const urlTypes = new Map(); // Track if it's featured, card, or author
 
-	// Extract attachment URLs
-	const attachmentRegex = /<wp:attachment_url><!\[CDATA\[(.*?)\]\]><\/wp:attachment_url>/g;
+	// Extract attachment URLs - handle both CDATA and plain text formats
+	const attachmentRegex = /<wp:attachment_url>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/wp:attachment_url>/g;
 	let match;
 
 	while ((match = attachmentRegex.exec(wxrContent)) !== null) {
@@ -102,17 +102,18 @@ function extractImageUrls(wxrContent) {
 	}
 
 	// Try to determine type from context (title or parent)
-	const featuredRegex = /<title><!\[CDATA\[(.*?)\s+featured image\]\]><\/title>[\s\S]*?<wp:attachment_url><!\[CDATA\[(.*?)\]\]><\/wp:attachment_url>/g;
+	// Handle both CDATA and plain text formats
+	const featuredRegex = /<title>(?:<!\[CDATA\[)?(.*?)\s+featured image(?:\]\]>)?<\/title>[\s\S]*?<wp:attachment_url>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/wp:attachment_url>/g;
 	while ((match = featuredRegex.exec(wxrContent)) !== null) {
 		urlTypes.set(match[2], 'featured');
 	}
 
-	const cardRegex = /<title><!\[CDATA\[(.*?)\s+card image\]\]><\/title>[\s\S]*?<wp:attachment_url><!\[CDATA\[(.*?)\]\]><\/wp:attachment_url>/g;
+	const cardRegex = /<title>(?:<!\[CDATA\[)?(.*?)\s+card image(?:\]\]>)?<\/title>[\s\S]*?<wp:attachment_url>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/wp:attachment_url>/g;
 	while ((match = cardRegex.exec(wxrContent)) !== null) {
 		urlTypes.set(match[2], 'card');
 	}
 
-	const authorRegex = /<title><!\[CDATA\[(.*?)\s+author photo\]\]><\/title>[\s\S]*?<wp:attachment_url><!\[CDATA\[(.*?)\]\]><\/wp:attachment_url>/g;
+	const authorRegex = /<title>(?:<!\[CDATA\[)?(.*?)\s+author photo(?:\]\]>)?<\/title>[\s\S]*?<wp:attachment_url>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/wp:attachment_url>/g;
 	while ((match = authorRegex.exec(wxrContent)) !== null) {
 		urlTypes.set(match[2], 'author');
 	}
