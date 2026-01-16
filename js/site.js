@@ -295,8 +295,6 @@
 	window.addEventListener('scroll', handleScroll);
 
 	// Handle mobile submenu toggles
-	const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
-
 	// Add menu type classes and arrow elements to dropdowns
 	document.querySelectorAll('.menu-item-has-children').forEach((item) => {
 		const link = item.querySelector('a');
@@ -319,71 +317,38 @@
 
 		// Add arrow element to dropdown (desktop only)
 		const submenu = item.querySelector('.sub-menu');
-		if (submenu && isDesktop) {
+		if (submenu && window.matchMedia('(min-width: 1024px)').matches) {
 			const arrow = document.createElement('div');
 			arrow.className = 'navigation__arrowUp';
 			submenu.insertBefore(arrow, submenu.firstChild);
 		}
-	});
-	if (!isDesktop) {
-		document.querySelectorAll('.menu-item-has-children').forEach((item) => {
-			const trigger = document.createElement('button');
-			trigger.className = 'navigation__submenuToggle';
-			trigger.type = 'button';
-			trigger.setAttribute('aria-expanded', 'false');
-			trigger.style.background = 'none';
-			trigger.style.border = 'none';
-			trigger.style.padding = '0';
-			trigger.style.cursor = 'pointer';
-			trigger.style.font = 'inherit';
-			trigger.innerHTML = '<span class="navigation__activeDropdown">+</span><span class="navigation__inactiveDropdown">-</span><span class="screen-reader-text">Toggle submenu</span>';
 
-			trigger.addEventListener('click', (e) => {
+		// Create mobile toggle button (always create, will be shown/hidden via CSS)
+		const trigger = document.createElement('button');
+		trigger.className = 'navigation__submenuToggle';
+		trigger.type = 'button';
+		trigger.setAttribute('aria-expanded', 'false');
+		trigger.innerHTML = '<span class="navigation__activeDropdown">+</span><span class="navigation__inactiveDropdown">-</span><span class="screen-reader-text">Toggle submenu</span>';
+
+		trigger.addEventListener('click', (e) => {
+			e.preventDefault();
+			const isOpen = item.classList.toggle('is-open');
+			trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+		});
+
+		// Prevent parent link from navigating when it has a submenu on mobile
+		link.addEventListener('click', (e) => {
+			// Only prevent default if clicking the link itself (not the toggle button)
+			if (!e.target.closest('.navigation__submenuToggle') && window.matchMedia('(max-width: 1023px)').matches) {
+				// On mobile, parent links with submenus should toggle the submenu, not navigate
 				e.preventDefault();
-				e.stopPropagation(); // Prevent event from bubbling to sidebar click handler
 				const isOpen = item.classList.toggle('is-open');
 				trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-			});
-
-			const link = item.querySelector('a');
-			if (link) {
-				// Prevent parent link from navigating when it has a submenu on mobile
-				link.addEventListener('click', (e) => {
-					// Only prevent default if clicking the link itself (not the toggle button)
-					if (!e.target.closest('.navigation__submenuToggle')) {
-						// On mobile, parent links with submenus should toggle the submenu, not navigate
-						const submenu = item.querySelector('.sub-menu');
-						if (submenu && window.matchMedia('(max-width: 1023px)').matches) {
-							e.preventDefault();
-							e.stopPropagation();
-							const isOpen = item.classList.toggle('is-open');
-							const toggleBtn = item.querySelector('.navigation__submenuToggle');
-							if (toggleBtn) {
-								toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-							}
-						}
-					}
-				});
-				link.after(trigger);
 			}
 		});
-	}
 
-	// Close desktop dropdowns when clicking a link
-	if (isDesktop) {
-		document.querySelectorAll('.menu-item-has-children a').forEach((link) => {
-			link.addEventListener('click', () => {
-				const parentItem = link.closest('.menu-item-has-children');
-				const submenu = parentItem ? parentItem.querySelector('.sub-menu') : null;
-				if (submenu) {
-					// Small delay to allow navigation
-					setTimeout(() => {
-						submenu.style.display = '';
-					}, 100);
-				}
-			});
-		});
-	}
+		link.after(trigger);
+	});
 
 	const filterContainer = document.querySelector('.resources-filter__controls');
 	if (filterContainer) {

@@ -93,6 +93,7 @@
             </button>
           </div>
 
+          <!-- TODO: See if we need this at all -->
           <!-- <div class="header__overlay" data-nav-overlay></div> -->
 
           <nav class="header__navigation" aria-label="<?php esc_attr_e('Primary navigation', 'aera'); ?>" data-nav-panel>

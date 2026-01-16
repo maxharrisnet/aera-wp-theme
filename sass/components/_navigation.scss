@@ -114,19 +114,44 @@
 		display: none;
 		@media (max-width: $min-1023) {
 			display: block;
-			position: absolute;
-			right: -40px;
-			top: 0px;
 		}
 	}
 	&__inactiveDropdown {
 		display: none;
-		@media (max-width: $min-1024) {
-			display: block;
+	}
+
+	// Submenu toggle button (mobile only)
+	&__submenuToggle {
+		background: none;
+		border: none;
+		padding: 0;
+		cursor: pointer;
+		font: inherit;
+		color: inherit;
+		display: none;
+		position: absolute;
+		right: 0;
+		top: 0;
+		font-size: 20px;
+		width: 30px;
+		height: 30px;
+		align-items: center;
+		justify-content: center;
+
+		@media (max-width: $min-1023) {
+			display: flex;
+		}
+
+		.screen-reader-text {
 			position: absolute;
-			right: 0px;
-			top: 0px;
-			display: none;
+			width: 1px;
+			height: 1px;
+			padding: 0;
+			margin: -1px;
+			overflow: hidden;
+			clip: rect(0, 0, 0, 0);
+			white-space: nowrap;
+			border: 0;
 		}
 	}
 
@@ -843,4 +868,30 @@
 }
 [data-menu-type='values'].current-menu-item > a {
 	border-color: $color-technology;
+}
+
+// Mobile submenu toggle behavior
+.menu-item-has-children {
+	.navigation__activeDropdown {
+		display: block;
+	}
+	.navigation__inactiveDropdown {
+		display: none;
+	}
+
+	&.is-open {
+		.navigation__activeDropdown {
+			display: none;
+		}
+		.navigation__inactiveDropdown {
+			display: block;
+		}
+
+		// Show the submenu when open on mobile
+		.navigation__dropdownSkills {
+			@media (max-width: $min-1023) {
+				display: block !important;
+			}
+		}
+	}
 }
