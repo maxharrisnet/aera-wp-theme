@@ -89,7 +89,7 @@
 
 	&__title {
 		@include heading(false, 30, 50);
-		font-family: $font-family-gilroy-bold;
+		font-family: $font-family-gilroy;
 		font-weight: 700;
 		border-bottom: 1px solid #000;
 		padding-bottom: 30px;
