@@ -26,7 +26,6 @@ function get_resource_types(): array
         'video',
         'whitepaper',
         'blog',
-        'case-study',
         'podcast',
       ),
     ),
@@ -49,10 +48,6 @@ function get_resource_types(): array
     'blogs'         => array(
       'label'      => __('Blogs', 'aera'),
       'post_types' => array('blog'),
-    ),
-    'case-studies'  => array(
-      'label'      => __('Case Studies', 'aera'),
-      'post_types' => array('case-study'),
     ),
     'podcasts'      => array(
       'label'      => __('Podcasts', 'aera'),
@@ -100,7 +95,20 @@ function build_resource_query_args(string $slug, int $paged = 1): array
     'post_status'    => 'publish',
     'orderby'        => 'date',
     'order'          => 'DESC',
+    // Note: Ordering by WordPress post_date (publish date).
+    // If custom date field is needed, add meta_key and orderby meta_value accordingly.
   );
+  /* Example for future use with custom ACF date field:
+  return array(
+    'post_type'      => $postTypes,
+    'posts_per_page' => -1,
+    'paged'          => max(1, $paged),
+    'post_status'    => 'publish',
+    'meta_key'       => 'resource_date_field_name',
+    'orderby'        => 'meta_value',
+    'order'          => 'DESC',
+  );
+  */
 }
 
 /**
