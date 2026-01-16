@@ -43,7 +43,7 @@
 	&__text {
 		@include reset-paragraph;
 		@include responsive-font(18, 26);
-		margin: 0 auto 1em;
+		margin: 0 auto ($gutter * 2);
 		font-weight: 400;
 
 		@media (min-width: $min-480) {
