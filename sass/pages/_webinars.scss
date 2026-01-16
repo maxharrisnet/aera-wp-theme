@@ -253,10 +253,11 @@
 			white-space: nowrap;
 
 			img {
-				display: inline-block;
+				// display: inline-block;
 				vertical-align: text-bottom;
 				margin-left: 5px;
 				width: 14px;
+				height: auto;
 			}
 
 			&:hover {
