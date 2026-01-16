@@ -58,10 +58,8 @@ $on_demand_args = array(
   'posts_per_page' => -1, // Get all for filtering
   'post_status'    => 'publish',
   'orderby'        => array(
-    'meta_value' => 'DESC',
-    'date'       => 'DESC',
+    'date'       => 'ASC',
   ),
-  'meta_key'       => 'webinar_date',
   'post__not_in'   => $featured_ids, // Exclude featured webinars
 );
 
