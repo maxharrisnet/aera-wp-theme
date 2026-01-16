@@ -130,8 +130,8 @@
 		color: inherit;
 		display: none;
 		position: absolute;
-		right: 0;
-		top: 0;
+		right: -30px;
+		top: -10px;
 		font-size: 20px;
 		width: 30px;
 		height: 30px;
@@ -872,6 +872,11 @@
 
 // Mobile submenu toggle behavior
 .menu-item-has-children {
+	.navigation__activeDropdown,
+	.navigation__inactiveDropdown {
+		font-family: $font-family-freight;
+		font-weight: 100;
+	}
 	.navigation__activeDropdown {
 		display: block;
 	}
