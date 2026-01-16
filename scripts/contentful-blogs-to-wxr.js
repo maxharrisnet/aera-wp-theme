@@ -22,7 +22,7 @@ const { marked } = require('marked');
 const striptags = require('striptags');
 
 const OUT = path.resolve(__dirname, '../_ORIGINAL_FILES/blogs-wxr.xml');
-const SRC = path.resolve(__dirname, '../export_blogs_sample/contentful-export-mh1amgo8m7ts-master-2025-11-25T03-16-19.json');
+const SRC = path.resolve(__dirname, '../export_blogs_sample/contentful-export-mh1amgo8m7ts-master-2026-01-16T12-53-01.json');
 const DEPRECATED_CSV = path.resolve(__dirname, '../_ORIGINAL_FILES/Website Cleanup - Nov 2025  - Aditya - Blogs.csv');
 const LIMIT = 12; // Start with 12 most recent for testing
 
@@ -394,21 +394,36 @@ function run() {
 		const cardFields = card.fields || {};
 		const cardTitle = firstLocalized(cardFields.title);
 		const cardLink = firstLocalized(cardFields.link);
+		let matched = false;
 
 		// Try to match by title first
 		blogPosts.forEach((blog) => {
 			const blogTitle = firstLocalized(blog.fields?.title);
 			if (blogTitle === cardTitle) {
 				cardsMap.set(blog.sys.id, card);
+				matched = true;
 			}
 		});
 
 		// If no match by title, try by link/slug
-		if (!cardsMap.has(card.sys.id)) {
+		if (!matched && cardLink) {
 			blogPosts.forEach((blog) => {
 				const blogSlug = firstLocalized(blog.fields?.slug);
-				if (cardLink && blogSlug && (cardLink.includes(blogSlug) || blogSlug.includes(cardLink))) {
-					cardsMap.set(blog.sys.id, card);
+				if (blogSlug) {
+					// Normalize slugs for comparison
+					const normalizedCardLink = cardLink
+						.replace(/^\/blogs\//, '')
+						.replace(/^\//, '')
+						.replace(/\/$/, '');
+					const normalizedBlogSlug = blogSlug
+						.replace(/^\/blogs\//, '')
+						.replace(/^\//, '')
+						.replace(/\/$/, '');
+
+					if (normalizedCardLink === normalizedBlogSlug || normalizedCardLink.includes(normalizedBlogSlug) || normalizedBlogSlug.includes(normalizedCardLink)) {
+						cardsMap.set(blog.sys.id, card);
+						matched = true;
+					}
 				}
 			});
 		}
