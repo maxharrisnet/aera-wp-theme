@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../variables' as *;
 @use '../mixins' as *;
 @use '../components/hubspot-form-base' as *;
@@ -678,9 +679,9 @@
 			top: -10px;
 			right: -10px;
 
-			&:hover {
-				background-color: darken(#00619e, 10%);
-				transform: scale(1.05);
+		&:hover {
+			background-color: color.adjust(#00619e, $lightness: -10%);
+			transform: scale(1.05);
 				opacity: 1;
 			}
 
