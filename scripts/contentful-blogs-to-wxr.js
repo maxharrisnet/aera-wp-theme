@@ -125,8 +125,19 @@ function buildWxr(blogPosts, cardsMap, assetsMap, authorsMap, deprecated) {
 
 		// Get content - prefer richText, then content
 		let content = firstLocalized(fields.richText) || firstLocalized(fields.content) || '';
-		// Content is already in markup, don't convert with marked
-		// Just ensure it's properly escaped for XML
+		// Convert markdown to HTML
+		if (content) {
+			try {
+				content = marked.parse(String(content));
+				// Remove the first image from content if it matches the featured image pattern
+				// This removes Blog_Hero_Banner_ images that should be replaced with featured image
+				content = content.replace(/<p>\s*<img[^>]*Blog_Hero_Banner_[^>]*>.*?<\/p>\s*/i, '');
+				content = content.replace(/<img[^>]*Blog_Hero_Banner_[^>]*>/i, '');
+			} catch (e) {
+				// If marked fails, just escape XML
+				content = escXml(String(content));
+			}
+		}
 
 		// Get excerpt from card text field
 		const excerpt = firstLocalized(cardFields.text) || firstLocalized(fields.metaDescription) || '';
@@ -137,27 +148,50 @@ function buildWxr(blogPosts, cardsMap, assetsMap, authorsMap, deprecated) {
 		const authorRole = firstLocalized(fields.author) || firstLocalized(cardFields.authorTitle) || '';
 		const authorName = publisher; // Publisher is the author name
 
-		// Get dates
-		const postDate = firstLocalized(fields.date) || (blog.sys.createdAt ? new Date(blog.sys.createdAt).toISOString().split('T')[0] : new Date().toISOString().split('T')[0]);
-		const postDateTime = postDate + 'T12:00:00';
+		// Get dates - WordPress format: YYYY-MM-DD HH:MM:SS
+		let postDate = firstLocalized(fields.date);
+		if (postDate) {
+			// If it's just a date (YYYY-MM-DD), add time
+			if (postDate.match(/^\d{4}-\d{2}-\d{2}$/)) {
+				postDate = postDate + ' 12:00:00';
+			}
+		} else {
+			// Fallback to creation date
+			const createdDate = blog.sys.createdAt ? new Date(blog.sys.createdAt) : new Date();
+			postDate = createdDate.toISOString().replace('T', ' ').substring(0, 19);
+		}
+		const postDateTime = postDate;
 
 		// Get images
 		// Featured image: prefer ogImageUrl, then image field, then first image from content
 		let featuredImageUrl = null;
 		let featuredImageId = null;
+		let cardImageUrl = null;
 
 		// Try ogImageUrl first (it's a URL string, not an asset reference)
 		const ogImageUrl = firstLocalized(fields.ogImageUrl);
+		const imageAssetId = extractAssetId(fields.image);
+
 		if (ogImageUrl) {
+			// ogImageUrl is the featured image
 			featuredImageUrl = ogImageUrl.startsWith('//') ? 'https:' + ogImageUrl : ogImageUrl;
+			// Card image should be the image field (different from featured)
+			if (imageAssetId && assetsMap[imageAssetId]) {
+				cardImageUrl = assetsMap[imageAssetId];
+			}
+		} else if (imageAssetId && assetsMap[imageAssetId]) {
+			// No ogImageUrl, so image field is the featured image
+			featuredImageUrl = assetsMap[imageAssetId];
+			featuredImageId = imageAssetId;
+			// Card image is same as featured in this case
+			cardImageUrl = featuredImageUrl;
 		}
 
-		// If no ogImageUrl, try image field (asset reference)
-		if (!featuredImageUrl) {
-			const imageAssetId = extractAssetId(fields.image);
-			if (imageAssetId && assetsMap[imageAssetId]) {
-				featuredImageUrl = assetsMap[imageAssetId];
-				featuredImageId = imageAssetId;
+		// Try card image from Community Card if available
+		if (!cardImageUrl) {
+			const cardImageAssetId = extractAssetId(cardFields.image);
+			if (cardImageAssetId && assetsMap[cardImageAssetId]) {
+				cardImageUrl = assetsMap[cardImageAssetId];
 			}
 		}
 
@@ -165,14 +199,6 @@ function buildWxr(blogPosts, cardsMap, assetsMap, authorsMap, deprecated) {
 		if (!featuredImageUrl) {
 			featuredImageUrl = DEFAULT_IMAGE_URL;
 		}
-
-		// Card image (for archive/excerpt display)
-		let cardImageUrl = null;
-		const cardImageAssetId = extractAssetId(cardFields.image);
-		if (cardImageAssetId && assetsMap[cardImageAssetId]) {
-			cardImageUrl = assetsMap[cardImageAssetId];
-		}
-		// If no card image, use featured image
 		if (!cardImageUrl) {
 			cardImageUrl = featuredImageUrl;
 		}
@@ -206,7 +232,13 @@ function buildWxr(blogPosts, cardsMap, assetsMap, authorsMap, deprecated) {
 		out += `<wp:post_date_gmt>${postDateTime}</wp:post_date_gmt>\n`;
 		out += `<wp:comment_status>closed</wp:comment_status>\n`;
 		out += `<wp:ping_status>closed</wp:ping_status>\n`;
-		out += `<wp:post_name>${escXml(slug || (title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')))}</wp:post_name>\n`;
+		out += `<wp:post_name>${escXml(
+			slug ||
+				title
+					.toLowerCase()
+					.replace(/[^a-z0-9]+/g, '-')
+					.replace(/(^-|-$)/g, '')
+		)}</wp:post_name>\n`;
 		out += `<wp:status>publish</wp:status>\n`;
 		out += `<wp:post_type>blog</wp:post_type>\n`;
 
@@ -394,7 +426,7 @@ function run() {
 			if (!authorsMap.has(publisher)) {
 				authorsMap.set(publisher, {
 					role: authorRole || '',
-					photoUrl: authorPhotoId && assetsMap[authorPhotoId] ? assetsMap[authorPhotoId] : null
+					photoUrl: authorPhotoId && assetsMap[authorPhotoId] ? assetsMap[authorPhotoId] : null,
 				});
 			}
 		}

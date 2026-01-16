@@ -62,4 +62,17 @@
 		text-align: center;
 		color: $color-codgray;
 	}
+
+	&__leadName {
+		display: block;
+		margin-bottom: 5px;
+	}
+
+	&__position {
+		display: block;
+		font-size: 14px;
+		font-weight: 400;
+		color: $color-shuttlegray;
+		margin-top: 5px;
+	}
 }

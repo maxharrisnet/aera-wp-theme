@@ -112,19 +112,20 @@
 		}
 	}
 
-	&__image {
+	&__image,
+	&__featured-image {
 		margin-top: $gutter * 1;
 		margin-bottom: $gutter * 1;
 
-		@media (min-width: $min-tablet) {
-			margin-left: calc(-25% - 8px);
-			margin-right: calc(-25% - 8px);
-		}
+		// @media (min-width: $min-tablet) {
+		// 	margin-left: calc(-25% - 8px);
+		// 	margin-right: calc(-25% - 8px);
+		// }
 
-		@media (min-width: $min-desktop) {
-			margin-left: calc(-50% - #{math.div($gutter, 2)});
-			margin-right: calc(-50% - #{math.div($gutter, 2)});
-		}
+		// @media (min-width: $min-desktop) {
+		// 	margin-left: calc(-50% - #{math.div($gutter, 2)});
+		// 	margin-right: calc(-50% - #{math.div($gutter, 2)});
+		// }
 	}
 
 	&__content {

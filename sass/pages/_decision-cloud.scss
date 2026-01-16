@@ -462,6 +462,20 @@
 		max-width: 1400px;
 		margin: 0 auto;
 	}
+
+	// Make any inline tables horizontally scrollable on small viewports
+	table {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	td,
+	th {
+		white-space: nowrap;
+	}
 }
 
 // Section and container styles

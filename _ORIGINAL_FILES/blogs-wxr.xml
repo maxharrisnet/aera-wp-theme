@@ -7,14 +7,12 @@
 <item>
 <title><![CDATA[Smarter Waste Mitigation for Maximum Margin Recovery and Less Loss]]></title>
 <link>/blogs/smarter-waste-management-for-faster-recovery-and-less-loss</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <excerpt:encoded><![CDATA[Learn how Aera’s Business Waste Mitigation Skill uses AI-driven decision intelligence to reduce waste, accelerate recovery, and protect margins.]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[Learn how Aera’s Business Waste Mitigation Skill uses AI-driven decision intelligence to reduce waste, accelerate recovery, and protect margins.]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-LLu9GcPV5tZT02Puq5tbV</guid>
-<content:encoded><![CDATA[![Blog Hero Banner - Smarter Waste Mitigation](//images.ctfassets.net/mh1amgo8m7ts/3He7EczzPpTNhDIePfMuA3/7e437966f6360ef8c4968a49dfd45f2d/Blog_Hero_Banner_-_Smarter_Waste_Mitigation.jpg)
-
-<p style="margin-top: 30px;
+<content:encoded><![CDATA[<p style="margin-top: 30px;
     margin-bottom: 30px;
     padding: 20px;
     border-left-style: none;
@@ -28,63 +26,50 @@
     font-weight: 600;
     text-align: center;">This blog is part of an ongoing series exploring how Aera Skills solve real-world supply chain challenges.</p>
 
-Reducing waste is essential to protecting margins and building a more resilient supply chain, yet limited visibility and manual analysis make it hard to act quickly on at-risk inventory. AI and automation now make it possible to detect risks early and take intelligent, coordinated action before materials or finished goods are lost.
-
-With the **Business Waste Mitigation Skill**, the Aera decision intelligence agent has helped organizations achieve 99% coverage across potential risks, reduce human effort by up to 80%, and cut resolution time by as much as 70%. These results demonstrate how decision intelligence turns waste management from a reactive task into a proactive, closed-loop process that delivers measurable value.
-
-# The Challenges: Hidden Waste, Manual Analysis, and Slow Decisions
-
-Most supply chain organizations struggle to manage at-risk inventory before it becomes waste. Short-dated or excess stock often goes unnoticed due to fragmented data, disconnected systems, and siloed teams. Common challenges include:
-
-* **No visibility into at-risk inventory** caused by inconsistent data sharing and disconnected systems.  
-* **Manual waste analysis** that forces teams to reconcile mismatches by hand, delaying action and recovery.  
-* **Siloed decision-making** across planning, demand, and logistics functions, leading to missed opportunities.  
-* **Inconsistent margin recovery** due to ad-hoc, non-standardized decision processes.
-
-Left unresolved, these issues lead to unnecessary write-offs, slower execution, and significant margin erosion across the supply chain.
-
-# The Aera Solution: AI-Driven Waste Mitigation
-
-Aera, the decision intelligence agent, uses the Business Waste Mitigation Skill to detect at-risk inventory and recommend the most effective mitigation path, whether through redeployment, promotion, liquidation, donation, or scrap. It does this by:
-
-* **Identifying at-risk inventory.** It matches supply and demand at the order-line and batch level to surface short-dated, blocked, and excess stock.  
-* **Determining optimal mitigation strategy.** It evaluates eligibility rules, transport feasibility, and cost-benefit tradeoffs to recommend the most effective mitigation action.  
-* **Generating actionable recommendations.** It creates ready-to-execute plans for redeployment, promotions, marketplace listings, donations, or scrap.  
-* **Enabling rapid execution.** It assigns recommendations to planning, category, demand, and logistics teams with clear supporting insights.
-
-Behind the scenes, a system of AI agents performs batch-level matching, shelf-life analysis, and cost-benefit optimization, learning from outcomes over time to continually improve accuracy and speed.
-
-# Case Study: From Reactive Response to Intelligent Recovery
-
-A global consumer packaged goods (CPG) company struggled with growing losses due to short-dated inventory and fragmented processes. Manual waste analysis delayed action, while disconnected planning and logistics teams missed opportunities for recovery.
-
-After implementing Aera’s Business Waste Mitigation Skill, the company automated risk detection and mitigation planning. Within weeks, Aera generated daily recommendations managing millions in cost-of-goods value and delivered measurable results:
-
-* **99%** coverage across all potential risks  
-* **60–80%** reduction in human effort  
-* **50–70%** reduction in resolution time
-
-Together, these improvements enabled faster recovery, reduced waste, and significantly improved margin performance across the enterprise.
-
-# Why Aera: What Sets It Apart
-
-Aera transforms waste mitigation from a manual, inconsistent process into a proactive, intelligent system of action powered by decision intelligence. By connecting data, decision logic, and execution in one closed loop, Aera helps teams move from reactive management to predictive control. What sets it apart:
-
-* **Unified decision intelligence** integrating inventory data, supply and demand projections, and mitigation strategies within a single connected platform.  
-* **AI-augmented workflows** enhancing productivity through intelligent, batch-level matching and sequencing.  
-* **Closed-loop execution** enabling end-to-end automation — from risk detection to mitigation action — with continuous learning and improvement.
-
-With Aera, organizations can recover more value, minimize waste, and achieve faster, smarter decisions across their entire supply chain.
-
-# Ready To Transform Your Waste Management Strategy?
-
-For more on how Aera can help you identify at-risk inventory, maximize recovery, and reduce waste with AI-driven decision intelligence, download the [Business Waste Mitigation Skill brief](https://meet.aeratechnology.com/hubfs/Skill%20Briefs/Skill%20Brief%20-%20Business%20Waste%20Mitigation%20Skill.pdf) or [schedule a demo](https://www.aeratechnology.com/demo).
-
-![Blog Supporting Image - Smarter Waste Mitigation](//images.ctfassets.net/mh1amgo8m7ts/6dImGtMybt5honrP44XKsY/b6f10badfcb750334a47b78e8b8aa4b4/Blog_Supporting_Image_-_Smarter_Waste_Mitigation.jpg)
+<p>Reducing waste is essential to protecting margins and building a more resilient supply chain, yet limited visibility and manual analysis make it hard to act quickly on at-risk inventory. AI and automation now make it possible to detect risks early and take intelligent, coordinated action before materials or finished goods are lost.</p>
+<p>With the <strong>Business Waste Mitigation Skill</strong>, the Aera decision intelligence agent has helped organizations achieve 99% coverage across potential risks, reduce human effort by up to 80%, and cut resolution time by as much as 70%. These results demonstrate how decision intelligence turns waste management from a reactive task into a proactive, closed-loop process that delivers measurable value.</p>
+<h1>The Challenges: Hidden Waste, Manual Analysis, and Slow Decisions</h1>
+<p>Most supply chain organizations struggle to manage at-risk inventory before it becomes waste. Short-dated or excess stock often goes unnoticed due to fragmented data, disconnected systems, and siloed teams. Common challenges include:</p>
+<ul>
+<li><strong>No visibility into at-risk inventory</strong> caused by inconsistent data sharing and disconnected systems.  </li>
+<li><strong>Manual waste analysis</strong> that forces teams to reconcile mismatches by hand, delaying action and recovery.  </li>
+<li><strong>Siloed decision-making</strong> across planning, demand, and logistics functions, leading to missed opportunities.  </li>
+<li><strong>Inconsistent margin recovery</strong> due to ad-hoc, non-standardized decision processes.</li>
+</ul>
+<p>Left unresolved, these issues lead to unnecessary write-offs, slower execution, and significant margin erosion across the supply chain.</p>
+<h1>The Aera Solution: AI-Driven Waste Mitigation</h1>
+<p>Aera, the decision intelligence agent, uses the Business Waste Mitigation Skill to detect at-risk inventory and recommend the most effective mitigation path, whether through redeployment, promotion, liquidation, donation, or scrap. It does this by:</p>
+<ul>
+<li><strong>Identifying at-risk inventory.</strong> It matches supply and demand at the order-line and batch level to surface short-dated, blocked, and excess stock.  </li>
+<li><strong>Determining optimal mitigation strategy.</strong> It evaluates eligibility rules, transport feasibility, and cost-benefit tradeoffs to recommend the most effective mitigation action.  </li>
+<li><strong>Generating actionable recommendations.</strong> It creates ready-to-execute plans for redeployment, promotions, marketplace listings, donations, or scrap.  </li>
+<li><strong>Enabling rapid execution.</strong> It assigns recommendations to planning, category, demand, and logistics teams with clear supporting insights.</li>
+</ul>
+<p>Behind the scenes, a system of AI agents performs batch-level matching, shelf-life analysis, and cost-benefit optimization, learning from outcomes over time to continually improve accuracy and speed.</p>
+<h1>Case Study: From Reactive Response to Intelligent Recovery</h1>
+<p>A global consumer packaged goods (CPG) company struggled with growing losses due to short-dated inventory and fragmented processes. Manual waste analysis delayed action, while disconnected planning and logistics teams missed opportunities for recovery.</p>
+<p>After implementing Aera’s Business Waste Mitigation Skill, the company automated risk detection and mitigation planning. Within weeks, Aera generated daily recommendations managing millions in cost-of-goods value and delivered measurable results:</p>
+<ul>
+<li><strong>99%</strong> coverage across all potential risks  </li>
+<li><strong>60–80%</strong> reduction in human effort  </li>
+<li><strong>50–70%</strong> reduction in resolution time</li>
+</ul>
+<p>Together, these improvements enabled faster recovery, reduced waste, and significantly improved margin performance across the enterprise.</p>
+<h1>Why Aera: What Sets It Apart</h1>
+<p>Aera transforms waste mitigation from a manual, inconsistent process into a proactive, intelligent system of action powered by decision intelligence. By connecting data, decision logic, and execution in one closed loop, Aera helps teams move from reactive management to predictive control. What sets it apart:</p>
+<ul>
+<li><strong>Unified decision intelligence</strong> integrating inventory data, supply and demand projections, and mitigation strategies within a single connected platform.  </li>
+<li><strong>AI-augmented workflows</strong> enhancing productivity through intelligent, batch-level matching and sequencing.  </li>
+<li><strong>Closed-loop execution</strong> enabling end-to-end automation — from risk detection to mitigation action — with continuous learning and improvement.</li>
+</ul>
+<p>With Aera, organizations can recover more value, minimize waste, and achieve faster, smarter decisions across their entire supply chain.</p>
+<h1>Ready To Transform Your Waste Management Strategy?</h1>
+<p>For more on how Aera can help you identify at-risk inventory, maximize recovery, and reduce waste with AI-driven decision intelligence, download the <a href="https://meet.aeratechnology.com/hubfs/Skill%20Briefs/Skill%20Brief%20-%20Business%20Waste%20Mitigation%20Skill.pdf">Business Waste Mitigation Skill brief</a> or <a href="https://www.aeratechnology.com/demo">schedule a demo</a>.</p>
+<p><img src="//images.ctfassets.net/mh1amgo8m7ts/6dImGtMybt5honrP44XKsY/b6f10badfcb750334a47b78e8b8aa4b4/Blog_Supporting_Image_-_Smarter_Waste_Mitigation.jpg" alt="Blog Supporting Image - Smarter Waste Mitigation"></p>
 ]]></content:encoded>
 <wp:post_id>200000</wp:post_id>
-<wp:post_date>2025-11-19T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-11-19T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-11-19 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-11-19 12:00:00</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>smarter-waste-management-for-faster-recovery-and-less-loss</wp:post_name>
@@ -118,12 +103,12 @@ For more on how Aera can help you identify at-risk inventory, maximize recovery,
 <item>
 <title><![CDATA[Smarter Waste Mitigation for Maximum Margin Recovery and Less Loss featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/3He7EczzPpTNhDIePfMuA3/7e437966f6360ef8c4968a49dfd45f2d/Blog_Hero_Banner_-_Smarter_Waste_Mitigation.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <guid isPermaLink="false">attachment-300000</guid>
 <wp:post_id>300000</wp:post_id>
-<wp:post_date>2025-11-19T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-11-19T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-11-19 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-11-19 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200000</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -132,12 +117,12 @@ For more on how Aera can help you identify at-risk inventory, maximize recovery,
 <item>
 <title><![CDATA[Naveen Reddy author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/4sRyWjymfCQUHSdUUHnR8r/900ec2e47241c957a2a464d00be5c9d6/naveen-kumar.jpeg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <guid isPermaLink="false">attachment-300001</guid>
 <wp:post_id>300001</wp:post_id>
-<wp:post_date>2025-11-19T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-11-19T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-11-19 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-11-19 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -146,14 +131,12 @@ For more on how Aera can help you identify at-risk inventory, maximize recovery,
 <item>
 <title><![CDATA[IDC Unveils Global Research on Accelerating Enterprise Decision Intelligence with AI Agents]]></title>
 <link>/blogs/accelerating-enterprise-decision-intelligence-with-ai-agents</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Folia Grace</dc:creator>
 <excerpt:encoded><![CDATA[Discover how IDC’s research, presented at AeraHUB 25, shows decision intelligence emerging as a strategic necessity in the era of AI-agent-enabled action.]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[Discover how IDC’s research, presented at AeraHUB 25, shows decision intelligence emerging as a strategic necessity in the era of AI-agent-enabled action.]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-2nsDz2R0hlrGKLk3gIyyaT</guid>
-<content:encoded><![CDATA[![Blog Hero Banner - IDC Unveils Global Research on Accelerating Enterprise DI](//images.ctfassets.net/mh1amgo8m7ts/3iIwh7COisK1LJn9Ywdh8V/55e274db24fdd408c51513cbfafd2606/Blog_Hero_Banner_-_IDC_Unveils_Global_Research_on_Accelerating_Enterprise_DI.jpeg)
-
-<p style="margin-top: 30px;
+<content:encoded><![CDATA[<p style="margin-top: 30px;
     margin-bottom: 30px;
     padding: 20px;
     border-left-style: none;
@@ -167,80 +150,56 @@ For more on how Aera can help you identify at-risk inventory, maximize recovery,
     font-weight: 600;
     text-align: center;">Insights from this research were first presented by Megha Kumar, Research Vice President at IDC, live at AeraHUB 25, the Decision Intelligence Global Summit, in New York City on November 4, 2025.</p>
 
-At AeraHUB 25 in New York City, IDC’s Megha Kumar unveiled new global research that captures a pivotal moment in enterprise transformation. The whitepaper, *[Accelerating Enterprise Decision Intelligence with AI Agents](https://meet.aeratechnology.com/whitepapers/accelerating-enterprise-decision-intelligence-with-ai-agents)*, sponsored by Aera Technology, explores how organizations are evolving from AI-assisted insights to AI-agent-enabled action, reshaping how they think, decide, and operate.
-
-Two years after IDC and Aera’s earlier study, *What Every Executive Needs to Know About AI-Powered Decision Intelligence*, this new research shows just how far organizations have come. What began as experimentation has become enterprise-wide integration. IDC now forecasts that global AI spending will reach **$1.3 trillion by 2029**, with Generative AI accounting for more than half. Yet even as AI becomes pervasive, a persistent gap remains between insight and execution — a divide that AI agents are uniquely positioned to close.
-
-# The New Frontier: From Insight to Action
-
-That transition from insight to execution defines the next phase of enterprise evolution. IDC describes AI agents as software that “perceives, makes decisions, and acts on those decisions by combining insights from large language models with the ability to execute through tools and data sources.” In other words, where traditional AI systems inform, agents act — within set boundaries and often alongside human oversight.
-
-For early adopters, this shift is already paying off. A global manufacturer used AI agents to optimize production and distribution, improving fulfillment speed and inventory balance. Others are automating thousands of planning decisions each month, enabling faster response times without sacrificing human judgment. Together, these examples illustrate a powerful trajectory: organizations are moving from insight generation to intelligent execution, where technology and people collaborate continuously to drive performance.
-
-# Defining the Six Competencies of Decision Intelligence
-
-To better understand how enterprises are advancing along this path, IDC surveyed **311 large organizations** across 11 countries and six industries. The goal: to explore how AI is being applied across six key decision-making competencies: **data acquisition, analysis, simulation, collaboration, execution, and monitoring and learning.**
-
-When these competencies operate in isolation, decisions remain fragmented and slow. But when connected in a closed loop, they form a self-reinforcing system that enables continuous learning, faster action, and greater consistency. That’s why **40% of surveyed organizations** said they are adopting decision intelligence to address inefficiencies and rising costs while improving agility.
-
-The research also found common priorities across respondents:
-
-* Ensuring access to decision intelligence platforms  
-* Empowering employees with AI agents to make faster, policy-aligned choices  
-* Automating operational decisions where appropriate  
-* Standardizing decision processes across functions
-
-As enterprises connect these competencies and adopt AI agents, they’re not just improving decision-making; they’re fundamentally redesigning how decisions happen, shifting from periodic reviews to continuous, adaptive cycles of action and learning.
-
-# The State of Decision-Making Today
-
-Even so, many organizations remain in transition. IDC’s findings reveal that most still rely on a mix of human experience, data insights, and AI-generated recommendations. Only about **10%** base decisions primarily on AI, and a vast majority continue to use disconnected tools — **87% rely on spreadsheets**, alongside various BI, data governance, and planning systems.
-
-This fragmentation creates friction. Insights are generated faster than they can be acted upon, and valuable lessons often remain siloed within teams. Without integrated feedback loops, decision outcomes aren’t consistently measured or applied to future scenarios. Over time, this weakens institutional memory and erodes the ability to improve decision quality.
-
-The message is clear: to move from informed to intelligent decision-making, organizations need a unified platform that embeds AI directly into the decision process, connecting insight, execution, and learning into one continuous flow.
-
-# The Rise of AI Agents and Unified Platforms
-
-That unified approach is quickly gaining traction. IDC’s study found that **88% of surveyed organizations** have implemented or plan to pilot decision intelligence initiatives, and nearly **60%** see strong value in a single platform connecting all six decision-making competencies.
-
-AI agents sit at the center of this evolution. Two in five respondents identified agents as the key technology enabling advanced decision intelligence. Most expect AI agents to significantly enhance four of the six competencies — data acquisition, analysis, simulation, and monitoring — paving the way for continuous, self-improving decision cycles.
-
-Trust, however, remains essential. Roughly one-third of organizations say AI agents should assist without decision authority, while another 30% prefer that all actions be human-approved. Over the next two years, this balance will begin to shift, with many enterprises allowing agents to manage routine, low-risk decisions under human oversight. The result will be a hybrid model in which people and AI agents collaborate seamlessly, combining speed and scale with transparency and control.
-
-# What Sets Decision Intelligence Leaders Apart
-
-As the study makes clear, not all organizations are progressing at the same pace. IDC segmented respondents into groups based on how connected and automated their decision processes are. **Decision intelligence *leaders*,** those that have integrated most or all six competencies, stand well ahead of their peers.
-
-Among these leaders:
-
-* **58%** use AI to support business decision-making  
-* **72%** have deployed decision intelligence in one or more functions  
-* **74%** view unified platforms as highly beneficial
-
-These organizations outperform **decision intelligence *followers*** by an average of **40 percentage points** across key benefits such as decision speed, consistency, and governance. They also report higher customer satisfaction (78% vs. 61%) and improved operational efficiency (75% vs. 41%). The difference isn’t simply technological; it’s structural and cultural. By closing the loop between data, action, and learning, leaders are turning decision-making into a measurable, strategic advantage.
-
-# Guidance for the Path Ahead
-
-IDC’s research also highlights several practical steps for organizations aiming to advance their decision intelligence maturity and realize the full potential of AI agents:
-
-1. **Start with high-impact use cases.** Focus on areas where decisions are frequent, data-rich, and measurable (such as supply chain, pricing, finance, or operations) to demonstrate early success and build confidence.  
-2. **Automate routine decisions.** Target repetitive, low-risk activities to free up human capacity for higher-value collaboration and innovation.  
-3. **Invest in a unified platform.** Connect data, analytics, simulation, execution, and learning in one environment to ensure that intelligence flows seamlessly from insight to action.  
-4. **Maintain human oversight.** Balance automation with transparency through explainable models, clear governance, and human-in-the-loop controls.  
-5. **Build AI and data literacy.** Empower employees to understand, interpret, and challenge AI-driven insights, strengthening trust and accountability across the enterprise.
-
-By combining technology investment with governance and education, organizations can accelerate adoption while maintaining alignment between automation, oversight, and strategic intent.
-
-# A Defining Shift Toward Agentic AI
-
-As Megha Kumar emphasized at AeraHUB 25, decision intelligence is no longer a concept reserved for innovators — it’s a strategic necessity for every enterprise navigating complexity and change. The organizations that integrate AI agents into their decision frameworks will not only act faster but also learn faster, adapt sooner, and compete smarter.
-
-For full details on IDC’s global research and its findings on how AI agents are transforming enterprise decision-making, download the whitepaper: [*Accelerating Enterprise Decision Intelligence with AI Agents*](https://meet.aeratechnology.com/whitepapers/accelerating-enterprise-decision-intelligence-with-ai-agents).
+<p>At AeraHUB 25 in New York City, IDC’s Megha Kumar unveiled new global research that captures a pivotal moment in enterprise transformation. The whitepaper, <em><a href="https://meet.aeratechnology.com/whitepapers/accelerating-enterprise-decision-intelligence-with-ai-agents">Accelerating Enterprise Decision Intelligence with AI Agents</a></em>, sponsored by Aera Technology, explores how organizations are evolving from AI-assisted insights to AI-agent-enabled action, reshaping how they think, decide, and operate.</p>
+<p>Two years after IDC and Aera’s earlier study, <em>What Every Executive Needs to Know About AI-Powered Decision Intelligence</em>, this new research shows just how far organizations have come. What began as experimentation has become enterprise-wide integration. IDC now forecasts that global AI spending will reach <strong>$1.3 trillion by 2029</strong>, with Generative AI accounting for more than half. Yet even as AI becomes pervasive, a persistent gap remains between insight and execution — a divide that AI agents are uniquely positioned to close.</p>
+<h1>The New Frontier: From Insight to Action</h1>
+<p>That transition from insight to execution defines the next phase of enterprise evolution. IDC describes AI agents as software that “perceives, makes decisions, and acts on those decisions by combining insights from large language models with the ability to execute through tools and data sources.” In other words, where traditional AI systems inform, agents act — within set boundaries and often alongside human oversight.</p>
+<p>For early adopters, this shift is already paying off. A global manufacturer used AI agents to optimize production and distribution, improving fulfillment speed and inventory balance. Others are automating thousands of planning decisions each month, enabling faster response times without sacrificing human judgment. Together, these examples illustrate a powerful trajectory: organizations are moving from insight generation to intelligent execution, where technology and people collaborate continuously to drive performance.</p>
+<h1>Defining the Six Competencies of Decision Intelligence</h1>
+<p>To better understand how enterprises are advancing along this path, IDC surveyed <strong>311 large organizations</strong> across 11 countries and six industries. The goal: to explore how AI is being applied across six key decision-making competencies: <strong>data acquisition, analysis, simulation, collaboration, execution, and monitoring and learning.</strong></p>
+<p>When these competencies operate in isolation, decisions remain fragmented and slow. But when connected in a closed loop, they form a self-reinforcing system that enables continuous learning, faster action, and greater consistency. That’s why <strong>40% of surveyed organizations</strong> said they are adopting decision intelligence to address inefficiencies and rising costs while improving agility.</p>
+<p>The research also found common priorities across respondents:</p>
+<ul>
+<li>Ensuring access to decision intelligence platforms  </li>
+<li>Empowering employees with AI agents to make faster, policy-aligned choices  </li>
+<li>Automating operational decisions where appropriate  </li>
+<li>Standardizing decision processes across functions</li>
+</ul>
+<p>As enterprises connect these competencies and adopt AI agents, they’re not just improving decision-making; they’re fundamentally redesigning how decisions happen, shifting from periodic reviews to continuous, adaptive cycles of action and learning.</p>
+<h1>The State of Decision-Making Today</h1>
+<p>Even so, many organizations remain in transition. IDC’s findings reveal that most still rely on a mix of human experience, data insights, and AI-generated recommendations. Only about <strong>10%</strong> base decisions primarily on AI, and a vast majority continue to use disconnected tools — <strong>87% rely on spreadsheets</strong>, alongside various BI, data governance, and planning systems.</p>
+<p>This fragmentation creates friction. Insights are generated faster than they can be acted upon, and valuable lessons often remain siloed within teams. Without integrated feedback loops, decision outcomes aren’t consistently measured or applied to future scenarios. Over time, this weakens institutional memory and erodes the ability to improve decision quality.</p>
+<p>The message is clear: to move from informed to intelligent decision-making, organizations need a unified platform that embeds AI directly into the decision process, connecting insight, execution, and learning into one continuous flow.</p>
+<h1>The Rise of AI Agents and Unified Platforms</h1>
+<p>That unified approach is quickly gaining traction. IDC’s study found that <strong>88% of surveyed organizations</strong> have implemented or plan to pilot decision intelligence initiatives, and nearly <strong>60%</strong> see strong value in a single platform connecting all six decision-making competencies.</p>
+<p>AI agents sit at the center of this evolution. Two in five respondents identified agents as the key technology enabling advanced decision intelligence. Most expect AI agents to significantly enhance four of the six competencies — data acquisition, analysis, simulation, and monitoring — paving the way for continuous, self-improving decision cycles.</p>
+<p>Trust, however, remains essential. Roughly one-third of organizations say AI agents should assist without decision authority, while another 30% prefer that all actions be human-approved. Over the next two years, this balance will begin to shift, with many enterprises allowing agents to manage routine, low-risk decisions under human oversight. The result will be a hybrid model in which people and AI agents collaborate seamlessly, combining speed and scale with transparency and control.</p>
+<h1>What Sets Decision Intelligence Leaders Apart</h1>
+<p>As the study makes clear, not all organizations are progressing at the same pace. IDC segmented respondents into groups based on how connected and automated their decision processes are. <strong>Decision intelligence <em>leaders</em>,</strong> those that have integrated most or all six competencies, stand well ahead of their peers.</p>
+<p>Among these leaders:</p>
+<ul>
+<li><strong>58%</strong> use AI to support business decision-making  </li>
+<li><strong>72%</strong> have deployed decision intelligence in one or more functions  </li>
+<li><strong>74%</strong> view unified platforms as highly beneficial</li>
+</ul>
+<p>These organizations outperform <strong>decision intelligence <em>followers</em></strong> by an average of <strong>40 percentage points</strong> across key benefits such as decision speed, consistency, and governance. They also report higher customer satisfaction (78% vs. 61%) and improved operational efficiency (75% vs. 41%). The difference isn’t simply technological; it’s structural and cultural. By closing the loop between data, action, and learning, leaders are turning decision-making into a measurable, strategic advantage.</p>
+<h1>Guidance for the Path Ahead</h1>
+<p>IDC’s research also highlights several practical steps for organizations aiming to advance their decision intelligence maturity and realize the full potential of AI agents:</p>
+<ol>
+<li><strong>Start with high-impact use cases.</strong> Focus on areas where decisions are frequent, data-rich, and measurable (such as supply chain, pricing, finance, or operations) to demonstrate early success and build confidence.  </li>
+<li><strong>Automate routine decisions.</strong> Target repetitive, low-risk activities to free up human capacity for higher-value collaboration and innovation.  </li>
+<li><strong>Invest in a unified platform.</strong> Connect data, analytics, simulation, execution, and learning in one environment to ensure that intelligence flows seamlessly from insight to action.  </li>
+<li><strong>Maintain human oversight.</strong> Balance automation with transparency through explainable models, clear governance, and human-in-the-loop controls.  </li>
+<li><strong>Build AI and data literacy.</strong> Empower employees to understand, interpret, and challenge AI-driven insights, strengthening trust and accountability across the enterprise.</li>
+</ol>
+<p>By combining technology investment with governance and education, organizations can accelerate adoption while maintaining alignment between automation, oversight, and strategic intent.</p>
+<h1>A Defining Shift Toward Agentic AI</h1>
+<p>As Megha Kumar emphasized at AeraHUB 25, decision intelligence is no longer a concept reserved for innovators — it’s a strategic necessity for every enterprise navigating complexity and change. The organizations that integrate AI agents into their decision frameworks will not only act faster but also learn faster, adapt sooner, and compete smarter.</p>
+<p>For full details on IDC’s global research and its findings on how AI agents are transforming enterprise decision-making, download the whitepaper: <a href="https://meet.aeratechnology.com/whitepapers/accelerating-enterprise-decision-intelligence-with-ai-agents"><em>Accelerating Enterprise Decision Intelligence with AI Agents</em></a>.</p>
 ]]></content:encoded>
 <wp:post_id>200001</wp:post_id>
-<wp:post_date>2025-11-07T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-11-07T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-11-07 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-11-07 12:00:00</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>accelerating-enterprise-decision-intelligence-with-ai-agents</wp:post_name>
@@ -274,12 +233,12 @@ For full details on IDC’s global research and its findings on how AI agents ar
 <item>
 <title><![CDATA[IDC Unveils Global Research on Accelerating Enterprise Decision Intelligence with AI Agents featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/3iIwh7COisK1LJn9Ywdh8V/55e274db24fdd408c51513cbfafd2606/Blog_Hero_Banner_-_IDC_Unveils_Global_Research_on_Accelerating_Enterprise_DI.jpeg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Folia Grace</dc:creator>
 <guid isPermaLink="false">attachment-300002</guid>
 <wp:post_id>300002</wp:post_id>
-<wp:post_date>2025-11-07T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-11-07T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-11-07 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-11-07 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200001</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -288,12 +247,12 @@ For full details on IDC’s global research and its findings on how AI agents ar
 <item>
 <title><![CDATA[Folia Grace author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/1u3LJ2a2GgFdAnNIJ49xy4/d16cd41587e49c82510c15685ba554f3/folia.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Folia Grace</dc:creator>
 <guid isPermaLink="false">attachment-300003</guid>
 <wp:post_id>300003</wp:post_id>
-<wp:post_date>2025-11-07T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-11-07T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-11-07 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-11-07 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -302,14 +261,12 @@ For full details on IDC’s global research and its findings on how AI agents ar
 <item>
 <title><![CDATA[Smarter Competitive Pricing for Faster Revenue Capture]]></title>
 <link>/blogs/smarter-competitive-pricing-for-faster-revenue-capture</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <excerpt:encoded><![CDATA[Learn how Aera's Competitive Pricing Optimization Skill turns near real-time market intelligence into clear, policy-aligned price recommendations.]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[Learn how Aera's Competitive Pricing Optimization Skill turns near real-time market intelligence into clear, policy-aligned price recommendations.]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-4LY7Spb2uamotGwlhx6qk7</guid>
-<content:encoded><![CDATA[![Blog Hero Banner - Smarter Competitive Pricing](//images.ctfassets.net/mh1amgo8m7ts/2CnKm2niDUvLcVlpGyh6fv/a330a47da846931cb1cc8570274bbe09/Blog_Hero_Banner_-_Smarter_Competitive_Pricing.jpg)
-
-<p style="margin-top: 30px;
+<content:encoded><![CDATA[<p style="margin-top: 30px;
     margin-bottom: 30px;
     padding: 20px;
     border-left-style: none;
@@ -323,64 +280,51 @@ For full details on IDC’s global research and its findings on how AI agents ar
     font-weight: 600;
     text-align: center;">This blog is part of an ongoing series exploring how Aera Skills solve real-world supply chain challenges.</p>
 
-Efficient fuel pricing is essential for competitiveness and margin growth — yet daily market shifts and manual analysis make it hard to respond with speed and consistency. AI and automation help teams act faster and with greater confidence by turning near real-time market intelligence into clear, policy-aligned price recommendations.
-
-With the **Competitive Pricing Optimization Skill**, the Aera decision intelligence agent has achieved a 15% increase in fuel sales, generated more than 10,000 pricing recommendations, and reduced manual effort by over 80%. These results reflect a shift from spreadsheet-heavy work to a closed-loop system that executes decisions in minutes.
-
-# The Challenges: Manual Work, Complex Calculations, and Market Timing
-
-Many oil & gas companies still rely on manual processes for fuel price analysis. Shifting market dynamics, competitor changes, and supply-demand fluctuations create bottlenecks that lead to missed opportunities. Common challenges include:
-
-* **Manual competitor analysis** across prices, market conditions, and customer preferences.  
-* **Complex pricing calculations** using MOPS, ocean freight, exchange rates, and competitor adjustments.  
-* **Market-timing delays** that slow responses to market and competitor price shifts.  
-* **Inconsistent strategy** across account managers, weakening competitiveness and margin performance.
-
-Left unresolved, these issues reduce responsiveness, erode margin, and slow execution across the network.
-
-# The Aera Solution: AI-Driven Competitive Pricing
-
-Aera, the decision intelligence agent, uses the **Competitive Pricing Optimization Skill** to automate price recommendations using near real-time market intelligence — improving accuracy, speed, and consistency from ingestion through execution. It does this by:
-
-* **Automating price-build calculations** using market data, exchange rates, ocean freight, and capture periods aligned to customer schedules.  
-* **Analyzing competitor positioning** against baselines and applying strategy based on market stance.  
-* **Generating intelligent recommendations** at the Product–Terminal–Customer level factoring in conditions, supply adequacy, and projected impact.  
-* **Enabling rapid decision execution** with actionable recommendations and supporting analytics for immediate system updates.
-
-Behind the scenes, a team of AI agents structures incoming data, evaluates it against strategy and constraints, and reasons about the best move for each station — all with traceable logic and built-in governance.
-
-# Case Study: From Manual Updates To Market-Speed Decisions
-
-A leading oil & gas company needed to optimize Terminal Gate Pricing across wholesale and transport customers in Australia. Manual pricing created delays, reduced competitiveness, and hindered revenue capture. 
-
-After implementing Aera’s Competitive Pricing Optimization Skill, the company automated daily and weekly workflows across 10+ price elements, enabled real-time competitor analysis, and accelerated price updates with Product–Terminal–Customer recommendations.
-
-* **15% increase in fuel sales**  
-* **\>10,000 pricing recommendations generated**  
-* **\>80% reduction in manual effort**
-
-Together, these improvements enabled faster, market-aligned pricing that protected margins and strengthened share in priority locations.
-
-### 
-
-# Why Aera: What Sets It Apart
-
-Aera transforms competitive pricing from a manual, time-intensive process into a streamlined, intelligent system of action powered by decision intelligence. By standardizing guardrails and closing the loop from recommendation to system writeback, teams respond to market moves in minutes while protecting margin and brand position. What sets it apart:
-
-* **Unified decision intelligence** integrating market data, competitor pricing, supply-demand analytics, and pricing strategy in one platform.  
-* **AI-augmented workflows** improving productivity with automated price calculations and intelligent recommendations on daily and weekly schedules.  
-* **Closed-loop execution** enabling end-to-end automation — from market data ingestion to system writeback — for immediate price implementation.
-
-With Aera, pricing teams can move beyond slow, manual routines and toward faster, more reliable decision-making — confident that every price change is timely, consistent, and aligned to strategy.
-
-# Ready To Transform Your Competitive Pricing?
-
-For more on how Aera can help you improve responsiveness, eliminate manual effort, and maximize revenue capture, download the [Competitive Pricing Optimization Skill brief](https://meet.aeratechnology.com/hubfs/Skill%20Brief%20-%20Competitive%20Pricing%20Optimization%20Skill.pdf) or [schedule a demo](https://www.aeratechnology.com/demo).
-
-![Blog Supporting Image - Smarter Competitive Pricing](//images.ctfassets.net/mh1amgo8m7ts/6P7Wuf8v84g4G1F5QfzyKz/740b9693f08e1a248863c269676b9adc/Blog_Supporting_Image_-_Smarter_Competitive_Pricing.jpg)]]></content:encoded>
+<p>Efficient fuel pricing is essential for competitiveness and margin growth — yet daily market shifts and manual analysis make it hard to respond with speed and consistency. AI and automation help teams act faster and with greater confidence by turning near real-time market intelligence into clear, policy-aligned price recommendations.</p>
+<p>With the <strong>Competitive Pricing Optimization Skill</strong>, the Aera decision intelligence agent has achieved a 15% increase in fuel sales, generated more than 10,000 pricing recommendations, and reduced manual effort by over 80%. These results reflect a shift from spreadsheet-heavy work to a closed-loop system that executes decisions in minutes.</p>
+<h1>The Challenges: Manual Work, Complex Calculations, and Market Timing</h1>
+<p>Many oil &amp; gas companies still rely on manual processes for fuel price analysis. Shifting market dynamics, competitor changes, and supply-demand fluctuations create bottlenecks that lead to missed opportunities. Common challenges include:</p>
+<ul>
+<li><strong>Manual competitor analysis</strong> across prices, market conditions, and customer preferences.  </li>
+<li><strong>Complex pricing calculations</strong> using MOPS, ocean freight, exchange rates, and competitor adjustments.  </li>
+<li><strong>Market-timing delays</strong> that slow responses to market and competitor price shifts.  </li>
+<li><strong>Inconsistent strategy</strong> across account managers, weakening competitiveness and margin performance.</li>
+</ul>
+<p>Left unresolved, these issues reduce responsiveness, erode margin, and slow execution across the network.</p>
+<h1>The Aera Solution: AI-Driven Competitive Pricing</h1>
+<p>Aera, the decision intelligence agent, uses the <strong>Competitive Pricing Optimization Skill</strong> to automate price recommendations using near real-time market intelligence — improving accuracy, speed, and consistency from ingestion through execution. It does this by:</p>
+<ul>
+<li><strong>Automating price-build calculations</strong> using market data, exchange rates, ocean freight, and capture periods aligned to customer schedules.  </li>
+<li><strong>Analyzing competitor positioning</strong> against baselines and applying strategy based on market stance.  </li>
+<li><strong>Generating intelligent recommendations</strong> at the Product–Terminal–Customer level factoring in conditions, supply adequacy, and projected impact.  </li>
+<li><strong>Enabling rapid decision execution</strong> with actionable recommendations and supporting analytics for immediate system updates.</li>
+</ul>
+<p>Behind the scenes, a team of AI agents structures incoming data, evaluates it against strategy and constraints, and reasons about the best move for each station — all with traceable logic and built-in governance.</p>
+<h1>Case Study: From Manual Updates To Market-Speed Decisions</h1>
+<p>A leading oil &amp; gas company needed to optimize Terminal Gate Pricing across wholesale and transport customers in Australia. Manual pricing created delays, reduced competitiveness, and hindered revenue capture. </p>
+<p>After implementing Aera’s Competitive Pricing Optimization Skill, the company automated daily and weekly workflows across 10+ price elements, enabled real-time competitor analysis, and accelerated price updates with Product–Terminal–Customer recommendations.</p>
+<ul>
+<li><strong>15% increase in fuel sales</strong>  </li>
+<li><strong>&gt;10,000 pricing recommendations generated</strong>  </li>
+<li><strong>&gt;80% reduction in manual effort</strong></li>
+</ul>
+<p>Together, these improvements enabled faster, market-aligned pricing that protected margins and strengthened share in priority locations.</p>
+<h3></h3>
+<h1>Why Aera: What Sets It Apart</h1>
+<p>Aera transforms competitive pricing from a manual, time-intensive process into a streamlined, intelligent system of action powered by decision intelligence. By standardizing guardrails and closing the loop from recommendation to system writeback, teams respond to market moves in minutes while protecting margin and brand position. What sets it apart:</p>
+<ul>
+<li><strong>Unified decision intelligence</strong> integrating market data, competitor pricing, supply-demand analytics, and pricing strategy in one platform.  </li>
+<li><strong>AI-augmented workflows</strong> improving productivity with automated price calculations and intelligent recommendations on daily and weekly schedules.  </li>
+<li><strong>Closed-loop execution</strong> enabling end-to-end automation — from market data ingestion to system writeback — for immediate price implementation.</li>
+</ul>
+<p>With Aera, pricing teams can move beyond slow, manual routines and toward faster, more reliable decision-making — confident that every price change is timely, consistent, and aligned to strategy.</p>
+<h1>Ready To Transform Your Competitive Pricing?</h1>
+<p>For more on how Aera can help you improve responsiveness, eliminate manual effort, and maximize revenue capture, download the <a href="https://meet.aeratechnology.com/hubfs/Skill%20Brief%20-%20Competitive%20Pricing%20Optimization%20Skill.pdf">Competitive Pricing Optimization Skill brief</a> or <a href="https://www.aeratechnology.com/demo">schedule a demo</a>.</p>
+<p><img src="//images.ctfassets.net/mh1amgo8m7ts/6P7Wuf8v84g4G1F5QfzyKz/740b9693f08e1a248863c269676b9adc/Blog_Supporting_Image_-_Smarter_Competitive_Pricing.jpg" alt="Blog Supporting Image - Smarter Competitive Pricing"></p>
+]]></content:encoded>
 <wp:post_id>200002</wp:post_id>
-<wp:post_date>2025-10-21T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-21T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-21 21:16:44</wp:post_date>
+<wp:post_date_gmt>2025-10-21 21:16:44</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>smarter-competitive-pricing-for-faster-revenue-capture</wp:post_name>
@@ -414,12 +358,12 @@ For more on how Aera can help you improve responsiveness, eliminate manual effor
 <item>
 <title><![CDATA[Smarter Competitive Pricing for Faster Revenue Capture featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/2CnKm2niDUvLcVlpGyh6fv/a330a47da846931cb1cc8570274bbe09/Blog_Hero_Banner_-_Smarter_Competitive_Pricing.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <guid isPermaLink="false">attachment-300004</guid>
 <wp:post_id>300004</wp:post_id>
-<wp:post_date>2025-10-21T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-21T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-21 21:16:44</wp:post_date>
+<wp:post_date_gmt>2025-10-21 21:16:44</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200002</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -428,12 +372,12 @@ For more on how Aera can help you improve responsiveness, eliminate manual effor
 <item>
 <title><![CDATA[Naveen Reddy author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/4sRyWjymfCQUHSdUUHnR8r/900ec2e47241c957a2a464d00be5c9d6/naveen-kumar.jpeg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <guid isPermaLink="false">attachment-300005</guid>
 <wp:post_id>300005</wp:post_id>
-<wp:post_date>2025-10-21T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-21T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-21 21:16:44</wp:post_date>
+<wp:post_date_gmt>2025-10-21 21:16:44</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -442,35 +386,24 @@ For more on how Aera can help you improve responsiveness, eliminate manual effor
 <item>
 <title><![CDATA[Webinar Recap: Eliminating Waste in Supply Chains —  Unlocking Efficiency with AI-Powered Decision Intelligence]]></title>
 <link>/blogs/eliminating-waste-in-supply-chains-unlocking-efficiency-with-ai-powered-decision-intelligence</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Uma Asthana</dc:creator>
 <excerpt:encoded><![CDATA[Learn how Aera, the decision intelligence agent, reduces E&O, frees working capital, and cuts waste with targeted, scalable actions across the supply chain]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[Learn how Aera, the decision intelligence agent, reduces E&O, frees working capital, and cuts waste with targeted, scalable actions across the supply chain]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-68xxI9t2fhomrIb6XKW6Oz</guid>
-<content:encoded><![CDATA[![Blog Hero Banner - Webinar, Eliminating Waste in Supply Chains](//images.ctfassets.net/mh1amgo8m7ts/bhU1z7ukdBXWd3SspDQFH/b56e125141ccbd20eb4b240903a39852/Blog_Hero_Banner_-_Webinar__Eliminating_Waste_in_Supply_Chains.png)
-## Summary
-
-In our *Future.Now* webinar, **“Eliminating Waste in Supply Chains:  Unlocking Efficiency with AI-Powered Decision Intelligence,”** we explored how enterprises can curb excess and obsolete (E\&O) inventory while boosting performance. The session framed why inventory waste persists — rising complexity, volatile demand, and fragmented processes — then showed how decision intelligence changes the game by detecting surplus risks early, evaluating trade-offs, and recommending targeted actions before waste escalates. We also touched on governance and adoption — how teams vet recommendations, capture rationale, and measure effect — so improvements stick beyond a one-off cleanup.
-
-We discussed industry patterns (excess vs. obsolescence), the capital and service impact of overstocking, and practical examples where decision intelligence unlocked value in weeks. The live demo walked through how **Aera, the decision intelligence agent**, continuously monitors material, production, and inventory signals; simulates options against constraints; and can execute actions to throttle supply, shape demand, reallocate stock, or adjust planned orders. We closed on outcomes of implementing the agent: reduced write-off risk, lower working capital, and measurable sustainability gains through source-level waste reduction — at scale and with consistent control.
-
-## Key Takeaways
-
-#### 
-
-* **Inventory waste is structural — and solvable.**   
-  Disruptions, rapid product cycles, and network complexity raise the odds of overstock and obsolescence. Decision intelligence addresses this by continuously scanning live signals — demand, supply, lead times, and policy thresholds — surfacing surplus risks early, and guiding precise responses that prevent cost from building up. Crucially, it standardizes how organizations spot, prioritize, and resolve risks across brands and regions.  
-* **Excess and obsolescence require different plays.**   
-  Excess often stems from over-ordering, location imbalances, or slowing velocity; obsolescence follows design changes, regulatory shifts, or quality issues. The right response varies — reallocation to under-served markets, demand shaping with targeted promotions, or plan adjustments and buy-downs — so you need a system that understands context (SKU, customer, constraints) and proposes the right move with quantified impact and confidence.  
-* **Targeted actions beat blanket cuts.**   
-  The examples showed how repurposing or reallocating inventory, rather than broad reductions, frees capital and avoids write-offs while protecting customer commitments. Decision intelligence recommends specific moves (what to change, where, when), simulates alternatives, and shows expected outcomes on service and margin. Teams can compare options side-by-side, approve the best one, and track realized benefits for continuous improvement.  
-* **Live data \+ simulation improves outcomes.**   
-  Aera evaluates choices before recommending action, accounting for capacity limits, material availability, customer priorities, and planning horizons. This reduces firefighting and second-guessing while improving service. Over time, the agent learns from decision outcomes, refines thresholds and heuristics, and raises recommendation quality — turning tribal knowledge into repeatable, governed practice.  
-* **From recommendations to action — at scale.**   
-  Beyond analytics, the agent can execute approved actions and write back to source systems, shortening the loop between insight and result. This creates consistent governance, auditable decisions, and scalable improvements across SKUs, sites, and regions without adding manual workload. Organizations move from periodic cleanup projects to a continuous, closed-loop process that sustains results.
-
-## Speakers
-
+<content:encoded><![CDATA[<h2>Summary</h2>
+<p>In our <em>Future.Now</em> webinar, <strong>“Eliminating Waste in Supply Chains:  Unlocking Efficiency with AI-Powered Decision Intelligence,”</strong> we explored how enterprises can curb excess and obsolete (E&amp;O) inventory while boosting performance. The session framed why inventory waste persists — rising complexity, volatile demand, and fragmented processes — then showed how decision intelligence changes the game by detecting surplus risks early, evaluating trade-offs, and recommending targeted actions before waste escalates. We also touched on governance and adoption — how teams vet recommendations, capture rationale, and measure effect — so improvements stick beyond a one-off cleanup.</p>
+<p>We discussed industry patterns (excess vs. obsolescence), the capital and service impact of overstocking, and practical examples where decision intelligence unlocked value in weeks. The live demo walked through how <strong>Aera, the decision intelligence agent</strong>, continuously monitors material, production, and inventory signals; simulates options against constraints; and can execute actions to throttle supply, shape demand, reallocate stock, or adjust planned orders. We closed on outcomes of implementing the agent: reduced write-off risk, lower working capital, and measurable sustainability gains through source-level waste reduction — at scale and with consistent control.</p>
+<h2>Key Takeaways</h2>
+<h4></h4>
+<ul>
+<li><strong>Inventory waste is structural — and solvable.</strong><br>Disruptions, rapid product cycles, and network complexity raise the odds of overstock and obsolescence. Decision intelligence addresses this by continuously scanning live signals — demand, supply, lead times, and policy thresholds — surfacing surplus risks early, and guiding precise responses that prevent cost from building up. Crucially, it standardizes how organizations spot, prioritize, and resolve risks across brands and regions.  </li>
+<li><strong>Excess and obsolescence require different plays.</strong><br>Excess often stems from over-ordering, location imbalances, or slowing velocity; obsolescence follows design changes, regulatory shifts, or quality issues. The right response varies — reallocation to under-served markets, demand shaping with targeted promotions, or plan adjustments and buy-downs — so you need a system that understands context (SKU, customer, constraints) and proposes the right move with quantified impact and confidence.  </li>
+<li><strong>Targeted actions beat blanket cuts.</strong><br>The examples showed how repurposing or reallocating inventory, rather than broad reductions, frees capital and avoids write-offs while protecting customer commitments. Decision intelligence recommends specific moves (what to change, where, when), simulates alternatives, and shows expected outcomes on service and margin. Teams can compare options side-by-side, approve the best one, and track realized benefits for continuous improvement.  </li>
+<li><strong>Live data + simulation improves outcomes.</strong><br>Aera evaluates choices before recommending action, accounting for capacity limits, material availability, customer priorities, and planning horizons. This reduces firefighting and second-guessing while improving service. Over time, the agent learns from decision outcomes, refines thresholds and heuristics, and raises recommendation quality — turning tribal knowledge into repeatable, governed practice.  </li>
+<li><strong>From recommendations to action — at scale.</strong><br>Beyond analytics, the agent can execute approved actions and write back to source systems, shortening the loop between insight and result. This creates consistent governance, auditable decisions, and scalable improvements across SKUs, sites, and regions without adding manual workload. Organizations move from periodic cleanup projects to a continuous, closed-loop process that sustains results.</li>
+</ul>
+<h2>Speakers</h2>
 <table>
   <tr>
     <td style="width: 180px; padding: 20px;">
@@ -492,66 +425,45 @@ We discussed industry patterns (excess vs. obsolescence), the capital and servic
   </tr>
 </table>
 
-## Full Recording
-
-[Access the full webinar recording here](https://meet.aeratechnology.com/eliminating-waste-in-supply-chains-unlocking-efficiency-with-ai-powered-decision-intelligence-oct14).
-
-## Q\&A
-
-**Q: The presentation showed impressive results. How long did it take to achieve these results, and what were the key success factors?**
-
-**Jeroen Nysen**: It depends on the use case, but with decision intelligence on the Aera platform the time to value is really impressive — especially compared with more traditional, large APS or transactional systems that follow a long, waterfall approach over several years. Here it’s very dynamic: we’re talking several weeks to reach a working product, which can then be further enhanced with additional capabilities. The time to value here can be measured in weeks, not months or years.
-
-**Archana Ravi**: Adding to that: beyond quick time to value, the pre-built Decision Data Model (DDM) accelerates ingestion and decision-logic validation. The platform’s composability (its modular design) lets you build skills tailored to your business without starting from scratch. These are key success factors that enable teams to get going quickly on the platform.
-
-**Q: The presentation emphasizes that “planning alone is not the solution.” How does decision intelligence complement traditional supply chain planning tools?**
-
-**Archana Ravi**: Aera is deployed for many customers who already have a planning tool in place, and the two go hand in hand. First, planning typically operates in time horizons beyond the frozen period. You deploy decision intelligence within the frozen horizon, where a lot of changes are happening and you need to respond quickly. Secondly, you need to be able to pull data from different source systems. For example, one customer of ours used planning, order management, distribution, and warehouse management data together to make the right decision. Working across systems to make the right decision is a key differentiator here.
-
-**Jeroen Nysen**: We see decision intelligence complementing planning (such as handling deviations in the frozen period with exception-based management to course-correct) and also augmenting planning altogether. For example, dynamically setting planning parameters such as lead time: some APS solutions bake in fixed lead times, but lead time fluctuates over time and across scenarios. Without reflecting those fluctuations, you get inappropriate planning and multiple disruptions. So you can use decision intelligence both to deal with disruptions and to enhance planning so fewer disruptions are generated. In the end, they’re truly complementary sets of capabilities.
-
-**Q: How do you determine which decisions should be automated vs. augmented vs. supported? What framework do you use?**
-
-**Archana Ravi**: As Jeroen briefly touched on, the product supports both structured decisions and situational decisions. For high-frequency, highly-granular decisions that pull from different sources, you typically deploy a skill or a decision agent for automation. Aera also supports situational decisions through its calc capabilities, which enable modeling when there are tactical or strategic decisions that you need to take, such as in long-term capacity planning.
-
-We didn’t have time to dive into the other capabilities today, but we’re happy to connect offline and walk through them. In practice, you automate frequent, data-rich decisions with skills and augment/support tactical or strategic decisions with modeling and human review.
-
-**Q: What’s the biggest mindset change teams need to make for this kind of transformation?**
-
-**Jeroen Nysen**: A couple stand out. First, it’s important to treat decision intelligence as a principle and a capability, not a single use case. We highlighted several use cases — inventory aging, allocation, health management, and others — but the real opportunity is to think about decisions across the end-to-end value chain and orchestrate them so you automate and augment decision-making to reach better, faster, and more decisions overall. Don’t get stuck on one use case.
-
-Second, it’s important to rethink readiness. Many organizations feel they must first achieve full data availability or end-to-end visibility before they’re “ready.” That can become an endless cycle. Instead, work backwards from the decisions you want to make — where value is leaking or opportunity is largest — and identify the data and other requirements needed to unlock that decision-making process. You’ll achieve faster time to value than with a sequential, waterfall approach that waits for each prerequisite. Keep a value-based mindset, focus on the desired outcome, and build backwards from there.
-
-**Q: How does data from our ERP system integrate into Aera?**
-
-**Archana Ravi**: Data is transferred securely through Aera’s patented agent architecture. Predefined crawlers extract data from ERP systems and can ingest thousands of data fields and tables, including: master data (e.g., materials, vendors, customers), Transactions (e.g., orders, shipments, inventory), financials (e.g., billing, cost centers), and procurement and planning data. Aera can also ingest unstructured data via the agent architecture. The agent also supports bidirectional communication; it can read data *from* and write approved decisions *back into* your ERP. Once ingested, ERP data is mapped and cleansed using Aera’s step-based stream flows and harmonized into a single, unified Decision Data Model, enabling cross-functional visibility and real-time context.
-
-**Q: What challenges have you faced in customers adopting AI and embedding it into their day-to-day workflows? How much time do you typically need to support customers before they can use the system independently?**
-
-**Archana Ravi**: Customers typically face challenges with master data quality, trust and change management, and system integration. Aera’s platform and methodology address these from day one:
-
-* **Master data quality**: Many organizations begin with inconsistent or inaccurate master data across ERPs and source systems. Aera’s Decision Data Model and Master Data Skill continuously monitor, cleanse, and harmonize data using embedded business rules, creating a trusted foundation for decision automation.  
-* **Trust, change management, and adoption**: Aera’s “glass box” approach builds user trust through full transparency — each recommendation includes contextual information, expected business impact, and a confidence score.  
-* **Integration simplicity**: Aera’s crawler technology connects seamlessly with ERPs, planning systems, and data lakes, providing real-time, bi-directional data flow. This enables faster onboarding, minimal IT dependency, and continuous synchronization across systems.
-
-Together, these capabilities help customers quickly build confidence in Aera’s decisions, reduce manual effort, and achieve scalable adoption typically within four to five months.
-
-**Jeroen Nysen**: To all that I would advise…
-
-* **Ensure fit-for-purpose through early involvement**: Make sure designed and implemented decision-intelligence use cases are tailored to *actual end users and decision-makers* so they can make better decisions. Involve them from the very beginning in ideation and design, not only later at UAT.  
-* **Ensure buy-in through a value-oriented mindset**: Keep value realization up front in ideation and design, and clearly measure and display realized benefits after go-live.  
-* **Ensure trust through logic transparency**: In reference to Archana’s glass box principles — make what the AI does easy to understand, and able to be tested and reviewed.  
-* **Ensure motivation through a seamless experience**: In reference to integration simplicity and overall ease of use — aim for the least number of clicks from issue detection to resolution.
-
-**Q: Do you offer supply chain accelerators to integrate with the main supply chain processes or areas?**
-
-**Archana Ravi**: Yes. Aera offers a robust set of prebuilt supply chain accelerators designed to integrate with and enhance core supply chain processes — across planning, inventory, and fulfillment. These accelerators help organizations achieve faster time-to-value while maintaining flexibility to adapt to specific business needs. Aera Decision Cloud is built as a *modular* platform where decision logic, data, AI models, and user engagement are separate but interoperable components. You can reuse and adapt prebuilt skills across use cases, functions, and geographies, and rapidly compose new skills by combining existing decision components and leveraging platform capabilities.
-
-**Jeroen Nysen**: Just as in Aera, Deloitte has built a repository of prebuilt supply chain accelerators and skill templates. These help organizations get started from an initial skill architecture, which can later be fine-tuned and tailored to a client’s specific needs. Deloitte also brings deep supply chain and industry expertise to adapt these templates and standards accordingly.  
+<h2>Full Recording</h2>
+<p><a href="https://meet.aeratechnology.com/eliminating-waste-in-supply-chains-unlocking-efficiency-with-ai-powered-decision-intelligence-oct14">Access the full webinar recording here</a>.</p>
+<h2>Q&amp;A</h2>
+<p><strong>Q: The presentation showed impressive results. How long did it take to achieve these results, and what were the key success factors?</strong></p>
+<p><strong>Jeroen Nysen</strong>: It depends on the use case, but with decision intelligence on the Aera platform the time to value is really impressive — especially compared with more traditional, large APS or transactional systems that follow a long, waterfall approach over several years. Here it’s very dynamic: we’re talking several weeks to reach a working product, which can then be further enhanced with additional capabilities. The time to value here can be measured in weeks, not months or years.</p>
+<p><strong>Archana Ravi</strong>: Adding to that: beyond quick time to value, the pre-built Decision Data Model (DDM) accelerates ingestion and decision-logic validation. The platform’s composability (its modular design) lets you build skills tailored to your business without starting from scratch. These are key success factors that enable teams to get going quickly on the platform.</p>
+<p><strong>Q: The presentation emphasizes that “planning alone is not the solution.” How does decision intelligence complement traditional supply chain planning tools?</strong></p>
+<p><strong>Archana Ravi</strong>: Aera is deployed for many customers who already have a planning tool in place, and the two go hand in hand. First, planning typically operates in time horizons beyond the frozen period. You deploy decision intelligence within the frozen horizon, where a lot of changes are happening and you need to respond quickly. Secondly, you need to be able to pull data from different source systems. For example, one customer of ours used planning, order management, distribution, and warehouse management data together to make the right decision. Working across systems to make the right decision is a key differentiator here.</p>
+<p><strong>Jeroen Nysen</strong>: We see decision intelligence complementing planning (such as handling deviations in the frozen period with exception-based management to course-correct) and also augmenting planning altogether. For example, dynamically setting planning parameters such as lead time: some APS solutions bake in fixed lead times, but lead time fluctuates over time and across scenarios. Without reflecting those fluctuations, you get inappropriate planning and multiple disruptions. So you can use decision intelligence both to deal with disruptions and to enhance planning so fewer disruptions are generated. In the end, they’re truly complementary sets of capabilities.</p>
+<p><strong>Q: How do you determine which decisions should be automated vs. augmented vs. supported? What framework do you use?</strong></p>
+<p><strong>Archana Ravi</strong>: As Jeroen briefly touched on, the product supports both structured decisions and situational decisions. For high-frequency, highly-granular decisions that pull from different sources, you typically deploy a skill or a decision agent for automation. Aera also supports situational decisions through its calc capabilities, which enable modeling when there are tactical or strategic decisions that you need to take, such as in long-term capacity planning.</p>
+<p>We didn’t have time to dive into the other capabilities today, but we’re happy to connect offline and walk through them. In practice, you automate frequent, data-rich decisions with skills and augment/support tactical or strategic decisions with modeling and human review.</p>
+<p><strong>Q: What’s the biggest mindset change teams need to make for this kind of transformation?</strong></p>
+<p><strong>Jeroen Nysen</strong>: A couple stand out. First, it’s important to treat decision intelligence as a principle and a capability, not a single use case. We highlighted several use cases — inventory aging, allocation, health management, and others — but the real opportunity is to think about decisions across the end-to-end value chain and orchestrate them so you automate and augment decision-making to reach better, faster, and more decisions overall. Don’t get stuck on one use case.</p>
+<p>Second, it’s important to rethink readiness. Many organizations feel they must first achieve full data availability or end-to-end visibility before they’re “ready.” That can become an endless cycle. Instead, work backwards from the decisions you want to make — where value is leaking or opportunity is largest — and identify the data and other requirements needed to unlock that decision-making process. You’ll achieve faster time to value than with a sequential, waterfall approach that waits for each prerequisite. Keep a value-based mindset, focus on the desired outcome, and build backwards from there.</p>
+<p><strong>Q: How does data from our ERP system integrate into Aera?</strong></p>
+<p><strong>Archana Ravi</strong>: Data is transferred securely through Aera’s patented agent architecture. Predefined crawlers extract data from ERP systems and can ingest thousands of data fields and tables, including: master data (e.g., materials, vendors, customers), Transactions (e.g., orders, shipments, inventory), financials (e.g., billing, cost centers), and procurement and planning data. Aera can also ingest unstructured data via the agent architecture. The agent also supports bidirectional communication; it can read data <em>from</em> and write approved decisions <em>back into</em> your ERP. Once ingested, ERP data is mapped and cleansed using Aera’s step-based stream flows and harmonized into a single, unified Decision Data Model, enabling cross-functional visibility and real-time context.</p>
+<p><strong>Q: What challenges have you faced in customers adopting AI and embedding it into their day-to-day workflows? How much time do you typically need to support customers before they can use the system independently?</strong></p>
+<p><strong>Archana Ravi</strong>: Customers typically face challenges with master data quality, trust and change management, and system integration. Aera’s platform and methodology address these from day one:</p>
+<ul>
+<li><strong>Master data quality</strong>: Many organizations begin with inconsistent or inaccurate master data across ERPs and source systems. Aera’s Decision Data Model and Master Data Skill continuously monitor, cleanse, and harmonize data using embedded business rules, creating a trusted foundation for decision automation.  </li>
+<li><strong>Trust, change management, and adoption</strong>: Aera’s “glass box” approach builds user trust through full transparency — each recommendation includes contextual information, expected business impact, and a confidence score.  </li>
+<li><strong>Integration simplicity</strong>: Aera’s crawler technology connects seamlessly with ERPs, planning systems, and data lakes, providing real-time, bi-directional data flow. This enables faster onboarding, minimal IT dependency, and continuous synchronization across systems.</li>
+</ul>
+<p>Together, these capabilities help customers quickly build confidence in Aera’s decisions, reduce manual effort, and achieve scalable adoption typically within four to five months.</p>
+<p><strong>Jeroen Nysen</strong>: To all that I would advise…</p>
+<ul>
+<li><strong>Ensure fit-for-purpose through early involvement</strong>: Make sure designed and implemented decision-intelligence use cases are tailored to <em>actual end users and decision-makers</em> so they can make better decisions. Involve them from the very beginning in ideation and design, not only later at UAT.  </li>
+<li><strong>Ensure buy-in through a value-oriented mindset</strong>: Keep value realization up front in ideation and design, and clearly measure and display realized benefits after go-live.  </li>
+<li><strong>Ensure trust through logic transparency</strong>: In reference to Archana’s glass box principles — make what the AI does easy to understand, and able to be tested and reviewed.  </li>
+<li><strong>Ensure motivation through a seamless experience</strong>: In reference to integration simplicity and overall ease of use — aim for the least number of clicks from issue detection to resolution.</li>
+</ul>
+<p><strong>Q: Do you offer supply chain accelerators to integrate with the main supply chain processes or areas?</strong></p>
+<p><strong>Archana Ravi</strong>: Yes. Aera offers a robust set of prebuilt supply chain accelerators designed to integrate with and enhance core supply chain processes — across planning, inventory, and fulfillment. These accelerators help organizations achieve faster time-to-value while maintaining flexibility to adapt to specific business needs. Aera Decision Cloud is built as a <em>modular</em> platform where decision logic, data, AI models, and user engagement are separate but interoperable components. You can reuse and adapt prebuilt skills across use cases, functions, and geographies, and rapidly compose new skills by combining existing decision components and leveraging platform capabilities.</p>
+<p><strong>Jeroen Nysen</strong>: Just as in Aera, Deloitte has built a repository of prebuilt supply chain accelerators and skill templates. These help organizations get started from an initial skill architecture, which can later be fine-tuned and tailored to a client’s specific needs. Deloitte also brings deep supply chain and industry expertise to adapt these templates and standards accordingly.  </p>
 ]]></content:encoded>
 <wp:post_id>200003</wp:post_id>
-<wp:post_date>2025-10-17T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-17T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-17 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-17 12:00:00</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>eliminating-waste-in-supply-chains-unlocking-efficiency-with-ai-powered-decision-intelligence</wp:post_name>
@@ -585,12 +497,12 @@ Together, these capabilities help customers quickly build confidence in Aera’s
 <item>
 <title><![CDATA[Webinar Recap: Eliminating Waste in Supply Chains —  Unlocking Efficiency with AI-Powered Decision Intelligence featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/bhU1z7ukdBXWd3SspDQFH/b56e125141ccbd20eb4b240903a39852/Blog_Hero_Banner_-_Webinar__Eliminating_Waste_in_Supply_Chains.png</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Uma Asthana</dc:creator>
 <guid isPermaLink="false">attachment-300006</guid>
 <wp:post_id>300006</wp:post_id>
-<wp:post_date>2025-10-17T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-17T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-17 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-17 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200003</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -599,12 +511,12 @@ Together, these capabilities help customers quickly build confidence in Aera’s
 <item>
 <title><![CDATA[Uma Asthana author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/1yZJCvOym0YCSciPGrec6i/3e5b92e396fd1c89b20af374a73fdf84/umaastana.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Uma Asthana</dc:creator>
 <guid isPermaLink="false">attachment-300007</guid>
 <wp:post_id>300007</wp:post_id>
-<wp:post_date>2025-10-17T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-17T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-17 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-17 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -613,66 +525,46 @@ Together, these capabilities help customers quickly build confidence in Aera’s
 <item>
 <title><![CDATA[IT Release Cycles Are Slow — Your Decisions Don’t Have to Be]]></title>
 <link>/blogs/it-release-cycles-are-slow-your-decisions-dont-have-to-be</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Rob Wolfe</dc:creator>
 <excerpt:encoded><![CDATA[Learn how Aera, the decision intelligence agent, helps teams own decision logic, cut latency, and turn dashboards into action — without waiting for IT releases.]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[Learn how Aera, the decision intelligence agent, helps teams own decision logic, cut latency, and turn dashboards into action — without waiting for IT releases.]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-A0rYLoI9iS1U8HozWCfUl</guid>
-<content:encoded><![CDATA[![Blog Hero Banner - IT Release Cycles Are Slow](//images.ctfassets.net/mh1amgo8m7ts/658l4FjM3JOx929yriJb9k/795ca6d6827850eca43060a13ffd36b0/Blog_Hero_Banner_-_IT_Release_Cycles_Are_Slow.jpeg)
-
-Today’s supply chains move faster than release cycles. It’s a mismatch that traps the logic of action inside complex code — changeable only through IT tickets and queued deployments. When conditions shift, systems lag. Inflexibility creeps in, latency compounds, and planners revert to spreadsheets while opportunities and risks slip by.
-
-You can see the consequences in the weekly planning meeting: a wall of dashboards, filters applied, and three different versions of “the truth.” Sales is pushing a promotion that landed early, procurement is flagging a resin shortage, and operations is juggling labor constraints. Everyone agrees a decision must be made — rebalance inventory, advance a PO, divert a shipment — yet the tools still can’t reflect how the decision actually gets made.
-
-This is where value leaks. IT built the system; business owns the outcome. The logic of real decisions rarely lives where the code does — and until that logic is surfaced, shared, and owned by the people making the trade-offs, the gap widens with every release cycle.
-
-# How We Got Here
-
-For years we leaned on IT because supply chain processes are complex and deeply customized. Each exception spawned a ticket; each ticket became code; each piece of code created another dependency. Over time, the “process” hardened into brittle decision trees — essentially RPA: if this, then that; else, escalate. That’s useful for repetitive tasks. It is tone-deaf, however, to the context humans use every day: risk appetite, service levels by segment, supplier reliability, promotion cannibalization, logistics lead-time volatility, and the million-dollar question — what trades off against what. Real decisions require nuance that is hard to capture in code, and harder still to maintain.
-
-That history leaves two reinforcing problems that show up in every planning cycle:
-
-* **Inflexibility**. When the market shifts — or a supplier slips — changing logic means changing code. Releases queue up while planners patch with spreadsheets. The cost of customization skyrockets when every logic change requires a deployment.  
-* **Latency**. Opportunity cost compounds while organizations wait for update cycles that can’t keep pace with promotions, disruptions, and day-to-day performance gaps.
-
-Put simply, this operating model is too slow for today’s demand signals and supply risk. When tools can’t adapt at the speed of the business, planners retreat to Excel, decisions drift from governance, and competitive advantage erodes. The model has to change.
-
-# What the Business Actually Needs
-
-Supply chain decisions aren’t just workflows; they’re living models of intent. They blend policies (“Service Tier A must be protected”), heuristics (“This supplier’s promise date slips by five days on average”), and probabilistic signals (demand confidence intervals, lead-time distributions, inventory health). For that to work in practice, the people closest to the decision must be able to express and evolve the logic themselves — without turning every adjustment into a month-long IT project.
-
-Said differently: business should own the logic and policies, IT should own platform integrity, and analytics should supply the signals and models. When those roles line up, collaboration becomes the default path rather than an exception process, and decision quality improves because intent, data, and execution finally move together.
-
-# Enter Decision Intelligence
-
-Decision intelligence recenters the system on decisions, not screens. It connects data, analytics, and action in a simple loop: understand → recommend → act → learn. It also makes the “why” behind each recommendation explicit, so intent and execution stay aligned as conditions change.
-
-This is precisely where the old model breaks down. Hard-coded rules can’t keep up with variability. Human-in-the-loop decision intelligence can — but only if business users can actually shape the logic that guides the system.
-
-# The Aera Approach (and Why It’s Different)
-
-Aera, the decision intelligence agent, is built to close the gap between how we really decide and how systems assume decisions happen. It brings ownership, transparency, and action into the same frame.
-
-* **Composable, low-code skills**. Instead of burying logic in code, Aera lets business, IT, and analytics teams co-create “skills” that encapsulate a decision. Policies, guardrails, and heuristics are visible and editable — no release cycle required.  
-* **Shared ownership by design**. As stated above, business users own decision logic and policies. IT governs security, data, and performance. Analytics injects models and quality signals. Because this collaboration is built in, it scales with the work rather than slowing it down.  
-* **From recommendation to action**. Skills don’t stop at highlighting exceptions. Aera recommends the best action, orchestrates the collaboration to align stakeholders, and executes. Then it captures outcomes, learns from results, and improves the next decision — closing the loop in practice, not just in theory.  
-* **Decision governance**. With logic and outcomes explicit, leaders can see how decisions are made, measure impact, and spot gaps in the process. Governance becomes practical, and performance follows.
-
-If that still sounds abstract, the fastest way to feel the difference is to build something real.
-
-# Try Aera: Build a Stockout Skill in Two Days
-
-In a two-day workshop, your business users — yes, the planners — build a functioning skill that recommends how to resolve projected stockouts. They define how to identify transfers to expedite, how to evaluate trade-offs, and how to weigh cost versus service risk. Because the logic is composable and low code, they can iterate in hours — not quarters — and see the effect immediately in their planning rhythm.
-
-The experience changes the conversation. Instead of “Please code this exception,” the team asks, “Should our policy prioritize margin or service for this segment?” The logic becomes a living asset that the business can evolve as the market moves, and the collaboration between business, IT, and analytics becomes the norm rather than the workaround.
-
-# Decisions at the Speed of the Business
-
-IT doesn’t need to understand every nuance of how planners decide; it needs to empower them. By making decision logic first-class, composable, and co-owned, Aera turns brittle rules into adaptive skills — and turns meetings full of dashboards into decisions that move the business. The result is a supply chain that learns, adapts, and decides at the speed of reality, without waiting for the next code release.  
+<content:encoded><![CDATA[<p>Today’s supply chains move faster than release cycles. It’s a mismatch that traps the logic of action inside complex code — changeable only through IT tickets and queued deployments. When conditions shift, systems lag. Inflexibility creeps in, latency compounds, and planners revert to spreadsheets while opportunities and risks slip by.</p>
+<p>You can see the consequences in the weekly planning meeting: a wall of dashboards, filters applied, and three different versions of “the truth.” Sales is pushing a promotion that landed early, procurement is flagging a resin shortage, and operations is juggling labor constraints. Everyone agrees a decision must be made — rebalance inventory, advance a PO, divert a shipment — yet the tools still can’t reflect how the decision actually gets made.</p>
+<p>This is where value leaks. IT built the system; business owns the outcome. The logic of real decisions rarely lives where the code does — and until that logic is surfaced, shared, and owned by the people making the trade-offs, the gap widens with every release cycle.</p>
+<h1>How We Got Here</h1>
+<p>For years we leaned on IT because supply chain processes are complex and deeply customized. Each exception spawned a ticket; each ticket became code; each piece of code created another dependency. Over time, the “process” hardened into brittle decision trees — essentially RPA: if this, then that; else, escalate. That’s useful for repetitive tasks. It is tone-deaf, however, to the context humans use every day: risk appetite, service levels by segment, supplier reliability, promotion cannibalization, logistics lead-time volatility, and the million-dollar question — what trades off against what. Real decisions require nuance that is hard to capture in code, and harder still to maintain.</p>
+<p>That history leaves two reinforcing problems that show up in every planning cycle:</p>
+<ul>
+<li><strong>Inflexibility</strong>. When the market shifts — or a supplier slips — changing logic means changing code. Releases queue up while planners patch with spreadsheets. The cost of customization skyrockets when every logic change requires a deployment.  </li>
+<li><strong>Latency</strong>. Opportunity cost compounds while organizations wait for update cycles that can’t keep pace with promotions, disruptions, and day-to-day performance gaps.</li>
+</ul>
+<p>Put simply, this operating model is too slow for today’s demand signals and supply risk. When tools can’t adapt at the speed of the business, planners retreat to Excel, decisions drift from governance, and competitive advantage erodes. The model has to change.</p>
+<h1>What the Business Actually Needs</h1>
+<p>Supply chain decisions aren’t just workflows; they’re living models of intent. They blend policies (“Service Tier A must be protected”), heuristics (“This supplier’s promise date slips by five days on average”), and probabilistic signals (demand confidence intervals, lead-time distributions, inventory health). For that to work in practice, the people closest to the decision must be able to express and evolve the logic themselves — without turning every adjustment into a month-long IT project.</p>
+<p>Said differently: business should own the logic and policies, IT should own platform integrity, and analytics should supply the signals and models. When those roles line up, collaboration becomes the default path rather than an exception process, and decision quality improves because intent, data, and execution finally move together.</p>
+<h1>Enter Decision Intelligence</h1>
+<p>Decision intelligence recenters the system on decisions, not screens. It connects data, analytics, and action in a simple loop: understand → recommend → act → learn. It also makes the “why” behind each recommendation explicit, so intent and execution stay aligned as conditions change.</p>
+<p>This is precisely where the old model breaks down. Hard-coded rules can’t keep up with variability. Human-in-the-loop decision intelligence can — but only if business users can actually shape the logic that guides the system.</p>
+<h1>The Aera Approach (and Why It’s Different)</h1>
+<p>Aera, the decision intelligence agent, is built to close the gap between how we really decide and how systems assume decisions happen. It brings ownership, transparency, and action into the same frame.</p>
+<ul>
+<li><strong>Composable, low-code skills</strong>. Instead of burying logic in code, Aera lets business, IT, and analytics teams co-create “skills” that encapsulate a decision. Policies, guardrails, and heuristics are visible and editable — no release cycle required.  </li>
+<li><strong>Shared ownership by design</strong>. As stated above, business users own decision logic and policies. IT governs security, data, and performance. Analytics injects models and quality signals. Because this collaboration is built in, it scales with the work rather than slowing it down.  </li>
+<li><strong>From recommendation to action</strong>. Skills don’t stop at highlighting exceptions. Aera recommends the best action, orchestrates the collaboration to align stakeholders, and executes. Then it captures outcomes, learns from results, and improves the next decision — closing the loop in practice, not just in theory.  </li>
+<li><strong>Decision governance</strong>. With logic and outcomes explicit, leaders can see how decisions are made, measure impact, and spot gaps in the process. Governance becomes practical, and performance follows.</li>
+</ul>
+<p>If that still sounds abstract, the fastest way to feel the difference is to build something real.</p>
+<h1>Try Aera: Build a Stockout Skill in Two Days</h1>
+<p>In a two-day workshop, your business users — yes, the planners — build a functioning skill that recommends how to resolve projected stockouts. They define how to identify transfers to expedite, how to evaluate trade-offs, and how to weigh cost versus service risk. Because the logic is composable and low code, they can iterate in hours — not quarters — and see the effect immediately in their planning rhythm.</p>
+<p>The experience changes the conversation. Instead of “Please code this exception,” the team asks, “Should our policy prioritize margin or service for this segment?” The logic becomes a living asset that the business can evolve as the market moves, and the collaboration between business, IT, and analytics becomes the norm rather than the workaround.</p>
+<h1>Decisions at the Speed of the Business</h1>
+<p>IT doesn’t need to understand every nuance of how planners decide; it needs to empower them. By making decision logic first-class, composable, and co-owned, Aera turns brittle rules into adaptive skills — and turns meetings full of dashboards into decisions that move the business. The result is a supply chain that learns, adapts, and decides at the speed of reality, without waiting for the next code release.  </p>
 ]]></content:encoded>
 <wp:post_id>200004</wp:post_id>
-<wp:post_date>2025-10-14T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-14T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-14 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-14 12:00:00</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>it-release-cycles-are-slow-your-decisions-dont-have-to-be</wp:post_name>
@@ -706,12 +598,12 @@ IT doesn’t need to understand every nuance of how planners decide; it needs to
 <item>
 <title><![CDATA[IT Release Cycles Are Slow — Your Decisions Don’t Have to Be featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/658l4FjM3JOx929yriJb9k/795ca6d6827850eca43060a13ffd36b0/Blog_Hero_Banner_-_IT_Release_Cycles_Are_Slow.jpeg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Rob Wolfe</dc:creator>
 <guid isPermaLink="false">attachment-300008</guid>
 <wp:post_id>300008</wp:post_id>
-<wp:post_date>2025-10-14T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-14T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-14 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-14 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200004</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -720,12 +612,12 @@ IT doesn’t need to understand every nuance of how planners decide; it needs to
 <item>
 <title><![CDATA[Rob Wolfe author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/3rkOzG1tD2KcoJVfehkJvX/4a10b17654bf6523afb6c13b1bb5cbba/Rob_Wolfe.jpeg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Rob Wolfe</dc:creator>
 <guid isPermaLink="false">attachment-300009</guid>
 <wp:post_id>300009</wp:post_id>
-<wp:post_date>2025-10-14T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-14T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-14 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-14 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -734,95 +626,73 @@ IT doesn’t need to understand every nuance of how planners decide; it needs to
 <item>
 <title><![CDATA[Material Planning, Reimagined: AI Agents in Action]]></title>
 <link>/blogs/material-planning-reimagined-ai-agents-in-action</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Nikitas Magel</dc:creator>
 <excerpt:encoded><![CDATA[Learn how Aera, the decision intelligence agent, transforms material planning with AI-driven automation that boosts resilience, speed, and efficiency.]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[Learn how Aera, the decision intelligence agent, transforms material planning with AI-driven automation that boosts resilience, speed, and efficiency.]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-6wi5FvUzLLk7W4w0wQrkNs</guid>
-<content:encoded><![CDATA[![Blog Hero Banner - Material Planning, Reimagined](//images.ctfassets.net/mh1amgo8m7ts/2yTXVjxAJ0kGNmDGaIQo9Q/639c578076054fd0955ec767b0e5751d/Blog_Hero_Banner_-_Material_Planning__Reimagined.jpeg)
-
-Material planning sits at the heart of every supply chain — determining whether the right materials reach the right places at the right time. Yet in most enterprises, this critical process is still dominated by manual processes, fragmented data, and constant firefighting. Planners spend their days chasing supplier updates, reconciling data, and managing disruptions that could have been anticipated sooner. The result is a process that’s essential but exhausting — vital for operational success, yet rarely strategic in its execution.
-
-As global supply networks grow more complex, dynamic, and interdependent, the traditional methods of planning simply can’t keep pace. Supply disruptions, fluctuating demand, and compliance pressures now occur in real time — demanding decisions that do, too. That’s where **AI-powered decision intelligence** changes the equation. By bringing automation, predictive insight, and real-time orchestration together, Aera’s **Digital Material Planner Skill** transforms material planning from an administrative burden into a source of resilience, efficiency, and competitive advantage.
-
-# Why Traditional Approaches Fall Short
-
-For most planning teams, the day begins reactively — chasing supplier updates, resolving exceptions, and piecing together data from multiple systems. Traditional material requirements planning (MRP) tools can determine what materials are needed, in what quantities, and when — but they fall short in showing _how_ to anticipate disruptions, balance trade-offs, and act decisively across complex networks.
-
-This strain on planners isn’t driven by occasional challenges — it’s fueled by systemic forces that are only intensifying. Several converging trends are pushing material planning beyond the limits of manual processes and traditional MRP logic:
-
-- **Network fragmentation is increasing**, adding handoffs, intermediaries, and failure points across extended supplier ecosystems.
-- **Demand patterns are more volatile**, shaped by shorter product lifecycles, customization, and rapid market shifts that outpace static planning cycles.
-- **Compliance obligations are expanding**, as trade rules, environmental standards, and geopolitical restrictions introduce new constraints and variability.
-- **The risk landscape is escalating**, with port closures, labor actions, geopolitical conflict, and extreme weather turning yesterday’s edge cases into today’s regular operating conditions.
-
-Taken together, these trends overwhelm manual workflows and rule-based planning. The result is slower decisions, higher buffers, more expedites, and growing pressure on both margins and resilience — exactly the gaps decision intelligence is designed to close.
-
-# A Closed-Loop System for Smarter Material Planning
-
-Decision intelligence redefines how you approach material planning. Instead of relying on static dashboards or disconnected workflows, it combines real-time data, AI models, and automation to create a living, adaptive decision cycle. It bridges the gap between insight and action by detecting emerging risks, analyzing their impact, recommending the best response, and executing those decisions. The result is continuous, proactive orchestration — not the episodic, reactive planning of traditional systems.
-
-Aera, the decision intelligence agent, delivers this closed-loop approach through a series of interconnected stages:
-
-1. **Data foundation:** Aera integrates information from ERP, procurement, and supplier systems to create a unified, real-time view of material demand, supply, and performance.
-2. **Risk detection:** Aera continuously monitors key indicators — from supplier reliability to lead-time variability — identifying potential disruptions before they become crises.
-3. **Scenario evaluation:** Aera runs AI- and machine learning–based simulations to test alternative responses and determine which options best balance cost, service, and risk.
-4. **Recommendation generation:** Aera presents ranked recommendations, complete with impact analysis and trade-offs, helping you make faster, more confident decisions.
-5. **Action orchestration:** Aera executes approved actions automatically — adjusting purchase orders, reallocating inventory, or rescheduling production — with full visibility and traceability.
-6. **Learning and optimization:** Aera learns from every decision, applying those insights to refine future recommendations and continuously improve performance over time.
-
-By linking intelligence to execution, Aera turns material planning into a dynamic, self-improving process — one that keeps your operations agile, informed, and always one step ahead of disruption.
-
-# Turning Complexity into Collaboration
-
-Decision intelligence becomes tangible in the context of material planning through the **Digital Material Planner Skill** — where intelligence doesn’t just inform decisions; it **orchestrates** them. Leveraging this skill, Aera coordinates a network of specialized AI agents that operate like a cross-functional team, each focusing on a specific task while sharing context in real time.
-
-- **Demand Sensing Agent** monitors forecasts and production schedules to spot shifts as they happen.
-- **BOM Intelligence Agent** converts those shifts into precise component requirements by part, quantity, and timing.
-- **Contract Intelligence Agent** surfaces the terms that matter — pricing, lead times, and payment conditions — so plans reflect commercial reality.
-- **Supplier Performance Agent** evaluates reliability, quality, and responsiveness continuously, not just quarterly.
-- **Communication Agent** reads unstructured supplier messages and notifications, flagging early signals like “temporary constraints” or “capacity adjustments.”
-
-Crucially, these agents **work concurrently**, not in a linear hand-off. A demand spike can instantly trigger capacity checks, contract lookups, and risk scans — without human coordination. The skill synthesizes all inputs into **ranked, justification-rich recommendations, executes** approved actions directly in your systems, and **tracks outcomes with full auditability**. Each cycle feeds learning back into the models, so recommendations become faster, sharper, and better aligned with your objectives over time.
-
-# Driving Measurable Gains Across the Enterprise
-
-When this closed-loop approach is applied at scale, the impact is material and measurable. To ground the numbers: for a company with $10B in annual revenue and roughly $2B in inventory value (20% of cost of goods sold), optimizing material planning with decision intelligence can unlock up to $200M in working capital — not through blanket cuts, but by lifting availability while reducing safety stock. By implementing Aera with the Digital Material Planner Skill, such a company can:
-
-- **Improve financial performance** by lowering excess inventory and carrying costs while maintaining (and often improving) material availability — strengthening liquidity and funding growth without sacrificing service.
-- **Achieve operational excellence** by automating exception handling, supplier updates, and contract analysis (in seconds rather than hours) and reducing manual planning work by up to **90%** — shifting time to continuous improvement and supplier collaboration.
-- **Enhance strategic capability** by preventing up to **90%** of potential disruptions before they affect production schedules — modeling mitigation paths that balance cost, service, and coverage simultaneously.
-- **Create competitive differentiation** through faster market response, improved on-time delivery, and stronger supplier partnerships grounded in proactive planning rather than crisis management.
-
-These gains don’t just lower cost — they **increase resilience and agility**, turning material planning into a durable source of advantage.
-
-# Empowering Every Role with Intelligence
-
-Building on these gains, decision intelligence reshapes how people work day to day. By taking on complexity and routine analysis, Aera frees planners, leaders, and finance teams to focus on the decisions that drive growth and resilience. It doesn’t just optimize systems — it empowers the people behind them, surfacing real-time insights that enable smarter, faster action across every level of the organization:
-
-- **Material planners** can focus on strategy instead of spreadsheets. Automated exception handling, supplier changes, and performance monitoring free up time for network optimization and collaboration.
-- **Supply chain directors** gain real-time visibility across the supplier ecosystem. They can predict issues before they occur, align operations with strategy, and drive proactive decision-making across teams.
-- **CFOs** can release trapped working capital and improve predictability. Earlier risk detection and automated planning reduce unplanned costs and improve the return on assets.
-
-Across roles, decision intelligence shifts material planning **from firefighting to foresight**.
-
-# Why Leading Enterprises Choose Aera
-
-As organizations scale and their planning environments grow more complex, having a trusted, intelligent foundation becomes critical. Aera provides exactly that — a proven platform that combines enterprise-grade strength with continuous innovation.
-
-Global companies across industries trust Aera to power millions of supply chain decisions daily. Built on an enterprise-grade foundation with pre-built ERP connectors (e.g., SAP, Oracle, Microsoft Dynamics), Aera integrates quickly into existing environments — minimizing deployment time and maximizing early results.
-
-But reliability is only the beginning. What truly sets Aera apart is how it evolves alongside the business. Agentic AI capabilities enable decisions that adapt as business conditions change, while enterprise support, training, and customer success help organizations scale and sustain value over time. Aera doesn’t just automate processes — it creates **autonomy**: a system that learns, reasons, and acts so teams can make faster, smarter, and more confident decisions.
-
-# The Future of Material Planning Starts Now
-
-Supply chain volatility isn’t slowing — but decision-making can finally keep pace. With proven results and enterprise-ready technology, decision intelligence makes that possible, enabling organizations to move beyond reactive, manual processes toward proactive, AI-driven operations that strengthen resilience and growth. Leveraging the Digital Material Planner Skill, Aera turns material management into a self-optimizing process — detecting risks earlier, preventing shortages, reducing manual effort, and sustaining improvements over time. Together, these capabilities become a core driver of agility and adaptability across the enterprise.
-
-For more on how Aera can help you transform material planning into a source of resilience, efficiency, and strategic advantage, download the whitepaper, [_Reimagining Material Planning with AI Agents_](https://meet.aeratechnology.com/reimagining-material-planning-with-ai-agents).
+<content:encoded><![CDATA[<p>Material planning sits at the heart of every supply chain — determining whether the right materials reach the right places at the right time. Yet in most enterprises, this critical process is still dominated by manual processes, fragmented data, and constant firefighting. Planners spend their days chasing supplier updates, reconciling data, and managing disruptions that could have been anticipated sooner. The result is a process that’s essential but exhausting — vital for operational success, yet rarely strategic in its execution.</p>
+<p>As global supply networks grow more complex, dynamic, and interdependent, the traditional methods of planning simply can’t keep pace. Supply disruptions, fluctuating demand, and compliance pressures now occur in real time — demanding decisions that do, too. That’s where <strong>AI-powered decision intelligence</strong> changes the equation. By bringing automation, predictive insight, and real-time orchestration together, Aera’s <strong>Digital Material Planner Skill</strong> transforms material planning from an administrative burden into a source of resilience, efficiency, and competitive advantage.</p>
+<h1>Why Traditional Approaches Fall Short</h1>
+<p>For most planning teams, the day begins reactively — chasing supplier updates, resolving exceptions, and piecing together data from multiple systems. Traditional material requirements planning (MRP) tools can determine what materials are needed, in what quantities, and when — but they fall short in showing <em>how</em> to anticipate disruptions, balance trade-offs, and act decisively across complex networks.</p>
+<p>This strain on planners isn’t driven by occasional challenges — it’s fueled by systemic forces that are only intensifying. Several converging trends are pushing material planning beyond the limits of manual processes and traditional MRP logic:</p>
+<ul>
+<li><strong>Network fragmentation is increasing</strong>, adding handoffs, intermediaries, and failure points across extended supplier ecosystems.</li>
+<li><strong>Demand patterns are more volatile</strong>, shaped by shorter product lifecycles, customization, and rapid market shifts that outpace static planning cycles.</li>
+<li><strong>Compliance obligations are expanding</strong>, as trade rules, environmental standards, and geopolitical restrictions introduce new constraints and variability.</li>
+<li><strong>The risk landscape is escalating</strong>, with port closures, labor actions, geopolitical conflict, and extreme weather turning yesterday’s edge cases into today’s regular operating conditions.</li>
+</ul>
+<p>Taken together, these trends overwhelm manual workflows and rule-based planning. The result is slower decisions, higher buffers, more expedites, and growing pressure on both margins and resilience — exactly the gaps decision intelligence is designed to close.</p>
+<h1>A Closed-Loop System for Smarter Material Planning</h1>
+<p>Decision intelligence redefines how you approach material planning. Instead of relying on static dashboards or disconnected workflows, it combines real-time data, AI models, and automation to create a living, adaptive decision cycle. It bridges the gap between insight and action by detecting emerging risks, analyzing their impact, recommending the best response, and executing those decisions. The result is continuous, proactive orchestration — not the episodic, reactive planning of traditional systems.</p>
+<p>Aera, the decision intelligence agent, delivers this closed-loop approach through a series of interconnected stages:</p>
+<ol>
+<li><strong>Data foundation:</strong> Aera integrates information from ERP, procurement, and supplier systems to create a unified, real-time view of material demand, supply, and performance.</li>
+<li><strong>Risk detection:</strong> Aera continuously monitors key indicators — from supplier reliability to lead-time variability — identifying potential disruptions before they become crises.</li>
+<li><strong>Scenario evaluation:</strong> Aera runs AI- and machine learning–based simulations to test alternative responses and determine which options best balance cost, service, and risk.</li>
+<li><strong>Recommendation generation:</strong> Aera presents ranked recommendations, complete with impact analysis and trade-offs, helping you make faster, more confident decisions.</li>
+<li><strong>Action orchestration:</strong> Aera executes approved actions automatically — adjusting purchase orders, reallocating inventory, or rescheduling production — with full visibility and traceability.</li>
+<li><strong>Learning and optimization:</strong> Aera learns from every decision, applying those insights to refine future recommendations and continuously improve performance over time.</li>
+</ol>
+<p>By linking intelligence to execution, Aera turns material planning into a dynamic, self-improving process — one that keeps your operations agile, informed, and always one step ahead of disruption.</p>
+<h1>Turning Complexity into Collaboration</h1>
+<p>Decision intelligence becomes tangible in the context of material planning through the <strong>Digital Material Planner Skill</strong> — where intelligence doesn’t just inform decisions; it <strong>orchestrates</strong> them. Leveraging this skill, Aera coordinates a network of specialized AI agents that operate like a cross-functional team, each focusing on a specific task while sharing context in real time.</p>
+<ul>
+<li><strong>Demand Sensing Agent</strong> monitors forecasts and production schedules to spot shifts as they happen.</li>
+<li><strong>BOM Intelligence Agent</strong> converts those shifts into precise component requirements by part, quantity, and timing.</li>
+<li><strong>Contract Intelligence Agent</strong> surfaces the terms that matter — pricing, lead times, and payment conditions — so plans reflect commercial reality.</li>
+<li><strong>Supplier Performance Agent</strong> evaluates reliability, quality, and responsiveness continuously, not just quarterly.</li>
+<li><strong>Communication Agent</strong> reads unstructured supplier messages and notifications, flagging early signals like “temporary constraints” or “capacity adjustments.”</li>
+</ul>
+<p>Crucially, these agents <strong>work concurrently</strong>, not in a linear hand-off. A demand spike can instantly trigger capacity checks, contract lookups, and risk scans — without human coordination. The skill synthesizes all inputs into <strong>ranked, justification-rich recommendations, executes</strong> approved actions directly in your systems, and <strong>tracks outcomes with full auditability</strong>. Each cycle feeds learning back into the models, so recommendations become faster, sharper, and better aligned with your objectives over time.</p>
+<h1>Driving Measurable Gains Across the Enterprise</h1>
+<p>When this closed-loop approach is applied at scale, the impact is material and measurable. To ground the numbers: for a company with $10B in annual revenue and roughly $2B in inventory value (20% of cost of goods sold), optimizing material planning with decision intelligence can unlock up to $200M in working capital — not through blanket cuts, but by lifting availability while reducing safety stock. By implementing Aera with the Digital Material Planner Skill, such a company can:</p>
+<ul>
+<li><strong>Improve financial performance</strong> by lowering excess inventory and carrying costs while maintaining (and often improving) material availability — strengthening liquidity and funding growth without sacrificing service.</li>
+<li><strong>Achieve operational excellence</strong> by automating exception handling, supplier updates, and contract analysis (in seconds rather than hours) and reducing manual planning work by up to <strong>90%</strong> — shifting time to continuous improvement and supplier collaboration.</li>
+<li><strong>Enhance strategic capability</strong> by preventing up to <strong>90%</strong> of potential disruptions before they affect production schedules — modeling mitigation paths that balance cost, service, and coverage simultaneously.</li>
+<li><strong>Create competitive differentiation</strong> through faster market response, improved on-time delivery, and stronger supplier partnerships grounded in proactive planning rather than crisis management.</li>
+</ul>
+<p>These gains don’t just lower cost — they <strong>increase resilience and agility</strong>, turning material planning into a durable source of advantage.</p>
+<h1>Empowering Every Role with Intelligence</h1>
+<p>Building on these gains, decision intelligence reshapes how people work day to day. By taking on complexity and routine analysis, Aera frees planners, leaders, and finance teams to focus on the decisions that drive growth and resilience. It doesn’t just optimize systems — it empowers the people behind them, surfacing real-time insights that enable smarter, faster action across every level of the organization:</p>
+<ul>
+<li><strong>Material planners</strong> can focus on strategy instead of spreadsheets. Automated exception handling, supplier changes, and performance monitoring free up time for network optimization and collaboration.</li>
+<li><strong>Supply chain directors</strong> gain real-time visibility across the supplier ecosystem. They can predict issues before they occur, align operations with strategy, and drive proactive decision-making across teams.</li>
+<li><strong>CFOs</strong> can release trapped working capital and improve predictability. Earlier risk detection and automated planning reduce unplanned costs and improve the return on assets.</li>
+</ul>
+<p>Across roles, decision intelligence shifts material planning <strong>from firefighting to foresight</strong>.</p>
+<h1>Why Leading Enterprises Choose Aera</h1>
+<p>As organizations scale and their planning environments grow more complex, having a trusted, intelligent foundation becomes critical. Aera provides exactly that — a proven platform that combines enterprise-grade strength with continuous innovation.</p>
+<p>Global companies across industries trust Aera to power millions of supply chain decisions daily. Built on an enterprise-grade foundation with pre-built ERP connectors (e.g., SAP, Oracle, Microsoft Dynamics), Aera integrates quickly into existing environments — minimizing deployment time and maximizing early results.</p>
+<p>But reliability is only the beginning. What truly sets Aera apart is how it evolves alongside the business. Agentic AI capabilities enable decisions that adapt as business conditions change, while enterprise support, training, and customer success help organizations scale and sustain value over time. Aera doesn’t just automate processes — it creates <strong>autonomy</strong>: a system that learns, reasons, and acts so teams can make faster, smarter, and more confident decisions.</p>
+<h1>The Future of Material Planning Starts Now</h1>
+<p>Supply chain volatility isn’t slowing — but decision-making can finally keep pace. With proven results and enterprise-ready technology, decision intelligence makes that possible, enabling organizations to move beyond reactive, manual processes toward proactive, AI-driven operations that strengthen resilience and growth. Leveraging the Digital Material Planner Skill, Aera turns material management into a self-optimizing process — detecting risks earlier, preventing shortages, reducing manual effort, and sustaining improvements over time. Together, these capabilities become a core driver of agility and adaptability across the enterprise.</p>
+<p>For more on how Aera can help you transform material planning into a source of resilience, efficiency, and strategic advantage, download the whitepaper, <a href="https://meet.aeratechnology.com/reimagining-material-planning-with-ai-agents"><em>Reimagining Material Planning with AI Agents</em></a>.</p>
 ]]></content:encoded>
 <wp:post_id>200005</wp:post_id>
-<wp:post_date>2025-10-10T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-10T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-10 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-10 12:00:00</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>material-planning-reimagined-ai-agents-in-action</wp:post_name>
@@ -856,12 +726,12 @@ For more on how Aera can help you transform material planning into a source of r
 <item>
 <title><![CDATA[Material Planning, Reimagined: AI Agents in Action featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/2yTXVjxAJ0kGNmDGaIQo9Q/639c578076054fd0955ec767b0e5751d/Blog_Hero_Banner_-_Material_Planning__Reimagined.jpeg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Nikitas Magel</dc:creator>
 <guid isPermaLink="false">attachment-300010</guid>
 <wp:post_id>300010</wp:post_id>
-<wp:post_date>2025-10-10T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-10T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-10 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-10 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200005</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -870,12 +740,12 @@ For more on how Aera can help you transform material planning into a source of r
 <item>
 <title><![CDATA[Nikitas Magel author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/1lkoPLU3w2r7aMUJZiTbMM/c72e9b578b6e471e9095962b886324f0/nikitas.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Nikitas Magel</dc:creator>
 <guid isPermaLink="false">attachment-300011</guid>
 <wp:post_id>300011</wp:post_id>
-<wp:post_date>2025-10-10T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-10T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-10 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-10 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -884,21 +754,15 @@ For more on how Aera can help you transform material planning into a source of r
 <item>
 <title><![CDATA[Webinar Recap: From Blind Spots to Visibility — How Alcon is Transforming its Supply Chain with AI]]></title>
 <link>/blogs/from-blind-spots-to-visibility-how-alcon-is-transforming-its-supply-chain-with-ai</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Maria Luceron</dc:creator>
 <excerpt:encoded><![CDATA[See how Alcon, with support from EY, uses Aera’s decision intelligence to improve delivery accuracy, cut manual work, and turn visibility into action.]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[See how Alcon, with support from EY, uses Aera’s decision intelligence to improve delivery accuracy, cut manual work, and turn visibility into action.]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-5OWXv1XlLPWzbfWhAvbRcn</guid>
-<content:encoded><![CDATA[![Blog Hero Banner - Webinar, From Blind Spots to Visibility](//images.ctfassets.net/mh1amgo8m7ts/4QFZEeFnWfT2LSr6hn6k3t/c06eda58102ef4380c320b61a4ca15c3/Blog_Hero_Banner_-_Webinar__From_Blind_Spots_to_Visibility.jpg)
-
-### Summary
-
-In our *Future.Now* webinar, __“From Blind Spots to Visibility: How Alcon is Transforming its Supply Chain with AI,”__ we explored how Alcon embedded the Aera decision intelligence agent directly into day-to-day operations to move from manual firefighting to proactive, system-driven decisions. Speakers walked through how the agent ingests live signals across supply, demand, and inventory; reasons over enterprise rules and constraints; and then issues explainable recommendations — so planners can act quickly on the best available option rather than assemble data from disparate systems. The session detailed how this approach improves delivery accuracy, shortens response times, and lowers the need for rush shipments by addressing issues before they impact customers.
-
-We also examined the operating model that made this possible: aligning to a single decision data model; codifying policies and service priorities as guardrails; and sequencing rollout by high-impact use cases (such as system-driven sourcing, distribution rebalancing, and exception triage). With EY supporting enablement and scale, Alcon emphasized measurable outcomes — higher on-time performance, fewer manual touches per decision, and faster cycle times — while maintaining auditability and compliance. Together, these elements showed how visibility becomes action, how actions are governed, and how governed action drives resilience.
-
-### Key Takeaways
-
+<content:encoded><![CDATA[<h3>Summary</h3>
+<p>In our <em>Future.Now</em> webinar, <strong>“From Blind Spots to Visibility: How Alcon is Transforming its Supply Chain with AI,”</strong> we explored how Alcon embedded the Aera decision intelligence agent directly into day-to-day operations to move from manual firefighting to proactive, system-driven decisions. Speakers walked through how the agent ingests live signals across supply, demand, and inventory; reasons over enterprise rules and constraints; and then issues explainable recommendations — so planners can act quickly on the best available option rather than assemble data from disparate systems. The session detailed how this approach improves delivery accuracy, shortens response times, and lowers the need for rush shipments by addressing issues before they impact customers.</p>
+<p>We also examined the operating model that made this possible: aligning to a single decision data model; codifying policies and service priorities as guardrails; and sequencing rollout by high-impact use cases (such as system-driven sourcing, distribution rebalancing, and exception triage). With EY supporting enablement and scale, Alcon emphasized measurable outcomes — higher on-time performance, fewer manual touches per decision, and faster cycle times — while maintaining auditability and compliance. Together, these elements showed how visibility becomes action, how actions are governed, and how governed action drives resilience.</p>
+<h3>Key Takeaways</h3>
 <ul>
   <li><strong>Decision intelligence turns visibility into action.</strong><br/>
     Many programs stall at dashboards and reports; Alcon went further by embedding agents directly in operational flows. With Aera connected to enterprise logic and policies, recommendations fire in real time, accounting for constraints such as capacity, sourcing rules, and service priorities — so teams act faster and with greater consistency. Each recommendation includes a short rationale and feasibility check, making it easy to review and execute.</li>
@@ -924,8 +788,7 @@ We also examined the operating model that made this possible: aligning to a sing
   </li>
 </ul>
 
-### Speakers
-
+<h3>Speakers</h3>
 <table border="1" cellpadding="8" cellspacing="0" style="border-color: #ffffff;">
   <tr>
     <td class="speaker-img"><img src="https://images.ctfassets.net/mh1amgo8m7ts/6t926TJUcXh7FFhfFMVNg1/3ca1b10fcfc1bb5ad942cf180a37a140/mariaL.jpg" alt="Maria"/></td>
@@ -949,12 +812,10 @@ Stefano brings 16 years of experience transforming and digitizing global supply 
   </tr>
 </table>
 
-### Full Recording
-
+<h3>Full Recording</h3>
 <p><a href="https://meet.aeratechnology.com/from-blind-spots-to-visibility-how-alcon-is-transforming-its-supply-chain-with-ai-sep30" target="_blank">Access the full webinar recording here</a></p>
 
-### Q&A
-
+<h3>Q&amp;A</h3>
 <p>
   <strong>Q: Harmonizing data from multiple systems is always a challenge. You seem to have done it well. What approach did you take to make it work?</strong><br/>
 <strong>A: Jan Kovarik:</strong> It’s a very difficult undertaking. At Alcon we enforced, in a very strict fashion, what “good” looks like, the standards we wanted to see. We started at the top level with global attributes (if you want the technical jargon), then defined regional and site-specific standards, and so on. The first word that came to mind was policing. It wasn’t a pretty process — but it was extremely powerful by the end of the journey. When we deployed the ERP system, it worked on day one, followed global standards, and gave us value we could build on. As Johanna and Stefano pointed out, that foundation made implementing the decision intelligence layer — which sits on top of various systems, ERP being one of the most important ones and all fed by the data — much faster. The value generation was bigger and easier for the organization.
@@ -992,8 +853,8 @@ On the value proposition, understand the business value DI can bring. That’s w
 </p>
 ]]></content:encoded>
 <wp:post_id>200006</wp:post_id>
-<wp:post_date>2025-10-03T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-03T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-03 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-03 12:00:00</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>from-blind-spots-to-visibility-how-alcon-is-transforming-its-supply-chain-with-ai</wp:post_name>
@@ -1027,12 +888,12 @@ On the value proposition, understand the business value DI can bring. That’s w
 <item>
 <title><![CDATA[Webinar Recap: From Blind Spots to Visibility — How Alcon is Transforming its Supply Chain with AI featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/4QFZEeFnWfT2LSr6hn6k3t/c06eda58102ef4380c320b61a4ca15c3/Blog_Hero_Banner_-_Webinar__From_Blind_Spots_to_Visibility.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Maria Luceron</dc:creator>
 <guid isPermaLink="false">attachment-300012</guid>
 <wp:post_id>300012</wp:post_id>
-<wp:post_date>2025-10-03T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-03T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-03 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-03 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200006</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -1041,12 +902,12 @@ On the value proposition, understand the business value DI can bring. That’s w
 <item>
 <title><![CDATA[Maria Luceron author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/6t926TJUcXh7FFhfFMVNg1/3ca1b10fcfc1bb5ad942cf180a37a140/mariaL.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Maria Luceron</dc:creator>
 <guid isPermaLink="false">attachment-300013</guid>
 <wp:post_id>300013</wp:post_id>
-<wp:post_date>2025-10-03T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-10-03T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-10-03 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-10-03 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -1055,13 +916,12 @@ On the value proposition, understand the business value DI can bring. That’s w
 <item>
 <title><![CDATA[Smarter Claims Processing for Faster Cash Flow]]></title>
 <link>/blogs/smarter-claims-processing-for-faster-cash-flow</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <excerpt:encoded><![CDATA[Learn how Aera’s Claims Management Skill helps organizations accelerate claim resolution, reduce workload, and ensure accurate settlements at scale.]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[Learn how Aera’s Claims Management Skill helps organizations accelerate claim resolution, reduce workload, and ensure accurate settlements at scale.]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-7qT2x0yALSUCdv20T3tsc9</guid>
-<content:encoded><![CDATA[![Blog cover (1)](//images.ctfassets.net/mh1amgo8m7ts/7Gm5W8m4uJboJEtXqJSDnX/43bb905260b5c38ad6f48aad80ef62bc/Blog_cover__1_.jpg)
-
+<content:encoded><![CDATA[<p><img src="//images.ctfassets.net/mh1amgo8m7ts/7Gm5W8m4uJboJEtXqJSDnX/43bb905260b5c38ad6f48aad80ef62bc/Blog_cover__1_.jpg" alt="Blog cover (1)"></p>
 <p style="margin-top: 30px;
     margin-bottom: 30px;
     padding: 20px;
@@ -1076,56 +936,44 @@ On the value proposition, understand the business value DI can bring. That’s w
     font-weight: 600;
     text-align: center;">This blog is part of an ongoing series exploring how Aera Skills solve real-world supply chain challenges.</p>
 
-Efficient claims management is critical for maintaining healthy cash flow and strong customer relationships — yet achieving it consistently can be a challenge. That’s where AI and automation can help, providing the intelligence needed to accelerate resolution, reduce manual work, and improve settlement accuracy.
-
-With the __Claims Management Skill__, the Aera decision intelligence agent has achieved claim coverage exceeding 90 percent, reduced manual effort by more than 80 percent, and improved resolution accuracy to above 85 percent. These results enable finance and customer service teams to resolve claims faster, operate more efficiently, and strengthen customer satisfaction.
-
-### The Challenges: Manual Work, Data Complexity, and Inconsistent Resolution
-
-Many organizations still rely on manual work and disconnected systems to process customer claims. These inefficiencies slow the billing-to-cash cycle, create errors, and overburden specialists. Common challenges include:
-
-- __Manual claim processing__ requiring extensive review, categorization, and resolution by claim specialists.
-- __Complex data management__ where claims must be matched against sales orders, billing documents, and contract terms.
-- __Inconsistent claim handling__ due to claims arriving in structured formats (spreadsheets) and unstructured formats (PDFs, emails).
-- __Resource-intensive workflows__ requiring integration across claims systems, sales orders, master data, and communication channels.
-
-Left unresolved, these issues create billing delays, hinder cash flow, and strain customer relationships.
-
-### The Aera Solution: AI-Driven Claims Management
-
-Aera, the decision intelligence agent, uses the __Claims Management Skill__ to automate claim validation and processing from end to end. This transforms claims management into a faster, more accurate, and scalable system of action by:
-
-- __Grouping claims intelligently__ by type, amount, and data availability across structured and unstructured sources.
-- __Applying contract validation__ against contracts, pricing agreements, promotional terms, and master data to calculate accurate settlements.
-- __Generating clear recommendations__ to confirm valid claims for settlement or notify customers of invalid claims.
-- __Enabling specialist review__ by integrating recommendations into workflows, allowing experts to focus on approvals instead of research.
-
-Behind the scenes, Aera applies a team of AI agents that structure data, validate it against contracts, and apply reasoning logic to assess legitimacy. Document processing, contract matching, and decision rules combine to deliver reliable, automated claim outcomes.
-
-### Case Study: From Bottlenecks to Accelerated Resolution
-
-A leading consumer packaged goods (CPG) company faced delays and inconsistencies in claim resolution that slowed cash flow and overburdened specialists. Manual reviews across multiple contract types and agreements created bottlenecks and frequent errors.
-
-After deploying Aera with the Claims Management Skill, the company automated claim categorization, contract validation, and recommendation generation. Within just a few months, it achieved:
-
-- __>90% coverage of claims__
-- __>80% reduction in manual effort__
-- __>85% accuracy in claim resolution__
-
-These improvements accelerated resolution times, reduced operational workload, and improved customer satisfaction.
-
-### Why Aera: What Sets It Apart
-
-Aera transforms claims processing from a manual, error-prone task into a streamlined, intelligent process powered by AI and automation. It replaces complexity and inconsistency with speed, accuracy, and consistency, so teams can focus on making better decisions, not managing claims data.
-
-- __Unified decision intelligence:__ Aera integrates claim data, contract validation, and settlement logic into a single solution.
-- __AI-augmented workflows:__ It improves claims efficiency by applying composite AI and intelligent automation across the full claims lifecycle.
-- __Closed-loop execution:__ Valid claims are automatically processed and invalid claims trigger clear customer notifications, accelerating and standardizing resolution at scale.
-
-With Aera, finance and customer service teams can move beyond slow, manual processes and toward faster, more reliable decision-making — confident that their claims are accurate, timely, and actionable.
-
-### Ready to transform your claims management?
-
+<p>Efficient claims management is critical for maintaining healthy cash flow and strong customer relationships — yet achieving it consistently can be a challenge. That’s where AI and automation can help, providing the intelligence needed to accelerate resolution, reduce manual work, and improve settlement accuracy.</p>
+<p>With the <strong>Claims Management Skill</strong>, the Aera decision intelligence agent has achieved claim coverage exceeding 90 percent, reduced manual effort by more than 80 percent, and improved resolution accuracy to above 85 percent. These results enable finance and customer service teams to resolve claims faster, operate more efficiently, and strengthen customer satisfaction.</p>
+<h3>The Challenges: Manual Work, Data Complexity, and Inconsistent Resolution</h3>
+<p>Many organizations still rely on manual work and disconnected systems to process customer claims. These inefficiencies slow the billing-to-cash cycle, create errors, and overburden specialists. Common challenges include:</p>
+<ul>
+<li><strong>Manual claim processing</strong> requiring extensive review, categorization, and resolution by claim specialists.</li>
+<li><strong>Complex data management</strong> where claims must be matched against sales orders, billing documents, and contract terms.</li>
+<li><strong>Inconsistent claim handling</strong> due to claims arriving in structured formats (spreadsheets) and unstructured formats (PDFs, emails).</li>
+<li><strong>Resource-intensive workflows</strong> requiring integration across claims systems, sales orders, master data, and communication channels.</li>
+</ul>
+<p>Left unresolved, these issues create billing delays, hinder cash flow, and strain customer relationships.</p>
+<h3>The Aera Solution: AI-Driven Claims Management</h3>
+<p>Aera, the decision intelligence agent, uses the <strong>Claims Management Skill</strong> to automate claim validation and processing from end to end. This transforms claims management into a faster, more accurate, and scalable system of action by:</p>
+<ul>
+<li><strong>Grouping claims intelligently</strong> by type, amount, and data availability across structured and unstructured sources.</li>
+<li><strong>Applying contract validation</strong> against contracts, pricing agreements, promotional terms, and master data to calculate accurate settlements.</li>
+<li><strong>Generating clear recommendations</strong> to confirm valid claims for settlement or notify customers of invalid claims.</li>
+<li><strong>Enabling specialist review</strong> by integrating recommendations into workflows, allowing experts to focus on approvals instead of research.</li>
+</ul>
+<p>Behind the scenes, Aera applies a team of AI agents that structure data, validate it against contracts, and apply reasoning logic to assess legitimacy. Document processing, contract matching, and decision rules combine to deliver reliable, automated claim outcomes.</p>
+<h3>Case Study: From Bottlenecks to Accelerated Resolution</h3>
+<p>A leading consumer packaged goods (CPG) company faced delays and inconsistencies in claim resolution that slowed cash flow and overburdened specialists. Manual reviews across multiple contract types and agreements created bottlenecks and frequent errors.</p>
+<p>After deploying Aera with the Claims Management Skill, the company automated claim categorization, contract validation, and recommendation generation. Within just a few months, it achieved:</p>
+<ul>
+<li><strong>&gt;90% coverage of claims</strong></li>
+<li><strong>&gt;80% reduction in manual effort</strong></li>
+<li><strong>&gt;85% accuracy in claim resolution</strong></li>
+</ul>
+<p>These improvements accelerated resolution times, reduced operational workload, and improved customer satisfaction.</p>
+<h3>Why Aera: What Sets It Apart</h3>
+<p>Aera transforms claims processing from a manual, error-prone task into a streamlined, intelligent process powered by AI and automation. It replaces complexity and inconsistency with speed, accuracy, and consistency, so teams can focus on making better decisions, not managing claims data.</p>
+<ul>
+<li><strong>Unified decision intelligence:</strong> Aera integrates claim data, contract validation, and settlement logic into a single solution.</li>
+<li><strong>AI-augmented workflows:</strong> It improves claims efficiency by applying composite AI and intelligent automation across the full claims lifecycle.</li>
+<li><strong>Closed-loop execution:</strong> Valid claims are automatically processed and invalid claims trigger clear customer notifications, accelerating and standardizing resolution at scale.</li>
+</ul>
+<p>With Aera, finance and customer service teams can move beyond slow, manual processes and toward faster, more reliable decision-making — confident that their claims are accurate, timely, and actionable.</p>
+<h3>Ready to transform your claims management?</h3>
 <p>For more on how Aera can help you achieve faster resolutions, eliminate manual effort, and improve accuracy, download the <a href="https://meet.aeratechnology.com/hubfs/Skill%20Briefs/Skill%20Brief%20-%20Claims%20Management%20Skill.pdf" target="_blank" style="font-style: italic">Claims Management Skill brief</a> or <a href="https://www.aeratechnology.com/demo" target="_blank" style="font-style: italic">schedule a demo</a>.</p>
 
 <p>
@@ -1135,8 +983,8 @@ With Aera, finance and customer service teams can move beyond slow, manual proce
 </p>
 ]]></content:encoded>
 <wp:post_id>200007</wp:post_id>
-<wp:post_date>2025-09-30T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-30T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-30 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-30 12:00:00</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>smarter-claims-processing-for-faster-cash-flow</wp:post_name>
@@ -1170,12 +1018,12 @@ With Aera, finance and customer service teams can move beyond slow, manual proce
 <item>
 <title><![CDATA[Smarter Claims Processing for Faster Cash Flow featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/7Gm5W8m4uJboJEtXqJSDnX/43bb905260b5c38ad6f48aad80ef62bc/Blog_cover__1_.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <guid isPermaLink="false">attachment-300014</guid>
 <wp:post_id>300014</wp:post_id>
-<wp:post_date>2025-09-30T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-30T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-30 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-30 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200007</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -1184,12 +1032,12 @@ With Aera, finance and customer service teams can move beyond slow, manual proce
 <item>
 <title><![CDATA[Naveen Reddy author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/4sRyWjymfCQUHSdUUHnR8r/900ec2e47241c957a2a464d00be5c9d6/naveen-kumar.jpeg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <guid isPermaLink="false">attachment-300015</guid>
 <wp:post_id>300015</wp:post_id>
-<wp:post_date>2025-09-30T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-30T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-30 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-30 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -1198,21 +1046,16 @@ With Aera, finance and customer service teams can move beyond slow, manual proce
 <item>
 <title><![CDATA[Webinar Recap: Agentic AI in Action — Redefining Enterprise Decision-Making with Aera]]></title>
 <link>/blogs/agentic-ai-in-action-redefining-enterprise-decision-making-with-aera</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Uma Asthana</dc:creator>
 <excerpt:encoded><![CDATA[Explore how embedded agentic AI is redefining enterprise decision-making with Aera, from orchestrating agent teams to scaling autonomy with control.]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[Explore how embedded agentic AI is redefining enterprise decision-making with Aera, from orchestrating agent teams to scaling autonomy with control.]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-1UGEoC4S6rkhf6DWPsTJEA</guid>
-<content:encoded><![CDATA[![Landing page and blog recap cover (1) (1)](//images.ctfassets.net/mh1amgo8m7ts/7JYdTX4wwUAD59SQfbVIi7/54e42ee9379a36ede57651506d4ea9af/Landing_page_and_blog_recap_cover__1___1_.jpg)
-
-### Summary
-
-In our Future.Now webinar, __“Agentic AI in Action: Redefining Enterprise Decision-Making with Aera,”__ we explored how organizations are moving beyond copilots and chatbots to deploy embedded AI agents capable of reasoning, acting, and adapting at scale. The discussion focused on the innovations within Aera’s latest release, which combine the reasoning power of large language models (LLMs) with enterprise logic and governance to bring agentic AI directly into live decision processes.
-
-Through a mix of real-world context and live demonstration, the session highlighted how enterprises can orchestrate teams of AI agents to tackle complex, high-value decisions. The demonstration centered on supply chain risk management, showing how agent teams can detect disruptions early, simulate alternative responses, and execute actions while maintaining trust and explainability. Taken together, the insights underscored how agentic AI is redefining decision-making by embedding intelligence directly where it matters most — inside the flow of enterprise operations.
-
-### Key Takeaways
-
+<content:encoded><![CDATA[<p><img src="//images.ctfassets.net/mh1amgo8m7ts/7JYdTX4wwUAD59SQfbVIi7/54e42ee9379a36ede57651506d4ea9af/Landing_page_and_blog_recap_cover__1___1_.jpg" alt="Landing page and blog recap cover (1) (1)"></p>
+<h3>Summary</h3>
+<p>In our Future.Now webinar, <strong>“Agentic AI in Action: Redefining Enterprise Decision-Making with Aera,”</strong> we explored how organizations are moving beyond copilots and chatbots to deploy embedded AI agents capable of reasoning, acting, and adapting at scale. The discussion focused on the innovations within Aera’s latest release, which combine the reasoning power of large language models (LLMs) with enterprise logic and governance to bring agentic AI directly into live decision processes.</p>
+<p>Through a mix of real-world context and live demonstration, the session highlighted how enterprises can orchestrate teams of AI agents to tackle complex, high-value decisions. The demonstration centered on supply chain risk management, showing how agent teams can detect disruptions early, simulate alternative responses, and execute actions while maintaining trust and explainability. Taken together, the insights underscored how agentic AI is redefining decision-making by embedding intelligence directly where it matters most — inside the flow of enterprise operations.</p>
+<h3>Key Takeaways</h3>
 <ul>
   <li>
     <strong>Agentic AI extends LLMs into live decision processes.</strong><br/> 
@@ -1236,8 +1079,7 @@ Through a mix of real-world context and live demonstration, the session highligh
   </li>
 </ul>
 
-### Speakers
-
+<h3>Speakers</h3>
 <table border="1" cellpadding="8" cellspacing="0" style="border-color: #ffffff;">
   <tr>
     <td class="speaker-img"><img src="https://images.ctfassets.net/mh1amgo8m7ts/2AucyDA0TfGVtP69QUA8Mq/a4819450a90db20e035652beefedc48a/61bc98a393de113234f112eb_Laurent_Lefouet.png" alt="Lalitha"/></td>
@@ -1251,12 +1093,10 @@ Ram leads the GTM strategy for Aera Decision Cloud with over two decades of expe
   </tr>
 </table>
 
-### Full Recording
-
+<h3>Full Recording</h3>
 <p><a href="https://meet.aeratechnology.com/agentic-ai-in-action-redefining-enterprise-decision-making-with-aera" target="_blank">Access the full webinar recording here</a>.</p>
 
-### Q&A
-
+<h3>Q&amp;A</h3>
 <p>
   <strong>Q: Can you explain what is more beneficial — RPA or agentic AI — in terms of business value from an organizational perspective?</strong><br/>
   <strong>A:</strong> RPA is primarily focused on reducing FTEs by automating tasks people used to perform manually. The system monitors human activity and then mimics those actions — such as keyboard inputs — to reduce call center headcount or other task-based labor. Its business value lies almost entirely in task automation and cost reduction.<br/>
@@ -1319,8 +1159,8 @@ The platform supports no-code, low-code, and pro-code development. Users can int
 </p>
 ]]></content:encoded>
 <wp:post_id>200008</wp:post_id>
-<wp:post_date>2025-09-18T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-18T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-18 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-18 12:00:00</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>agentic-ai-in-action-redefining-enterprise-decision-making-with-aera</wp:post_name>
@@ -1354,12 +1194,12 @@ The platform supports no-code, low-code, and pro-code development. Users can int
 <item>
 <title><![CDATA[Webinar Recap: Agentic AI in Action — Redefining Enterprise Decision-Making with Aera featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/7JYdTX4wwUAD59SQfbVIi7/54e42ee9379a36ede57651506d4ea9af/Landing_page_and_blog_recap_cover__1___1_.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Uma Asthana</dc:creator>
 <guid isPermaLink="false">attachment-300016</guid>
 <wp:post_id>300016</wp:post_id>
-<wp:post_date>2025-09-18T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-18T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-18 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-18 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200008</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -1368,12 +1208,12 @@ The platform supports no-code, low-code, and pro-code development. Users can int
 <item>
 <title><![CDATA[Uma Asthana author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/1yZJCvOym0YCSciPGrec6i/3e5b92e396fd1c89b20af374a73fdf84/umaastana.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Uma Asthana</dc:creator>
 <guid isPermaLink="false">attachment-300017</guid>
 <wp:post_id>300017</wp:post_id>
-<wp:post_date>2025-09-18T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-18T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-18 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-18 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -1382,18 +1222,15 @@ The platform supports no-code, low-code, and pro-code development. Users can int
 <item>
 <title><![CDATA[AeraHUB 25, the Decision Intelligence Global Summit: Why Attend in Person]]></title>
 <link>/blogs/aerahub-25-decision-intelligence-global-summit-why-attend-in-person</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Nikitas Magel</dc:creator>
 <excerpt:encoded><![CDATA[Learn why attending AeraHUB 25, the Decision Intelligence Global Summit in New York City, offers unmatched value with demos, training, insights, and networking.]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[Learn why attending AeraHUB 25, the Decision Intelligence Global Summit in New York City, offers unmatched value with demos, training, insights, and networking.]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-3J9kTZw5iK4Nd1auvVz5je</guid>
-<content:encoded><![CDATA[![Blog Hero Banner - AeraHUB 25, Why Attend in Person (1)](//images.ctfassets.net/mh1amgo8m7ts/1hy1GhRIXbPiDbVMDw9DFG/76b2cdb05a0ef344407f9bd8a9ec7c0f/Blog_Hero_Banner_-_AeraHUB_25__Why_Attend_in_Person__1_.jpg)
-
-<p>The countdown is on for our flagship global event in New York City — <a href="https://www.aeratechnology.com/aerahub-2025" target="_blank">AeraHUB 25, the Decision Intelligence Global Summit</a> — and the excitement is building fast!
+<content:encoded><![CDATA[<p>The countdown is on for our flagship global event in New York City — <a href="https://www.aeratechnology.com/aerahub-2025" target="_blank">AeraHUB 25, the Decision Intelligence Global Summit</a> — and the excitement is building fast!
 </p>
 
-Registrations are coming in from around the world, and with so much momentum, we’re expanding the agenda to make this year’s experience even more dynamic than ever before.
-
+<p>Registrations are coming in from around the world, and with so much momentum, we’re expanding the agenda to make this year’s experience even more dynamic than ever before.</p>
 <p>While AeraHUB 25 will once again be offered in a hybrid format, there’s nothing quite like being on site at <a href="https://www.thetimescenter.com" target="_blank">The Times Center in New York City</a>. Here’s what awaits those joining us in person this November:</p>
 
 <ul style="padding-left: 20px;">
@@ -1425,10 +1262,8 @@ Registrations are coming in from around the world, and with so much momentum, we
 
 <p>Curious what the AeraHUB experience feels like? <a href="javascript:;" id="openPopup">Watch our sizzle reel from past events</a> and get a glimpse of the energy, insights, and connections that await in New York.</p>
 
-__Experience it live this November__. Join us in New York for this premier gathering of innovators and practitioners in decision intelligence. See firsthand how applying AI to optimize and automate decision-making is reshaping industries and unlocking new opportunities for growth.
-
-Be part of the momentum at AeraHUB 25 and experience the future of decision intelligence firsthand.
-
+<p><strong>Experience it live this November</strong>. Join us in New York for this premier gathering of innovators and practitioners in decision intelligence. See firsthand how applying AI to optimize and automate decision-making is reshaping industries and unlocking new opportunities for growth.</p>
+<p>Be part of the momentum at AeraHUB 25 and experience the future of decision intelligence firsthand.</p>
 <div class="videoPopup" id="videoPopup">
                 <div class="videoContainer">
                     <button class="closeBtn" id="closePopup">&times;</button>
@@ -1498,8 +1333,8 @@ Be part of the momentum at AeraHUB 25 and experience the future of decision inte
         });
 </script>]]></content:encoded>
 <wp:post_id>200009</wp:post_id>
-<wp:post_date>2025-09-17T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-17T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-17 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-17 12:00:00</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>aerahub-25-decision-intelligence-global-summit-why-attend-in-person</wp:post_name>
@@ -1533,12 +1368,12 @@ Be part of the momentum at AeraHUB 25 and experience the future of decision inte
 <item>
 <title><![CDATA[AeraHUB 25, the Decision Intelligence Global Summit: Why Attend in Person featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/1hy1GhRIXbPiDbVMDw9DFG/76b2cdb05a0ef344407f9bd8a9ec7c0f/Blog_Hero_Banner_-_AeraHUB_25__Why_Attend_in_Person__1_.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Nikitas Magel</dc:creator>
 <guid isPermaLink="false">attachment-300018</guid>
 <wp:post_id>300018</wp:post_id>
-<wp:post_date>2025-09-17T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-17T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-17 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-17 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200009</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -1547,12 +1382,12 @@ Be part of the momentum at AeraHUB 25 and experience the future of decision inte
 <item>
 <title><![CDATA[Nikitas Magel author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/1lkoPLU3w2r7aMUJZiTbMM/c72e9b578b6e471e9095962b886324f0/nikitas.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Nikitas Magel</dc:creator>
 <guid isPermaLink="false">attachment-300019</guid>
 <wp:post_id>300019</wp:post_id>
-<wp:post_date>2025-09-17T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-17T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-17 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-17 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -1561,59 +1396,46 @@ Be part of the momentum at AeraHUB 25 and experience the future of decision inte
 <item>
 <title><![CDATA[Pilot-Proof AI: Four Ways that Decision Intelligence Sidesteps the Usual Pitfalls]]></title>
 <link>/blogs/pilot-proof-ai-4-ways-decision-intelligence-sidesteps-the-usual-pitfalls</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Rob Wolfe</dc:creator>
 <excerpt:encoded><![CDATA[Learn how Aera, the decision intelligence agent, overcomes 4 common AI pilot pitfalls to deliver scalable, trusted, and measurable enterprise value.]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[Learn how Aera, the decision intelligence agent, overcomes 4 common AI pilot pitfalls to deliver scalable, trusted, and measurable enterprise value.]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-7F5PgEQZakAzGuO5nxAVkF</guid>
-<content:encoded><![CDATA[![Blog Hero Banner - Pilot-Proof AI](//images.ctfassets.net/mh1amgo8m7ts/5jUeAmgWFp2Or1NEx73F24/e80e178e0eebb228f801897fa0299f0a/Blog_Hero_Banner_-_Pilot-Proof_AI.jpg)
-
-Over the past two years, enterprises have launched a surge of AI pilots and “agents,” often with high expectations. Yet despite the investment, few make it past the starting line. Studies from 2023 through 2025 tell a consistent story: most AI pilots stall or fail to create measurable value, leaving many executives speaking of “pilot fatigue.” Instead of scaling, they find themselves watching demos that spark interest in the moment but rarely lead to meaningful deployment.
-
-The issue is not that AI lacks potential. The deeper challenge is that turning decision intelligence into production reality requires a solution that is trusted, scalable, comprehensive, and composable. Most pilots, however, are built as isolated proofs of concept. They may shine in controlled environments, but once exposed to fragmented data, governance requirements, and business-critical complexity, they quickly fall short.
-
-This is where Aera, the decision intelligence agent, changes the equation. By harmonizing data into a decision-ready foundation, combining agents with engines under strong orchestration, ensuring every prototype connects seamlessly to operations, and making adoption transparent and measurable, Aera provides the framework to move beyond pilots and into production.
-
-Below are the four most common reasons pilots stall — and how Aera makes each one work in practice.
-
-### Where Programs Fail — and How Aera Makes Them Work
-
-__1) Data is scattered and unharmonized.__
-
+<content:encoded><![CDATA[<p>Over the past two years, enterprises have launched a surge of AI pilots and “agents,” often with high expectations. Yet despite the investment, few make it past the starting line. Studies from 2023 through 2025 tell a consistent story: most AI pilots stall or fail to create measurable value, leaving many executives speaking of “pilot fatigue.” Instead of scaling, they find themselves watching demos that spark interest in the moment but rarely lead to meaningful deployment.</p>
+<p>The issue is not that AI lacks potential. The deeper challenge is that turning decision intelligence into production reality requires a solution that is trusted, scalable, comprehensive, and composable. Most pilots, however, are built as isolated proofs of concept. They may shine in controlled environments, but once exposed to fragmented data, governance requirements, and business-critical complexity, they quickly fall short.</p>
+<p>This is where Aera, the decision intelligence agent, changes the equation. By harmonizing data into a decision-ready foundation, combining agents with engines under strong orchestration, ensuring every prototype connects seamlessly to operations, and making adoption transparent and measurable, Aera provides the framework to move beyond pilots and into production.</p>
+<p>Below are the four most common reasons pilots stall — and how Aera makes each one work in practice.</p>
+<h3>Where Programs Fail — and How Aera Makes Them Work</h3>
+<p><strong>1) Data is scattered and unharmonized.</strong></p>
 <ul style="padding-left:20px;">
   <li><strong>The problem.</strong> Data exists, but it’s scattered across silos, labeled inconsistently, missing context, and unreliable for decision-making. Pilots spend more time cleaning and reconciling than delivering value.</li>
   <li><strong>The Aera solution. </strong>The <a href="https://www.aeratechnology.com/decision-data-model" target="_blank">Decision Data Model</a> (DDM) harmonizes sources — internal, external, structured, and unstructured — into a governed, decision-ready foundation with shared semantics, lineage, and quality rules. It can ingest offline and external data so every signal relevant to a decision is represented.</li>
   <li><strong>Why it works.</strong> The DDM creates one trusted source of truth that is comprehensive enough to cover all signals and scalable across business units. Because every agent and engine reads from the same semantics, decision logic remains composable and consistent across the enterprise.</li>
 </ul>
 
-__2) Agents are given open-ended decisions.__
-
+<p><strong>2) Agents are given open-ended decisions.</strong></p>
 <ul style="padding-left:20px;">
   <li><strong>The problem.</strong> Many organizations rely on agents to replace brittle decision trees, assuming they can simply “learn” how to make complex decisions from data. In practice, this approach produces hallucinations — confident but wrong answers that erode trust in AI for enterprise use.</li>
   <li><strong>The Aera solution. </strong><a href="https://www.aeratechnology.com/decision-cloud" target="_blank">Agentic Ambient Orchestration</a> organizes agents into teams with explicit roles, defined inputs and outputs, and structured handoffs. Decision-making is decoupled: agents orchestrate and reason, while composable <a href="https://www.aeratechnology.com/decision-cloud" target="_blank">Decision Engines</a> handle analytics, scenario evaluation, and end-to-end modeling. Guardrails and human-in-the-loop reviews ensure results are validated.</li>
   <li><strong>Why it works</strong>. The combination balances flexibility and control. Agents provide context-aware reasoning within tight scopes, while <a href="https://www.aeratechnology.com/decision-cloud" target="_blank">Decision Engines</a> do the math, test assumptions, and model system-wide impacts. Every step is explainable, auditable, and governed. With guardrails in place, organizations achieve trusted, scalable decision flows that handle nuance and deliver production-grade outcomes.</li>
 </ul>
 
-__3) Prototypes don’t connect to operations.__
-
+<p><strong>3) Prototypes don’t connect to operations.</strong></p>
 <ul style="padding-left:20px;">
   <li><strong>The problem.</strong> Many pilots look impressive in a demo but have no path to operations. They don’t write back to systems of record, lack approvals and user engagement, and can’t be monitored or governed.</li>
   <li><strong>The Aera solution. </strong>Engines and agents provide configurable write-backs to systems of record. <a href="https://www.aeratechnology.com/decision-engagement" target="_blank">Decision Engagement</a> serves as the operational inbox for recommendations, offering explanations, modeling, and push-button actions. And the <a href="https://www.aeratechnology.com/aera-control-room" target="_blank">Aera Control Room</a> manages governance, tracking adoption and value, surfacing gaps, and prioritizing enhancements.</li>
   <li><strong>Why it works</strong>. Together, write-backs, the engagement inbox, and the <a href="https://www.aeratechnology.com/aera-control-room" target="_blank">Control Room</a> form a closed loop: recommend, approve, execute, and measure. Every action is trusted, governed, and auditable, so pilots can scale into operations with confidence.</li>
 </ul>
 
-__4) Adoption fails without trust and ROI.__
-
+<p><strong>4) Adoption fails without trust and ROI.</strong></p>
 <ul style="padding-left:20px;">
   <li><strong>The problem.</strong> Users won’t act on recommendations if they can’t see the sources, challenge the reasoning, or understand what changed. Without trust and clear value, workflows revert to manual processes.</li>
   <li><strong>The Aera solution. </strong><a href="https://www.aeratechnology.com/decision-engagement" target="_blank">Decision Engagement</a> makes recommendations transparent, showing the “why” behind each one and enabling “what-if” scenario analysis. Actions can be executed with a button click. The <a href="https://www.aeratechnology.com/aera-control-room" target="_blank">Control Room</a> tracks adoption, monitors impact, and measures realized value.</li>
   <li><strong>Why it works</strong>. Governance reassures leaders that decisions are delivering measurable outcomes, while users gain visibility and explanations that build trust. Transparent evidence, auditable actions, and demonstrable ROI make recommendations credible — turning adoption from a hurdle into a natural progression.</li>
 </ul>
 
-### What “Good” Looks Like: Fast, Iterative, and Built for Production
-
-Moving from pilots to production isn’t about chasing perfection up front — it’s about building momentum, learning in real environments, and scaling with confidence. Success depends on speed, adaptability, and trust. Here’s what that looks like in practice:
-
+<h3>What “Good” Looks Like: Fast, Iterative, and Built for Production</h3>
+<p>Moving from pilots to production isn’t about chasing perfection up front — it’s about building momentum, learning in real environments, and scaling with confidence. Success depends on speed, adaptability, and trust. Here’s what that looks like in practice:</p>
 <ul>
   <li>
     <strong>Launch fast, learn in production.</strong> Go live quickly and use the <a href="https://www.aeratechnology.com/aera-control-room" target="_blank">Control Room</a> to observe interactions, track value against KPIs, surface gaps, and prioritize enhancements. Improvements are based on real decisions, not hypotheticals. Composable <a href="https://www.aeratechnology.com/skills" target="_blank">Aera Skills</a> make it easy to adjust logic rapidly and scale at speed.
@@ -1629,17 +1451,15 @@ Moving from pilots to production isn’t about chasing perfection up front — i
   </li>
 </ul>
 
-### From Pilots to Production
-
-To move AI from pilot to production, enterprises need a solution that is trusted, scalable, composable, and comprehensive.
-
+<h3>From Pilots to Production</h3>
+<p>To move AI from pilot to production, enterprises need a solution that is trusted, scalable, composable, and comprehensive.</p>
 <p>Aera delivers on all four. The <a href="https://www.aeratechnology.com/decision-data-model" target="_blank">Decision Data Model</a> establishes a governed source of truth. <a href="https://www.aeratechnology.com/decision-cloud" target="_blank">Agentic Ambient Orchestration</a> organizes agents into coordinated teams that execute decision tasks across the ecosystem. Composable <a href="https://www.aeratechnology.com/decision-cloud" target="_blank">Decision Engines</a> provide deterministic, auditable insights, while <a href="https://www.aeratechnology.com/decision-engagement" target="_blank">Decision Engagement</a> makes outcomes clear, explainable, executable, and measurable. Together, these capabilities create a closed-loop system that transforms pilots into production-ready workflows.</p>
 
-With this foundation, organizations can unlock the full value of AI — not as isolated experiments, but as enterprise-scale systems that deliver repeatable, measurable ROI.
+<p>With this foundation, organizations can unlock the full value of AI — not as isolated experiments, but as enterprise-scale systems that deliver repeatable, measurable ROI.</p>
 ]]></content:encoded>
 <wp:post_id>200010</wp:post_id>
-<wp:post_date>2025-09-16T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-16T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-16 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-16 12:00:00</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>pilot-proof-ai-4-ways-decision-intelligence-sidesteps-the-usual-pitfalls</wp:post_name>
@@ -1673,12 +1493,12 @@ With this foundation, organizations can unlock the full value of AI — not as i
 <item>
 <title><![CDATA[Pilot-Proof AI: Four Ways that Decision Intelligence Sidesteps the Usual Pitfalls featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/5jUeAmgWFp2Or1NEx73F24/e80e178e0eebb228f801897fa0299f0a/Blog_Hero_Banner_-_Pilot-Proof_AI.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Rob Wolfe</dc:creator>
 <guid isPermaLink="false">attachment-300020</guid>
 <wp:post_id>300020</wp:post_id>
-<wp:post_date>2025-09-16T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-16T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-16 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-16 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200010</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -1687,12 +1507,12 @@ With this foundation, organizations can unlock the full value of AI — not as i
 <item>
 <title><![CDATA[Rob Wolfe author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/3rkOzG1tD2KcoJVfehkJvX/4a10b17654bf6523afb6c13b1bb5cbba/Rob_Wolfe.jpeg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Rob Wolfe</dc:creator>
 <guid isPermaLink="false">attachment-300021</guid>
 <wp:post_id>300021</wp:post_id>
-<wp:post_date>2025-09-16T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-16T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-16 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-16 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -1701,91 +1521,65 @@ With this foundation, organizations can unlock the full value of AI — not as i
 <item>
 <title><![CDATA[Clinical Trials, Reimagined: Decision Intelligence in Action]]></title>
 <link>/blogs/clinical-trials-reimagined-decision-intelligence-in-action</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <excerpt:encoded><![CDATA[Learn how Aera, the decision intelligence agent, empowers life sciences teams to streamline clinical logistics, reduce waste, and ensure trial continuity.]]></excerpt:encoded>
 <wp:post_excerpt><![CDATA[Learn how Aera, the decision intelligence agent, empowers life sciences teams to streamline clinical logistics, reduce waste, and ensure trial continuity.]]></wp:post_excerpt>
 <guid isPermaLink="false">blog-4XJQeM3PI71k6wTGybDpR8</guid>
-<content:encoded><![CDATA[![Blog Hero Banner - Clinical Trials, Reimagined](//images.ctfassets.net/mh1amgo8m7ts/74zjylqly5Xzk9kf3AERcB/2615e9ac5570a21f51e2412bdda705aa/Blog_Hero_Banner_-_Clinical_Trials__Reimagined.jpg)
-
-In clinical trials, every shipment of investigational medicine plays a critical role in maintaining treatment schedules and ensuring study integrity. But as trials grow more global and complex, supply chains must contend with unpredictable demand, evolving protocols, siloed systems, and high manual workload. The result is often a scramble to identify issues, coordinate teams, and avoid costly disruptions that could compromise patient care and regulatory compliance.
-
-To meet these growing demands, life sciences organizations are turning to decision intelligence. By embedding real-time, context-aware intelligence into clinical logistics, decision intelligence enables teams to move from reactive triage to proactive orchestration. It helps detect risk earlier, recommend smarter interventions, and reduce unnecessary effort — all while learning from each decision to continuously improve performance. The result is a more resilient, responsive clinical supply chain that can keep pace with the demands of modern research.
-
-### Why Traditional Approaches Fall Short
-
-Coordinating investigational medicines and supplies across global trials is an inherently complex task. Traditional methods rely heavily on spreadsheets, email threads, and siloed systems, leaving teams to manually track shipments, verify site readiness, and respond to issues as they arise.
-
-The result is often missed opportunities to act, reactive interventions, and high levels of cognitive load for clinical supply professionals. Key challenges include:
-
-- __Multi-geography operations:__ Shipments span regions with different customs, logistics networks, and compliance rules, each introducing friction and variability.
-- __Dynamic study protocols:__ Changes to eligibility criteria, study design, or site activation can quickly shift demand patterns, making static plans obsolete.
-- __Unpredictable demand:__ Patient enrollment rates, treatment arms, and retention vary by site, often in ways that are hard to forecast and even harder to manage.
-
-These factors introduce uncertainty at every turn. And in a setting where timely delivery is mission-critical, the margin for error is thin.
-
-### The Case for Decision Intelligence
-
-A smarter, more proactive approach is needed — which is where decision intelligence comes in. By combining real-time data, AI-driven insights, and automation, decision intelligence helps clinical supply teams shift from reactive triage to forward-looking orchestration, spotting issues sooner, understanding their impact, and guiding the right response.
-
-Aera, the decision intelligence agent, brings this approach to life. It acts as an always-on, context-aware layer that continuously monitors supply flows, flags emerging risks, and recommends the next best action, tailored to the situation, the user, and the clinical context. Unlike traditional tools that simply alert users to problems, Aera interprets delays in light of protocol needs, patient risk, and downstream impact. It then simulates options, recommends a path forward, and learns from every decision made — growing more accurate and effective over time, all while keeping human decision-makers in control.
-
-### A Closed-Loop System for Smarter Inventory Management
-
-Most clinical supply chains are saturated with data — from Interactive Response Technology (IRT) systems, shipment trackers, and ERP feeds — but lack a mechanism to act on it cohesively. Aera changes that. It brings together clinical, operational, and external intelligence into a closed-loop, learning system comprised of six steps:
-
-1. __Unified data foundation:__ Aera ingests information from IRT, ERP, logistics feeds, and risk indicators to create a single view of demand, supply, and shipment status.
-2. __Trigger detection:__ Intelligent thresholds and milestone tracking detect early signs of delay, flagging potential issues based on expected timelines, shipment states, and clinical priority.
-3. __Context-aware simulation:__ The agent assesses root causes, forecasts impact to sites and patients, and proposes mitigation options like rerouting or site-to-site reallocation.
-4. __Next-best-action recommendations:__ Based on risk, feasibility, and user role, the agent suggests high-confidence steps, from automated emails to escalations or delivery confirmation.
-5. __Integrated execution:__ Smart emails, reminders, and status checks are embedded directly in workflows, so recommended actions turn into verified outcomes.
-6. __Continuous learning:__ Each decision and result is captured to improve future recommendations, refine thresholds, and adapt to shifting study needs.
-
-With this structure in place, teams gain not just visibility, but also the ability to act with precision and speed.
-
-### Real-World Results at Scale
-
-One global biopharmaceutical leader faced a familiar challenge: growing trial complexity, rising headcount, and still nearly 60% of packed product ending up as waste. Manual processes and fragmented data made it hard to scale or manage risk effectively.
-
-To address this, the company partnered with Aera Technology and ZS, a global life sciences consultancy. After launching a data excellence initiative, the first Aera Skill went live in just three months, freeing analysts from manual data wrangling and surfacing risks in real time. In one early success, Aera flagged a stalled cancer trial shipment over the weekend, enabling proactive intervention before a stock-out occurred.
-
-As additional skills were deployed, more improved outcomes followed:
-
-- __Reduced product waste:__ Better data integrity and smarter, context-aware decision-making helped cut down excess and prevent avoidable loss.
-- __Faster deployment cycles:__ New capabilities launched quickly to support continuity and reduce supply disruptions.
-- __Scalable, self-healing network:__ A foundation was established for intelligent orchestration across clinical and commercial operations.
-
-By uniting domain expertise with decision intelligence, the organization is building a faster, more resilient clinical supply chain.
-
-### Empowering the People Behind the Decisions
-
-Decision intelligence doesn’t just streamline operations; it transforms how clinical supply professionals work. By embedding intelligence directly into their workflows, Aera reduces manual effort, clarifies priorities, and enables faster, more confident decisions.
-
-Here’s how it transforms work for each of these roles:
-
-- __For logistics specialists__, the agent filters out noise and highlights only the most urgent issues, often with ready-to-send emails and clear next steps. With 75–90% less effort per alert, they can focus on high-impact coordination instead of chasing status updates.
-- __For clinical supply study leads__ (CSSLs), Aera improves visibility, auto-verifies deliveries, and triggers smart escalations when protocol-sensitive shipments are at risk. With prioritized tasks and patient-aware alerts, CSSLs can manage study continuity proactively, not reactively.
-
-By taking on the heavy lifting, the agent frees teams to apply their expertise where it matters most, protecting patients, trials, and timelines.
-
-### Human + AI: Smarter Decisions, Together
-
-The power of decision intelligence lies in the collaboration between people and technology. Aera doesn’t replace clinical supply professionals — it amplifies their expertise. By handling data-heavy tasks like risk detection, root cause analysis, and mitigation modeling, the agent clears the way for humans to focus on judgment, coordination, and strategic oversight.
-
-Users remain in control at every step. Recommendations are transparent, explainable, and tailored to role and context, whether that’s a logistics specialist managing vendor follow-ups or a CSSL overseeing protocol-critical milestones. Users can adapt, accept, or override suggestions as needed.
-
-And because the system learns from every interaction — every confirmation, escalation, or adjustment — it continuously improves. Over time, this feedback loop builds a smarter, more aligned decision system that evolves with the needs of the organization. With Aera, clinical supply decisions become more consistent, coordinated, and confident — not because humans are removed from the loop, but because they're empowered within it.
-
-### A Blueprint for the Future of Clinical Supply Chains
-
-As clinical trials evolve — with more sites, more data, and higher expectations — success will depend on the ability to manage complexity with speed and precision. Aera provides the infrastructure to do just that.
-
-By transforming fragmented systems into a unified, self-learning network, decision intelligence empowers clinical supply chains to become proactive, adaptive, and resilient. They sense risk early, recommend action intelligently, and execute reliably, ensuring every patient receives what they need, when they need it.
-
+<content:encoded><![CDATA[<p>In clinical trials, every shipment of investigational medicine plays a critical role in maintaining treatment schedules and ensuring study integrity. But as trials grow more global and complex, supply chains must contend with unpredictable demand, evolving protocols, siloed systems, and high manual workload. The result is often a scramble to identify issues, coordinate teams, and avoid costly disruptions that could compromise patient care and regulatory compliance.</p>
+<p>To meet these growing demands, life sciences organizations are turning to decision intelligence. By embedding real-time, context-aware intelligence into clinical logistics, decision intelligence enables teams to move from reactive triage to proactive orchestration. It helps detect risk earlier, recommend smarter interventions, and reduce unnecessary effort — all while learning from each decision to continuously improve performance. The result is a more resilient, responsive clinical supply chain that can keep pace with the demands of modern research.</p>
+<h3>Why Traditional Approaches Fall Short</h3>
+<p>Coordinating investigational medicines and supplies across global trials is an inherently complex task. Traditional methods rely heavily on spreadsheets, email threads, and siloed systems, leaving teams to manually track shipments, verify site readiness, and respond to issues as they arise.</p>
+<p>The result is often missed opportunities to act, reactive interventions, and high levels of cognitive load for clinical supply professionals. Key challenges include:</p>
+<ul>
+<li><strong>Multi-geography operations:</strong> Shipments span regions with different customs, logistics networks, and compliance rules, each introducing friction and variability.</li>
+<li><strong>Dynamic study protocols:</strong> Changes to eligibility criteria, study design, or site activation can quickly shift demand patterns, making static plans obsolete.</li>
+<li><strong>Unpredictable demand:</strong> Patient enrollment rates, treatment arms, and retention vary by site, often in ways that are hard to forecast and even harder to manage.</li>
+</ul>
+<p>These factors introduce uncertainty at every turn. And in a setting where timely delivery is mission-critical, the margin for error is thin.</p>
+<h3>The Case for Decision Intelligence</h3>
+<p>A smarter, more proactive approach is needed — which is where decision intelligence comes in. By combining real-time data, AI-driven insights, and automation, decision intelligence helps clinical supply teams shift from reactive triage to forward-looking orchestration, spotting issues sooner, understanding their impact, and guiding the right response.</p>
+<p>Aera, the decision intelligence agent, brings this approach to life. It acts as an always-on, context-aware layer that continuously monitors supply flows, flags emerging risks, and recommends the next best action, tailored to the situation, the user, and the clinical context. Unlike traditional tools that simply alert users to problems, Aera interprets delays in light of protocol needs, patient risk, and downstream impact. It then simulates options, recommends a path forward, and learns from every decision made — growing more accurate and effective over time, all while keeping human decision-makers in control.</p>
+<h3>A Closed-Loop System for Smarter Inventory Management</h3>
+<p>Most clinical supply chains are saturated with data — from Interactive Response Technology (IRT) systems, shipment trackers, and ERP feeds — but lack a mechanism to act on it cohesively. Aera changes that. It brings together clinical, operational, and external intelligence into a closed-loop, learning system comprised of six steps:</p>
+<ol>
+<li><strong>Unified data foundation:</strong> Aera ingests information from IRT, ERP, logistics feeds, and risk indicators to create a single view of demand, supply, and shipment status.</li>
+<li><strong>Trigger detection:</strong> Intelligent thresholds and milestone tracking detect early signs of delay, flagging potential issues based on expected timelines, shipment states, and clinical priority.</li>
+<li><strong>Context-aware simulation:</strong> The agent assesses root causes, forecasts impact to sites and patients, and proposes mitigation options like rerouting or site-to-site reallocation.</li>
+<li><strong>Next-best-action recommendations:</strong> Based on risk, feasibility, and user role, the agent suggests high-confidence steps, from automated emails to escalations or delivery confirmation.</li>
+<li><strong>Integrated execution:</strong> Smart emails, reminders, and status checks are embedded directly in workflows, so recommended actions turn into verified outcomes.</li>
+<li><strong>Continuous learning:</strong> Each decision and result is captured to improve future recommendations, refine thresholds, and adapt to shifting study needs.</li>
+</ol>
+<p>With this structure in place, teams gain not just visibility, but also the ability to act with precision and speed.</p>
+<h3>Real-World Results at Scale</h3>
+<p>One global biopharmaceutical leader faced a familiar challenge: growing trial complexity, rising headcount, and still nearly 60% of packed product ending up as waste. Manual processes and fragmented data made it hard to scale or manage risk effectively.</p>
+<p>To address this, the company partnered with Aera Technology and ZS, a global life sciences consultancy. After launching a data excellence initiative, the first Aera Skill went live in just three months, freeing analysts from manual data wrangling and surfacing risks in real time. In one early success, Aera flagged a stalled cancer trial shipment over the weekend, enabling proactive intervention before a stock-out occurred.</p>
+<p>As additional skills were deployed, more improved outcomes followed:</p>
+<ul>
+<li><strong>Reduced product waste:</strong> Better data integrity and smarter, context-aware decision-making helped cut down excess and prevent avoidable loss.</li>
+<li><strong>Faster deployment cycles:</strong> New capabilities launched quickly to support continuity and reduce supply disruptions.</li>
+<li><strong>Scalable, self-healing network:</strong> A foundation was established for intelligent orchestration across clinical and commercial operations.</li>
+</ul>
+<p>By uniting domain expertise with decision intelligence, the organization is building a faster, more resilient clinical supply chain.</p>
+<h3>Empowering the People Behind the Decisions</h3>
+<p>Decision intelligence doesn’t just streamline operations; it transforms how clinical supply professionals work. By embedding intelligence directly into their workflows, Aera reduces manual effort, clarifies priorities, and enables faster, more confident decisions.</p>
+<p>Here’s how it transforms work for each of these roles:</p>
+<ul>
+<li><strong>For logistics specialists</strong>, the agent filters out noise and highlights only the most urgent issues, often with ready-to-send emails and clear next steps. With 75–90% less effort per alert, they can focus on high-impact coordination instead of chasing status updates.</li>
+<li><strong>For clinical supply study leads</strong> (CSSLs), Aera improves visibility, auto-verifies deliveries, and triggers smart escalations when protocol-sensitive shipments are at risk. With prioritized tasks and patient-aware alerts, CSSLs can manage study continuity proactively, not reactively.</li>
+</ul>
+<p>By taking on the heavy lifting, the agent frees teams to apply their expertise where it matters most, protecting patients, trials, and timelines.</p>
+<h3>Human + AI: Smarter Decisions, Together</h3>
+<p>The power of decision intelligence lies in the collaboration between people and technology. Aera doesn’t replace clinical supply professionals — it amplifies their expertise. By handling data-heavy tasks like risk detection, root cause analysis, and mitigation modeling, the agent clears the way for humans to focus on judgment, coordination, and strategic oversight.</p>
+<p>Users remain in control at every step. Recommendations are transparent, explainable, and tailored to role and context, whether that’s a logistics specialist managing vendor follow-ups or a CSSL overseeing protocol-critical milestones. Users can adapt, accept, or override suggestions as needed.</p>
+<p>And because the system learns from every interaction — every confirmation, escalation, or adjustment — it continuously improves. Over time, this feedback loop builds a smarter, more aligned decision system that evolves with the needs of the organization. With Aera, clinical supply decisions become more consistent, coordinated, and confident — not because humans are removed from the loop, but because they&#39;re empowered within it.</p>
+<h3>A Blueprint for the Future of Clinical Supply Chains</h3>
+<p>As clinical trials evolve — with more sites, more data, and higher expectations — success will depend on the ability to manage complexity with speed and precision. Aera provides the infrastructure to do just that.</p>
+<p>By transforming fragmented systems into a unified, self-learning network, decision intelligence empowers clinical supply chains to become proactive, adaptive, and resilient. They sense risk early, recommend action intelligently, and execute reliably, ensuring every patient receives what they need, when they need it.</p>
 <p>For more on how Aera can help you safeguard continuity and elevate performance in clinical trials, download the whitepaper, <a href="https://meet.aeratechnology.com/transforming-the-clinical-trial-journey-with-decision-intelligence" target="_blank" style="font-style:italic">Transforming the Clinical Trial Journey with Decision Intelligence</a>.</p>]]></content:encoded>
 <wp:post_id>200011</wp:post_id>
-<wp:post_date>2025-09-08T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-08T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-08 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-08 12:00:00</wp:post_date_gmt>
 <wp:comment_status>closed</wp:comment_status>
 <wp:ping_status>closed</wp:ping_status>
 <wp:post_name>clinical-trials-reimagined-decision-intelligence-in-action</wp:post_name>
@@ -1819,12 +1613,12 @@ By transforming fragmented systems into a unified, self-learning network, decisi
 <item>
 <title><![CDATA[Clinical Trials, Reimagined: Decision Intelligence in Action featured image]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/74zjylqly5Xzk9kf3AERcB/2615e9ac5570a21f51e2412bdda705aa/Blog_Hero_Banner_-_Clinical_Trials__Reimagined.jpg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <guid isPermaLink="false">attachment-300022</guid>
 <wp:post_id>300022</wp:post_id>
-<wp:post_date>2025-09-08T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-08T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-08 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-08 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>200011</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>
@@ -1833,12 +1627,12 @@ By transforming fragmented systems into a unified, self-learning network, decisi
 <item>
 <title><![CDATA[Naveen Reddy author photo]]></title>
 <link>https://images.ctfassets.net/mh1amgo8m7ts/4sRyWjymfCQUHSdUUHnR8r/900ec2e47241c957a2a464d00be5c9d6/naveen-kumar.jpeg</link>
-<pubDate>Fri, 16 Jan 2026 14:23:08 GMT</pubDate>
+<pubDate>Fri, 16 Jan 2026 19:17:04 GMT</pubDate>
 <dc:creator>Naveen Reddy</dc:creator>
 <guid isPermaLink="false">attachment-300023</guid>
 <wp:post_id>300023</wp:post_id>
-<wp:post_date>2025-09-08T12:00:00</wp:post_date>
-<wp:post_date_gmt>2025-09-08T12:00:00</wp:post_date_gmt>
+<wp:post_date>2025-09-08 12:00:00</wp:post_date>
+<wp:post_date_gmt>2025-09-08 12:00:00</wp:post_date_gmt>
 <wp:post_status>inherit</wp:post_status>
 <wp:post_parent>0</wp:post_parent>
 <wp:post_type>attachment</wp:post_type>

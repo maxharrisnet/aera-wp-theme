@@ -242,7 +242,7 @@ function aera_technology_scripts()
 
   // Preload HubSpot forms script on all pages for faster form loading
   // This prevents the "LOADING" message delay when clicking Schedule Demo buttons
-  add_action('wp_head', function() {
+  add_action('wp_head', function () {
     echo '<link rel="preload" href="https://js.hsforms.net/forms/embed/v2.js" as="script" crossorigin="anonymous">' . "\n";
   }, 1);
 }
@@ -336,6 +336,23 @@ function aera_technology_partner_archive_order($query)
 add_action('pre_get_posts', 'aera_technology_partner_archive_order');
 
 /**
+ * Customize the document title for Webinars and Events archives.
+ *
+ * @param array $title The document title parts.
+ * @return array Modified title parts.
+ */
+function aera_technology_custom_archive_title($title)
+{
+  if (is_post_type_archive('webinar')) {
+    $title['title'] = __('Webinars', 'aera');
+  } elseif (is_post_type_archive('event')) {
+    $title['title'] = __('Events', 'aera');
+  }
+  return $title;
+}
+add_filter('document_title_parts', 'aera_technology_custom_archive_title');
+
+/**
  * ============================================
  * ICON SELECTOR FUNCTIONALITY
  * ============================================
@@ -406,7 +423,7 @@ function aera_add_icon_preview($field)
     return;
   }
 
-  ?>
+?>
   <style>
     .acf-field[data-name="<?php echo esc_attr($field['name']); ?>"] .icon-preview-container {
       display: flex;
@@ -414,6 +431,7 @@ function aera_add_icon_preview($field)
       gap: 15px;
       margin-top: 10px;
     }
+
     .acf-field[data-name="<?php echo esc_attr($field['name']); ?>"] .icon-preview {
       width: 60px;
       height: 60px;
@@ -449,7 +467,48 @@ function aera_add_icon_preview($field)
       });
     })(jQuery);
   </script>
-  <?php
+<?php
 }
 
 add_action('acf/render_field/type=select', 'aera_add_icon_preview', 10, 1);
+
+/**
+ * Override get_avatar to use author_photo_url from user meta if available
+ *
+ * @param string $avatar      Avatar image tag.
+ * @param mixed  $id_or_email User ID, email, or object.
+ * @param int    $size        Avatar size.
+ * @param string $default     Default avatar URL.
+ * @param string $alt         Alt text.
+ * @return string Avatar image tag.
+ */
+function aera_custom_avatar($avatar, $id_or_email, $size, $default, $alt)
+{
+  $user = false;
+  if (is_numeric($id_or_email)) {
+    $user = get_user_by('id', (int) $id_or_email);
+  } elseif (is_object($id_or_email)) {
+    if (! empty($id_or_email->user_id)) {
+      $user = get_user_by('id', (int) $id_or_email->user_id);
+    }
+  } else {
+    $user = get_user_by('email', $id_or_email);
+  }
+
+  if ($user && is_object($user)) {
+    $author_photo_url = get_user_meta($user->ID, 'author_photo_url', true);
+    if (! empty($author_photo_url)) {
+      $avatar = sprintf(
+        '<img alt="%s" src="%s" class="avatar avatar-%d photo" height="%d" width="%d" />',
+        esc_attr($alt ?: $user->display_name),
+        esc_url($author_photo_url),
+        (int) $size,
+        (int) $size,
+        (int) $size
+      );
+    }
+  }
+
+  return $avatar;
+}
+add_filter('get_avatar', 'aera_custom_avatar', 10, 5);

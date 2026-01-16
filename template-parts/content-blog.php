@@ -42,7 +42,17 @@ $article_classes = array(
           <?php endif; ?>
         </header>
 
+
+
         <div class="article-template__content">
+          <?php
+          // Display featured image if available (replaces inline Blog_Hero_Banner_ images)
+          if (has_post_thumbnail()) :
+          ?>
+            <div class="article-template__featured-image">
+              <?php the_post_thumbnail('large', array('loading' => 'eager')); ?>
+            </div>
+          <?php endif; ?>
           <?php the_content(); ?>
         </div>
 

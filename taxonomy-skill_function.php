@@ -522,7 +522,7 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
         const rect = skill.getBoundingClientRect();
         const skillCenter = rect.top + rect.height / 2;
         const distance = Math.abs(skillCenter - viewportCenter);
-        
+
         if (distance < closestDistance) {
           closestDistance = distance;
           currentSkillIndex = index;
@@ -552,6 +552,31 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
 
       // Initial check
       updateSidebarActiveState();
+    }
+
+    // Fade-in animation on scroll using IntersectionObserver
+    const skillContents = document.querySelectorAll('.skill-content');
+    if (skillContents.length > 0) {
+      const fadeInObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            // Element is in viewport - fade in
+            entry.target.style.opacity = '1';
+          } else {
+            // Element is below viewport - start faded
+            entry.target.style.opacity = '0.3';
+          }
+        });
+      }, {
+        threshold: 0.1, // Trigger when 10% of element is visible
+        rootMargin: '0px 0px -100px 0px' // Start animation 100px before element enters viewport
+      });
+
+      skillContents.forEach(function(skill) {
+        // Set initial opacity
+        skill.style.opacity = '0.3';
+        fadeInObserver.observe(skill);
+      });
     }
   });
 </script>

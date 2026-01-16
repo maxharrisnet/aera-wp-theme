@@ -32,22 +32,13 @@ if (!$card_image) {
 	}
 }
 
-// Get author - strip HTML and get first line (matching NewsItem.js structure)
+// Get author - use WordPress post author
 $author = '';
-if (function_exists('get_field')) {
-	// Try new field name first, fallback to old for backwards compatibility
-	$author_raw = get_field('resource_author', $post_id);
-	if (empty($author_raw)) {
-		$author_raw = get_field('resource_author_1', $post_id);
-	}
-	if ($author_raw) {
-		// Strip HTML tags completely
-		$author_text = wp_strip_all_tags($author_raw);
-		// Get first line only
-		$author_lines = array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $author_text)));
-		if (!empty($author_lines)) {
-			$author = reset($author_lines);
-		}
+$author_id = get_post_field('post_author', $post_id);
+if ($author_id) {
+	$author = get_the_author_meta('display_name', $author_id);
+	if (empty($author)) {
+		$author = get_the_author_meta('user_login', $author_id);
 	}
 }
 ?>

@@ -12,7 +12,7 @@ get_header();
 
 // Hero section - try ACF Company Options first, then use defaults
 $hero_title = __('Partners', 'aera');
-$hero_text = __('We are partnering with a select group of organizations, from consulting firms to technology platforms and data service providers, to accelerate time to value and value over time. Together, we are delivering and scaling Decision Intelligence across the globe.', 'aera');
+$hero_text = __('We partner with a select group of organizations, from consulting firms to technology platforms and data service providers, to accelerate time to value and value over time. Together, we deliver and scale decision intelligence to enterprises across the globe.', 'aera');
 
 if (function_exists('get_field')) {
   $acf_title = get_field('company_partner_hero_title', 'option');
@@ -96,6 +96,35 @@ $cta = null; // Let the CTA component pull from ACF
   get_template_part('template-parts/components/cta', null, array('cta' => $cta));
   ?>
 </main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Fade-in animation on scroll using IntersectionObserver
+    const partnerComponents = document.querySelectorAll('.partners__components');
+    if (partnerComponents.length > 0) {
+      const fadeInObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            // Element is in viewport - fade in
+            entry.target.style.opacity = '1';
+          } else {
+            // Element is below viewport - start faded
+            entry.target.style.opacity = '0.3';
+          }
+        });
+      }, {
+        threshold: 0.1, // Trigger when 10% of element is visible
+        rootMargin: '0px 0px -100px 0px' // Start animation 100px before element enters viewport
+      });
+
+      partnerComponents.forEach(function(component) {
+        // Set initial opacity
+        component.style.opacity = '0.3';
+        fadeInObserver.observe(component);
+      });
+    }
+  });
+</script>
 
 <?php
 get_footer();
