@@ -28,25 +28,23 @@ if (function_exists('get_field')) {
 
 $hero_full_height = false;
 
-// CTA section - try ACF first, then use defaultsloading
-$cta_title = __('Interested in becoming a partner?', 'aera');
-$cta_text = __('Schedule Demo', 'aera');
-$cta_link = home_url('/demo');
-
+// CTA section - get from ACF page field group
+$cta = array();
 if (function_exists('get_field')) {
-  $acf_cta_title = get_field('partners_cta_title', 'option');
-  $acf_cta_text = get_field('partners_cta_text', 'option');
-  $acf_cta_link = get_field('partners_cta_link', 'option');
+  $cta = get_field('cta') ?: array();
+}
 
-  if (!empty($acf_cta_title)) {
-    $cta_title = $acf_cta_title;
-  }
-  if (!empty($acf_cta_text)) {
-    $cta_text = $acf_cta_text;
-  }
-  if (!empty($acf_cta_link)) {
-    $cta_link = $acf_cta_link;
-  }
+// Fallback defaults if ACF not set
+if (empty($cta)) {
+  $cta = array(
+    'title' => __('Interested in becoming a partner?', 'aera'),
+    'buttons' => array(
+      array(
+        'text' => __('Schedule Demo', 'aera'),
+        'link' => home_url('/demo'),
+      )
+    ),
+  );
 }
 
 ?>
@@ -109,13 +107,7 @@ if (function_exists('get_field')) {
 
   <!-- CTA Section -->
   <?php
-  get_template_part('template-parts/components/cta', null, array(
-    'cta' => array(
-      'title' => $cta_title,
-      'text' => $cta_text,
-      'link' => $cta_link,
-    ),
-  ));
+  get_template_part('template-parts/components/cta', null, array('cta' => $cta));
   ?>
 </main>
 
