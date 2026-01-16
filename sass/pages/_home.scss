@@ -158,10 +158,9 @@
 	}
 }
 
-.request {
-	//@include segment;
-	padding: 50px 0px;
-	text-align: center;
+.cta-section {
+	@include segment;
+	// text-align: center;
 
 	&__container {
 		@include container;
@@ -169,10 +168,14 @@
 
 	&__title {
 		// @include heading($hasMargin: false);
-		@extend %title-base;
+		// @extend %title-base;
 		margin-bottom: $gutter;
 	}
 }
+
+// Deprecated: Use CTA component instead
+// Keeping for backwards compatibility with existing pages
+// New pages should use template-parts/components/cta.php
 
 @media (max-width: 767px) {
 	.header__demo {

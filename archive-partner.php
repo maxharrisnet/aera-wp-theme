@@ -107,15 +107,16 @@ if (function_exists('get_field')) {
     </section>
   <?php endif; ?>
 
-  <!-- Request/CTA Section -->
-  <section class="request">
-    <div class="request__container">
-      <div class="request__content">
-        <h2 class="request__title"><?php echo esc_html($cta_title); ?></h2>
-        <a class="button button--outline" href="<?php echo esc_url($cta_link); ?>"><?php echo esc_html($cta_text); ?></a>
-      </div>
-    </div>
-  </section>
+  <!-- CTA Section -->
+  <?php
+  get_template_part('template-parts/components/cta', null, array(
+    'cta' => array(
+      'title' => $cta_title,
+      'text' => $cta_text,
+      'link' => $cta_link,
+    ),
+  ));
+  ?>
 </main>
 
 <?php

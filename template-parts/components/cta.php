@@ -20,22 +20,47 @@ $cta = wp_parse_args(
   $cta,
   array(
     'title' => __('See Aera in action.', 'aera'),
-    'text'  => __('Schedule Demo', 'aera'),
-    'link'  => home_url('/demo'),
+    'buttons' => array(
+      array(
+        'text' => __('Schedule Demo', 'aera'),
+        'link' => home_url('/demo'),
+      )
+    ),
   )
 );
 
 // Don't render if required fields are missing
-if (empty($cta['title']) || empty($cta['text']) || empty($cta['link'])) {
+if (empty($cta['title'])) {
   return;
+}
+
+// Support legacy single button format (text/link keys)
+if (!empty($cta['text']) && !empty($cta['link'])) {
+  $cta['buttons'] = array(
+    array(
+      'text' => $cta['text'],
+      'link' => $cta['link'],
+    )
+  );
 }
 ?>
 
-<section class="request">
-  <div class="request__container">
-    <div class="request__content">
-      <h2 class="request__title"><?php echo esc_html($cta['title']); ?></h2>
-      <a class="button button--outline" href="<?php echo esc_url($cta['link']); ?>"><?php echo esc_html($cta['text']); ?></a>
+<section class="cta-section">
+  <div class="cta-section__container">
+    <div class="cta-section__content">
+      <h2 class="cta-section__title"><?php echo esc_html($cta['title']); ?></h2>
+
+      <?php if (!empty($cta['buttons'])) : ?>
+        <div class="cta-section__buttons">
+          <?php foreach ($cta['buttons'] as $button) : ?>
+            <?php if (!empty($button['text']) && !empty($button['link'])) : ?>
+              <a class="button button--outline" href="<?php echo esc_url($button['link']); ?>">
+                <?php echo esc_html($button['text']); ?>
+              </a>
+            <?php endif; ?>
+          <?php endforeach; ?>
+        </div>
+      <?php endif; ?>
     </div>
   </div>
 </section>

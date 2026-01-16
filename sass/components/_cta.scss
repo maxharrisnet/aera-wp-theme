@@ -1,0 +1,84 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// ============================================================================
+// CTA Section Component
+// ============================================================================
+
+.cta-section {
+	padding: 50px 0 100px 0;
+	text-align: center;
+
+	@media (max-width: $max-720) {
+		padding: 50px 0 80px 0;
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		@include heading($hasMargin: false);
+		margin-bottom: $gutter;
+	}
+
+	&__buttons {
+		display: flex;
+		gap: 16px;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+
+		@media (max-width: $max-720) {
+			flex-direction: column;
+			gap: 12px;
+		}
+	}
+
+	&__button {
+		padding: 0;
+		margin: 0;
+		font-family: inherit;
+		font-size: inherit;
+		font-weight: inherit;
+		line-height: inherit;
+		vertical-align: baseline;
+		border: 0;
+		background: 0 0;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		font-size: 14px;
+		display: -ms-inline-flexbox;
+		display: inline-flex;
+		-ms-flex-pack: center;
+		justify-content: center;
+		position: relative;
+		padding: 0 2.85714em;
+		height: 3.57143em;
+		color: $color-mineshaft;
+		font-family: $font-family-gilroy;
+		font-weight: 600;
+		line-height: 3.57143;
+		letter-spacing: 0.025em;
+		text-transform: uppercase;
+		text-decoration: none;
+		white-space: nowrap;
+		border-radius: 999px;
+		border: 1px solid #bee9f3;
+		cursor: pointer;
+		background: linear-gradient(180deg, #dff9ff 0%, #dee9fb 100%);
+		transition: 180ms;
+		transition-property: border-color, background-color, color, opacity;
+		min-width: 200px;
+
+		&:hover {
+			opacity: 0.8;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			max-width: 300px;
+		}
+	}
+}

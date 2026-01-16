@@ -693,7 +693,7 @@
 	text-transform: uppercase;
 
 	&:hover {
-		background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
+		background: linear-gradient(180deg, #dff9ff 0%, #dee9fb 100%);
 	}
 
 	img {
@@ -707,7 +707,6 @@
 		transform: translate(5px, 0px);
 	}
 }
-
 
 // SVG panel styles
 .svg-panel {
@@ -813,70 +812,6 @@
 		position: absolute;
 		right: 0px;
 		top: -30px;
-	}
-}
-
-.request {
-	// @include segment;
-	padding: 50px 0 100px 0;
-	text-align: center;
-
-	&__container {
-		@include container;
-	}
-
-	&__title {
-		@include heading($hasMargin: false);
-		margin-bottom: $gutter;
-	}
-	&__button {
-		width: 280px;
-	}
-	&__filled {
-		padding: 0;
-		margin: 0;
-		font-family: inherit;
-		font-size: inherit;
-		font-weight: inherit;
-		line-height: inherit;
-		vertical-align: baseline;
-		border: 0;
-		background: 0 0;
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		font-size: 14px;
-		display: -ms-inline-flexbox;
-		display: inline-flex;
-		-ms-flex-pack: center;
-		justify-content: center;
-		position: relative;
-		padding: 0 2.85714em;
-		height: 3.57143em;
-		color: #1a1a1a;
-		font-family: 'Gilroy', sans-serif;
-		font-weight: 600;
-		line-height: 3.57143;
-		letter-spacing: 0.025em;
-		text-transform: uppercase;
-		text-decoration: none;
-		white-space: nowrap;
-		border-radius: 999px;
-		border: 1px solid #bee9f3;
-		cursor: pointer;
-		background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
-		transition: 180ms;
-		transition-property: border-color, background-color, color, opacity;
-		margin-left: 15px;
-
-		&:hover {
-			background: linear-gradient(180deg, #DEE9FB 0%, #DFF9FF 100%);
-		}
-		@media (max-width: $max-720) {
-			margin-left: 0px;
-			margin-top: 15px;
-			font-size: 13px;
-		}
 	}
 }
 

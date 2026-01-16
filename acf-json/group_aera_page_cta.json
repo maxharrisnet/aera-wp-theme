@@ -1,0 +1,114 @@
+{
+  "key": "group_aera_page_cta",
+  "title": "Page CTA",
+  "fields": [
+    {
+      "key": "field_cta_content_tab",
+      "label": "CTA",
+      "name": "",
+      "type": "tab",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_cta_title",
+      "label": "CTA Title",
+      "name": "cta_title",
+      "type": "text",
+      "instructions": "Call-to-action section title.",
+      "required": 0,
+      "default_value": "See Aera in action.",
+      "placeholder": "",
+      "prepend": "",
+      "append": "",
+      "maxlength": "",
+      "wrapper": {
+        "width": "100",
+        "class": "",
+        "id": ""
+      }
+    },
+    {
+      "key": "field_cta_buttons",
+      "label": "CTA Buttons",
+      "name": "cta_buttons",
+      "type": "repeater",
+      "instructions": "Add one or more call-to-action buttons. Leave empty to use defaults.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "100",
+        "class": "",
+        "id": ""
+      },
+      "min": 0,
+      "max": 3,
+      "layout": "table",
+      "button_label": "Add Button",
+      "sub_fields": [
+        {
+          "key": "field_cta_button_text",
+          "label": "Button Text",
+          "name": "text",
+          "type": "text",
+          "instructions": "",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "Schedule Demo",
+          "prepend": "",
+          "append": "",
+          "maxlength": "",
+          "wrapper": {
+            "width": "40",
+            "class": "",
+            "id": ""
+          },
+          "parent_repeater": "field_cta_buttons"
+        },
+        {
+          "key": "field_cta_button_link",
+          "label": "Button URL",
+          "name": "link",
+          "type": "url",
+          "instructions": "",
+          "required": 1,
+          "default_value": "",
+          "placeholder": "https://example.com or /demo",
+          "wrapper": {
+            "width": "60",
+            "class": "",
+            "id": ""
+          },
+          "parent_repeater": "field_cta_buttons"
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "page"
+      }
+    ]
+  ],
+  "menu_order": 1,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Call-to-action section settings for pages",
+  "show_in_rest": 0,
+  "modified": 1737000000
+}

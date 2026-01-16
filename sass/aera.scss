@@ -16,8 +16,7 @@ Custom Aera website styles compiled from SCSS
 @use 'components/background';
 @use 'components/loading';
 @use 'components/social';
-
-/* FORMS */
+@use 'components/cta'; /* FORMS */
 @use 'components/forms';
 @use 'components/hubspot-form-base';
 @use 'components/contact-form';
