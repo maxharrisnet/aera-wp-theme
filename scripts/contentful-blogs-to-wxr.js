@@ -22,9 +22,38 @@ const { marked } = require('marked');
 const striptags = require('striptags');
 
 const OUT = path.resolve(__dirname, '../_ORIGINAL_FILES/blogs-wxr.xml');
-const SRC = path.resolve(__dirname, '../export_blogs_sample/contentful-export-mh1amgo8m7ts-master-2026-01-16T12-53-01.json');
 const DEPRECATED_CSV = path.resolve(__dirname, '../_ORIGINAL_FILES/Website Cleanup - Nov 2025  - Aditya - Blogs.csv');
 const LIMIT = 12; // Start with 12 most recent for testing
+
+// LATEST EXPORT FILE (with Community Cards): contentful-export-mh1amgo8m7ts-master-2026-01-16T12-53-01.json
+// This file includes both Community Template Pages and Community Cards
+// Auto-detect latest export file
+function getLatestExportFile() {
+	const exportDir = path.resolve(__dirname, '../export_blogs_sample');
+	if (!fs.existsSync(exportDir)) {
+		throw new Error('Export directory not found: ' + exportDir);
+	}
+	const files = fs
+		.readdirSync(exportDir)
+		.filter((f) => f.includes('contentful-export') && f.endsWith('.json'))
+		.map((f) => ({
+			name: f,
+			path: path.join(exportDir, f),
+			mtime: fs.statSync(path.join(exportDir, f)).mtime,
+		}))
+		.sort((a, b) => b.mtime - a.mtime);
+
+	if (files.length === 0) {
+		throw new Error('No export files found in: ' + exportDir);
+	}
+
+	console.error('📁 Using latest export file:', files[0].name);
+	console.error('   Modified:', files[0].mtime.toISOString());
+
+	return files[0].path;
+}
+
+const SRC = getLatestExportFile();
 
 function escXml(s) {
 	if (s == null) return '';
@@ -111,6 +140,14 @@ function buildWxr(blogPosts, cardsMap, assetsMap, authorsMap, deprecated) {
 		const card = cardsMap.get(blog.sys.id) || null;
 		const cardFields = card?.fields || {};
 
+		if (card) {
+			console.error(`\n[${i + 1}] Blog: ${title.substring(0, 60)}`);
+			console.error(`  Card matched: ${firstLocalized(cardFields.title) || 'N/A'}`);
+		} else {
+			console.error(`\n[${i + 1}] Blog: ${title.substring(0, 60)}`);
+			console.error(`  ⚠ No card matched`);
+		}
+
 		// Extract slug - remove "blogs/" prefix if present
 		let slug = firstLocalized(fields.slug) || firstLocalized(cardFields.link) || '';
 		if (slug.startsWith('blogs/')) {
@@ -163,10 +200,9 @@ function buildWxr(blogPosts, cardsMap, assetsMap, authorsMap, deprecated) {
 		const postDateTime = postDate;
 
 		// Get images
-		// Featured image: prefer ogImageUrl, then image field, then first image from content
+		// Featured image: from Community Template Page (ogImageUrl or image field)
 		let featuredImageUrl = null;
 		let featuredImageId = null;
-		let cardImageUrl = null;
 
 		// Try ogImageUrl first (it's a URL string, not an asset reference)
 		const ogImageUrl = firstLocalized(fields.ogImageUrl);
@@ -175,33 +211,37 @@ function buildWxr(blogPosts, cardsMap, assetsMap, authorsMap, deprecated) {
 		if (ogImageUrl) {
 			// ogImageUrl is the featured image
 			featuredImageUrl = ogImageUrl.startsWith('//') ? 'https:' + ogImageUrl : ogImageUrl;
-			// Card image should be the image field (different from featured)
-			if (imageAssetId && assetsMap[imageAssetId]) {
-				cardImageUrl = assetsMap[imageAssetId];
-			}
 		} else if (imageAssetId && assetsMap[imageAssetId]) {
 			// No ogImageUrl, so image field is the featured image
 			featuredImageUrl = assetsMap[imageAssetId];
 			featuredImageId = imageAssetId;
-			// Card image is same as featured in this case
-			cardImageUrl = featuredImageUrl;
 		}
 
-		// Try card image from Community Card if available
-		if (!cardImageUrl) {
-			const cardImageAssetId = extractAssetId(cardFields.image);
-			if (cardImageAssetId && assetsMap[cardImageAssetId]) {
-				cardImageUrl = assetsMap[cardImageAssetId];
-			}
-		}
-
-		// Fallback to default
+		// Fallback to default for featured image
 		if (!featuredImageUrl) {
 			featuredImageUrl = DEFAULT_IMAGE_URL;
 		}
-		if (!cardImageUrl) {
-			cardImageUrl = featuredImageUrl;
+
+		// Card image: ALWAYS from Community Card's image field (if card exists)
+		// This is different from the featured image and comes from the card data
+		// IMPORTANT: Card image should NEVER be the same as featured image
+		let cardImageUrl = null;
+		const cardImageAssetId = extractAssetId(cardFields.image);
+		if (cardImageAssetId && assetsMap[cardImageAssetId]) {
+			cardImageUrl = assetsMap[cardImageAssetId];
+			console.error(`  ✓ Card image from Community Card: ${cardImageUrl.split('/').pop()}`);
+
+			// If card image is the same as featured image, that's an error - they should be different
+			if (cardImageUrl === featuredImageUrl) {
+				console.error(`  ⚠ WARNING: Card image is same as featured image! This should not happen.`);
+				// Don't set card image if it's the same as featured
+				cardImageUrl = null;
+			}
+		} else if (card) {
+			console.error(`  ⚠ Card exists but no image found`);
 		}
+
+		// DO NOT fallback to featured image - card image should be separate or not set at all
 
 		// Meta fields
 		const metaTitle = firstLocalized(fields.metaTitle) || title;
@@ -215,7 +255,8 @@ function buildWxr(blogPosts, cardsMap, assetsMap, authorsMap, deprecated) {
 		// Build post item
 		const currentPostId = postId++;
 		const featuredAttachId = attachId++;
-		const cardAttachId = cardImageUrl !== featuredImageUrl ? attachId++ : featuredAttachId;
+		// Card image should ALWAYS have its own attachment if it exists and is different from featured
+		const cardAttachId = cardImageUrl && cardImageUrl !== featuredImageUrl ? attachId++ : null;
 		const authorPhotoAttachId = authorPhotoUrl ? attachId++ : null;
 
 		out += '<item>\n';
@@ -251,11 +292,11 @@ function buildWxr(blogPosts, cardsMap, assetsMap, authorsMap, deprecated) {
 		// Featured image
 		meta('_thumbnail_id', featuredAttachId);
 
-		// Card image (for archive display)
-		if (cardImageUrl && cardAttachId !== featuredAttachId) {
+		// Card image (for archive display) - ACF image field needs both value and field key
+		// ONLY set card image if it exists and is different from featured image
+		if (cardImageUrl && cardAttachId && cardAttachId !== featuredAttachId) {
 			meta('resource_card_image', cardAttachId);
-		} else {
-			meta('resource_card_image', featuredAttachId);
+			meta('_resource_card_image', 'field_resource_card_image'); // ACF field key reference
 		}
 
 		// Author fields (we'll use WordPress author, but keep ACF for backwards compatibility during transition)
@@ -287,8 +328,8 @@ function buildWxr(blogPosts, cardsMap, assetsMap, authorsMap, deprecated) {
 		out += `<wp:attachment_url>${escXml(featuredImageUrl)}</wp:attachment_url>\n`;
 		out += '</item>\n';
 
-		// Card image attachment (if different from featured)
-		if (cardImageUrl && cardAttachId !== featuredAttachId) {
+		// Card image attachment (ONLY if card image exists and is different from featured)
+		if (cardImageUrl && cardAttachId && cardAttachId !== featuredAttachId) {
 			out += '<item>\n';
 			out += `<title><![CDATA[${title} card image]]></title>\n`;
 			out += `<link>${escXml(cardImageUrl)}</link>\n`;

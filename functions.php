@@ -512,3 +512,23 @@ function aera_custom_avatar($avatar, $id_or_email, $size, $default, $alt)
   return $avatar;
 }
 add_filter('get_avatar', 'aera_custom_avatar', 10, 5);
+
+
+// TEMPORARY: Fix imported images - Remove after running once
+add_action('init', function () {
+  if (get_option('aera_fixed_imported_images')) return;
+
+  $post_types = array('news', 'blog', 'press-release', 'case-study', 'video', 'podcast', 'whitepaper');
+  foreach ($post_types as $post_type) {
+    $posts = get_posts(array(
+      'post_type' => $post_type,
+      'posts_per_page' => -1,
+      'post_status' => 'publish',
+      'meta_query' => array(array('key' => '_thumbnail_id', 'compare' => 'EXISTS'))
+    ));
+    foreach ($posts as $post) {
+      wp_update_post(array('ID' => $post->ID));
+    }
+  }
+  update_option('aera_fixed_imported_images', true);
+}, 999);
