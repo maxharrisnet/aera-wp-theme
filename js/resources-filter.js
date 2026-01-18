@@ -44,7 +44,7 @@
 
 		console.log('Resources Filter - Setup:', {
 			filterButtonsFound: filterButtons.length,
-			resourceItemsFound: resourceItems.length
+			resourceItemsFound: resourceItems.length,
 		});
 
 		if (!filterButtons.length || !resourceItems.length) {
@@ -75,16 +75,17 @@
 
 	/**
 	 * Handle filter button click
+	 *
 	 * @param {Event} event - Click event
 	 */
 	function handleFilterClick(event) {
 		console.log('Resources Filter - Click detected');
 		event.preventDefault();
 		event.stopPropagation();
-		
+
 		const button = event.currentTarget;
 		const filterValue = button.getAttribute('data-filter');
-		
+
 		console.log('Resources Filter - Filtering by:', filterValue);
 
 		// Apply filter and update URL
@@ -93,7 +94,8 @@
 
 	/**
 	 * Apply filter to resources
-	 * @param {string} filterValue - Filter value to apply
+	 *
+	 * @param {string}  filterValue   - Filter value to apply
 	 * @param {boolean} updateHistory - Whether to update browser history
 	 */
 	function applyFilter(filterValue, updateHistory) {
@@ -111,6 +113,7 @@
 
 	/**
 	 * Update URL parameter
+	 *
 	 * @param {string} filterValue - Filter value
 	 */
 	function updateURL(filterValue) {
@@ -127,6 +130,7 @@
 
 	/**
 	 * Update active states on filter buttons
+	 *
 	 * @param {string} activeFilter - Currently active filter
 	 */
 	function updateButtonStates(activeFilter) {
@@ -147,14 +151,16 @@
 	/**
 	 * Normalize filter slug to match post_type values used in data-resource-type
 	 * e.g., 'videos' -> 'video', 'blogs' -> 'blog'
+	 *
 	 * @param {string} value
-	 * @returns {string}
+	 * @return {string}
 	 */
 	function normalizeFilter(value) {
 		const map = {
 			videos: 'video',
 			whitepapers: 'whitepaper',
 			blogs: 'blog',
+			'case-studies': 'case-study',
 			podcasts: 'podcast',
 		};
 		return map[value] || value;
@@ -162,6 +168,7 @@
 
 	/**
 	 * Filter resource items with fade animation
+	 *
 	 * @param {string} filterValue - Filter value
 	 */
 	function filterItems(filterValue) {
@@ -182,6 +189,7 @@
 
 	/**
 	 * Fade in element
+	 *
 	 * @param {HTMLElement} element - Element to fade in
 	 */
 	function fadeIn(element) {
@@ -202,6 +210,7 @@
 
 	/**
 	 * Fade out element
+	 *
 	 * @param {HTMLElement} element - Element to fade out
 	 */
 	function fadeOut(element) {

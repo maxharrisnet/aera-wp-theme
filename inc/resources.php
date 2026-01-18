@@ -26,6 +26,7 @@ function get_resource_types(): array
         'video',
         'whitepaper',
         'blog',
+        'case-study',
         'podcast',
       ),
     ),
@@ -48,6 +49,10 @@ function get_resource_types(): array
     'blogs'         => array(
       'label'      => __('Blogs', 'aera'),
       'post_types' => array('blog'),
+    ),
+    'case-studies'  => array(
+      'label'      => __('Case Studies', 'aera'),
+      'post_types' => array('case-study'),
     ),
     'podcasts'      => array(
       'label'      => __('Podcasts', 'aera'),
