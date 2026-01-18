@@ -98,7 +98,9 @@ function build_resource_query_args(string $slug, int $paged = 1): array
     'posts_per_page' => -1,
     'paged'          => max(1, $paged),
     'post_status'    => 'publish',
-    'orderby'        => 'date',
+    // 'orderby'        => 'date',
+    'orderby' => 'meta_value',
+    'meta_key' => 'resource_date',
     'order'          => 'DESC',
     // Note: Ordering by WordPress post_date (publish date).
     // If custom date field is needed, add meta_key and orderby meta_value accordingly.

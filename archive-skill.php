@@ -278,10 +278,11 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
       }
     });
 
-    // Submit form when checkboxes change
+    // Submit form when checkboxes change (fallback only if client-side filter isn't active)
     const skillCheckboxes = document.querySelectorAll('.skills-filter__checkbox');
     skillCheckboxes.forEach(function(checkbox) {
       checkbox.addEventListener('change', function() {
+        if (window.AeraSkillsFilterActive) return; // client-side filtering handles it
         const form = document.getElementById('skillsFilterForm');
         if (form) {
           form.submit();
