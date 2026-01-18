@@ -53,7 +53,7 @@ if ($skill_icon) {
 }
 ?>
 
-<div class="icon-card" data-function="<?php echo esc_attr($function_slug); ?>">
+<div class="icon-card" data-function="<?php echo esc_attr($function_slug); ?>" data-category="<?php echo esc_attr($category_slug); ?>" data-skill-id="<?php echo esc_attr(get_the_ID()); ?>">
   <a href="<?php echo esc_url($card_link); ?>" class="icon-card__link">
     <div class="icon-card__top-stripe"></div>
 

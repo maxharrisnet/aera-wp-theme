@@ -31,13 +31,13 @@ $skill_categories = get_terms(array(
 
 // Get current filters from URL
 $current_search = isset($_GET['skill_search']) ? sanitize_text_field(is_array($_GET['skill_search']) ? $_GET['skill_search'][0] : $_GET['skill_search']) : '';
-$current_skills = isset($_GET['skill']) ? array_map('intval', (array)$_GET['skill']) : array();
+$current_skills = isset($_GET['skills']) ? array_map('intval', (array)$_GET['skills']) : array();
 $current_sort = isset($_GET['sort']) ? sanitize_text_field(is_array($_GET['sort']) ? $_GET['sort'][0] : $_GET['sort']) : 'menu_order';
 
 // Prevent WordPress from processing our custom parameters as query vars
 add_filter('request', function ($query_vars) {
   // Remove our custom parameters from WordPress's query processing
-  unset($query_vars['skill']);
+  unset($query_vars['skills']);
   unset($query_vars['skill_search']);
   unset($query_vars['sort']);
   return $query_vars;
@@ -174,7 +174,7 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
                           $is_checked = in_array($skill->ID, $current_skills);
                         ?>
                           <label class="skills-filter__skill-item">
-                            <input type="checkbox" name="skill[]" value="<?php echo esc_attr($skill->ID); ?>" class="skills-filter__checkbox" <?php checked($is_checked); ?>>
+                            <input type="checkbox" name="skills[]" value="<?php echo esc_attr($skill->ID); ?>" class="skills-filter__checkbox" <?php checked($is_checked); ?>>
                             <span><?php echo esc_html($skill->post_title); ?></span>
                           </label>
                         <?php endforeach; ?>

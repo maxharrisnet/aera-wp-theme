@@ -226,6 +226,20 @@ function aera_technology_scripts()
     }
   }
 
+  // Enqueue Skills Archive filtering script
+  if (is_post_type_archive('skill')) {
+    $skills_filter_js_path = get_template_directory() . '/js/skills-filter.js';
+    if (file_exists($skills_filter_js_path)) {
+      wp_enqueue_script(
+        'aera-skills-filter',
+        get_template_directory_uri() . '/js/skills-filter.js',
+        array(),
+        filemtime($skills_filter_js_path),
+        true
+      );
+    }
+  }
+
   // Enqueue AeraHub 2025 page scripts
   if (is_page_template('page-aerahub-2025.php')) {
     $aerahub_2025_js_path = get_template_directory() . '/js/aerahub-2025.js';

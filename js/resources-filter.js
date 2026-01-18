@@ -42,28 +42,19 @@
 		filterButtons = document.querySelectorAll(CONFIG.filterSelector);
 		resourceItems = document.querySelectorAll(CONFIG.itemSelector);
 
-		console.log('Resources Filter - Setup:', {
-			filterButtonsFound: filterButtons.length,
-			resourceItemsFound: resourceItems.length,
-		});
-
 		if (!filterButtons.length || !resourceItems.length) {
-			console.warn('Resources Filter - Missing elements, filter not initialized');
 			return;
 		}
 
 		// Read initial filter from URL and apply
 		const urlParams = new URLSearchParams(window.location.search);
 		const initialFilter = urlParams.get(CONFIG.urlParam) || CONFIG.allValue;
-		console.log('Resources Filter - Initial filter:', initialFilter);
 		applyFilter(initialFilter, false);
 
 		// Attach click handlers to filter buttons
 		filterButtons.forEach(function (button) {
 			button.addEventListener('click', handleFilterClick);
 		});
-
-		console.log('Resources Filter - Event listeners attached');
 
 		// Handle browser back/forward buttons
 		window.addEventListener('popstate', function () {
@@ -79,14 +70,11 @@
 	 * @param {Event} event - Click event
 	 */
 	function handleFilterClick(event) {
-		console.log('Resources Filter - Click detected');
 		event.preventDefault();
 		event.stopPropagation();
 
 		const button = event.currentTarget;
 		const filterValue = button.getAttribute('data-filter');
-
-		console.log('Resources Filter - Filtering by:', filterValue);
 
 		// Apply filter and update URL
 		applyFilter(filterValue, true);
