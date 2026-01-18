@@ -25,12 +25,13 @@ function getLatestExportFile() {
 	if (!fs.existsSync(exportDir)) {
 		throw new Error('Export directory not found: ' + exportDir);
 	}
-	const files = fs.readdirSync(exportDir)
-		.filter(f => f.includes('contentful-export') && f.endsWith('.json'))
-		.map(f => ({
+	const files = fs
+		.readdirSync(exportDir)
+		.filter((f) => f.includes('contentful-export') && f.endsWith('.json'))
+		.map((f) => ({
 			name: f,
 			path: path.join(exportDir, f),
-			mtime: fs.statSync(path.join(exportDir, f)).mtime
+			mtime: fs.statSync(path.join(exportDir, f)).mtime,
 		}))
 		.sort((a, b) => b.mtime - a.mtime);
 
@@ -128,6 +129,9 @@ function buildWxr(items, assetsMap) {
 			imageUrl = DEFAULT_IMAGE_URL;
 		}
 
+		// Debug: Log image assignment
+		console.error(`  📷 "${title.substring(0, 50)}" → Image: ${imageUrl.split('/').pop() || 'DEFAULT'} (Asset ID: ${imageAssetId || 'NONE'})`);
+
 		const currentPostId = postId++;
 		const featuredAttachId = attachId++;
 
@@ -188,12 +192,15 @@ function buildWxr(items, assetsMap) {
 		out += '</item>\n';
 
 		// Image attachment
+		// Use unique GUID based on Contentful ID to prevent WordPress from deduplicating attachments
+		const uniqueGuid = it.sys && it.sys.id ? `attachment-news-${it.sys.id}-${featuredAttachId}` : `attachment-${featuredAttachId}`;
+
 		out += '<item>\n';
 		out += `<title><![CDATA[${title} image]]></title>\n`;
 		out += `<link>${escXml(imageUrl)}</link>\n`;
 		out += `<pubDate>${now}</pubDate>\n`;
 		out += `<dc:creator>admin</dc:creator>\n`;
-		out += `<guid isPermaLink="false">attachment-${featuredAttachId}</guid>\n`;
+		out += `<guid isPermaLink="false">${uniqueGuid}</guid>\n`;
 		out += `<wp:post_id>${featuredAttachId}</wp:post_id>\n`;
 		out += `<wp:post_date>${postDate}</wp:post_date>\n`;
 		out += `<wp:post_date_gmt>${postDate}</wp:post_date_gmt>\n`;
@@ -264,7 +271,7 @@ function run() {
 	});
 
 	console.error('News Item contentType:', newsCt.name, newsCt.sys?.id);
-	console.error('Total published News Items:', entries.filter(e => e.sys?.contentType?.sys?.id === 'newsItem' && e.sys?.publishedAt).length);
+	console.error('Total published News Items:', entries.filter((e) => e.sys?.contentType?.sys?.id === 'newsItem' && e.sys?.publishedAt).length);
 	console.error('Filtered to type="News":', newsEntries.length);
 
 	// Sort by date field (newest first)

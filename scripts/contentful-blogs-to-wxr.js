@@ -23,7 +23,7 @@ const striptags = require('striptags');
 
 const OUT = path.resolve(__dirname, '../_ORIGINAL_FILES/blogs-wxr.xml');
 const DEPRECATED_CSV = path.resolve(__dirname, '../_ORIGINAL_FILES/Website Cleanup - Nov 2025  - Aditya - Blogs.csv');
-const LIMIT = 12; // Start with 12 most recent for testing
+const LIMIT = 999; // Start with 12 most recent for testing
 
 // LATEST EXPORT FILE (with Community Cards): contentful-export-mh1amgo8m7ts-master-2026-01-16T12-53-01.json
 // This file includes both Community Template Pages and Community Cards
