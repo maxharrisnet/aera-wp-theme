@@ -240,6 +240,20 @@ function aera_technology_scripts()
     }
   }
 
+  // Enqueue Resources page filtering scripts
+  if (is_page_template('page-resources.php')) {
+    $resources_filter_js_path = get_template_directory() . '/js/resources-filter.js';
+    if (file_exists($resources_filter_js_path)) {
+      wp_enqueue_script(
+        'aera-resources-filter',
+        get_template_directory_uri() . '/js/resources-filter.js',
+        array(),
+        filemtime($resources_filter_js_path),
+        true
+      );
+    }
+  }
+
   // Preload HubSpot forms script on all pages for faster form loading
   // This prevents the "LOADING" message delay when clicking Schedule Demo buttons
   add_action('wp_head', function () {

@@ -23,10 +23,11 @@ $hero = wp_parse_args(
 );
 
 $types = get_resource_types();
-$active_slug = get_active_resource_type(filter_input(INPUT_GET, 'category', FILTER_SANITIZE_SPECIAL_CHARS));
+$active_slug = get_active_resource_type(filter_input(INPUT_GET, 'type', FILTER_SANITIZE_SPECIAL_CHARS));
 $paged = max(1, get_query_var('paged') ?: get_query_var('page') ?: 1);
 
-$resource_query = new WP_Query(build_resource_query_args($active_slug, $paged));
+// Load ALL resources - filtering will happen on the client-side via JavaScript
+$resource_query = new WP_Query(build_resource_query_args('all', $paged));
 
 $demo_media_base = trailingslashit(get_template_directory_uri()) . 'assets/placeholder/';
 $demo_resources = array(
@@ -68,7 +69,7 @@ $base_url = get_permalink();
     <div class="resources__filterType" id="typeSelector">
       <?php foreach ($types as $slug => $type) : ?>
         <?php
-        $url = 'all' === $slug ? remove_query_arg('category', $base_url) : add_query_arg('category', $slug, $base_url);
+        $url = 'all' === $slug ? remove_query_arg('type', $base_url) : add_query_arg('type', $slug, $base_url);
         $is_active = $slug === $active_slug;
         $style = $is_active ? 'border-bottom: 1px solid #00578f;' : '';
         ?>
