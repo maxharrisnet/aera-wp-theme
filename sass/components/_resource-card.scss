@@ -6,7 +6,7 @@
 /* RESOURCE CARD */
 .resource-card {
 	margin-top: $gutter * 1;
-	width: 32.9%; // TODO: Fix dumb flexbox widths
+	width: 33.33%; // TODO: Fix dumb flexbox widths
 	display: flex;
 	padding: 20px;
 
@@ -155,7 +155,7 @@
 		font-family: $font-family-gilroy;
 		font-style: normal;
 		font-weight: bold;
-		font-size: 22px;
+		font-size: 24px;
 		line-height: 27px;
 		color: $color-codgray;
 		margin: 15px 0px;
@@ -180,6 +180,7 @@
 		min-height: 120px;
 		color: $color-codgray;
 		flex: 1;
+		margin-top: 0;
 		// Truncate text to prevent overflow
 		display: -webkit-box;
 		-webkit-line-clamp: 5; // Show max 5 lines

@@ -140,7 +140,7 @@ function get_resource_cta_label(string $postType): string
     'webinar'      => __('Watch', 'aera'),
     'event'        => __('Register', 'aera'),
     'press-release' => __('Read', 'aera'),
-    'news'         => __('Read', 'aera'),
+    // 'news'         => __('Read More', 'aera'),
     'whitepaper'   => __('Download', 'aera'),
     'podcast'      => __('Listen', 'aera'),
     'customer'     => __('Explore', 'aera'),

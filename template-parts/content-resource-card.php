@@ -151,7 +151,7 @@ foreach ($link_attrs as $attr => $value) {
       ?> class="resource-card__link-wrapper">
       <div class="resource-card__row">
         <?php if ($type_label) : ?>
-          <div class="resource-card__type"><?php echo esc_html($type_label); ?></div>
+          <div class="resource-card__type"><?php echo esc_html(rtrim($type_label, 's')); ?></div>
         <?php endif; ?>
         <?php if ($city && $post_type === 'event') : ?>
           <div class="resource-card__city"><?php echo esc_html($city); ?></div>
@@ -173,7 +173,11 @@ foreach ($link_attrs as $attr => $value) {
             <div class="resource-card__date"><?php echo esc_html($display_date); ?></div>
           <?php endif; ?>
           <div class="resource-card__line"></div>
-          <?php if ($cta_label && $cta_label !== 'Read') : ?>
+          <?php
+          // Hide CTA for news, blogs, whitepapers, and press releases
+          $hide_cta = in_array($post_type, array('news', 'blog', 'whitepaper', 'press-release'));
+          if ($cta_label && !$hide_cta) :
+          ?>
             <span class="resource-card__link"><?php echo esc_html($cta_label); ?></span>
           <?php endif; ?>
         </div>
