@@ -24,12 +24,13 @@ function getLatestExportFile() {
 	if (!fs.existsSync(exportDir)) {
 		throw new Error('Export directory not found: ' + exportDir);
 	}
-	const files = fs.readdirSync(exportDir)
-		.filter(f => f.includes('contentful-export') && f.endsWith('.json'))
-		.map(f => ({
+	const files = fs
+		.readdirSync(exportDir)
+		.filter((f) => f.includes('contentful-export') && f.endsWith('.json'))
+		.map((f) => ({
 			name: f,
 			path: path.join(exportDir, f),
-			mtime: fs.statSync(path.join(exportDir, f)).mtime
+			mtime: fs.statSync(path.join(exportDir, f)).mtime,
 		}))
 		.sort((a, b) => b.mtime - a.mtime);
 
@@ -241,8 +242,8 @@ function run() {
 
 	// Filter: Only Podcast content type, published, and type="Podcast"
 	const podcasts = entries.filter((e) => {
-		// Must be Podcast content type
-		if (e.sys?.contentType?.sys?.id !== 'podcast') {
+		// Must be Podcast content type (content type ID is "podcasts", plural)
+		if (e.sys?.contentType?.sys?.id !== 'podcasts') {
 			return false;
 		}
 		// Must be published
@@ -259,14 +260,14 @@ function run() {
 		return true;
 	});
 
-	console.error('Podcast contentType: podcast');
-	console.error('Total published Podcasts:', entries.filter(e => e.sys?.contentType?.sys?.id === 'podcast' && e.sys?.publishedAt).length);
+	console.error('Podcast contentType: podcasts');
+	console.error('Total published Podcasts:', entries.filter((e) => e.sys?.contentType?.sys?.id === 'podcasts' && e.sys?.publishedAt).length);
 	console.error('Filtered to type="Podcast" (or all if no type field):', podcasts.length);
 
-	// Sort by date field (newest first)
+	// Sort by date field (newest first) - only use custom date field
 	podcasts.sort((a, b) => {
-		const dateA = firstLocalized(a.fields?.date) || a.sys.updatedAt || a.sys.createdAt;
-		const dateB = firstLocalized(b.fields?.date) || b.sys.updatedAt || b.sys.createdAt;
+		const dateA = firstLocalized(a.fields?.date) || '1970-01-01';
+		const dateB = firstLocalized(b.fields?.date) || '1970-01-01';
 		return new Date(dateB) - new Date(dateA);
 	});
 

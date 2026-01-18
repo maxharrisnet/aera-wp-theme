@@ -26,12 +26,13 @@ function getLatestExportFile() {
 	if (!fs.existsSync(exportDir)) {
 		throw new Error('Export directory not found: ' + exportDir);
 	}
-	const files = fs.readdirSync(exportDir)
-		.filter(f => f.includes('contentful-export') && f.endsWith('.json'))
-		.map(f => ({
+	const files = fs
+		.readdirSync(exportDir)
+		.filter((f) => f.includes('contentful-export') && f.endsWith('.json'))
+		.map((f) => ({
 			name: f,
 			path: path.join(exportDir, f),
-			mtime: fs.statSync(path.join(exportDir, f)).mtime
+			mtime: fs.statSync(path.join(exportDir, f)).mtime,
 		}))
 		.sort((a, b) => b.mtime - a.mtime);
 
@@ -311,7 +312,7 @@ function run() {
 		if (e.sys?.contentType?.sys?.id !== 'newsItem') return false;
 		if (!e.sys?.publishedAt) return false;
 		const type = firstLocalized(e.fields?.type);
-		return type && (type.includes('Press') && type.includes('Release'));
+		return type && type.includes('Press') && type.includes('Release');
 	});
 
 	console.error('Article Template Pages (published):', articlePages.length);
@@ -337,8 +338,14 @@ function run() {
 			const cardByUrl = pressReleaseCards.find((card) => {
 				const cardLink = firstLocalized(card.fields?.link);
 				if (!cardLink || (!articleSlug && !articleUrl)) return false;
-				const normalizedCardLink = cardLink.replace(/^\/news\//, '').replace(/^\//, '').replace(/\/$/, '');
-				const normalizedArticleSlug = (articleSlug || articleUrl || '').replace(/^\/news\//, '').replace(/^\//, '').replace(/\/$/, '');
+				const normalizedCardLink = cardLink
+					.replace(/^\/news\//, '')
+					.replace(/^\//, '')
+					.replace(/\/$/, '');
+				const normalizedArticleSlug = (articleSlug || articleUrl || '')
+					.replace(/^\/news\//, '')
+					.replace(/^\//, '')
+					.replace(/\/$/, '');
 				return normalizedCardLink === normalizedArticleSlug || normalizedCardLink.includes(normalizedArticleSlug) || normalizedArticleSlug.includes(normalizedCardLink);
 			});
 
@@ -350,10 +357,28 @@ function run() {
 
 	console.error('Cards matched to articles:', cardsMap.size);
 
-	// Sort by date (newest first)
+	// Sort by date (newest first) - use card date as fallback if article date missing
 	articlePages.sort((a, b) => {
-		const dateA = firstLocalized(a.fields?.date) || a.sys.updatedAt || a.sys.createdAt;
-		const dateB = firstLocalized(b.fields?.date) || b.sys.updatedAt || b.sys.createdAt;
+		// Get article date first, fallback to card date (card is already matched)
+		let dateA = firstLocalized(a.fields?.date);
+		if (!dateA) {
+			const cardA = cardsMap.get(a.sys.id);
+			if (cardA) {
+				dateA = firstLocalized(cardA.fields?.date);
+			}
+		}
+		let dateB = firstLocalized(b.fields?.date);
+		if (!dateB) {
+			const cardB = cardsMap.get(b.sys.id);
+			if (cardB) {
+				dateB = firstLocalized(cardB.fields?.date);
+			}
+		}
+
+		// Only use custom date field - if missing, sort to end (use far past date)
+		dateA = dateA || '1970-01-01';
+		dateB = dateB || '1970-01-01';
+
 		return new Date(dateB) - new Date(dateA);
 	});
 

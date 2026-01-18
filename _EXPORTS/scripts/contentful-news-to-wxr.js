@@ -274,10 +274,10 @@ function run() {
 	console.error('Total published News Items:', entries.filter((e) => e.sys?.contentType?.sys?.id === 'newsItem' && e.sys?.publishedAt).length);
 	console.error('Filtered to type="News":', newsEntries.length);
 
-	// Sort by date field (newest first)
+	// Sort by date field (newest first) - only use custom date field
 	newsEntries.sort((a, b) => {
-		const dateA = firstLocalized(a.fields?.date) || a.sys.createdAt || '';
-		const dateB = firstLocalized(b.fields?.date) || b.sys.createdAt || '';
+		const dateA = firstLocalized(a.fields?.date) || '1970-01-01';
+		const dateB = firstLocalized(b.fields?.date) || '1970-01-01';
 		return new Date(dateB) - new Date(dateA);
 	});
 

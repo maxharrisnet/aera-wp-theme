@@ -503,10 +503,28 @@ function run() {
 		}
 	});
 
-	// Sort by date (most recent first) and limit
+	// Sort by date (most recent first) - use card date as fallback if blog date missing
 	blogPosts.sort((a, b) => {
-		const dateA = firstLocalized(a.fields?.date) || a.sys.updatedAt || a.sys.createdAt;
-		const dateB = firstLocalized(b.fields?.date) || b.sys.updatedAt || b.sys.createdAt;
+		// Get blog date first, fallback to card date (card is already matched)
+		let dateA = firstLocalized(a.fields?.date);
+		if (!dateA) {
+			const cardA = cardsMap.get(a.sys.id);
+			if (cardA) {
+				dateA = firstLocalized(cardA.fields?.date);
+			}
+		}
+		let dateB = firstLocalized(b.fields?.date);
+		if (!dateB) {
+			const cardB = cardsMap.get(b.sys.id);
+			if (cardB) {
+				dateB = firstLocalized(cardB.fields?.date);
+			}
+		}
+
+		// Only use custom date field - if missing, sort to end (use far past date)
+		dateA = dateA || '1970-01-01';
+		dateB = dateB || '1970-01-01';
+
 		return new Date(dateB) - new Date(dateA);
 	});
 

@@ -24,12 +24,13 @@ function getLatestExportFile() {
 	if (!fs.existsSync(exportDir)) {
 		throw new Error('Export directory not found: ' + exportDir);
 	}
-	const files = fs.readdirSync(exportDir)
-		.filter(f => f.includes('contentful-export') && f.endsWith('.json'))
-		.map(f => ({
+	const files = fs
+		.readdirSync(exportDir)
+		.filter((f) => f.includes('contentful-export') && f.endsWith('.json'))
+		.map((f) => ({
 			name: f,
 			path: path.join(exportDir, f),
-			mtime: fs.statSync(path.join(exportDir, f)).mtime
+			mtime: fs.statSync(path.join(exportDir, f)).mtime,
 		}))
 		.sort((a, b) => b.mtime - a.mtime);
 
@@ -241,8 +242,8 @@ function run() {
 
 	// Filter: Only Events content type, published, and type="Whitepaper"
 	const whitepapers = entries.filter((e) => {
-		// Must be Events content type
-		if (e.sys?.contentType?.sys?.id !== 'event') {
+		// Must be Events content type (content type ID is "events", not "event")
+		if (e.sys?.contentType?.sys?.id !== 'events') {
 			return false;
 		}
 		// Must be published
@@ -254,14 +255,14 @@ function run() {
 		return type === 'Whitepaper';
 	});
 
-	console.error('Events contentType: event');
-	console.error('Total published Events:', entries.filter(e => e.sys?.contentType?.sys?.id === 'event' && e.sys?.publishedAt).length);
+	console.error('Events contentType: events');
+	console.error('Total published Events:', entries.filter((e) => e.sys?.contentType?.sys?.id === 'events' && e.sys?.publishedAt).length);
 	console.error('Filtered to type="Whitepaper":', whitepapers.length);
 
-	// Sort by date field (newest first)
+	// Sort by date field (newest first) - only use custom date field
 	whitepapers.sort((a, b) => {
-		const dateA = firstLocalized(a.fields?.date) || a.sys.updatedAt || a.sys.createdAt;
-		const dateB = firstLocalized(b.fields?.date) || b.sys.updatedAt || b.sys.createdAt;
+		const dateA = firstLocalized(a.fields?.date) || '1970-01-01';
+		const dateB = firstLocalized(b.fields?.date) || '1970-01-01';
 		return new Date(dateB) - new Date(dateA);
 	});
 
