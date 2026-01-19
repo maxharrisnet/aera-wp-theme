@@ -17,7 +17,7 @@ $hero = function_exists('get_field') ? (array) get_field('events_hero') : array(
 $hero = wp_parse_args(
   $hero,
   array(
-    'title'       => __('In-PersonEvents', 'aera')
+    'title'       => __('In-Person Events', 'aera')
   )
 );
 

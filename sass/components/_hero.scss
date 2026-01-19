@@ -5,7 +5,7 @@
 @use '../grid' as *;
 @use 'typography' as *;
 
-// Base hero styles - shared across all variations
+// Base hero styles - default (Intro style)
 .hero {
 	position: relative;
 	z-index: 3;
@@ -31,9 +31,15 @@
 	&__container {
 		@include container;
 	}
-	// hero
+
 	&__title {
-		@extend %title-hero-base;
+		@include responsive-font(26, 70);
+		margin-bottom: 6px;
+		font-family: $font-family-heading;
+		font-weight: 700;
+		line-height: 1.3;
+		letter-spacing: -0.025em;
+		color: $font-color-dark;
 	}
 
 	&__subtitle {
@@ -43,7 +49,7 @@
 	&__text {
 		@include reset-paragraph;
 		@include responsive-font(18, 26);
-		margin: 0 auto ($gutter * 2);
+		margin: 0 auto 1em;
 		font-weight: 400;
 
 		@media (min-width: $min-480) {
@@ -52,17 +58,6 @@
 
 			.hero--full-height & {
 				max-width: math.div(940, 26) * 1em;
-			}
-		}
-
-		// Decision Cloud variation - wider text to prevent wrapping of "agent" and "realtime"
-		.site-main--decision-cloud & {
-			@media (min-width: $min-480) {
-				max-width: 100%;
-				width: 100%;
-			}
-			@media (min-width: $min-768) {
-				max-width: 1200px;
 			}
 		}
 	}
@@ -103,6 +98,7 @@
 // Home variation
 .hero--home {
 	padding: 50px 0 0;
+	height: auto;
 
 	@media (min-width: $min-768) {
 		padding: 50px 0 0;
@@ -123,19 +119,60 @@
 	}
 
 	.hero__text {
+		@include responsive-font(18, 26);
+
 		@media (min-width: $min-480) {
 			max-width: math.div(840, 26) * 1em;
 			width: 100%;
+		}
+	}
+}
 
-			.hero--full-height & {
-				max-width: math.div(940, 26) * 1em;
-			}
+// ADC (Platform / Decision Cloud) variation
+.hero--adc {
+	padding: 150px 0 0 !important;
+	height: 550px;
+
+	@media (max-width: $min-720) {
+		padding: 0px 0 0;
+		height: auto;
+		min-height: 300px;
+	}
+
+	@media (min-width: $min-768) {
+		padding: 0px 0 0;
+	}
+
+	@media (min-width: $min-1024) {
+		padding: 0px 0 0;
+	}
+
+	.hero__title {
+		@include responsive-font(26, 70);
+		margin-bottom: 20px;
+		padding-top: 0px;
+		margin-top: 20px;
+		line-height: 1.3;
+		letter-spacing: -0.025em;
+	}
+
+	.hero__text {
+		@include responsive-font(18, 26);
+		max-width: 100%;
+		width: 100%;
+
+		@media (min-width: $min-768) {
+			max-width: 1200px;
 		}
 	}
 }
 
 // Careers variation
 .hero--careers {
+	.hero__title {
+		margin-bottom: 6px;
+	}
+
 	.hero__text {
 		@media (min-width: $min-480) {
 			max-width: math.div(840, 26) * 1em;
@@ -150,16 +187,12 @@
 
 // Team variation
 .hero--team {
-	height: 450px;
-	min-height: 100vh;
-	display: flex;
-	align-items: center;
 	padding: 290px 0 0 !important;
+	height: 450px;
 
 	@media (max-width: $min-720) {
 		padding: 100px 0 0 !important;
-		display: flex;
-		align-items: center;
+		height: auto;
 		min-height: 100vh;
 	}
 
@@ -180,9 +213,11 @@
 	}
 
 	.hero__title {
+		@include responsive-font(26, 70);
 		margin-bottom: 20px;
-		padding-top: 0px;
 		margin-top: 20px;
+		line-height: 1.3;
+		letter-spacing: -0.025em;
 	}
 
 	.hero__text {
@@ -193,25 +228,17 @@
 		@media (min-width: $min-480) {
 			max-width: math.div(840, 20) * 1em;
 			width: 100%;
-
-			.hero--full-height & {
-				max-width: math.div(940, 26) * 1em;
-			}
 		}
 	}
 }
 
 // Skillset variation
 .hero--skillset {
-	height: 550px;
-	display: flex;
-	align-items: center;
 	padding: 150px 0 0 !important;
+	height: 550px;
 
 	@media (max-width: $min-720) {
 		padding: 100px 0 0;
-		display: flex;
-		align-items: center;
 		height: auto;
 		min-height: 300px;
 	}
@@ -228,12 +255,17 @@
 		display: flex;
 		align-items: center;
 		padding: 0;
+		height: auto;
+		min-height: 100vh;
 	}
 
 	.hero__title {
+		@include responsive-font(26, 70);
 		margin-bottom: 20px;
 		padding-top: 0px;
 		margin-top: 20px;
+		line-height: 1.3;
+		letter-spacing: -0.025em;
 	}
 
 	.hero__text {
@@ -242,25 +274,19 @@
 		@media (min-width: $min-480) {
 			max-width: math.div(840, 18) * 1em;
 			width: 100%;
-
-			.hero--full-height & {
-				max-width: math.div(940, 26) * 1em;
-			}
 		}
 	}
 }
 
 // Partners variation
 .hero--partners {
-	height: 550px;
-	display: flex;
-	align-items: center;
 	padding: 150px 0 0 !important;
+	height: 550px;
 
 	@media (max-width: $min-720) {
 		padding: 0px 0 0;
-		display: flex;
-		align-items: center;
+		height: auto;
+		min-height: 300px;
 	}
 
 	@media (min-width: $min-768) {
@@ -275,12 +301,17 @@
 		display: flex;
 		align-items: center;
 		padding: 0;
+		height: auto;
+		min-height: 100vh;
 	}
 
 	.hero__title {
+		@include responsive-font(26, 70);
 		margin-bottom: 20px;
 		padding-top: 0px;
 		margin-top: 20px;
+		line-height: 1.3;
+		letter-spacing: -0.025em;
 	}
 
 	.hero__text {
@@ -289,27 +320,19 @@
 		@media (min-width: $min-480) {
 			max-width: math.div(840, 21) * 1em;
 			width: 100%;
-
-			.hero--full-height & {
-				max-width: math.div(940, 26) * 1em;
-			}
 		}
 	}
 }
 
 // Case Study variation
 .hero--case-study {
-	position: relative;
-	z-index: 3;
-	height: 450px;
-	display: flex;
-	align-items: center;
 	padding: 150px 0 0 !important;
+	height: 450px;
 
 	@media (max-width: $min-720) {
 		padding: 0px 0 0;
-		display: flex;
-		align-items: center;
+		height: auto;
+		min-height: 300px;
 	}
 
 	@media (min-width: $min-768) {
@@ -324,6 +347,8 @@
 		display: flex;
 		align-items: center;
 		padding: 0;
+		height: auto;
+		min-height: 100vh;
 	}
 
 	.hero__title {
@@ -346,10 +371,6 @@
 			max-width: math.div(840, 20) * 1em;
 			width: 100%;
 			margin-bottom: 0;
-
-			.hero--full-height & {
-				max-width: math.div(940, 26) * 1em;
-			}
 		}
 	}
 }
