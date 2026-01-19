@@ -152,34 +152,119 @@
       "label": "CTA Buttons",
       "name": "cta_buttons",
       "type": "repeater",
-      "instructions": "Add call-to-action buttons (up to 3 recommended).",
-      "required": false,
+      "instructions": "Add one or more call-to-action buttons.",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "100",
+        "class": "",
+        "id": ""
+      },
+      "default_value": [
+        {
+          "text": "Schedule Demo",
+          "link_type": "external",
+          "link_external": "/demo"
+        }
+      ],
       "min": 0,
-      "max": 0,
+      "max": 3,
       "layout": "table",
       "button_label": "Add Button",
       "sub_fields": [
         {
-          "key": "field_cta_button_label",
-          "label": "Button Label",
-          "name": "label",
+          "key": "field_cta_button_text",
+          "label": "Button Text",
+          "name": "text",
           "type": "text",
           "instructions": "",
-          "required": true,
+          "required": 1,
+          "default_value": "",
+          "placeholder": "Schedule Demo",
+          "prepend": "",
+          "append": "",
+          "maxlength": "",
           "wrapper": {
-            "width": "50"
-          }
+            "width": "40",
+            "class": "",
+            "id": ""
+          },
+          "parent_repeater": "field_cta_buttons"
         },
         {
-          "key": "field_cta_button_url",
-          "label": "Button URL",
-          "name": "url",
-          "type": "url",
+          "key": "field_cta_button_link_type",
+          "label": "Link Type",
+          "name": "link_type",
+          "type": "button_group",
           "instructions": "",
-          "required": true,
+          "required": 0,
+          "choices": {
+            "external": "External URL",
+            "internal": "Internal Page"
+          },
+          "default_value": "external",
           "wrapper": {
-            "width": "50"
-          }
+            "width": "30",
+            "class": "",
+            "id": ""
+          },
+          "parent_repeater": "field_cta_buttons"
+        },
+        {
+          "key": "field_cta_button_link_external",
+          "label": "External URL",
+          "name": "link_external",
+          "type": "text",
+          "instructions": "External URL or relative path (e.g., /demo)",
+          "required": 0,
+          "conditional_logic": [
+            [
+              {
+                "field": "field_cta_button_link_type",
+                "operator": "==",
+                "value": "external"
+              }
+            ]
+          ],
+          "default_value": "",
+          "placeholder": "https://example.com or /demo",
+          "wrapper": {
+            "width": "70",
+            "class": "",
+            "id": ""
+          },
+          "parent_repeater": "field_cta_buttons"
+        },
+        {
+          "key": "field_cta_button_link_internal",
+          "label": "Internal Page",
+          "name": "link_internal",
+          "type": "post_object",
+          "instructions": "Select an internal page",
+          "required": 0,
+          "conditional_logic": [
+            [
+              {
+                "field": "field_cta_button_link_type",
+                "operator": "==",
+                "value": "internal"
+              }
+            ]
+          ],
+          "post_type": [
+            "page",
+            "post"
+          ],
+          "taxonomy": "",
+          "allow_null": 0,
+          "multiple": 0,
+          "return_format": "id",
+          "wrapper": {
+            "width": "70",
+            "class": "",
+            "id": ""
+          },
+          "parent_repeater": "field_cta_buttons"
         }
       ]
     }

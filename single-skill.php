@@ -186,9 +186,27 @@ while (have_posts()) :
           <h2 class="skills-home__action-title"><?php esc_html_e('See Aera in Action', 'aera'); ?></h2>
           <div class="skills-home__action-buttons">
             <?php foreach ($cta_buttons as $button) : ?>
-              <?php if (!empty($button['url']) && !empty($button['label'])) : ?>
-                <a href="<?php echo esc_url($button['url']); ?>" class="skills-home__action-button">
-                  <?php echo esc_html($button['label']); ?>
+              <?php
+              // Process button link
+              $link = '';
+              if (!empty($button['link_type']) && $button['link_type'] === 'internal' && !empty($button['link_internal'])) {
+                $link = get_permalink($button['link_internal']);
+              } elseif (!empty($button['link_external'])) {
+                $link = $button['link_external'];
+              } elseif (!empty($button['link'])) {
+                // Legacy support
+                $link = $button['link'];
+              } elseif (!empty($button['url'])) {
+                // Legacy support for old 'url' field
+                $link = $button['url'];
+              }
+
+              $text = $button['text'] ?? $button['label'] ?? '';
+
+              if (!empty($text) && !empty($link)) :
+              ?>
+                <a href="<?php echo esc_url($link); ?>" class="skills-home__action-button">
+                  <?php echo esc_html($text); ?>
                 </a>
               <?php endif; ?>
             <?php endforeach; ?>

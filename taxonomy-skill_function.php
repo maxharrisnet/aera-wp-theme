@@ -206,22 +206,37 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                       <?php endif; ?>
 
                       <?php
-                      // Display CTA buttons (optional)
-                      $read_how_url = function_exists('get_field') ? get_field('read_how_it_works_url', $skill->ID) : '';
-                      $explore_more_url = function_exists('get_field') ? get_field('explore_more_url', $skill->ID) : '';
+                      // Display CTA buttons (from repeater field)
+                      $cta_buttons = function_exists('get_field') ? get_field('cta_buttons', $skill->ID) : array();
 
-                      if (!$read_how_url && $explore_more_url) :
+                      if (!empty($cta_buttons) && is_array($cta_buttons)) :
                       ?>
                         <div class="skill-content__cta">
-                          <a href="<?php echo esc_url($explore_more_url); ?>" class="button button--outline" target="_blank" rel="noopener noreferrer">
-                            <?php esc_html_e('Explore more', 'aera'); ?>
-                          </a>
-                        </div>
-                      <?php elseif ($read_how_url) : ?>
-                        <div class="skill-content__cta">
-                          <a href="<?php echo esc_url($read_how_url); ?>" class="button button--outline" target="_blank" rel="noopener noreferrer">
-                            <?php esc_html_e('Read how It Works', 'aera'); ?>
-                          </a>
+                          <?php foreach ($cta_buttons as $button) : ?>
+                            <?php
+                            // Process button link
+                            $link = '';
+                            if (!empty($button['link_type']) && $button['link_type'] === 'internal' && !empty($button['link_internal'])) {
+                              $link = get_permalink($button['link_internal']);
+                            } elseif (!empty($button['link_external'])) {
+                              $link = $button['link_external'];
+                            } elseif (!empty($button['link'])) {
+                              // Legacy support
+                              $link = $button['link'];
+                            } elseif (!empty($button['url'])) {
+                              // Legacy support for old 'url' field
+                              $link = $button['url'];
+                            }
+
+                            $text = $button['text'] ?? $button['label'] ?? '';
+
+                            if (!empty($text) && !empty($link)) :
+                            ?>
+                              <a href="<?php echo esc_url($link); ?>" class="button button--outline" target="_blank" rel="noopener noreferrer">
+                                <?php echo esc_html($text); ?>
+                              </a>
+                            <?php endif; ?>
+                          <?php endforeach; ?>
                         </div>
                       <?php endif; ?>
 
@@ -308,9 +323,27 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
         <h2 class="skills-cta__title"><?php echo esc_html($cta_title); ?></h2>
         <div class="skills-cta__buttons">
           <?php foreach ($cta_buttons as $button) : ?>
-            <?php if (!empty($button['button_text']) && !empty($button['button_url'])) : ?>
-              <a href="<?php echo esc_url($button['button_url']); ?>" class="button button--primary">
-                <?php echo esc_html($button['button_text']); ?>
+            <?php
+            // Process button link
+            $link = '';
+            if (!empty($button['link_type']) && $button['link_type'] === 'internal' && !empty($button['link_internal'])) {
+              $link = get_permalink($button['link_internal']);
+            } elseif (!empty($button['link_external'])) {
+              $link = $button['link_external'];
+            } elseif (!empty($button['link'])) {
+              // Legacy support
+              $link = $button['link'];
+            } elseif (!empty($button['button_url'])) {
+              // Legacy support for old 'button_url' field
+              $link = $button['button_url'];
+            }
+
+            $text = $button['text'] ?? $button['button_text'] ?? '';
+
+            if (!empty($text) && !empty($link)) :
+            ?>
+              <a href="<?php echo esc_url($link); ?>" class="button button--primary">
+                <?php echo esc_html($text); ?>
               </a>
             <?php endif; ?>
           <?php endforeach; ?>

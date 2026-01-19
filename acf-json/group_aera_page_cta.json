@@ -41,7 +41,7 @@
       "label": "CTA Buttons",
       "name": "cta_buttons",
       "type": "repeater",
-      "instructions": "Add one or more call-to-action buttons. Leave empty to use defaults.",
+      "instructions": "Add one or more call-to-action buttons.",
       "required": 0,
       "conditional_logic": 0,
       "wrapper": {
@@ -49,6 +49,13 @@
         "class": "",
         "id": ""
       },
+      "default_value": [
+        {
+          "text": "Schedule Demo",
+          "link_type": "external",
+          "link_external": "/demo"
+        }
+      ],
       "min": 0,
       "max": 3,
       "layout": "table",
