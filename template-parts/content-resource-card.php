@@ -46,8 +46,15 @@ if (empty($excerpt)) {
 
 $type_label = $args['type_label'] ?? get_resource_label_for_post_type($post_type);
 $city = $args['city'] ?? '';
-// Get date value - use args if provided, otherwise get WordPress post date in Y-m-d format
-$date_value = $args['date'] ?? get_the_date('Y-m-d', $post_id);
+
+// Check for Coming Soon toggle
+$is_coming_soon = false;
+if (!$is_demo && function_exists('get_field')) {
+  $is_coming_soon = (bool) get_field('resource_coming_soon', $post_id);
+}
+
+// Get date value - no date for coming soon items
+$date_value = $is_coming_soon ? '' : ($args['date'] ?? get_the_date('Y-m-d', $post_id));
 $display_date = $date_value ?: '';
 
 $external_url = $args['external_url'] ?? (function_exists('get_field') ? get_field('resource_external_url', $post_id) : '');
@@ -110,11 +117,14 @@ $fallback_media = (!$has_image && !$has_logo) ? get_resource_fallback_media($pos
 $card_classes = array('resource-card');
 $card_classes[] = 'resource-card--' . esc_attr($post_type);
 
-// Build link attributes
-$link_attrs = array('href' => esc_url($link));
-if ($is_external) {
-  $link_attrs['target'] = '_blank';
-  $link_attrs['rel'] = 'noopener noreferrer';
+// Build link attributes - don't link if Coming Soon
+$link_attrs = array();
+if (!$is_coming_soon) {
+  $link_attrs['href'] = esc_url($link);
+  if ($is_external) {
+    $link_attrs['target'] = '_blank';
+    $link_attrs['rel'] = 'noopener noreferrer';
+  }
 }
 $link_attr_string = '';
 foreach ($link_attrs as $attr => $value) {
@@ -148,7 +158,7 @@ foreach ($link_attrs as $attr => $value) {
     <?php endif; ?>
 
     <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-      ?> class="resource-card__link-wrapper">
+      ?> class="resource-card__link-wrapper<?php echo $is_coming_soon ? ' resource-card__link-wrapper--coming-soon' : ''; ?>">
       <div class="resource-card__row">
         <?php if ($type_label) : ?>
           <div class="resource-card__type"><?php echo esc_html(rtrim($type_label, 's')); ?></div>
@@ -169,16 +179,21 @@ foreach ($link_attrs as $attr => $value) {
 
       <div class="resource-card__lastRow">
         <div class="resource-card__row resource-card__row--last">
-          <?php if ($display_date) : ?>
-            <div class="resource-card__date"><?php echo esc_html($display_date); ?></div>
-          <?php endif; ?>
-          <div class="resource-card__line"></div>
-          <?php
-          // Hide CTA for news, blogs, whitepapers, and press releases
-          $hide_cta = in_array($post_type, array('news', 'blog', 'whitepaper', 'press-release'));
-          if ($cta_label && !$hide_cta) :
-          ?>
-            <span class="resource-card__link"><?php echo esc_html($cta_label); ?></span>
+          <?php if ($is_coming_soon) : ?>
+            <div class="resource-card__line"></div>
+            <span class="resource-card__coming-soon"><?php esc_html_e('Coming Soon', 'aera'); ?></span>
+          <?php else : ?>
+            <?php if ($display_date) : ?>
+              <div class="resource-card__date"><?php echo esc_html($display_date); ?></div>
+            <?php endif; ?>
+            <div class="resource-card__line"></div>
+            <?php
+            // Hide CTA for news, blogs, whitepapers, and press releases
+            $hide_cta = in_array($post_type, array('news', 'blog', 'whitepaper', 'press-release'));
+            if ($cta_label && !$hide_cta) :
+            ?>
+              <span class="resource-card__link"><?php echo esc_html($cta_label); ?></span>
+            <?php endif; ?>
           <?php endif; ?>
         </div>
       </div>

@@ -284,6 +284,32 @@
 		}
 	}
 
+	&__coming-soon {
+		font-family: $font-family-gilroy;
+		font-size: 13px;
+		font-weight: 700;
+		color: #003f68;
+		text-transform: uppercase;
+		text-align: right;
+		display: block;
+		cursor: default;
+		white-space: nowrap;
+		text-decoration: none;
+
+		@media (max-width: $max-720) {
+			text-align: left;
+		}
+	}
+
+	&__link-wrapper--coming-soon {
+		cursor: default;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
 	// Horizontal layout for Skills Home resources
 	&--horizontal {
 		width: 100%;

@@ -120,6 +120,26 @@
       "default_value": "",
       "placeholder": "",
       "maxlength": ""
+    },
+    {
+      "key": "field_resource_coming_soon",
+      "label": "Coming Soon",
+      "name": "resource_coming_soon",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "Enable this to mark this resource as Coming Soon. Coming Soon items will not be linked, won't show a date, and will appear at the end of the list.",
+      "required": false,
+      "conditional_logic": false,
+      "wrapper": {
+        "width": "50",
+        "class": "",
+        "id": ""
+      },
+      "message": "This is a Coming Soon resource",
+      "default_value": 0,
+      "ui": 1,
+      "ui_on_text": "Yes",
+      "ui_off_text": "No"
     }
   ],
   "location": [
