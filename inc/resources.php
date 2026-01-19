@@ -98,21 +98,8 @@ function build_resource_query_args(string $slug, int $paged = 1): array
     'posts_per_page' => -1,
     'paged'          => max(1, $paged),
     'post_status'    => 'publish',
-    'orderby'        => array(
-      'coming_soon_clause' => 'ASC',  // Coming Soon last (0 before 1)
-      'date'               => 'DESC',
-    ),
-    'meta_query'     => array(
-      'relation' => 'OR',
-      'coming_soon_clause' => array(
-        'key'     => 'resource_coming_soon',
-        'compare' => 'EXISTS',
-      ),
-      array(
-        'key'     => 'resource_coming_soon',
-        'compare' => 'NOT EXISTS',
-      ),
-    ),
+    'orderby'        => 'date',
+    'order'          => 'DESC',
   );
 }
 
