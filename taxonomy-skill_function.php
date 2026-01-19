@@ -218,6 +218,8 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                             $link = '';
                             if (!empty($button['link_type']) && $button['link_type'] === 'internal' && !empty($button['link_internal'])) {
                               $link = get_permalink($button['link_internal']);
+                            } elseif (!empty($button['link_type']) && $button['link_type'] === 'resource' && !empty($button['link_resource'])) {
+                              $link = get_permalink($button['link_resource']);
                             } elseif (!empty($button['link_external'])) {
                               $link = $button['link_external'];
                             } elseif (!empty($button['link'])) {
@@ -328,6 +330,8 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
             $link = '';
             if (!empty($button['link_type']) && $button['link_type'] === 'internal' && !empty($button['link_internal'])) {
               $link = get_permalink($button['link_internal']);
+            } elseif (!empty($button['link_type']) && $button['link_type'] === 'resource' && !empty($button['link_resource'])) {
+              $link = get_permalink($button['link_resource']);
             } elseif (!empty($button['link_external'])) {
               $link = $button['link_external'];
             } elseif (!empty($button['link'])) {

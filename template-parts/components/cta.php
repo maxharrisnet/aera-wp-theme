@@ -30,6 +30,9 @@ if (!isset($cta) || $cta === null) {
           if (!empty($button['link_type']) && $button['link_type'] === 'internal' && !empty($button['link_internal'])) {
             // Internal link - get permalink from post ID
             $link = get_permalink($button['link_internal']);
+          } elseif (!empty($button['link_type']) && $button['link_type'] === 'resource' && !empty($button['link_resource'])) {
+            // Resource link - blogs/press releases/case studies
+            $link = get_permalink($button['link_resource']);
           } elseif (!empty($button['link_external'])) {
             // External link or relative path
             $link = $button['link_external'];
@@ -60,6 +63,9 @@ if (!empty($cta) && !empty($cta['buttons'])) {
     if (isset($button['link_type']) && $button['link_type'] === 'internal' && isset($button['link_internal'])) {
       $button['link'] = get_permalink($button['link_internal']);
       unset($button['link_type'], $button['link_internal'], $button['link_external']);
+    } elseif (isset($button['link_type']) && $button['link_type'] === 'resource' && isset($button['link_resource'])) {
+      $button['link'] = get_permalink($button['link_resource']);
+      unset($button['link_type'], $button['link_internal'], $button['link_external'], $button['link_resource']);
     } elseif (isset($button['link_external'])) {
       $button['link'] = $button['link_external'];
       unset($button['link_type'], $button['link_internal'], $button['link_external']);
@@ -95,6 +101,34 @@ if (!empty($cta['text']) && !empty($cta['link'])) {
     )
   );
 }
+
+// Deduplicate and sanitize buttons (avoid accidental double renders)
+if (!empty($cta['buttons']) && is_array($cta['buttons'])) {
+  $deduped_buttons = array();
+  $seen = array();
+
+  foreach ($cta['buttons'] as $btn) {
+    $text = isset($btn['text']) ? trim($btn['text']) : '';
+    $link = isset($btn['link']) ? trim($btn['link']) : '';
+
+    if ($text === '' || $link === '') {
+      continue;
+    }
+
+    $key = md5($text . '|' . $link);
+    if (isset($seen[$key])) {
+      continue; // skip duplicates
+    }
+    $seen[$key] = true;
+
+    $deduped_buttons[] = array(
+      'text' => $text,
+      'link' => $link,
+    );
+  }
+
+  $cta['buttons'] = $deduped_buttons;
+}
 ?>
 
 <section class="cta-section">
@@ -104,9 +138,13 @@ if (!empty($cta['text']) && !empty($cta['link'])) {
 
       <?php if (!empty($cta['buttons'])) : ?>
         <div class="cta-section__buttons">
-          <?php foreach ($cta['buttons'] as $button) : ?>
+          <?php foreach ($cta['buttons'] as $index => $button) : ?>
             <?php if (!empty($button['text']) && !empty($button['link'])) : ?>
-              <a class="button button--outline" href="<?php echo esc_url($button['link']); ?>">
+              <?php
+              // Second button gets solid style; others remain outline
+              $button_class = $index === 1 ? 'button button--solid' : 'button button--outline';
+              ?>
+              <a class="<?php echo esc_attr($button_class); ?>" href="<?php echo esc_url($button['link']); ?>">
                 <?php echo esc_html($button['text']); ?>
               </a>
             <?php endif; ?>

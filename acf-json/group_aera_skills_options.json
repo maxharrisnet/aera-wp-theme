@@ -246,7 +246,8 @@
           "required": 0,
           "choices": {
             "external": "External URL",
-            "internal": "Internal Page"
+            "internal": "Internal Page",
+            "resource": "Resources"
           },
           "default_value": "external",
           "wrapper": {
@@ -300,6 +301,38 @@
           "post_type": [
             "page",
             "post"
+          ],
+          "taxonomy": "",
+          "allow_null": 0,
+          "multiple": 0,
+          "return_format": "id",
+          "wrapper": {
+            "width": "70",
+            "class": "",
+            "id": ""
+          },
+          "parent_repeater": "field_skills_cta_buttons"
+        },
+        {
+          "key": "field_skills_cta_button_link_resource",
+          "label": "Resource",
+          "name": "link_resource",
+          "type": "post_object",
+          "instructions": "Select a resource (blog, press release, case study)",
+          "required": 0,
+          "conditional_logic": [
+            [
+              {
+                "field": "field_skills_cta_button_link_type",
+                "operator": "==",
+                "value": "resource"
+              }
+            ]
+          ],
+          "post_type": [
+            "blog",
+            "press-release",
+            "case-study"
           ],
           "taxonomy": "",
           "allow_null": 0,
