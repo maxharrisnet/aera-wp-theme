@@ -77,6 +77,7 @@ function register_post_types(): void
       'plural'    => __('Blogs', 'aera'),
       'rewrite'   => 'blogs',
       'menu_icon' => 'dashicons-edit',
+      'supports'  => array_merge($defaultSupports, array('author')),
     ),
     'case-study'    => array(
       'singular'  => __('Case Study', 'aera'),

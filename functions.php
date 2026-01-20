@@ -541,6 +541,190 @@ function aera_custom_avatar($avatar, $id_or_email, $size, $default, $alt)
 }
 add_filter('get_avatar', 'aera_custom_avatar', 10, 5);
 
+/**
+ * Hide default WordPress Posts from admin menu
+ */
+function aera_hide_default_posts_menu()
+{
+  remove_menu_page('edit.php');
+}
+add_action('admin_menu', 'aera_hide_default_posts_menu');
+
+/**
+ * Change Users page post count column to show Blog count instead of default posts
+ */
+function aera_modify_user_posts_column($columns)
+{
+  // Remove default posts column
+  unset($columns['posts']);
+
+  // Add Blog posts column
+  $columns['blog_posts'] = __('Blog Posts', 'aera');
+
+  return $columns;
+}
+add_filter('manage_users_columns', 'aera_modify_user_posts_column');
+
+/**
+ * Display blog post count in Users list
+ */
+function aera_custom_user_column_content($value, $column_name, $user_id)
+{
+  if ($column_name === 'blog_posts') {
+    $count = count_user_posts($user_id, 'blog');
+    if ($count > 0) {
+      $url = admin_url('edit.php?post_type=blog&author=' . $user_id);
+      return '<a href="' . esc_url($url) . '">' . $count . '</a>';
+    }
+    return '0';
+  }
+  return $value;
+}
+add_filter('manage_users_custom_column', 'aera_custom_user_column_content', 10, 3);
+
+/**
+ * Make blog posts column sortable
+ */
+function aera_make_blog_posts_column_sortable($columns)
+{
+  $columns['blog_posts'] = 'blog_posts';
+  return $columns;
+}
+add_filter('manage_users_sortable_columns', 'aera_make_blog_posts_column_sortable');
+
+/**
+ * Handle sorting by blog posts count
+ */
+function aera_sort_users_by_blog_posts($query)
+{
+  if (!is_admin() || !isset($_GET['orderby']) || $_GET['orderby'] !== 'blog_posts') {
+    return;
+  }
+
+  global $wpdb;
+  $order = isset($_GET['order']) && strtolower($_GET['order']) === 'desc' ? 'DESC' : 'ASC';
+
+  $query->query_orderby = "ORDER BY (
+    SELECT COUNT(*)
+    FROM {$wpdb->posts}
+    WHERE {$wpdb->posts}.post_author = {$wpdb->users}.ID
+    AND {$wpdb->posts}.post_type = 'blog'
+    AND {$wpdb->posts}.post_status = 'publish'
+  ) $order";
+}
+add_action('pre_get_users', 'aera_sort_users_by_blog_posts');
+
+/**
+ * Enqueue media uploader script on user profile pages
+ */
+function aera_enqueue_user_profile_media_script($hook)
+{
+  if ($hook !== 'profile.php' && $hook !== 'user-edit.php') {
+    return;
+  }
+  wp_enqueue_media();
+}
+add_action('admin_enqueue_scripts', 'aera_enqueue_user_profile_media_script');
+
+/**
+ * Add custom fields to User profile for author photo and position
+ */
+function aera_add_user_profile_fields($user)
+{
+?>
+  <h3><?php esc_html_e('Author Information', 'aera'); ?></h3>
+  <p><?php esc_html_e('These fields are used for blog post author display in the sidebar.', 'aera'); ?></p>
+
+  <table class="form-table">
+    <tr>
+      <th>
+        <label for="author_photo_url"><?php esc_html_e('Author Photo URL', 'aera'); ?></label>
+      </th>
+      <td>
+        <?php
+        $author_photo_url = get_user_meta($user->ID, 'author_photo_url', true);
+        ?>
+        <input type="url" name="author_photo_url" id="author_photo_url" value="<?php echo esc_attr($author_photo_url); ?>" class="regular-text" />
+        <button type="button" class="button" id="author_photo_upload_button"><?php esc_html_e('Upload Image', 'aera'); ?></button>
+        <p class="description">
+          <?php esc_html_e('URL to the author photo. This will be used instead of Gravatar for blog posts. Click "Upload Image" to select from Media Library.', 'aera'); ?>
+        </p>
+        <?php if ($author_photo_url) : ?>
+          <p>
+            <img src="<?php echo esc_url($author_photo_url); ?>" alt="Author photo preview" style="max-width: 150px; height: auto; margin-top: 10px; border: 1px solid #ddd; padding: 5px;" />
+          </p>
+        <?php endif; ?>
+      </td>
+    </tr>
+    <tr>
+      <th>
+        <label for="author_position"><?php esc_html_e('Author Position', 'aera'); ?></label>
+      </th>
+      <td>
+        <?php
+        $author_position = get_user_meta($user->ID, 'author_position', true);
+        ?>
+        <input type="text" name="author_position" id="author_position" value="<?php echo esc_attr($author_position); ?>" class="regular-text" placeholder="<?php esc_attr_e('e.g., VP of Product, Chief Technology Officer', 'aera'); ?>" />
+        <p class="description">
+          <?php esc_html_e('Author\'s role or position. This will be displayed below the author name in blog post sidebars.', 'aera'); ?>
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+  jQuery(document).ready(function($) {
+    $('#author_photo_upload_button').on('click', function(e) {
+      e.preventDefault();
+      var button = $(this);
+      var input = $('#author_photo_url');
+
+      var frame = wp.media({
+        title: 'Select Author Photo',
+        button: {
+          text: 'Use this image'
+        },
+        multiple: false
+      });
+
+      frame.on('select', function() {
+        var attachment = frame.state().get('selection').first().toJSON();
+        input.val(attachment.url);
+        if ($('#author_photo_preview').length) {
+          $('#author_photo_preview').attr('src', attachment.url);
+        } else {
+          input.after('<p><img id="author_photo_preview" src="' + attachment.url + '" alt="Author photo preview" style="max-width: 150px; height: auto; margin-top: 10px; border: 1px solid #ddd; padding: 5px;" /></p>');
+        }
+      });
+
+      frame.open();
+    });
+  });
+  </script>
+<?php
+}
+add_action('show_user_profile', 'aera_add_user_profile_fields');
+add_action('edit_user_profile', 'aera_add_user_profile_fields');
+
+/**
+ * Save custom user profile fields
+ */
+function aera_save_user_profile_fields($user_id)
+{
+  if (!current_user_can('edit_user', $user_id)) {
+    return false;
+  }
+
+  if (isset($_POST['author_photo_url'])) {
+    update_user_meta($user_id, 'author_photo_url', sanitize_text_field($_POST['author_photo_url']));
+  }
+
+  if (isset($_POST['author_position'])) {
+    update_user_meta($user_id, 'author_position', sanitize_text_field($_POST['author_position']));
+  }
+}
+add_action('personal_options_update', 'aera_save_user_profile_fields');
+add_action('edit_user_profile_update', 'aera_save_user_profile_fields');
 
 // TEMPORARY: Fix imported images - Remove after running once
 add_action('init', function () {
