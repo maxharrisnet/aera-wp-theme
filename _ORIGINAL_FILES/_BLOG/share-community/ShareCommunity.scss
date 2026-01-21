@@ -1,0 +1,97 @@
+@import "~styles/config";
+
+.share {
+  padding-top: 0px;
+  @media (max-width: $max-960) {
+    padding-top: 0px;
+  }
+  @media (max-width: $max-720) {
+    padding-top: 0px;
+  }
+
+  &__container {
+    //@include container;
+    padding-bottom: 20px;
+    margin: 0px 70px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+  }
+
+  &__someNetwork {
+    vertical-align: top;
+    display: inline-block;
+    margin-right: 9%;
+    text-align: right;
+
+    &__someNetwork__shareButton {
+      cursor: pointer;
+    }
+    &__someNetwork__shareButton:hover:not(:active) {
+      opacity: 0.75;
+    }
+
+    &__someNetwork__customIcon {
+      width: 32px;
+      height: 32px;
+    }
+    button {
+      outline: none;
+    }
+  }
+
+  &__item {
+    margin-bottom: 6px;
+    color: $font-color-dark;
+
+    &:nth-child(1):hover {
+      color: $color-medium;
+    }
+
+    &:nth-child(2):hover {
+      color: $color-twitter;
+    }
+
+    &:nth-child(3):hover {
+      color: $color-linkedin;
+    }
+
+    &:nth-child(4):hover {
+      color: $color-facebook;
+    }
+  }
+
+  &__link {
+    @include reset-anchor;
+    position: relative;
+
+    padding-left: 30px;
+
+    font-family: $font-family-heading;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: inherit;
+
+    transition: color 0.3s ease-in-out;
+
+    &Icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      opacity: 0.7;
+      margin: auto;
+
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &:hover {
+      transition: none;
+    }
+
+    &:hover &Icon {
+      opacity: 1;
+      transition: none;
+    }
+  }
+}

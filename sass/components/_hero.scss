@@ -96,37 +96,37 @@
 }
 
 // Home variation
-.hero--home {
-	padding: 50px 0 0;
-	height: auto;
+// .hero--home {
+// 	padding: 50px 0 0;
+// 	height: auto;
 
-	@media (min-width: $min-768) {
-		padding: 50px 0 0;
-	}
+// 	@media (min-width: $min-768) {
+// 		padding: 50px 0 0;
+// 	}
 
-	@media (min-width: $min-1024) {
-		padding: 0px 0 0;
-	}
+// 	@media (min-width: $min-1024) {
+// 		padding: 0px 0 0;
+// 	}
 
-	.hero__title {
-		@include responsive-font(28, 66);
-		margin-bottom: 0px;
-		line-height: 76px;
+// 	.hero__title {
+// 		@include responsive-font(28, 66);
+// 		margin-bottom: 0px;
+// 		line-height: 76px;
 
-		@media (max-width: $min-720) {
-			line-height: 40px;
-		}
-	}
+// 		@media (max-width: $min-720) {
+// 			line-height: 40px;
+// 		}
+// 	}
 
-	.hero__text {
-		@include responsive-font(18, 26);
+// 	.hero__text {
+// 		@include responsive-font(18, 26);
 
-		@media (min-width: $min-480) {
-			max-width: math.div(840, 26) * 1em;
-			width: 100%;
-		}
-	}
-}
+// 		@media (min-width: $min-480) {
+// 			max-width: math.div(840, 26) * 1em;
+// 			width: 100%;
+// 		}
+// 	}
+// }
 
 // ADC (Platform / Decision Cloud) variation
 .hero--adc {
@@ -169,18 +169,48 @@
 
 // Careers variation
 .hero--careers {
+	padding: 150px 0 0 !important;
+	height: 450px;
+
+	@media (max-width: $min-720) {
+		padding: 100px 0 0 !important;
+		display: flex;
+		align-items: center;
+		height: auto;
+		min-height: 100vh;
+	}
+
+	@media (min-width: $min-768) {
+		padding: 0px 0 0;
+	}
+
+	@media (min-width: $min-1024) {
+		padding: 0px 0 0;
+	}
+
+	&--full-height {
+		display: flex;
+		align-items: center;
+		padding: 0;
+		height: 500px;
+		min-height: 100vh;
+	}
+
 	.hero__title {
-		margin-bottom: 6px;
+		@include responsive-font(26, 70);
+		margin-bottom: 20px;
+		line-height: 1.3;
+		letter-spacing: -0.025em;
 	}
 
 	.hero__text {
-		@media (min-width: $min-480) {
-			max-width: math.div(840, 26) * 1em;
-			width: 80%;
+		@include responsive-font(18, 26);
+		margin-bottom: 70px;
+		font-weight: 200;
 
-			.hero--full-height & {
-				max-width: math.div(940, 26) * 1em;
-			}
+		@media (min-width: $min-480) {
+			max-width: math.div(840, 20) * 1em;
+			width: 100%;
 		}
 	}
 }

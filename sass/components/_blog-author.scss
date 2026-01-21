@@ -6,24 +6,14 @@
 
 .article-author {
 	@include segment;
-	padding-bottom: 0 !important;
+	padding: 0 !important; // Sidebar version should sit tight to adjacent widgets
 	width: 100%;
 	text-align: center;
 
-	@media (max-width: $max-1080) {
-		padding-top: 28%;
-	}
-
-	@media (max-width: $max-960) {
-		padding-top: 28%;
-	}
-
-	@media (max-width: $max-720) {
-		padding-top: 10%;
-	}
-
 	&__container {
 		@include container;
+		padding-left: 0;
+		padding-right: 0;
 	}
 
 	&__row {
@@ -34,7 +24,7 @@
 	}
 
 	&__col {
-		padding: 0 10px;
+		padding: 0;
 		margin-bottom: 20px;
 
 		@media (max-width: $max-960) {

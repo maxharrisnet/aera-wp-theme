@@ -6,7 +6,6 @@
 @use '../mixins' as *;
 
 .article-template {
-	@include segment;
 	padding-bottom: 0 !important;
 	width: math.percentage(math.div(12, 12));
 

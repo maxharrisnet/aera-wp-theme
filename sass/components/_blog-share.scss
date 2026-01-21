@@ -4,7 +4,7 @@
 @use '../mixins' as *;
 
 .blog-share {
-	padding-top: 200px;
+	padding-top: 0; // Match original share block spacing
 
 	@media (max-width: $max-960) {
 		padding-top: 0;
@@ -12,7 +12,7 @@
 
 	&__container {
 		margin: 0 70px;
-		padding: 20px 0;
+		padding: 0 0 20px; // Only bottom padding like original
 		border-top: 1px solid #000;
 		border-bottom: 1px solid #000;
 	}

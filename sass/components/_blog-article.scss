@@ -7,6 +7,7 @@
 .blog-article {
 	&__row {
 		@include make-row;
+		@include segment;
 	}
 
 	&__left {
