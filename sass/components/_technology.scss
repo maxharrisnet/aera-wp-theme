@@ -35,6 +35,7 @@ $sceneScale: 1.4;
 
 	&__row {
 		@include make-row;
+		padding: 0 20px; // TODO: Check source of padding 
 	}
 
 	&__colItems {
