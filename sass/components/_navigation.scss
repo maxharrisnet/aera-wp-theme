@@ -805,69 +805,29 @@
 		}
 	}
 }
-
 // Support for data-menu-type attribute on parent elements
-[data-menu-type='technology'] .navigation__link:hover {
-	border-color: $color-technology;
-}
-[data-menu-type='skills'] .navigation__link:hover {
-	border-color: $color-skills;
-}
-[data-menu-type='company'] .navigation__link:hover {
-	border-color: $color-company;
-}
-[data-menu-type='careers'] .navigation__link:hover {
-	border-color: $color-careers;
-}
-[data-menu-type='resources'] .navigation__link:hover {
-	border-color: $color-resources;
-}
-[data-menu-type='demo'] .navigation__link:hover {
-	border-color: $color-company;
-}
-[data-menu-type='platform'] .navigation__link:hover {
-	border-color: $color-technology;
-}
-[data-menu-type='values'] .navigation__link:hover {
-	border-color: $color-technology;
-}
-[data-menu-type='events'] .navigation__link:hover {
-	border-color: #96b1d8;
-}
+$menu-type-colors: (
+	'platform': $color-technology,
+	'skills': $color-skills,
+	'company': $color-cornflower,
+	'customer': $color-poloblue,
+	'careers': $color-careers,
+	'resources': $color-resources,
+	'demo': $color-company,
+	'values': $color-technology,
+	'events': #96b1d8,
+	'technology': $color-technology,
+	'news': #96b1d8,
+	'action': #96b1d8,
+);
 
-// Active state support for data-menu-type
-[data-menu-type='technology'].current-menu-item > a {
-	border-color: $color-technology;
-}
-[data-menu-type='skills'].current-menu-item > a {
-	border-color: $color-skills;
-}
-[data-menu-type='company'].current-menu-item > a {
-	border-color: $color-company;
-}
-[data-menu-type='careers'].current-menu-item > a {
-	border-color: $color-careers;
-}
-[data-menu-type='resources'].current-menu-item > a {
-	border-color: $color-resources;
-}
-[data-menu-type='demo'].current-menu-item > a {
-	border-color: $color-company;
-}
-[data-menu-type='news'].current-menu-item > a {
-	border-color: #96b1d8;
-}
-[data-menu-type='action'].current-menu-item > a {
-	border-color: #96b1d8;
-}
-[data-menu-type='events'].current-menu-item > a {
-	border-color: #96b1d8;
-}
-[data-menu-type='platform'].current-menu-item > a {
-	border-color: $color-technology;
-}
-[data-menu-type='values'].current-menu-item > a {
-	border-color: $color-technology;
+@each $type, $color in $menu-type-colors {
+	[data-menu-type='#{$type}'] .navigation__link:hover {
+		border-color: $color;
+	}
+	[data-menu-type='#{$type}'].current-menu-item > a {
+		border-color: $color;
+	}
 }
 
 // Mobile submenu toggle behavior

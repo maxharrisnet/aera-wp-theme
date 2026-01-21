@@ -87,6 +87,11 @@ class Navigation_Walker extends \Walker_Nav_Menu
       $classes[] = 'navigation__dropdownShow';
     }
 
+    // Check if this menu item is the current archive/post type page
+    if ($this->is_current_archive($item->url)) {
+      $classes[] = 'current-menu-item';
+    }
+
     /**
      * Filters the arguments for a single nav menu item.
      *
@@ -234,7 +239,8 @@ class Navigation_Walker extends \Walker_Nav_Menu
     // Archive and post type patterns
     $menu_type_map = array(
       'skills'               => array('skills', 'skill'),
-      'company'              => array('about', 'team', 'leadership', 'board', 'partners', 'customers', 'customer'),
+      'company'              => array('about', 'team', 'leadership', 'board', 'partners', 'partner'),
+      'customer'             => array('customers', 'customer'),
       'careers'              => array('careers', 'jobs'),
       'resources'            => array('resources', 'blogs', 'blog', 'news', 'press-release', 'whitepaper', 'podcast', 'video'),
       'events'               => array('events', 'webinars', 'event', 'webinar'),
@@ -251,6 +257,56 @@ class Navigation_Walker extends \Walker_Nav_Menu
         }
       }
     }
+
+    return false;
+  }
+
+  /**
+   * Check if we're currently viewing the archive that a menu item URL points to.
+   *
+   * @param string $item_url Menu item URL.
+   * @return bool True if on the corresponding archive page.
+   */
+  private function is_current_archive($item_url)
+  {
+    if (empty($item_url) || !is_archive()) {
+      return false;
+    }
+
+    // Get the current page URL
+    $current_url = home_url(add_query_arg(array()));
+
+    // Parse both URLs to compare paths
+    $item_parsed = wp_parse_url($item_url);
+    $current_parsed = wp_parse_url($current_url);
+
+    $item_path = isset($item_parsed['path']) ? trailingslashit($item_parsed['path']) : '';
+    $current_path = isset($current_parsed['path']) ? trailingslashit($current_parsed['path']) : '';
+
+    // Exact path match
+    if ($item_path === $current_path) {
+      return true;
+    }
+
+    // Check if menu item points to a post type archive
+    // (e.g., /blogs/ matches archive-blog or /events/ matches archive-event)
+    if (is_post_type_archive()) {
+      $post_type = get_post_type();
+      $archive_link = get_post_type_archive_link($post_type);
+
+      if ($archive_link) {
+        $archive_parsed = wp_parse_url($archive_link);
+        $archive_path = isset($archive_parsed['path']) ? trailingslashit($archive_parsed['path']) : '';
+
+        // Check if item URL matches the archive link
+        $item_path_normalized = trailingslashit($item_path);
+        if ($item_path_normalized === $archive_path) {
+          return true;
+        }
+      }
+    }
+
+    return false;
 
     return false;
   }
