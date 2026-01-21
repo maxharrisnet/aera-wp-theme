@@ -4,11 +4,8 @@
 
 .button {
 	@include button;
-
 	cursor: pointer;
-
 	background: rgba($color-white, 0.5);
-
 	transition: 180ms;
 	transition-property: border-color, background-color, color, opacity;
 
@@ -17,7 +14,7 @@
 
 		@media (min-width: $min-mobile) {
 			margin-top: 0;
-			margin-left: math.div($gutter, 2);
+			// margin-left: math.div($gutter, 2);
 		}
 	}
 
@@ -57,27 +54,27 @@
 
 		@include hover {
 			border-color: #e0f9ff rgba(255, 255, 255, 0) #dee8fb;
-			background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
+			background: linear-gradient(180deg, #dff9ff 0%, #dee9fb 100%);
 		}
 	}
 
 	&--solid {
 		line-height: math.div(52, 14);
 		border: 0;
-		background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
+		background: linear-gradient(180deg, #dff9ff 0%, #dee9fb 100%);
 
 		@include hover {
-			background: linear-gradient(180deg, #DEE9FB 0%, #DFF9FF 100%);
+			background: linear-gradient(180deg, #dee9fb 0%, #dff9ff 100%);
 		}
 	}
 
 	&--submit {
 		line-height: math.div(52, 14);
 		border: 0;
-		background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
+		background: linear-gradient(180deg, #dff9ff 0%, #dee9fb 100%);
 
 		@include hover {
-			background: linear-gradient(180deg, #DEE9FB 0%, #DFF9FF 100%);
+			background: linear-gradient(180deg, #dee9fb 0%, #dff9ff 100%);
 		}
 	}
 
@@ -93,7 +90,7 @@
 
 		@include hover {
 			border-color: #e0f9ff rgba(255, 255, 255, 0) #dee8fb;
-			background: linear-gradient(180deg, #DFF9FF 0%, #DEE9FB 100%);
+			background: linear-gradient(180deg, #dff9ff 0%, #dee9fb 100%);
 		}
 	}
 }
