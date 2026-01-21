@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- Sample WXR to import FAQ posts (CPT: faq). Includes a page using the [aera_faq] shortcode. -->
+<rss version="2.0"
+  xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:wp="http://wordpress.org/export/1.2/">
+  <channel>
+    <title>Aera FAQ Import</title>
+    <wp:wxr_version>1.2</wp:wxr_version>
+    <wp:base_site_url>https://example.com</wp:base_site_url>
+    <wp:base_blog_url>https://example.com</wp:base_blog_url>
+
+    <wp:author>
+      <wp:author_id>1</wp:author_id>
+      <wp:author_login><![CDATA>admin]]></wp:author_login>
+      <wp:author_email><![CDATA>admin@example.com]]></wp:author_email>
+      <wp:author_display_name><![CDATA>Admin]]></wp:author_display_name>
+      <wp:author_first_name><![CDATA>]]></wp:author_first_name>
+      <wp:author_last_name><![CDATA>]]></wp:author_last_name>
+    </wp:author>
+
+    <!-- FAQ page using shortcode -->
+    <item>
+      <title>Decision Intelligence FAQ</title>
+      <wp:post_id>10001</wp:post_id>
+      <wp:post_date>2025-01-01 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-01-01 00:00:00</wp:post_date_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>decision-intelligence-faq</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>0</wp:menu_order>
+      <wp:post_type>page</wp:post_type>
+      <wp:post_password></wp:post_password>
+      <wp:is_sticky>0</wp:is_sticky>
+      <content:encoded><![CDATA[[aera_faq heading="h2" class="faq" id="faq"]]]></content:encoded>
+      <wp:postmeta>
+        <wp:meta_key>_wp_page_template</wp:meta_key>
+        <wp:meta_value><![CDATA[page-faq.php]]></wp:meta_value>
+      </wp:postmeta>
+    </item>
+
+    <!-- FAQ posts -->
+    <item>
+      <title>What is decision intelligence?</title>
+      <wp:post_id>10002</wp:post_id>
+      <wp:post_date>2025-01-01 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-01-01 00:00:00</wp:post_date_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>what-is-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>1</wp:menu_order>
+      <wp:post_type>faq</wp:post_type>
+      <wp:is_sticky>0</wp:is_sticky>
+      <content:encoded><![CDATA[Decision intelligence (DI) is a discipline that integrates data, analytics, AI, and automation into a continuous loop to improve how decisions are made across the enterprise.]]></content:encoded>
+    </item>
+
+    <item>
+      <title>What are the key benefits of decision intelligence?</title>
+      <wp:post_id>10003</wp:post_id>
+      <wp:post_date>2025-01-01 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-01-01 00:00:00</wp:post_date_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>decision-intelligence-benefits</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>2</wp:menu_order>
+      <wp:post_type>faq</wp:post_type>
+      <wp:is_sticky>0</wp:is_sticky>
+      <content:encoded><![CDATA[DI delivers accuracy, frequency, granularity, automation, and coverage by combining harmonized data, analytics, and automation to recommend or execute better actions.]]></content:encoded>
+    </item>
+
+    <item>
+      <title>Why is decision intelligence becoming essential?</title>
+      <wp:post_id>10004</wp:post_id>
+      <wp:post_date>2025-01-01 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-01-01 00:00:00</wp:post_date_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>why-decision-intelligence-essential</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>3</wp:menu_order>
+      <wp:post_type>faq</wp:post_type>
+      <wp:is_sticky>0</wp:is_sticky>
+      <content:encoded><![CDATA[Enterprises face rising volume and complexity of decisions. DI embeds AI and automation into workflows, shifting teams from reactive reporting to proactive execution.]]></content:encoded>
+    </item>
+
+    <item>
+      <title>How does human-AI collaboration work in decision intelligence?</title>
+      <wp:post_id>10005</wp:post_id>
+      <wp:post_date>2025-01-01 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-01-01 00:00:00</wp:post_date_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>human-ai-collaboration-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>4</wp:menu_order>
+      <wp:post_type>faq</wp:post_type>
+      <wp:is_sticky>0</wp:is_sticky>
+      <content:encoded><![CDATA[DI supports human-in-the-loop, human-on-the-loop, and human-out-of-the-loop modes: from decision support to recommendations to autonomous execution with guardrails.]]></content:encoded>
+    </item>
+
+    <item>
+      <title>Which industries can use decision intelligence?</title>
+      <wp:post_id>10006</wp:post_id>
+      <wp:post_date>2025-01-01 00:00:00</wp:post_date>
+      <wp:post_date_gmt>2025-01-01 00:00:00</wp:post_date_gmt>
+      <wp:comment_status>closed</wp:comment_status>
+      <wp:ping_status>closed</wp:ping_status>
+      <wp:post_name>industries-decision-intelligence</wp:post_name>
+      <wp:status>publish</wp:status>
+      <wp:post_parent>0</wp:post_parent>
+      <wp:menu_order>5</wp:menu_order>
+      <wp:post_type>faq</wp:post_type>
+      <wp:is_sticky>0</wp:is_sticky>
+      <content:encoded><![CDATA[DI is used across manufacturing, retail and CPG, life sciences, energy, and financial services to improve forecasting, replenishment, logistics, risk, and more.]]></content:encoded>
+    </item>
+
+  </channel>
+</rss>

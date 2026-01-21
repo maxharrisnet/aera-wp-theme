@@ -95,7 +95,7 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
 
         <!-- Sidebar Filter -->
         <aside class="skills-filter">
-          <h3 class="skills-filter__title"><?php esc_html_e('All Skills', 'aera'); ?></h3>
+          <h3 class="skills-filter__title"><?php esc_html_e('All Skills@', 'aera'); ?></h3>
 
           <div class="skills-filter__toggle" id="filterToggle">
             <?php esc_html_e('Filter Skills', 'aera'); ?>

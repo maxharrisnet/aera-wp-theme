@@ -1,0 +1,149 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../grid' as *;
+@use '../mixins' as *;
+
+.site-main--faq {
+	padding-top: 0;
+}
+
+.faq {
+	margin-top: $gutter * 2;
+
+	&__title {
+		@include heading(false, 32, 44);
+		margin-bottom: $gutter;
+	}
+
+	&__intro {
+		font-size: 18px;
+		line-height: 28px;
+		color: $font-color-dark;
+		margin-bottom: $gutter * 1.5;
+
+		p:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__section {
+		border-top: 1px solid #c2ced7;
+		padding: $gutter 0;
+
+		&:last-child {
+			border-bottom: 1px solid #c2ced7;
+		}
+	}
+
+	&__sectionTitle {
+		font-family: $font-family-heading;
+		font-weight: 700;
+		font-size: 22px;
+		line-height: 30px;
+		margin: 0 0 ($gutter / 2) 0;
+	}
+
+	&__sectionDescription {
+		font-size: 16px;
+		line-height: 26px;
+		color: $font-color-dark;
+
+		p {
+			margin-top: 0;
+		}
+	}
+
+	&__list {
+		margin-top: $gutter;
+	}
+
+	&__item + &__item {
+		margin-top: $gutter;
+	}
+
+	&__question {
+		width: 100%;
+		text-align: left;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: $gutter;
+		font-family: $font-family-heading;
+		font-size: 18px;
+		line-height: 26px;
+		background: #f5f7fa;
+		border: 1px solid #c2ced7;
+		border-radius: 8px;
+		padding: 14px 16px;
+		cursor: pointer;
+		transition:
+			background-color 150ms ease,
+			border-color 150ms ease;
+
+		&:focus {
+			outline: 2px solid $color-bemuda;
+			outline-offset: 2px;
+		}
+
+		&:hover {
+			background-color: #eaf2fa;
+			border-color: #9fb7cc;
+		}
+	}
+
+	&__questionText {
+		flex: 1 1 auto;
+	}
+
+	&__icon {
+		font-size: 24px;
+		line-height: 1;
+	}
+
+	&__answer {
+		border-left: 2px solid #c2ced7;
+		margin-top: 10px;
+		padding: 0 0 0 14px;
+		color: $font-color-dark;
+		font-size: 16px;
+		line-height: 26px;
+
+		ul,
+		ol {
+			padding-left: 20px;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+
+			th,
+			td {
+				border: 1px solid #c2ced7;
+				padding: 8px;
+			}
+
+			th {
+				background: #f5f7fa;
+				font-weight: 700;
+			}
+		}
+	}
+
+	&__empty {
+		color: $font-color-dark;
+	}
+}
+
+@media (max-width: $max-720) {
+	.faq {
+		&__title {
+			font-size: 28px;
+			line-height: 36px;
+		}
+
+		&__question {
+			font-size: 16px;
+		}
+	}
+}

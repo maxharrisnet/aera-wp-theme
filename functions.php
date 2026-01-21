@@ -317,6 +317,11 @@ require get_template_directory() . '/inc/lever.php';
 require get_template_directory() . '/inc/admin.php';
 
 /**
+ * FAQ helpers and shortcode.
+ */
+require get_template_directory() . '/inc/faq.php';
+
+/**
  * Advanced Custom Fields helpers.
  */
 require get_template_directory() . '/inc/acf.php';
@@ -673,33 +678,33 @@ function aera_add_user_profile_fields($user)
   </table>
 
   <script>
-  jQuery(document).ready(function($) {
-    $('#author_photo_upload_button').on('click', function(e) {
-      e.preventDefault();
-      var button = $(this);
-      var input = $('#author_photo_url');
+    jQuery(document).ready(function($) {
+      $('#author_photo_upload_button').on('click', function(e) {
+        e.preventDefault();
+        var button = $(this);
+        var input = $('#author_photo_url');
 
-      var frame = wp.media({
-        title: 'Select Author Photo',
-        button: {
-          text: 'Use this image'
-        },
-        multiple: false
+        var frame = wp.media({
+          title: 'Select Author Photo',
+          button: {
+            text: 'Use this image'
+          },
+          multiple: false
+        });
+
+        frame.on('select', function() {
+          var attachment = frame.state().get('selection').first().toJSON();
+          input.val(attachment.url);
+          if ($('#author_photo_preview').length) {
+            $('#author_photo_preview').attr('src', attachment.url);
+          } else {
+            input.after('<p><img id="author_photo_preview" src="' + attachment.url + '" alt="Author photo preview" style="max-width: 150px; height: auto; margin-top: 10px; border: 1px solid #ddd; padding: 5px;" /></p>');
+          }
+        });
+
+        frame.open();
       });
-
-      frame.on('select', function() {
-        var attachment = frame.state().get('selection').first().toJSON();
-        input.val(attachment.url);
-        if ($('#author_photo_preview').length) {
-          $('#author_photo_preview').attr('src', attachment.url);
-        } else {
-          input.after('<p><img id="author_photo_preview" src="' + attachment.url + '" alt="Author photo preview" style="max-width: 150px; height: auto; margin-top: 10px; border: 1px solid #ddd; padding: 5px;" /></p>');
-        }
-      });
-
-      frame.open();
     });
-  });
   </script>
 <?php
 }
