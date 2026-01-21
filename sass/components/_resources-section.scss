@@ -9,6 +9,7 @@
 	padding: 50px 0px;
 
 	h2 {
+		font-family: $font-family-freight;
 		font-size: 42px;
 		line-height: 52px;
 		text-align: center;
@@ -22,7 +23,7 @@
 
 	&__container {
 		padding: 0 70px;
-		// max-width: 1046px;
+		max-width: 1420px;
 		margin: 0 auto;
 
 		@media (max-width: $max-1024) {
@@ -89,18 +90,17 @@
 	}
 
 	&__cardTitle {
-		font-size: 20px;
+		font-size: 22px;
 		line-height: 30px;
-		font-family: $font-family-gilroy;
-		font-weight: 700;
-		margin: 20px 0 0 0;
+		// font-family: $font-family-gilroy;
+		margin: 15px 0 0 0;
 	}
 
 	&__cardDescription {
-		color: $color-shuttlegray;
-		font-size: 18px;
-		line-height: 28px;
-		font-weight: 350;
+		// color: $color-shuttlegray;
+		// font-size: 18px;
+		// line-height: 28px;
+		// font-weight: 350;
 		margin: 10px 0 0px 0;
 	}
 }

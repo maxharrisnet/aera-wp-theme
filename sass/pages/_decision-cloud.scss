@@ -756,10 +756,12 @@
 	border: 2px solid #bbe1fa;
 	border-radius: 20px;
 	padding: 0px 40px;
-	text-transform: uppercase;
 
 	&:hover {
-		background: linear-gradient(180deg, #dff9ff 0%, #dee9fb 100%);
+		// background: linear-gradient(180deg, #dff9ff 0%, #dee9fb 100%);
+		border-color: #e0f9ff rgba(255, 255, 255, 0) #dee8fb;
+		background-color: #e0f9ff;
+		background-image: linear-gradient(rgba(222, 232, 251, 0) 0%, #dee8fb 90%);
 	}
 
 	img {

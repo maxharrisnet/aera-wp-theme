@@ -284,7 +284,7 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
     <!-- Benefits Section -->
     <div class="decisioncloud__benefits">
       <div class="decisioncloud__container">
-        <h2><?php esc_html_e('Built for How Business Works Today', 'aera'); ?></h2>
+        <h2><?php echo esc_html(get_field('benefits_section_title') ?: __('Built for How Business Works Today', 'aera')); ?></h2>
         <div class="decisioncloud__benefitsWrapper">
           <div class="decisioncloud__benefitsBox">
             <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -334,8 +334,8 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
               <line x1="68.2451" y1="53.3018" x2="59.8594" y2="62.6516" stroke="#4237B8" stroke-width="1.5" stroke-miterlimit="10" />
               <line x1="47.1115" y1="50.9893" x2="33.9492" y2="60.804" stroke="#4237B8" stroke-width="1.5" stroke-miterlimit="10" />
             </svg>
-            <h3><?php esc_html_e('Comprehensive', 'aera'); ?></h3>
-            <p><?php esc_html_e('Aera provides everything you need to support any type of decision — from advised, to assisted, to fully automated.', 'aera'); ?></p>
+            <h3><?php echo esc_html(get_field('benefit_1_title') ?: __('Comprehensive', 'aera')); ?></h3>
+            <p><?php echo esc_html(get_field('benefit_1_description') ?: __('Aera provides everything you need to support any type of decision — from advised, to assisted, to fully automated.', 'aera')); ?></p>
           </div>
 
           <div class="decisioncloud__benefitsBox">
@@ -356,8 +356,8 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
               <circle cx="66.216" cy="70.4016" r="1.69" stroke="#009D95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               <circle cx="52.0754" cy="79.3127" r="1.69" stroke="#009D95" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <h3><?php esc_html_e('Composable', 'aera'); ?></h3>
-            <p><?php esc_html_e('Easy to build, adjust, and expand, Aera evolves as your business does.', 'aera'); ?></p>
+            <h3><?php echo esc_html(get_field('benefit_2_title') ?: __('Composable', 'aera')); ?></h3>
+            <p><?php echo esc_html(get_field('benefit_2_description') ?: __('Easy to build, adjust, and expand, Aera evolves as your business does.', 'aera')); ?></p>
           </div>
 
           <div class="decisioncloud__benefitsBox">
@@ -368,8 +368,8 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
               <path d="M60.6216 90.8384C54.0755 89.0537 47.5657 85.0154 42.5987 79.6309C38.527 75.2144 33.6719 67.8999 33.6719 58.1291V37.6377C43.3247 35.9195 55.8421 31.255 60.6216 29.3916C65.4011 31.255 77.9186 35.9195 87.5714 37.6377V58.1291C87.5714 67.8999 82.7162 75.2144 78.6446 79.6309C73.6806 85.0154 67.1708 89.0507 60.6216 90.8384Z" stroke="#4237B8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
               <path d="M48.3086 61.236L57.3382 68.0513L73.5401 51.9492" stroke="#4237B8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <h3><?php esc_html_e('Trusted', 'aera'); ?></h3>
-            <p><?php esc_html_e('Aera is transparent and explainable. You always know where the data comes from, why recommendations are given, and how decisions are made.', 'aera'); ?></p>
+            <h3><?php echo esc_html(get_field('benefit_3_title') ?: __('Trusted', 'aera')); ?></h3>
+            <p><?php echo esc_html(get_field('benefit_3_description') ?: __('Aera is transparent and explainable. You always know where the data comes from, why recommendations are given, and how decisions are made.', 'aera')); ?></p>
           </div>
 
           <div class="decisioncloud__benefitsBox">
@@ -392,8 +392,8 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
               <line x1="54.8789" y1="79.1259" x2="56.4742" y2="75.4121" stroke="#00619E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
               <line x1="63.6445" y1="75.4121" x2="65.947" y2="80.7687" stroke="#00619E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
-            <h3><?php esc_html_e('Scalable', 'aera'); ?></h3>
-            <p><?php esc_html_e('From routine tasks to complex strategies, Aera keeps learning and growing with your business.', 'aera'); ?></p>
+            <h3><?php echo esc_html(get_field('benefit_4_title') ?: __('Scalable', 'aera')); ?></h3>
+            <p><?php echo esc_html(get_field('benefit_4_description') ?: __('From routine tasks to complex strategies, Aera keeps learning and growing with your business.', 'aera')); ?></p>
           </div>
         </div>
       </div>
