@@ -12,14 +12,29 @@ use function Aera\get_resource_label_for_post_type;
 
 get_header();
 
-// Get hero content - try ACF first, then use defaults
-$hero = function_exists('get_field') ? (array) get_field('customers_hero') : array();
-$hero = wp_parse_args(
-  $hero,
+// Get hero content from Company Options (preferred), then page ACF, then defaults
+$hero_options = array();
+if (function_exists('get_field')) {
+  $hero_options['title']       = (string) get_field('company_customer_hero_title', 'option');
+  $hero_options['description'] = (string) get_field('company_customer_hero_text', 'option');
+  $hero_options['button_text'] = (string) get_field('company_customer_hero_button_text', 'option');
+  $hero_options['button_link'] = (string) get_field('company_customer_hero_button_link', 'option');
+}
+
+// Legacy per-page/group field support (secondary)
+$hero_page = function_exists('get_field') ? (array) get_field('customers_hero') : array();
+$hero_page = wp_parse_args(
+  $hero_page,
   array(
-    'title'       => __('Customers', 'aera'),
-    'description' => __('From supply chain and procurement to revenue management and marketing, some of the world\'s largest organizations are achieving breakthrough agility by transforming how they make and execute decisions.', 'aera'),
+    'title'       => '',
+    'description' => '',
   )
+);
+
+// Defaults (fallback)
+$hero_defaults = array(
+  'title'       => __('Customers', 'aera'),
+  'description' => __('From supply chain and procurement to revenue management and marketing, some of the world\'s largest organizations are achieving breakthrough agility by transforming how they make and execute decisions.', 'aera'),
 );
 ?>
 
@@ -28,26 +43,32 @@ $hero = wp_parse_args(
   // Prepare hero data - try ACF group field first, then use defaults
   $hero_args = array();
 
-  // Title - from ACF or default
-  if (!empty($hero['title'])) {
-    $hero_args['hero_title'] = $hero['title'];
+  // Title: prefer Company Options, then page/group, then default
+  if (!empty($hero_options['title'])) {
+    $hero_args['hero_title'] = $hero_options['title'];
+  } elseif (!empty($hero_page['title'])) {
+    $hero_args['hero_title'] = $hero_page['title'];
   } else {
-    $hero_args['hero_title'] = __('Customers', 'aera');
+    $hero_args['hero_title'] = $hero_defaults['title'];
   }
 
-  // Text/Description - from ACF or default
-  if (!empty($hero['description'])) {
-    $hero_args['hero_text'] = $hero['description'];
+  // Text/Description: prefer Company Options, then page/group, then default
+  if (!empty($hero_options['description'])) {
+    $hero_args['hero_text'] = $hero_options['description'];
+  } elseif (!empty($hero_page['description'])) {
+    $hero_args['hero_text'] = $hero_page['description'];
   } else {
-    $hero_args['hero_text'] = __('From supply chain and procurement to revenue management and marketing, some of the world\'s largest organizations are achieving breakthrough agility by transforming how they make and execute decisions.', 'aera');
+    $hero_args['hero_text'] = $hero_defaults['description'];
   }
 
   // Optional: Add subtitle if needed
   // $hero_args['hero_subtitle'] = __('Your subtitle here', 'aera');
 
-  // Optional: Add button if needed
-  // $hero_args['hero_button_text'] = __('Schedule Demo', 'aera');
-  // $hero_args['hero_button_link'] = home_url('/demo');
+  // Optional: Add button from Company Options if provided
+  if (!empty($hero_options['button_text']) && !empty($hero_options['button_link'])) {
+    $hero_args['hero_button_text'] = $hero_options['button_text'];
+    $hero_args['hero_button_link'] = $hero_options['button_link'];
+  }
 
   // Optional: Full height hero
   // $hero_args['hero_full_height'] = true;

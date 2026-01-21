@@ -1,0 +1,39 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+
+/* DEFAULT ARCHIVE PAGE - scoped to avoid conflicts with specialty archives */
+.site-main--archive .archive {
+	// margin-top: $gutter * 1;
+
+	&__container {
+		@include container;
+	}
+
+	&__list {
+		@media (min-width: $min-1200) {
+			@include make-row;
+		}
+	}
+
+	&__col {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0;
+
+		@media (min-width: $min-1200) {
+			@include make-col(math.percentage(math.div(10.5, 12)));
+			margin: 0 auto;
+			padding: 50px 0px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0; // Cards handle their own spacing
+		}
+	}
+
+	&__pagination {
+		margin-top: $gutter * 2;
+		text-align: center;
+	}
+}

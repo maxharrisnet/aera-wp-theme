@@ -1,17 +1,54 @@
 @use 'sass:math';
 @use '../variables' as *;
 @use '../mixins' as *;
+@use '../reset' as *;
 @use '../grid' as *;
 
 .page-template-page-decision-cloud {
 	.hero {
+		padding: 150px 0 0;
+		height: 550px;
+
+		// @media (max-width: $min-720) {
+		// 	padding: 0px 0 0;
+		// 	height: 500px;
+		// }
+
+		// @media (min-width: $min-768) {
+		// 	padding: 0px 0 0;
+		// }
+
+		// @media (min-width: $min-1024) {
+		// 	padding: 0px 0 0;
+		// }
+
+		&__title {
+			margin: 20px auto 0;
+		}
+
 		&__subtitle {
 			@include responsive-font(18, 36);
-			margin-top: 0;
-			font-weight: 400;
+			// margin-top: 0;
+			// font-weight: 400;
 
 			@media (max-width: $max-1200) {
 				font-size: 36px;
+			}
+		}
+
+		&__text {
+			// @include reset-paragraph;
+			// @include responsive-font(16, 26);
+			margin: 0 auto 1em;
+			// font-weight: 400;
+
+			@media (min-width: $min-480) {
+				max-width: (840/21) * 1em;
+				width: 100%;
+
+				.fullHeight & {
+					max-width: (940/26) * 1em;
+				}
 			}
 		}
 	}
@@ -23,6 +60,7 @@
 		max-width: 1440px;
 		margin: 0 auto;
 		//background-color: #F7F8FA;
+
 		h2 {
 			font-size: 50px;
 			font-family: 'Gilroy', sans-serif;

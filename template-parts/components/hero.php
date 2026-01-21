@@ -91,18 +91,27 @@ if (empty($hero_title)) {
 
     <?php if ($hero_text) : ?>
       <?php
-      $paragraphs = array_filter(
-        array_map('trim', explode("\n", $hero_text)),
-        function ($p) {
-          return ! empty($p);
+      // If ACF returned HTML paragraphs (wpautop), add hero__text to those <p> tags.
+      if (strpos($hero_text, '<p') !== false) {
+        $content = wp_kses_post($hero_text);
+        // Append hero__text to existing class attributes on <p>
+        $content = preg_replace('/<p([^>]*)class="([^"]*)"([^>]*)>/', '<p$1class="$2 hero__text"$3>', $content);
+        // Add class when no class attribute is present on <p>
+        $content = preg_replace('/<p(?![^>]*class=)([^>]*)>/', '<p$1 class="hero__text">', $content);
+        echo $content; // Already sanitized above
+      } else {
+        // Plain text: split on newlines and wrap each in hero__text paragraph
+        $paragraphs = array_filter(
+          array_map('trim', explode("\n", (string) $hero_text)),
+          function ($p) {
+            return ! empty($p);
+          }
+        );
+        foreach ($paragraphs as $paragraph) {
+          echo '<p class="hero__text">' . wp_kses_post($paragraph) . '</p>';
         }
-      );
-      foreach ($paragraphs as $paragraph) :
+      }
       ?>
-        <p class="hero__text">
-          <?php echo wp_kses_post($paragraph); ?>
-        </p>
-      <?php endforeach; ?>
     <?php endif; ?>
 
     <?php if ($hero_button_text && $hero_button_link) : ?>

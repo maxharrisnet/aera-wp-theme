@@ -11,6 +11,8 @@
 	z-index: 3;
 	padding: 200px 0 0;
 	text-align: center;
+	display: flex;
+	align-items: center;
 
 	&--full-height {
 		display: flex;
@@ -21,11 +23,19 @@
 	}
 
 	@media (min-width: $min-768) {
+		padding: 0px 0 0;
+	}
+
+	@media (min-width: $min-1024) {
+		padding: 0px 0 0;
+	}
+
+	@media (min-width: $min-768) {
 		padding: 180px 0 0;
 	}
 
 	@media (min-width: $min-1024) {
-		// padding: 290px 0 0;
+		padding: 290px 0 0;
 	}
 
 	&__container {
