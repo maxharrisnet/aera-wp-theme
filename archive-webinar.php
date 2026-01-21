@@ -64,6 +64,34 @@ $on_demand_args = array(
 );
 
 $on_demand_query = new WP_Query($on_demand_args);
+
+// Get taxonomy terms for filters
+$industry_terms = get_terms(
+  array(
+    'taxonomy'   => 'industry',
+    'hide_empty' => true,
+    'orderby'    => 'name',
+    'order'      => 'ASC',
+  )
+);
+
+$solution_area_terms = get_terms(
+  array(
+    'taxonomy'   => 'webinar_solution_area',
+    'hide_empty' => true,
+    'orderby'    => 'name',
+    'order'      => 'ASC',
+  )
+);
+
+$job_function_terms = get_terms(
+  array(
+    'taxonomy'   => 'webinar_job_function',
+    'hide_empty' => true,
+    'orderby'    => 'name',
+    'order'      => 'ASC',
+  )
+);
 ?>
 
 <main id="primary" class="site-main site-main--webinars">
@@ -164,12 +192,119 @@ $on_demand_query = new WP_Query($on_demand_args);
             endwhile;
             ?>
           </div>
+
+          <div id="webinarNoResults" class="news__noResults" style="display: none;">
+            <?php esc_html_e('No webinars match your filters.', 'aera'); ?>
+          </div>
         </div>
       </div>
     </section>
   <?php endif; ?>
   <?php wp_reset_postdata(); ?>
 </main>
+
+<?php
+// Build a simplified options array for the front-end filter
+$taxonomy_options = array(
+  'industry'      => array(),
+  'solutionAreas' => array(),
+  'jobFunctions'  => array(),
+);
+
+if (!is_wp_error($industry_terms)) {
+  foreach ($industry_terms as $term) {
+    $taxonomy_options['industry'][] = array(
+      'slug' => $term->slug,
+      'name' => $term->name,
+    );
+  }
+}
+
+if (!is_wp_error($solution_area_terms)) {
+  foreach ($solution_area_terms as $term) {
+    $taxonomy_options['solutionAreas'][] = array(
+      'slug' => $term->slug,
+      'name' => $term->name,
+    );
+  }
+}
+
+if (!is_wp_error($job_function_terms)) {
+  foreach ($job_function_terms as $term) {
+    $taxonomy_options['jobFunctions'][] = array(
+      'slug' => $term->slug,
+      'name' => $term->name,
+    );
+  }
+}
+?>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const taxonomyOptions = <?php echo wp_json_encode($taxonomy_options); ?>;
+
+    const industrySelect = document.getElementById('industryFilter');
+    const solutionAreaSelect = document.getElementById('solutionAreaFilter');
+    const jobFunctionSelect = document.getElementById('jobFunctionFilter');
+    const gridItems = Array.from(document.querySelectorAll('#webinarGrid .newsItem'));
+    const noResults = document.getElementById('webinarNoResults');
+
+    function populateSelect(selectEl, items) {
+      if (!selectEl || !Array.isArray(items)) return;
+      items.forEach(function(item) {
+        const option = document.createElement('option');
+        option.value = item.slug;
+        option.textContent = item.name;
+        selectEl.appendChild(option);
+      });
+    }
+
+    populateSelect(industrySelect, taxonomyOptions.industry);
+    populateSelect(solutionAreaSelect, taxonomyOptions.solutionAreas);
+    populateSelect(jobFunctionSelect, taxonomyOptions.jobFunctions);
+
+    function itemMatches(item) {
+      const industryValue = industrySelect ? industrySelect.value : '';
+      const solutionValue = solutionAreaSelect ? solutionAreaSelect.value : '';
+      const jobValue = jobFunctionSelect ? jobFunctionSelect.value : '';
+
+      const industries = (item.dataset.industries || '').split(',').filter(Boolean);
+      const solutionAreas = (item.dataset.solutionAreas || '').split(',').filter(Boolean);
+      const jobFunctions = (item.dataset.jobFunctions || '').split(',').filter(Boolean);
+
+      const matchesIndustry = !industryValue || industries.includes(industryValue);
+      const matchesSolution = !solutionValue || solutionAreas.includes(solutionValue);
+      const matchesJob = !jobValue || jobFunctions.includes(jobValue);
+
+      return matchesIndustry && matchesSolution && matchesJob;
+    }
+
+    function applyFilters() {
+      let visibleCount = 0;
+
+      gridItems.forEach(function(item) {
+        if (itemMatches(item)) {
+          item.style.display = '';
+          visibleCount += 1;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+      if (noResults) {
+        noResults.style.display = visibleCount === 0 ? '' : 'none';
+      }
+    }
+
+    [industrySelect, solutionAreaSelect, jobFunctionSelect].forEach(function(selectEl) {
+      if (selectEl) {
+        selectEl.addEventListener('change', applyFilters);
+      }
+    });
+
+    applyFilters();
+  });
+</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {

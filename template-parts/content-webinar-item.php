@@ -65,9 +65,18 @@ if ($resource_card_image && !empty($resource_card_image['url'])) {
 // Get right arrow icon
 $assets_base = trailingslashit(get_template_directory_uri()) . 'assets/';
 $right_arrow = $assets_base . 'images/rightArrow.jpg';
+
+// Collect taxonomy slugs for client-side filtering
+$industry_terms = get_the_terms($post_id, 'industry');
+$solution_area_terms = get_the_terms($post_id, 'webinar_solution_area');
+$job_function_terms = get_the_terms($post_id, 'webinar_job_function');
+
+$industry_slugs = $industry_terms && !is_wp_error($industry_terms) ? wp_list_pluck($industry_terms, 'slug') : array();
+$solution_area_slugs = $solution_area_terms && !is_wp_error($solution_area_terms) ? wp_list_pluck($solution_area_terms, 'slug') : array();
+$job_function_slugs = $job_function_terms && !is_wp_error($job_function_terms) ? wp_list_pluck($job_function_terms, 'slug') : array();
 ?>
 
-<div class="newsItem" resource-type="<?php echo esc_attr($webinar_type); ?>" resource-class="resources">
+<div class="newsItem" resource-type="<?php echo esc_attr($webinar_type); ?>" resource-class="resources" data-industries="<?php echo esc_attr(implode(',', $industry_slugs)); ?>" data-solution-areas="<?php echo esc_attr(implode(',', $solution_area_slugs)); ?>" data-job-functions="<?php echo esc_attr(implode(',', $job_function_slugs)); ?>">
   <div class="newsItem__wrapper">
     <?php if ($image_url) : ?>
       <div class="newsItem__figure">
