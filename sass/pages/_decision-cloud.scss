@@ -9,18 +9,10 @@
 		padding: 150px 0 0;
 		height: 550px;
 
-		// @media (max-width: $min-720) {
-		// 	padding: 0px 0 0;
-		// 	height: 500px;
-		// }
-
-		// @media (min-width: $min-768) {
-		// 	padding: 0px 0 0;
-		// }
-
-		// @media (min-width: $min-1024) {
-		// 	padding: 0px 0 0;
-		// }
+		@media (max-width: $max-720) {
+			padding: 50px 0 0;
+			height: auto;
+		}
 
 		&__title {
 			margin: 20px auto 0;

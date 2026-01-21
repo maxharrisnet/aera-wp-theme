@@ -14,6 +14,11 @@
 	display: flex;
 	align-items: center;
 
+	// Mobile-first: remove top padding on smaller screens
+	@media (max-width: $max-720) {
+		padding: 50px 0 0;
+	}
+
 	&--full-height {
 		display: flex;
 		align-items: center;
