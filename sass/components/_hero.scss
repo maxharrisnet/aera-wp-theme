@@ -63,7 +63,9 @@
 		font-weight: 400;
 
 		@media (min-width: $min-480) {
-			max-width: math.div(840, 24) * 1em;
+			// max-width: math.div(840, 24) * 1em;
+			max-width: (840/24) * 1em;
+
 			width: 90%;
 
 			.hero--full-height & {

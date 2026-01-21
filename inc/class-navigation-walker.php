@@ -231,11 +231,25 @@ class Navigation_Walker extends \Walker_Nav_Menu
     $parsed_url = wp_parse_url($url);
     $path       = isset($parsed_url['path']) ? $parsed_url['path'] : '';
 
-    // Determine menu type based on path - only add for resources and events
-    if (strpos($path, 'resources') !== false) {
-      return 'resources';
-    } elseif (strpos($path, 'events') !== false || strpos($path, 'webinars') !== false) {
-      return 'events';
+    // Archive and post type patterns
+    $menu_type_map = array(
+      'skills'               => array('skills', 'skill'),
+      'company'              => array('about', 'team', 'leadership', 'board', 'partners', 'customers', 'customer'),
+      'careers'              => array('careers', 'jobs'),
+      'resources'            => array('resources', 'blogs', 'blog', 'news', 'press-release', 'whitepaper', 'podcast', 'video'),
+      'events'               => array('events', 'webinars', 'event', 'webinar'),
+      'platform'             => array('decision-cloud', 'platform', 'aera-decision-cloud'),
+      'technology'           => array('technology', 'what-is-decision-intelligence'),
+      'values'               => array('values'),
+      'demo'                 => array('demo', 'test-drive'),
+    );
+
+    foreach ($menu_type_map as $type => $patterns) {
+      foreach ($patterns as $pattern) {
+        if (strpos($path, $pattern) !== false) {
+          return $type;
+        }
+      }
     }
 
     return false;
