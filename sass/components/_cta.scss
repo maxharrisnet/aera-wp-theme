@@ -29,10 +29,13 @@
 		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
+		max-width: 500px;
+		margin: 0 auto;
 
 		@media (max-width: $max-720) {
 			flex-direction: column;
 			gap: 12px;
+			max-width: 100%;
 		}
 	}
 
@@ -81,5 +84,15 @@
 			width: 100%;
 			max-width: 300px;
 		}
+	}
+}
+
+.cta-section .button {
+	flex: 1 1 calc(50% - 8px);
+	max-width: calc(50% - 8px);
+
+	@media (max-width: $max-720) {
+		flex: 1 1 100%;
+		max-width: 300px;
 	}
 }
