@@ -103,12 +103,16 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: space-between;
+
 		h1 {
-			color: #ffffff;
+			font-family: $font-family-freight;
+			color: $color-white;
 		}
+    
 		@media (max-width: $min-960) {
 			flex-direction: column;
 		}
+
 		// p{
 		//     margin: 25px 0;
 		// }

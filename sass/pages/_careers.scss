@@ -7,6 +7,19 @@
 
 /* CAREERS PAGE */
 
+.page-template-page-careers .hero {
+	&__text {
+		@media (min-width: $min-480) {
+			max-width: (840/26) * 1em;
+			width: 80%;
+
+			.fullHeight & {
+				max-width: (940/26) * 1em;
+			}
+		}
+	}
+}
+
 /* Intro Section */
 .page-careers {
 	.intro {

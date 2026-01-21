@@ -31,12 +31,12 @@
 		}
 
 		&__text {
-			@include reset-paragraph;
+			// @include reset-paragraph;
 			@include responsive-font(16, 24);
 			margin: 0 auto 1em;
 
 			@media (min-width: $min-480) {
-				max-width: (840/18) * 1em;
+				max-width: (840/21) * 1em;
 				width: 100%;
 
 				.fullHeight & {

@@ -4,6 +4,12 @@
 @use '../grid' as *;
 @use '../reset' as *;
 
+.site-main--about-us {
+	.hero {
+		display: block;
+	}
+}
+
 /* ABOUT */
 .about {
 	margin-top: $gutter * 2;

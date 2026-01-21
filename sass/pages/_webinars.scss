@@ -8,9 +8,15 @@
 	padding-top: 0;
 }
 
-// Intro section for webinars
-.intro--webinars {
-	padding-top: 0;
+.post-type-archive.post-type-archive-webinar {
+	.hero {
+		&__text {
+			@media (min-width: $min-480) {
+				max-width: (840/24) * 1em;
+				width: 100%;
+			}
+		}
+	}
 }
 
 // News section styles (from legacy React)
