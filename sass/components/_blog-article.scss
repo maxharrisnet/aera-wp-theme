@@ -8,6 +8,7 @@
 	&__row {
 		@include make-row;
 		@include segment;
+		padding-bottom: 0;
 	}
 
 	&__left {

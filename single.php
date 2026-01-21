@@ -57,6 +57,11 @@ get_header();
     get_sidebar();
   endif;
   ?>
+
+  <?php
+  // CTA Section - pulls from ACF fields or uses defaults
+  get_template_part('template-parts/components/cta');
+  ?>
 </main>
 
 <?php
