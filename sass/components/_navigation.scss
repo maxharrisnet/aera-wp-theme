@@ -563,7 +563,7 @@
 		top: -2px;
 		text-align: left;
 		/* padding-left: 20px; */
-		width: 250px;
+		// width: 250px;
 		background-color: #fff;
 		padding: 0;
 		color: #1a1a1a;
@@ -753,7 +753,6 @@
 		display: block;
 		align-items: center;
 		justify-content: center;
-
 		padding: 0 math.div($gutter, 2);
 		position: relative;
 		//margin-bottom: 10px;
@@ -762,6 +761,7 @@
 			justify-content: flex-start;
 			display: flex;
 		}
+
 		@media (max-width: $min-1024) {
 			text-align: center;
 			margin-bottom: 10px;
@@ -815,10 +815,10 @@ $menu-type-colors: (
 	'resources': $color-resources,
 	'demo': $color-company,
 	'values': $color-technology,
-	'events': #96b1d8,
+	'events': $color-cornflower,
 	'technology': $color-technology,
-	'news': #96b1d8,
-	'action': #96b1d8,
+	// 'news': #96b1d8,
+	 // 'action': #96b1d8,
 );
 
 @each $type, $color in $menu-type-colors {
@@ -859,4 +859,29 @@ $menu-type-colors: (
 			}
 		}
 	}
+}
+
+// Menu type-specific dropdown widths (outside .navigation block to avoid nesting issues)
+li[data-menu-type='company'] .navigation__dropdownSkills {
+	width: 220px;
+}
+
+li[data-menu-type='skills'] .navigation__dropdownSkills {
+	width: 250px;
+}
+
+li[data-menu-type='events'] .navigation__dropdownSkills {
+	width: 185px;
+}
+
+li[data-menu-type='resources'] .navigation__dropdownSkills {
+	width: 290px;
+}
+
+li[data-menu-type='webinars'] .navigation__dropdownSkills {
+	width: 210px;
+}
+
+li[data-menu-type='blog'] .navigation__dropdownSkills {
+	width: 230px;
 }
