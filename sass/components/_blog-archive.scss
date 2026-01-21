@@ -5,8 +5,6 @@
 @use '../mixins' as *;
 
 .blog {
-	margin-top: $gutter * 1;
-
 	&__container {
 		@include container;
 	}
