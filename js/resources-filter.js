@@ -11,7 +11,7 @@
 		filterSelector: '#typeSelector a[data-filter]',
 		itemSelector: '[data-resource-class="resources"]',
 		itemTypeAttr: 'data-resource-type',
-		urlParam: 'type',
+		urlParam: 'category',
 		allValue: 'all',
 		activeClass: 'active',
 		activeBorderStyle: '1px solid #00578f',
