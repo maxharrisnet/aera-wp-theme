@@ -27,9 +27,9 @@
 		@include container;
 	}
 
-	&__subheading {
+	&__heading {
 		font-size: 48px;
-		font-family: $font-family-heading;
+		// font-family: $font-family-heading;
 		line-height: 48px;
 		color: #000;
 		margin-bottom: 0;
@@ -526,7 +526,7 @@
 		font-size: 14px;
 		line-height: 3.71429;
 		border: 0;
-		background-color: transparent;
+		background: transparent;
 		margin: 0;
 		vertical-align: baseline;
 		appearance: none;
@@ -551,8 +551,7 @@
 		&:hover {
 			outline: none;
 			border-color: #e0f9ff rgba(255, 255, 255, 0) #dee8fb;
-			background-color: #e0f9ff;
-			background-image: linear-gradient(rgba(222, 232, 251, 0) 0%, #dee8fb 90%);
+			background: linear-gradient(180deg, #dff9ff 0%, #dee9fb 100%);
 		}
 
 		@media (max-width: $max-720) {
