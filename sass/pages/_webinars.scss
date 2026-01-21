@@ -27,15 +27,18 @@
 		@include container;
 	}
 
-	&__heading {
-		font-size: 48px;
-		// font-family: $font-family-heading;
-		line-height: 48px;
-		color: #000;
-		margin-bottom: 0;
+	// Section subheading (e.g., the H2 above filters in the All Resources area)
+	&--all-resources {
+		.news__subheading {
+			font-size: 48px;
+			font-family: $font-family-heading;
+			line-height: 48px;
+			color: #000;
+			margin-bottom: 0;
 
-		@media (max-width: $max-720) {
-			font-size: 36px;
+			@media (max-width: $max-720) {
+				font-size: 36px;
+			}
 		}
 	}
 
@@ -312,22 +315,25 @@
 		}
 	}
 
-	&__subheading {
-		font-family: $font-family;
-		font-size: 20px;
-		font-weight: 400;
-		line-height: 30px;
-		text-align: left;
-		color: #5c6475;
-		margin: 0;
-		margin-bottom: 20px;
-
-		@media (max-width: $max-1024) {
+	// Featured card excerpt subheading
+	&__featuredEventsDetails {
+		.news__subheading {
+			font-family: $font-family;
+			font-size: 20px;
+			font-weight: 400;
+			line-height: 30px;
+			text-align: left;
+			color: #5c6475;
+			margin: 0;
 			margin-bottom: 20px;
-		}
 
-		@media (max-width: $max-720) {
-			margin-bottom: 20px;
+			@media (max-width: $max-1024) {
+				margin-bottom: 20px;
+			}
+
+			@media (max-width: $max-720) {
+				margin-bottom: 20px;
+			}
 		}
 	}
 
