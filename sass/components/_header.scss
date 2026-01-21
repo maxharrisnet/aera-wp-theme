@@ -45,7 +45,7 @@
 		position: relative;
 
 		@media (min-width: $min-1024) {
-			padding: 55px 0 0;
+			padding: 50px 0 60px;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
@@ -56,11 +56,9 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-
 		position: relative;
 		z-index: 2;
-
-		padding: 15px $container-gutter-mobile;
+		padding: 20px;
 
 		@media (max-width: $min-720) {
 			z-index: 223; // Above navigation (222) so toggle button is clickable

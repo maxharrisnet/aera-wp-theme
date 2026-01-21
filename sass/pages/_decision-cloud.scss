@@ -3,6 +3,20 @@
 @use '../mixins' as *;
 @use '../grid' as *;
 
+.page-template-page-decision-cloud {
+	.hero {
+		&__subtitle {
+			@include responsive-font(18, 36);
+			margin-top: 0;
+			font-weight: 400;
+
+			@media (max-width: $max-1200) {
+				font-size: 36px;
+			}
+		}
+	}
+}
+
 .decisioncloud {
 	&__wrapper {
 		padding: 20px 70px 40px 70px;
