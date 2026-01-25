@@ -25,8 +25,8 @@ if (!empty($webinar_excerpt)) {
     $excerpt = wp_strip_all_tags($wp_excerpt);
   }
 }
-// Truncate excerpt to 140 characters
-$excerpt = mb_substr($excerpt, 0, 140) . (mb_strlen($excerpt) > 140 ? '...' : '');
+// Truncate excerpt to a high ceiling (50k chars) to effectively avoid clipping
+$excerpt = mb_substr($excerpt, 0, 50000) . (mb_strlen($excerpt) > 50000 ? '...' : '');
 
 // Truncate title to 130 characters
 $title_truncated = mb_substr($title, 0, 130) . (mb_strlen($title) > 130 ? '...' : '');

@@ -58,9 +58,6 @@
 	// Get all the link elements with children within the menu.
 	const linksWithChildren = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
 
-	// Get all submenu toggle buttons.
-	const submenuToggles = menu.querySelectorAll( '.navigation__submenuToggle' );
-
 	// Toggle focus each time a menu link is focused or blurred.
 	for ( const link of links ) {
 		link.addEventListener( 'focus', toggleFocus, true );
@@ -70,19 +67,6 @@
 	// Toggle focus each time a menu link with children receive a touch event.
 	for ( const link of linksWithChildren ) {
 		link.addEventListener( 'touchstart', toggleFocus, false );
-	}
-
-	// Handle submenu toggle button clicks (mobile only).
-	for ( const toggle of submenuToggles ) {
-		toggle.addEventListener( 'click', function( event ) {
-			event.preventDefault();
-			event.stopPropagation();
-			
-			const menuItem = this.closest( '.menu-item-has-children, .page_item_has_children' );
-			if ( menuItem ) {
-				menuItem.classList.toggle( 'is-open' );
-			}
-		} );
 	}
 
 	/**

@@ -63,7 +63,7 @@
     <header class="header" id="headnav" data-header>
       <div class="header__topBanner">
         <span>
-          <b>Complimentary Report: Gartner's Hype Cycle for Artificial Intelligence, 2025</b>
+          <b>Complimentary Report: Gartner Magic Quadrant for Decision Intelligence Platforms (2026)</b>
         </span>
         <span>
           <a

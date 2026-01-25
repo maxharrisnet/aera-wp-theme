@@ -130,15 +130,13 @@
 		color: inherit;
 		display: none;
 		position: absolute;
-		right: 0;
-		top: 50%;
-		transform: translateY( -50% );
+		right: -30px;
+		top: -10px;
 		font-size: 20px;
 		width: 30px;
 		height: 30px;
 		align-items: center;
 		justify-content: center;
-		z-index: 10;
 
 		@media (max-width: $min-1023) {
 			display: flex;
@@ -767,14 +765,6 @@
 		@media (max-width: $min-1024) {
 			text-align: center;
 			margin-bottom: 10px;
-		}
-
-		// Ensure menu items with children have space for the toggle button
-		@media (max-width: $min-1023) {
-			&.menu-item-has-children,
-			&.page_item_has_children {
-				padding-right: 50px;
-			}
 		}
 	}
 
