@@ -410,6 +410,10 @@
 
 		// Only treat as mobile if sceneWrapper is hidden (max-width: 768px)
 		const isMobile = window.matchMedia('(max-width: 767px)').matches;
+		
+		// Add isSticky class on desktop, remove on mobile
+		technology.classList.toggle('isSticky', !isMobile);
+		
 		if (isMobile) {
 			scenes.forEach((scene) => scene.classList.add('isVisible'));
 			items.forEach((item, index) => {

@@ -31,11 +31,15 @@ $sceneScale: 1.4;
 		@include container;
 		position: relative;
 		z-index: 10;
+
+		.isSticky & {
+			margin-top: -90vh;
+		}
 	}
 
 	&__row {
 		@include make-row;
-		padding: 0 20px; // TODO: Check source of padding 
+		padding: 0 20px; // TODO: Check source of padding
 	}
 
 	&__colItems {
