@@ -390,13 +390,58 @@
 			return;
 		}
 
+		// Track which scenes have had their messages animated
+		const animatedScenes = new Set();
+
+		const animateMessages = (sceneIndex) => {
+			if (animatedScenes.has(sceneIndex)) {
+				return;
+			}
+			animatedScenes.add(sceneIndex);
+
+			const scene = technology.querySelector(`[data-technology-scene="${sceneIndex}"]`);
+			if (!scene) {
+				return;
+			}
+
+			const messages = scene.querySelectorAll('.technologyMessagesItem');
+			messages.forEach((message, index) => {
+				// Reset initial state
+				message.style.opacity = '0';
+				message.style.transform = 'translateY(10px) scale(0.95)';
+
+				// Stagger animation (0.4s delay between each + 1.5s initial delay)
+				const delay = 1500 + index * 400;
+				setTimeout(() => {
+					message.style.transition = 'opacity 0.3s ease-out, transform 0.3s ease-out';
+					message.style.opacity = '1';
+					message.style.transform = 'translateY(0) scale(1)';
+				}, delay);
+			});
+		};
+
 		const setActiveScene = (activeIndex) => {
 			items.forEach((item) => {
 				const index = parseInt(item.dataset.technologyIndex, 10);
 				if (Number.isNaN(index)) {
 					return;
 				}
-				item.classList.toggle('isActive', index === activeIndex);
+				const isActive = index === activeIndex;
+				item.classList.toggle('isActive', isActive);
+
+				// Fade items based on scroll position (waypoint-like behavior)
+				const rect = item.getBoundingClientRect();
+				const triggerPoint = window.innerHeight * 0.7; // 30% from top (similar to topOffset="-30%")
+
+				if (rect.top < triggerPoint) {
+					// Calculate opacity based on distance from trigger point
+					const distance = triggerPoint - rect.top;
+					const fadeRange = window.innerHeight * 0.3;
+					const opacity = Math.min(1, Math.max(0, distance / fadeRange));
+					item.style.opacity = opacity;
+				} else {
+					item.style.opacity = '0';
+				}
 			});
 
 			scenes.forEach((scene) => {
@@ -404,20 +449,29 @@
 				if (Number.isNaN(index)) {
 					return;
 				}
-				scene.classList.toggle('isVisible', index === activeIndex);
+				const wasVisible = scene.classList.contains('isVisible');
+				const isVisible = index === activeIndex;
+
+				scene.classList.toggle('isVisible', isVisible);
+
+				// Trigger message animation when scene becomes active for the first time
+				if (isVisible && !wasVisible) {
+					animateMessages(index);
+				}
 			});
 		};
 
 		// Only treat as mobile if sceneWrapper is hidden (max-width: 768px)
 		const isMobile = window.matchMedia('(max-width: 767px)').matches;
-		
+
 		// Add isSticky class on desktop, remove on mobile
 		technology.classList.toggle('isSticky', !isMobile);
-		
+
 		if (isMobile) {
 			scenes.forEach((scene) => scene.classList.add('isVisible'));
 			items.forEach((item, index) => {
 				item.classList.toggle('isActive', index === 0);
+				item.style.opacity = '1'; // Ensure full opacity on mobile
 			});
 
 			if (sceneWrapper) {
@@ -489,6 +543,10 @@
 			if (sceneWrapper) {
 				sceneWrapper.style.height = '';
 			}
+			// Reset styles on cleanup
+			items.forEach((item) => {
+				item.style.opacity = '';
+			});
 		};
 	};
 

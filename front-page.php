@@ -188,12 +188,51 @@ $cta = wp_parse_args(
             $video = $section['video'] ?? '';
             $cta_link = $section['cta_link'] ?? '';
             $cta_label = $section['cta_label'] ?? '';
+            $messages = $section['messages'] ?? array();
+            $last_aera_index = -1;
+            foreach ($messages as $message_index => $message) {
+              if ('aera' === ($message['speaker'] ?? '')) {
+                $last_aera_index = $message_index;
+              }
+            }
             ?>
             <article class="technologyItem pos-<?php echo esc_attr($index); ?><?php echo 0 === $index ? ' isActive' : ''; ?>" data-technology-item data-technology-index="<?php echo esc_attr($index); ?>">
               <div class="technologyItem__scene">
-                <?php if (! empty($video)) : ?>
-                  <video autoplay muted loop playsinline preload="metadata" src="<?php echo esc_url($video); ?>"></video>
-                <?php endif; ?>
+                <div class="technologyScene scene-<?php echo esc_attr($index); ?> isVisible">
+                  <div class="technologyScene__container">
+                    <div class="technologyScene__videoContainer">
+                      <div class="technologyScene__videoWrap">
+                        <?php if (! empty($video)) : ?>
+                          <video class="technologyScene__video" autoplay muted loop playsinline preload="metadata" src="<?php echo esc_url($video); ?>" width="1280" height="720"></video>
+                        <?php endif; ?>
+                      </div>
+                    </div>
+                    <?php if (! empty($section['background_image'] ?? '')) : ?>
+                      <div class="technologyScene__prop">
+                        <img src="<?php echo esc_url($section['background_image']); ?>" alt="" loading="lazy" />
+                      </div>
+                    <?php endif; ?>
+                    <div class="technologyScene__messages">
+                      <div class="technologyScene__messagesRow">
+                        <div class="technologyScene__messagesCol">
+                          <div class="technologyMessages scene-<?php echo esc_attr($index); ?>">
+                            <?php foreach ($messages as $message_index => $message) : ?>
+                              <?php
+                              $speaker = 'aera' === ($message['speaker'] ?? '') ? 'aera' : 'user';
+                              $is_last_aera = ($speaker === 'aera' && $message_index === $last_aera_index);
+                              ?>
+                              <div class="technologyMessagesItem <?php echo esc_attr($speaker); ?> pos-<?php echo esc_attr($message_index); ?><?php echo $is_last_aera ? ' lastAera' : ''; ?>">
+                                <div class="technologyMessagesItem__panel">
+                                  <?php echo esc_html($message['text'] ?? ''); ?>
+                                </div>
+                              </div>
+                            <?php endforeach; ?>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <h2 class="technologyItem__title"><?php echo esc_html($title); ?></h2>
               <div class="technologyItem__text">

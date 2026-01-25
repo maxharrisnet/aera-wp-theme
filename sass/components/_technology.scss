@@ -38,13 +38,12 @@ $sceneScale: 1.4;
 	}
 
 	&__row {
-		@include make-row;
-		padding: 0 20px; // TODO: Check source of padding
+		@media (min-width: $min-768) {
+			@include make-row;
+		}
 	}
 
 	&__colItems {
-		width: 100%;
-
 		@media (min-width: $min-768) {
 			@include make-col(math.percentage(math.div(5, 12)));
 			margin-left: math.percentage(math.div(7, 12));
@@ -235,24 +234,29 @@ $sceneScale: 1.4;
 			left: 0;
 			margin-bottom: 0;
 			width: 100%;
-		}
 
-		&Row {
-			@include make-row;
-		}
+			&Row {
+				@include make-row;
+			}
 
-		&Col {
-			@include make-col(math.percentage(math.div(7, 12)));
+			&Col {
+				@include make-col(math.percentage(math.div(7, 12)));
+			}
 		}
 	}
 }
 
 .technologyMessages {
 	position: relative;
-	margin-left: 10px;
 
-	@media (min-width: $min-768) {
-		margin-left: 0;
+	&.scene-0,
+	&.scene-2,
+	&.scene-3 {
+		margin-left: 10px;
+
+		@media (min-width: $min-768) {
+			margin-left: 0;
+		}
 	}
 
 	&.scene-0 {
@@ -300,7 +304,13 @@ $sceneScale: 1.4;
 	display: flex;
 	margin-bottom: 15px;
 	transform-origin: 50% 100%;
-	will-change: opacity;
+	will-change: opacity, transform;
+
+	@media (min-width: $min-768) {
+		// Initial state for animation - will be set via JavaScript
+		// opacity: 0;
+		// transform: translateY(10px) scale(0.95);
+	}
 
 	&__panel {
 		@include responsive-font(16, 18);
@@ -311,7 +321,7 @@ $sceneScale: 1.4;
 		letter-spacing: -0.0002em;
 		color: $color-messages-text;
 		background: $color-messages;
-		border-radius: 40px;
+		border-radius: 50px;
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 	}
 
@@ -490,7 +500,7 @@ $sceneScale: 1.4;
 .technologyItem {
 	position: relative;
 	margin-bottom: $gutter * 4;
-	scroll-margin-top: 140px;
+	// scroll-margin-top: 140px;
 
 	@media (min-width: $min-768) {
 		display: flex;
@@ -499,6 +509,9 @@ $sceneScale: 1.4;
 		z-index: 1;
 		margin-bottom: 0;
 		height: 130vh;
+		opacity: 0;
+		transition: opacity 0.6s ease-out;
+		will-change: opacity;
 	}
 
 	&:last-child {
