@@ -26,6 +26,19 @@
       }
     },
     {
+      "key": "field_dc_benefits_section_subtitle",
+      "label": "Benefits Section Subtitle",
+      "name": "benefits_section_subtitle",
+      "type": "textarea",
+      "instructions": "Subtitle text for the benefits section",
+      "required": 0,
+      "default_value": "",
+      "rows": 3,
+      "wrapper": {
+        "width": "100"
+      }
+    },
+    {
       "key": "field_dc_benefit_1_title",
       "label": "Benefit 1 - Title",
       "name": "benefit_1_title",

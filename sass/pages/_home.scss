@@ -149,17 +149,14 @@
 	}
 }
 
-.cta-section {
+.home .cta-section {
 	@include segment;
-	// text-align: center;
 
 	&__container {
 		@include container;
 	}
 
 	&__title {
-		// @include heading($hasMargin: false);
-		// @extend %title-base;
 		margin-bottom: $gutter;
 	}
 }

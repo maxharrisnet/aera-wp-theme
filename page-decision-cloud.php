@@ -285,6 +285,9 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
     <div class="decisioncloud__benefits">
       <div class="decisioncloud__container">
         <h2><?php echo esc_html(get_field('benefits_section_title') ?: __('Built for How Business Works Today', 'aera')); ?></h2>
+        <?php if (get_field('benefits_section_subtitle')) : ?>
+          <p class="decisioncloud__subline"><?php echo esc_html(get_field('benefits_section_subtitle')); ?></p>
+        <?php endif; ?>
         <div class="decisioncloud__benefitsWrapper">
           <div class="decisioncloud__benefitsBox">
             <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
