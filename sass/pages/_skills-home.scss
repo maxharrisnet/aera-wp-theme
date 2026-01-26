@@ -9,10 +9,7 @@
 
 	.hero {
 		padding: 150px 0 0;
-
-		@media (max-width: $max-720) {
-			padding: 80px 0 0;
-		}
+		height: 550px;
 	}
 }
 
@@ -21,7 +18,7 @@
 
 	&__container {
 		@include container;
-		padding: 50px 0;
+		// padding: 50px 0;
 		max-width: 1046px;
 	}
 
@@ -337,50 +334,6 @@
 		}
 	}
 
-	// Function card stripe color variations (based on function slug)
-	&__grid .skill-card,
-	&__skills-grid .skill-card {
-		// Supply Chain
-		&[data-function*='supply-chain'] .skill-card__stripe {
-			background-color: $color-aera-1;
-		}
-
-		// Procurement
-		&[data-function*='procurement'] .skill-card__stripe {
-			background-color: $color-brand-2;
-		}
-
-		// Manufacturing
-		&[data-function*='manufacturing'] .skill-card__stripe {
-			background-color: $color-brand-3;
-		}
-
-		// Finance
-		&[data-function*='finance'] .skill-card__stripe {
-			background-color: $color-brand-4;
-		}
-
-		// Sales / Marketing
-		&[data-function*='sales'] .skill-card__stripe,
-		&[data-function*='marketing'] .skill-card__stripe {
-			background-color: $color-brand-6;
-		}
-
-		// HR / IT / Other
-		&[data-function*='hr'] .skill-card__stripe,
-		&[data-function*='it'] .skill-card__stripe,
-		&[data-function*='customer'] .skill-card__stripe {
-			background-color: $color-cornflower;
-		}
-
-		// Product / ESG (fallback colors)
-		&[data-function*='product'] .skill-card__stripe {
-			background-color: $color-poloblue;
-		}
-
-		&[data-function*='esg'] .skill-card__stripe,
-		&[data-function*='sustainability'] .skill-card__stripe {
-			background-color: $color-bemuda;
-		}
-	}
+	// Function card stripe colors are now defined in _skill-card.scss
+	// via the skill-function-stripe-colors mixin
 }

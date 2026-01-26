@@ -296,6 +296,7 @@
 
 	// Handle mobile submenu toggles
 	// Add menu type classes and arrow elements to dropdowns
+	// Note: Toggle buttons are now created by PHP in Navigation_Walker
 	document.querySelectorAll('.menu-item-has-children').forEach((item) => {
 		const link = item.querySelector('a');
 		if (!link) {
@@ -323,31 +324,34 @@
 			submenu.insertBefore(arrow, submenu.firstChild);
 		}
 
-		// Create mobile toggle button (always create, will be shown/hidden via CSS)
-		const trigger = document.createElement('button');
-		trigger.className = 'navigation__submenuToggle';
-		trigger.type = 'button';
-		trigger.setAttribute('aria-expanded', 'false');
-		trigger.innerHTML = '<span class="navigation__activeDropdown">+</span><span class="navigation__inactiveDropdown">-</span><span class="screen-reader-text">Toggle submenu</span>';
+		// Find the toggle button (created by PHP Navigation_Walker)
+		const trigger = item.querySelector('.navigation__submenuToggle');
 
-		trigger.addEventListener('click', (e) => {
-			e.preventDefault();
-			const isOpen = item.classList.toggle('is-open');
-			trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-		});
-
-		// Prevent parent link from navigating when it has a submenu on mobile
-		link.addEventListener('click', (e) => {
-			// Only prevent default if clicking the link itself (not the toggle button)
-			if (!e.target.closest('.navigation__submenuToggle') && window.matchMedia('(max-width: 1023px)').matches) {
-				// On mobile, parent links with submenus should toggle the submenu, not navigate
+		if (trigger) {
+			// Add click handler to toggle button
+			trigger.addEventListener('click', (e) => {
 				e.preventDefault();
+				e.stopPropagation();
+
+				// Close all other open submenus at the same level
+				const siblings = item.parentNode.querySelectorAll('.menu-item-has-children.is-open');
+				siblings.forEach((sibling) => {
+					if (sibling !== item) {
+						sibling.classList.remove('is-open');
+						const siblingTrigger = sibling.querySelector('.navigation__submenuToggle');
+						if (siblingTrigger) {
+							siblingTrigger.setAttribute('aria-expanded', 'false');
+						}
+					}
+				});
+
 				const isOpen = item.classList.toggle('is-open');
 				trigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-			}
-		});
+			});
+		}
 
-		link.after(trigger);
+		// Links work as normal links - no preventDefault!
+		// The toggle button handles opening/closing the dropdown
 	});
 
 	const filterContainer = document.querySelector('.resources-filter__controls');

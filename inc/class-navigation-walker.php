@@ -203,6 +203,15 @@ class Navigation_Walker extends \Walker_Nav_Menu
     $item_output .= '<a' . $attributes . '>';
     $item_output .= (isset($args->link_before) ? $args->link_before : '') . $title . (isset($args->link_after) ? $args->link_after : '');
     $item_output .= '</a>';
+
+    // Add toggle button for items with children (mobile dropdown toggle)
+    if (in_array('menu-item-has-children', $classes)) {
+      $item_output .= '<button class="navigation__submenuToggle" aria-expanded="false" aria-label="' . esc_attr(sprintf(__('Toggle submenu for %s', 'aera'), $title)) . '">';
+      $item_output .= '<span class="navigation__activeDropdown" aria-hidden="true">+</span>';
+      $item_output .= '<span class="navigation__inactiveDropdown" aria-hidden="true">-</span>';
+      $item_output .= '</button>';
+    }
+
     $item_output .= isset($args->after) ? $args->after : '';
 
     /**

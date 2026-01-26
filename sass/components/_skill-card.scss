@@ -83,4 +83,7 @@
 			line-height: 22px;
 		}
 	}
+
+	// Function-based stripe colors
+	@include skill-function-stripe-colors('.skill-card__stripe');
 }

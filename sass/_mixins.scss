@@ -211,3 +211,52 @@
 	clip: rect(0 0 0 0);
 	overflow: hidden;
 }
+
+// Skill function stripe colors
+// Maps skill functions to their brand colors for stripe elements
+// Usage: @include skill-function-stripe-colors('.stripe-element');
+@mixin skill-function-stripe-colors($stripe-selector) {
+	// Supply Chain
+	&[data-function*='supply-chain'] #{$stripe-selector} {
+		background-color: $color-aera-1;
+	}
+
+	// Procurement
+	&[data-function*='procurement'] #{$stripe-selector} {
+		background-color: $color-brand-2;
+	}
+
+	// Manufacturing
+	&[data-function*='manufacturing'] #{$stripe-selector} {
+		background-color: $color-brand-3;
+	}
+
+	// Finance
+	&[data-function*='finance'] #{$stripe-selector} {
+		background-color: $color-brand-4;
+	}
+
+	// Sales / Marketing
+	&[data-function*='sales'] #{$stripe-selector},
+	&[data-function*='marketing'] #{$stripe-selector} {
+		background-color: $color-brand-6;
+	}
+
+	// HR / IT / Customer Success
+	&[data-function*='hr'] #{$stripe-selector},
+	&[data-function*='it'] #{$stripe-selector},
+	&[data-function*='customer'] #{$stripe-selector} {
+		background-color: $color-cornflower;
+	}
+
+	// Product
+	&[data-function*='product'] #{$stripe-selector} {
+		background-color: $color-poloblue;
+	}
+
+	// ESG / Sustainability
+	&[data-function*='esg'] #{$stripe-selector},
+	&[data-function*='sustainability'] #{$stripe-selector} {
+		background-color: $color-bemuda;
+	}
+}

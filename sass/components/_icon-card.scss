@@ -105,46 +105,5 @@
 
 /* Function-based stripe colors */
 .icon-card {
-	// Supply Chain
-	&[data-function*='supply-chain'] .icon-card__top-stripe {
-		background-color: $color-aera-1;
-	}
-
-	// Procurement
-	&[data-function*='procurement'] .icon-card__top-stripe {
-		background-color: $color-brand-2;
-	}
-
-	// Manufacturing
-	&[data-function*='manufacturing'] .icon-card__top-stripe {
-		background-color: $color-brand-3;
-	}
-
-	// Finance
-	&[data-function*='finance'] .icon-card__top-stripe {
-		background-color: $color-brand-4;
-	}
-
-	// Sales / Marketing
-	&[data-function*='sales'] .icon-card__top-stripe,
-	&[data-function*='marketing'] .icon-card__top-stripe {
-		background-color: $color-brand-6;
-	}
-
-	// HR / IT / Customer Success
-	&[data-function*='hr'] .icon-card__top-stripe,
-	&[data-function*='it'] .icon-card__top-stripe,
-	&[data-function*='customer'] .icon-card__top-stripe {
-		background-color: $color-cornflower;
-	}
-
-	// Product / ESG (fallback colors)
-	&[data-function*='product'] .icon-card__top-stripe {
-		background-color: $color-poloblue;
-	}
-
-	&[data-function*='esg'] .icon-card__top-stripe,
-	&[data-function*='sustainability'] .icon-card__top-stripe {
-		background-color: $color-bemuda;
-	}
+	@include skill-function-stripe-colors('.icon-card__top-stripe');
 }

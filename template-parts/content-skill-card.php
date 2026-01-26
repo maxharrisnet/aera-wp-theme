@@ -9,9 +9,13 @@
  */
 
 $skill_card_image = get_field('skill_card_image');
+
+// Get the function (skill_function taxonomy) for color coding
+$functions = get_the_terms(get_the_ID(), 'skill_function');
+$function_slug = (!empty($functions) && !is_wp_error($functions)) ? $functions[0]->slug : '';
 ?>
 
-<div class="skill-card">
+<div class="skill-card" data-function="<?php echo esc_attr($function_slug); ?>">
   <div class="skill-card__wrapper">
     <a href="<?php the_permalink(); ?>">
       <?php if ($skill_card_image) : ?>

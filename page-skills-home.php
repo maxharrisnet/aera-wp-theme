@@ -25,7 +25,7 @@ get_header();
     $hero_args = array(
       'hero_title' => $hero_title,
       'hero_text' => $hero_text,
-      'hero_full_height' => true,
+      'hero_full_height' => false,
     );
 
     get_template_part('template-parts/components/hero', null, $hero_args);

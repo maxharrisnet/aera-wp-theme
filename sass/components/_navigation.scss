@@ -110,14 +110,12 @@
 		}
 	}
 
-	&__activeDropdown {
-		display: none;
-		@media (max-width: $min-1023) {
-			display: block;
-		}
-	}
+	&__activeDropdown,
 	&__inactiveDropdown {
-		display: none;
+		font-family: $font-family-freight;
+		font-weight: 100;
+		font-size: 18px;
+		line-height: 1;
 	}
 
 	// Submenu toggle button (mobile only)
@@ -130,11 +128,13 @@
 		color: inherit;
 		display: none;
 		position: absolute;
-		right: -30px;
-		top: -10px;
-		font-size: 20px;
+		right: -40px;
+		top: 0;
+		font-size: 16px;
+		font-family: $font-family-freight;
+		font-weight: 100;
 		width: 30px;
-		height: 30px;
+		height: 24px;
 		align-items: center;
 		justify-content: center;
 
@@ -152,6 +152,14 @@
 			clip: rect(0, 0, 0, 0);
 			white-space: nowrap;
 			border: 0;
+		}
+
+		// Show + by default, hide - by default
+		.navigation__activeDropdown {
+			display: block;
+		}
+		.navigation__inactiveDropdown {
+			display: none;
 		}
 	}
 
@@ -832,24 +840,26 @@ $menu-type-colors: (
 
 // Mobile submenu toggle behavior
 .menu-item-has-children {
-	.navigation__activeDropdown,
-	.navigation__inactiveDropdown {
-		font-family: $font-family-freight;
-		font-weight: 100;
-	}
-	.navigation__activeDropdown {
-		display: block;
-	}
-	.navigation__inactiveDropdown {
-		display: none;
+	position: relative;
+
+	// Toggle button +/- indicator states
+	.navigation__submenuToggle {
+		.navigation__activeDropdown {
+			display: block;
+		}
+		.navigation__inactiveDropdown {
+			display: none;
+		}
 	}
 
 	&.is-open {
-		.navigation__activeDropdown {
-			display: none;
-		}
-		.navigation__inactiveDropdown {
-			display: block;
+		.navigation__submenuToggle {
+			.navigation__activeDropdown {
+				display: none;
+			}
+			.navigation__inactiveDropdown {
+				display: block;
+			}
 		}
 
 		// Show the submenu when open on mobile
