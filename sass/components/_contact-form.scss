@@ -58,6 +58,58 @@
 	}
 }
 
+// Hubspot WordPress Plugin Form Styles
+.wp-block-leadin-hubspot-form-block {
+	@include hubspot-form-base;
+	max-width: 850px;
+	margin: 0 auto;
+	position: relative;
+
+	.hbspt-form {
+		// Contact form specific input styles
+		.hs-form input[type='text'],
+		.hs-form input[type='email'],
+		.hs-form input[type='tel'],
+		input[type='text'],
+		input[type='email'],
+		input[type='tel'] {
+			border-bottom: 1px solid #85daca;
+			font-weight: 200;
+		}
+
+		input[type='submit'] {
+			max-width: 25%;
+
+			@media (max-width: $min-720) {
+				max-width: 60%;
+			}
+		}
+
+		select {
+			padding-left: 2.85714em;
+			padding-right: 9.77143em;
+			height: 2.5em;
+
+			&[name='department'] {
+				width: 45% !important;
+
+				@media (max-width: $min-720) {
+					width: 100% !important;
+				}
+			}
+		}
+
+		textarea {
+			height: 200px;
+			border-bottom: 1px solid #85daca;
+		}
+	}
+
+	@media (max-width: $min-720) {
+		padding: 0 30px;
+	}
+}
+
 /* Make Contact */
 
 .makeContact {
