@@ -2,9 +2,27 @@
 @use '../mixins' as *;
 @use '../grid' as *;
 
-main {
-	position: relative;
+.page-platform-detail .hero {
+	padding: 150px 0 0;
+	height: 450px;
+
+	&__title {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		@media (min-width: $min-480) {
+			max-width: 42em;
+			width: 100%;
+			margin-bottom: 0;
+		}
+	}
 }
+
+// main {
+// 	position: relative;
+// }
 
 .platformnew {
 	padding: 50px 0px 80px 0px;
