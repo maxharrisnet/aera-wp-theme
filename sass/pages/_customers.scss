@@ -9,19 +9,6 @@
 		height: 550px;
 		padding: 150px 0 0;
 
-		@media (max-width: $min-720) {
-			padding: 50px 0 0;
-			height: auto;
-		}
-
-		@media (min-width: $min-768) {
-			// padding: 0px 0 0;
-		}
-
-		@media (min-width: $min-1024) {
-			// padding: 0px 0 0;
-		}
-
 		&__title {
 			margin-bottom: 20px;
 			padding-top: 0px;

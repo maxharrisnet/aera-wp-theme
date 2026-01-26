@@ -16,7 +16,7 @@
 
 	// Mobile-first: remove top padding on smaller screens
 	@media (max-width: $max-720) {
-		padding: 50px 0 0;
+		// padding: 50px 0 0;
 	}
 
 	&--full-height {
@@ -86,7 +86,7 @@
 
 	&__button-link {
 		@include reset-anchor;
-		@include responsive-font(13, 14);
+		font-size: 14px;
 		display: inline-flex;
 		justify-content: center;
 		position: relative;

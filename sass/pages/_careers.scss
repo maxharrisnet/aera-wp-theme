@@ -69,12 +69,18 @@
 .image-block {
 	margin-top: $gutter;
 
-	@media (min-width: $min-720) {
+	@media (max-width: $min-720) {
 		margin-top: $gutter * 2;
+		margin-bottom: $gutter * 2;
 	}
 
 	&__container {
-		@include container;
+		max-width: $page-width + 500px;
+
+		@media (max-width: $min-720) {
+			margin-left: -13%;
+			margin-right: -13%;
+		}
 
 		img {
 			width: 100%;
@@ -86,8 +92,7 @@
 
 /* Culture Section */
 .culture {
-	margin-bottom: $gutter * 1.5;
-	margin-top: $gutter * 1.5;
+  margin-bottom: $gutter * 3;
 
 	&__container {
 		@include container;

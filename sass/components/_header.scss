@@ -55,14 +55,14 @@
 	&__bar {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		// align-items: center;
 		position: relative;
 		z-index: 2;
 		padding: 20px;
 
 		@media (max-width: $min-720) {
 			z-index: 223; // Above navigation (222) so toggle button is clickable
-			padding: 15px $container-gutter-mobile;
+			// padding: 15px $container-gutter-mobile;
 		}
 
 		@media (min-width: $min-720) {
