@@ -92,7 +92,7 @@
 
 /* Culture Section */
 .culture {
-  margin-bottom: $gutter * 3;
+	margin-bottom: $gutter * 3;
 
 	&__container {
 		@include container;
@@ -319,19 +319,15 @@
 
 	&__link {
 		@include reset-anchor;
-
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-
 		position: relative;
 		padding: 0 $container-gutter-mobile * 2 0 $container-gutter-mobile;
 		min-height: 100px;
-
 		text-decoration: none;
 		color: $font-color-dark;
-
-		background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>') no-repeat calc(100% - #{$container-gutter-mobile}) 50%;
+		background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="7" height="12"><path fill="#1a1a1a" d="M.69 0L0 .69 5.3 6 0 11.3l.69.7 6-6z"/></svg>') no-repeat calc(100% - #{$container-gutter-mobile}) 50%;
 		background-size: 20px 20px;
 
 		@media (min-width: $min-720) {

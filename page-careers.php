@@ -177,8 +177,8 @@ if (function_exists('\Aera\get_careers_jobs')) {
                   <option value="all"><?php esc_html_e('All teams', 'aera'); ?></option>
                   <!-- Options will be populated dynamically from jobs -->
                 </select>
-                <svg class="select__chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <svg class="select__chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="7">
+                  <path fill="currentColor" d="M12 .84l-.69-.69L6 5.46.7.15 0 .84l6 6z" />
                 </svg>
               </div>
             </div>
@@ -189,8 +189,8 @@ if (function_exists('\Aera\get_careers_jobs')) {
                   <option value="all"><?php esc_html_e('All countries', 'aera'); ?></option>
                   <!-- Options will be populated dynamically from jobs -->
                 </select>
-                <svg class="select__chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <svg class="select__chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="7">
+                  <path fill="currentColor" d="M12 .84l-.69-.69L6 5.46.7.15 0 .84l6 6z" />
                 </svg>
               </div>
             </div>
@@ -201,8 +201,8 @@ if (function_exists('\Aera\get_careers_jobs')) {
                   <option value="all"><?php esc_html_e('All cities', 'aera'); ?></option>
                   <!-- Options will be populated dynamically from jobs -->
                 </select>
-                <svg class="select__chevron" width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M1 1L6 6L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <svg class="select__chevron" xmlns="http://www.w3.org/2000/svg" width="12" height="7">
+                  <path fill="currentColor" d="M12 .84l-.69-.69L6 5.46.7.15 0 .84l6 6z" />
                 </svg>
               </div>
             </div>
