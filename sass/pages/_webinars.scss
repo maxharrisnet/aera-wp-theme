@@ -163,12 +163,12 @@
 
 			@media (max-width: $max-960) {
 				min-height: 70px;
-				background-size: cover;
+				// background-size: cover;
 			}
 
 			@media (max-width: $max-720) {
 				min-height: 100px;
-				background-size: contain;
+				// background-size: contain;
 			}
 		}
 
@@ -196,6 +196,7 @@
 			position: relative;
 			width: 100%;
 			display: block;
+			overflow: hidden;
 
 			@media (max-width: $max-720) {
 				min-height: auto;
