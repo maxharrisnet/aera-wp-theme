@@ -130,15 +130,8 @@ $hero_defaults = array(
   <?php endif; ?>
 
   <?php
-  // CTA section - "See Aera in action"
-  $cta_title = __('See Aera in action.', 'aera');
-  $cta_text = __('Schedule Demo', 'aera');
-  $cta_link = home_url('/demo');
+  get_template_part('template-parts/components/cta');
   ?>
-  <div class="customers__cta">
-    <h2 class="customers__ctaTitle"><?php echo esc_html($cta_title); ?></h2>
-    <a href="<?php echo esc_url($cta_link); ?>" class="customers__ctaButton"><?php echo esc_html($cta_text); ?></a>
-  </div>
 
 </main>
 

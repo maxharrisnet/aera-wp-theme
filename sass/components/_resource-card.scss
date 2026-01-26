@@ -47,19 +47,17 @@
 		width: 100%;
 		display: block;
 		min-height: 96px;
-		background-size: contain;
+		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
 		border-radius: 10px 10px 0px 0px;
 
 		@media (max-width: $max-960) {
 			min-height: 70px;
-			background-size: cover;
 		}
 
 		@media (max-width: $max-720) {
 			min-height: 100px;
-			background-size: contain;
 		}
 	}
 
@@ -135,19 +133,20 @@
 	&__city {
 		font-family: $font-family-gilroy;
 		font-style: normal;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 14px;
-		line-height: 20px;
+		// line-height: 20px;
 		display: inline-block;
 		color: $color-codgray;
 		position: relative;
 		white-space: nowrap;
-		margin-left: auto;
-		text-align: right;
-		flex-shrink: 0; // Prevent city from shrinking
-		max-width: calc(50% - 5px); // Prevent overlap with type
-		overflow: hidden;
-		text-overflow: ellipsis;
+		// margin-left: auto;
+		// text-align: right;
+		flex-shrink: 0;
+		margin-bottom: 10px;
+		// max-width: calc(50% - 5px); // Prevent overlap with type
+		// overflow: hidden;
+		// text-overflow: ellipsis;
 	}
 
 	&__title {

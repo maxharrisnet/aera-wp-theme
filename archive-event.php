@@ -86,9 +86,9 @@ $all_resources_query = new WP_Query($all_resources_args);
               $event_start_date = function_exists('get_field') ? get_field('event_start_date', $post_id) : '';
               $event_date = '';
               if ($event_start_date) {
-                $event_date = date_i18n(get_option('date_format'), strtotime($event_start_date));
+                $event_date = date_i18n('Y-m-d', strtotime($event_start_date));
               } else {
-                $event_date = get_the_date(get_option('date_format'), $post_id);
+                $event_date = get_the_date('Y-m-d', $post_id);
               }
 
               // Get CTA text
