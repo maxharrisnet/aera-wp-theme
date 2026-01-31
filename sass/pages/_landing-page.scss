@@ -1,4 +1,8 @@
-@use '../config' as *;
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../reset' as *;
+@use '../grid' as *;
 
 body:has(.landing-page) {
 	padding: 0;

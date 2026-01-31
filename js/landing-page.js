@@ -1,11 +1,15 @@
 (function () {
 	const page = document.querySelector('.landing-page');
-	if (!page) return;
+	if (!page) {
+		return;
+	}
 
 	const carousel = page.querySelector('[data-carousel]');
 	const prevButton = page.querySelector('[data-carousel-prev]');
 	const nextButton = page.querySelector('[data-carousel-next]');
-	if (!carousel || !prevButton || !nextButton) return;
+	if (!carousel || !prevButton || !nextButton) {
+		return;
+	}
 
 	const state = {
 		currentIndex: 0,
@@ -32,7 +36,9 @@
 		Array.from(carousel.querySelectorAll('[data-clone="true"]')).forEach((node) => node.remove());
 
 		const originals = getOriginalItems();
-		if (!originals.length) return;
+		if (!originals.length) {
+			return;
+		}
 
 		const clones = originals.slice(0, state.perView).map((item) => {
 			const clone = item.cloneNode(true);
@@ -49,15 +55,15 @@
 	};
 
 	const applyTransform = () => {
-		carousel.style.transition = state.isTransitioning
-			? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
-			: 'none';
+		carousel.style.transition = state.isTransitioning ? 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)' : 'none';
 		carousel.style.transform = `translateX(calc(-${state.currentIndex} * (100% / ${state.perView} + ${state.gapPx}px / ${state.perView})))`;
 	};
 
 	const handleNext = () => {
 		const originals = getOriginalItems();
-		if (originals.length <= 1) return;
+		if (originals.length <= 1) {
+			return;
+		}
 
 		state.currentIndex += 1;
 		state.isTransitioning = true;
@@ -74,7 +80,9 @@
 
 	const handlePrev = () => {
 		const originals = getOriginalItems();
-		if (originals.length <= 1) return;
+		if (originals.length <= 1) {
+			return;
+		}
 
 		if (state.currentIndex === 0) {
 			state.currentIndex = originals.length;
@@ -98,17 +106,23 @@
 
 	carousel.addEventListener('touchstart', (event) => {
 		const touch = event.touches && event.touches[0];
-		if (!touch) return;
+		if (!touch) {
+			return;
+		}
 		touchStartX = touch.clientX;
 		touchStartY = touch.clientY;
 	});
 
 	carousel.addEventListener('touchend', (event) => {
 		const touch = event.changedTouches && event.changedTouches[0];
-		if (!touch) return;
+		if (!touch) {
+			return;
+		}
 		const deltaX = touch.clientX - touchStartX;
 		const deltaY = touch.clientY - touchStartY;
-		if (Math.abs(deltaX) < 40 || Math.abs(deltaX) < Math.abs(deltaY)) return;
+		if (Math.abs(deltaX) < 40 || Math.abs(deltaX) < Math.abs(deltaY)) {
+			return;
+		}
 		if (deltaX > 0) {
 			handlePrev();
 		} else {

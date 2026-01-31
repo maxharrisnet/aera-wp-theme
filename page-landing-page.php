@@ -38,7 +38,7 @@ if (!empty($hero_background_image) && !empty($hero_background_image['url'])) {
 <main id="primary" class="site-main site-main--landing-page">
   <div class="landing-page">
     <?php if (!empty($hero_title) || !empty($hero_subtitle) || !empty($hero_image)) : ?>
-      <section class="landing-page__hero"<?php echo $hero_style; ?>>
+      <section class="landing-page__hero" <?php echo $hero_style; ?>>
         <div class="landing-page__heroContainer">
           <div class="landing-page__heroLeft">
             <?php if (!empty($hero_eyebrow)) : ?>
