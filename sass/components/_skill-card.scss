@@ -65,6 +65,12 @@
 		@media (max-width: $max-720) {
 			padding: 15px;
 		}
+
+		p {
+			margin: 0;
+			font-weight: 350;
+			font-size: 18px;
+		}
 	}
 
 	&__title {

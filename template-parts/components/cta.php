@@ -10,8 +10,11 @@ namespace Aera;
 
 defined('ABSPATH') || exit;
 
+// Extract CTA data from $args if passed via get_template_part()
+$cta = $args['cta'] ?? null;
+
 // Accept CTA data as parameter, or get from ACF if not provided
-if (!isset($cta) || $cta === null) {
+if (!isset($cta) || $cta === null || empty($cta)) {
   // Try to get CTA from ACF fields (cta_title and cta_buttons)
   if (function_exists('get_field')) {
     $cta_title = get_field('cta_title');

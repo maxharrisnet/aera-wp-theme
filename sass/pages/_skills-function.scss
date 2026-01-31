@@ -107,6 +107,7 @@
 
 	// Content Wrapper
 	&__content-wrapper {
+		@include container;
 		position: relative;
 	}
 
@@ -245,8 +246,11 @@
 
 	// Main Content Area
 	&__main {
+		max-width: 738px;
+
 		@media (max-width: $max-720) {
 			order: 1;
+			max-width: 100%;
 		}
 	}
 
@@ -514,7 +518,6 @@
 		position: relative;
 		display: block;
 		width: 100%;
-		max-width: 800px;
 		margin: 0;
 		padding: 0;
 		border: none;

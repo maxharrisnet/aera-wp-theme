@@ -239,7 +239,7 @@
 	// Sales / Marketing
 	&[data-function*='sales'] #{$stripe-selector},
 	&[data-function*='marketing'] #{$stripe-selector} {
-		background-color: $color-brand-6;
+		background-color: $color-persiangreen;
 	}
 
 	// HR / IT / Customer Success

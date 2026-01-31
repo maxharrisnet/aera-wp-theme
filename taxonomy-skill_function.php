@@ -162,7 +162,8 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                               data-hubspot-form="<?php echo esc_attr($hubspot_form_id); ?>"
                               data-skill-id="<?php echo esc_attr($skill->ID); ?>"
                               aria-label="<?php esc_attr_e('Play video', 'aera'); ?>">
-                              <img src="<?php echo esc_url($video_thumbnail['url']); ?>" alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video'); ?>" />
+                              <img src="<?php echo esc_url($video_thumbnail['url']); ?>"
+                              alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video'); ?>" />
                               <span class="skill-content__video-play-icon">
                                 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.7)" />
@@ -315,46 +316,23 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
 
   <!-- CTA Section -->
   <?php
-  $cta_title = function_exists('get_field') ? get_field('skills_cta_title', 'option') : '';
-  $cta_buttons = function_exists('get_field') ? get_field('skills_cta_buttons', 'option') : array();
+  // Get skills-specific CTA from options, or let component use defaults
+  $skills_cta_title = function_exists('get_field') ? get_field('skills_cta_title', 'option') : '';
+  $skills_cta_buttons = function_exists('get_field') ? get_field('skills_cta_buttons', 'option') : array();
 
-  if ($cta_title && !empty($cta_buttons)) :
+  // Only pass custom data if skills-specific CTA is configured in options
+  if (!empty($skills_cta_title) || !empty($skills_cta_buttons)) {
+    get_template_part('template-parts/components/cta', null, array(
+      'cta' => array(
+        'title' => $skills_cta_title,
+        'buttons' => $skills_cta_buttons,
+      ),
+    ));
+  } else {
+    // Use default CTA from component
+    get_template_part('template-parts/components/cta');
+  }
   ?>
-    <section class="skills-cta">
-      <div class="skills-cta__container">
-        <h2 class="skills-cta__title"><?php echo esc_html($cta_title); ?></h2>
-        <div class="skills-cta__buttons">
-          <?php foreach ($cta_buttons as $button) : ?>
-            <?php
-            // Process button link
-            $link = '';
-            if (!empty($button['link_type']) && $button['link_type'] === 'internal' && !empty($button['link_internal'])) {
-              $link = get_permalink($button['link_internal']);
-            } elseif (!empty($button['link_type']) && $button['link_type'] === 'resource' && !empty($button['link_resource'])) {
-              $link = get_permalink($button['link_resource']);
-            } elseif (!empty($button['link_external'])) {
-              $link = $button['link_external'];
-            } elseif (!empty($button['link'])) {
-              // Legacy support
-              $link = $button['link'];
-            } elseif (!empty($button['button_url'])) {
-              // Legacy support for old 'button_url' field
-              $link = $button['button_url'];
-            }
-
-            $text = $button['text'] ?? $button['button_text'] ?? '';
-
-            if (!empty($text) && !empty($link)) :
-            ?>
-              <a href="<?php echo esc_url($link); ?>" class="button button--primary">
-                <?php echo esc_html($text); ?>
-              </a>
-            <?php endif; ?>
-          <?php endforeach; ?>
-        </div>
-      </div>
-    </section>
-  <?php endif; ?>
 
   <!-- Video Modal -->
   <div id="skillVideoModal" class="skill-video-modal" style="display: none;">
