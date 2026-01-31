@@ -198,6 +198,20 @@ function aera_technology_scripts()
     }
   }
 
+  // Enqueue Landing Page scripts
+  if (is_page_template('page-landing-page.php')) {
+    $landing_page_js_path = get_template_directory() . '/js/landing-page.js';
+    if (file_exists($landing_page_js_path)) {
+      wp_enqueue_script(
+        'aera-landing-page',
+        get_template_directory_uri() . '/js/landing-page.js',
+        array(),
+        filemtime($landing_page_js_path),
+        true
+      );
+    }
+  }
+
   // Enqueue Skill Detail page scripts
   if (is_singular('skill')) {
     $skill_detail_js_path = get_template_directory() . '/js/skill-detail.js';
