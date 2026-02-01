@@ -148,6 +148,18 @@ function register_acf_options_pages(): void
     'parent_slug' => 'edit.php?post_type=skill',
     'icon_url'   => 'dashicons-awards',
   ));
+
+  // Site Options (global settings, banners, etc.)
+  acf_add_options_page(array(
+    'page_title' => __('Site Options', 'aera'),
+    'menu_title' => __('Site Options', 'aera'),
+    'menu_slug'  => 'acf-options-site-options',
+    'capability' => 'manage_options',
+    'parent_slug' => '',
+    'icon_url'   => 'dashicons-admin-settings',
+    'position'   => 2,
+    'redirect'   => false,
+  ));
 }
 add_action('acf/init', __NAMESPACE__ . '\\register_acf_options_pages');
 

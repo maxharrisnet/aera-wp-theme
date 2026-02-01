@@ -341,6 +341,11 @@ require get_template_directory() . '/inc/faq.php';
 require get_template_directory() . '/inc/acf.php';
 
 /**
+ * Announcement banner helpers.
+ */
+require get_template_directory() . '/inc/banner.php';
+
+/**
  * Custom navigation walker.
  */
 require get_template_directory() . '/inc/class-navigation-walker.php';
