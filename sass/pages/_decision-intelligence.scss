@@ -17,7 +17,7 @@
 			// @include responsive-font(16, 24);
 
 			@media (min-width: $min-480) {
-				max-width: (840/18) * 1em;
+				max-width: 40em;
 				width: 100%;
 
 				.fullHeight & {

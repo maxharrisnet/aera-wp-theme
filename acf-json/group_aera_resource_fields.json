@@ -219,6 +219,13 @@
         "operator": "==",
         "value": "media-item"
       }
+    ],
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "report"
+      }
     ]
   ],
   "menu_order": 99,

@@ -28,6 +28,7 @@ function get_resource_types(): array
         'blog',
         'case-study',
         'podcast',
+        'report',
       ),
     ),
     'news'          => array(
@@ -57,6 +58,10 @@ function get_resource_types(): array
     'podcasts'      => array(
       'label'      => __('Podcasts', 'aera'),
       'post_types' => array('podcast'),
+    ),
+    'reports'       => array(
+      'label'      => __('Reports', 'aera'),
+      'post_types' => array('report'),
     ),
   );
 

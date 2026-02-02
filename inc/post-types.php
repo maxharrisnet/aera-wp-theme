@@ -34,6 +34,7 @@ function register_post_types(): void
     'blog',
     'case-study',
     'podcast',
+    'report',
     'webinar',
     'faq',
     'media-item',
@@ -90,6 +91,12 @@ function register_post_types(): void
       'plural'    => __('Podcasts', 'aera'),
       'rewrite'   => 'podcasts',
       'menu_icon' => 'dashicons-microphone',
+    ),
+    'report'        => array(
+      'singular'  => __('Report', 'aera'),
+      'plural'    => __('Reports', 'aera'),
+      'rewrite'   => 'reports',
+      'menu_icon' => 'dashicons-media-document',
     ),
     'customer'      => array(
       'singular'  => __('Customer Story', 'aera'),
