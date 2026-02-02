@@ -225,6 +225,7 @@
 					}
 					if (topBanner) {
 						topBanner.classList.add('header__topBanner--hidden');
+						document.body.classList.add('banner-hidden');
 					}
 				} else {
 					// Scrolling up - show header and banner
@@ -233,6 +234,7 @@
 					}
 					if (topBanner) {
 						topBanner.classList.remove('header__topBanner--hidden');
+						document.body.classList.remove('banner-hidden');
 					}
 				}
 			} else {
@@ -244,6 +246,7 @@
 				}
 				if (topBanner) {
 					topBanner.classList.remove('header__topBanner--hidden');
+					document.body.classList.remove('banner-hidden');
 				}
 			}
 

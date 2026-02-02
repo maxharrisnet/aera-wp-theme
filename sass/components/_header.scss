@@ -45,10 +45,16 @@
 		position: relative;
 
 		@media (min-width: $min-1024) {
-			padding: 50px 0 0;
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
+
+			// Only add the top padding when an announcement banner is active
+			// (body.has-announcement-banner). Using @at-root to emit a selector
+			// that targets the header content from the body scope.
+			@at-root body.has-announcement-banner #{&} {
+				padding: 50px 0 0;
+			}
 		}
 	}
 
@@ -460,26 +466,6 @@
 				display: block;
 				font-size: 16px;
 			}
-		}
-	}
-}
-
-// Body padding adjustments when announcement banner is present
-// The .has-announcement-banner class is added by PHP when a banner is active
-body.has-announcement-banner {
-	// Add top padding to account for the fixed/absolute banner
-	// This prevents content from being hidden behind the banner on desktop
-	@media (min-width: $min-1024) {
-		.header__content {
-			padding-top: 90px; // 50px original + ~40px banner height
-		}
-	}
-
-	// On mobile/tablet, the banner is relative positioned, so no extra padding needed
-	// but we ensure the header adjusts properly
-	@media (max-width: $max-1024) {
-		.header__content {
-			padding-top: 0;
 		}
 	}
 }
