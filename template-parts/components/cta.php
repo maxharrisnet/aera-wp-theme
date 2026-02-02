@@ -13,34 +13,40 @@ defined('ABSPATH') || exit;
 // Extract CTA data from $args if passed via get_template_part()
 $cta = $args['cta'] ?? null;
 
-// Accept CTA data as parameter, or get from ACF if not provided
+// Accept CTA data as parameter, or get from ACF if not provided. Prefer
+// page-level fields and fall back to site-level defaults (options).
 if (!isset($cta) || $cta === null || empty($cta)) {
-  // Try to get CTA from ACF fields (cta_title and cta_buttons)
   if (function_exists('get_field')) {
-    $cta_title = get_field('cta_title');
-    $cta_buttons = get_field('cta_buttons');
+    // Load both page-level and site-level fields and merge intelligently.
+    $page_cta_title = get_field('cta_title');
+    $page_cta_buttons = get_field('cta_buttons');
 
-    if (!empty($cta_title) || !empty($cta_buttons)) {
+    $site_cta_title = get_field('cta_title', 'option');
+    $site_cta_buttons = get_field('cta_buttons', 'option');
+
+    // Prefer page title when present, otherwise use site default.
+    $source_title = !empty($page_cta_title) ? $page_cta_title : $site_cta_title;
+
+    // Prefer page buttons when present; otherwise fall back to site defaults.
+    $source_buttons = !empty($page_cta_buttons) && is_array($page_cta_buttons) ? $page_cta_buttons : $site_cta_buttons;
+
+    if (!empty($source_title) || !empty($source_buttons)) {
       $cta = array(
-        'title' => $cta_title ?: '',
+        'title' => $source_title ?: '',
         'buttons' => array(),
       );
 
       // Process buttons to resolve link types
-      if (!empty($cta_buttons)) {
-        foreach ($cta_buttons as $button) {
+      if (!empty($source_buttons) && is_array($source_buttons)) {
+        foreach ($source_buttons as $button) {
           $link = '';
           if (!empty($button['link_type']) && $button['link_type'] === 'internal' && !empty($button['link_internal'])) {
-            // Internal link - get permalink from post ID
             $link = get_permalink($button['link_internal']);
           } elseif (!empty($button['link_type']) && $button['link_type'] === 'resource' && !empty($button['link_resource'])) {
-            // Resource link - blogs/press releases/case studies
             $link = get_permalink($button['link_resource']);
           } elseif (!empty($button['link_external'])) {
-            // External link or relative path
             $link = $button['link_external'];
           } elseif (!empty($button['link'])) {
-            // Legacy support for old 'link' field
             $link = $button['link'];
           }
 

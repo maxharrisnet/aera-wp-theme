@@ -427,6 +427,188 @@
           "display_format": "F j, Y g:i a",
           "return_format": "Y-m-d H:i:s",
           "first_day": 0
+        },
+        {
+          "key": "field_site_cta_tab",
+          "label": "CTA Defaults",
+          "name": "",
+          "aria-label": "",
+          "type": "tab",
+          "instructions": "",
+          "required": 0,
+          "conditional_logic": false,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "placement": "top",
+          "endpoint": 0,
+          "selected": 0
+        },
+        {
+          "key": "field_site_cta_title",
+          "label": "CTA Title",
+          "name": "cta_title",
+          "aria-label": "",
+          "type": "text",
+          "instructions": "Default CTA title for generic pages.",
+          "required": 0,
+          "conditional_logic": false,
+          "wrapper": {
+            "width": "100",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "See Aera in action.",
+          "placeholder": "",
+          "prepend": "",
+          "append": "",
+          "maxlength": ""
+        },
+        {
+          "key": "field_site_cta_buttons",
+          "label": "CTA Buttons",
+          "name": "cta_buttons",
+          "aria-label": "",
+          "type": "repeater",
+          "instructions": "Default CTA buttons used on generic pages.",
+          "required": 0,
+          "conditional_logic": false,
+          "wrapper": {
+            "width": "100",
+            "class": "",
+            "id": ""
+          },
+          "collapsed": "field_site_cta_button_text",
+          "min": 0,
+          "max": 3,
+          "layout": "table",
+          "button_label": "Add Button",
+          "sub_fields": [
+            {
+              "key": "field_site_cta_button_text",
+              "label": "Button Text",
+              "name": "text",
+              "type": "text",
+              "instructions": "",
+              "required": 1,
+              "conditional_logic": false,
+              "wrapper": {
+                "width": "40",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "Schedule Demo",
+              "placeholder": "Schedule Demo",
+              "maxlength": ""
+            },
+            {
+              "key": "field_site_cta_button_link_type",
+              "label": "Link Type",
+              "name": "link_type",
+              "type": "button_group",
+              "instructions": "",
+              "required": 0,
+              "conditional_logic": false,
+              "choices": {
+                "external": "External URL",
+                "internal": "Internal Page",
+                "resource": "Resources"
+              },
+              "default_value": "external",
+              "wrapper": {
+                "width": "30",
+                "class": "",
+                "id": ""
+              }
+            },
+            {
+              "key": "field_site_cta_button_link_external",
+              "label": "External URL",
+              "name": "link_external",
+              "type": "text",
+              "instructions": "External URL or relative path (e.g., /demo)",
+              "required": 0,
+              "conditional_logic": [
+                [
+                  {
+                    "field": "field_site_cta_button_link_type",
+                    "operator": "==",
+                    "value": "external"
+                  }
+                ]
+              ],
+              "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+              },
+              "default_value": "/demo",
+              "placeholder": "https://example.com or /demo"
+            },
+            {
+              "key": "field_site_cta_button_link_internal",
+              "label": "Internal Page",
+              "name": "link_internal",
+              "type": "post_object",
+              "instructions": "Select an internal page",
+              "required": 0,
+              "conditional_logic": [
+                [
+                  {
+                    "field": "field_site_cta_button_link_type",
+                    "operator": "==",
+                    "value": "internal"
+                  }
+                ]
+              ],
+              "post_type": [
+                "page",
+                "post"
+              ],
+              "taxonomy": "",
+              "allow_null": 0,
+              "multiple": 0,
+              "return_format": "id",
+              "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+              }
+            },
+            {
+              "key": "field_site_cta_button_link_resource",
+              "label": "Resource",
+              "name": "link_resource",
+              "type": "post_object",
+              "instructions": "Select a resource (blog, press release, case study)",
+              "required": 0,
+              "conditional_logic": [
+                [
+                  {
+                    "field": "field_site_cta_button_link_type",
+                    "operator": "==",
+                    "value": "resource"
+                  }
+                ]
+              ],
+              "post_type": [
+                "blog",
+                "press-release",
+                "case-study"
+              ],
+              "taxonomy": "",
+              "allow_null": 0,
+              "multiple": 0,
+              "return_format": "id",
+              "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+              }
+            }
+          ]
         }
       ]
     }
