@@ -5,60 +5,26 @@
 
 /* SKILLS HOME PAGE */
 .site-main--skills-home {
-	padding-top: 0;
-
 	.hero {
 		padding: 150px 0 0;
-		height: auto;
 
-  
+		&__title {
+			@include responsive-font(26, 64);
+			margin-top: 10px;
+			margin-bottom: 30px;
+
+			@media (min-width: $min-1200) {
+				line-height: 30px;
+			}
+		}
 	}
 }
 
 .skills-home {
-	// padding-top: 0;
-
 	&__container {
 		@include container;
-		// padding: 50px 0;
+		padding: 50px 0;
 		max-width: 1046px;
-	}
-
-	&__intro {
-		text-align: center;
-		max-width: 900px;
-		margin: 0 auto 60px;
-
-		@media (max-width: $max-720) {
-			margin-bottom: 40px;
-		}
-	}
-
-	&__title {
-		font-size: 48px;
-		font-family: $font-family-gilroy;
-		font-weight: 700;
-		line-height: 1.2;
-		color: $color-codgray;
-		margin: 0 0 20px;
-
-		@media (max-width: $max-720) {
-			font-size: 36px;
-		}
-	}
-
-	&__subtitle {
-		font-size: 20px;
-		line-height: 30px;
-		font-family: $font-family;
-		color: $color-shuttlegray;
-		margin: 0 auto;
-		max-width: 800px;
-
-		@media (max-width: $max-720) {
-			font-size: 18px;
-			line-height: 26px;
-		}
 	}
 
 	&__grid,
@@ -83,35 +49,6 @@
 		text-align: center;
 		padding: 40px 0;
 	}
-
-	// &__cta-button {
-	// 	@include link;
-	// 	display: inline-block;
-	// 	padding: 12px 40px;
-	// 	font-family: $font-family-gilroy;
-	// 	font-size: 14px;
-	// 	font-weight: 600;
-	// 	line-height: 1.5;
-	// 	text-transform: uppercase;
-	// 	letter-spacing: 0.025em;
-	// 	color: $color-codgray;
-	// 	background-color: $color-btn-background;
-	// 	border: 1px solid $color-btn-default;
-	// 	border-radius: $btn-border-radius;
-	// 	text-decoration: none;
-	// 	transition: all $transition-enter ease;
-
-	// 	&:hover {
-	// 		background-color: $color-btn-gradient;
-	// 		background-image: linear-gradient(rgba($color-hawkesblue, 0) 0%, $color-hawkesblue 90%);
-	// 		text-decoration: none;
-	// 	}
-
-	// 	@media (max-width: $max-720) {
-	// 		padding: 10px 30px;
-	// 		font-size: 13px;
-	// 	}
-	// }
 
 	// Icon Grid Section (4 columns with icons and text)
 	&__icon-section {
