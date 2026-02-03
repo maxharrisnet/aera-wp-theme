@@ -9,7 +9,9 @@
 
 	.hero {
 		padding: 150px 0 0;
-		height: 550px;
+		height: auto;
+
+  
 	}
 }
 
@@ -145,6 +147,7 @@
 		text-align: center;
 		margin: 0 auto 40px;
 		max-width: 900px;
+		font-weight: 350;
 
 		@media (max-width: $max-720) {
 			font-size: 16px;
@@ -220,8 +223,8 @@
 
 	&__icon-item-text {
 		font-size: 18px;
-		font-weight: 300;
-		line-height: 24px;
+		font-weight: 350;
+		line-height: $line-height;
 		color: $color-shuttlegray;
 		margin: 0;
 	}

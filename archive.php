@@ -33,7 +33,7 @@ $paged = max(1, get_query_var('paged') ?: get_query_var('page') ?: 1);
                 get_template_part('template-parts/content', 'case-study-card');
               } else {
                 // Use resource-card template for resource-like post types
-                $resource_types = array('blog', 'news', 'press-release', 'whitepaper', 'podcast', 'video', 'webinar');
+                $resource_types = array('blog', 'news', 'press-release', 'whitepaper', 'podcast', 'video', 'report', 'case-study');
                 if (in_array($post_type, $resource_types, true)) {
                   get_template_part(
                     'template-parts/content',

@@ -49,6 +49,12 @@ function aera_technology_setup()
   add_theme_support('post-thumbnails');
   add_image_size('resource_card', 720, 405, true);
 
+  // Project-specific image sizes
+  add_image_size('author_image', 160, 160, true); // Author avatar / contributor headshot
+  add_image_size('card_image', 480, 270, true);   // Generic card image (3:2)
+  add_image_size('blog_hero', 1400, 700, true);   // Blog post hero/banner
+  add_image_size('skill_hero', 1200, 600, true);  // Skill hero image
+
   // This theme uses wp_nav_menu() in one location.
   register_nav_menus(
     array(
@@ -113,6 +119,23 @@ function aera_technology_setup()
   );
 }
 add_action('after_setup_theme', 'aera_technology_setup');
+
+/**
+ * Make custom image sizes available in the media selector.
+ *
+ * @param array $sizes Existing sizes.
+ * @return array
+ */
+function aera_technology_image_sizes($sizes)
+{
+  return array_merge($sizes, array(
+    'author_image' => __('Author Image (160x160)', 'aera'),
+    'card_image'   => __('Card Image (480x270)', 'aera'),
+    'blog_hero'    => __('Blog Hero (1400x700)', 'aera'),
+    'skill_hero'   => __('Skill Hero (1200x600)', 'aera'),
+  ));
+}
+add_filter('image_size_names_choose', 'aera_technology_image_sizes');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.

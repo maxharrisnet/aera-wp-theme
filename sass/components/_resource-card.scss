@@ -5,14 +5,16 @@
 
 /* RESOURCE CARD */
 .resource-card {
-	// margin-top: $gutter * 1;
 	width: 33.33%; // TODO: Fix dumb flexbox widths
 	display: flex;
 	padding: 20px;
 
+	@media (max-width: $max-960) {
+		width: 50%;
+	}
+
 	@media (max-width: $max-720) {
-		width: 85%;
-		padding: 0;
+		width: 100%;
 		margin: 0 auto;
 		display: block;
 		margin-bottom: 20px;
@@ -27,6 +29,7 @@
 		width: 100%;
 		display: flex;
 		flex-direction: column;
+		background-color: $color-white;
 
 		@media (max-width: $max-720) {
 			min-height: auto;
@@ -47,7 +50,7 @@
 		width: 100%;
 		display: block;
 		min-height: 96px;
-		background-size: cover;
+		background-size: contain; // TODO: compare on desktop
 		background-position: center;
 		background-repeat: no-repeat;
 		border-radius: 10px 10px 0px 0px;
@@ -106,7 +109,7 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		min-height: 350px;
+		// min-height: 350px;
 
 		@media (max-width: $max-720) {
 			min-height: auto;

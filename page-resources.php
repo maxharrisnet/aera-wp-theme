@@ -23,59 +23,46 @@ $hero = wp_parse_args(
 );
 
 $types = get_resource_types();
-$active_slug = get_active_resource_type(filter_input(INPUT_GET, 'type', FILTER_SANITIZE_SPECIAL_CHARS));
+// Accept either `type` or `category` in the querystring for compatibility
+$requested_type = filter_input(INPUT_GET, 'category', FILTER_SANITIZE_SPECIAL_CHARS);
+if (! $requested_type) {
+  $requested_type = filter_input(INPUT_GET, 'type', FILTER_SANITIZE_SPECIAL_CHARS);
+}
+$active_slug = get_active_resource_type($requested_type);
 $paged = max(1, get_query_var('paged') ?: get_query_var('page') ?: 1);
 
 // Load ALL resources - filtering will happen on the client-side via JavaScript
 $resource_query = new WP_Query(build_resource_query_args('all', $paged));
 
-$demo_media_base = trailingslashit(get_template_directory_uri()) . 'assets/placeholder/';
-$demo_resources = array(
-  array(
-    'title'      => __('Smarter Waste Mitigation for Maximum Margin Recovery and Less Loss', 'aera'),
-    'excerpt'    => __('Aera\'s Business Waste Mitigation Skill detects at-risk inventory and recommends the most effective mitigation path.', 'aera'),
-    'type_label' => __('Blogs', 'aera'),
-    'post_type'  => 'blog',
-    'date'       => '2025-11-19',
-    'image'      => $demo_media_base . 'aera_tile.png',
-    'image_alt'  => __('Technology powered freight truck', 'aera'),
-  ),
-  array(
-    'title'      => __('Hershey, Gallo Advance Decision Intelligence Across the Supply Chain', 'aera'),
-    'excerpt'    => __('Supply chain leaders from Hershey and Gallo share how they are scaling decision intelligence from pilot to production.', 'aera'),
-    'type_label' => __('News', 'aera'),
-    'post_type'  => 'news',
-    'date'       => '2025-11-18',
-    'image'      => $demo_media_base . 'aera_tile.png',
-    'image_alt'  => __('Corporate building exterior', 'aera'),
-  ),
-  array(
-    'title'      => __('Fred Laluyaux: How Decision Intelligence & AI Agents Are Redefining Enterprise Operations', 'aera'),
-    'excerpt'    => __('CEO Fred Laluyaux unpacks how organizations can move from dashboards to systems that sense, reason, and act.', 'aera'),
-    'type_label' => __('Podcasts', 'aera'),
-    'post_type'  => 'podcast',
-    'date'       => '2025-11-13',
-    'image'      => $demo_media_base . 'aera_tile.png',
-    'image_alt'  => __('Animated conversational UI preview', 'aera'),
-  ),
-);
-
 $base_url = get_permalink();
 ?>
 
 <main id="primary" class="site-main site-main--resources">
-
   <div class="resources__filterWrapper">
     <div class="resources__filterType" id="typeSelector">
       <?php foreach ($types as $slug => $type) : ?>
         <?php
-        $url = 'all' === $slug ? remove_query_arg('type', $base_url) : add_query_arg('type', $slug, $base_url);
+        // Generate links using the actual post type slug (first configured
+        // post_type for that resource type). This ensures URLs use the value
+        // the server-side query and older links expect (e.g. ?category=report).
+        if ('all' === $slug) {
+          $url = remove_query_arg('category', $base_url);
+          $data_filter = 'all';
+          $post_type_for_link = 'all';
+        } else {
+          $post_type_for_link = !empty($type['post_types'][0]) ? $type['post_types'][0] : $slug;
+          $url = add_query_arg('category', $post_type_for_link, $base_url);
+          // Use the post_type value for the data-filter so client-side JS
+          // updates the URL with the same value that the link points to.
+          $data_filter = $post_type_for_link;
+        }
+
         $is_active = $slug === $active_slug;
         $style = $is_active ? 'border-bottom: 1px solid #00578f;' : '';
         ?>
         <a
           href="<?php echo esc_url($url); ?>"
-          data-filter="<?php echo esc_attr($slug); ?>"
+          data-filter="<?php echo esc_attr($data_filter); ?>"
           class="<?php echo $is_active ? 'active' : ''; ?>"
           style="<?php echo esc_attr($style); ?>">
           <?php echo esc_html($type['label']); ?>
@@ -129,28 +116,8 @@ $base_url = get_permalink();
           </nav>
         <?php endif; ?>
       <?php else : ?>
-        <div class="resources__list">
-          <div class="resources__col">
-            <?php foreach ($demo_resources as $item) : ?>
-              <?php
-              get_template_part(
-                'template-parts/content',
-                'resource-card',
-                array(
-                  'title'      => $item['title'],
-                  'excerpt'    => $item['excerpt'],
-                  'type_label' => $item['type_label'],
-                  'date'       => $item['date'],
-                  'link'       => '#',
-                  'is_demo'    => true,
-                  'post_type'  => $item['post_type'] ?? 'blog',
-                  'image'      => $item['image'] ?? '',
-                  'image_alt'  => $item['image_alt'] ?? '',
-                )
-              );
-              ?>
-            <?php endforeach; ?>
-          </div>
+        <div className="resources__no-results-wrapper">
+          <p class="resources__no-results"><?php esc_html_e('No resources found.', 'aera'); ?></p>
         </div>
       <?php endif; ?>
     </div>

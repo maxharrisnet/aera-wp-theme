@@ -251,7 +251,7 @@ class Navigation_Walker extends \Walker_Nav_Menu
       'company'              => array('about', 'team', 'leadership', 'board', 'partners', 'partner'),
       'customer'             => array('customers', 'customer'),
       'careers'              => array('careers', 'jobs'),
-      'resources'            => array('resources', 'blogs', 'blog', 'news', 'press-release', 'whitepaper', 'podcast', 'video'),
+      'resources'            => array('resources', 'blogs', 'blog', 'news', 'press-release', 'whitepaper', 'podcast', 'video', 'report'),
       'events'               => array('events', 'webinars', 'event', 'webinar'),
       'platform'             => array('decision-cloud', 'platform', 'aera-decision-cloud'),
       'technology'           => array('technology', 'what-is-decision-intelligence'),

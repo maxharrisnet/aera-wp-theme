@@ -79,11 +79,21 @@ function get_active_resource_type(string $slug = null): string
   $slug = $slug ? sanitize_key($slug) : 'all';
   $types = get_resource_types();
 
-  if (! isset($types[$slug])) {
-    return 'all';
+  // If the slug matches a defined type key, return it.
+  if (isset($types[$slug])) {
+    return $slug;
   }
 
-  return $slug;
+  // If the slug instead is a post type (e.g. 'report'), map it to the
+  // resource type key that includes that post type (e.g. 'reports'). This
+  // makes the `?type=` parameter tolerant of singular/plural mismatches.
+  foreach ($types as $key => $type) {
+    if (! empty($type['post_types']) && in_array($slug, $type['post_types'], true)) {
+      return $key;
+    }
+  }
+
+  return 'all';
 }
 
 /**
