@@ -95,9 +95,21 @@ if ($resource_card_image && !empty($resource_card_image['url'])) {
     </div>
   </div>
 
-  <?php if ($image_url) : ?>
+  <?php if ($resource_card_image || $image_url) : ?>
     <div class="news__featuredEventsImage">
-      <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy" />
+      <?php
+      // Prefer ACF attachment ID so WP can output srcset for the requested size
+      if (!empty($resource_card_image) && is_array($resource_card_image)) {
+        $att_id = $resource_card_image['ID'] ?? $resource_card_image['id'] ?? null;
+        if ($att_id) {
+          echo wp_get_attachment_image($att_id, 'large', false, array('alt' => $title, 'loading' => 'lazy'));
+        } else {
+          echo '<img src="' . esc_url($resource_card_image['url']) . '" alt="' . esc_attr($title) . '" loading="lazy" />';
+        }
+      } else {
+        echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy" />';
+      }
+      ?>
     </div>
   <?php endif; ?>
 </a>

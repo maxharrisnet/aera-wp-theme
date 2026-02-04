@@ -20,7 +20,14 @@ $function_slug = (!empty($functions) && !is_wp_error($functions)) ? $functions[0
     <a href="<?php the_permalink(); ?>">
       <?php if ($skill_card_image) : ?>
         <figure class="skill-card__image-container">
-          <img src="<?php echo esc_url($skill_card_image['url']); ?>" alt="<?php echo esc_attr($skill_card_image['alt'] ?: get_the_title()); ?>" class="skill-card__image" />
+          <?php
+          $att = $skill_card_image['ID'] ?? $skill_card_image['id'] ?? null;
+          if ($att) {
+            echo wp_get_attachment_image($att, 'resource_card_image', false, array('alt' => ($skill_card_image['alt'] ?: get_the_title()), 'class' => 'skill-card__image'));
+          } else {
+            echo '<img src="' . esc_url($skill_card_image['url']) . '" alt="' . esc_attr($skill_card_image['alt'] ?: get_the_title()) . '" class="skill-card__image" />';
+          }
+          ?>
         </figure>
       <?php endif; ?>
 

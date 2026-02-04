@@ -26,7 +26,14 @@ if (empty($functions) || is_wp_error($functions)) {
         <a href="<?php echo esc_url($function_url); ?>">
           <?php if ($function_image) : ?>
             <figure class="<?php echo esc_attr($card_class); ?>__image-container">
-              <img src="<?php echo esc_url($function_image['url']); ?>" alt="<?php echo esc_attr($function_image['alt'] ?: $function->name); ?>" class="<?php echo esc_attr($card_class); ?>__image" />
+              <?php
+              $att = $function_image['ID'] ?? $function_image['id'] ?? null;
+              if ($att) {
+                echo wp_get_attachment_image($att, 'skill_hero', false, array('alt' => ($function_image['alt'] ?: $function->name), 'class' => esc_attr($card_class) . '__image'));
+              } else {
+                echo '<img src="' . esc_url($function_image['url']) . '" alt="' . esc_attr($function_image['alt'] ?: $function->name) . '" class="' . esc_attr($card_class) . '__image" />';
+              }
+              ?>
             </figure>
           <?php endif; ?>
 

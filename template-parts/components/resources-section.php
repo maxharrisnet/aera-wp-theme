@@ -100,12 +100,19 @@ if (empty($resources)) {
     <div class="resources-section__row">
       <?php foreach ($resources as $resource) : ?>
         <?php
-        $image_url = $resource['image'] && !empty($resource['image']['url']) ? $resource['image']['url'] : '';
+        $image = $resource['image'] ?? null;
         $target = ($resource['external'] ?? false) ? ' target="_blank" rel="noopener noreferrer"' : '';
         ?>
-        <a href="<?php echo esc_url($resource['url']); ?>" class="resources-section__card"<?php echo $target; ?>>
-          <?php if ($image_url) : ?>
-            <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($resource['title']); ?>" loading="lazy" />
+        <a href="<?php echo esc_url($resource['url']); ?>" class="resources-section__card" <?php echo $target; ?>>
+          <?php if ($image && is_array($image)) : ?>
+            <?php
+            $att = $image['ID'] ?? $image['id'] ?? null;
+            if ($att) {
+              echo wp_get_attachment_image($att, 'medium', false, array('alt' => $resource['title'], 'loading' => 'lazy'));
+            } else {
+              echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($resource['title']) . '" loading="lazy" />';
+            }
+            ?>
           <?php endif; ?>
           <div class="resources-section__cardWrapper">
             <h3 class="resources-section__cardTitle"><?php echo esc_html($resource['title']); ?></h3>
@@ -118,4 +125,3 @@ if (empty($resources)) {
     </div>
   </div>
 </section>
-

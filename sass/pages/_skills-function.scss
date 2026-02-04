@@ -529,27 +529,20 @@
 		transition:
 			transform 0.3s ease,
 			box-shadow 0.3s ease;
-		border-radius: 8px;
 		overflow: hidden;
 
-		&:hover {
-			transform: translateY(-4px);
-			box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+		// &:hover {
+		// 	transform: translateY(-4px);
+		// 	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 
-			.skill-content__video-play-icon {
-				transform: translate(-50%, -50%) scale(1.1);
-			}
-		}
+		// 	.skill-content__video-play-icon {
+		// 		transform: translate(-50%, -50%) scale(1.1);
+		// 	}
+		// }
 
 		&:focus {
 			outline: 3px solid $color-link;
 			outline-offset: 4px;
-		}
-
-		img {
-			display: block;
-			width: 100%;
-			height: auto;
 		}
 	}
 

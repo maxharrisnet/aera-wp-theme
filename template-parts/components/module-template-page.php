@@ -45,7 +45,14 @@ if (empty($featured_image) && function_exists('get_field')) {
           <?php endif; ?>
           <?php if (!empty($featured_image) && is_array($featured_image)) : ?>
             <div class="module-template__featImage">
-              <img src="<?php echo esc_url($featured_image['url']); ?>" alt="<?php echo esc_attr($featured_image['alt'] ?? ''); ?>" />
+              <?php
+              $att = $featured_image['ID'] ?? $featured_image['id'] ?? null;
+              if ($att) {
+                echo wp_get_attachment_image($att, 'large', false, array('alt' => ($featured_image['alt'] ?? '')));
+              } else {
+                echo '<img src="' . esc_url($featured_image['url']) . '" alt="' . esc_attr($featured_image['alt'] ?? '') . '" />';
+              }
+              ?>
             </div>
           <?php endif; ?>
         </div>

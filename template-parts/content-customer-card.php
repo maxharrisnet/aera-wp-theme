@@ -136,16 +136,30 @@ if (isset($args['link'])) {
 
 <div class="feature-card__card">
   <div class="feature-card__components" id="mainCard">
-    <?php if ($hero_image_url) : ?>
+    <?php if ($hero_image_data) : ?>
       <div class="feature-card__cosImage feature-card__imageRow" id="companyimage">
-        <img src="<?php echo esc_url($hero_image_url); ?>" alt="companyImage" />
+        <?php
+        $att = $hero_image_data['ID'] ?? $hero_image_data['id'] ?? null;
+        if ($att) {
+          echo wp_get_attachment_image($att, 'resource_card_image', false, array('alt' => 'companyImage'));
+        } else {
+          echo '<img src="' . esc_url($hero_image_url) . '" alt="companyImage" />';
+        }
+        ?>
       </div>
     <?php endif; ?>
 
     <div class="feature-card__companydetails">
-      <?php if ($logo_url) : ?>
+      <?php if ($logo_data) : ?>
         <div class="feature-card__title">
-          <img src="<?php echo esc_url($logo_url); ?>" alt="companyLogo" />
+          <?php
+          $att = $logo_data['ID'] ?? $logo_data['id'] ?? null;
+          if ($att) {
+            echo wp_get_attachment_image($att, 'resource_card_image', false, array('alt' => 'companyLogo'));
+          } else {
+            echo '<img src="' . esc_url($logo_url) . '" alt="companyLogo" />';
+          }
+          ?>
         </div>
       <?php elseif ($company_name && !$logo_url) : ?>
         <div class="feature-card__info">

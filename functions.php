@@ -50,10 +50,11 @@ function aera_technology_setup()
   // add_image_size('resource_card', 720, 405, true);   // TODO: check if used?
 
   // Project-specific image sizes
-  add_image_size('author_image', 120, 120, true); // Author avatar / contributor headshot
-  add_image_size('resource_card_image', 480, 100, true);   // Generic card image (3:2)
-  add_image_size('blog_hero', 890, 670, true);   // Blog post hero/banner
-  add_image_size('skill_hero', 738, 620, true);  // Skill hero image
+  // add_image_size('author_image', 120, 120, true);
+  add_image_size('resource_card_image', 342, 96, true);
+  add_image_size('webinar_card_image', 333, 180, true);
+  add_image_size('blog_hero', 890, 0);
+  add_image_size('skill_hero', 738, 0);
 
   register_nav_menus(
     array(

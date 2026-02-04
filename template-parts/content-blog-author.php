@@ -36,7 +36,14 @@ if (! $has_content) {
         <?php if ($author_id && $author_name) : ?>
           <?php if ($author_photo_url) : ?>
             <div class="article-author__image">
-              <img src="<?php echo esc_url($author_photo_url); ?>" alt="<?php echo esc_attr($author_name); ?>" />
+              <?php
+              // Support either an attachment ID or a URL saved in user meta.
+              if (is_numeric($author_photo_url)) {
+                echo wp_get_attachment_image((int) $author_photo_url, 'author_image', false, array('alt' => $author_name));
+              } else {
+                echo '<img src="' . esc_url($author_photo_url) . '" alt="' . esc_attr($author_name) . '" width="120" height="120" loading="lazy" />';
+              }
+              ?>
             </div>
           <?php else : ?>
             <div class="article-author__image">

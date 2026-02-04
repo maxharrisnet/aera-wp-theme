@@ -162,8 +162,18 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                               data-hubspot-form="<?php echo esc_attr($hubspot_form_id); ?>"
                               data-skill-id="<?php echo esc_attr($skill->ID); ?>"
                               aria-label="<?php esc_attr_e('Play video', 'aera'); ?>">
-                              <img src="<?php echo esc_url($video_thumbnail['url']); ?>"
-                                alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video'); ?>" />
+                              <?php
+                              $thumb_alt = ! empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video';
+                              // Prefer using attachment ID so WP can serve the registered size
+                              $attachment_id = $video_thumbnail['ID'] ?? $video_thumbnail['id'] ?? null;
+                              if ($attachment_id) {
+                                echo wp_get_attachment_image($attachment_id, 'skill_hero', false, array('alt' => $thumb_alt));
+                              } else {
+                                // Fallback to a sized URL if ACF provides sizes, else use original URL
+                                $src = $video_thumbnail['sizes']['skill_hero'] ?? $video_thumbnail['sizes']['medium'] ?? $video_thumbnail['url'];
+                                echo '<img src="' . esc_url($src) . '" alt="' . esc_attr($thumb_alt) . '" />';
+                              }
+                              ?>
                               <span class="skill-content__video-play-icon">
                                 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.7)" />
@@ -172,7 +182,16 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                               </span>
                             </button>
                           <?php else : ?>
-                            <img src="<?php echo esc_url($video_thumbnail['url']); ?>" alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title); ?>" />
+                            <?php
+                            $thumb_alt = ! empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title;
+                            $attachment_id = $video_thumbnail['ID'] ?? $video_thumbnail['id'] ?? null;
+                            if ($attachment_id) {
+                              echo wp_get_attachment_image($attachment_id, 'skill_hero', false, array('alt' => $thumb_alt));
+                            } else {
+                              $src = $video_thumbnail['sizes']['skill_hero'] ?? $video_thumbnail['sizes']['medium'] ?? $video_thumbnail['url'];
+                              echo '<img src="' . esc_url($src) . '" alt="' . esc_attr($thumb_alt) . '" />';
+                            }
+                            ?>
                           <?php endif; ?>
                         </div>
                       <?php endif; ?> <div class="skill-content__header">

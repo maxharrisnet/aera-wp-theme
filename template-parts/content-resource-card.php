@@ -83,25 +83,41 @@ $card_image_url = '';
 $card_image_data = null;
 if (!$is_demo && function_exists('get_field')) {
   $card_image_data = get_field('resource_card_image', $post_id);
-  if ($card_image_data && !empty($card_image_data['url'])) {
-    $card_image_url = $card_image_data['url'];
+  if ($card_image_data && is_array($card_image_data)) {
+    $att = $card_image_data['ID'] ?? $card_image_data['id'] ?? null;
+    if ($att) {
+      $card_image_url = wp_get_attachment_image_url($att, 'resource_card_image');
+    } else {
+      $card_image_url = $card_image_data['url'] ?? '';
+    }
   }
 }
 
+// Get logo from ACF - check both resource_logo and customer_logo
 // Get logo from ACF - check both resource_logo and customer_logo
 $logo_url = '';
 $logo_data = null;
 if (!$is_demo && function_exists('get_field')) {
   // First check for resource_logo (standard resource field)
   $logo_data = get_field('resource_logo', $post_id);
-  if ($logo_data && !empty($logo_data['url'])) {
-    $logo_url = $logo_data['url'];
+  if ($logo_data && is_array($logo_data)) {
+    $att = $logo_data['ID'] ?? $logo_data['id'] ?? null;
+    if ($att) {
+      $logo_url = wp_get_attachment_image_url($att, 'resource_card_image');
+    } else {
+      $logo_url = $logo_data['url'] ?? '';
+    }
   }
   // If no resource_logo and post type is customer, check customer_logo
   if (empty($logo_url) && $post_type === 'customer') {
     $customer_logo = get_field('customer_logo', $post_id);
-    if ($customer_logo && !empty($customer_logo['url'])) {
-      $logo_url = $customer_logo['url'];
+    if ($customer_logo && is_array($customer_logo)) {
+      $att = $customer_logo['ID'] ?? $customer_logo['id'] ?? null;
+      if ($att) {
+        $logo_url = wp_get_attachment_image_url($att, 'resource_card_image');
+      } else {
+        $logo_url = $customer_logo['url'] ?? '';
+      }
     }
   }
 }

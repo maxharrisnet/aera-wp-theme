@@ -25,13 +25,22 @@ $link = get_permalink();
         <div class="case-study-card__header">
           <div class="case-study-card__icon-wrapper">
             <?php if ($icon) : ?>
-              <?php if ($company_type === 'Pharmaceutical') : ?>
-                <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt'] ?: $company_type); ?>" class="case-study-card__icon" style="width: 40px; margin-top: -5.5px;" />
-              <?php elseif ($company_type === 'Health & Hygiene') : ?>
-                <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt'] ?: $company_type); ?>" class="case-study-card__icon" style="width: 45px;" />
-              <?php else : ?>
-                <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($icon['alt'] ?: $company_type); ?>" class="case-study-card__icon" />
-              <?php endif; ?>
+              <?php
+              $att = is_array($icon) ? ($icon['ID'] ?? $icon['id'] ?? null) : null;
+              $alt = is_array($icon) ? ($icon['alt'] ?: $company_type) : $company_type;
+              if ($att) {
+                // Use a small size (resource_card_image) for icons to keep layout consistent
+                echo wp_get_attachment_image($att, 'resource_card_image', false, array('class' => 'case-study-card__icon', 'alt' => $alt));
+              } else {
+                if ($company_type === 'Pharmaceutical') {
+                  echo '<img src="' . esc_url($icon['url']) . '" alt="' . esc_attr($alt) . '" class="case-study-card__icon" style="width: 40px; margin-top: -5.5px;" />';
+                } elseif ($company_type === 'Health & Hygiene') {
+                  echo '<img src="' . esc_url($icon['url']) . '" alt="' . esc_attr($alt) . '" class="case-study-card__icon" style="width: 45px;" />';
+                } else {
+                  echo '<img src="' . esc_url($icon['url']) . '" alt="' . esc_attr($alt) . '" class="case-study-card__icon" />';
+                }
+              }
+              ?>
             <?php endif; ?>
           </div>
           <div class="case-study-card__company-type">
