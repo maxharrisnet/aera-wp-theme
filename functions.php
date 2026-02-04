@@ -47,15 +47,14 @@ function aera_technology_setup()
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
   add_theme_support('post-thumbnails');
-  add_image_size('resource_card', 720, 405, true);
+  // add_image_size('resource_card', 720, 405, true);   // TODO: check if used?
 
   // Project-specific image sizes
-  add_image_size('author_image', 160, 160, true); // Author avatar / contributor headshot
-  add_image_size('card_image', 480, 270, true);   // Generic card image (3:2)
-  add_image_size('blog_hero', 1400, 700, true);   // Blog post hero/banner
-  add_image_size('skill_hero', 1200, 600, true);  // Skill hero image
+  add_image_size('author_image', 120, 120, true); // Author avatar / contributor headshot
+  add_image_size('resource_card_image', 480, 100, true);   // Generic card image (3:2)
+  add_image_size('blog_hero', 890, 670, true);   // Blog post hero/banner
+  add_image_size('skill_hero', 738, 620, true);  // Skill hero image
 
-  // This theme uses wp_nav_menu() in one location.
   register_nav_menus(
     array(
       'primary'          => esc_html__('Primary Navigation', 'aera'),
@@ -130,9 +129,9 @@ function aera_technology_image_sizes($sizes)
 {
   return array_merge($sizes, array(
     'author_image' => __('Author Image (160x160)', 'aera'),
-    'card_image'   => __('Card Image (480x270)', 'aera'),
-    'blog_hero'    => __('Blog Hero (1400x700)', 'aera'),
-    'skill_hero'   => __('Skill Hero (1200x600)', 'aera'),
+    'resource_card_image'   => __('Card Image (480x100)', 'aera'),
+    'blog_hero'    => __('Blog Hero (890x670)', 'aera'),
+    'skill_hero'   => __('Skill Hero (738x620)', 'aera'),
   ));
 }
 add_filter('image_size_names_choose', 'aera_technology_image_sizes');
@@ -632,7 +631,7 @@ add_filter('manage_users_custom_column', 'aera_custom_user_column_content', 10, 
 /**
  * Make blog posts column sortable
  */
-function aera_make_blog_posts_column_sortable($columns)
+function aera_make_blog_posts_column_sortable($columns) /// TODO: delete?
 {
   $columns['blog_posts'] = 'blog_posts';
   return $columns;
@@ -772,22 +771,3 @@ function aera_save_user_profile_fields($user_id)
 }
 add_action('personal_options_update', 'aera_save_user_profile_fields');
 add_action('edit_user_profile_update', 'aera_save_user_profile_fields');
-
-// TEMPORARY: Fix imported images - Remove after running once
-add_action('init', function () {
-  if (get_option('aera_fixed_imported_images')) return;
-
-  $post_types = array('news', 'blog', 'press-release', 'case-study', 'video', 'podcast', 'whitepaper');
-  foreach ($post_types as $post_type) {
-    $posts = get_posts(array(
-      'post_type' => $post_type,
-      'posts_per_page' => -1,
-      'post_status' => 'publish',
-      'meta_query' => array(array('key' => '_thumbnail_id', 'compare' => 'EXISTS'))
-    ));
-    foreach ($posts as $post) {
-      wp_update_post(array('ID' => $post->ID));
-    }
-  }
-  update_option('aera_fixed_imported_images', true);
-}, 999);

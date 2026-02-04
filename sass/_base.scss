@@ -136,11 +136,26 @@ select {
 
 sup {
 	font-size: 0.5em;
-	line-height: inherit;
+	line-height: normal;
 	vertical-align: super;
 
 	&.registered {
 		font-size: 0.6em;
+	}
+}
+
+h1 sup,
+h2 sup {
+	font-size: 0.5em;
+	// vertical-align: super;
+
+	&.registered {
+		font-size: 0.4em;
+	}
+
+	&.trademark {
+		font-size: 0.6em;
+		vertical-align: super;
 	}
 }
 

@@ -113,8 +113,14 @@ function build_resource_query_args(string $slug, int $paged = 1): array
     'posts_per_page' => -1,
     'paged'          => max(1, $paged),
     'post_status'    => 'publish',
-    'orderby'        => 'date',
-    'order'          => 'DESC',
+    // Ensure "Coming Soon" items (ACF true/false) appear at the end of lists.
+    // ACF true/false stores 1 for true; order by meta_value_num ASC puts 0 (normal)
+    // before 1 (coming soon). Then order by date desc within each group.
+    'meta_key'       => 'resource_coming_soon',
+    'orderby'        => array(
+      'meta_value_num' => 'ASC',
+      'date'           => 'DESC',
+    ),
   );
 }
 

@@ -9,8 +9,9 @@
 
 .site-main--skills-function {
 	.hero {
-		height: 550px;
-		padding: 150px 0 0;
+		&__text {
+			max-width: 800px;
+		}
 	}
 }
 
@@ -105,13 +106,15 @@
 		}
 	}
 
-	// Content Wrapper
 	&__content-wrapper {
 		@include container;
 		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		// justify-content: center;
 	}
 
-	// Panel (Tab Content)
 	&__panel {
 		display: none;
 

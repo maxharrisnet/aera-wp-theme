@@ -28,14 +28,6 @@
 	}
 
 	@media (min-width: $min-768) {
-		padding: 0px 0 0;
-	}
-
-	@media (min-width: $min-1024) {
-		padding: 0px 0 0;
-	}
-
-	@media (min-width: $min-768) {
 		padding: 180px 0 0;
 	}
 
@@ -112,39 +104,6 @@
 }
 
 // TODO: Check these variations are all needed
-
-// Home variation
-// .hero--home {
-// 	padding: 50px 0 0;
-// 	height: auto;
-
-// 	@media (min-width: $min-768) {
-// 		padding: 50px 0 0;
-// 	}
-
-// 	@media (min-width: $min-1024) {
-// 		padding: 0px 0 0;
-// 	}
-
-// 	.hero__title {
-// 		@include responsive-font(28, 66);
-// 		margin-bottom: 0px;
-// 		line-height: 76px;
-
-// 		@media (max-width: $min-720) {
-// 			line-height: 40px;
-// 		}
-// 	}
-
-// 	.hero__text {
-// 		@include responsive-font(18, 26);
-
-// 		@media (min-width: $min-480) {
-// 			max-width: math.div(840, 26) * 1em;
-// 			width: 100%;
-// 		}
-// 	}
-// }
 
 // ADC (Platform / Decision Cloud) variation
 .hero--adc {
@@ -234,95 +193,31 @@
 
 // Skillset variation
 .hero--skillset {
-	// padding: 150px 0 0 !important;
-	height: 550px;
-
-	@media (max-width: $min-720) {
-		padding: 100px 0 0;
-		height: auto;
-		min-height: 300px;
-	}
+	// height: 550px;
 
 	@media (min-width: $min-768) {
-		padding: 0px 0 0;
+		padding: 180px 0 0;
 	}
-
-	@media (min-width: $min-1024) {
-		padding: 0px 0 0;
-	}
-
-	&--full-height {
-		display: flex;
-		align-items: center;
-		padding: 0;
-		height: auto;
-		min-height: 100vh;
-	}
-
 	.hero__title {
-		@include responsive-font(26, 70);
-		margin-bottom: 20px;
-		padding-top: 0px;
-		margin-top: 20px;
-		line-height: 1.3;
-		letter-spacing: -0.025em;
+		@include responsive-font(26, 64);
+		margin-top: 10px;
+		margin-bottom: 30px;
+
+		@media (min-width: $min-1200) {
+			line-height: 30px;
+		}
 	}
 
 	.hero__text {
+		max-width: 800px;
 		@include responsive-font(16, 24);
 
-		@media (min-width: $min-480) {
-			max-width: math.div(840, 18) * 1em;
-			width: 100%;
-		}
+		// @media (min-width: $min-480) {
+		// 	max-width: math.div(840, 18) * 1em;
+		// 	width: 100%;
+		// }
 	}
 }
-
-// // Partners variation
-// .hero--partners {
-// 	padding: 150px 0 0 !important;
-// 	height: 550px;
-
-// 	@media (max-width: $min-720) {
-// 		padding: 0px 0 0;
-// 		height: auto;
-// 		min-height: 300px;
-// 	}
-
-// 	@media (min-width: $min-768) {
-// 		padding: 0px 0 0;
-// 	}
-
-// 	@media (min-width: $min-1024) {
-// 		padding: 0px 0 0;
-// 	}
-
-// 	&--full-height {
-// 		display: flex;
-// 		align-items: center;
-// 		padding: 0;
-// 		height: auto;
-// 		min-height: 100vh;
-// 	}
-
-// 	.hero__title {
-// 		@include responsive-font(26, 70);
-// 		margin-bottom: 20px;
-// 		padding-top: 0px;
-// 		margin-top: 20px;
-// 		line-height: 1.3;
-// 		letter-spacing: -0.025em;
-// 	}
-
-// 	.hero__text {
-// 		@include responsive-font(16, 24);
-
-// 		@media (min-width: $min-480) {
-// 			max-width: math.div(840, 21) * 1em;
-// 			width: 100%;
-// 		}
-// 	}
-// }
 
 // Case Study variation
 .hero--case-study {
@@ -344,11 +239,11 @@
 	}
 
 	&--full-height {
-		display: flex;
-		align-items: center;
-		padding: 0;
+		// display: flex;
+		// align-items: center;
+		// padding: 0;
 		height: auto;
-		min-height: 100vh;
+		// min-height: 100vh;
 	}
 
 	.hero__title {
