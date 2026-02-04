@@ -53,7 +53,7 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
   $hero_args = array(
     'hero_title' => $hero_title,
     'hero_text' => $hero_description,
-    'hero_full_height' => true,
+    'hero_full_height' => false,
     'hero_variation' => 'skillset'
   );
 
@@ -163,7 +163,7 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                               data-skill-id="<?php echo esc_attr($skill->ID); ?>"
                               aria-label="<?php esc_attr_e('Play video', 'aera'); ?>">
                               <img src="<?php echo esc_url($video_thumbnail['url']); ?>"
-                              alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video'); ?>" />
+                                alt="<?php echo esc_attr(!empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video'); ?>" />
                               <span class="skill-content__video-play-icon">
                                 <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                                   <circle cx="40" cy="40" r="40" fill="rgba(0,0,0,0.7)" />

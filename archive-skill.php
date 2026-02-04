@@ -10,16 +10,21 @@
 
 get_header();
 
-// Get hero content - try ACF from options page
+// Get hero content - prefer page-level (if present), otherwise use ACF options
 $hero_title = function_exists('get_field') ? get_field('skills_archive_title', 'option') : '';
 $hero_description = function_exists('get_field') ? get_field('skills_archive_description', 'option') : '';
 
+// Provide sensible defaults if options are empty
 if (empty($hero_title)) {
   $hero_title = __('Aera Skills™', 'aera');
 }
 if (empty($hero_description)) {
   $hero_description = __('Explore our comprehensive suite of business decision skills powered by the Aera Decision Cloud™.', 'aera');
 }
+
+// CTA button for archive (options)
+$hero_button_text = function_exists('get_field') ? get_field('skills_archive_button_text', 'option') : '';
+$hero_button_link = function_exists('get_field') ? get_field('skills_archive_button_link', 'option') : '';
 
 // Get skill categories for filtering
 $skill_categories = get_terms(array(
@@ -81,8 +86,10 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
   $hero_args = array(
     'hero_title' => $hero_title,
     'hero_text' => $hero_description,
-    'hero_full_height' => true,
-    'hero_variation' => 'skillset'
+    'hero_full_height' => false,
+    'hero_variation' => 'skillset',
+    'hero_button_text' => $hero_button_text,
+    'hero_button_link' => $hero_button_link,
   );
 
   get_template_part('template-parts/components/hero', null, $hero_args);
@@ -95,7 +102,7 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
 
         <!-- Sidebar Filter -->
         <aside class="skills-filter">
-          <h3 class="skills-filter__title"><?php esc_html_e('All Skills@', 'aera'); ?></h3>
+          <h3 class="skills-filter__title"><?php esc_html_e('All Skills', 'aera'); ?></h3>
 
           <div class="skills-filter__toggle" id="filterToggle">
             <?php esc_html_e('Filter Skills', 'aera'); ?>

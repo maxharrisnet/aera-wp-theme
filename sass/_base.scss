@@ -133,6 +133,43 @@ select {
 		color: $color-placeholder;
 	}
 }
+
+sup {
+	font-size: 0.5em;
+	line-height: inherit;
+	vertical-align: super;
+
+	&.registered {
+		font-size: 0.6em;
+	}
+}
+
+.checkboxList {
+	list-style: none;
+	padding-left: 0;
+	margin: 10px 0;
+
+	li {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		color: #5c6475;
+		flex-wrap: nowrap;
+		font-weight: 350;
+		font-size: 18px;
+		margin-bottom: 10px;
+
+		&::before {
+			content: '';
+			width: 24px;
+			height: 24px;
+			background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.9031 2.39999H4.09686C3.15971 2.39999 2.39999 3.15971 2.39999 4.09686V19.9031C2.39999 20.8403 3.15971 21.6 4.09686 21.6H19.9031C20.8403 21.6 21.6 20.8403 21.6 19.9031V4.09686C21.6 3.15971 20.8403 2.39999 19.9031 2.39999Z' stroke='%2300629F' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.18977 13.0545L9.44504 16.4289L18.2642 7.47772' stroke='%2300629F' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+}
+
 div#hs-eu-cookie-confirmation.can-use-gradients {
 	bottom: 32% !important;
 	width: 40%;
@@ -140,10 +177,12 @@ div#hs-eu-cookie-confirmation.can-use-gradients {
 	border: 0px;
 	box-shadow: 0px 0px 30px #00000069 !important;
 }
+
 div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p {
 	font-size: 14px;
 	line-height: 24px;
 }
+
 div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
 	text-align: center !important;
 }

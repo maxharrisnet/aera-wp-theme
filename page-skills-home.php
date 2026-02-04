@@ -17,15 +17,31 @@ get_header();
   while (have_posts()) :
     the_post();
 
-    // Get ACF hero fields if they exist
-    $hero_title = get_field('hero_title') ?: __('Aera Skills™', 'aera');
-    $hero_text = get_field('hero_text') ?: __('Powered by the Aera Decision Cloud™, Aera Skills provide real-time insights, recommendations, and predictions. Aera Skills deliver prepackaged content, logic, and interactions that augment and automate business decisions.', 'aera');
+    // Hero values: prefer page-level ACF, then Skills Options, then defaults
+    if (function_exists('get_field')) {
+      $hero_title = get_field('hero_title') ?: get_field('skills_home_hero_title', 'option');
+      $hero_text = get_field('hero_text') ?: get_field('skills_home_hero_text', 'option');
+
+      // CTA button: page-level first, then options (leave empty if unset)
+      $hero_button_text = get_field('hero_button_text') ?: get_field('skills_home_button_text', 'option');
+      $hero_button_link = get_field('hero_button_link') ?: get_field('skills_home_button_link', 'option');
+    } else {
+      $hero_title = '';
+      $hero_text = '';
+      $hero_button_text = '';
+      $hero_button_link = '';
+    }
+
+    $hero_title = $hero_title ?: __('Aera Skills™', 'aera');
+    $hero_text = $hero_text ?: __('Powered by the Aera Decision Cloud™, Aera Skills provide real-time insights, recommendations, and predictions. Aera Skills deliver prepackaged content, logic, and interactions that augment and automate business decisions.', 'aera');
 
     // Prepare hero data
     $hero_args = array(
       'hero_title' => $hero_title,
       'hero_text' => $hero_text,
       'hero_full_height' => false,
+      'hero_button_text' => $hero_button_text,
+      'hero_button_link' => $hero_button_link,
     );
 
     get_template_part('template-parts/components/hero', null, $hero_args);

@@ -161,7 +161,12 @@ foreach ($link_attrs as $attr => $value) {
       ?> class="resource-card__link-wrapper<?php echo $is_coming_soon ? ' resource-card__link-wrapper--coming-soon' : ''; ?>">
       <div class="resource-card__row">
         <?php if ($type_label) : ?>
-          <div class="resource-card__type"><?php echo esc_html(rtrim($type_label, 's')); ?></div>
+          <div class="resource-card__type">
+            <?php
+            $label = strtolower($type_label) === 'news' ? $type_label : rtrim($type_label, 's');
+            echo esc_html($label);
+            ?>
+          </div>
         <?php endif; ?>
         <?php if ($city && $post_type === 'event') : ?>
           <div class="resource-card__city"><?php echo esc_html($city); ?></div>

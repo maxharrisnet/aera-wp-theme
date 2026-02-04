@@ -4,7 +4,26 @@
 @use '../mixins' as *;
 @use '../grid' as *;
 
-/* SKILLS ARCHIVE PAGE */
+.post-type-archive-skill {
+	.hero {
+		padding: 150px 0 0;
+
+		&__title {
+			@include responsive-font(26, 64);
+			margin-top: 10px;
+			margin-bottom: 30px;
+
+			@media (min-width: $min-1200) {
+				line-height: 30px;
+			}
+		}
+
+		&__text {
+			max-width: 800px;
+		}
+	}
+}
+
 .site-main--skills {
 	padding-top: 0;
 }

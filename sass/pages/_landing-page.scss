@@ -47,9 +47,10 @@ body:has(.landing-page) {
 	&__heroLeft {
 		display: flex;
 		flex-direction: column;
-		gap: 40px;
+		gap: 10px;
 		position: relative;
 		z-index: 1;
+		max-width: 660px;
 
 		@media (max-width: $max-1080) {
 			width: 100%;
@@ -63,9 +64,11 @@ body:has(.landing-page) {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		max-width: 500px;
 
 		@media (max-width: $max-1080) {
 			width: 100%;
+			max-width: 400px;
 		}
 	}
 
@@ -82,18 +85,16 @@ body:has(.landing-page) {
 	&__eyebrow {
 		font-family: $font-family-gilroy;
 		font-weight: 700;
-		font-size: 24px;
-		letter-spacing: 0%;
+		font-size: 20px;
 		color: $color-white;
 		margin: 0;
 	}
 
 	&__heroTitle {
 		font-family: $font-family-gilroy;
-		line-height: 42px;
+		line-height: 48px;
 		font-weight: 700;
 		font-size: 40px;
-		letter-spacing: 0%;
 		color: $color-white;
 		margin: 0;
 
@@ -101,19 +102,15 @@ body:has(.landing-page) {
 			font-size: 32px;
 			line-height: 38px;
 		}
-
-		sup {
-			font-size: 0.5em;
-		}
 	}
 
 	&__heroSubtitle {
-		line-height: 1.25;
+		line-height: 1.3;
 		font-family: $font-family-freight;
 		font-weight: 350;
 		font-size: 18px;
 		color: $color-white;
-		margin: 0;
+		margin: 10px 0;
 	}
 
 	&__heroCTA {

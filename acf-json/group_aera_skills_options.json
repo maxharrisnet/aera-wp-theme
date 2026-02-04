@@ -3,6 +3,130 @@
   "title": "Skills Options",
   "fields": [
     {
+      "key": "field_skills_home_hero_tab",
+      "label": "Skills Home",
+      "name": "",
+      "type": "tab",
+      "instructions": "Fields for the Skills Home page (options).",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_skills_home_hero_title",
+      "label": "Home Title",
+      "name": "skills_home_hero_title",
+      "type": "text",
+      "instructions": "Title used on the Skills Home page when page-level field is empty.",
+      "required": 0,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_skills_home_hero_text",
+      "label": "Home Description",
+      "name": "skills_home_hero_text",
+      "type": "textarea",
+      "instructions": "Description for the Skills Home.",
+      "required": 0,
+      "rows": 4,
+      "new_lines": "br",
+      "wrapper": {
+        "width": "100"
+      }
+    },
+    {
+      "key": "field_skills_home_button_text",
+      "label": "Home Button Text",
+      "name": "skills_home_button_text",
+      "type": "text",
+      "instructions": "Button label for Skills Home.",
+      "required": 0,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_skills_home_button_link",
+      "label": "Home Button URL",
+      "name": "skills_home_button_link",
+      "type": "text",
+      "instructions": "Button URL for Skills Home.",
+      "required": 0,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_skills_archive_hero_tab",
+      "label": "Skills Archive",
+      "name": "",
+      "type": "tab",
+      "instructions": "Fields for the Skills Archive page (options).",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "placement": "top",
+      "endpoint": 0
+    },
+    {
+      "key": "field_skills_archive_title",
+      "label": "Archive Hero Title",
+      "name": "skills_archive_title",
+      "type": "text",
+      "instructions": "Hero title used on the Skills Archive page when page-level field is empty.",
+      "required": 0,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_skills_archive_description",
+      "label": "Archive Hero Description",
+      "name": "skills_archive_description",
+      "type": "textarea",
+      "instructions": "Description for the Skills Archive hero.",
+      "required": 0,
+      "rows": 4,
+      "new_lines": "br",
+      "wrapper": {
+        "width": "100"
+      }
+    },
+    {
+      "key": "field_skills_archive_button_text",
+      "label": "Archive Button Text",
+      "name": "skills_archive_button_text",
+      "type": "text",
+      "instructions": "Button label for Skills Archive.",
+      "required": 0,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_skills_archive_button_link",
+      "label": "Archive Button URL",
+      "name": "skills_archive_button_link",
+      "type": "text",
+      "instructions": "Button URL for Skills Archive.",
+      "required": 0,
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
       "key": "field_skills_options_resources_section",
       "label": "Resources Section",
       "name": "",
