@@ -141,9 +141,9 @@ if (isset($args['link'])) {
         <?php
         $att = $hero_image_data['ID'] ?? $hero_image_data['id'] ?? null;
         if ($att) {
-          echo wp_get_attachment_image($att, 'resource_card_image', false, array('alt' => 'companyImage'));
+          echo wp_get_attachment_image($att, 'webinar_card_image', false, array('alt' => 'companyImage', 'class' => 'feature-card__image', 'loading' => 'lazy'));
         } else {
-          echo '<img src="' . esc_url($hero_image_url) . '" alt="companyImage" />';
+          echo '<img src="' . esc_url($hero_image_url) . '" alt="companyImage" class="feature-card__image" loading="lazy" />';
         }
         ?>
       </div>
@@ -155,9 +155,9 @@ if (isset($args['link'])) {
           <?php
           $att = $logo_data['ID'] ?? $logo_data['id'] ?? null;
           if ($att) {
-            echo wp_get_attachment_image($att, 'resource_card_image', false, array('alt' => 'companyLogo'));
+            echo wp_get_attachment_image($att, 'webinar_card_image', false, array('alt' => 'companyLogo', 'class' => 'feature-card__logo', 'loading' => 'lazy'));
           } else {
-            echo '<img src="' . esc_url($logo_url) . '" alt="companyLogo" />';
+            echo '<img src="' . esc_url($logo_url) . '" alt="companyLogo" class="feature-card__logo" loading="lazy" />';
           }
           ?>
         </div>

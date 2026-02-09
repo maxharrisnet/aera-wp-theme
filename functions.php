@@ -130,7 +130,9 @@ function aera_technology_image_sizes($sizes)
 {
   return array_merge($sizes, array(
     'author_image' => __('Author Image (160x160)', 'aera'),
-    'resource_card_image'   => __('Card Image (480x100)', 'aera'),
+    'resource_card_image'   => __('Resource Card (342x96)', 'aera'),
+    // Use this generic "Card Image" label for webinar/resource/customer cards
+    'webinar_card_image'    => __('Card Image (333x190)', 'aera'),
     'blog_hero'    => __('Blog Hero (890x670)', 'aera'),
     'skill_hero'   => __('Skill Hero (738x620)', 'aera'),
   ));

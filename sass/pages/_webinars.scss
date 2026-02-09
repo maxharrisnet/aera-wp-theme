@@ -383,7 +383,7 @@
 	}
 
 	.resource-card__bgImage {
-		background-size: cover;
+		object-fit: cover;
 	}
 
 	// Filter row for all resources

@@ -140,7 +140,7 @@
 		}
 
 		&:hover {
-			img[alt="companyImage"] {
+			img[alt='companyImage'] {
 				margin-top: -210px;
 
 				@media (max-width: $max-960) {
@@ -148,7 +148,7 @@
 				}
 			}
 
-			img[alt="companyLogo"] {
+			img[alt='companyLogo'] {
 				margin: 5px 0px 8px 0;
 
 				@media (max-width: $max-720) {
@@ -209,7 +209,9 @@
 
 		img {
 			margin: 20px 0;
-			transition: margin 1s, height 1s;
+			transition:
+				margin 1s,
+				height 1s;
 		}
 	}
 
@@ -232,6 +234,7 @@
 
 		img {
 			height: 30px;
+			width: auto;
 		}
 	}
 
@@ -292,4 +295,3 @@
 		// Asset container styles
 	}
 }
-

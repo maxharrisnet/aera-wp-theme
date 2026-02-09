@@ -97,7 +97,7 @@ if (! empty($resource_card_image) && is_array($resource_card_image)) {
           // Prefer the attachment ID so WordPress outputs responsive `srcset` and
           // plugins like Perfect Images can generate WebP/retina variants.
           if (! empty($image_att)) {
-            echo wp_get_attachment_image((int) $image_att, 'full', false, array(
+            echo wp_get_attachment_image((int) $image_att, 'webinar_card_image', false, array(
               'class' => 'newsItem__img newsItem__bgImage',
               'alt'   => esc_attr($title),
               'loading' => 'lazy',

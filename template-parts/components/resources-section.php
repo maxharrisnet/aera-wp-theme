@@ -108,9 +108,9 @@ if (empty($resources)) {
             <?php
             $att = $image['ID'] ?? $image['id'] ?? null;
             if ($att) {
-              echo wp_get_attachment_image($att, 'medium', false, array('alt' => $resource['title'], 'loading' => 'lazy'));
+              echo wp_get_attachment_image($att, 'webinar_card_image', false, array('alt' => $resource['title'], 'class' => 'resources-section__img', 'loading' => 'lazy'));
             } else {
-              echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($resource['title']) . '" loading="lazy" />';
+              echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($resource['title']) . '" class="resources-section__img" loading="lazy" />';
             }
             ?>
           <?php endif; ?>

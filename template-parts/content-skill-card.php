@@ -23,9 +23,13 @@ $function_slug = (!empty($functions) && !is_wp_error($functions)) ? $functions[0
           <?php
           $att = $skill_card_image['ID'] ?? $skill_card_image['id'] ?? null;
           if ($att) {
-            echo wp_get_attachment_image($att, 'resource_card_image', false, array('alt' => ($skill_card_image['alt'] ?: get_the_title()), 'class' => 'skill-card__image'));
+            echo wp_get_attachment_image($att, 'webinar_card_image', false, array(
+              'alt' => ($skill_card_image['alt'] ?: get_the_title()),
+              'class' => 'skill-card__image',
+              'loading' => 'lazy',
+            ));
           } else {
-            echo '<img src="' . esc_url($skill_card_image['url']) . '" alt="' . esc_attr($skill_card_image['alt'] ?: get_the_title()) . '" class="skill-card__image" />';
+            echo '<img src="' . esc_url($skill_card_image['url']) . '" alt="' . esc_attr($skill_card_image['alt'] ?: get_the_title()) . '" class="skill-card__image" loading="lazy" />';
           }
           ?>
         </figure>
