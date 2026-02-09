@@ -50,18 +50,45 @@
 		width: 100%;
 		display: block;
 		min-height: 96px;
-		background-size: contain; // TODO: compare on desktop
-		background-position: 50%;
-		background-repeat: no-repeat;
+		height: 101px;
+		// background-size: contain; // TODO: compare on desktop
+		// background-position: 50%;
+		// background-repeat: no-repeat;
 		border-radius: 10px 10px 0px 0px;
 
 		@media (max-width: $max-960) {
 			min-height: 70px;
+			height: auto;
 		}
 
 		@media (max-width: $max-720) {
 			min-height: 100px;
+			height: auto;
 		}
+	}
+
+	&__figure {
+		height: 190px;
+		overflow: hidden;
+		border-radius: 10px 10px 0 0;
+
+		@media (max-width: $max-960) {
+			min-height: 70px;
+			height: auto;
+		}
+
+		@media (max-width: $max-720) {
+			min-height: 100px;
+			height: auto;
+		}
+	}
+
+	&__img {
+		// width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: contain;
+		border-radius: inherit;
 	}
 
 	&__logoImage {

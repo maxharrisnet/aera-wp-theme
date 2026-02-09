@@ -82,17 +82,28 @@ $custom_image_alt = $args['image_alt'] ?? $title;
 // TODO: Change default image
 $card_image_url = '';
 $card_image_data = null;
+$card_image_att = null;
 if (!$is_demo && function_exists('get_field')) {
   $card_image_data = get_field('resource_card_image', $post_id);
   if ($card_image_data && is_array($card_image_data)) {
     $att = $card_image_data['ID'] ?? $card_image_data['id'] ?? null;
     if ($att) {
-      // Use the original uploaded image for the card background so CSS can
-      // scale/crop as needed for the card's background-image.
-      $card_image_url = wp_get_attachment_image_url($att, 'resource_card_image)');
+      // Keep the attachment ID so we can render a proper <img> (with srcset)
+      $card_image_att = (int) $att;
+      // Still keep a URL fallback
+      $card_image_url = wp_get_attachment_image_url($att, 'resource_card_image') ?: '';
     } else {
       $card_image_url = $card_image_data['url'] ?? '';
     }
+  }
+}
+
+// If no ACF image ID and no URL, try the featured image
+if (empty($card_image_att) && empty($card_image_url)) {
+  $thumb_id = get_post_thumbnail_id($post_id);
+  if ($thumb_id) {
+    $card_image_att = (int) $thumb_id;
+    $card_image_url = wp_get_attachment_image_url($thumb_id, 'resource_card_image') ?: '';
   }
 }
 
@@ -158,7 +169,19 @@ foreach ($link_attrs as $attr => $value) {
         <a<?php echo $link_attr_string; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
           ?>>
           <?php if ($has_image && !$has_logo) : ?>
-            <div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url(<?php echo esc_url($image_url); ?>);"></div>
+            <div class="resource-card__bgImage resource-card__imageBorder">
+              <?php
+              if (! empty($card_image_att)) {
+                echo wp_get_attachment_image((int) $card_image_att, 'resource_card_image', false, array(
+                  'class' => 'resource-card__img resource-card__bgImage',
+                  'alt'   => esc_attr($title),
+                  'loading' => 'lazy',
+                ));
+              } else {
+                echo '<img class="resource-card__img resource-card__bgImage" src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy" />';
+              }
+              ?>
+            </div>
           <?php elseif ($has_logo) : ?>
             <div class="resource-card__logoImage resource-card__imageBorder">
               <img class="resource-card__logo" src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($title); ?>" />
