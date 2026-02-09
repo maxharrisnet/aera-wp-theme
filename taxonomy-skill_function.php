@@ -367,8 +367,6 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
       <div class="skill-video-modal__player">
         <!-- HubSpot Form (shown initially if gated) -->
         <div id="skillVideoForm" class="skill-video-modal__form" style="display: none;">
-          <h3 class="skill-video-modal__form-title"><?php esc_html_e('Watch This Video', 'aera'); ?></h3>
-          <p class="skill-video-modal__form-description"><?php esc_html_e('Please fill out the form below to access this content.', 'aera'); ?></p>
           <div id="skillVideoHubspotForm"></div>
         </div>
 

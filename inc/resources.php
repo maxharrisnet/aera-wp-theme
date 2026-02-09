@@ -108,20 +108,30 @@ function build_resource_query_args(string $slug, int $paged = 1): array
   $types = get_resource_types();
   $postTypes = $types[$slug]['post_types'] ?? $types['all']['post_types'];
 
-  return array(
+  // Coming Soon
+  $args = array(
     'post_type'      => $postTypes,
     'posts_per_page' => -1,
     'paged'          => max(1, $paged),
     'post_status'    => 'publish',
-    // Ensure "Coming Soon" items (ACF true/false) appear at the end of lists.
-    // ACF true/false stores 1 for true; order by meta_value_num ASC puts 0 (normal)
-    // before 1 (coming soon). Then order by date desc within each group.
     'meta_key'       => 'resource_coming_soon',
-    'orderby'        => array(
-      'meta_value_num' => 'ASC',
-      'date'           => 'DESC',
-    ),
   );
+
+  $args['orderby'] = array(
+    'meta_value_num' => 'ASC',
+    'date'           => 'DESC',
+  );
+
+  // Order By Menu Order
+  if ($slug === 'case-study') {
+    $args['orderby'] = array(
+      'menu_order'     => 'ASC',
+      // 'meta_value_num' => 'ASC',
+      // 'date'           => 'DESC',
+    );
+  }
+
+  return $args;
 }
 
 /**
@@ -157,13 +167,13 @@ function get_resource_label_for_post_type(string $postType): string
 function get_resource_cta_label(string $postType): string
 {
   $map = array(
-    'video'        => __('Watch', 'aera'),
+    'video'        => __('Watch Now', 'aera'),
     'webinar'      => __('Watch', 'aera'),
     'event'        => __('Register', 'aera'),
     'press-release' => __('Read', 'aera'),
     // 'news'         => __('Read More', 'aera'),
     'whitepaper'   => __('Download', 'aera'),
-    'podcast'      => __('Listen', 'aera'),
+    'podcast'      => __('Watch Now', 'aera'),
     'customer'     => __('Explore', 'aera'),
     'case-study'   => __('Explore', 'aera'),
   );

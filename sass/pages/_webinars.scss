@@ -172,6 +172,31 @@
 			}
 		}
 
+		&__figure {
+			/* Keep the visual height on the figure container so images can use object-fit */
+			height: 190px;
+			overflow: hidden;
+			border-radius: 5px 5px 0 0;
+
+			@media (max-width: $max-960) {
+				min-height: 70px;
+				height: auto;
+			}
+
+			@media (max-width: $max-720) {
+				min-height: 100px;
+				height: auto;
+			}
+		}
+
+		&__img {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: cover;
+			border-radius: inherit;
+		}
+
 		// Image border removed: border-bottom: 5px solid #003F68;
 
 		&__row {
@@ -355,6 +380,10 @@
 			width: 100%;
 			padding-right: 0;
 		}
+	}
+
+	.resource-card__bgImage {
+		background-size: cover;
 	}
 
 	// Filter row for all resources

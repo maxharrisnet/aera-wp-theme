@@ -51,8 +51,8 @@ function aera_technology_setup()
 
   // Project-specific image sizes
   // add_image_size('author_image', 120, 120, true);
-  add_image_size('resource_card_image', 342, 96, true);
-  add_image_size('webinar_card_image', 333, 180, true);
+  add_image_size('resource_card_image', 342, 96);
+  add_image_size('webinar_card_image', 333, 180);
   add_image_size('blog_hero', 890, 0);
   add_image_size('skill_hero', 738, 0);
 

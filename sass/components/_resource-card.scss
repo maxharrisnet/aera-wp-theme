@@ -51,7 +51,7 @@
 		display: block;
 		min-height: 96px;
 		background-size: contain; // TODO: compare on desktop
-		background-position: center;
+		background-position: 50%;
 		background-repeat: no-repeat;
 		border-radius: 10px 10px 0px 0px;
 
@@ -92,7 +92,7 @@
 		padding: 15px 15px 0 15px;
 		justify-content: space-between;
 		align-items: center;
-		gap: 10px; // Prevent type and city from overlapping
+		// gap: 10px;
 
 		&--last {
 			padding: 15px 0 0;

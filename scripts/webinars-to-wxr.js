@@ -142,14 +142,27 @@ function buildWxr(blogs) {
 		out += '<item>\n';
 		out += `<title>${title}</title>\n`;
 		out += `<link>${link}</link>\n`;
-		out += `<pubDate>${now}</pubDate>\n`;
+		// Use webinarDate (parsed Y-m-d) for item pubDate/post_date when available.
+		function ymdToIsoStart(ymd) {
+			// Create an ISO datetime at midnight UTC for the given Y-m-d
+			return new Date(ymd + 'T00:00:00Z').toISOString();
+		}
+		function ymdToRfc1123(ymd) {
+			return new Date(ymd + 'T00:00:00Z').toUTCString();
+		}
+
+		const parsed = parseDateFromString(b.link || b.title || '');
+		const webinarDate = parsed || new Date().toISOString().slice(0, 10);
+		const itemPub = webinarDate ? ymdToRfc1123(webinarDate) : now;
+		out += `<pubDate>${itemPub}</pubDate>\n`;
 		out += `<dc:creator>admin</dc:creator>\n`;
 		out += `<guid isPermaLink="false">webinar-${b.id || i}</guid>\n`;
 		const content = `- Original link: <a href="${link}">${link}</a><br/><img src=\"${image}\" alt=\"${escXml(b.title)}\" />`;
 		out += `<content:encoded><![CDATA[${content}]]></content:encoded>\n`;
 		out += `<wp:post_id>${postId}</wp:post_id>\n`;
-		out += `<wp:post_date>${new Date().toISOString()}</wp:post_date>\n`;
-		out += `<wp:post_date_gmt>${new Date().toISOString()}</wp:post_date_gmt>\n`;
+		const postIso = webinarDate ? ymdToIsoStart(webinarDate) : new Date().toISOString();
+		out += `<wp:post_date>${postIso}</wp:post_date>\n`;
+		out += `<wp:post_date_gmt>${postIso}</wp:post_date_gmt>\n`;
 		out += `<wp:comment_status>closed</wp:comment_status>\n`;
 		out += `<wp:ping_status>closed</wp:ping_status>\n`;
 		out += `<wp:post_name>${escXml(
@@ -190,8 +203,7 @@ function buildWxr(blogs) {
 		if (jobFunction && jobFunction.length) meta('job_function', jobFunction.join(', '));
 
 		// add webinar_date meta: attempt to parse from link/title, else use today's date
-		const parsed = parseDateFromString(b.link || b.title || '');
-		const webinarDate = parsed || new Date().toISOString().slice(0, 10);
+		// webinarDate already parsed above; ensure meta is set.
 		if (webinarDate) meta('webinar_date', webinarDate);
 
 		// set featured image relation: will point to attachment created below
@@ -208,12 +220,13 @@ function buildWxr(blogs) {
 			out += '<item>\n';
 			out += `<title>${escXml((b.title || '') + ' - image')}</title>\n`;
 			out += `<link>${image}</link>\n`;
-			out += `<pubDate>${now}</pubDate>\n`;
+			const attachPub = webinarDate ? ymdToRfc1123(webinarDate) : now;
+			out += `<pubDate>${attachPub}</pubDate>\n`;
 			out += `<dc:creator>admin</dc:creator>\n`;
 			out += `<guid isPermaLink="false">attachment-${attachId}</guid>\n`;
 			out += `<wp:post_id>${attachId}</wp:post_id>\n`;
-			out += `<wp:post_date>${new Date().toISOString()}</wp:post_date>\n`;
-			out += `<wp:post_date_gmt>${new Date().toISOString()}</wp:post_date_gmt>\n`;
+			out += `<wp:post_date>${postIso}</wp:post_date>\n`;
+			out += `<wp:post_date_gmt>${postIso}</wp:post_date_gmt>\n`;
 			out += `<wp:comment_status>closed</wp:comment_status>\n`;
 			out += `<wp:ping_status>closed</wp:ping_status>\n`;
 			out += `<wp:post_name>${escXml('attachment-' + (b.id || i))}</wp:post_name>\n`;

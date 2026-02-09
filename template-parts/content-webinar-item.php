@@ -53,18 +53,16 @@ $image_url = '';
 if (!empty($resource_card_image) && is_array($resource_card_image)) {
   $att = $resource_card_image['ID'] ?? $resource_card_image['id'] ?? null;
   if ($att) {
-    $src = wp_get_attachment_image_src($att, 'webinar_card_image');
-    $image_url = $src ? $src[0] : $resource_card_image['url'];
+    // Use the original uploaded image for the background to avoid
+    // small, potentially blurry thumbnails on larger / high-DPI screens.
+    $image_url = wp_get_attachment_image_url($att, 'full') ?: ($resource_card_image['url'] ?? '');
   } else {
     $image_url = $resource_card_image['url'];
   }
 } else {
   $thumbnail_id = get_post_thumbnail_id($post_id);
   if ($thumbnail_id) {
-    $thumbnail = wp_get_attachment_image_src($thumbnail_id, 'webinar_card_image');
-    if ($thumbnail) {
-      $image_url = $thumbnail[0];
-    }
+    $image_url = wp_get_attachment_image_url($thumbnail_id, 'full') ?: $image_url;
   }
 }
 
@@ -80,13 +78,36 @@ $job_function_terms = get_the_terms($post_id, 'webinar_job_function');
 $industry_slugs = $industry_terms && !is_wp_error($industry_terms) ? wp_list_pluck($industry_terms, 'slug') : array();
 $solution_area_slugs = $solution_area_terms && !is_wp_error($solution_area_terms) ? wp_list_pluck($solution_area_terms, 'slug') : array();
 $job_function_slugs = $job_function_terms && !is_wp_error($job_function_terms) ? wp_list_pluck($job_function_terms, 'slug') : array();
+
+// Determine attachment ID for rendering an <img> with srcset when available
+$image_att = null;
+if (! empty($resource_card_image) && is_array($resource_card_image)) {
+  $image_att = $resource_card_image['ID'] ?? $resource_card_image['id'] ?? null;
+} else {
+  $image_att = get_post_thumbnail_id($post_id) ?: null;
+}
 ?>
 
 <div class="newsItem" resource-type="<?php echo esc_attr($webinar_type); ?>" resource-class="resources" data-industries="<?php echo esc_attr(implode(',', $industry_slugs)); ?>" data-solution-areas="<?php echo esc_attr(implode(',', $solution_area_slugs)); ?>" data-job-functions="<?php echo esc_attr(implode(',', $job_function_slugs)); ?>">
   <div class="newsItem__wrapper">
     <?php if ($image_url) : ?>
       <div class="newsItem__figure">
-        <a href="<?php echo esc_url($link); ?>" class="newsItem__image newsItem__bgImage newsItem__imageBorder" target="_blank" style="background-image: url('<?php echo esc_url($image_url); ?>');"></a>
+        <a href="<?php echo esc_url($link); ?>" class="newsItem__image newsItem__imageBorder" target="_blank">
+          <?php
+          // Prefer the attachment ID so WordPress outputs responsive `srcset` and
+          // plugins like Perfect Images can generate WebP/retina variants.
+          if (! empty($image_att)) {
+            echo wp_get_attachment_image((int) $image_att, 'full', false, array(
+              'class' => 'newsItem__img newsItem__bgImage',
+              'alt'   => esc_attr($title),
+              'loading' => 'lazy',
+            ));
+          } else {
+            // Fallback to the URL we resolved earlier.
+            echo '<img class="newsItem__img newsItem__bgImage" src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy" />';
+          }
+          ?>
+        </a>
       </div>
     <?php endif; ?>
 

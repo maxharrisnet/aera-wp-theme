@@ -79,6 +79,7 @@ $custom_image = $args['image'] ?? '';
 $custom_image_alt = $args['image_alt'] ?? $title;
 
 // Get card image from ACF field, fallback to featured image
+// TODO: Change default image
 $card_image_url = '';
 $card_image_data = null;
 if (!$is_demo && function_exists('get_field')) {
@@ -86,7 +87,9 @@ if (!$is_demo && function_exists('get_field')) {
   if ($card_image_data && is_array($card_image_data)) {
     $att = $card_image_data['ID'] ?? $card_image_data['id'] ?? null;
     if ($att) {
-      $card_image_url = wp_get_attachment_image_url($att, 'resource_card_image');
+      // Use the original uploaded image for the card background so CSS can
+      // scale/crop as needed for the card's background-image.
+      $card_image_url = wp_get_attachment_image_url($att, 'resource_card_image)');
     } else {
       $card_image_url = $card_image_data['url'] ?? '';
     }
@@ -133,7 +136,6 @@ $fallback_media = (!$has_image && !$has_logo) ? get_resource_fallback_media($pos
 $card_classes = array('resource-card');
 $card_classes[] = 'resource-card--' . esc_attr($post_type);
 
-// Build link attributes - don't link if Coming Soon
 $link_attrs = array();
 if (!$is_coming_soon) {
   $link_attrs['href'] = esc_url($link);
@@ -142,6 +144,7 @@ if (!$is_coming_soon) {
     $link_attrs['rel'] = 'noopener noreferrer';
   }
 }
+
 $link_attr_string = '';
 foreach ($link_attrs as $attr => $value) {
   $link_attr_string .= sprintf(' %1$s="%2$s"', $attr, $value);
@@ -209,8 +212,7 @@ foreach ($link_attrs as $attr => $value) {
             <?php endif; ?>
             <div class="resource-card__line"></div>
             <?php
-            // Hide CTA for news, blogs, whitepapers, and press releases
-            $hide_cta = in_array($post_type, array('news', 'blog', 'whitepaper', 'press-release'));
+            $hide_cta = in_array($post_type, array('news', 'blog', 'whitepaper', 'press-release', 'report'));
             if ($cta_label && !$hide_cta) :
             ?>
               <span class="resource-card__link"><?php echo esc_html($cta_label); ?></span>

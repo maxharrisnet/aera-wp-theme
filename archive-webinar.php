@@ -44,7 +44,7 @@ $featured_args = array(
 
 $featured_query = new WP_Query($featured_args);
 
-// Get IDs of featured webinars to exclude from main grid
+// Esclude featured webinars from main grid
 $featured_ids = array();
 if ($featured_query->have_posts()) {
   foreach ($featured_query->posts as $featured_post) {
@@ -52,15 +52,19 @@ if ($featured_query->have_posts()) {
   }
 }
 
-// Query for all on-demand webinars for the grid (excluding featured)
+// Query webinars for the grid (order by ACF webinar_date)
 $on_demand_args = array(
   'post_type'      => 'webinar',
-  'posts_per_page' => -1, // Get all for filtering
+  'posts_per_page' => -1, // Show all
   'post_status'    => 'publish',
+  // Use the ACF `webinar_date` (format Y-m-d) as the primary ordering key.
+  'meta_key'       => 'webinar_date',
+  'meta_type'      => 'DATE',
   'orderby'        => array(
-    'date'       => 'ASC',
+    'menu_order' => 'ASC', // Keep featured items at the top within the gridnewsItem__figure
+    'meta_value' => 'DESC',
   ),
-  'post__not_in'   => $featured_ids, // Exclude featured webinars
+  'post__not_in'   => $featured_ids,
 );
 
 $on_demand_query = new WP_Query($on_demand_args);
@@ -138,7 +142,7 @@ $job_function_terms = get_terms(
   <?php endif; ?>
   <?php wp_reset_postdata(); ?>
 
-  <!-- Newsletter Form Section -->
+  <!-- Form Section -->
   <section class="news__formSection">
     <div class="news__container">
       <div class="news__col">
@@ -167,19 +171,16 @@ $job_function_terms = get_terms(
             <div>
               <select id="industryFilter" class="news__filter">
                 <option value=""><?php esc_html_e('All Industries', 'aera'); ?></option>
-                <!-- Populated via JavaScript -->
               </select>
             </div>
             <div>
               <select id="solutionAreaFilter" class="news__filter">
                 <option value=""><?php esc_html_e('All Solution Areas', 'aera'); ?></option>
-                <!-- Populated via JavaScript -->
               </select>
             </div>
             <div>
               <select id="jobFunctionFilter" class="news__filter">
                 <option value=""><?php esc_html_e('All Job Functions', 'aera'); ?></option>
-                <!-- Populated via JavaScript -->
               </select>
             </div>
           </div>
