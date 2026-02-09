@@ -181,12 +181,14 @@
 	}
 
 	&__cosImage {
+		object-fit: cover;
 		padding: 5px;
 
 		img {
-			transition: margin-top 1s;
-			display: block;
-			margin: 0 auto;
+			// transition: margin-top 1s;
+			// display: block;
+			// margin: 0 auto;
+			width: 100%;
 
 			@media (max-width: $max-960) {
 				margin: 0 auto;
@@ -195,9 +197,9 @@
 	}
 
 	&__imageRow {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+		// display: flex;
+		// align-items: center;
+		// justify-content: center;
 	}
 
 	&__companydetails {

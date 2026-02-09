@@ -60,19 +60,33 @@ $cta = null; // Let the CTA component pull from ACF
           $partner_link = get_field('partner_link', $partner_id);
 
           // Fallback to featured image if no ACF image
-          if (!$partner_image && has_post_thumbnail($partner_id)) {
-            $partner_image = array('url' => get_the_post_thumbnail_url($partner_id, 'full'));
+          if (!$partner_image) {
+            if (has_post_thumbnail($partner_id)) {
+              $partner_image = array('ID' => get_post_thumbnail_id($partner_id));
+            }
           }
         ?>
           <div class="partners__components">
-            <?php if (!empty($partner_image['url'])) : ?>
+            <?php
+            $att = is_array($partner_image) ? ($partner_image['ID'] ?? $partner_image['id'] ?? null) : null;
+            if ($att) : ?>
               <div class="partners__cosImage">
                 <?php if ($partner_link) : ?>
                   <a href="<?php echo esc_url($partner_link); ?>" target="_blank" rel="noopener noreferrer">
-                    <img src="<?php echo esc_url($partner_image['url']); ?>" alt="<?php echo esc_attr($partner_title); ?>" loading="lazy" />
+                    <?php echo wp_get_attachment_image($att, 'full', false, array('alt' => $partner_title, 'class' => 'partners__img', 'loading' => 'lazy')); ?>
                   </a>
                 <?php else : ?>
-                  <img src="<?php echo esc_url($partner_image['url']); ?>" alt="<?php echo esc_attr($partner_title); ?>" loading="lazy" />
+                    <?php echo wp_get_attachment_image($att, 'full', false, array('alt' => $partner_title, 'class' => 'partners__img', 'loading' => 'lazy')); ?>
+                <?php endif; ?>
+              </div>
+            <?php elseif (!empty($partner_image['url'])) : ?>
+              <div class="partners__cosImage">
+                <?php if ($partner_link) : ?>
+                  <a href="<?php echo esc_url($partner_link); ?>" target="_blank" rel="noopener noreferrer">
+                    <img src="<?php echo esc_url($partner_image['url']); ?>" alt="<?php echo esc_attr($partner_title); ?>" loading="lazy" class="partners__img" />
+                  </a>
+                <?php else : ?>
+                  <img src="<?php echo esc_url($partner_image['url']); ?>" alt="<?php echo esc_attr($partner_title); ?>" loading="lazy" class="partners__img" />
                 <?php endif; ?>
               </div>
             <?php endif; ?>

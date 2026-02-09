@@ -46,11 +46,18 @@ $article_classes = array(
 
         <div class="article-template__content">
           <?php
-          // Display featured image if available (replaces inline Blog_Hero_Banner_ images)
+          // Display featured image if available (use blog_hero size for consistency)
           if (has_post_thumbnail()) :
+            $thumb_id = get_post_thumbnail_id();
           ?>
             <div class="article-template__featured-image">
-              <?php the_post_thumbnail('large', array('loading' => 'eager')); ?>
+              <?php
+              if ($thumb_id) {
+                echo wp_get_attachment_image($thumb_id, 'blog_hero', false, array('loading' => 'eager', 'alt' => get_the_title()));
+              } else {
+                the_post_thumbnail('large', array('loading' => 'eager'));
+              }
+              ?>
             </div>
           <?php endif; ?>
           <?php the_content(); ?>
