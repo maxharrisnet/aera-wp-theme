@@ -30,22 +30,24 @@ while (have_posts()) :
 
   <article id="post-<?php the_ID(); ?>" <?php post_class('template-page'); ?>>
     <?php
-    // Prepare hero data
-    $hero_args = array(
-      'hero_title' => get_the_title()
-    );
-
-    // Add lead text as hero text if available
-    if (!empty($lead_paragraphs)) {
-      $hero_args['hero_text'] = implode("\n\n", $lead_paragraphs);
-    }
-
-    get_template_part('template-parts/components/hero', null, $hero_args);
+    // No global hero for pages — titles and lead render inside the narrow container below.
     ?>
 
     <div class="template-page__container">
       <div class="template-page__row">
         <div class="template-page__col">
+
+          <header class="template-page__header">
+            <?php if ($show_date && $display_date) : ?>
+              <p class="template-page__date"><time datetime="<?php echo esc_attr($date_value); ?>"><?php echo esc_html($display_date); ?></time></p>
+            <?php endif; ?>
+            <h1 class="template-page__title"><?php echo esc_html(get_the_title()); ?></h1>
+            <?php if (!empty($lead_paragraphs)) : ?>
+              <?php foreach ($lead_paragraphs as $p) : ?>
+                <p class="template-page__lead"><?php echo esc_html($p); ?></p>
+              <?php endforeach; ?>
+            <?php endif; ?>
+          </header>
 
           <section class="template-page__content">
             <?php

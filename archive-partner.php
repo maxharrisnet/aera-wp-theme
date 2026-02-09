@@ -76,7 +76,7 @@ $cta = null; // Let the CTA component pull from ACF
                     <?php echo wp_get_attachment_image($att, 'full', false, array('alt' => $partner_title, 'class' => 'partners__img', 'loading' => 'lazy')); ?>
                   </a>
                 <?php else : ?>
-                    <?php echo wp_get_attachment_image($att, 'full', false, array('alt' => $partner_title, 'class' => 'partners__img', 'loading' => 'lazy')); ?>
+                  <?php echo wp_get_attachment_image($att, 'full', false, array('alt' => $partner_title, 'class' => 'partners__img', 'loading' => 'lazy')); ?>
                 <?php endif; ?>
               </div>
             <?php elseif (!empty($partner_image['url'])) : ?>
