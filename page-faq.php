@@ -22,7 +22,7 @@ if (!empty($hero_description)) {
 
 get_template_part('template-parts/components/hero', null, $hero_args);
 
-$faq_data = function_exists('\\Aera\\get_company_faq_data') ? \Aera\get_company_faq_data() : array();
+$faq_data = function_exists('\\Aera\\get_company_faq_data') ? \Aera\get_company_faq_data(get_the_ID()) : array();
 $faq_markup = function_exists('Aera\\render_faq_markup') ? \Aera\render_faq_markup($faq_data, array(
   'wrapper_classes' => 'faq faq--page',
   'heading_tag'     => 'h2',
@@ -46,7 +46,7 @@ $faq_markup = function_exists('Aera\\render_faq_markup') ? \Aera\render_faq_mark
 
       <?php if (!empty($faq_markup)) : ?>
         <div class="faq__wrapper">
-          <?php echo $faq_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+          <?php echo $faq_markup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
           ?>
         </div>
       <?php else : ?>

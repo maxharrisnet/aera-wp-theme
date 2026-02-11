@@ -11,11 +11,12 @@ namespace Aera;
 defined('ABSPATH') || exit;
 
 /**
- * Retrieve FAQ data stored in Company Options.
+ * Retrieve FAQ data stored on the FAQ page.
  *
+ * @param int|null $post_id Page ID to load the FAQ fields from.
  * @return array
  */
-function get_company_faq_data(): array
+function get_company_faq_data(?int $post_id = null): array
 {
   $data = array(
     'title'    => '',
@@ -24,10 +25,18 @@ function get_company_faq_data(): array
   );
 
   if (function_exists('get_field')) {
-    $data['title'] = (string) get_field('company_faq_title', 'option');
-    $data['intro'] = (string) get_field('company_faq_intro', 'option');
+    if ($post_id === null) {
+      $post_id = (int) get_the_ID();
+    }
 
-    $sections = get_field('company_faq_sections', 'option');
+    if ($post_id <= 0) {
+      return $data;
+    }
+
+    $data['title'] = (string) get_field('company_faq_title', $post_id);
+    $data['intro'] = (string) get_field('company_faq_intro', $post_id);
+
+    $sections = get_field('company_faq_sections', $post_id);
     if (is_array($sections)) {
       foreach ($sections as $section) {
         $section_title = isset($section['section_title']) ? (string) $section['section_title'] : '';
