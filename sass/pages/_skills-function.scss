@@ -743,12 +743,19 @@
 		position: relative;
 		width: 100%;
 		padding-bottom: 56.25%; // 16:9 aspect ratio
-		// height: 0;
-		// overflow: hidden;
+		height: 0;
+		overflow: hidden;
 		border-radius: 8px;
 		background-color: $color-white;
 		border: 15px solid $color-white;
 
+		@media (max-width: $max-720) {
+			height: auto;
+			overflow: scroll;
+		}
+	}
+
+	&__video-wrapper {
 		iframe {
 			position: absolute;
 			top: 0;
@@ -764,6 +771,68 @@
 		.hbspt-form,
 		form {
 			@include hubspot-form-base;
+
+			// Compact spacing to fit modal content
+			fieldset {
+				&.form-columns-2 {
+					.hs-form-field {
+						width: 50%;
+						float: left;
+					}
+
+					.input {
+						margin-right: 8px;
+					}
+				}
+
+				&.form-columns-1 {
+					.hs-input {
+						width: 95%;
+					}
+
+					.input {
+						margin-right: 8px;
+					}
+
+					input[type='checkbox'],
+					input[type='radio'] {
+						width: auto;
+					}
+				}
+			}
+
+			fieldset {
+				div {
+					margin-bottom: 10px !important;
+					font-size: 16px;
+					line-height: 20px;
+					color: #1a1a1a;
+					margin-right: 0 !important;
+				}
+			}
+
+			input[type='text'],
+			input[type='email'],
+			input[type='tel'] {
+				border-bottom: 2px solid $color-primary;
+				line-height: 2;
+				font-size: 15px;
+			}
+
+			textarea {
+				height: 50px;
+				border-bottom: 2px solid $color-primary;
+				font-size: 15px;
+				padding: 0.6em 0;
+			}
+
+			select {
+				width: 90%;
+				margin-top: 10px;
+				padding-left: 1.85714em;
+				padding-right: 1.77143em;
+				height: 2.5em;
+			}
 
 			// Add colored underlines to inputs
 			fieldset {
@@ -801,7 +870,7 @@
 			// Style the submit button to match theme
 			.hs-submit {
 				text-align: center;
-				margin-top: 30px;
+				margin-top: 0;
 
 				input[type='submit'],
 				.hs-button {
@@ -814,6 +883,7 @@
 					text-transform: uppercase;
 					cursor: pointer;
 					transition: all 0.18s ease;
+					margin-top: 0;
 
 					&:hover {
 						transform: translateY(-1px);
