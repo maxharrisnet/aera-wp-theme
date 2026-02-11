@@ -11,6 +11,8 @@
 		var icon = trigger.querySelector('.faq__icon');
 		if (icon) {
 			icon.textContent = isOpen ? '\u2304' : '\u2303';
+			icon.classList.toggle('up', !isOpen);
+			icon.classList.toggle('down', isOpen);
 		}
 	}
 

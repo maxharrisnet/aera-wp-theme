@@ -1,0 +1,72 @@
+@use '../variables' as *;
+
+.accordion {
+	max-width: 70%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.accordion-item {
+	border-bottom: 1px solid #c2ced7;
+}
+
+.accordion-header {
+	padding: 12px 16px;
+	cursor: pointer;
+	display: flex;
+	font-family: Gilroy, sans-serif;
+	justify-content: space-between;
+	align-items: center;
+	font-weight: 700;
+	text-align: left;
+	width: 100%;
+	background: transparent;
+	border: 0;
+}
+
+.accordion-content {
+	text-align: left;
+	display: none;
+	padding: 0 16px 12px 16px;
+	background: #fff;
+
+	&:not([hidden]) {
+		display: block;
+	}
+
+	table {
+		margin-bottom: 15px;
+	}
+
+	p {
+		margin-top: 0;
+	}
+
+	ul {
+		padding-left: 30px;
+	}
+}
+
+.arrow {
+	transition: transform 0.3s ease;
+	font-size: 24px;
+}
+
+.arrow.down {
+	transform: rotate(0deg);
+}
+
+.arrow.up {
+	transform: rotate(180deg);
+}
+
+.marginLeft {
+	display: block;
+	margin-left: 15px;
+}
+
+@media screen and (max-width: $max-720) {
+	.accordion {
+		max-width: 100%;
+	}
+}

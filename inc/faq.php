@@ -129,7 +129,7 @@ function render_faq_markup(array $faq_data, array $args = array()): string
           <div class="faq__sectionDescription"><?php echo wp_kses_post($section_description); ?></div>
         <?php endif; ?>
 
-        <div class="faq__list" role="list">
+        <div class="faq__list accordion" role="list">
           <?php foreach ($items as $item_index => $item) :
             $question = $item['question'] ?? '';
             $answer = $item['answer'] ?? '';
@@ -140,12 +140,12 @@ function render_faq_markup(array $faq_data, array $args = array()): string
             $button_id = $item_id . '-button';
             $panel_id = $item_id . '-panel';
           ?>
-            <div class="faq__item" id="<?php echo esc_attr($item_id); ?>" role="listitem">
-              <button class="faq__question" id="<?php echo esc_attr($button_id); ?>" type="button" aria-expanded="false" aria-controls="<?php echo esc_attr($panel_id); ?>">
+            <div class="faq__item accordion-item" id="<?php echo esc_attr($item_id); ?>" role="listitem">
+              <button class="faq__question accordion-header" id="<?php echo esc_attr($button_id); ?>" type="button" aria-expanded="false" aria-controls="<?php echo esc_attr($panel_id); ?>">
                 <span class="faq__questionText"><?php echo esc_html($question); ?></span>
-                <span class="faq__icon" aria-hidden="true">&#8964;</span>
+                <span class="faq__icon arrow down" aria-hidden="true">&#8964;</span>
               </button>
-              <div class="faq__answer" id="<?php echo esc_attr($panel_id); ?>" role="region" aria-labelledby="<?php echo esc_attr($button_id); ?>" hidden>
+              <div class="faq__answer accordion-content" id="<?php echo esc_attr($panel_id); ?>" role="region" aria-labelledby="<?php echo esc_attr($button_id); ?>" hidden>
                 <?php echo wp_kses_post($answer); ?>
               </div>
             </div>

@@ -743,8 +743,8 @@
 		position: relative;
 		width: 100%;
 		padding-bottom: 56.25%; // 16:9 aspect ratio
-		height: 0;
-		overflow: hidden;
+		// height: 0;
+		// overflow: hidden;
 		border-radius: 8px;
 		background-color: $color-white;
 		border: 15px solid $color-white;
