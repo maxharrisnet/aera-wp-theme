@@ -15,7 +15,7 @@ $hero_args = array(
   'hero_title' => get_the_title(),
 );
 
-$hero_description = get_the_excerpt();
+// $hero_description = get_the_excerpt();
 if (!empty($hero_description)) {
   $hero_args['hero_text'] = $hero_description;
 }

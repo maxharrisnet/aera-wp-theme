@@ -80,15 +80,15 @@
 			background-color 150ms ease,
 			border-color 150ms ease;
 
-		&:focus {
-			outline: 2px solid $color-bemuda;
-			outline-offset: 2px;
-		}
+		// &:focus {
+		// 	outline: 2px solid $color-bemuda;
+		// 	outline-offset: 2px;
+		// }
 
-		&:hover {
-			background-color: #eaf2fa;
-			border-color: #9fb7cc;
-		}
+		// &:hover {
+		// 	background-color: #eaf2fa;
+		// 	border-color: #9fb7cc;
+		// }
 	}
 
 	&__questionText {

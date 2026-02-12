@@ -6,44 +6,55 @@
 
 .page-template-page-decision-cloud {
 	.hero {
-		padding: 150px 0 0;
+		padding: 150px 0 80px;
 		height: 550px;
+
+		@media (min-width: $min-480) {
+			min-width: 100%;
+			max-width: none;
+		}
 
 		@media (max-width: $max-720) {
 			// padding: 50px 0 0;
 			height: 500px;
 		}
 
-		// &__title {
-		// 	margin: 20px auto 0;
-		// }
+		&__title {
+			// margin: 20px auto 0;
+		}
 
-		// &__subtitle {
-		// 	@include responsive-font(18, 36);
-		// 	// margin-top: 0;
-		// 	// font-weight: 400;
+		&__subtitle {
+			@include responsive-font(18, 36);
+			// margin-top: 0;
+			// font-weight: 400;
 
-		// 	@media (max-width: $max-1200) {
-		// 		font-size: 36px;
-		// 	}
+			@media (max-width: $max-1200) {
+				font-size: 36px;
+			}
+		}
+
+		&__text {
+			// margin: 0 auto 1em;
+
+			@media (min-width: $min-480) {
+				min-width: 100%;
+				max-width: none;
+			}
+
+			@include reset-paragraph;
+			@include responsive-font(16, 26);
+			// 	// 	// font-weight: 400;
+
+			// 	// 	@media (min-width: $min-480) {
+			// 	// 		max-width: (840/21) * 1em;
+			// 	// 		width: 100%;
+
+			// 	// 		.fullHeight & {
+			// 	// 			max-width: (940/26) * 1em;
+			// 	// 		}
+			// 	// 	}
+		}
 	}
-
-	// 	// &__text {
-	// 	// 	// @include reset-paragraph;
-	// 	// 	// @include responsive-font(16, 26);
-	// 	// 	margin: 0 auto 1em;
-	// 	// 	// font-weight: 400;
-
-	// 	// 	@media (min-width: $min-480) {
-	// 	// 		max-width: (840/21) * 1em;
-	// 	// 		width: 100%;
-
-	// 	// 		.fullHeight & {
-	// 	// 			max-width: (940/26) * 1em;
-	// 	// 		}
-	// 	// 	}
-	// 	// }
-	// }
 }
 
 .decisioncloud {

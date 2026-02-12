@@ -57,7 +57,7 @@
 		@include reset-paragraph;
 		@include responsive-font(18, 24); // TODO: check sizes, used to be 18,26
 		margin: 0 auto 1em;
-		font-weight: 350;
+		// font-weight: 350;
 
 		@media (min-width: $min-480) {
 			// max-width: math.div(840, 24) * 1em;
