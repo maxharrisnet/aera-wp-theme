@@ -387,6 +387,12 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
 </main>
 
 <script>
+  // Prevent default browser hash scroll on page load - we'll handle it ourselves
+  if (window.location.hash) {
+    // Scroll to top immediately to prevent browser's default hash scroll
+    window.scrollTo(0, 0);
+  }
+
   document.addEventListener('DOMContentLoaded', function() {
     // Video Modal functionality
     const modal = document.getElementById('skillVideoModal');
@@ -609,6 +615,91 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
         skill.style.opacity = '0.3';
         fadeInObserver.observe(skill);
       });
+    }
+
+    // Handle deep-linking from archive (hash + optional category)
+    function handleInitialHashScroll() {
+      const hash = window.location.hash;
+      if (!hash || hash === '#') return;
+
+      const targetElement = document.querySelector(hash);
+      if (!targetElement) {
+        // Element not found yet, try again after a short delay
+        setTimeout(handleInitialHashScroll, 100);
+        return;
+      }
+
+      // Ensure the correct category panel is active if this skill is inside a non-active panel
+      const parentPanel = targetElement.closest('.skills-function__panel');
+      if (parentPanel && !parentPanel.classList.contains('active')) {
+        const panelId = parentPanel.getAttribute('id'); // e.g. "category-supply-chain"
+        const categorySlug = panelId ? panelId.replace('category-', '') : '';
+
+        if (categorySlug) {
+          const tabToActivate = document.querySelector('.skills-function__tab[data-category="' + categorySlug + '"]');
+          if (tabToActivate) {
+            // Mirror the click behaviour without triggering another scroll
+            tabs.forEach(t => {
+              t.classList.remove('active');
+              t.setAttribute('aria-selected', 'false');
+            });
+            panels.forEach(p => p.classList.remove('active'));
+
+            tabToActivate.classList.add('active');
+            tabToActivate.setAttribute('aria-selected', 'true');
+            parentPanel.classList.add('active');
+
+            // After tab switch, wait for layout to stabilize before scrolling
+            requestAnimationFrame(function() {
+              requestAnimationFrame(function() {
+                performScroll(targetElement);
+              });
+            });
+            return;
+          }
+        }
+      }
+
+      // If panel is already active, scroll immediately
+      performScroll(targetElement);
+    }
+
+    // Perform the actual scroll operation
+    function performScroll(targetElement) {
+      const offset = 100; // Adjust for fixed header
+      const elementTop = targetElement.getBoundingClientRect().top;
+      const offsetPosition = elementTop + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Update sidebar link active state to match the target skill
+      const hash = window.location.hash;
+      const targetSidebarLink = document.querySelector('.skills-function__sidebar-link[href="' + hash + '"]');
+      if (targetSidebarLink) {
+        const allSidebarLinks = document.querySelectorAll('.skills-function__sidebar-link');
+        allSidebarLinks.forEach(l => l.classList.remove('active'));
+        targetSidebarLink.classList.add('active');
+      }
+    }
+
+    // Run hash handling on initial load - wait for both DOM and window load
+    if (window.location.hash) {
+      // If page is already loaded, run immediately
+      if (document.readyState === 'complete') {
+        requestAnimationFrame(function() {
+          setTimeout(handleInitialHashScroll, 100);
+        });
+      } else {
+        // Wait for window load event (all resources loaded)
+        window.addEventListener('load', function() {
+          requestAnimationFrame(function() {
+            setTimeout(handleInitialHashScroll, 200);
+          });
+        });
+      }
     }
   });
 </script>
