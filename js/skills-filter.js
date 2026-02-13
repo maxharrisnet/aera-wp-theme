@@ -13,6 +13,8 @@
 		searchInputSelector: '.skills-filter__search-input',
 		itemsSelector: '.skills-grid__list .icon-card',
 		itemIdAttr: 'data-skill-id',
+		itemCategoryIdsAttr: 'data-category-ids',
+		urlCategoriesParam: 'categories',
 		fadeInDuration: 300,
 		fadeOutDuration: 250,
 		urlSkillParam: 'skills[]',
@@ -35,16 +37,13 @@
 		const filterForm = document.getElementById('skillsFilterForm');
 		const searchForm = document.getElementById('skillsSearchForm');
 
-		// Category-based filtering: form submits and page reloads with server-side filter.
-		// Do not run any client-side checkbox filtering in that case.
-		const hasCategoryCheckboxes = filterForm && (filterForm.querySelector('#skillsFilterCategories') || filterForm.querySelector('.skills-filter__category-cb'));
-		if (hasCategoryCheckboxes) {
-			// Let form submit on checkbox change (handled by inline script in archive-skill.php).
-			if (searchForm) {
-				searchForm.addEventListener('submit', function (e) {
-					e.preventDefault();
-				});
-			}
+		// Category-based filtering: client-side (no reload), like resources-filter.js
+		const categoryCheckboxes = filterForm && Array.from(filterForm.querySelectorAll('.skills-filter__category-cb'));
+		const hasCategoryFilter = categoryCheckboxes && categoryCheckboxes.length > 0;
+		const items = Array.from(document.querySelectorAll(CONFIG.itemsSelector));
+
+		if (hasCategoryFilter && items.length > 0) {
+			setupCategoryFilter(filterForm, searchForm, categoryCheckboxes, items);
 			return;
 		}
 
@@ -125,6 +124,121 @@
 		if (searchInput) {
 			searchInput.value = state.searchTerm || '';
 		}
+	}
+
+	/**
+	 * Category filter: client-side filter by category IDs, update URL with pushState (no reload).
+	 */
+	function setupCategoryFilter(filterForm, searchForm, categoryCheckboxes, items) {
+		if (searchForm) {
+			searchForm.addEventListener('submit', function (e) {
+				e.preventDefault();
+			});
+		}
+		if (filterForm) {
+			filterForm.addEventListener('submit', function (e) {
+				e.preventDefault();
+			});
+		}
+
+		const hiddenCategories = document.getElementById('skillsFilterCategories');
+
+		function getSelectedCategoryIds() {
+			return categoryCheckboxes
+				.filter((cb) => cb.checked)
+				.map((cb) => parseInt(cb.value, 10))
+				.filter((n) => !Number.isNaN(n));
+		}
+
+		function getStateFromURLCategories() {
+			const url = new URL(window.location.href);
+			const param = url.searchParams.get(CONFIG.urlCategoriesParam);
+			if (!param) return [];
+			return param
+				.split(',')
+				.map((s) => parseInt(s.trim(), 10))
+				.filter((n) => !Number.isNaN(n));
+		}
+
+		function updateURLCategories(selectedIds) {
+			const url = new URL(window.location.href);
+			if (selectedIds.length === 0) {
+				url.searchParams.delete(CONFIG.urlCategoriesParam);
+			} else {
+				url.searchParams.set(CONFIG.urlCategoriesParam, selectedIds.join(','));
+			}
+			window.history.pushState({ categories: selectedIds }, '', url.toString());
+		}
+
+		function setCheckboxesFromState(selectedIds) {
+			const idSet = new Set(selectedIds);
+			categoryCheckboxes.forEach((cb) => {
+				cb.checked = idSet.has(parseInt(cb.value, 10));
+			});
+			if (hiddenCategories) {
+				hiddenCategories.value = selectedIds.join(',');
+			}
+		}
+
+		function expandHeadersForCheckedCategories() {
+			const expanded = new Set();
+			categoryCheckboxes.forEach((cb) => {
+				if (!cb.checked) return;
+				const fn = cb.closest('.skills-filter__function');
+				const header = fn?.querySelector('.skills-filter__function-header');
+				const slug = header?.getAttribute('data-function');
+				if (slug && !expanded.has(slug)) {
+					expanded.add(slug);
+					const list = document.getElementById('function-' + slug);
+					if (list) list.classList.add('active');
+					if (header) header.classList.add('active');
+				}
+			});
+		}
+
+		function applyCategoryFilter(selectedIds, updateHistory) {
+			if (updateHistory) {
+				updateURLCategories(selectedIds);
+			}
+			setCheckboxesFromState(selectedIds);
+
+			const hasFilter = selectedIds.length > 0;
+			const idSet = new Set(selectedIds);
+
+			items.forEach((item) => {
+				const raw = item.getAttribute(CONFIG.itemCategoryIdsAttr) || '';
+				const cardCategoryIds = raw
+					.split(',')
+					.map((s) => parseInt(s.trim(), 10))
+					.filter((n) => !Number.isNaN(n));
+				const matches = !hasFilter || cardCategoryIds.some((id) => idSet.has(id));
+				if (matches) {
+					fadeIn(item);
+				} else {
+					fadeOut(item);
+				}
+			});
+
+			expandHeadersForCheckedCategories();
+		}
+
+		function onCategoryChange() {
+			const selectedIds = getSelectedCategoryIds();
+			applyCategoryFilter(selectedIds, true);
+		}
+
+		// Initial state from URL
+		const initial = getStateFromURLCategories();
+		applyCategoryFilter(initial, false);
+
+		categoryCheckboxes.forEach((cb) => {
+			cb.addEventListener('change', onCategoryChange);
+		});
+
+		window.addEventListener('popstate', function () {
+			const state = getStateFromURLCategories();
+			applyCategoryFilter(state, false);
+		});
 	}
 
 	function getStateFromURL() {

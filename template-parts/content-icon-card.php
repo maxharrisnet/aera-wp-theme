@@ -16,11 +16,13 @@ $functions = get_the_terms(get_the_ID(), 'skill_function');
 $function_slug = (!empty($functions) && !is_wp_error($functions)) ? $functions[0]->slug : '';
 $function_term = (!empty($functions) && !is_wp_error($functions)) ? $functions[0] : null;
 
-// Get the first category (skill_category taxonomy) for tab navigation
+// Get categories (skill_category taxonomy) for tab navigation and client-side filtering
 $categories = get_the_terms(get_the_ID(), 'skill_category');
 $category_slug = '';
+$category_ids = array();
 if (!empty($categories) && !is_wp_error($categories)) {
   $category_slug = $categories[0]->slug;
+  $category_ids = wp_list_pluck($categories, 'term_id');
 }
 
 // Build the link URL - link to the skill function page with category param and skill anchor
@@ -53,7 +55,7 @@ if ($skill_icon) {
 }
 ?>
 
-<div class="icon-card" data-function="<?php echo esc_attr($function_slug); ?>" data-category="<?php echo esc_attr($category_slug); ?>" data-skill-id="<?php echo esc_attr(get_the_ID()); ?>">
+<div class="icon-card" data-function="<?php echo esc_attr($function_slug); ?>" data-category="<?php echo esc_attr($category_slug); ?>" data-category-ids="<?php echo esc_attr(implode(',', $category_ids)); ?>" data-skill-id="<?php echo esc_attr(get_the_ID()); ?>">
   <a href="<?php echo esc_url($card_link); ?>" class="icon-card__link">
     <div class="icon-card__top-stripe"></div>
 

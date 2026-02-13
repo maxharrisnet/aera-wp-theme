@@ -125,7 +125,7 @@ function build_resource_query_args(string $slug, int $paged = 1): array
   // Order By Menu Order
   if ($slug === 'case-study') {
     $args['orderby'] = array(
-      'menu_order'     => 'ASC',
+      // 'menu_order'     => 'DESC',
       // 'meta_value_num' => 'ASC',
       // 'date'           => 'DESC',
     );

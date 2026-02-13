@@ -68,7 +68,7 @@ $current_sort = isset($_GET['sort']) ? sanitize_text_field(is_array($_GET['sort'
   ?>
 
   <!-- Skills Archive Section -->
-  <section class="skills skills--archive">
+  <section id="skills-archive-section" class="skills skills--archive">
     <div class="skills__container">
       <div class="skills__row">
 
@@ -243,37 +243,7 @@ $current_sort = isset($_GET['sort']) ? sanitize_text_field(is_array($_GET['sort'
       });
     });
 
-    // Auto-expand functions that have checked categories
-    const checkedCategoryCheckboxes = document.querySelectorAll('.skills-filter__category-cb:checked');
-    checkedCategoryCheckboxes.forEach(function(checkbox) {
-      const skillItem = checkbox.closest('.skills-filter__skill-item');
-      const functionContainer = skillItem ? skillItem.closest('.skills-filter__function') : null;
-      const functionHeader = functionContainer ? functionContainer.querySelector('.skills-filter__function-header') : null;
-      const functionSlug = functionHeader ? functionHeader.getAttribute('data-function') : null;
-      const categoriesList = functionSlug ? document.getElementById('function-' + functionSlug) : null;
-
-      if (categoriesList && functionHeader) {
-        categoriesList.classList.add('active');
-        functionHeader.classList.add('active');
-      }
-    });
-
-    // Category checkboxes: update hidden input (categories=35,39) and submit form
-    const categoryCheckboxes = document.querySelectorAll('.skills-filter__category-cb');
-    const hiddenCategories = document.getElementById('skillsFilterCategories');
-    const filterForm = document.getElementById('skillsFilterForm');
-
-    function syncCategoriesAndSubmit() {
-      if (!hiddenCategories || !filterForm) return;
-      const checked = Array.from(categoryCheckboxes).filter(function(cb) { return cb.checked; });
-      const ids = checked.map(function(cb) { return cb.value; });
-      hiddenCategories.value = ids.join(',');
-      filterForm.submit();
-    }
-
-    categoryCheckboxes.forEach(function(checkbox) {
-      checkbox.addEventListener('change', syncCategoriesAndSubmit);
-    });
+    // Category checkboxes: client-side filtering and URL updates (see js/skills-filter.js)
 
     // Sort dropdown
     const sortSelect = document.getElementById('skillSort');
