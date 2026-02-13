@@ -32,7 +32,24 @@
 	}
 
 	function setup() {
-		// Signal that client-side filtering is active to avoid server-side auto-submit
+		const filterForm = document.getElementById('skillsFilterForm');
+		const searchForm = document.getElementById('skillsSearchForm');
+
+		// Category-based filtering: form submits and page reloads with server-side filter.
+		// Do not run any client-side checkbox filtering in that case.
+		const hasCategoryCheckboxes = filterForm && filterForm.querySelector('input[name="categories[]"]');
+		if (hasCategoryCheckboxes) {
+			// Let form submit on checkbox change (handled by inline script in archive-skill.php).
+			// Only optionally prevent search form if we want search to submit too.
+			if (searchForm) {
+				searchForm.addEventListener('submit', function (e) {
+					e.preventDefault();
+				});
+			}
+			return;
+		}
+
+		// Skill ID-based client-side filtering below
 		try {
 			window.AeraSkillsFilterActive = true;
 		} catch (e) {}
@@ -49,8 +66,6 @@
 		applyFilter(initial.selectedIds, initial.searchTerm, false);
 
 		// Intercept form submits
-		const filterForm = document.getElementById('skillsFilterForm');
-		const searchForm = document.getElementById('skillsSearchForm');
 		if (filterForm) {
 			filterForm.addEventListener('submit', function (e) {
 				e.preventDefault();

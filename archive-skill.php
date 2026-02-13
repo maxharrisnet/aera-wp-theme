@@ -26,9 +26,9 @@ if (empty($hero_description)) {
 $hero_button_text = function_exists('get_field') ? get_field('skills_archive_button_text', 'option') : '';
 $hero_button_link = function_exists('get_field') ? get_field('skills_archive_button_link', 'option') : '';
 
-// Get skill categories for filtering
-$skill_categories = get_terms(array(
-  'taxonomy' => 'skill_category',
+// Get skill functions for filtering
+$skill_functions = get_terms(array(
+  'taxonomy' => 'skill_function',
   'hide_empty' => true,
   'orderby' => 'name',
   'order' => 'ASC',
@@ -36,20 +36,27 @@ $skill_categories = get_terms(array(
 
 // Get current filters from URL
 $current_search = isset($_GET['skill_search']) ? sanitize_text_field(is_array($_GET['skill_search']) ? $_GET['skill_search'][0] : $_GET['skill_search']) : '';
-$current_skills = isset($_GET['skills']) ? array_map('intval', (array)$_GET['skills']) : array();
+// categories[] in form becomes 'categories' array in PHP on submit
+$current_categories = array();
+if (!empty($_GET['categories']) && is_array($_GET['categories'])) {
+  $current_categories = array_map('intval', $_GET['categories']);
+} elseif (isset($_GET['categories'])) {
+  $current_categories = array(intval($_GET['categories']));
+}
+$current_categories = array_filter($current_categories);
 $current_sort = isset($_GET['sort']) ? sanitize_text_field(is_array($_GET['sort']) ? $_GET['sort'][0] : $_GET['sort']) : 'menu_order';
 
 // Prevent WordPress from processing our custom parameters as query vars
 add_filter('request', function ($query_vars) {
   // Remove our custom parameters from WordPress's query processing
-  unset($query_vars['skills']);
+  unset($query_vars['categories']);
   unset($query_vars['skill_search']);
   unset($query_vars['sort']);
   return $query_vars;
 });
 
 // Modify the main query to add our filters
-add_action('pre_get_posts', function ($query) use ($current_search, $current_skills, $current_sort) {
+add_action('pre_get_posts', function ($query) use ($current_search, $current_categories, $current_sort) {
   if (!is_admin() && $query->is_main_query() && is_post_type_archive('skill')) {
 
     // Add search filter
@@ -57,9 +64,15 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
       $query->set('s', $current_search);
     }
 
-    // Add specific skill IDs filter
-    if (!empty($current_skills)) {
-      $query->set('post__in', $current_skills);
+    // Add category filter - get all skills that belong to selected categories
+    if (!empty($current_categories)) {
+      $query->set('tax_query', array(
+        array(
+          'taxonomy' => 'skill_category',
+          'field' => 'term_id',
+          'terms' => $current_categories,
+        ),
+      ));
     }
 
     // Add sorting
@@ -125,8 +138,8 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
               </form>
             </div>
 
-            <!-- Categories Filter -->
-            <?php if (!empty($skill_categories) && !is_wp_error($skill_categories)) : ?>
+            <!-- Functions Filter -->
+            <?php if (!empty($skill_functions) && !is_wp_error($skill_functions)) : ?>
               <form method="get" action="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" id="skillsFilterForm">
                 <!-- Preserve search parameter -->
                 <?php if (!empty($current_search)) : ?>
@@ -140,56 +153,50 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
 
                 <div class="skills-filter__functions">
 
-
-                  <?php foreach ($skill_categories as $category) :
-                    // Get skills in this category
-                    $skills_in_category = get_posts(array(
-                      'post_type' => 'skill',
-                      'posts_per_page' => -1,
-                      'tax_query' => array(
-                        array(
-                          'taxonomy' => 'skill_category',
-                          'field' => 'term_id',
-                          'terms' => $category->term_id,
-                        ),
-                      ),
-                      'orderby' => 'title',
-                      'order' => 'ASC',
+                  <?php foreach ($skill_functions as $function) :
+                    // Get all categories linked to this function via ACF
+                    $all_categories = get_terms(array(
+                      'taxonomy' => 'skill_category',
+                      'hide_empty' => true,
                     ));
 
-                    if (empty($skills_in_category)) continue;
-
-                    // Get parent function name if available
-                    $parent_function_id = function_exists('get_field') ? get_field('parent_function', 'skill_category_' . $category->term_id) : null;
-                    $parent_function_name = '';
-                    if ($parent_function_id) {
-                      $parent_function = get_term($parent_function_id, 'skill_function');
-                      if ($parent_function && !is_wp_error($parent_function)) {
-                        $parent_function_name = $parent_function->name;
+                    $function_categories = array();
+                    if (!empty($all_categories) && !is_wp_error($all_categories)) {
+                      foreach ($all_categories as $category) {
+                        $parent_function_id = function_exists('get_field') ? get_field('parent_function', 'skill_category_' . $category->term_id) : null;
+                        if ($parent_function_id == $function->term_id) {
+                          $function_categories[] = $category;
+                        }
                       }
                     }
+
+                    // Skip functions with no categories
+                    if (empty($function_categories)) continue;
                   ?>
                     <div class="skills-filter__function">
-                      <div class="skills-filter__function-header" data-function="<?php echo esc_attr($category->slug); ?>">
+                      <div class="skills-filter__function-header" data-function="<?php echo esc_attr($function->slug); ?>">
                         <span class="skills-filter__function-name">
-                          <?php echo esc_html($category->name); ?>
+                          <?php echo esc_html($function->name); ?>
                         </span>
                         <span class="skills-filter__function-icon">+</span>
                       </div>
-                      <div class="skills-filter__function-skills" id="function-<?php echo esc_attr($category->slug); ?>">
-                        <?php foreach ($skills_in_category as $skill) :
-                          $is_checked = in_array($skill->ID, $current_skills);
+                      <div class="skills-filter__function-skills" id="function-<?php echo esc_attr($function->slug); ?>">
+                        <?php foreach ($function_categories as $category) :
+                          // Only show categories that have skills (hide_empty handles this, but double-check)
+                          $category_count = $category->count;
+                          if ($category_count == 0) continue;
+                          
+                          $is_category_checked = in_array($category->term_id, $current_categories);
                         ?>
                           <label class="skills-filter__skill-item">
-                            <input type="checkbox" name="skills[]" value="<?php echo esc_attr($skill->ID); ?>" class="skills-filter__checkbox" <?php checked($is_checked); ?>>
-                            <span><?php echo esc_html($skill->post_title); ?></span>
+                            <input type="checkbox" name="categories[]" value="<?php echo esc_attr($category->term_id); ?>" class="skills-filter__checkbox" <?php checked($is_category_checked); ?>>
+                            <span><?php echo esc_html($category->name); ?></span>
                           </label>
                         <?php endforeach; ?>
                       </div>
                     </div>
                   <?php endforeach; ?>
                 </div>
-
 
               </form>
             <?php endif; ?>
@@ -256,40 +263,40 @@ add_action('pre_get_posts', function ($query) use ($current_search, $current_ski
     // Function expand/collapse
     const functionHeaders = document.querySelectorAll('.skills-filter__function-header');
     functionHeaders.forEach(function(header) {
-      header.addEventListener('click', function() {
+      header.addEventListener('click', function(e) {
         const functionSlug = this.getAttribute('data-function');
-        const skillsList = document.getElementById('function-' + functionSlug);
+        const categoriesList = document.getElementById('function-' + functionSlug);
         const icon = this.querySelector('.skills-filter__function-icon');
 
-        if (skillsList) {
-          skillsList.classList.toggle('active');
+        if (categoriesList) {
+          categoriesList.classList.toggle('active');
           this.classList.toggle('active');
-          icon.textContent = skillsList.classList.contains('active') ? '−' : '+';
+          icon.textContent = categoriesList.classList.contains('active') ? '−' : '+';
         }
       });
     });
 
-    // Auto-expand functions that have checked skills
-    const checkedCheckboxes = document.querySelectorAll('.skills-filter__checkbox:checked');
-    checkedCheckboxes.forEach(function(checkbox) {
-      const functionSkills = checkbox.closest('.skills-filter__function-skills');
-      const functionHeader = functionSkills ? functionSkills.previousElementSibling : null;
+    // Auto-expand functions that have checked categories
+    const checkedCategoryCheckboxes = document.querySelectorAll('.skills-filter__checkbox:checked');
+    checkedCategoryCheckboxes.forEach(function(checkbox) {
+      const skillItem = checkbox.closest('.skills-filter__skill-item');
+      const functionContainer = skillItem ? skillItem.closest('.skills-filter__function') : null;
+      const functionHeader = functionContainer ? functionContainer.querySelector('.skills-filter__function-header') : null;
+      const functionSlug = functionHeader ? functionHeader.getAttribute('data-function') : null;
+      const categoriesList = functionSlug ? document.getElementById('function-' + functionSlug) : null;
+      const icon = functionHeader ? functionHeader.querySelector('.skills-filter__function-icon') : null;
 
-      if (functionSkills && functionHeader) {
-        functionSkills.classList.add('active');
+      if (categoriesList && functionHeader && icon) {
+        categoriesList.classList.add('active');
         functionHeader.classList.add('active');
-        const icon = functionHeader.querySelector('.skills-filter__function-icon');
-        if (icon) {
-          icon.textContent = '−';
-        }
+        icon.textContent = '−';
       }
     });
 
-    // Submit form when checkboxes change (fallback only if client-side filter isn't active)
-    const skillCheckboxes = document.querySelectorAll('.skills-filter__checkbox');
-    skillCheckboxes.forEach(function(checkbox) {
+    // Submit form when category checkboxes change
+    const categoryCheckboxes = document.querySelectorAll('.skills-filter__checkbox');
+    categoryCheckboxes.forEach(function(checkbox) {
       checkbox.addEventListener('change', function() {
-        if (window.AeraSkillsFilterActive) return; // client-side filtering handles it
         const form = document.getElementById('skillsFilterForm');
         if (form) {
           form.submit();
