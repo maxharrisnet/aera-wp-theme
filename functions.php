@@ -427,6 +427,61 @@ function aera_technology_partner_archive_order($query)
 add_action('pre_get_posts', 'aera_technology_partner_archive_order');
 
 /**
+ * Filter Skills archive by category (skill_category taxonomy) and search/sort.
+ * Must run in pre_get_posts (here) so it applies to the main query before it runs.
+ *
+ * @param WP_Query $query The WordPress query object.
+ */
+function aera_technology_skill_archive_pre_get_posts($query)
+{
+  if (is_admin() || !$query->is_main_query() || !is_post_type_archive('skill')) {
+    return;
+  }
+
+  // Parse categories from URL (comma-separated or array)
+  $current_categories = array();
+  if (isset($_GET['categories'])) {
+    $raw = $_GET['categories'];
+    if (is_array($raw)) {
+      $current_categories = array_values(array_filter(array_map('intval', $raw)));
+    } else {
+      $current_categories = array_values(array_filter(array_map('intval', array_map('trim', explode(',', (string) $raw)))));
+    }
+  }
+
+  if (!empty($current_categories)) {
+    $query->set('tax_query', array(
+      array(
+        'taxonomy' => 'skill_category',
+        'field'    => 'term_id',
+        'terms'    => $current_categories,
+      ),
+    ));
+  }
+
+  if (!empty($_GET['skill_search'])) {
+    $search = is_array($_GET['skill_search']) ? $_GET['skill_search'][0] : $_GET['skill_search'];
+    $query->set('s', sanitize_text_field($search));
+  }
+
+  $sort = isset($_GET['sort']) ? sanitize_text_field(is_array($_GET['sort']) ? $_GET['sort'][0] : $_GET['sort']) : 'menu_order';
+  switch ($sort) {
+    case 'title':
+      $query->set('orderby', 'title');
+      $query->set('order', 'ASC');
+      break;
+    case 'date':
+      $query->set('orderby', 'date');
+      $query->set('order', 'DESC');
+      break;
+    default:
+      $query->set('orderby', 'menu_order');
+      $query->set('order', 'ASC');
+  }
+}
+add_action('pre_get_posts', 'aera_technology_skill_archive_pre_get_posts');
+
+/**
  * Customize the document title for Webinars and Events archives.
  *
  * @param array $title The document title parts.

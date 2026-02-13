@@ -37,10 +37,9 @@
 
 		// Category-based filtering: form submits and page reloads with server-side filter.
 		// Do not run any client-side checkbox filtering in that case.
-		const hasCategoryCheckboxes = filterForm && filterForm.querySelector('input[name="categories[]"]');
+		const hasCategoryCheckboxes = filterForm && (filterForm.querySelector('#skillsFilterCategories') || filterForm.querySelector('.skills-filter__category-cb'));
 		if (hasCategoryCheckboxes) {
 			// Let form submit on checkbox change (handled by inline script in archive-skill.php).
-			// Only optionally prevent search form if we want search to submit too.
 			if (searchForm) {
 				searchForm.addEventListener('submit', function (e) {
 					e.preventDefault();

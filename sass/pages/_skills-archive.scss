@@ -184,12 +184,33 @@
 	}
 
 	&__function-icon {
-		font-size: 22px;
-		font-weight: 300;
-		// font-family: $font-family-freight;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		color: $color-steelgray;
-		line-height: 1;
 		transition: color $transition-enter ease;
+
+		svg {
+			display: block;
+		}
+
+		.skills-filter__icon-minus {
+			display: none;
+		}
+
+		.skills-filter__icon-plus {
+			display: block;
+		}
+	}
+
+	&__function-header.active &__function-icon {
+		.skills-filter__icon-plus {
+			display: none;
+		}
+
+		.skills-filter__icon-minus {
+			display: block;
+		}
 	}
 
 	&__function-name {
@@ -211,7 +232,7 @@
 		max-height: 0;
 		overflow: hidden;
 		transition: max-height 0.3s ease;
-		padding: 0 12px;
+		// padding: 0 12px;
 
 		&.active {
 			max-height: 1000px;
