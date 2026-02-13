@@ -44,11 +44,13 @@
   } elseif (
     is_page_template('page-resources.php') ||
     is_page_template('page-aerahub-2025.php') ||
+    is_page_template('page-aerahub-2025-london.php') ||
     is_page_template('page-decision-cloud.php') ||
     (is_page() && get_page_template_slug() === 'page-resources.php') ||
     (is_page() && get_page_template_slug() === 'page-aerahub-2025.php') ||
+    (is_page() && get_page_template_slug() === 'page-aerahub-2025-london.php') ||
     (is_page() && get_page_template_slug() === 'page-decision-cloud.php') ||
-    is_page(array('resources', 'about-us', 'careers', 'webinars', 'aera-decision-cloud', 'test-drive', 'aerahub-2025', 'decision-cloud')) ||
+    is_page(array('resources', 'about-us', 'careers', 'webinars', 'aera-decision-cloud', 'test-drive', 'aerahub-2025', 'aerahub-2025-london', 'decision-cloud')) ||
     is_post_type_archive('webinar') ||
     is_post_type_archive('event')
   ) {

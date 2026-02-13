@@ -293,6 +293,20 @@ function aera_technology_scripts()
     }
   }
 
+  // Enqueue AeraHub 2025 London On-Demand page scripts
+  if (is_page_template('page-aerahub-2025-london.php')) {
+    $aerahub_london_js_path = get_template_directory() . '/js/aerahub-2025-london.js';
+    if (file_exists($aerahub_london_js_path)) {
+      wp_enqueue_script(
+        'aera-aerahub-2025-london',
+        get_template_directory_uri() . '/js/aerahub-2025-london.js',
+        array(),
+        filemtime($aerahub_london_js_path),
+        true
+      );
+    }
+  }
+
   // Enqueue Resources page filtering scripts
   if (is_page_template('page-resources.php')) {
     $resources_filter_js_path = get_template_directory() . '/js/resources-filter.js';

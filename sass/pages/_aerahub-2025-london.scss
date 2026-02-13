@@ -1,0 +1,681 @@
+@use '../variables' as *;
+
+/* AERAHUB 2025 LONDON ON-DEMAND PAGE */
+
+body.page-aerahub-2025-london {
+	#headnav,
+	#footer {
+		display: none !important;
+	}
+}
+
+.aerahub-2025-london {
+	color: #000;
+
+	&__clearfix {
+		clear: both;
+	}
+
+	&__section1 {
+		padding-top: 150px;
+		padding-bottom: 50px;
+		width: 100%;
+		background-image: url('assets/images/aerahub2024/HEADER_BG_v001.webp');
+		background-size: cover;
+		background-position: left;
+		position: relative;
+		overflow-y: hidden;
+
+		@media (max-width: $max-1200) {
+			padding-top: 120px;
+		}
+
+		@media (max-width: $max-720) {
+			padding-top: 100px;
+			padding-bottom: 0;
+		}
+	}
+
+	&__section1wrapper {
+		width: 100%;
+		margin: 0 auto;
+		text-align: right;
+		padding-right: 30%;
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding-right: 0%;
+		}
+
+		@media (max-width: $max-960) {
+			width: 80%;
+			padding-right: 0;
+		}
+
+		@media (max-width: $max-1080) {
+			width: 90%;
+			padding-right: 0;
+		}
+	}
+
+	&__header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		background-color: transparent;
+		padding: 20px;
+		width: 100%;
+		z-index: 2;
+
+		img {
+			width: 121px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		span {
+			display: inline-block;
+			line-height: 22px;
+			font-weight: 100;
+			color: #fff;
+			margin-left: 15px;
+			font-family: $font-family-freight;
+			font-size: 18px;
+		}
+	}
+
+	&__headerContainer {
+		padding: 0 70px;
+		max-width: 100%;
+		margin: 0 auto;
+
+		@media (max-width: $max-960) {
+			padding: 0 0;
+		}
+
+		@media (max-width: $max-720) {
+			padding: 0 0;
+		}
+	}
+
+	&__headerLogoImage {
+		width: 121px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&__darkBlue {
+		color: #000;
+		font-size: 42px;
+		line-height: 52px;
+		font-weight: 700;
+		margin-bottom: 0;
+		margin-top: 0;
+
+		@media (max-width: $max-720) {
+			font-size: 34px;
+			line-height: 44px;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__section1lefttext {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+
+		@media (max-width: $max-1200) {
+			width: 60%;
+			padding-right: 0;
+		}
+
+		@media (max-width: $max-1080) {
+			width: 100%;
+			padding-right: 0;
+		}
+
+		@media (max-width: $max-960) {
+			width: 100%;
+			padding-right: 0;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding-right: 0;
+		}
+	}
+
+	&__flexwrapper {
+		svg {
+			width: 100%;
+		}
+
+		@media (max-width: $max-960) {
+			justify-content: right;
+		}
+
+		@media (max-width: $max-720) {
+			margin-bottom: 0;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+		}
+	}
+
+	&__subtitle {
+		@media (max-width: $max-720) {
+			padding-right: 0;
+			text-align: center;
+		}
+
+		h2 {
+			font-size: 28px;
+			line-height: 36px;
+			color: #fff;
+			font-family: $font-family-gilroy;
+			margin: 0;
+
+			@media (max-width: $max-720) {
+				font-size: 24px;
+			}
+		}
+
+		h3 {
+			font-size: 28px;
+			line-height: 36px;
+			color: #fff;
+			font-family: $font-family-freight;
+			margin: 0;
+			font-weight: 200;
+
+			@media (max-width: $max-720) {
+				font-size: 24px;
+			}
+		}
+
+		h4 {
+			margin-top: 5px;
+			color: #fff;
+			font-family: $font-family-freight;
+			font-weight: 400;
+		}
+	}
+
+	&__imgbox {
+		background-image: url('assets/images/aerahub2025/londonhubbanner.png');
+		width: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		height: 100%;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right;
+
+		@media (max-width: $max-1080) {
+			display: none;
+		}
+
+		@media (max-width: $max-960) {
+			display: none;
+		}
+
+		@media (max-width: $max-720) {
+			display: none;
+		}
+	}
+
+	&__formBox {
+		background: #fff;
+		padding: 15px;
+		border-radius: 10px;
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding: 15px;
+			margin-top: 20px;
+		}
+
+		&.hs_error_rollup {
+			display: none;
+		}
+
+		input[type='submit'] {
+			max-width: 70%;
+			font-size: 14px;
+			line-height: 3.71429;
+			border: 0;
+			background-color: $color-bahamablue;
+			margin: 0;
+			padding: 0 2.85714em;
+			height: 3.57143em;
+			color: #fff;
+			font-family: $font-family-gilroy;
+			font-weight: 600;
+			letter-spacing: 0.025em;
+			text-transform: uppercase;
+			text-decoration: none;
+			border-radius: 999px;
+			cursor: pointer;
+			transition: 0.18s;
+
+			@media (max-width: $max-720) {
+				max-width: 100%;
+			}
+		}
+
+		input:not([type='submit']) {
+			border: 0;
+			border-bottom: 1px solid #4b8bb5;
+			width: 100%;
+			line-height: 3;
+			font-family: $font-family-freight;
+			font-size: 16px;
+			color: $color-codgray;
+
+			&:focus {
+				outline: 0;
+			}
+		}
+	}
+
+	&__footerbutton {
+		padding: 30px 0;
+	}
+
+	&__saveyourseat {
+		display: inline-block;
+		max-width: none;
+		line-height: 26px;
+		padding: 10px 50px;
+		border-radius: 50px;
+		color: #1a1a1a;
+		font-size: 24px;
+		font-weight: 400;
+		background-color: #fff;
+		text-decoration: none;
+
+		&:hover {
+			background-color: #e0f1fd;
+		}
+
+		@media (max-width: $max-720) {
+			padding: 8px 40px;
+			font-size: 18px;
+		}
+	}
+
+	&__container {
+		padding: 0 90px;
+		max-width: 90%;
+		margin: 0 auto;
+
+		@media (max-width: $max-1024) {
+			max-width: 100%;
+			padding: 0 50px;
+		}
+
+		@media (max-width: $max-960) {
+			padding: 0 20px;
+		}
+
+		@media (max-width: $max-720) {
+			padding: 0 20px;
+		}
+	}
+
+	&__section2 {
+		padding-top: 50px;
+		padding-bottom: 50px;
+		width: 100%;
+
+		@media (max-width: $max-720) {
+			padding-bottom: 0;
+		}
+	}
+
+	&__section2div1 {
+		width: 100%;
+		margin: 0 auto;
+		text-align: center;
+
+		h2 {
+			font-size: 36px;
+			line-height: 46px;
+
+			@media (max-width: $max-720) {
+				margin-top: 0;
+				font-size: 26px;
+				line-height: 36px;
+			}
+		}
+
+		p {
+			width: 100%;
+			margin: 15px auto;
+			font-size: 24px;
+			color: $color-codgray;
+			margin-bottom: 50px;
+			text-align: center;
+			font-weight: 300;
+
+			@media (max-width: $max-960) {
+				text-align: center;
+			}
+
+			@media (max-width: $max-720) {
+				width: 100%;
+				margin: 0 auto;
+				font-size: 18px;
+				margin-bottom: 30px;
+				text-align: center;
+			}
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+		}
+	}
+
+	&__keynotes {
+		padding: 50px 0;
+		background-color: #f4f4f4;
+	}
+
+	&__keynotewrapper {
+		h2 {
+			text-align: center;
+			font-size: 42px;
+			line-height: 52px;
+
+			@media (max-width: $max-720) {
+				font-size: 32px;
+				line-height: 42px;
+			}
+		}
+
+		p {
+			text-align: center;
+			font-size: 24px;
+			line-height: 34px;
+			font-weight: 300;
+
+			@media (max-width: $max-720) {
+				font-size: 20px;
+				line-height: 34px;
+				text-align: center;
+			}
+		}
+	}
+
+	&__keynotesboxwrapper {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+		margin-top: 50px;
+
+		img {
+			width: 100%;
+		}
+
+		@media (max-width: $max-720) {
+			flex-direction: column;
+		}
+	}
+
+	&__keynotesbox {
+		width: 43%;
+		box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.33);
+		margin-bottom: 50px;
+		border-radius: 40px;
+		text-decoration: none;
+		display: block;
+		background: #fff;
+		overflow: hidden;
+
+		h4 {
+			font-size: 28px;
+			line-height: 38px;
+			padding: 0 20px;
+			color: #000;
+			margin-top: 15px;
+			text-decoration: underline;
+		}
+
+		p {
+			text-align: left;
+			padding: 0 20px;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+		}
+	}
+
+	&__registersection {
+		padding: 20px 0;
+		text-align: center;
+		background-color: #f4f4f4;
+
+		h2 {
+			color: #000;
+			font-size: 36px;
+			margin: 0;
+
+			@media (max-width: $max-720) {
+				font-size: 32px;
+				line-height: 42px;
+			}
+		}
+	}
+
+	&__registersectionwrapper {
+		// wrapper for register CTA
+	}
+
+	&__registerbtnblue {
+		display: inline-block;
+		max-width: none;
+		line-height: 26px;
+		padding: 10px 50px;
+		border-radius: 50px;
+		color: #1a1a1a;
+		font-size: 24px;
+		font-weight: 400;
+		border: 2px solid #bee0f4;
+		background-color: #e0f1fd;
+		text-decoration: none;
+
+		&:hover {
+			background-color: #bee0f4;
+		}
+
+		@media (max-width: $max-720) {
+			padding: 8px 40px;
+			font-size: 18px;
+		}
+	}
+
+	&__sponsors {
+		padding: 50px 0;
+		text-align: center;
+		background-color: #f4f4f4;
+
+		h2 {
+			font-size: 36px;
+			line-height: 46px;
+			margin-top: 0;
+		}
+	}
+
+	&__sponsorswrapper {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+
+		@media (max-width: $max-720) {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__sponsor {
+		color: $color-codgray;
+		text-align: center;
+
+		@media (max-width: $max-720) {
+			margin-bottom: 30px;
+		}
+
+		img {
+			margin: 0 auto;
+		}
+
+		img[alt='Accenture'],
+		img[alt='Accenture logo'] {
+			height: 45px;
+			width: auto;
+		}
+
+		img[alt='ZS'] {
+			height: 75px;
+			width: auto;
+		}
+
+		img[alt='Deloitte'] {
+			height: 35px;
+			width: auto;
+		}
+	}
+
+	&__ctasection {
+		width: 100%;
+		padding: 50px 0;
+		background-color: #f6f7fa;
+		text-align: center;
+
+		p {
+			color: $color-bahamablue;
+			margin-bottom: 0;
+		}
+
+		a {
+			color: $color-bahamablue;
+		}
+	}
+
+	&__socialIcons {
+		a {
+			display: inline-block;
+			padding: 0 15px;
+		}
+
+		img {
+			width: 25px;
+		}
+	}
+
+	/* Video popups */
+	&__videoPopup {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.8);
+		justify-content: center;
+		align-items: center;
+		z-index: 10;
+
+		&.active {
+			display: flex;
+		}
+	}
+
+	&__videoContainer {
+		position: relative;
+		background: #fff;
+		padding: 20px;
+		border-radius: 8px;
+		width: 90%;
+		max-width: 600px;
+
+		iframe {
+			width: 100%;
+			height: 315px;
+			border-radius: 8px;
+		}
+	}
+
+	&__closeBtn {
+		position: absolute;
+		top: -10px;
+		right: -10px;
+		background: #3798d1;
+		color: #fff;
+		border: none;
+		cursor: pointer;
+		font-size: 18px;
+		border-radius: 50%;
+		width: 30px;
+		height: 30px;
+		line-height: 1;
+		padding: 0;
+	}
+
+	/* Overlay (gated form) */
+	&__overlaywrapper {
+		width: 100%;
+		position: fixed;
+		z-index: 9;
+		height: 100%;
+	}
+
+	&__overlay {
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 30%);
+
+		@media (max-width: $max-720) {
+			width: 90%;
+			transform: translate(-50%, 20%);
+		}
+	}
+
+	&__overlayFormWrapper {
+		padding: 15px 20px;
+		background-color: #fff;
+		width: 50%;
+		margin: 0 auto;
+		border-radius: 20px;
+		box-shadow: 1px 10px 10px rgba(0, 0, 0, 0.55);
+		overflow-y: auto;
+		height: 500px;
+
+		@media (max-width: $max-960) {
+			width: 80%;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			height: 500px;
+		}
+
+		p {
+			margin-top: 0;
+			font-family: $font-family-freight;
+			font-size: 20px;
+			font-weight: 300;
+		}
+	}
+
+	&__bluroverlay {
+		filter: blur(8px);
+	}
+}

@@ -322,12 +322,12 @@ $sceneScale: 1.4;
 		color: $color-messages-text;
 		background: $color-messages;
 		border-radius: 50px;
-		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+		// box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 	}
 
 	&.aera .technologyMessagesItem__panel {
-		background: $color-primary;
-		color: $color-white;
+		// background: $color-primary;
+		color: $color-messages-text;
 	}
 
 	&.lastAera .technologyMessagesItem__panel {

@@ -28,7 +28,7 @@ if (empty($technology_sections)) {
   $technology_sections = array(
     array(
       'title'       => __('Aera understands.', 'aera'),
-      'description' => __('Aera continuously crawls enterprise systems; refines, indexes, and augments data; and delivers real-time visibility into your operations.', 'aera'),
+      'description' => __('Aera continuously crawls enterprise systems; refines, indexes, and augments data; and delivers end-to-end, real-time visibility into your operations.', 'aera'),
       'video'       => $assets_base . 'technology-loop-vpsales.mp4',
       'background_image' => '',
       'messages'    => array(
@@ -44,7 +44,7 @@ if (empty($technology_sections)) {
     ),
     array(
       'title'       => __('Aera recommends.', 'aera'),
-      'description' => __('Aera uses real-time data and AI to predict risks and opportunities accurately, then recommends the best course of action.', 'aera'),
+      'description' => __('Aera uses real-time data and AI to predict business risks and opportunities accurately, then recommends the best course of action.', 'aera'),
       'video'       => $assets_base . 'technology-loop-csco.mp4',
       'background_image' => $assets_base . 'technology-truck.jpg',
       'messages'    => array(

@@ -524,6 +524,14 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
           const targetElement = document.querySelector(targetId);
 
           if (targetElement) {
+            // Update URL so refresh keeps you on this skill (preserve category param)
+            const newUrl = window.location.pathname + window.location.search + targetId;
+            if (window.history && window.history.pushState) {
+              window.history.pushState(null, '', newUrl);
+            } else {
+              window.location.hash = targetId;
+            }
+
             const offset = 100; // Adjust for fixed header
             const elementPosition = targetElement.getBoundingClientRect().top;
             const offsetPosition = elementPosition + window.pageYOffset - offset;
