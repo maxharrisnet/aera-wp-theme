@@ -100,7 +100,7 @@ if (empty($technology_sections)) {
 }
 
 $additional_text = function_exists('get_field') ? call_user_func('get_field', 'home_additional_text') : '';
-$additional_text = $additional_text ? $additional_text : __('With Decision Intelligence, your business is agile, scalable, and continuously learning.', 'aera');
+$additional_text = $additional_text ? $additional_text : __('With decision intelligence, your business is agile, scalable, and continuously learning.', 'aera');
 
 $cta = function_exists('get_field') ? (array) call_user_func('get_field', 'home_cta') : array();
 $cta = wp_parse_args(

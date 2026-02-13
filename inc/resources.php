@@ -74,7 +74,7 @@ function get_resource_types(): array
  * @param string|null $slug Request slug.
  * @return string
  */
-function get_active_resource_type(string $slug = null): string
+function get_active_resource_type(?string $slug = null): string
 {
   $slug = $slug ? sanitize_key($slug) : 'all';
   $types = get_resource_types();
@@ -122,12 +122,11 @@ function build_resource_query_args(string $slug, int $paged = 1): array
     'date'           => 'DESC',
   );
 
-  // Order By Menu Order
+  // Order By Menu Order for Case Studies
   if ($slug === 'case-study') {
     $args['orderby'] = array(
-      // 'menu_order'     => 'DESC',
-      // 'meta_value_num' => 'ASC',
-      // 'date'           => 'DESC',
+      'menu_order' => 'ASC',
+      'date'       => 'DESC',
     );
   }
 

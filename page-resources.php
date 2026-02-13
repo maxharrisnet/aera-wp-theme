@@ -31,8 +31,9 @@ if (! $requested_type) {
 $active_slug = get_active_resource_type($requested_type);
 $paged = max(1, get_query_var('paged') ?: get_query_var('page') ?: 1);
 
-// Load ALL resources - filtering will happen on the client-side via JavaScript
-$resource_query = new WP_Query(build_resource_query_args('all', $paged));
+// Load resources - use specific query for case studies to respect menu_order
+$query_slug = ($active_slug === 'case-study') ? 'case-study' : 'all';
+$resource_query = new WP_Query(build_resource_query_args($query_slug, $paged));
 
 $base_url = get_permalink();
 ?>
