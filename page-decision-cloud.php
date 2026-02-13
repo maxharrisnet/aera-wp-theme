@@ -57,7 +57,7 @@ $customers_tile_image = $assets_base . 'images/decision-cloud/customers.jpg';
                   <?php esc_html_e('Explore the Core Components of', 'aera'); ?> <br class="decisioncloud__hiddenXS" /> <?php esc_html_e('Aera Decision Cloud', 'aera'); ?>
                 </div>
                 <div class="decisioncloud__sectionDescription">
-                  <?php esc_html_e('Aera Decision Cloud combines four essential cores that enable Aera to deliver fast decisions and turn them into actions.', 'aera'); ?>
+                  <?php esc_html_e('Aera Decision Cloud combines four essential components that work together to deliver fast, high-quality decisions — and turn them into action.', 'aera'); ?>
                 </div>
               </div>
             </div>

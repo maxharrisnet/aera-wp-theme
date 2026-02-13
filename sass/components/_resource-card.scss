@@ -89,6 +89,7 @@
 		display: block;
 		object-fit: contain;
 		border-radius: inherit;
+		object-fit: cover;
 	}
 
 	&__logoImage {
@@ -336,6 +337,13 @@
 
 		&:hover {
 			text-decoration: none;
+		}
+	}
+
+	&--news,
+	&--report {
+		.resource-card__img {
+			object-fit: contain;
 		}
 	}
 
