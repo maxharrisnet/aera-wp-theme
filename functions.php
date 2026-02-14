@@ -651,6 +651,128 @@ function aera_hide_default_posts_menu()
 add_action('admin_menu', 'aera_hide_default_posts_menu');
 
 /**
+ * ============================================
+ * DISABLE DEFAULT POSTS, COMMENTS & AUTHORS
+ * ============================================
+ * The site uses custom post types exclusively.
+ * Default posts, comments, and author archives are disabled.
+ */
+
+/**
+ * Disable default post type from generating front-end URLs.
+ *
+ * @return void
+ */
+function aera_disable_default_post_type(): void
+{
+  global $wp_post_types;
+
+  if (isset($wp_post_types['post'])) {
+    $wp_post_types['post']->publicly_queryable  = false;
+    $wp_post_types['post']->has_archive         = false;
+    $wp_post_types['post']->rewrite             = false;
+    $wp_post_types['post']->query_var           = false;
+    $wp_post_types['post']->exclude_from_search = true;
+  }
+}
+add_action('init', 'aera_disable_default_post_type', 999);
+
+/**
+ * Redirect any default post, category, tag, date, or author archive pages.
+ *
+ * @return void
+ */
+function aera_redirect_disabled_archives(): void
+{
+  if (is_singular('post') || is_home() || is_category() || is_tag() || is_date()) {
+    wp_redirect(home_url('/'), 301);
+    exit;
+  }
+
+  // Disable author archive pages.
+  if (is_author()) {
+    wp_redirect(home_url('/'), 301);
+    exit;
+  }
+}
+add_action('template_redirect', 'aera_redirect_disabled_archives');
+
+/**
+ * Exclude default posts from Yoast XML sitemap.
+ *
+ * @param bool   $excluded  Whether the post type is excluded.
+ * @param string $post_type The post type slug.
+ * @return bool
+ */
+function aera_exclude_default_posts_from_sitemap(bool $excluded, string $post_type): bool
+{
+  if ($post_type === 'post') {
+    return true;
+  }
+  return $excluded;
+}
+add_filter('wpseo_sitemap_exclude_post_type', 'aera_exclude_default_posts_from_sitemap', 10, 2);
+
+/**
+ * Disable author sitemaps in Yoast.
+ *
+ * @param bool $excluded Whether authors are excluded.
+ * @return bool
+ */
+function aera_disable_author_sitemap(bool $excluded): bool
+{
+  return true;
+}
+add_filter('wpseo_sitemap_exclude_author', 'aera_disable_author_sitemap');
+
+/**
+ * Disable comments across the entire site.
+ *
+ * @return void
+ */
+function aera_disable_comments(): void
+{
+  // Remove comment support from all post types.
+  $post_types = get_post_types(array('public' => true), 'names');
+  foreach ($post_types as $post_type) {
+    remove_post_type_support($post_type, 'comments');
+    remove_post_type_support($post_type, 'trackbacks');
+  }
+}
+add_action('init', 'aera_disable_comments', 100);
+
+// Close comments and pings on the front-end.
+add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+
+// Return empty array for any existing comments.
+add_filter('comments_array', '__return_empty_array', 10, 2);
+
+/**
+ * Remove comments from admin menu and admin bar.
+ *
+ * @return void
+ */
+function aera_remove_comments_admin(): void
+{
+  remove_menu_page('edit-comments.php');
+  remove_submenu_page('options-general.php', 'options-discussion.php');
+}
+add_action('admin_menu', 'aera_remove_comments_admin', 999);
+
+/**
+ * Remove comments link from admin bar.
+ *
+ * @param WP_Admin_Bar $wp_admin_bar The admin bar instance.
+ * @return void
+ */
+function aera_remove_comments_admin_bar(\WP_Admin_Bar $wp_admin_bar): void
+{
+  $wp_admin_bar->remove_node('comments');
+}
+add_action('admin_bar_menu', 'aera_remove_comments_admin_bar', 999);
+
+/**
  * Change Users page post count column to show Blog count instead of default posts
  */
 function aera_modify_user_posts_column($columns)

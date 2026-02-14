@@ -32,13 +32,24 @@ function register_taxonomies(): void
     'media-item',
   );
 
+  // ---------------------------------------------------------------
+  // Taxonomy URL strategy:
+  //
+  // FRONT-END:  skill_function (/skills/{function-slug}/)
+  // ADMIN-ONLY: resource_topic, industry, webinar_solution_area,
+  //             webinar_job_function, skill_category
+  // ---------------------------------------------------------------
+
   $taxonomies = array(
     'resource_topic'    => array(
       'singular' => __('Resource Topic', 'aera'),
       'plural'   => __('Resource Topics', 'aera'),
       'slug'     => 'resource-topic',
       'args'     => array(
-        'hierarchical' => false,
+        'hierarchical'      => false,
+        'public'            => false,
+        'publicly_queryable' => false,
+        'rewrite'           => false,
       ),
       'post_types' => $resourceTypes,
     ),
@@ -47,16 +58,22 @@ function register_taxonomies(): void
       'plural'   => __('Industries', 'aera'),
       'slug'     => 'industry',
       'args'     => array(
-        'hierarchical' => true,
+        'hierarchical'      => true,
+        'public'            => false,
+        'publicly_queryable' => false,
+        'rewrite'           => false,
       ),
-      'post_types' => $resourceTypes, // Already includes webinar
+      'post_types' => $resourceTypes,
     ),
     'webinar_solution_area' => array(
       'singular' => __('Solution Area', 'aera'),
       'plural'   => __('Solution Areas', 'aera'),
       'slug'     => 'webinar-solution-area',
       'args'     => array(
-        'hierarchical' => true,
+        'hierarchical'      => true,
+        'public'            => false,
+        'publicly_queryable' => false,
+        'rewrite'           => false,
       ),
       'post_types' => array('webinar'),
     ),
@@ -65,16 +82,19 @@ function register_taxonomies(): void
       'plural'   => __('Job Functions', 'aera'),
       'slug'     => 'webinar-job-function',
       'args'     => array(
-        'hierarchical' => true,
+        'hierarchical'      => true,
+        'public'            => false,
+        'publicly_queryable' => false,
+        'rewrite'           => false,
       ),
       'post_types' => array('webinar'),
     ),
     'skill_function' => array(
       'singular' => __('Function', 'aera'),
       'plural'   => __('Functions', 'aera'),
-      'slug'     => 'function',
+      'slug'     => 'skills', // Original: /skills/{function-slug}
       'args'     => array(
-        'hierarchical' => true,
+        'hierarchical'      => true,
         'show_admin_column' => false,
       ),
       'post_types' => array('skill'),
@@ -82,10 +102,13 @@ function register_taxonomies(): void
     'skill_category' => array(
       'singular' => __('Skill Category', 'aera'),
       'plural'   => __('Skill Categories', 'aera'),
-      'slug'     => 'category',
+      'slug'     => 'skill-category', // Changed from 'category' to avoid WP default conflict
       'args'     => array(
-        'hierarchical' => true,
+        'hierarchical'      => true,
         'show_admin_column' => true,
+        'public'            => false,
+        'publicly_queryable' => false,
+        'rewrite'           => false,
       ),
       'post_types' => array('skill'),
     ),
@@ -106,15 +129,22 @@ function register_taxonomies(): void
       'menu_name'         => $settings['plural'],
     );
 
+    // Build rewrite — use false if explicitly disabled in args.
+    $rewrite = array(
+      'slug'       => $settings['slug'],
+      'with_front' => false,
+    );
+    if (isset($settings['args']['rewrite']) && $settings['args']['rewrite'] === false) {
+      $rewrite = false;
+    }
+
     $args = array(
-      'labels'            => $labels,
-      'show_admin_column' => true,
-      'rewrite'           => array(
-        'slug'       => $settings['slug'],
-        'with_front' => false,
-      ),
-      'show_in_rest'      => true,
-      'public'            => true,
+      'labels'             => $labels,
+      'show_admin_column'  => true,
+      'rewrite'            => $rewrite,
+      'show_in_rest'       => true,
+      'public'             => true,
+      'publicly_queryable' => true,
     );
 
     $args = array_merge($args, $settings['args']);
