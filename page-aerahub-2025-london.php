@@ -83,8 +83,8 @@ $has_direct_access = isset($_GET['access']) && $_GET['access'] === 'direct';
         </div>
       </header>
 
-      <section class="aerahub-2025-london__section1">
-        <div class="aerahub-2025-london__imgbox" aria-hidden="true"></div>
+      <section class="aerahub-2025-london__section1" style="background-image: url('<?php echo esc_url($assets_2024 . 'HEADER_BG_v001.webp'); ?>');">
+        <div class="aerahub-2025-london__imgbox" style="background-image: url('<?php echo esc_url($assets_2025 . 'londonhubbanner.png'); ?>');" aria-hidden="true"></div>
         <div class="aerahub-2025-london__container">
           <div class="aerahub-2025-london__section1wrapper">
             <div class="aerahub-2025-london__section1lefttext">

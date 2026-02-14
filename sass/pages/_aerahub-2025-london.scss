@@ -2,12 +2,7 @@
 
 /* AERAHUB 2025 LONDON ON-DEMAND PAGE */
 
-body.page-aerahub-2025-london {
-	#headnav,
-	#footer {
-		display: none !important;
-	}
-}
+/* Main site header/footer are now visible on this page */
 
 .aerahub-2025-london {
 	color: #000;
@@ -20,7 +15,6 @@ body.page-aerahub-2025-london {
 		padding-top: 150px;
 		padding-bottom: 50px;
 		width: 100%;
-		background-image: url('assets/images/aerahub2024/HEADER_BG_v001.webp');
 		background-size: cover;
 		background-position: left;
 		position: relative;
@@ -206,7 +200,6 @@ body.page-aerahub-2025-london {
 	}
 
 	&__imgbox {
-		background-image: url('assets/images/aerahub2025/londonhubbanner.png');
 		width: 100%;
 		position: absolute;
 		right: 0;
