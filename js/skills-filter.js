@@ -127,7 +127,7 @@
 	}
 
 	/**
-	 * Category filter: client-side filter by category IDs, update URL with pushState (no reload).
+	 * Category filter: client-side filter by category IDs + search, update URL with pushState (no reload).
 	 */
 	function setupCategoryFilter(filterForm, searchForm, categoryCheckboxes, items) {
 		if (searchForm) {
@@ -142,6 +142,7 @@
 		}
 
 		const hiddenCategories = document.getElementById('skillsFilterCategories');
+		const searchInput = document.querySelector(CONFIG.searchInputSelector);
 
 		function getSelectedCategoryIds() {
 			return categoryCheckboxes
@@ -150,24 +151,36 @@
 				.filter((n) => !Number.isNaN(n));
 		}
 
+		function getSearchTerm() {
+			return searchInput && searchInput.value ? searchInput.value.trim() : '';
+		}
+
 		function getStateFromURLCategories() {
 			const url = new URL(window.location.href);
 			const param = url.searchParams.get(CONFIG.urlCategoriesParam);
-			if (!param) return [];
-			return param
-				.split(',')
-				.map((s) => parseInt(s.trim(), 10))
-				.filter((n) => !Number.isNaN(n));
+			const categoryIds = !param
+				? []
+				: param
+						.split(',')
+						.map((s) => parseInt(s.trim(), 10))
+						.filter((n) => !Number.isNaN(n));
+			const searchTerm = url.searchParams.get(CONFIG.urlSearchParam) || '';
+			return { categoryIds, searchTerm };
 		}
 
-		function updateURLCategories(selectedIds) {
+		function updateURLState(selectedIds, searchTerm) {
 			const url = new URL(window.location.href);
 			if (selectedIds.length === 0) {
 				url.searchParams.delete(CONFIG.urlCategoriesParam);
 			} else {
 				url.searchParams.set(CONFIG.urlCategoriesParam, selectedIds.join(','));
 			}
-			window.history.pushState({ categories: selectedIds }, '', url.toString());
+			if (searchTerm) {
+				url.searchParams.set(CONFIG.urlSearchParam, searchTerm);
+			} else {
+				url.searchParams.delete(CONFIG.urlSearchParam);
+			}
+			window.history.pushState({ categories: selectedIds, search: searchTerm }, '', url.toString());
 		}
 
 		function setCheckboxesFromState(selectedIds) {
@@ -177,6 +190,12 @@
 			});
 			if (hiddenCategories) {
 				hiddenCategories.value = selectedIds.join(',');
+			}
+		}
+
+		function setSearchFromState(searchTerm) {
+			if (searchInput) {
+				searchInput.value = searchTerm || '';
 			}
 		}
 
@@ -196,14 +215,17 @@
 			});
 		}
 
-		function applyCategoryFilter(selectedIds, updateHistory) {
+		function applyCategoryFilter(selectedIds, searchTerm, updateHistory) {
 			if (updateHistory) {
-				updateURLCategories(selectedIds);
+				updateURLState(selectedIds, searchTerm);
 			}
 			setCheckboxesFromState(selectedIds);
+			setSearchFromState(searchTerm);
 
-			const hasFilter = selectedIds.length > 0;
+			const hasCategoryFilter = selectedIds.length > 0;
 			const idSet = new Set(selectedIds);
+			const hasSearch = !!(searchTerm && searchTerm.length);
+			const searchLower = hasSearch ? searchTerm.toLowerCase() : '';
 
 			items.forEach((item) => {
 				const raw = item.getAttribute(CONFIG.itemCategoryIdsAttr) || '';
@@ -211,8 +233,18 @@
 					.split(',')
 					.map((s) => parseInt(s.trim(), 10))
 					.filter((n) => !Number.isNaN(n));
-				const matches = !hasFilter || cardCategoryIds.some((id) => idSet.has(id));
-				if (matches) {
+				const matchesCategory = !hasCategoryFilter || cardCategoryIds.some((id) => idSet.has(id));
+
+				let matchesSearch = true;
+				if (hasSearch) {
+					const titleEl = item.querySelector('.icon-card__title');
+					const excerptEl = item.querySelector('.icon-card__excerpt');
+					const text = ((titleEl ? titleEl.textContent : '') + ' ' + (excerptEl ? excerptEl.textContent : '')).toLowerCase();
+					matchesSearch = text.indexOf(searchLower) !== -1;
+				}
+
+				const shouldShow = matchesCategory && matchesSearch;
+				if (shouldShow) {
 					fadeIn(item);
 				} else {
 					fadeOut(item);
@@ -222,22 +254,35 @@
 			expandHeadersForCheckedCategories();
 		}
 
-		function onCategoryChange() {
+		function onFilterChange(updateHistory) {
 			const selectedIds = getSelectedCategoryIds();
-			applyCategoryFilter(selectedIds, true);
+			const searchTerm = getSearchTerm();
+			applyCategoryFilter(selectedIds, searchTerm, updateHistory);
 		}
 
 		// Initial state from URL
 		const initial = getStateFromURLCategories();
-		applyCategoryFilter(initial, false);
+		applyCategoryFilter(initial.categoryIds, initial.searchTerm, false);
 
 		categoryCheckboxes.forEach((cb) => {
-			cb.addEventListener('change', onCategoryChange);
+			cb.addEventListener('change', function () {
+				onFilterChange(true);
+			});
 		});
+
+		if (searchInput) {
+			let debounceTimer = null;
+			searchInput.addEventListener('input', function () {
+				clearTimeout(debounceTimer);
+				debounceTimer = setTimeout(function () {
+					onFilterChange(true);
+				}, 200);
+			});
+		}
 
 		window.addEventListener('popstate', function () {
 			const state = getStateFromURLCategories();
-			applyCategoryFilter(state, false);
+			applyCategoryFilter(state.categoryIds, state.searchTerm, false);
 		});
 	}
 

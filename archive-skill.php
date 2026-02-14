@@ -86,7 +86,7 @@ $current_sort = isset($_GET['sort']) ? sanitize_text_field(is_array($_GET['sort'
             <div class="skills-filter__search">
               <form role="search" method="get" action="<?php echo esc_url(get_post_type_archive_link('skill')); ?>" id="skillsSearchForm" class="skills-filter__search-form">
                 <div class="skills-filter__search-wrapper">
-                  <input type="search" name="skill_search" placeholder="<?php esc_attr_e('Search skills...', 'aera'); ?>" value="<?php echo esc_attr($current_search); ?>" class="skills-filter__search-input">
+                  <input type="search" name="skill_search" placeholder="<?php esc_attr_e('Search', 'aera'); ?>" value="<?php echo esc_attr($current_search); ?>" class="skills-filter__search-input">
                   <button type="submit" class="skills-filter__search-button" aria-label="<?php esc_attr_e('Search', 'aera'); ?>">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="2" />
@@ -140,21 +140,21 @@ $current_sort = isset($_GET['sort']) ? sanitize_text_field(is_array($_GET['sort'
                           <?php echo esc_html($function->name); ?>
                         </span>
                         <span class="skills-filter__function-icon">
-                            <svg class="skills-filter__icon-plus" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                              <path d="M8 1V15" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                              <path d="M1 8H15" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                            <svg class="skills-filter__icon-minus" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                              <path d="M1 8H15" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                          </span>
+                          <svg class="skills-filter__icon-plus" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M8 1V15" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M1 8H15" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                          <svg class="skills-filter__icon-minus" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path d="M1 8H15" stroke="currentColor" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                          </svg>
+                        </span>
                       </div>
                       <div class="skills-filter__function-skills" id="function-<?php echo esc_attr($function->slug); ?>">
                         <?php foreach ($function_categories as $category) :
                           // Only show categories that have skills (hide_empty handles this, but double-check)
                           $category_count = $category->count;
                           if ($category_count == 0) continue;
-                          
+
                           $is_category_checked = in_array($category->term_id, $current_categories);
                         ?>
                           <label class="skills-filter__skill-item">

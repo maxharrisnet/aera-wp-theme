@@ -122,6 +122,12 @@
 		&::placeholder {
 			color: $color-steelgray;
 		}
+
+		// Hide native search clear (x) so it doesn’t overlap the search icon
+		&::-webkit-search-cancel-button {
+			-webkit-appearance: none;
+			appearance: none;
+		}
 	}
 
 	&__search-form {
@@ -164,9 +170,16 @@
 		}
 	}
 
-	// Functions
+	// Functions (scrollable when many items expanded)
 	&__functions {
 		margin-top: 20px;
+		max-height: calc(100vh - 280px);
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		@media (max-width: $max-1024) {
+			max-height: 50vh;
+		}
 	}
 
 	&__function {
