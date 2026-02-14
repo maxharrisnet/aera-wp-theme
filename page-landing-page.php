@@ -21,6 +21,8 @@ $form_subtitle = get_field('landing_form_subtitle');
 $form_description = get_field('landing_form_description');
 $form_feature_list = get_field('landing_form_features');
 $form_shortcode = get_field('landing_form_shortcode');
+$form_portal_id = get_field('landing_form_portal_id') ?: '4455954'; // Default portal ID
+$form_form_id = get_field('landing_form_id');
 
 $testimonials_title = get_field('landing_testimonials_title');
 $testimonials = get_field('landing_testimonials');
@@ -73,7 +75,7 @@ if (!empty($hero_background_image) && !empty($hero_background_image['url'])) {
       </section>
     <?php endif; ?>
 
-    <?php if (!empty($form_title) || !empty($form_subtitle) || !empty($form_description) || !empty($form_shortcode)) : ?>
+    <?php if (!empty($form_title) || !empty($form_subtitle) || !empty($form_description) || !empty($form_shortcode) || !empty($form_form_id)) : ?>
       <section class="landing-page__formSection" id="landing-form">
         <div class="landing-page__formContainer">
           <div class="landing-page__formLeft">
@@ -102,13 +104,124 @@ if (!empty($hero_background_image) && !empty($hero_background_image['url'])) {
             <?php endif; ?>
           </div>
 
-          <?php if (!empty($form_shortcode)) : ?>
+          <?php if (!empty($form_form_id)) : ?>
+            <div class="landing-page__formRight">
+              <div class="hbspt-form" id="landingHubspotForm"></div>
+            </div>
+          <?php elseif (!empty($form_shortcode)) : ?>
             <div class="landing-page__formRight">
               <?php echo do_shortcode($form_shortcode); ?>
             </div>
           <?php endif; ?>
         </div>
       </section>
+
+      <?php if (!empty($form_form_id)) : ?>
+      <script>
+        (function() {
+          const portalId = '<?php echo esc_js($form_portal_id); ?>';
+          const formId = '<?php echo esc_js($form_form_id); ?>';
+
+          if (!portalId || !formId) {
+            console.error('HubSpot form error: Portal ID or Form ID is missing');
+            return;
+          }
+
+          var hsFormCSS = [
+            '@import url("https://fonts.googleapis.com/css2?family=Gilroy:wght@400;600;700&display=swap");',
+            'body { margin: 0; padding: 0; }',
+            '.hs-form { width: 100%; font-family: "FreightSans Pro", sans-serif; }',
+            '.hs-form h3 { font-family: "Gilroy", sans-serif; font-weight: 700; font-size: 20px; }',
+            '.hs-form fieldset { margin-bottom: 20px; border: none; padding: 0; max-width: 100% !important; }',
+            '.hs-form fieldset .hs-form-field { margin-bottom: 20px; }',
+            '.hs-form fieldset .hs-form-field label { display: block; margin-bottom: 0; font-weight: 350; font-size: 20px; color: #3e424c; }',
+            '.hs-form fieldset .hs-form-field label span.hs-form-required { color: #e74c3c; margin-left: 4px; }',
+            '.hs-form fieldset .hs-form-field .input { position: relative; }',
+            '.hs-form input.hs-input, .hs-form select.hs-input { width: 100% !important; padding: 12px 15px; border: none; border-bottom: 1px solid #1a1a1a; border-radius: 0; font-size: 14px; background-color: transparent; color: #1a1a1a; transition: all 0.3s ease; box-sizing: border-box; }',
+            '.hs-form input.hs-input:focus, .hs-form select.hs-input:focus { border-color: #00619e; outline: none; box-shadow: 0 0 0 3px rgba(0,97,158,0.1); }',
+            '.hs-form input.hs-input.error, .hs-form select.hs-input.error { border-color: #e74c3c; background-color: #fef5f5; }',
+            '.hs-form input.hs-input::placeholder { color: #999; }',
+            '.hs-form .hs-error-msgs { list-style: none; padding: 0; margin: 4px 0 0 0; }',
+            '.hs-form .hs-error-msgs .hs-error-msg { color: #e74c3c; font-size: 14px; font-weight: 500; margin: 0; }',
+            '.hs-form .hs-richtext p { font-family: "FreightSans Pro", sans-serif; font-weight: 350; font-size: 10px; }',
+            '.hs-form .hs_submit { margin-top: 20px; }',
+            '.hs-form .hs_submit .actions { display: flex; gap: 10px; }',
+            '.hs-form .hs_submit input[type="submit"].hs-button { flex: 1; padding: 12px 32px; font-size: 14px; font-weight: 600; border-radius: 50px; border: 3px solid; border-color: rgba(138,196,232,0.5) #dee8fb #e0f9ff; background: rgba(255,255,255,0.5); color: rgba(138,196,232,0.5); cursor: pointer; font-family: "Gilroy", sans-serif; text-transform: uppercase; letter-spacing: 0.025em; transition: 180ms; transition-property: border-color, background-color, color, opacity; min-height: 50px; }',
+            '.hs-form .hs_submit input[type="submit"].hs-button:hover { border-color: #dee8fb rgba(255,255,255,0) rgba(138,196,232,0.5); background-color: #dee8fb; background-image: linear-gradient(rgba(224,249,255,0) 0%, #e0f9ff 90%); }',
+            '.hs-form .hs_submit input[type="submit"].hs-button:active { transform: scale(0.98); }',
+            '.hs-form .hs_submit input[type="submit"].hs-button:disabled { opacity: 0.5; cursor: not-allowed; }',
+            '.hs-form .legal-consent-container { margin-bottom: 20px; }',
+            '.hs-form .legal-consent-container .hs-richtext p { font-family: "FreightSans Pro", sans-serif; font-weight: 350; font-size: 12px; color: #3e424c; line-height: 1.5; margin: 0; }',
+            '.hs-form .legal-consent-container .hs-richtext p a { color: #00619e; text-decoration: none; }',
+            '.hs-form .legal-consent-container .hs-richtext p a:hover { text-decoration: underline; }',
+            '.hs-form .hs_recaptcha { margin-bottom: 20px; }'
+          ].join('\n');
+
+          function injectIframeStyles() {
+            var iframe = document.querySelector('#landingHubspotForm iframe.hs-form-iframe');
+            if (iframe && iframe.contentDocument) {
+              var style = iframe.contentDocument.createElement('style');
+              style.textContent = hsFormCSS;
+              iframe.contentDocument.head.appendChild(style);
+            }
+          }
+
+          function createForm() {
+            if (window.hbspt && window.hbspt.forms) {
+              window.hbspt.forms.create({
+                portalId: portalId,
+                formId: formId,
+                target: '#landingHubspotForm',
+                onFormReady: function() {
+                  var formContainer = document.getElementById('landingHubspotForm');
+                  if (formContainer) {
+                    formContainer.style.opacity = '1';
+                  }
+                  // Inject styles into HubSpot iframe
+                  setTimeout(injectIframeStyles, 100);
+                }
+              });
+            }
+          }
+
+          // Check if script is already loaded
+          if (document.querySelector('script[src*="js.hsforms.net"]')) {
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', createForm);
+            } else {
+              createForm();
+            }
+            return;
+          }
+
+          // Load HubSpot forms script
+          const script = document.createElement('script');
+          script.src = 'https://js.hsforms.net/forms/embed/v2.js';
+          script.charset = 'utf-8';
+          script.type = 'text/javascript';
+          script.async = true;
+
+          script.addEventListener('load', function() {
+            if (window.hbspt && window.hbspt.forms) {
+              if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', createForm);
+              } else {
+                createForm();
+              }
+            } else {
+              console.error('HubSpot forms library failed to load');
+            }
+          });
+
+          script.addEventListener('error', function() {
+            console.error('Failed to load HubSpot forms script');
+          });
+
+          const head = document.head || document.getElementsByTagName('head')[0];
+          head.appendChild(script);
+        })();
+      </script>
+      <?php endif; ?>
     <?php endif; ?>
 
     <?php if (!empty($testimonials)) : ?>

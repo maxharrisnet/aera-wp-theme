@@ -380,6 +380,11 @@ require get_template_directory() . '/inc/faq.php';
 require get_template_directory() . '/inc/acf.php';
 
 /**
+ * ACF Content Analysis for Yoast SEO integration.
+ */
+require get_template_directory() . '/inc/yoast-acf.php';
+
+/**
  * Announcement banner helpers.
  */
 require get_template_directory() . '/inc/banner.php';
