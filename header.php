@@ -42,9 +42,24 @@
             <a class="header__logo" href="<?php echo esc_url(home_url('/')); ?>" rel="home" aria-label="<?php esc_attr_e('Aera Technology', 'aera'); ?>">
               <?php
               $logo = get_theme_mod('custom_logo');
-              $logo_src = $logo ? wp_get_attachment_image_url($logo, 'full') : get_template_directory_uri() . '/assets/images/aera-logo.svg';
-              ?>
-              <img src="<?php echo esc_url($logo_src); ?>" class="header__logoImage" alt="<?php bloginfo('name'); ?>" loading="lazy" width="160" height="36" />
+              if ($logo) {
+                echo wp_get_attachment_image(
+                  $logo,
+                  'logo',
+                  false,
+                  array(
+                    'class'   => 'header__logoImage',
+                    'alt'     => get_bloginfo('name'),
+                    'loading' => 'eager',
+                    'width'   => 240,
+                    'height'  => 102,
+                  )
+                );
+              } else {
+                $logo_src = get_template_directory_uri() . '/assets/images/aera-logo.svg';
+                ?>
+                <img src="<?php echo esc_url($logo_src); ?>" class="header__logoImage" alt="<?php bloginfo('name'); ?>" loading="eager" width="160" height="36" />
+              <?php } ?>
             </a>
             <button class="header__toggle" type="button" data-nav-toggle aria-controls="primary-navigation" aria-expanded="false">
               <span class="header__toggleLine"></span>

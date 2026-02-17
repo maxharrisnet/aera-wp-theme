@@ -50,6 +50,7 @@ function aera_technology_setup()
   // add_image_size('resource_card', 720, 405, true);   // TODO: check if used?
 
   // Project-specific image sizes
+  add_image_size('logo', 480, 204, false); // 2x for 240x102 display (retina)
   // add_image_size('author_image', 120, 120, true);
   add_image_size('resource_card_image', 342, 96);
   add_image_size('webinar_card_image', 333, 180);
