@@ -1,15 +1,12 @@
 <?php
 
 /**
- * ACF Content Analysis for Yoast SEO — field mapping.
+ * Yoast SEO + ACF integration — field mapping.
  *
- * Maps ACF custom fields to Yoast SEO content analysis so that
- * field content is included (or excluded) from readability and
- * keyword scoring.
- *
- * Requires plugin: ACF Content Analysis for Yoast SEO
- *
- * @link https://en-ca.wordpress.org/plugins/acf-content-analysis-for-yoast-seo/
+ * Uses Yoast Premium's built-in custom fields analysis mechanism
+ * (WPSEO_Custom_Fields_Plugin) to include ACF field content in
+ * the Yoast content analysis, plus the ACF Content Analysis plugin
+ * filters as a secondary layer.
  *
  * @package Aera_Technology
  */
@@ -20,220 +17,245 @@ defined('ABSPATH') || exit;
 
 /**
  * =========================================================================
- * FIELD MAP OVERVIEW
+ * FIELD MAP — Yoast Premium Custom Fields (primary mechanism)
  * =========================================================================
  *
- * SCORED (included in Yoast analysis):
- * ─────────────────────────────────────────────────────────────────────────
- * Pages (group_aera_page_hero)
- *   hero_title           text      h1 — main page heading
- *   hero_title_line_two  text      h1 — continuation of page heading
- *   hero_subtitle        text      h2
- *   hero_text            textarea  body text
+ * Yoast Premium reads meta key names from the `wpseo_titles` option
+ * under `page-analyse-extra-{post_type}` and passes them to its JS
+ * analysis plugin. The JS reads the saved meta values and includes
+ * them in real-time content analysis.
  *
- * Blogs (group_aera_blog)
- *   blog_lead            textarea  lead/intro text
- *
- * Press Releases (group_aera_press_release)
- *   press_release_publication  text  publication name
- *
- * Case Studies — Page Content (group_aera_case_study)
- *   case_study_company_name   text      company name
- *   case_study_industry       text      industry/sector
- *   case_study_body_copy      wysiwyg   main body copy
- *   case_study_business_need  wysiwyg   business need description
- *   case_study_short_solution wysiwyg   solution summary
- *   case_study_short_result   wysiwyg   results summary
- *   case_study_challenges     wysiwyg   challenges section
- *   case_study_solution       wysiwyg   solution section
- *   case_study_results        wysiwyg   results section
- *   case_study_top_quote      wysiwyg   featured quote
- *   case_study_quote          wysiwyg   additional quote
- *
- * Skills (group_aera_skill)
- *   skill_description    textarea  skill description
- *   content_sections     repeater  → sub-field "content" (wysiwyg) is scored
- *
- * Resource Card (group_aera_resource_fields) — on all CPTs
- *   resource_card_title  text      card title (keyword-relevant)
- *   resource_excerpt     textarea  card excerpt (also used in case study hero)
- *
- * Home Page (group_aera_home)
- *   home_hero → title       text      h1
- *   home_hero → tagline     text      h2
- *   home_hero → description textarea  body text
- *   home_technology_sections → title       text      h2
- *   home_technology_sections → description textarea  body text
- *   home_technology_sections → messages → text textarea  message text
- *   home_additional_text     textarea  h2 supporting text
- *
- * BLACKLISTED (excluded from Yoast analysis):
- * ─────────────────────────────────────────────────────────────────────────
- * See yoast_acf_blacklist_fields() below for the full list and reasons.
- * Additionally, non-text field types (image, url, true_false, post_object,
- * etc.) are excluded globally via yoast_acf_blacklist_types().
+ * This filter injects the correct ACF meta key names per post type
+ * so no manual Yoast UI configuration is needed.
  * =========================================================================
  */
 
 /**
- * Blacklist specific ACF fields that should NOT be included in
- * Yoast SEO content analysis.
+ * Inject ACF field meta keys into Yoast Premium's custom fields
+ * analysis, keyed by post type.
  *
- * These are fields containing URLs, form IDs, style settings,
- * images, toggles, card-only metadata, or other non-content data.
+ * @param array $options The wpseo_titles option values.
+ * @return array Modified options with custom field names per CPT.
+ */
+function yoast_register_custom_fields_for_analysis($options)
+{
+  // Map of post_type => comma-separated meta key names to analyse.
+  $fields_map = array(
+
+    // ─── Blog ───────────────────────────────────────────────
+    'blog' => implode(',', array(
+      'blog_lead',             // Lead/intro text (textarea)
+      'resource_card_title',   // Card title (text)
+      'resource_excerpt',      // Card excerpt / description (textarea)
+    )),
+
+    // ─── Pages ──────────────────────────────────────────────
+    'page' => implode(',', array(
+      'hero_title',            // Hero <h1> (text)
+      'hero_title_line_two',   // Hero <h1> line 2 (text)
+      'hero_subtitle',         // Hero <h2> (text)
+      'hero_text',             // Hero body text (textarea)
+    )),
+
+    // ─── Press Releases ─────────────────────────────────────
+    'press-release' => implode(',', array(
+      'press_release_publication', // Publication name (text)
+      'resource_card_title',
+      'resource_excerpt',
+    )),
+
+    // ─── Case Studies ───────────────────────────────────────
+    'case-study' => implode(',', array(
+      'case_study_company_name',   // Company name (text)
+      'case_study_industry',       // Industry (text)
+      'case_study_body_copy',      // Main body (wysiwyg)
+      'case_study_business_need',  // Business need (wysiwyg)
+      'case_study_short_solution', // Solution summary (wysiwyg)
+      'case_study_short_result',   // Results summary (wysiwyg)
+      'case_study_challenges',     // Challenges (wysiwyg)
+      'case_study_solution',       // Solution detail (wysiwyg)
+      'case_study_results',        // Results detail (wysiwyg)
+      'case_study_top_quote',      // Featured quote (wysiwyg)
+      'case_study_quote',          // Additional quote (wysiwyg)
+      'resource_card_title',
+      'resource_excerpt',
+    )),
+
+    // ─── Whitepapers ────────────────────────────────────────
+    'whitepaper' => implode(',', array(
+      'resource_card_title',
+      'resource_excerpt',
+    )),
+
+    // ─── Skills ─────────────────────────────────────────────
+    // Note: content_sections is a repeater — sub-field meta keys
+    // use the pattern content_sections_{n}_content. We include
+    // up to 10 rows; extra keys with no data are harmless.
+    'skill' => implode(',', array(
+      'skill_description',
+      'resource_card_title',
+      'resource_excerpt',
+      'content_sections_0_content',
+      'content_sections_1_content',
+      'content_sections_2_content',
+      'content_sections_3_content',
+      'content_sections_4_content',
+      'content_sections_5_content',
+      'content_sections_6_content',
+      'content_sections_7_content',
+      'content_sections_8_content',
+      'content_sections_9_content',
+    )),
+  );
+
+  foreach ($fields_map as $post_type => $field_names) {
+    $option_key = 'page-analyse-extra-' . $post_type;
+
+    // Merge with any manually-configured fields from the Yoast UI.
+    $existing = isset($options[$option_key]) ? trim($options[$option_key]) : '';
+    if (!empty($existing)) {
+      // Avoid duplicates: combine existing + our fields, deduplicate.
+      $all = array_unique(array_filter(array_map('trim', explode(',', $existing . ',' . $field_names))));
+      $options[$option_key] = implode(',', $all);
+    } else {
+      $options[$option_key] = $field_names;
+    }
+  }
+
+  return $options;
+}
+add_filter('option_wpseo_titles', __NAMESPACE__ . '\\yoast_register_custom_fields_for_analysis');
+
+/**
+ * =========================================================================
+ * ACF Content Analysis for Yoast SEO — filter hooks (secondary layer)
+ * =========================================================================
+ *
+ * These filters are for the "ACF Content Analysis for Yoast SEO" plugin.
+ * If installed and working, they refine which ACF fields are scored and
+ * define heading levels. If the plugin is not active, these are harmless.
+ * =========================================================================
+ */
+
+/**
+ * Blacklist specific ACF fields from the ACF Content Analysis plugin.
  *
  * @param object $blacklist_name The blacklist object.
  * @return object
  */
 function yoast_acf_blacklist_fields($blacklist_name)
 {
-  // ─── Page Hero (group_aera_page_hero) ─────────────────────
-  $blacklist_name->add('hero_button_text');    // Button label (UI element)
-  $blacklist_name->add('hero_button_link');    // Button URL
-  $blacklist_name->add('hero_variation');      // Style selector
-  $blacklist_name->add('hero_full_height');    // Layout toggle
+  // Page Hero — UI/style fields
+  $blacklist_name->add('hero_button_text');
+  $blacklist_name->add('hero_button_link');
+  $blacklist_name->add('hero_variation');
+  $blacklist_name->add('hero_full_height');
 
-  // ─── Page CTA (group_aera_page_cta) ───────────────────────
-  // CTA sections repeat sitewide; not unique page content.
-  $blacklist_name->add('cta_title');           // CTA heading
-  $blacklist_name->add('cta_buttons');         // CTA button repeater
+  // Page CTA — sitewide repeated content
+  $blacklist_name->add('cta_title');
+  $blacklist_name->add('cta_buttons');
 
-  // ─── Resource Card (group_aera_resource_fields) ───────────
-  // Author: not used — blogs use WP post author, others use
-  // "Aera Technology" as author by default.
+  // Resource Card — non-content fields
   $blacklist_name->add('resource_author');
-  $blacklist_name->add('resource_card_image'); // Card image (image field)
-  $blacklist_name->add('resource_cta_text');   // CTA button label
-  $blacklist_name->add('resource_external_url'); // External URL
-  $blacklist_name->add('resource_coming_soon'); // Boolean toggle
-  $blacklist_name->add('resource_logo');       // Logo image
+  $blacklist_name->add('resource_card_image');
+  $blacklist_name->add('resource_cta_text');
+  $blacklist_name->add('resource_external_url');
+  $blacklist_name->add('resource_coming_soon');
+  $blacklist_name->add('resource_logo');
 
-  // ─── Press Release (group_aera_press_release) ─────────────
-  $blacklist_name->add('press_release_logo');  // Publication logo image
+  // Press Release
+  $blacklist_name->add('press_release_logo');
 
-  // ─── Case Study — Card Fields (group_aera_case_study) ─────
-  // These fields are for archive card display only, not rendered
-  // on the single case study template.
-  $blacklist_name->add('case_study_type');              // Card label
-  $blacklist_name->add('case_study_company_type');      // Card metadata
-  $blacklist_name->add('case_study_icon');              // Icon/logo image
-  $blacklist_name->add('case_study_employees');         // Card metadata
-  $blacklist_name->add('case_study_revenue');           // Card metadata
-  $blacklist_name->add('case_study_business_problem');  // Card-only excerpt
-  $blacklist_name->add('case_study_business_statement'); // Card-only tagline
-  $blacklist_name->add('case_study_featured_image');    // Image field
+  // Case Study — card-only fields
+  $blacklist_name->add('case_study_type');
+  $blacklist_name->add('case_study_company_type');
+  $blacklist_name->add('case_study_icon');
+  $blacklist_name->add('case_study_employees');
+  $blacklist_name->add('case_study_revenue');
+  $blacklist_name->add('case_study_business_problem');
+  $blacklist_name->add('case_study_business_statement');
+  $blacklist_name->add('case_study_featured_image');
 
-  // ─── Whitepaper (group_aera_whitepaper) ───────────────────
-  $blacklist_name->add('whitepaper_hubspot_form'); // HubSpot form ID
+  // Whitepaper
+  $blacklist_name->add('whitepaper_hubspot_form');
 
-  // ─── Skill (group_aera_skill) ─────────────────────────────
-  $blacklist_name->add('skill_icon');          // Icon selector (URL values)
-  $blacklist_name->add('video_thumbnail');     // Video thumbnail image
-  $blacklist_name->add('video_url');           // Video embed URL
-  $blacklist_name->add('hubspot_form_id');     // HubSpot form ID
+  // Skill — non-content fields
+  $blacklist_name->add('skill_icon');
+  $blacklist_name->add('video_thumbnail');
+  $blacklist_name->add('video_url');
+  $blacklist_name->add('hubspot_form_id');
 
-  // ─── Home Page (group_aera_home) ──────────────────────────
-  $blacklist_name->add('home_cta');            // CTA group (sitewide pattern)
+  // Home Page
+  $blacklist_name->add('home_cta');
 
-  // ─── Repeater / Group Sub-fields ──────────────────────────
-  // These sub-field names appear across multiple repeaters and
-  // groups and should never be scored.
-  $blacklist_name->add('cta_label');           // CTA button label (home hero, tech sections)
-  $blacklist_name->add('cta_link');            // CTA URL (home hero, tech sections)
-  $blacklist_name->add('speaker');             // Message speaker selector
-  $blacklist_name->add('anchor');              // Section anchor ID
-  $blacklist_name->add('link_external');       // URL in CTA button sub-fields
-  $blacklist_name->add('video');               // Video URL in tech sections
+  // Repeater / Group sub-fields — non-content
+  $blacklist_name->add('cta_label');
+  $blacklist_name->add('cta_link');
+  $blacklist_name->add('speaker');
+  $blacklist_name->add('anchor');
+  $blacklist_name->add('link_external');
+  $blacklist_name->add('video');
 
-  // ─── Skill Function Taxonomy (group_skill_function_settings)
-  $blacklist_name->add('related_skill_functions'); // Taxonomy relationship repeater
-
-  // ─── Customer / Partner Fields ────────────────────────────
-  $blacklist_name->add('customer_logo');       // Customer logo image
+  // Taxonomy / relationship fields
+  $blacklist_name->add('related_skill_functions');
+  $blacklist_name->add('customer_logo');
 
   return $blacklist_name;
 }
 add_filter('Yoast\WP\ACF\blacklist_name', __NAMESPACE__ . '\\yoast_acf_blacklist_fields');
 
 /**
- * Blacklist ACF field types that should never contribute text
- * to Yoast SEO content analysis.
+ * Blacklist non-text ACF field types from the ACF Content Analysis plugin.
  *
  * @param object $blacklist_type The blacklist type object.
  * @return object
  */
 function yoast_acf_blacklist_types($blacklist_type)
 {
-  // Visual / media fields
-  $blacklist_type->add('image');
-  $blacklist_type->add('file');
-  $blacklist_type->add('gallery');
+  $types = array(
+    'image', 'file', 'gallery',
+    'url', 'link', 'page_link',
+    'true_false',
+    'post_object', 'relationship', 'taxonomy', 'user',
+    'color_picker', 'google_map', 'button_group',
+    'password', 'date_picker', 'date_time_picker', 'time_picker',
+  );
 
-  // URL / link fields
-  $blacklist_type->add('url');
-  $blacklist_type->add('link');
-  $blacklist_type->add('page_link');
-
-  // Boolean / toggle fields
-  $blacklist_type->add('true_false');
-
-  // Relationship / reference fields
-  $blacklist_type->add('post_object');
-  $blacklist_type->add('relationship');
-  $blacklist_type->add('taxonomy');
-  $blacklist_type->add('user');
-
-  // UI / picker fields
-  $blacklist_type->add('color_picker');
-  $blacklist_type->add('google_map');
-  $blacklist_type->add('button_group');
-  $blacklist_type->add('password');
-  $blacklist_type->add('date_picker');
-  $blacklist_type->add('date_time_picker');
-  $blacklist_type->add('time_picker');
+  foreach ($types as $type) {
+    $blacklist_type->add($type);
+  }
 
   return $blacklist_type;
 }
 add_filter('Yoast\WP\ACF\blacklist_type', __NAMESPACE__ . '\\yoast_acf_blacklist_types');
 
 /**
- * Define heading levels for specific ACF fields.
- *
- * Tells Yoast which fields represent headings so that the
- * heading structure analysis is accurate.
- *
- * Uses ACF field KEYS (not names) per the plugin API.
+ * Define heading levels for ACF fields (ACF Content Analysis plugin).
  *
  * @param array $headlines Existing headline mappings.
  * @return array
  */
 function yoast_acf_headlines($headlines)
 {
-  // ─── Page Hero ────────────────────────────────────────────
-  // hero.php renders hero_title as <h1> and hero_subtitle as <h2>
-  $headlines['field_hero_title']          = 1; // <h1>
-  $headlines['field_hero_title_line_two'] = 1; // Part of <h1>
-  $headlines['field_hero_subtitle']       = 2; // <h2>
+  // Page Hero
+  $headlines['field_hero_title']          = 1;
+  $headlines['field_hero_title_line_two'] = 1;
+  $headlines['field_hero_subtitle']       = 2;
 
-  // ─── Home Page ────────────────────────────────────────────
-  // front-page.php renders title as <h1>, tagline as <h2>,
-  // technology titles as <h2>, additional text as <h2>
-  $headlines['field_home_hero_title']        = 1; // <h1>
-  $headlines['field_home_hero_tagline']      = 2; // <h2>
-  $headlines['field_home_technology_title']  = 2; // <h2>
-  $headlines['field_home_additional_text']   = 2; // <h2>
+  // Home Page
+  $headlines['field_home_hero_title']       = 1;
+  $headlines['field_home_hero_tagline']     = 2;
+  $headlines['field_home_technology_title'] = 2;
+  $headlines['field_home_additional_text']  = 2;
 
   return $headlines;
 }
 add_filter('Yoast\WP\ACF\headlines', __NAMESPACE__ . '\\yoast_acf_headlines');
 
 /**
- * Set the content analysis refresh rate.
+ * Set ACF Content Analysis refresh rate.
  *
- * The default can be aggressive; 1000ms provides a good balance
- * between responsiveness and editor performance.
- *
- * @return int Refresh rate in milliseconds.
+ * @return int Milliseconds.
  */
 function yoast_acf_refresh_rate()
 {

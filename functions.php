@@ -174,6 +174,33 @@ function aera_technology_widgets_init()
 add_action('widgets_init', 'aera_technology_widgets_init');
 
 /**
+ * Get the URL and version for a theme script, preferring the minified build.
+ *
+ * Falls back to the source file in js/ if the minified version doesn't exist
+ * (e.g. before running the build).
+ *
+ * @param string $script_name The script filename without extension (e.g. 'site').
+ * @return array{url: string, version: string} The script URL and version string.
+ */
+function aera_get_script($script_name)
+{
+  $min_path = get_template_directory() . '/assets/js/min/' . $script_name . '.min.js';
+
+  if (file_exists($min_path)) {
+    return array(
+      'url'     => get_template_directory_uri() . '/assets/js/min/' . $script_name . '.min.js',
+      'version' => (string) filemtime($min_path),
+    );
+  }
+
+  $src_path = get_template_directory() . '/js/' . $script_name . '.js';
+  return array(
+    'url'     => get_template_directory_uri() . '/js/' . $script_name . '.js',
+    'version' => file_exists($src_path) ? (string) filemtime($src_path) : _S_VERSION,
+  );
+}
+
+/**
  * Enqueue scripts and styles.
  */
 function aera_technology_scripts()
@@ -191,10 +218,13 @@ function aera_technology_scripts()
     true
   );
 
-  wp_enqueue_script('aera-technology-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
-  wp_enqueue_script('aera-theme-site', get_template_directory_uri() . '/js/site.js', array('gsap'), _S_VERSION, true);
+  $nav = aera_get_script('navigation');
+  wp_enqueue_script('aera-technology-navigation', $nav['url'], array(), $nav['version'], true);
 
-  // Only load the 622KB Three.js background bundle on pages that actually use it
+  $site = aera_get_script('site');
+  wp_enqueue_script('aera-theme-site', $site['url'], array('gsap'), $site['version'], true);
+
+  // Only load the Three.js background bundle on pages that actually use it
   if (aera_is_background_active()) {
     $background_bundle_path = get_template_directory() . '/assets/js/dist/background.js';
     if (file_exists($background_bundle_path)) {
@@ -212,116 +242,52 @@ function aera_technology_scripts()
     wp_enqueue_script('comment-reply');
   }
 
-  // Enqueue Decision Intelligence page scripts and styles
+  // Enqueue Decision Intelligence page scripts
   if (is_page_template('page-what-is-decision-intelligence.php')) {
-    $decision_intelligence_js_path = get_template_directory() . '/js/decision-intelligence.js';
-    if (file_exists($decision_intelligence_js_path)) {
-      wp_enqueue_script(
-        'aera-decision-intelligence',
-        get_template_directory_uri() . '/js/decision-intelligence.js',
-        array(),
-        filemtime($decision_intelligence_js_path),
-        true
-      );
-    }
+    $script = aera_get_script('decision-intelligence');
+    wp_enqueue_script('aera-decision-intelligence', $script['url'], array(), $script['version'], true);
   }
 
   // Enqueue Landing Page scripts
   if (is_page_template('page-landing-page.php')) {
-    $landing_page_js_path = get_template_directory() . '/js/landing-page.js';
-    if (file_exists($landing_page_js_path)) {
-      wp_enqueue_script(
-        'aera-landing-page',
-        get_template_directory_uri() . '/js/landing-page.js',
-        array(),
-        filemtime($landing_page_js_path),
-        true
-      );
-    }
+    $script = aera_get_script('landing-page');
+    wp_enqueue_script('aera-landing-page', $script['url'], array(), $script['version'], true);
   }
 
   // Enqueue Skill Detail page scripts
   if (is_singular('skill')) {
-    $skill_detail_js_path = get_template_directory() . '/js/skill-detail.js';
-    if (file_exists($skill_detail_js_path)) {
-      wp_enqueue_script(
-        'aera-skill-detail',
-        get_template_directory_uri() . '/js/skill-detail.js',
-        array(),
-        filemtime($skill_detail_js_path),
-        true
-      );
-    }
+    $script = aera_get_script('skill-detail');
+    wp_enqueue_script('aera-skill-detail', $script['url'], array(), $script['version'], true);
   }
 
   // Enqueue Skills Video Modal scripts for skill function taxonomy pages
   if (is_tax('skill_function')) {
-    $skills_video_modal_js_path = get_template_directory() . '/js/skills-video-modal.js';
-    if (file_exists($skills_video_modal_js_path)) {
-      wp_enqueue_script(
-        'aera-skills-video-modal',
-        get_template_directory_uri() . '/js/skills-video-modal.js',
-        array(),
-        filemtime($skills_video_modal_js_path),
-        true
-      );
-    }
+    $script = aera_get_script('skills-video-modal');
+    wp_enqueue_script('aera-skills-video-modal', $script['url'], array(), $script['version'], true);
   }
 
   // Enqueue Skills Archive filtering script
   if (is_post_type_archive('skill')) {
-    $skills_filter_js_path = get_template_directory() . '/js/skills-filter.js';
-    if (file_exists($skills_filter_js_path)) {
-      wp_enqueue_script(
-        'aera-skills-filter',
-        get_template_directory_uri() . '/js/skills-filter.js',
-        array(),
-        filemtime($skills_filter_js_path),
-        true
-      );
-    }
+    $script = aera_get_script('skills-filter');
+    wp_enqueue_script('aera-skills-filter', $script['url'], array(), $script['version'], true);
   }
 
   // Enqueue AeraHub 2025 page scripts
   if (is_page_template('page-aerahub-2025.php')) {
-    $aerahub_2025_js_path = get_template_directory() . '/js/aerahub-2025.js';
-    if (file_exists($aerahub_2025_js_path)) {
-      wp_enqueue_script(
-        'aera-aerahub-2025',
-        get_template_directory_uri() . '/js/aerahub-2025.js',
-        array(),
-        filemtime($aerahub_2025_js_path),
-        true
-      );
-    }
+    $script = aera_get_script('aerahub-2025');
+    wp_enqueue_script('aera-aerahub-2025', $script['url'], array(), $script['version'], true);
   }
 
   // Enqueue AeraHub 2025 London On-Demand page scripts
   if (is_page_template('page-aerahub-2025-london.php')) {
-    $aerahub_london_js_path = get_template_directory() . '/js/aerahub-2025-london.js';
-    if (file_exists($aerahub_london_js_path)) {
-      wp_enqueue_script(
-        'aera-aerahub-2025-london',
-        get_template_directory_uri() . '/js/aerahub-2025-london.js',
-        array(),
-        filemtime($aerahub_london_js_path),
-        true
-      );
-    }
+    $script = aera_get_script('aerahub-2025-london');
+    wp_enqueue_script('aera-aerahub-2025-london', $script['url'], array(), $script['version'], true);
   }
 
   // Enqueue Resources page filtering scripts
   if (is_page_template('page-resources.php')) {
-    $resources_filter_js_path = get_template_directory() . '/js/resources-filter.js';
-    if (file_exists($resources_filter_js_path)) {
-      wp_enqueue_script(
-        'aera-resources-filter',
-        get_template_directory_uri() . '/js/resources-filter.js',
-        array(),
-        filemtime($resources_filter_js_path),
-        true
-      );
-    }
+    $script = aera_get_script('resources-filter');
+    wp_enqueue_script('aera-resources-filter', $script['url'], array(), $script['version'], true);
   }
 }
 add_action('wp_enqueue_scripts', 'aera_technology_scripts');

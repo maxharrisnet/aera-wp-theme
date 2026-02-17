@@ -200,15 +200,7 @@ function enqueue_faq_assets(): void
     return;
   }
 
-  $faq_js_path = get_template_directory() . '/js/faq.js';
-  if (file_exists($faq_js_path)) {
-    wp_enqueue_script(
-      'aera-faq',
-      get_template_directory_uri() . '/js/faq.js',
-      array(),
-      filemtime($faq_js_path),
-      true
-    );
-  }
+  $script = aera_get_script('faq');
+  wp_enqueue_script('aera-faq', $script['url'], array(), $script['version'], true);
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\enqueue_faq_assets');
