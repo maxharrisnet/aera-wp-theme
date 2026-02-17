@@ -258,7 +258,7 @@
 		border: 1px solid $color-btn-default;
 		border-radius: $btn-border-radius;
 		text-decoration: none;
-		transition: all $transition-enter ease;
+		transition: background-color $transition-enter ease, background-image $transition-enter ease;
 
 		&:hover {
 			background-color: $color-btn-gradient;

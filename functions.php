@@ -182,27 +182,30 @@ function aera_technology_scripts()
   wp_style_add_data('aera-technology-style', 'rtl', 'replace');
   wp_enqueue_style('aera-theme-components', get_template_directory_uri() . '/assets/css/aera.css', array('aera-technology-style'), _S_VERSION);
 
-  // Enqueue GSAP from CDN (jsDelivr)
+  // Enqueue GSAP from CDN — loaded in footer since its dependents (site.js) also load in footer
   wp_enqueue_script(
     'gsap',
     'https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js',
     array(),
     '3.12.2',
-    false // Load in header so it's available for site.js
+    true
   );
 
   wp_enqueue_script('aera-technology-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true);
   wp_enqueue_script('aera-theme-site', get_template_directory_uri() . '/js/site.js', array('gsap'), _S_VERSION, true);
 
-  $background_bundle_path = get_template_directory() . '/assets/js/dist/background.js';
-  if (file_exists($background_bundle_path)) {
-    wp_enqueue_script(
-      'aera-background',
-      get_template_directory_uri() . '/assets/js/dist/background.js',
-      array(),
-      filemtime($background_bundle_path),
-      true
-    );
+  // Only load the 622KB Three.js background bundle on pages that actually use it
+  if (aera_is_background_active()) {
+    $background_bundle_path = get_template_directory() . '/assets/js/dist/background.js';
+    if (file_exists($background_bundle_path)) {
+      wp_enqueue_script(
+        'aera-background',
+        get_template_directory_uri() . '/assets/js/dist/background.js',
+        array(),
+        filemtime($background_bundle_path),
+        true
+      );
+    }
   }
 
   if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -320,14 +323,108 @@ function aera_technology_scripts()
       );
     }
   }
-
-  // Preload HubSpot forms script on all pages for faster form loading
-  // This prevents the "LOADING" message delay when clicking Schedule Demo buttons
-  add_action('wp_head', function () {
-    echo '<link rel="preload" href="https://js.hsforms.net/forms/embed/v2.js" as="script" crossorigin="anonymous">' . "\n";
-  }, 1);
 }
 add_action('wp_enqueue_scripts', 'aera_technology_scripts');
+
+/**
+ * Determine if the animated background should be active for the current page.
+ *
+ * Mirrors the logic in header.php to avoid loading the 622KB Three.js bundle
+ * on pages that don't use it.
+ *
+ * @return bool
+ */
+function aera_is_background_active()
+{
+  if (
+    is_page_template('page-demo.php') ||
+    is_page_template('page-contact-us.php') ||
+    (is_page() && get_page_template_slug() === 'page-demo.php') ||
+    (is_page() && get_page_template_slug() === 'page-contact-us.php') ||
+    is_page('contact-us') ||
+    is_post_type_archive('partner')
+  ) {
+    return false;
+  }
+
+  if (is_front_page()) {
+    return true;
+  }
+
+  if (
+    is_page_template('page-resources.php') ||
+    is_page_template('page-aerahub-2025.php') ||
+    is_page_template('page-aerahub-2025-london.php') ||
+    is_page_template('page-decision-cloud.php') ||
+    (is_page() && get_page_template_slug() === 'page-resources.php') ||
+    (is_page() && get_page_template_slug() === 'page-aerahub-2025.php') ||
+    (is_page() && get_page_template_slug() === 'page-aerahub-2025-london.php') ||
+    (is_page() && get_page_template_slug() === 'page-decision-cloud.php') ||
+    is_page(array('resources', 'about-us', 'careers', 'webinars', 'aera-decision-cloud', 'test-drive', 'aerahub-2025', 'aerahub-2025-london', 'decision-cloud')) ||
+    is_post_type_archive('webinar') ||
+    is_post_type_archive('event')
+  ) {
+    return true;
+  }
+
+  return false;
+}
+
+/**
+ * Determine if the current page has a HubSpot form.
+ *
+ * @return bool
+ */
+function aera_has_hubspot_form()
+{
+  return is_page_template('page-demo.php') ||
+    is_page_template('page-landing-page.php') ||
+    is_page_template('page-test-drive.php') ||
+    (is_page() && get_page_template_slug() === 'page-demo.php') ||
+    is_tax('skill_function') ||
+    is_post_type_archive('webinar');
+}
+
+/**
+ * Add defer attribute to specific scripts for better performance.
+ *
+ * @param string $tag    The script tag HTML.
+ * @param string $handle The script handle.
+ * @param string $src    The script source URL.
+ * @return string Modified script tag.
+ */
+function aera_script_loader_tag($tag, $handle, $src)
+{
+  $defer_handles = array('gsap', 'aera-technology-navigation', 'aera-theme-site', 'aera-background');
+
+  if (in_array($handle, $defer_handles, true)) {
+    $tag = str_replace(' src=', ' defer src=', $tag);
+  }
+
+  return $tag;
+}
+add_filter('script_loader_tag', 'aera_script_loader_tag', 10, 3);
+
+/**
+ * Add resource hints for performance: preconnect, dns-prefetch, and font preloading.
+ * Also conditionally preloads HubSpot forms script only on pages that use forms.
+ */
+function aera_resource_hints()
+{
+  $theme_uri = get_template_directory_uri();
+  ?>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//js.hsforms.net">
+  <link rel="preload" href="<?php echo esc_url($theme_uri . '/assets/fonts/FreightSans-Pro-Book.woff2'); ?>" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="<?php echo esc_url($theme_uri . '/assets/fonts/Gilroy-Semibold.woff2'); ?>" as="font" type="font/woff2" crossorigin>
+  <?php
+  if (aera_has_hubspot_form()) {
+    echo '<link rel="preconnect" href="https://js.hsforms.net" crossorigin>' . "\n";
+    echo '<link rel="preload" href="https://js.hsforms.net/forms/embed/v2.js" as="script" crossorigin="anonymous">' . "\n";
+  }
+}
+add_action('wp_head', 'aera_resource_hints', 1);
 
 /**
  * Implement the Custom Header feature.
@@ -383,6 +480,11 @@ require get_template_directory() . '/inc/acf.php';
  * ACF Content Analysis for Yoast SEO integration.
  */
 require get_template_directory() . '/inc/yoast-acf.php';
+
+/**
+ * Head meta and favicons (match original site).
+ */
+require get_template_directory() . '/inc/head-meta.php';
 
 /**
  * Announcement banner helpers.

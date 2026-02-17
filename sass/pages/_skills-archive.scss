@@ -302,7 +302,7 @@
 		border: 1px solid $color-link;
 		border-radius: 4px;
 		cursor: pointer;
-		transition: all $transition-enter ease;
+		transition: background-color $transition-enter ease, border-color $transition-enter ease;
 
 		&:hover {
 			background-color: color.adjust($color-link, $lightness: -10%);
@@ -325,7 +325,7 @@
 		border-radius: 4px;
 		text-decoration: none;
 		display: block;
-		transition: all $transition-enter ease;
+		transition: color $transition-enter ease, border-color $transition-enter ease;
 
 		&:hover {
 			color: $color-codgray;
@@ -547,7 +547,7 @@
 		border: 1px solid $color-aluminium;
 		border-radius: 6px;
 		text-decoration: none;
-		transition: all $transition-enter ease;
+		transition: background-color $transition-enter ease, border-color $transition-enter ease, color $transition-enter ease;
 
 		&:hover {
 			background-color: $color-btn-background;

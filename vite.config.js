@@ -1,12 +1,12 @@
 import { defineConfig } from 'vite';
 import path from 'path';
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   publicDir: false,
   build: {
     outDir: 'assets/js/dist',
     emptyOutDir: false,
-    sourcemap: true,
+    sourcemap: mode !== 'production',
     rollupOptions: {
       input: {
         background: path.resolve(__dirname, 'src/background/index.js'),
@@ -19,4 +19,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));

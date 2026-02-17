@@ -546,7 +546,7 @@ body:has(.landing-page) {
 			font-size: 14px;
 			background-color: transparent;
 			color: $color-codgray;
-			transition: all 0.3s ease;
+			transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 			box-sizing: border-box;
 
 			&:focus {

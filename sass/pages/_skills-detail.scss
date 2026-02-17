@@ -92,7 +92,7 @@
 		text-transform: uppercase;
 		letter-spacing: 0.025em;
 		border-bottom: 3px solid transparent;
-		transition: all $transition-enter ease;
+		transition: color $transition-enter ease, border-bottom-color $transition-enter ease;
 
 		&:hover {
 			color: $color-link;
@@ -484,7 +484,7 @@
 		border: 1px solid $color-link;
 		border-radius: 20px;
 		cursor: pointer;
-		transition: all $transition-enter ease;
+		transition: background-color $transition-enter ease, color $transition-enter ease;
 
 		&:hover {
 			background-color: $color-link;

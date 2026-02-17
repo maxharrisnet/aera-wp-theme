@@ -13,7 +13,7 @@
 
 <head>
   <meta charset="<?php bloginfo('charset'); ?>">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="profile" href="https://gmpg.org/xfn/11">
 
   <?php wp_head(); ?>
@@ -23,38 +23,10 @@
   <?php
   wp_body_open();
   $background_classes = 'background';
-  $background_active = false;
+  $background_active = aera_is_background_active();
 
-  // Determine if background should be active based on WordPress conditionals
-  $background_active = false;
-
-  // Explicitly exclude demo, contact-us, and partners pages
-  if (
-    is_page_template('page-demo.php') ||
-    is_page_template('page-contact-us.php') ||
-    (is_page() && get_page_template_slug() === 'page-demo.php') ||
-    (is_page() && get_page_template_slug() === 'page-contact-us.php') ||
-    is_page('contact-us') ||
-    is_post_type_archive('partner')
-  ) {
-    $background_active = false;
-  } elseif (is_front_page()) {
-    $background_active = true;
+  if ($background_active && is_front_page()) {
     $background_classes .= ' isHome';
-  } elseif (
-    is_page_template('page-resources.php') ||
-    is_page_template('page-aerahub-2025.php') ||
-    is_page_template('page-aerahub-2025-london.php') ||
-    is_page_template('page-decision-cloud.php') ||
-    (is_page() && get_page_template_slug() === 'page-resources.php') ||
-    (is_page() && get_page_template_slug() === 'page-aerahub-2025.php') ||
-    (is_page() && get_page_template_slug() === 'page-aerahub-2025-london.php') ||
-    (is_page() && get_page_template_slug() === 'page-decision-cloud.php') ||
-    is_page(array('resources', 'about-us', 'careers', 'webinars', 'aera-decision-cloud', 'test-drive', 'aerahub-2025', 'aerahub-2025-london', 'decision-cloud')) ||
-    is_post_type_archive('webinar') ||
-    is_post_type_archive('event')
-  ) {
-    $background_active = true;
   }
   ?>
   <div id="app" class="site">
