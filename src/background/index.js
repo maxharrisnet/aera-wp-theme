@@ -11,8 +11,16 @@ const initBackground = () => {
   window.aeraBackground = new BackgroundController(container);
 };
 
+const deferInit = () => {
+  if (typeof requestIdleCallback === 'function') {
+    requestIdleCallback(initBackground, { timeout: 2000 });
+  } else {
+    setTimeout(initBackground, 200);
+  }
+};
+
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initBackground, { once: true });
+  document.addEventListener('DOMContentLoaded', deferInit, { once: true });
 } else {
-  initBackground();
+  deferInit();
 }

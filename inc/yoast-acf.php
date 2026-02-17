@@ -49,12 +49,24 @@ function yoast_register_custom_fields_for_analysis($options)
       'resource_excerpt',      // Card excerpt / description (textarea)
     )),
 
-    // ─── Pages ──────────────────────────────────────────────
+    // ─── Pages (including front-page) ──────────────────────
     'page' => implode(',', array(
       'hero_title',            // Hero <h1> (text)
       'hero_title_line_two',   // Hero <h1> line 2 (text)
       'hero_subtitle',         // Hero <h2> (text)
       'hero_text',             // Hero body text (textarea)
+      'home_additional_text',  // Home supporting text (textarea)
+      // Home technology sections repeater (up to 5 rows)
+      'home_technology_sections_0_title',
+      'home_technology_sections_0_description',
+      'home_technology_sections_1_title',
+      'home_technology_sections_1_description',
+      'home_technology_sections_2_title',
+      'home_technology_sections_2_description',
+      'home_technology_sections_3_title',
+      'home_technology_sections_3_description',
+      'home_technology_sections_4_title',
+      'home_technology_sections_4_description',
     )),
 
     // ─── Press Releases ─────────────────────────────────────
@@ -119,6 +131,31 @@ function yoast_register_custom_fields_for_analysis($options)
       $options[$option_key] = implode(',', $all);
     } else {
       $options[$option_key] = $field_names;
+    }
+  }
+
+  /**
+   * Meta description fallback templates.
+   *
+   * Uses Yoast's %%cf_<field>%% replacement variable to pull from ACF fields
+   * when no per-page meta description is set. Only injects a template if one
+   * is not already configured.
+   *
+   * Note: These are fallbacks. The homepage and key pages should still get
+   * hand-written meta descriptions via the Yoast meta box.
+   */
+  $metadesc_templates = array(
+    'metadesc-page'          => '%%cf_hero_text%%',
+    'metadesc-blog'          => '%%cf_blog_lead%%',
+    'metadesc-case-study'    => '%%cf_resource_excerpt%%',
+    'metadesc-press-release' => '%%cf_resource_excerpt%%',
+    'metadesc-whitepaper'    => '%%cf_resource_excerpt%%',
+    'metadesc-skill'         => '%%cf_skill_description%%',
+  );
+
+  foreach ($metadesc_templates as $key => $template) {
+    if (empty($options[$key])) {
+      $options[$key] = $template;
     }
   }
 

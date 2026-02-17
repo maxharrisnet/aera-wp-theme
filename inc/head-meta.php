@@ -47,35 +47,27 @@ function aera_output_head_meta()
 add_action('wp_head', __NAMESPACE__ . '\\aera_output_head_meta', 2);
 
 /**
- * Output Organization JSON-LD on front page to match original site.
+ * Enhance Yoast's Organization schema with address data.
+ *
+ * Instead of outputting a duplicate Organization JSON-LD block,
+ * we hook into Yoast's schema graph and add the address to the
+ * existing Organization piece. This avoids duplicate schemas.
+ *
+ * @param array $data The Organization schema data.
+ * @return array
  */
-function aera_output_organization_schema()
+function aera_enhance_yoast_organization_schema($data)
 {
-  if (! is_front_page()) {
-    return;
-  }
-
-  $home = 'https://www.aeratechnology.com';
-  $schema = array(
-    '@context'    => 'http://www.schema.org',
-    '@type'       => 'Organization',
-    'name'        => 'Aera Technology',
-    'url'         => trailingslashit($home),
-    'logo'        => $home . '/aera-logo.svg',
-    'image'       => $home . '/aera-logo.svg',
-    'description' => 'Aera Technology is the Decision Intelligence company that makes business agility happen. In the era of digital acceleration, Aera helps enterprises around the world transform how they respond to the ever-changing environment',
-    'address'     => array(
-      array(
-        '@type'           => 'PostalAddress',
-        'streetAddress'   => 'Aera Technology Headquarter, 707 California Street Mountain View, CA 94041',
-        'addressLocality' => 'Mountain View',
-        'addressRegion'   => 'California',
-        'postalCode'      => '94041',
-        'addressCountry'  => 'United States of America',
-        'telephone'       => '+1 408-524-2222',
-      ),
-    ),
+  $data['address'] = array(
+    '@type'           => 'PostalAddress',
+    'streetAddress'   => '707 California Street',
+    'addressLocality' => 'Mountain View',
+    'addressRegion'   => 'CA',
+    'postalCode'      => '94041',
+    'addressCountry'  => 'US',
+    'telephone'       => '+1 408-524-2222',
   );
-  echo '<script type="application/ld+json">' . "\n" . wp_json_encode($schema) . "\n" . '</script>' . "\n";
+
+  return $data;
 }
-add_action('wp_head', __NAMESPACE__ . '\\aera_output_organization_schema', 5);
+add_filter('wpseo_schema_organization', __NAMESPACE__ . '\\aera_enhance_yoast_organization_schema');

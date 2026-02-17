@@ -54,7 +54,7 @@
     "dev:scripts": "vite build --watch --mode development --config vite.config.scripts.js",
     "build": "npm run clean:dsstore && npm run build:css && npm run build:js && npm run build:scripts",
     "build:prod": "npm run clean:dsstore && npm run build:css && npm run build:js && npm run build:scripts",
-    "build:css": "sass sass/aera.scss:assets/css/aera.css --style=compressed --no-source-map && stylelint 'assets/css/*.css' --fix || true",
+    "build:css": "sass sass/aera.scss:assets/css/aera.css --style=compressed --no-source-map",
     "build:js": "vite build --mode production --config vite.config.js",
     "build:scripts": "vite build --mode production --config vite.config.scripts.js",
     "watch": "concurrently \"npm run watch:css\" \"npm run watch:js\" \"npm run watch:scripts\" --names \"SASS,BG,JS\" --prefix-colors \"cyan,green,yellow\"",
