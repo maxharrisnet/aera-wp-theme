@@ -485,7 +485,13 @@ body:has(.landing-page) {
 	.hbspt-form {
 		width: 100%;
 
-		// HubSpot inline form styles
+		// HubSpot can render the form either inline (markup injected here)
+		// or inside an iframe (shortcode/embed produces an iframe). When
+		// the form is rendered inside an iframe the internal markup cannot
+		// be styled from the parent document — we can only style the iframe
+		// element and wrapper. The rules below cover both cases:
+		//  - `.hs-form` matches when HubSpot injects the form inline
+		//  - `iframe.hs-form-iframe` matches when HubSpot uses an iframe
 		.hs-form-iframe,
 		.hs-form {
 			width: 100%;
@@ -503,11 +509,13 @@ body:has(.landing-page) {
 			}
 		}
 
-		// Iframe fallback styles
+		// When HubSpot renders into an iframe we can style the iframe element
+		// itself to keep layout consistent. The actual inputs inside the
+		// iframe remain out-of-scope for parent CSS.
 		&[data-hs-forms-root='true'] {
 			iframe.hs-form-iframe {
 				width: 100%;
-				border: none;
+				border: 3px solid red;
 				display: block;
 				min-height: 300px;
 			}
@@ -546,7 +554,7 @@ body:has(.landing-page) {
 			font-size: 14px;
 			background-color: transparent;
 			color: $color-codgray;
-			transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+			transition: all 0.3s ease;
 			box-sizing: border-box;
 
 			&:focus {

@@ -175,7 +175,7 @@
       "label": "HubSpot Portal ID",
       "name": "landing_form_portal_id",
       "type": "text",
-      "instructions": "HubSpot portal ID. Defaults to 4455954 if empty.",
+      "instructions": "Defaults to 4455954 if empty.",
       "required": 0,
       "default_value": "4455954",
       "wrapper": {
@@ -187,7 +187,7 @@
       "label": "HubSpot Form ID",
       "name": "landing_form_id",
       "type": "text",
-      "instructions": "HubSpot form GUID. When provided, renders form inline (recommended). Find this in HubSpot under Marketing > Forms > Form Details.",
+      "instructions": "Form GUID from HubSpot. When set, renders inline with styles (recommended).",
       "required": 0,
       "wrapper": {
         "width": "50"
@@ -195,10 +195,10 @@
     },
     {
       "key": "field_landing_form_shortcode",
-      "label": "HubSpot Form Shortcode (Legacy)",
+      "label": "HubSpot Form Shortcode (fallback)",
       "name": "landing_form_shortcode",
       "type": "textarea",
-      "instructions": "Legacy fallback. Only used if Form ID above is empty. Note: shortcodes may render in iframe and cannot be styled.",
+      "instructions": "Paste the HubSpot form shortcode here.",
       "required": 0,
       "rows": 3,
       "new_lines": "",
