@@ -108,27 +108,28 @@ if (empty($card_image_att) && empty($card_image_url)) {
 }
 
 // Get logo from ACF - check both resource_logo and customer_logo
-// Get logo from ACF - check both resource_logo and customer_logo
 $logo_url = '';
-$logo_data = null;
+$logo_att = null;
 if (!$is_demo && function_exists('get_field')) {
   // First check for resource_logo (standard resource field)
   $logo_data = get_field('resource_logo', $post_id);
   if ($logo_data && is_array($logo_data)) {
     $att = $logo_data['ID'] ?? $logo_data['id'] ?? null;
     if ($att) {
-      $logo_url = wp_get_attachment_image_url($att, 'resource_card_image');
+      $logo_att = (int) $att;
+      $logo_url = wp_get_attachment_image_url($att, 'card_logo');
     } else {
       $logo_url = $logo_data['url'] ?? '';
     }
   }
   // If no resource_logo and post type is customer, check customer_logo
-  if (empty($logo_url) && $post_type === 'customer') {
+  if (empty($logo_url) && empty($logo_att) && $post_type === 'customer') {
     $customer_logo = get_field('customer_logo', $post_id);
     if ($customer_logo && is_array($customer_logo)) {
       $att = $customer_logo['ID'] ?? $customer_logo['id'] ?? null;
       if ($att) {
-        $logo_url = wp_get_attachment_image_url($att, 'resource_card_image');
+        $logo_att = (int) $att;
+        $logo_url = wp_get_attachment_image_url($att, 'card_logo');
       } else {
         $logo_url = $customer_logo['url'] ?? '';
       }
@@ -173,23 +174,35 @@ foreach ($link_attrs as $attr => $value) {
               <?php
               if (! empty($card_image_att)) {
                 echo wp_get_attachment_image((int) $card_image_att, 'resource_card_image', false, array(
-                  'class' => 'resource-card__img resource-card__bgImage',
-                  'alt'   => esc_attr($title),
-                  'loading' => 'lazy',
+                  'class'    => 'resource-card__img resource-card__bgImage',
+                  'alt'      => esc_attr($title),
+                  'loading'  => 'lazy',
+                  'decoding' => 'async',
                 ));
               } else {
-                echo '<img class="resource-card__img resource-card__bgImage" src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy" />';
+                echo '<img class="resource-card__img resource-card__bgImage" src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy" decoding="async" />';
               }
               ?>
             </div>
           <?php elseif ($has_logo) : ?>
             <div class="resource-card__logoImage resource-card__imageBorder">
-              <img class="resource-card__logo" src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($title); ?>" />
+              <?php
+              if ($logo_att) {
+                echo wp_get_attachment_image($logo_att, 'card_logo', false, array(
+                  'class'    => 'resource-card__logo',
+                  'alt'      => esc_attr($title),
+                  'loading'  => 'lazy',
+                  'decoding' => 'async',
+                ));
+              } else {
+                echo '<img class="resource-card__logo" src="' . esc_url($logo_url) . '" alt="' . esc_attr($title) . '" loading="lazy" decoding="async" />';
+              }
+              ?>
             </div>
           <?php elseif (!empty($fallback_media['url'])) : ?>
             <?php if (!empty($fallback_media['is_logo'])) : ?>
               <div class="resource-card__logoImage resource-card__imageBorder">
-                <img class="resource-card__logo" src="<?php echo esc_url($fallback_media['url']); ?>" alt="<?php echo esc_attr($title); ?>" />
+                <img class="resource-card__logo" src="<?php echo esc_url($fallback_media['url']); ?>" alt="<?php echo esc_attr($title); ?>" loading="lazy" decoding="async" />
               </div>
             <?php else : ?>
               <div class="resource-card__bgImage resource-card__imageBorder" style="background-image: url(<?php echo esc_url($fallback_media['url']); ?>);"></div>

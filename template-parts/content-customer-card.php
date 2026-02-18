@@ -141,9 +141,9 @@ if (isset($args['link'])) {
         <?php
         $att = $hero_image_data['ID'] ?? $hero_image_data['id'] ?? null;
         if ($att) {
-          echo wp_get_attachment_image($att, 'webinar_card_image', false, array('alt' => 'companyImage', 'class' => 'feature-card__image', 'loading' => 'lazy'));
+          echo wp_get_attachment_image($att, 'webinar_card_image', false, array('alt' => 'companyImage', 'class' => 'feature-card__image', 'loading' => 'lazy', 'decoding' => 'async'));
         } else {
-          echo '<img src="' . esc_url($hero_image_url) . '" alt="companyImage" class="feature-card__image" loading="lazy" />';
+          echo '<img src="' . esc_url($hero_image_url) . '" alt="companyImage" class="feature-card__image" loading="lazy" decoding="async" />';
         }
         ?>
       </div>
@@ -155,9 +155,9 @@ if (isset($args['link'])) {
           <?php
           $att = $logo_data['ID'] ?? $logo_data['id'] ?? null;
           if ($att) {
-            echo wp_get_attachment_image($att, 'webinar_card_image', false, array('alt' => 'companyLogo', 'class' => 'feature-card__logo', 'loading' => 'lazy'));
+            echo wp_get_attachment_image($att, 'card_logo', false, array('alt' => 'companyLogo', 'class' => 'feature-card__logo', 'loading' => 'lazy', 'decoding' => 'async'));
           } else {
-            echo '<img src="' . esc_url($logo_url) . '" alt="companyLogo" class="feature-card__logo" loading="lazy" />';
+            echo '<img src="' . esc_url($logo_url) . '" alt="companyLogo" class="feature-card__logo" loading="lazy" decoding="async" />';
           }
           ?>
         </div>
@@ -202,11 +202,11 @@ if (isset($args['link'])) {
                 <a href="<?php echo esc_url($asset['url']); ?>" target="_blank" rel="noopener noreferrer"><?php echo esc_html($asset_cta); ?></a>
                 <?php if ($has_watch) : ?>
                   <a href="<?php echo esc_url($asset['url']); ?>" target="_blank" rel="noopener noreferrer">
-                    <img alt="Watch Now" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/watchnow.png'); ?>" class="feature-card__playReadBtn" />
+                    <img alt="Watch Now" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/icons/watchnow.png'); ?>" class="feature-card__playReadBtn" width="24" height="24" loading="lazy" decoding="async" />
                   </a>
                 <?php elseif ($has_read) : ?>
                   <a href="<?php echo esc_url($asset['url']); ?>" target="_blank" rel="noopener noreferrer">
-                    <img alt="Read Now" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/customers/icons/readnow.png'); ?>" class="feature-card__playReadBtn" />
+                    <img alt="Read Now" src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/customers/icons/readnow.png'); ?>" class="feature-card__playReadBtn" width="24" height="24" loading="lazy" decoding="async" />
                   </a>
                 <?php endif; ?>
               </div>

@@ -111,12 +111,14 @@ get_header();
               $title = get_field("icon_{$i}_title");
               $description = get_field("icon_{$i}_description");
 
-              // Handle both image array (old) and URL string (new select field)
+              // Handle both image array (ACF image field) and URL string (select field)
               $icon_url = '';
               $icon_alt = $title;
+              $icon_att = null;
               if ($icon) {
                 if (is_array($icon)) {
-                  $icon_url = $icon['url'];
+                  $icon_att = $icon['ID'] ?? $icon['id'] ?? null;
+                  $icon_url = $icon['url'] ?? '';
                   $icon_alt = $icon['alt'] ?: $title;
                 } else {
                   $icon_url = $icon;
@@ -126,9 +128,19 @@ get_header();
               if ($title) :
             ?>
                 <div class="skills-home__icon-item">
-                  <?php if ($icon_url) : ?>
+                  <?php if ($icon_att || $icon_url) : ?>
                     <div class="skills-home__icon-image">
-                      <img src="<?php echo esc_url($icon_url); ?>" alt="<?php echo esc_attr($icon_alt); ?>" />
+                      <?php
+                      if ($icon_att) {
+                        echo wp_get_attachment_image((int) $icon_att, 'thumbnail', false, array(
+                          'alt'      => esc_attr($icon_alt),
+                          'loading'  => 'lazy',
+                          'decoding' => 'async',
+                        ));
+                      } else {
+                        echo '<img src="' . esc_url($icon_url) . '" alt="' . esc_attr($icon_alt) . '" loading="lazy" decoding="async" />';
+                      }
+                      ?>
                     </div>
                   <?php endif; ?>
                   <h3 class="skills-home__icon-item-title"><?php echo esc_html($title); ?></h3>

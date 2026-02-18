@@ -54,6 +54,8 @@ function aera_technology_setup()
   // add_image_size('author_image', 120, 120, true);
   add_image_size('resource_card_image', 342, 96);
   add_image_size('webinar_card_image', 333, 180);
+  add_image_size('webinar_featured', 800, 450, true);
+  add_image_size('card_logo', 150, 150, false);
   add_image_size('blog_hero', 890, 0);
   add_image_size('skill_hero', 738, 0);
 
@@ -379,7 +381,7 @@ add_filter('script_loader_tag', 'aera_script_loader_tag', 10, 3);
 function aera_resource_hints()
 {
   $theme_uri = get_template_directory_uri();
-  ?>
+?>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
   <link rel="dns-prefetch" href="//js.hsforms.net">
@@ -625,7 +627,7 @@ function aera_add_icon_preview($field)
     return;
   }
 
-?>
+  ?>
   <style>
     .acf-field[data-name="<?php echo esc_attr($field['name']); ?>"] .icon-preview-container {
       display: flex;

@@ -62,7 +62,7 @@ if ($resource_card_image && !empty($resource_card_image['url'])) {
 } else {
   $thumbnail_id = get_post_thumbnail_id($post_id);
   if ($thumbnail_id) {
-    $thumbnail = wp_get_attachment_image_src($thumbnail_id, 'large');
+    $thumbnail = wp_get_attachment_image_src($thumbnail_id, 'webinar_featured');
     if ($thumbnail) {
       $image_url = $thumbnail[0];
     }
@@ -98,16 +98,22 @@ if ($resource_card_image && !empty($resource_card_image['url'])) {
   <?php if ($resource_card_image || $image_url) : ?>
     <div class="news__featuredEventsImage">
       <?php
-      // Prefer ACF attachment ID so WP can output srcset for the requested size
+      $att_id = null;
       if (!empty($resource_card_image) && is_array($resource_card_image)) {
         $att_id = $resource_card_image['ID'] ?? $resource_card_image['id'] ?? null;
-        if ($att_id) {
-          echo wp_get_attachment_image($att_id, 'large', false, array('alt' => $title, 'loading' => 'lazy'));
-        } else {
-          echo '<img src="' . esc_url($resource_card_image['url']) . '" alt="' . esc_attr($title) . '" loading="lazy" />';
-        }
-      } else {
-        echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy" />';
+      } elseif ($image_url) {
+        $att_id = get_post_thumbnail_id($post_id) ?: null;
+      }
+      if ($att_id) {
+        echo wp_get_attachment_image((int) $att_id, 'webinar_featured', false, array(
+          'alt'      => esc_attr($title),
+          'loading'  => 'lazy',
+          'decoding' => 'async',
+        ));
+      } elseif (!empty($resource_card_image) && is_array($resource_card_image) && !empty($resource_card_image['url'])) {
+        echo '<img src="' . esc_url($resource_card_image['url']) . '" alt="' . esc_attr($title) . '" loading="lazy" decoding="async" />';
+      } elseif ($image_url) {
+        echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy" decoding="async" />';
       }
       ?>
     </div>

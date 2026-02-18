@@ -106,6 +106,8 @@ function register_taxonomies(): void
       'args'     => array(
         'hierarchical'      => true,
         'show_admin_column' => true,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
         'public'            => false,
         'publicly_queryable' => false,
         'rewrite'           => false,

@@ -164,14 +164,16 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                               aria-label="<?php esc_attr_e('Play video', 'aera'); ?>">
                               <?php
                               $thumb_alt = ! empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title . ' video';
-                              // Prefer using attachment ID so WP can serve the registered size
                               $attachment_id = $video_thumbnail['ID'] ?? $video_thumbnail['id'] ?? null;
                               if ($attachment_id) {
-                                echo wp_get_attachment_image($attachment_id, 'skill_hero', false, array('alt' => $thumb_alt));
+                                echo wp_get_attachment_image($attachment_id, 'skill_hero', false, array(
+                                  'alt'      => $thumb_alt,
+                                  'loading'  => 'lazy',
+                                  'decoding' => 'async',
+                                ));
                               } else {
-                                // Fallback to a sized URL if ACF provides sizes, else use original URL
                                 $src = $video_thumbnail['sizes']['skill_hero'] ?? $video_thumbnail['sizes']['medium'] ?? $video_thumbnail['url'];
-                                echo '<img src="' . esc_url($src) . '" alt="' . esc_attr($thumb_alt) . '" />';
+                                echo '<img src="' . esc_url($src) . '" alt="' . esc_attr($thumb_alt) . '" loading="lazy" decoding="async" />';
                               }
                               ?>
                               <span class="skill-content__video-play-icon">
@@ -186,10 +188,14 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                             $thumb_alt = ! empty($video_thumbnail['alt']) ? $video_thumbnail['alt'] : $skill->post_title;
                             $attachment_id = $video_thumbnail['ID'] ?? $video_thumbnail['id'] ?? null;
                             if ($attachment_id) {
-                              echo wp_get_attachment_image($attachment_id, 'skill_hero', false, array('alt' => $thumb_alt));
+                              echo wp_get_attachment_image($attachment_id, 'skill_hero', false, array(
+                                'alt'      => $thumb_alt,
+                                'loading'  => 'lazy',
+                                'decoding' => 'async',
+                              ));
                             } else {
                               $src = $video_thumbnail['sizes']['skill_hero'] ?? $video_thumbnail['sizes']['medium'] ?? $video_thumbnail['url'];
-                              echo '<img src="' . esc_url($src) . '" alt="' . esc_attr($thumb_alt) . '" />';
+                              echo '<img src="' . esc_url($src) . '" alt="' . esc_attr($thumb_alt) . '" loading="lazy" decoding="async" />';
                             }
                             ?>
                           <?php endif; ?>

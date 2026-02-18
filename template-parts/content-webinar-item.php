@@ -48,21 +48,19 @@ if (!empty($resource_cta_text)) {
   $cta_text = __('Watch Now', 'aera');
 }
 
-// Get featured or card image - prefer attachment sizes
+// Get featured or card image - use card-appropriate size for better performance
 $image_url = '';
 if (!empty($resource_card_image) && is_array($resource_card_image)) {
   $att = $resource_card_image['ID'] ?? $resource_card_image['id'] ?? null;
   if ($att) {
-    // Use the original uploaded image for the background to avoid
-    // small, potentially blurry thumbnails on larger / high-DPI screens.
-    $image_url = wp_get_attachment_image_url($att, 'full') ?: ($resource_card_image['url'] ?? '');
+    $image_url = wp_get_attachment_image_url($att, 'webinar_card_image') ?: ($resource_card_image['url'] ?? '');
   } else {
     $image_url = $resource_card_image['url'];
   }
 } else {
   $thumbnail_id = get_post_thumbnail_id($post_id);
   if ($thumbnail_id) {
-    $image_url = wp_get_attachment_image_url($thumbnail_id, 'full') ?: $image_url;
+    $image_url = wp_get_attachment_image_url($thumbnail_id, 'webinar_card_image') ?: $image_url;
   }
 }
 
@@ -98,13 +96,13 @@ if (! empty($resource_card_image) && is_array($resource_card_image)) {
           // plugins like Perfect Images can generate WebP/retina variants.
           if (! empty($image_att)) {
             echo wp_get_attachment_image((int) $image_att, 'webinar_card_image', false, array(
-              'class' => 'newsItem__img newsItem__bgImage',
-              'alt'   => esc_attr($title),
-              'loading' => 'lazy',
+              'class'    => 'newsItem__img newsItem__bgImage',
+              'alt'      => esc_attr($title),
+              'loading'  => 'lazy',
+              'decoding' => 'async',
             ));
           } else {
-            // Fallback to the URL we resolved earlier.
-            echo '<img class="newsItem__img newsItem__bgImage" src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy" />';
+            echo '<img class="newsItem__img newsItem__bgImage" src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy" decoding="async" />';
           }
           ?>
         </a>

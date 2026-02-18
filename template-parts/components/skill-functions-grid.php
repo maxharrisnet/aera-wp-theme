@@ -29,9 +29,14 @@ if (empty($functions) || is_wp_error($functions)) {
               <?php
               $att = $function_image['ID'] ?? $function_image['id'] ?? null;
               if ($att) {
-                echo wp_get_attachment_image($att, 'skill_hero', false, array('alt' => ($function_image['alt'] ?: $function->name), 'class' => esc_attr($card_class) . '__image'));
+                echo wp_get_attachment_image($att, 'webinar_card_image', false, array(
+                  'alt'      => ($function_image['alt'] ?: $function->name),
+                  'class'    => esc_attr($card_class) . '__image',
+                  'loading'  => 'lazy',
+                  'decoding' => 'async',
+                ));
               } else {
-                echo '<img src="' . esc_url($function_image['url']) . '" alt="' . esc_attr($function_image['alt'] ?: $function->name) . '" class="' . esc_attr($card_class) . '__image" />';
+                echo '<img src="' . esc_url($function_image['url']) . '" alt="' . esc_attr($function_image['alt'] ?: $function->name) . '" class="' . esc_attr($card_class) . '__image" loading="lazy" decoding="async" />';
               }
               ?>
             </figure>

@@ -24,12 +24,13 @@ $function_slug = (!empty($functions) && !is_wp_error($functions)) ? $functions[0
           $att = $skill_card_image['ID'] ?? $skill_card_image['id'] ?? null;
           if ($att) {
             echo wp_get_attachment_image($att, 'webinar_card_image', false, array(
-              'alt' => ($skill_card_image['alt'] ?: get_the_title()),
-              'class' => 'skill-card__image',
-              'loading' => 'lazy',
+              'alt'      => ($skill_card_image['alt'] ?: get_the_title()),
+              'class'    => 'skill-card__image',
+              'loading'  => 'lazy',
+              'decoding' => 'async',
             ));
           } else {
-            echo '<img src="' . esc_url($skill_card_image['url']) . '" alt="' . esc_attr($skill_card_image['alt'] ?: get_the_title()) . '" class="skill-card__image" loading="lazy" />';
+            echo '<img src="' . esc_url($skill_card_image['url']) . '" alt="' . esc_attr($skill_card_image['alt'] ?: get_the_title()) . '" class="skill-card__image" loading="lazy" decoding="async" />';
           }
           ?>
         </figure>
