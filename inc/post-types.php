@@ -268,6 +268,38 @@ function register_post_types(): void
 add_action('init', __NAMESPACE__ . '\\register_post_types');
 
 /**
+ * Removes the default WordPress content editor for resource post types that use
+ * ACF fields or other templates instead. Only blog and press-release use the_content().
+ *
+ * @return void
+ */
+function remove_editor_from_resource_post_types(): void
+{
+  $post_types_without_editor = array(
+    'news',
+    'video',
+    'whitepaper',
+    'case-study',
+    'podcast',
+    'report',
+    'webinar',
+    'faq',
+    'media-item',
+    'customer',
+    'event',
+    'partner',
+    'skill',
+  );
+
+  foreach ($post_types_without_editor as $post_type) {
+    if (post_type_exists($post_type)) {
+      remove_post_type_support($post_type, 'editor');
+    }
+  }
+}
+add_action('init', __NAMESPACE__ . '\\remove_editor_from_resource_post_types', 20);
+
+/**
  * Adds a top-priority rewrite rule so /skills/{slug} resolves to the
  * skill_function taxonomy instead of individual skill posts.
  *

@@ -100,15 +100,6 @@ while (have_posts()) :
           </div>
         </div>
       </div>
-    <?php else : ?>
-      <!-- Fallback: Use the post content if no sections defined -->
-      <div class="skill-detail">
-        <div class="skill-detail__container">
-          <div class="skill-detail__content">
-            <?php the_content(); ?>
-          </div>
-        </div>
-      </div>
     <?php endif; ?>
 
     <!-- How Aera Helps Section -->
