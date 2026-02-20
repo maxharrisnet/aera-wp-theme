@@ -193,7 +193,6 @@ function yoast_acf_blacklist_fields($blacklist_name)
   $blacklist_name->add('cta_buttons');
 
   // Resource Card — non-content fields
-  $blacklist_name->add('resource_author');
   $blacklist_name->add('resource_card_image');
   $blacklist_name->add('resource_cta_text');
   $blacklist_name->add('resource_external_url');

@@ -21,26 +21,6 @@
       "maxlength": ""
     },
     {
-      "key": "field_resource_author",
-      "label": "Author",
-      "name": "resource_author",
-      "aria-label": "",
-      "type": "textarea",
-      "instructions": "Author name and details. Each line will create a new paragraph.",
-      "required": false,
-      "conditional_logic": false,
-      "wrapper": {
-        "width": "50",
-        "class": "",
-        "id": ""
-      },
-      "rows": 3,
-      "new_lines": "wpautop",
-      "default_value": "",
-      "maxlength": "",
-      "placeholder": ""
-    },
-    {
       "key": "field_resource_card_image",
       "label": "Card Image",
       "name": "resource_card_image",
@@ -235,7 +215,7 @@
   "instruction_placement": "label",
   "hide_on_screen": "",
   "active": true,
-  "description": "Common fields for all resource post types including author, card image, card excerpt, CTA text, and external URL.",
+  "description": "Common fields for all resource post types including card image, card excerpt, CTA text, and external URL.",
   "show_in_rest": 1,
   "display_title": "",
   "modified": 1735000000
