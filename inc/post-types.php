@@ -36,8 +36,6 @@ function register_post_types(): void
     'podcast',
     'report',
     'webinar',
-    'faq',
-    'media-item',
   );
 
   $companyMenuSlug = 'aera-company-hub';
@@ -54,7 +52,7 @@ function register_post_types(): void
   // SINGLE + ARCHIVE: blog, skill (archive only, singles redirect)
   // SINGLE ONLY:      press-release (slug: news), whitepaper, case-study
   // ARCHIVE ONLY:     webinar, event, customer, partner (singles redirect)
-  // NO FRONT-END:     news, video, podcast, report, faq, media-item,
+  // NO FRONT-END:     news, video, podcast, report
   //                   team_member, board_member
   // ---------------------------------------------------------------
 
@@ -100,28 +98,6 @@ function register_post_types(): void
       'exclude_from_search' => true,
       'query_var' => false,
     ),
-    'faq'           => array(
-      'singular'  => __('FAQ Item', 'aera'),
-      'plural'    => __('FAQs', 'aera'),
-      'rewrite'   => false,
-      'menu_icon' => 'dashicons-editor-help',
-      'publicly_queryable' => false,
-      'has_archive' => false,
-      'exclude_from_search' => true,
-      'query_var' => false,
-    ),
-    'media-item'    => array(
-      'singular'  => __('Media Item', 'aera'),
-      'plural'    => __('Media Items', 'aera'),
-      'rewrite'   => false,
-      'menu_icon' => 'dashicons-portfolio',
-      'supports'  => array_merge($defaultSupports, array('custom-fields')),
-      'publicly_queryable' => false,
-      'has_archive' => false,
-      'exclude_from_search' => true,
-      'query_var' => false,
-    ),
-
     // --- Single-page CPTs: Have template pages, no archive ---
     'press-release' => array(
       'singular'  => __('Press Release', 'aera'),
@@ -283,8 +259,6 @@ function remove_editor_from_resource_post_types(): void
     'podcast',
     'report',
     'webinar',
-    'faq',
-    'media-item',
     'customer',
     'event',
     'partner',
