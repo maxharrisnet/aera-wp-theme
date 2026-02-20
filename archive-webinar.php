@@ -10,15 +10,51 @@
 
 get_header();
 
-// Get hero content - try ACF first, then use defaults
-$hero = function_exists('get_field') ? (array) get_field('webinars_hero') : array();
-$hero = wp_parse_args(
-  $hero,
-  array(
-    'title'       => get_the_archive_title('', false),
-    'description' => get_the_archive_description() ?: __('Register for upcoming webinars or explore our library of past sessions. Filter videos by industry, solution area or job function to find the content most relevant to you.', 'aera'),
-  )
-);
+// Hero section - from ACF Webinars Options
+$hero_title = __('Webinars', 'aera');
+$hero_title_line_two = '';
+$hero_subtitle = '';
+$hero_text = __('Register for upcoming webinars or explore our library of past sessions. Filter videos by industry, solution area or job function to find the content most relevant to you.', 'aera');
+$hero_button_text = '';
+$hero_button_link = '';
+$hero_full_height = false;
+$hero_variation = 'default';
+
+if (function_exists('get_field')) {
+  $acf_title = get_field('webinars_hero_title', 'option');
+  $acf_title_line_two = get_field('webinars_hero_title_line_two', 'option');
+  $acf_subtitle = get_field('webinars_hero_subtitle', 'option');
+  $acf_text = get_field('webinars_hero_text', 'option');
+  $acf_button_text = get_field('webinars_hero_button_text', 'option');
+  $acf_button_link = get_field('webinars_hero_button_link', 'option');
+  $acf_full_height = get_field('webinars_hero_full_height', 'option');
+  $acf_variation = get_field('webinars_hero_variation', 'option');
+
+  if (!empty($acf_title)) {
+    $hero_title = $acf_title;
+  }
+  if (!empty($acf_title_line_two)) {
+    $hero_title_line_two = $acf_title_line_two;
+  }
+  if (!empty($acf_subtitle)) {
+    $hero_subtitle = $acf_subtitle;
+  }
+  if (!empty($acf_text)) {
+    $hero_text = $acf_text;
+  }
+  if (!empty($acf_button_text)) {
+    $hero_button_text = $acf_button_text;
+  }
+  if (!empty($acf_button_link)) {
+    $hero_button_link = $acf_button_link;
+  }
+  if ($acf_full_height) {
+    $hero_full_height = (bool) $acf_full_height;
+  }
+  if (!empty($acf_variation)) {
+    $hero_variation = $acf_variation;
+  }
+}
 
 // Get today's date for comparison
 $today = current_time('Y-m-d');
@@ -100,23 +136,17 @@ $job_function_terms = get_terms(
 
 <main id="primary" class="site-main site-main--webinars">
   <?php
-  // Prepare hero data - try ACF group field first, then use defaults
-  // You can customize any of these fields via ACF or by modifying the array below
-  $hero_args = array();
-
-  // Title - from ACF or default
-  if (!empty($hero['title'])) {
-    $hero_args['hero_title'] = $hero['title'];
-  } else {
-    $hero_args['hero_title'] = __('Webinars', 'aera');
-  }
-
-  // Text/Description - from ACF or default
-  if (!empty($hero['description'])) {
-    $hero_args['hero_text'] = $hero['description'];
-  } else {
-    $hero_args['hero_text'] = __('Register for upcoming webinars or explore our library of past sessions. Filter videos by industry, solution area or job function to find the content most relevant to you.', 'aera');
-  }
+  // Prepare hero data
+  $hero_args = array(
+    'hero_title'          => $hero_title,
+    'hero_title_line_two' => $hero_title_line_two,
+    'hero_subtitle'       => $hero_subtitle,
+    'hero_text'           => $hero_text,
+    'hero_button_text'    => $hero_button_text,
+    'hero_button_link'    => $hero_button_link,
+    'hero_full_height'    => $hero_full_height,
+    'hero_variation'      => $hero_variation,
+  );
 
   get_template_part('template-parts/components/hero', null, $hero_args);
   ?>
