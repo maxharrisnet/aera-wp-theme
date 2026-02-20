@@ -90,12 +90,13 @@ function register_taxonomies(): void
       'post_types' => array('webinar'),
     ),
     'skill_function' => array(
-      'singular' => __('Function', 'aera'),
-      'plural'   => __('Functions', 'aera'),
+      'singular' => __('Skill Function', 'aera'),
+      'plural'   => __('Skill Functions', 'aera'),
       'slug'     => 'skills', // Original: /skills/{function-slug}
       'args'     => array(
         'hierarchical'      => true,
         'show_admin_column' => false,
+        'show_in_menu'      => 'edit.php?post_type=skill',
       ),
       'post_types' => array('skill'),
     ),
@@ -107,7 +108,7 @@ function register_taxonomies(): void
         'hierarchical'      => true,
         'show_admin_column' => true,
         'show_ui'           => true,
-        'show_in_menu'      => true,
+        'show_in_menu'      => 'edit.php?post_type=skill',
         'public'            => false,
         'publicly_queryable' => false,
         'rewrite'           => false,

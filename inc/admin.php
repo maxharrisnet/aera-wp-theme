@@ -164,6 +164,19 @@ function register_acf_options_pages(): void
 add_action('acf/init', __NAMESPACE__ . '\\register_acf_options_pages');
 
 /**
+ * Removes the duplicate first submenu item (same label as parent) from hub menus.
+ * WordPress auto-adds a submenu matching the parent; we remove it so Options is first.
+ *
+ * @return void
+ */
+function remove_hub_menu_duplicate_submenus(): void
+{
+  remove_submenu_page('aera-resources-hub', 'aera-resources-hub');
+  remove_submenu_page('aera-company-hub', 'aera-company-hub');
+}
+add_action('admin_menu', __NAMESPACE__ . '\\remove_hub_menu_duplicate_submenus', 999);
+
+/**
  * Forces a visible Customizer entry under Appearance for quick access.
  *
  * @return void
