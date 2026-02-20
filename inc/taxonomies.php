@@ -71,9 +71,11 @@ function register_taxonomies(): void
       'slug'     => 'webinar-solution-area',
       'args'     => array(
         'hierarchical'      => true,
+        'show_ui'           => true,
         'public'            => false,
         'publicly_queryable' => false,
         'rewrite'           => false,
+        'show_in_menu'      => false, // Added via add_webinar_taxonomies_to_menu
       ),
       'post_types' => array('webinar'),
     ),
@@ -83,9 +85,11 @@ function register_taxonomies(): void
       'slug'     => 'webinar-job-function',
       'args'     => array(
         'hierarchical'      => true,
+        'show_ui'           => true,
         'public'            => false,
         'publicly_queryable' => false,
         'rewrite'           => false,
+        'show_in_menu'      => false, // Added via add_webinar_taxonomies_to_menu
       ),
       'post_types' => array('webinar'),
     ),
@@ -200,6 +204,32 @@ function nest_industry_taxonomy_menu(): void
   }
 }
 add_action('admin_menu', __NAMESPACE__ . '\\nest_industry_taxonomy_menu', 20);
+
+/**
+ * Adds webinar taxonomies (Solution Areas, Job Functions) to the Webinars admin menu.
+ * Required because taxonomy show_in_menu can be unreliable for CPTs.
+ *
+ * @return void
+ */
+function add_webinar_taxonomies_to_menu(): void
+{
+  $webinar_taxonomies = array('webinar_solution_area', 'webinar_job_function');
+  $parent_slug = 'edit.php?post_type=webinar';
+
+  foreach ($webinar_taxonomies as $taxonomy_slug) {
+    $taxonomy = get_taxonomy($taxonomy_slug);
+    if ($taxonomy && current_user_can($taxonomy->cap->manage_terms)) {
+      add_submenu_page(
+        $parent_slug,
+        $taxonomy->labels->name,
+        $taxonomy->labels->menu_name,
+        $taxonomy->cap->manage_terms,
+        'edit-tags.php?taxonomy=' . $taxonomy_slug . '&post_type=webinar'
+      );
+    }
+  }
+}
+add_action('admin_menu', __NAMESPACE__ . '\\add_webinar_taxonomies_to_menu', 20);
 
 /**
  * Set the number of skills to display per page in admin.
