@@ -16,6 +16,19 @@ namespace Aera;
 defined('ABSPATH') || exit;
 
 /**
+ * Move Yoast SEO metabox below ACF custom fields.
+ * Priority order: high, core, default, low (high = top, low = bottom).
+ *
+ * @param string $priority The current Yoast metabox priority.
+ * @return string
+ */
+function yoast_metabox_below_acf(string $priority): string
+{
+  return 'low';
+}
+add_filter('wpseo_metabox_prio', __NAMESPACE__ . '\\yoast_metabox_below_acf');
+
+/**
  * =========================================================================
  * FIELD MAP — Yoast Premium Custom Fields (primary mechanism)
  * =========================================================================
