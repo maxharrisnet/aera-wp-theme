@@ -167,6 +167,7 @@ Exact field names and locations are in each `acf-json/group_*.json` file; the AC
 ## 8. HubSpot
 
 - **Usage:** Forms are embedded via HubSpot’s embed script (`https://js.hsforms.net/forms/embed/v2.js`). It is preloaded only on pages that have a form (`functions.php` → `aera_has_hubspot_form()`).
+- **Page tracking (URL-based workflows):** On pages with HubSpot forms, the theme loads the main HubSpot tracking script (`js.hs-scripts.com/{portalId}.js`) and pushes `setPath` + `trackPageView` (see `inc/hubspot-tracker.php`). This mirrors the original React `HubspotTracker` component (`_ORIGINAL_FILES/hubspot-tracker/`) so that form submissions are associated with the correct page URL and URL-triggered emails/workflows fire.
 - **Pages with HubSpot:** Demo page template, Landing Page template, Test Drive template, **skill_function** taxonomy pages, **webinar** archive.
 - **Theme:** No HubSpot plugin logic in theme; forms are either:  
   - Rendered by **Leadin (HubSpot)** plugin (e.g. Gutenberg block `wp-block-leadin-hubspot-form-block`), or  
@@ -302,7 +303,13 @@ All archive and single templates that show hero/CTA use ACF and/or options as de
 
 ---
 
-## 18. Other Notable Items
+## 18. Redirects (legacy React)
+
+The original React app’s redirect list lives in **`_SITEMAPS/index.js`** as React Router `<Redirect>` components (from ~line 181). These are the source of truth for importing redirects into WordPress when needed (e.g. via Redirection plugin or server config). No redirects from that file are applied by the theme today; import as required.
+
+---
+
+## 19. Other Notable Items
 
 - **Default posts/comments:** Default `post` type is disabled from the front (no URLs, no sitemap); comments are disabled site-wide. See `functions.php` (`aera_disable_default_post_type`, `aera_redirect_disabled_archives`, `aera_disable_comments`, etc.). Blog content uses CPT **blog**.
 - **Author display:** User meta `author_photo_url` and `author_position` (edited in User profile) are used for blog author blocks; `get_avatar` is filtered to use `author_photo_url` when set.
@@ -314,7 +321,7 @@ All archive and single templates that show hero/CTA use ACF and/or options as de
 
 ---
 
-## 19. File Map (Theme)
+## 20. File Map (Theme)
 
 | Area | Location |
 |------|----------|
@@ -323,6 +330,7 @@ All archive and single templates that show hero/CTA use ACF and/or options as de
 | Resource helpers (types, query args, labels) | `inc/resources.php` |
 | ACF (JSON path) | `inc/acf.php` |
 | ACF + Yoast | `inc/yoast-acf.php` |
+| HubSpot page tracking (setPath/trackPageView) | `inc/hubspot-tracker.php` |
 | FAQ data + shortcode | `inc/faq.php` |
 | Admin menus + ACF options pages | `inc/admin.php` |
 | Hero component | `template-parts/components/hero.php` |

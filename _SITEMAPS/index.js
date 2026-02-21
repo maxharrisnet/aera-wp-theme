@@ -178,6 +178,7 @@ class App extends Component {
 									component={Home}
 								/>
 
+								{/* React Router redirects: source of truth for importing into WordPress (e.g. .htaccess / Redirection plugin) later */}
 								<Redirect
 									status={301}
 									path='/technology'

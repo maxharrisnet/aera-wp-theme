@@ -390,6 +390,7 @@ function aera_resource_hints()
   <?php
   if (aera_has_hubspot_form()) {
     echo '<link rel="preconnect" href="https://js.hsforms.net" crossorigin>' . "\n";
+    echo '<link rel="dns-prefetch" href="//js.hs-scripts.com">' . "\n";
     echo '<link rel="preload" href="https://js.hsforms.net/forms/embed/v2.js" as="script" crossorigin="anonymous">' . "\n";
   }
 }
@@ -449,6 +450,11 @@ require get_template_directory() . '/inc/acf.php';
  * ACF Content Analysis for Yoast SEO integration.
  */
 require get_template_directory() . '/inc/yoast-acf.php';
+
+/**
+ * HubSpot page tracking (setPath/trackPageView) so form submissions have correct URL context.
+ */
+require get_template_directory() . '/inc/hubspot-tracker.php';
 
 /**
  * Head meta and favicons (match original site).
