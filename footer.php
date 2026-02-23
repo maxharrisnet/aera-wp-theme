@@ -1,9 +1,7 @@
 <?php
 
 /**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
+ * Footer
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -46,7 +44,6 @@
               continue;
             }
 
-            // Get menu items to check if it has children
             $menu_items = wp_get_nav_menu_items(get_nav_menu_locations()[$location]);
             $has_children = false;
             if ($menu_items) {
@@ -58,7 +55,6 @@
               }
             }
 
-            // Add class to ul if menu has children (except first menu)
             $ul_class = ($has_children && $location !== 'footer-aera') ? 'footer__w15_2lLXd' : '';
           ?>
             <ul<?php echo $ul_class ? ' class="' . esc_attr($ul_class) . '"' : ''; ?>>
@@ -101,7 +97,7 @@
     <p class="footer__copyright">© <?php echo esc_html(date_i18n('Y')); ?> Aera Technology® · <?php esc_html_e('All Rights Reserved.', 'aera'); ?></p>
   </div>
 </footer>
-</div><!-- #app -->
+</div>
 
 <?php wp_footer(); ?>
 

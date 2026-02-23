@@ -57,6 +57,8 @@ function register_taxonomies(): void
       'slug'     => 'industry',
       'args'     => array(
         'hierarchical'      => true,
+        'show_ui'           => true,
+        'show_in_menu'      => true,
         'public'            => false,
         'publicly_queryable' => false,
         'rewrite'           => false,
@@ -167,8 +169,7 @@ function register_taxonomies(): void
 add_action('init', __NAMESPACE__ . '\\register_taxonomies', 11);
 
 /**
- * Moves the Industry taxonomy menu item under the Company hub menu.
- * Uses a redirect submenu because edit-tags.php does not resolve under admin.php?page=.
+ * Moves the Industry taxonomy under Webinars and removes it from other post type menus.
  *
  * @return void
  */
@@ -176,52 +177,35 @@ function nest_industry_taxonomy_menu(): void
 {
   global $submenu;
 
-  // Remove Industry from its default location (under each post type)
-  if (isset($submenu['aera-company-hub'])) {
-    // Find and remove Industry taxonomy menu items from other locations
-    foreach ($submenu as $parent => $items) {
-      if ($parent !== 'aera-company-hub' && is_array($items)) {
-        foreach ($items as $key => $item) {
-          if (isset($item[2]) && strpos($item[2], 'edit-tags.php?taxonomy=industry') !== false) {
-            unset($submenu[$parent][$key]);
-          }
+  $webinar_slug = 'edit.php?post_type=webinar';
+
+  // Remove Industry from its default locations (under each post type including Webinars)
+  foreach ($submenu as $parent => $items) {
+    if (is_array($items)) {
+      foreach ($items as $key => $item) {
+        if (isset($item[2]) && strpos($item[2], 'edit-tags.php?taxonomy=industry') !== false) {
+          unset($submenu[$parent][$key]);
         }
       }
     }
+  }
 
-    // Add Industry taxonomy under Company hub (redirect required; edit-tags.php slug is dead under custom parent)
-    $taxonomy = get_taxonomy('industry');
-    if ($taxonomy && current_user_can($taxonomy->cap->manage_terms)) {
-      add_submenu_page(
-        'aera-company-hub',
-        $taxonomy->labels->name,
-        $taxonomy->labels->menu_name,
-        $taxonomy->cap->manage_terms,
-        'aera-edit-industries',
-        '__return_false'
-      );
-    }
+  // Add Industry taxonomy under Webinars
+  $taxonomy = get_taxonomy('industry');
+  if ($taxonomy && current_user_can($taxonomy->cap->manage_terms)) {
+    add_submenu_page(
+      $webinar_slug,
+      $taxonomy->labels->name,
+      $taxonomy->labels->menu_name,
+      $taxonomy->cap->manage_terms,
+      'edit-tags.php?taxonomy=industry&post_type=webinar'
+    );
   }
 }
 add_action('admin_menu', __NAMESPACE__ . '\\nest_industry_taxonomy_menu', 20);
 
 /**
- * Redirects Industries submenu to taxonomy edit screen before any output.
- * Must run on load-{page} so headers are not yet sent.
- *
- * @return void
- */
-function redirect_industries_submenu_on_load(): void
-{
-  if (isset($_GET['page']) && $_GET['page'] === 'aera-edit-industries') {
-    wp_safe_redirect(admin_url('edit-tags.php?taxonomy=industry'));
-    exit;
-  }
-}
-add_action('load-aera-company-hub_page_aera-edit-industries', __NAMESPACE__ . '\\redirect_industries_submenu_on_load');
-
-/**
- * Keeps the Company menu expanded and Industries highlighted when editing industry terms.
+ * Keeps the Webinars menu expanded and Industries highlighted when editing industry terms.
  *
  * @param string $parent_file Parent file slug.
  * @return string
@@ -231,7 +215,7 @@ function industry_taxonomy_parent_file(string $parent_file): string
   global $current_screen;
 
   if (isset($current_screen->taxonomy) && $current_screen->taxonomy === 'industry') {
-    return 'aera-company-hub';
+    return 'edit.php?post_type=webinar';
   }
 
   return $parent_file;
@@ -249,8 +233,8 @@ function industry_taxonomy_submenu_file(?string $submenu_file, string $parent_fi
 {
   global $current_screen;
 
-  if (isset($current_screen->taxonomy) && $current_screen->taxonomy === 'industry' && $parent_file === 'aera-company-hub') {
-    return 'aera-edit-industries';
+  if (isset($current_screen->taxonomy) && $current_screen->taxonomy === 'industry' && $parent_file === 'edit.php?post_type=webinar') {
+    return 'edit-tags.php?taxonomy=industry&post_type=webinar';
   }
 
   return $submenu_file;
