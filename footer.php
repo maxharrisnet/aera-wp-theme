@@ -102,8 +102,6 @@
   </div>
 </footer>
 </div><!-- #app -->
-<!-- Loading -->
-<?php get_template_part('template-parts/components/loading'); ?>
 
 <?php wp_footer(); ?>
 
