@@ -30,8 +30,8 @@ get_header();
               ?>
 
               <?php
-              // Related posts section (full list)
-              get_template_part('template-parts/content', 'blog-related');
+              // Recent news section (5 most recent News CPT items)
+              get_template_part('template-parts/content', 'news-recent');
               ?>
 
               <?php
