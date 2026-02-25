@@ -246,7 +246,7 @@ if (!is_wp_error($industry_terms)) {
   foreach ($industry_terms as $term) {
     $taxonomy_options['industry'][] = array(
       'slug' => $term->slug,
-      'name' => $term->name,
+      'name' => html_entity_decode($term->name, ENT_QUOTES | ENT_HTML5, 'UTF-8'),
     );
   }
 }
@@ -255,7 +255,7 @@ if (!is_wp_error($solution_area_terms)) {
   foreach ($solution_area_terms as $term) {
     $taxonomy_options['solutionAreas'][] = array(
       'slug' => $term->slug,
-      'name' => $term->name,
+      'name' => html_entity_decode($term->name, ENT_QUOTES | ENT_HTML5, 'UTF-8'),
     );
   }
 }
@@ -264,7 +264,7 @@ if (!is_wp_error($job_function_terms)) {
   foreach ($job_function_terms as $term) {
     $taxonomy_options['jobFunctions'][] = array(
       'slug' => $term->slug,
-      'name' => $term->name,
+      'name' => html_entity_decode($term->name, ENT_QUOTES | ENT_HTML5, 'UTF-8'),
     );
   }
 }
