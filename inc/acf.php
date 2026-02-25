@@ -68,3 +68,106 @@ function normalize_meet_subdomain_url($value, $post_id, $field)
 }
 add_filter('acf/load_value/name=resource_external_url', __NAMESPACE__ . '\\normalize_meet_subdomain_url', 10, 3);
 
+/**
+ * Keep Page Hero above and Page CTA below other page-level ACF groups.
+ *
+ * @param array $field_group ACF field group definition.
+ * @return array
+ */
+function adjust_field_group_order(array $field_group): array
+{
+  if (($field_group['key'] ?? '') === 'group_aera_page_hero') {
+    $field_group['menu_order'] = -20;
+  }
+
+  if (($field_group['key'] ?? '') === 'group_aera_page_cta') {
+    $field_group['menu_order'] = 200;
+  }
+
+  return $field_group;
+}
+add_filter('acf/load_field_group', __NAMESPACE__ . '\\adjust_field_group_order');
+
+/**
+ * Apply editor-focused field tweaks without relying on JSON edits.
+ *
+ * @param array $field ACF field definition.
+ * @return array
+ */
+function adjust_field_settings(array $field): array
+{
+  $field_name = $field['name'] ?? '';
+  $field_key = $field['key'] ?? '';
+
+  if ($field_name === 'resource_card_image') {
+    $field['required'] = 1;
+  }
+
+  if ($field_name === 'hero_title') {
+    $field['required'] = 0;
+  }
+
+  if ($field_name === 'video_thumbnail') {
+    $field['required'] = 1;
+    if (!isset($field['wrapper']) || !is_array($field['wrapper'])) {
+      $field['wrapper'] = array();
+    }
+    $field['wrapper']['width'] = '100';
+  }
+
+  if ($field_name === 'video_url') {
+    if (!isset($field['wrapper']) || !is_array($field['wrapper'])) {
+      $field['wrapper'] = array();
+    }
+    $field['wrapper']['width'] = '50';
+  }
+
+  if ($field_name === 'hubspot_form_id') {
+    if (!isset($field['wrapper']) || !is_array($field['wrapper'])) {
+      $field['wrapper'] = array();
+    }
+    $field['wrapper']['width'] = '50';
+  }
+
+  if (
+    $field_key === 'field_cta_button_link_external' ||
+    $field_key === 'field_cta_button_link_internal' ||
+    $field_key === 'field_cta_button_link_resource'
+  ) {
+    if (!isset($field['wrapper']) || !is_array($field['wrapper'])) {
+      $field['wrapper'] = array();
+    }
+    $field['wrapper']['width'] = '33.33';
+  }
+
+  return $field;
+}
+add_filter('acf/load_field', __NAMESPACE__ . '\\adjust_field_settings');
+
+/**
+ * Hide all editable "Posts Per Page" option fields in ACF option screens.
+ *
+ * @param array $field ACF field definition.
+ * @return array|false
+ */
+function hide_posts_per_page_option_fields($field)
+{
+  $field_name = is_array($field) ? ($field['name'] ?? '') : '';
+  if (is_string($field_name) && preg_match('/_posts_per_page$/', $field_name)) {
+    return false;
+  }
+
+  return $field;
+}
+add_filter('acf/prepare_field', __NAMESPACE__ . '\\hide_posts_per_page_option_fields');
+
+/**
+ * Keep Yoast SEO metabox below ACF/custom fields.
+ *
+ * @return string
+ */
+function set_yoast_metabox_priority(): string
+{
+  return 'low';
+}
+add_filter('wpseo_metabox_prio', __NAMESPACE__ . '\\set_yoast_metabox_priority');

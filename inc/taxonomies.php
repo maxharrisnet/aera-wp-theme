@@ -30,6 +30,17 @@ function register_taxonomies(): void
     'webinar',
   );
 
+  $industryTypes = array(
+    'news',
+    'video',
+    'whitepaper',
+    'blog',
+    'case-study',
+    'podcast',
+    'event',
+    'webinar',
+  );
+
   // ---------------------------------------------------------------
   // Taxonomy URL strategy:
   //
@@ -63,7 +74,7 @@ function register_taxonomies(): void
         'publicly_queryable' => false,
         'rewrite'           => false,
       ),
-      'post_types' => $resourceTypes,
+      'post_types' => $industryTypes,
     ),
     'webinar_solution_area' => array(
       'singular' => __('Solution Area', 'aera'),

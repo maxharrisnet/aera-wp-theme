@@ -20,8 +20,6 @@ function register_post_types(): void
   $defaultSupports = array(
     'title',
     'editor',
-    'excerpt',
-    'thumbnail',
     'revisions',
   );
 
@@ -127,7 +125,7 @@ function register_post_types(): void
       'plural'    => __('Blogs', 'aera'),
       'rewrite'   => 'blogs',
       'menu_icon' => 'dashicons-edit',
-      'supports'  => array_merge($defaultSupports, array('author')),
+      'supports'  => array_merge($defaultSupports, array('excerpt', 'thumbnail', 'author')),
     ),
 
     // --- Archive-only CPTs: Have archive templates, singles redirect ---
@@ -156,7 +154,7 @@ function register_post_types(): void
       'plural'    => __('Partners', 'aera'),
       'rewrite'   => 'partners',
       'menu_icon' => 'dashicons-groups',
-      'supports'  => array('title', 'editor', 'thumbnail', 'revisions'),
+      'supports'  => array('title', 'editor', 'revisions'),
       'public'    => true,
       'has_archive' => true,
       'publicly_queryable' => true,
@@ -178,7 +176,7 @@ function register_post_types(): void
       'plural'    => __('Leadership', 'aera'),
       'rewrite'   => false,
       'menu_icon' => 'dashicons-groups',
-      'supports'  => array('title', 'thumbnail', 'revisions'),
+      'supports'  => array('title', 'revisions'),
       'public'    => true,
       'has_archive' => false,
       'publicly_queryable' => false,
@@ -189,7 +187,7 @@ function register_post_types(): void
       'plural'    => __('Board Members', 'aera'),
       'rewrite'   => false,
       'menu_icon' => 'dashicons-groups',
-      'supports'  => array('title', 'thumbnail', 'revisions'),
+      'supports'  => array('title', 'revisions'),
       'public'    => true,
       'has_archive' => false,
       'publicly_queryable' => false,

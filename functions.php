@@ -375,6 +375,44 @@ function aera_script_loader_tag($tag, $handle, $src)
 add_filter('script_loader_tag', 'aera_script_loader_tag', 10, 3);
 
 /**
+ * Keep page author and slug controls in the sidebar (classic editor layout).
+ *
+ * @return void
+ */
+function aera_move_page_meta_boxes_to_sidebar(): void
+{
+  add_post_type_support('page', 'author');
+
+  remove_meta_box('slugdiv', 'page', 'normal');
+  add_meta_box('slugdiv', __('Slug'), 'post_slug_meta_box', 'page', 'side', 'default');
+
+  remove_meta_box('authordiv', 'page', 'normal');
+  add_meta_box('authordiv', __('Author'), 'post_author_meta_box', 'page', 'side', 'default');
+}
+add_action('admin_menu', 'aera_move_page_meta_boxes_to_sidebar', 99);
+
+/**
+ * Ensure archive pages that are meant to be fully browsable are not paginated.
+ *
+ * @param WP_Query $query The query object.
+ * @return void
+ */
+function aera_force_unlimited_archive_posts(WP_Query $query): void
+{
+  if (is_admin() || !$query->is_main_query()) {
+    return;
+  }
+
+  if (
+    is_post_type_archive(array('partner', 'customer', 'event', 'webinar', 'skill')) ||
+    is_tax('skill_function')
+  ) {
+    $query->set('posts_per_page', -1);
+  }
+}
+add_action('pre_get_posts', 'aera_force_unlimited_archive_posts', 50);
+
+/**
  * Add resource hints for performance: preconnect, dns-prefetch, and font preloading.
  * Also conditionally preloads HubSpot forms script only on pages that use forms.
  */
