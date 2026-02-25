@@ -316,22 +316,22 @@ function aera_is_background_active()
     return false;
   }
 
-  if (is_front_page()) {
-    return true;
-  }
-
   if (
+    is_front_page() ||
     is_page_template('page-resources.php') ||
     is_page_template('page-aerahub-2025.php') ||
     is_page_template('page-aerahub-2025-london.php') ||
     is_page_template('page-decision-cloud.php') ||
+    is_page_template('page-skills-home.php') ||
     (is_page() && get_page_template_slug() === 'page-resources.php') ||
     (is_page() && get_page_template_slug() === 'page-aerahub-2025.php') ||
     (is_page() && get_page_template_slug() === 'page-aerahub-2025-london.php') ||
     (is_page() && get_page_template_slug() === 'page-decision-cloud.php') ||
+    (is_page() && get_page_template_slug() === 'page-skills-home.php') ||
     is_page(array('resources', 'about-us', 'careers', 'webinars', 'aera-decision-cloud', 'test-drive', 'aerahub-2025', 'aerahub-2025-london', 'decision-cloud')) ||
     is_post_type_archive('webinar') ||
-    is_post_type_archive('event')
+    is_post_type_archive('event') ||
+    is_post_type_archive('skill')
   ) {
     return true;
   }
