@@ -74,7 +74,7 @@ if (!$is_demo && function_exists('get_field')) {
     foreach ($industry_ids as $industry_id) {
       $term = get_term($industry_id, 'industry');
       if ($term && !is_wp_error($term)) {
-        $industries[] = $term->name;
+        $industries[] = html_entity_decode($term->name, ENT_QUOTES | ENT_HTML5, 'UTF-8');
       }
     }
   }
