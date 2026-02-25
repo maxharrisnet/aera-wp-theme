@@ -14,10 +14,7 @@
 	}
 
 	&__subNoLink {
-		//font-weight: 300 !important;
 		cursor: default !important;
-		//font-family: FreightSans Pro !important;
-		//font-size: 11px !important;
 		font-size: 14px !important;
 		font-weight: 400 !important;
 		color: #5c6476;
@@ -62,14 +59,11 @@
 	}
 
 	&__noLink {
-		//margin: 5px 0px 0 0;
 		font-weight: 600 !important;
 		font-size: 14px !important;
 		cursor: default !important;
-		// @media (max-width: $min-960) {
-		//   display: none;
-		// }
 	}
+
 	&__noMarginbottom {
 		margin-bottom: 0px;
 	}
@@ -803,7 +797,8 @@
 		@media (min-width: $min-1024) {
 			font-size: 14px;
 		}
-		@media (max-width: $min-1200) {
+
+		@media (max-width: $min-1280) {
 			font-size: 12px;
 			padding: 0 3px;
 		}
