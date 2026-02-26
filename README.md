@@ -98,27 +98,27 @@ Registered in: `inc/post-types.php` (namespace `Aera`, action `init`).
 
 ### Summary
 
-| CPT | Front-end URL | Notes |
-|-----|----------------|--------|
-| **Resources (under Resources hub)** | | |
-| `news` | No | External links only; no archive/single |
-| `press-release` | `/news/{slug}` | Single only |
-| `video` | No | External links only |
-| `whitepaper` | `/whitepapers/{slug}` | Single only |
-| `blog` | `/blogs` archive + single | Uses editor + ACF |
-| `case-study` | `/case-study/{slug}` | Single only |
-| `podcast` | No | External links only |
-| `report` | No | External links only |
-| **Webinars & Events** | | |
-| `webinar` | `/webinars` archive only | Singles redirect to archive |
-| `event` | `/events` archive only | Singles redirect to archive |
-| **Company (under Company hub)** | | |
-| `customer` | `/customers` archive only | Singles redirect to archive |
-| `partner` | `/partners` archive only | Singles redirect to archive |
-| `team_member` | No | Used in About/Leadership blocks |
-| `board_member` | No | Used in company sections |
-| **Skills** | | |
-| `skill` | `/skills` archive only | Singles redirect to **skill function** taxonomy page |
+| CPT                                 | Front-end URL             | Notes                                                |
+| ----------------------------------- | ------------------------- | ---------------------------------------------------- |
+| **Resources (under Resources hub)** |                           |                                                      |
+| `news`                              | No                        | External links only; no archive/single               |
+| `press-release`                     | `/news/{slug}`            | Single only                                          |
+| `video`                             | No                        | External links only                                  |
+| `whitepaper`                        | `/whitepapers/{slug}`     | Single only                                          |
+| `blog`                              | `/blogs` archive + single | Uses editor + ACF                                    |
+| `case-study`                        | `/case-study/{slug}`      | Single only                                          |
+| `podcast`                           | No                        | External links only                                  |
+| `report`                            | No                        | External links only                                  |
+| **Webinars & Events**               |                           |                                                      |
+| `webinar`                           | `/webinars` archive only  | Singles redirect to archive                          |
+| `event`                             | `/events` archive only    | Singles redirect to archive                          |
+| **Company (under Company hub)**     |                           |                                                      |
+| `customer`                          | `/customers` archive only | Singles redirect to archive                          |
+| `partner`                           | `/partners` archive only  | Singles redirect to archive                          |
+| `team_member`                       | No                        | Used in About/Leadership blocks                      |
+| `board_member`                      | No                        | Used in company sections                             |
+| **Skills**                          |                           |                                                      |
+| `skill`                             | `/skills` archive only    | Singles redirect to **skill function** taxonomy page |
 
 Admin menus: Resource CPTs are grouped under **Resources**; company CPTs under **Company**. Events and Webinars are top-level; Skills is top-level.
 
@@ -130,14 +130,14 @@ Permalinks for archive-only CPTs: Card/permalinks use ACF `resource_external_url
 
 Registered in: `inc/taxonomies.php` (namespace `Aera`, action `init` priority 11).
 
-| Taxonomy | Post types | Public/front-end | Admin location |
-|----------|------------|------------------|----------------|
-| `resource_topic` | All resource CPTs | No (filtering only) | Per post type |
-| `industry` | All resource CPTs | No | **Company** hub → Industries (redirect) |
-| `webinar_solution_area` | webinar | No | Under Webinars |
-| `webinar_job_function` | webinar | No | Under Webinars |
-| **`skill_function`** | skill | **Yes** — `/skills/{function-slug}/` | Under Skills |
-| `skill_category` | skill | No (used to group skills under a function) | Under Skills; has ACF `parent_function` to link to a skill_function |
+| Taxonomy                | Post types        | Public/front-end                           | Admin location                                                      |
+| ----------------------- | ----------------- | ------------------------------------------ | ------------------------------------------------------------------- |
+| `resource_topic`        | All resource CPTs | No (filtering only)                        | Per post type                                                       |
+| `industry`              | All resource CPTs | No                                         | **Company** hub → Industries (redirect)                             |
+| `webinar_solution_area` | webinar           | No                                         | Under Webinars                                                      |
+| `webinar_job_function`  | webinar           | No                                         | Under Webinars                                                      |
+| **`skill_function`**    | skill             | **Yes** — `/skills/{function-slug}/`       | Under Skills                                                        |
+| `skill_category`        | skill             | No (used to group skills under a function) | Under Skills; has ACF `parent_function` to link to a skill_function |
 
 Important: `/skills/{slug}` is served by the **skill_function** taxonomy (rewrite in `post-types.php`). Individual skill posts do not have their own URLs; they redirect to their skill function term page.
 
@@ -269,15 +269,15 @@ Integration file: `inc/yoast-acf.php`
 
 Defined in `functions.php` (`aera_technology_setup()`):
 
-| Size name | Dimensions | Crop | Usage |
-|-----------|------------|------|--------|
-| `logo` | 480×204 | no | Retina logos |
-| `resource_card_image` | 342×96 | — | Resource cards |
-| `webinar_card_image` | 333×180 | — | Webinar/card |
-| `webinar_featured` | 800×450 | yes | Featured webinars |
-| `card_logo` | 150×150 | no | Card logos |
-| `blog_hero` | 890×0 | — | Blog hero |
-| `skill_hero` | 738×0 | — | Skill hero images |
+| Size name             | Dimensions | Crop | Usage             |
+| --------------------- | ---------- | ---- | ----------------- |
+| `logo`                | 480×204    | no   | Retina logos      |
+| `resource_card_image` | 342×96     | —    | Resource cards    |
+| `webinar_card_image`  | 333×180    | —    | Webinar/card      |
+| `webinar_featured`    | 800×450    | yes  | Featured webinars |
+| `card_logo`           | 150×150    | no   | Card logos        |
+| `blog_hero`           | 890×0      | —    | Blog hero         |
+| `skill_hero`          | 738×0      | —    | Skill hero images |
 
 ---
 
@@ -347,22 +347,22 @@ Registered in `functions.php`:
 
 ## 17. Custom Page Templates (Quick Reference)
 
-| Template file | Uses ACF |
-|---------------|----------|
-| `page-resources.php` | Yes |
-| `page-skills-home.php` | Yes |
-| `page-faq.php` | Yes |
-| `page-about-us.php` | Yes |
-| `page-careers.php` | Yes |
-| `page-contact-us.php` | Yes |
-| `page-demo.php` | Yes |
-| `page-test-drive.php` | Yes |
-| `page-landing-page.php` | Yes |
-| `page-decision-cloud.php` | Yes |
-| `page-what-is-decision-intelligence.php` | Yes |
-| `page-platform-detail.php` | Yes |
-| `page-aerahub-2025.php` | Yes |
-| `page-aerahub-2025-london.php` | Yes |
+| Template file                            | Uses ACF |
+| ---------------------------------------- | -------- |
+| `page-resources.php`                     | Yes      |
+| `page-skills-home.php`                   | Yes      |
+| `page-faq.php`                           | Yes      |
+| `page-about-us.php`                      | Yes      |
+| `page-careers.php`                       | Yes      |
+| `page-contact-us.php`                    | Yes      |
+| `page-demo.php`                          | Yes      |
+| `page-test-drive.php`                    | Yes      |
+| `page-landing-page.php`                  | Yes      |
+| `page-decision-cloud.php`                | Yes      |
+| `page-what-is-decision-intelligence.php` | Yes      |
+| `page-platform-detail.php`               | Yes      |
+| `page-aerahub-2025.php`                  | Yes      |
+| `page-aerahub-2025-london.php`           | Yes      |
 
 ---
 
@@ -385,19 +385,19 @@ Historical redirect list source: `_SITEMAPS/index.js` from legacy app. Import re
 
 ## 20. File Map
 
-| Area | Location |
-|------|----------|
-| CPTs | `inc/post-types.php` |
-| Taxonomies | `inc/taxonomies.php` |
-| Resource helpers | `inc/resources.php` |
-| ACF integration | `inc/acf.php` |
-| ACF + Yoast | `inc/yoast-acf.php` |
-| HubSpot tracker | `inc/hubspot-tracker.php` |
-| FAQ helpers | `inc/faq.php` |
-| Admin/options pages | `inc/admin.php` |
-| Hero component | `template-parts/components/hero.php` |
-| CTA component | `template-parts/components/cta.php` |
-| Versioned ACF definitions | `acf-json/*.json` |
+| Area                      | Location                             |
+| ------------------------- | ------------------------------------ |
+| CPTs                      | `inc/post-types.php`                 |
+| Taxonomies                | `inc/taxonomies.php`                 |
+| Resource helpers          | `inc/resources.php`                  |
+| ACF integration           | `inc/acf.php`                        |
+| ACF + Yoast               | `inc/yoast-acf.php`                  |
+| HubSpot tracker           | `inc/hubspot-tracker.php`            |
+| FAQ helpers               | `inc/faq.php`                        |
+| Admin/options pages       | `inc/admin.php`                      |
+| Hero component            | `template-parts/components/hero.php` |
+| CTA component             | `template-parts/components/cta.php`  |
+| Versioned ACF definitions | `acf-json/*.json`                    |
 
 ---
 
