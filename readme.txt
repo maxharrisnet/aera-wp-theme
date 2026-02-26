@@ -1,20 +1,28 @@
 === Aera Technology ===
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Contributors: aera-technology
+Tags: custom-background, custom-logo, custom-menu, featured-images, translation-ready
 
 Requires at least: 4.5
-Tested up to: 5.4
+Tested up to: 6.6
 Requires PHP: 5.6
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called Aera Technology.
+A custom production theme for Aera Technology.
 
 == Description ==
 
-Description
+This is the production WordPress theme used for the Aera Technology site.
+
+Highlights:
+
+- Custom post types and taxonomies for Resources, Webinars, Events, Company, and Skills.
+- ACF-driven page architecture with versioned Local JSON (`acf-json/`).
+- Custom archive/template implementations and reusable hero/CTA components.
+- Asset pipeline using Sass + Vite with production build scripts.
+- Yoast + ACF integration support in theme code.
 
 == Installation ==
 
@@ -24,14 +32,16 @@ Description
 
 == Frequently Asked Questions ==
 
-= Does this theme support any plugins? =
+= What plugins are expected? =
 
-Aera Technology includes support for WooCommerce and for Infinite Scroll in Jetpack.
+This theme expects Advanced Custom Fields (ACF Pro) and supports Yoast SEO integration through theme code. HubSpot form embeds are also supported where configured.
 
 == Changelog ==
 
-= 1.0 - May 12 2015 =
-* Initial release
+= 1.0.0 - February 25 2026 =
+* Production handoff baseline
+* Theme documentation modernization
+* Build/deploy workflow alignment
 
 == Credits ==
 

@@ -13,6 +13,18 @@ if (! defined('_S_VERSION')) {
   define('_S_VERSION', '1.0.0');
 }
 
+if (! defined('AERA_THEME_SLUG')) {
+  define('AERA_THEME_SLUG', 'aera-technology');
+}
+
+if (! defined('AERA_THEME_NAME')) {
+  define('AERA_THEME_NAME', 'Aera Technology');
+}
+
+if (! defined('AERA_THEME_README_PATH')) {
+  define('AERA_THEME_README_PATH', get_template_directory() . '/README.md');
+}
+
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -208,8 +220,9 @@ function aera_get_script($script_name)
  */
 function aera_technology_scripts()
 {
-  // style.css contains only the WP theme header comment (no actual rules).
-  // Enqueue aera.css directly without the empty dependency to eliminate a render-blocking request.
+  // Canonical theme stylesheet: assets/css/aera.css.
+  // For best performance, generate it via `npm run build:css` (compressed, no source map).
+  // style.css is retained only for the required WP theme header.
   wp_enqueue_style('aera-theme-components', get_template_directory_uri() . '/assets/css/aera.css', array(), _S_VERSION);
 
   // Enqueue GSAP from CDN — loaded in footer since its dependents (site.js) also load in footer
