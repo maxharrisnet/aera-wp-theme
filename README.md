@@ -8,6 +8,22 @@ This README replaces the default `_s` starter documentation and is now the prima
 - Text domain: `aera`
 - Primary namespace used in theme code: `Aera`
 
+## Quick start (TL;DR)
+
+```bash
+composer install
+npm install
+npm run build
+```
+
+Deploy result to WP Engine, then in WP Admin sync ACF JSON if prompted and purge cache.
+
+## Read this first
+
+- **Developers**: start at [Local Development](#local-development), then [Release checklist](#release-checklist).
+- **Content/Admin team**: use [Custom Fields (ACF)](#3-custom-fields-acf--where-they-are-managed), [FAQs](#15-faqs), and [Menus](#13-menus).
+- **SEO team**: see [Yoast SEO](#9-yoast-seo) and [HubSpot](#8-hubspot).
+
 ---
 
 ## Requirements
