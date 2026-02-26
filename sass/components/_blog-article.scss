@@ -1,0 +1,53 @@
+@use 'sass:math';
+@use '../reset' as *;
+@use '../variables' as *;
+@use '../grid' as *;
+@use '../mixins' as *;
+
+.blog-article {
+	&__row {
+		@include make-row;
+		@include segment;
+		padding-bottom: 0;
+	}
+
+	&__left {
+		width: 70%;
+		float: left;
+		color: #1a1a1a;
+
+		@media (max-width: $max-960) {
+			width: 100%;
+			padding: 0 40px;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding: 0 20px;
+		}
+	}
+
+	&__right {
+		width: 30%;
+		float: right;
+		position: relative;
+		right: 0px;
+		top: 0px;
+
+		@media (max-width: $max-960) {
+			width: 100%;
+			padding: 0 40px;
+			position: relative;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding: 0 20px;
+			position: relative;
+		}
+
+		h3 {
+			font-family: $font-family-freight;
+		}
+	}
+}

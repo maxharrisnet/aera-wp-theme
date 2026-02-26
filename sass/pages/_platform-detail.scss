@@ -1,0 +1,177 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+
+.page-platform-detail .hero {
+	padding: 150px 0 0;
+	height: 450px;
+
+	&__title {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	&__text {
+		@media (min-width: $min-480) {
+			max-width: 42em;
+			width: 100%;
+			margin-bottom: 0;
+		}
+	}
+}
+
+// main {
+// 	position: relative;
+// }
+
+.platformnew {
+	padding: 50px 0px 80px 0px;
+
+	@media (max-width: $max-720) {
+		padding: 0 0 80px 0;
+	}
+
+	&__container {
+		@include container;
+
+		@media (min-width: $min-1080) {
+			max-width: 1046px;
+		}
+	}
+
+	&__relative {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 99;
+		background-color: #fff;
+		transition: ease-in-out 0.1s;
+		-webkit-transition: ease-in-out 0.1s;
+		-moz-transition: ease-in-out 0.1s;
+
+		@media (max-width: $max-960) {
+			z-index: 9;
+			bottom: 0px;
+		}
+
+		@media (max-width: $max-768) {
+			bottom: 0px;
+		}
+
+		@media (max-width: $max-720) {
+			bottom: 0px;
+		}
+
+		&.scroll {
+			background-color: #fff;
+			position: fixed;
+			bottom: 0px;
+			left: 0;
+			width: 100%;
+
+			@media (max-width: $max-1024) {
+				bottom: 0px;
+			}
+
+			@media (max-width: $max-960) {
+				bottom: 0px;
+			}
+
+			@media (max-width: $max-768) {
+				bottom: 0px;
+			}
+
+			@media (max-width: $max-720) {
+				bottom: 0px;
+			}
+		}
+
+		&.absolute {
+			background-color: #fff;
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			z-index: 0;
+			width: 100%;
+		}
+	}
+
+	&__controls {
+		position: absolute;
+		bottom: 20px;
+		left: 0;
+		width: 100%;
+
+		@media (max-width: $max-960) {
+			display: none;
+		}
+	}
+
+	&__controlsLeft {
+		cursor: pointer;
+		float: left;
+		width: 70px;
+		height: 50px;
+		background: rgba(255, 255, 255, 0.8);
+		z-index: 99;
+		position: relative;
+
+		img {
+			margin: 17px auto;
+		}
+	}
+
+	&__controlsRight {
+		cursor: pointer;
+		float: right;
+		width: 70px;
+		height: 50px;
+		background: rgba(255, 255, 255, 0.8);
+		z-index: 99;
+		position: relative;
+
+		img {
+			margin: 17px auto;
+		}
+	}
+
+	&__row {
+		@include make-row;
+	}
+
+	&__wrapper {
+		position: relative;
+	}
+
+	&__left {
+		color: #1a1a1a;
+		position: relative;
+		width: 100%;
+		overflow-x: auto;
+	}
+
+	&__right {
+		width: 100%;
+		float: right;
+		position: relative;
+		right: 0px;
+		top: 0px;
+
+		@media (max-width: $max-960) {
+			width: 100%;
+			padding: 0 0px;
+			position: relative;
+		}
+
+		@media (max-width: $max-720) {
+			width: 100%;
+			padding: 0 0px;
+			position: relative;
+		}
+	}
+
+	&__clearfix {
+		clear: both;
+	}
+}

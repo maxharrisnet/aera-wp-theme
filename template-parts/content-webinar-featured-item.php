@@ -1,0 +1,121 @@
+<?php
+
+/**
+ * Featured webinar card partial (FeatEventsItem style - large horizontal cards).
+ *
+ * @package Aera_Technology
+ */
+
+$post_id = get_the_ID();
+$title = get_the_title($post_id);
+
+// Get ACF fields
+$webinar_date = function_exists('get_field') ? get_field('webinar_date', $post_id) : '';
+$resource_card_image = function_exists('get_field') ? get_field('resource_card_image', $post_id) : '';
+$webinar_featured = function_exists('get_field') ? get_field('webinar_featured', $post_id) : false;
+$webinar_excerpt = function_exists('get_field') ? get_field('webinar_excerpt', $post_id) : '';
+
+// Get excerpt - prefer ACF excerpt, then WordPress excerpt
+$excerpt = '';
+if (!empty($webinar_excerpt)) {
+  $excerpt = wp_strip_all_tags($webinar_excerpt);
+} else {
+  $wp_excerpt = get_the_excerpt($post_id);
+  if (!empty($wp_excerpt)) {
+    $excerpt = wp_strip_all_tags($wp_excerpt);
+  }
+}
+// Truncate excerpt to a high ceiling (50k chars) to effectively avoid clipping
+$excerpt = mb_substr($excerpt, 0, 50000) . (mb_strlen($excerpt) > 50000 ? '...' : '');
+
+// Truncate title to 130 characters
+$title_truncated = mb_substr($title, 0, 130) . (mb_strlen($title) > 130 ? '...' : '');
+
+// Determine if upcoming or on-demand
+$today = current_time('Y-m-d');
+$is_upcoming = false;
+$event_type = __('On-Demand', 'aera');
+
+if ($webinar_date) {
+  $is_upcoming = strtotime($webinar_date) >= strtotime($today);
+  // TODO: Make this dynamic
+  $event_type = $is_upcoming ? __('Coming Soon', 'aera') : __('On-Demand', 'aera');
+}
+
+// Get external URL from resource fields, fallback to permalink
+$external_url = function_exists('get_field') ? get_field('resource_external_url', $post_id) : '';
+$link = !empty($external_url) ? $external_url : get_permalink($post_id);
+
+// Get custom CTA text from resource fields, fallback to default
+$resource_cta_text = function_exists('get_field') ? get_field('resource_cta_text', $post_id) : '';
+if (!empty($resource_cta_text)) {
+  $cta_text = $resource_cta_text;
+} else {
+  // Default CTA for webinars should be "Watch Now"
+  $cta_text = __('Watch Now', 'aera');
+}
+
+// Get featured or card image
+$image_url = '';
+if ($resource_card_image && !empty($resource_card_image['url'])) {
+  $image_url = $resource_card_image['url'];
+} else {
+  $thumbnail_id = get_post_thumbnail_id($post_id);
+  if ($thumbnail_id) {
+    $thumbnail = wp_get_attachment_image_src($thumbnail_id, 'webinar_featured');
+    if ($thumbnail) {
+      $image_url = $thumbnail[0];
+    }
+  }
+}
+?>
+
+<a href="<?php echo esc_url($link); ?>" class="newsItem" resource-type="Webinar" resource-class="resources" target="_blank">
+  <div class="news__featuredEventsDetails">
+    <div class="news__detailsWrapper">
+      <?php if ($event_type) : ?>
+        <div class="news__type"><?php echo esc_html($event_type); ?></div>
+      <?php endif; ?>
+
+      <h2 class="news__heading">
+        <?php echo esc_html($title_truncated); ?>
+      </h2>
+
+      <?php if ($excerpt) : ?>
+        <p class="news__subheading">
+          <?php echo esc_html($excerpt); ?>
+        </p>
+      <?php endif; ?>
+    </div>
+
+    <div class="news__buttonWrapper">
+      <span class="newsItem__highlight highlighted">
+        <?php echo esc_html($cta_text); ?>
+      </span>
+    </div>
+  </div>
+
+  <?php if ($resource_card_image || $image_url) : ?>
+    <div class="news__featuredEventsImage">
+      <?php
+      $att_id = null;
+      if (!empty($resource_card_image) && is_array($resource_card_image)) {
+        $att_id = $resource_card_image['ID'] ?? $resource_card_image['id'] ?? null;
+      } elseif ($image_url) {
+        $att_id = get_post_thumbnail_id($post_id) ?: null;
+      }
+      if ($att_id) {
+        echo wp_get_attachment_image((int) $att_id, 'webinar_featured', false, array(
+          'alt'      => esc_attr($title),
+          'loading'  => 'lazy',
+          'decoding' => 'async',
+        ));
+      } elseif (!empty($resource_card_image) && is_array($resource_card_image) && !empty($resource_card_image['url'])) {
+        echo '<img src="' . esc_url($resource_card_image['url']) . '" alt="' . esc_attr($title) . '" loading="lazy" decoding="async" />';
+      } elseif ($image_url) {
+        echo '<img src="' . esc_url($image_url) . '" alt="' . esc_attr($title) . '" loading="lazy" decoding="async" />';
+      }
+      ?>
+    </div>
+  <?php endif; ?>
+</a>

@@ -1,0 +1,109 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+
+/* ICON CARD (Archive Page) */
+.icon-card {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+
+	&__link {
+		display: block;
+		width: 100%;
+		box-shadow: 0px 2px 10px rgba($color-codgray, 0.1);
+		border-radius: 8px;
+		background-color: $color-white;
+		text-decoration: none;
+		color: inherit;
+		transition:
+			box-shadow $transition-enter ease,
+			transform $transition-enter ease;
+		overflow: hidden;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+
+		&:hover {
+			box-shadow: 0px 4px 20px rgba($color-codgray, 0.15);
+			transform: translateY(-4px);
+		}
+	}
+
+	&__top-stripe {
+		height: 8px;
+		background-color: $color-link;
+		width: 100%;
+	}
+
+	&__content {
+		padding: 20px;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+
+		@media (max-width: $max-720) {
+			padding: 15px;
+		}
+	}
+
+	&__icon {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin-bottom: 15px;
+
+		img {
+			max-width: 64px;
+			max-height: 64px;
+			width: auto;
+			height: auto;
+			// filter: brightness(0) saturate(100%) invert(64%) sepia(47%) saturate(1055%) hue-rotate(157deg) brightness(95%) contrast(90%); // Light blue tint
+		}
+
+		@media (max-width: $max-720) {
+			img {
+				max-width: 50px;
+				max-height: 50px;
+			}
+		}
+	}
+
+	&__title {
+		@include subheading;
+		font-family: $font-family-gilroy;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 20px;
+		line-height: 24px;
+		color: $color-codgray;
+		margin: 0 0 10px;
+		text-align: left;
+
+		@media (max-width: $max-720) {
+			font-size: 16px;
+			line-height: 22px;
+		}
+	}
+
+	&__excerpt {
+		font-size: 18px;
+		font-weight: 350;
+		line-height: 20px;
+		color: $color-steelgray;
+		margin: 0;
+		text-align: left;
+
+		@media (max-width: $max-720) {
+			font-size: 13px;
+			line-height: 19px;
+		}
+	}
+}
+
+/* Function-based stripe colors */
+.icon-card {
+	@include skill-function-stripe-colors('.icon-card__top-stripe');
+}

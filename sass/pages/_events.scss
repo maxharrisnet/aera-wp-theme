@@ -1,0 +1,130 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../grid' as *;
+@use '../mixins' as *;
+
+.site-main--events {
+	padding-top: 0;
+}
+
+.post-type-archive.post-type-archive-event .hero {
+	height: 450px;
+}
+
+// News section styles (from legacy React - adapted for resource-card)
+.news--events {
+	padding-top: 0;
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		display: none;
+		@include heading;
+
+		@media (min-width: $min-1200) {
+			margin-left: math.percentage(math.div(1, 12));
+		}
+	}
+
+	&__list {
+		@media (min-width: $min-1200) {
+			@include make-row;
+		}
+	}
+
+	&__col {
+		margin-top: 50px;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+
+		@media (min-width: $min-1200) {
+			@include make-col(math.percentage(math.div(10.5, 12)));
+			margin: 0 auto;
+			padding: 50px 0px;
+		}
+	}
+
+	&__more {
+		display: flex;
+		justify-content: center;
+		padding: 70px 0px;
+	}
+
+	&__filterWrapper {
+		width: 60%;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 16px;
+		line-height: 24px;
+		padding: 250px 0px 15px 0px;
+		border-bottom: 1px solid #000;
+		font-family: $font-family-freight;
+		font-style: normal;
+		font-weight: 400;
+		margin-bottom: 35px;
+
+		a {
+			display: inline-block;
+			margin: 0 15px 20px 15px;
+			border-bottom: 1px solid transparent;
+
+			&:hover {
+				border-bottom: 1px solid #00578f !important;
+			}
+
+			&.active {
+				border-bottom: 1px solid #00578f;
+			}
+
+			@media (max-width: $max-960) {
+				margin: 0 10px 15px 10px;
+			}
+
+			@media (max-width: $max-720) {
+				margin: 0 12px 12px 15px;
+			}
+		}
+
+		@media (max-width: $max-720) {
+			width: 90%;
+			padding-top: 200px;
+		}
+	}
+
+	&__filterTopic {
+		padding-bottom: 40px;
+	}
+
+	&__heading {
+		text-align: center;
+	}
+}
+
+// Grid layout for resource cards on events page
+.news--events .news__col {
+	display: flex;
+	flex-wrap: wrap;
+	// width: 100%;
+
+	.resource-card,
+	article[class*='resource-card'] {
+		width: 33.33%;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+
+		@media (max-width: $max-960) {
+			width: 50%;
+		}
+
+		@media (max-width: $max-720) {
+			width: 85%;
+			padding: 0;
+			margin: 0 auto;
+			margin-bottom: 20px;
+		}
+	}
+}

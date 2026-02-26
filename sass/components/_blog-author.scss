@@ -1,0 +1,72 @@
+@use 'sass:math';
+@use '../reset' as *;
+@use '../variables' as *;
+@use '../grid' as *;
+@use '../mixins' as *;
+
+.article-author {
+	@include segment;
+	padding: 0 !important; // Sidebar version should sit tight to adjacent widgets
+	width: 100%;
+	text-align: center;
+
+	&__container {
+		margin: 0 70px;
+		padding: 0 0 20px;
+		border-bottom: 1px solid #000;
+	}
+
+	&__row {
+		@media (min-width: $min-720) {
+			@include make-row;
+			justify-content: center;
+		}
+	}
+
+	&__col {
+		padding: 0;
+		margin-bottom: 20px;
+
+		@media (max-width: $max-960) {
+			margin-left: 0;
+			padding-left: 0;
+			padding-right: 0;
+			margin-bottom: 30px;
+		}
+	}
+
+	img {
+		width: 120px;
+		margin: 0 auto;
+		margin-bottom: 20px;
+		border-radius: 70px;
+	}
+
+	p {
+		margin: 0;
+		color: $color-codgray;
+		font-size: 14px;
+	}
+
+	&__lead {
+		text-align: center;
+		color: $color-codgray;
+		margin-bottom: 20px;
+	}
+
+	&__leadName {
+		display: block;
+		color: $color-codgray;
+		margin-bottom: 5px;
+
+		a {
+			color: $color-codgray;
+		}
+	}
+
+	&__position {
+		color: $color-codgray;
+		display: inline-block;
+		margin-bottom: 5px;
+	}
+}

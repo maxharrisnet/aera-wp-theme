@@ -1,0 +1,53 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// ============================================================================
+// CTA Section Component
+// ============================================================================
+
+.cta-section {
+	@include segment;
+	// padding: 50px 0 100px 0;
+	text-align: center;
+
+	// @media (max-width: $max-720) {
+	// 	padding: 50px 0 80px 0;
+	// }
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		@include heading($hasMargin: false);
+		margin-bottom: $gutter;
+		// font-weight: 700;
+	}
+
+	// &__buttons {
+	// 	display: flex;
+	// 	gap: 16px;
+	// 	justify-content: center;
+	// 	align-items: center;
+	// 	flex-wrap: wrap;
+	// 	// max-width: 500px;
+	// 	margin: 0 auto;
+
+	// 	@media (max-width: $max-720) {
+	// 		flex-direction: column;
+	// 		gap: 12px;
+	// 		max-width: 100%;
+	// 	}
+	// }
+
+	// &__button {
+	// 	&:hover {
+	// 		opacity: 0.8;
+	// 	}
+
+	// 	@media (max-width: $max-720) {
+	// 		width: 100%;
+	// 		max-width: 300px;
+	// 	}
+	// }
+}

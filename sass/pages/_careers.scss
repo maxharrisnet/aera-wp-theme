@@ -1,0 +1,385 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+@use '../reset' as *;
+@use '../components/typography' as *;
+
+/* CAREERS PAGE */
+
+.page-template-page-careers .hero {
+	&__text {
+		@media (min-width: $min-480) {
+			max-width: (840/26) * 1em;
+			width: 80%;
+
+			.fullHeight & {
+				max-width: (940/26) * 1em;
+			}
+		}
+	}
+}
+
+/* Intro Section */
+.page-careers {
+	.intro {
+		position: relative;
+		padding: 50px 0 0;
+		text-align: center;
+
+		&.fullHeight {
+			display: flex;
+			align-items: center;
+			padding: 0;
+			height: 500px;
+			min-height: 100vh;
+		}
+
+		@media (min-width: $min-768) {
+			padding: 50px 0 0;
+		}
+
+		@media (min-width: $min-1024) {
+			padding-top: 0;
+		}
+
+		&__container {
+			@include container;
+		}
+
+		&__title {
+			@extend %title-base;
+			margin-bottom: 20px;
+		}
+
+		&__text {
+			@include reset-paragraph;
+			@include responsive-font(18, 26);
+			margin: 0 auto 1em;
+			font-weight: 400;
+
+			@media (min-width: $min-480) {
+				max-width: math.div(840, 26) * 1em;
+			}
+		}
+	}
+}
+
+/* Image Block Section */
+.image-block {
+	margin-top: $gutter;
+
+	@media (max-width: $min-720) {
+		margin-top: $gutter * 2;
+		margin-bottom: $gutter * 2;
+	}
+
+	&__container {
+		max-width: $page-width + 500px;
+
+		@media (max-width: $min-720) {
+			margin-left: -13%;
+			margin-right: -13%;
+		}
+
+		img {
+			width: 100%;
+			height: auto;
+			display: block;
+		}
+	}
+}
+
+/* Culture Section */
+.culture {
+	margin-bottom: $gutter * 3;
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		@include heading;
+		margin-bottom: $gutter;
+
+		@media (min-width: $min-720) {
+			margin-bottom: $gutter;
+			max-width: 9em;
+		}
+	}
+
+	&__text {
+		@media (min-width: $min-720) {
+			max-width: 36em;
+		}
+	}
+}
+
+/* Gallery Section */
+.page-careers {
+	.gallery {
+		margin-top: $gutter * 1.5;
+
+		&__container {
+			@include container;
+		}
+
+		&__row {
+			@media (min-width: $min-720) {
+				@include make-row;
+			}
+
+			&:first-child {
+				margin-bottom: $gutter;
+			}
+		}
+
+		&__col1 {
+			@media (min-width: $min-720) {
+				@include make-col(math.percentage(math.div(8, 12)));
+			}
+		}
+
+		&__col2 {
+			@media (min-width: $min-720) {
+				@include make-col(math.percentage(math.div(4, 12)));
+				align-self: flex-end;
+			}
+		}
+
+		&__col3 {
+			@media (min-width: $min-720) {
+				@include make-col(math.percentage(math.div(3, 12)));
+				margin-left: math.percentage(math.div(1, 12));
+			}
+		}
+
+		&__col4 {
+			@media (min-width: $min-720) {
+				@include make-col(math.percentage(math.div(8, 12)));
+			}
+		}
+
+		&__media {
+			width: 100%;
+			height: auto;
+			display: block;
+			margin-bottom: $gutter;
+
+			@media (min-width: $min-720) {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+/* Roles Section */
+.roles {
+	margin-top: $gutter * 2;
+	@include segment-bottom;
+
+	&__container {
+		@include container;
+	}
+
+	&__content {
+		padding-bottom: $gutter * 1.5;
+
+		@media (min-width: $min-720) {
+			@include make-row;
+			padding-bottom: $gutter;
+		}
+	}
+
+	&__contentCol {
+		@media (min-width: $min-720) {
+			@include make-col(math.percentage(math.div(9, 12)));
+			margin-left: math.percentage(math.div(1, 12));
+		}
+	}
+
+	&__title {
+		@include heading($hasMargin: false);
+		margin-bottom: 25px;
+	}
+
+	&__text {
+		@include reset-paragraph;
+	}
+
+	&__boldtext {
+		font-size: 14px;
+		color: #000;
+		margin-top: 20px;
+	}
+
+	&__center {
+		text-align: center;
+	}
+
+	&__row {
+		@include make-row;
+
+		@media (min-width: $min-720) {
+			display: flex;
+		}
+
+		&--header {
+			font-size: 14px;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: $color-table-heading;
+		}
+	}
+
+	&__col {
+		@include make-col(math.percentage(math.div(5, 12)));
+
+		padding-top: $gutter;
+		padding-bottom: $gutter;
+
+		@media (min-width: $min-720) {
+			font-size: 14px;
+			font-weight: 600;
+			text-transform: uppercase;
+			color: $color-table-heading;
+		}
+
+		&:first-child {
+			margin-left: math.percentage(math.div(1, 12));
+		}
+	}
+
+	&__filter {
+		padding-top: $gutter * 2;
+
+		&Item {
+			display: inline-block;
+			margin-bottom: $gutter;
+			margin-right: $gutter;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			label {
+				display: block;
+				margin-bottom: 8px;
+				font-weight: 600;
+				font-size: 14px;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	&__select {
+		padding: 8px 12px;
+		border: 1px solid $color-border;
+		background-color: #fff;
+		font-size: 14px;
+		min-width: 200px;
+		cursor: pointer;
+
+		&:focus {
+			outline: none;
+			border-color: $color-primary;
+		}
+	}
+
+	&__noMatch {
+		@include make-row;
+
+		&Content {
+			@include make-col(math.percentage(math.div(10, 12)));
+			margin-left: math.percentage(math.div(1, 12));
+			padding: $gutter * 2;
+			text-align: center;
+		}
+	}
+
+	&__listWrapper {
+		margin-top: $gutter * 2;
+	}
+
+	&__list {
+		@include reset-list;
+
+		margin: 0 (-$container-gutter-mobile);
+
+		@media (min-width: $min-720) {
+			margin: 0;
+		}
+	}
+}
+
+.rolesItem {
+	&:nth-child(odd) {
+		background: $color-background-darker;
+	}
+
+	&__link {
+		@include reset-anchor;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		position: relative;
+		padding: 0 $container-gutter-mobile * 2 0 $container-gutter-mobile;
+		min-height: 100px;
+		text-decoration: none;
+		color: $font-color-dark;
+		background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="7" height="12"><path fill="#1a1a1a" d="M.69 0L0 .69 5.3 6 0 11.3l.69.7 6-6z"/></svg>') no-repeat calc(100% - #{$container-gutter-mobile}) 50%;
+		background-size: 20px 20px;
+
+		@media (min-width: $min-720) {
+			padding-left: 0;
+			padding-right: 0;
+			background-position: calc(#{math.percentage(math.div(11, 12))} - 3px) 50%;
+		}
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.02);
+		}
+	}
+
+	&__row {
+		@media (min-width: $min-720) {
+			@include make-row;
+		}
+	}
+
+	&__col {
+		@media (min-width: $min-720) {
+			@include make-col(math.percentage(math.div(5, 12)));
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			&:first-child {
+				margin-left: math.percentage(math.div(1, 12));
+			}
+		}
+	}
+
+	&__heading {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__name {
+		@include responsive-font(16, 18);
+		margin-bottom: 0;
+		font-weight: 500;
+	}
+
+	&__type {
+		@include responsive-font(12, 14);
+		margin-top: 0;
+		text-transform: uppercase;
+		color: #666;
+	}
+
+	&__location {
+		@include responsive-font(16, 18);
+		font-weight: 200;
+	}
+}

@@ -1,0 +1,172 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+@use '../reset' as *;
+@use '../components/typography' as *;
+
+.intro {
+	position: relative;
+	z-index: 3;
+	padding: 50px 0 0;
+	text-align: center;
+
+	&.fullHeight {
+		display: flex;
+		align-items: center;
+		padding: 0;
+		height: 500px;
+		min-height: 100vh;
+	}
+
+	@media (min-width: $min-768) {
+		padding: 50px 0 0;
+	}
+
+	@media (min-width: $min-1024) {
+		padding: 0px 0 0;
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		@extend %title-base;
+	}
+
+	&__subtitle {
+		@extend %subtitle-base;
+		margin-top: 5px;
+		margin-bottom: 15px;
+	}
+
+	&__scrollBtn {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, -20%);
+
+		img {
+			width: 35px;
+			cursor: pointer;
+		}
+		@media (max-width: $min-720) {
+			transform: translate(-50%, -120%);
+			bottom: 8%;
+		}
+	}
+	&__text {
+		@include reset-paragraph;
+		@include responsive-font(18, 26);
+
+		margin: 0 auto 1em;
+
+		font-weight: 400;
+
+		@media (min-width: $min-480) {
+			max-width: math.div(840, 26) * 1em;
+			width: 100%;
+
+			.fullHeight & {
+				max-width: math.div(940, 26) * 1em;
+			}
+		}
+	}
+}
+
+.additionalsection {
+	padding-top: $gutter * 2;
+	text-align: center;
+
+	@media (max-width: $max-720) {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+
+	&__hiddenxs {
+		display: block;
+		@media (max-width: $max-720) {
+			display: none;
+		}
+	}
+
+	&__container {
+		@include container;
+		position: relative;
+	}
+
+	h2 {
+		font-size: 36px;
+		line-height: 46px;
+		font-weight: 700;
+
+		@media (max-width: $max-720) {
+			font-size: 22px;
+			line-height: 32px;
+		}
+	}
+
+	&__wrapper {
+		position: relative;
+		z-index: 1;
+		margin-bottom: 0px;
+		padding: 0px 20px;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			left: -$gutter;
+			right: -$gutter;
+			bottom: -20px;
+			z-index: 1;
+			height: 0px;
+			background: $color-background-darker;
+
+			@media (min-width: $min-720) {
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+
+	&__row {
+		@media (min-width: $min-720) {
+			@include make-row;
+		}
+	}
+
+	&__col {
+		@media (min-width: $min-720) {
+			@include make-col(math.percentage(math.div(12, 12)));
+			align-items: center;
+			order: 1;
+		}
+		@media (min-width: $min-1080) {
+			width: math.percentage(math.div(12, 12));
+		}
+	}
+}
+
+.home .cta-section {
+	@include segment;
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		margin-bottom: $gutter;
+	}
+}
+
+// Deprecated: Use CTA component instead
+// Keeping for backwards compatibility with existing pages
+// New pages should use template-parts/components/cta.php
+
+@media (max-width: 767px) {
+	.header__demo {
+		display: none;
+	}
+}

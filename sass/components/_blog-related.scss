@@ -1,0 +1,96 @@
+@use 'sass:math';
+@use '../reset' as *;
+@use '../variables' as *;
+@use '../grid' as *;
+@use '../mixins' as *;
+
+.blog-related {
+	margin-top: 0;
+	// margin-bottom: $gutter * 2;
+
+	&__container {
+		margin: 0 70px;
+		// border-bottom: #000 1px solid;
+	}
+
+	h3 {
+		// margin-top: 0;
+		// margin-bottom: $gutter;
+	}
+
+	&__list {
+		// List container for related items
+	}
+
+	&__col {
+		// Column container for related items
+	}
+
+	&__item {
+		margin-bottom: 15px;
+
+		&Row {
+			@include make-row;
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		&Wrapper {
+			border: 1px solid #c4c4c4;
+
+			a {
+				@include reset-anchor;
+				display: block;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+				display: block;
+			}
+		}
+	}
+
+	&__author {
+		font-size: 14px;
+		line-height: 26px;
+		margin-bottom: 0;
+		color: #000;
+		padding: 0 15px;
+	}
+
+	&__title {
+		display: block;
+		font-size: 16px;
+		line-height: 26px;
+		margin-top: 5px;
+		padding: 0 15px;
+		margin-bottom: 15px;
+
+		a {
+			color: #1a1a1a;
+		}
+	}
+
+	// border-top: 1px solid #5c6476;
+	// margin: 0 70px;
+
+	ul {
+		padding-left: 20px;
+		margin-top: 0;
+		color: $color-codgray;
+	}
+
+	a {
+		// display: block;
+		color: $color-codgray;
+		// font-weight: 400;
+		// font-size: 18px;
+		// @include reset-anchor;
+		// margin-bottom: 10px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

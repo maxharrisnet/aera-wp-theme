@@ -1,0 +1,129 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+@use 'typography' as *;
+
+// Case Study Card Styles
+// Uses resource-card classes for grid layout, case-study-card__ for unique styling
+.resource-card--case-study {
+	// Grid styles are inherited from .resource-card
+}
+
+.case-study-card {
+	&__content {
+		min-height: 500px;
+		position: relative;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		@media (max-width: $max-1024) {
+			min-height: 660px;
+		}
+		@media (max-width: $max-960) {
+			min-height: 620px;
+		}
+		@media (max-width: $max-720) {
+			min-height: auto;
+		}
+	}
+
+	&__header {
+		border-bottom: 5px solid $color-link;
+		padding: $gutter * 0.33 0;
+		min-height: 95px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@include responsive-font(20, 24);
+		font-weight: bold;
+		font-family: $font-family-heading;
+		@media (max-width: $max-1200) {
+			flex-direction: column;
+		}
+		@media (max-width: $max-960) {
+			flex-direction: row;
+		}
+	}
+
+	&__icon-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__icon {
+		width: 50px;
+		margin: 0 auto;
+		@media (max-width: $max-960) {
+			margin: 0 auto;
+		}
+	}
+
+	&__company-type {
+		padding-left: $gutter * 0.33;
+		@include responsive-font(20, 22);
+		font-family: $font-family-heading;
+		@media (max-width: $max-1200) {
+			padding-left: 0;
+			padding-top: $gutter * 0.33;
+		}
+		@media (max-width: $max-960) {
+			padding-left: $gutter * 0.33;
+			padding-top: 0;
+		}
+	}
+
+	&__company-details {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin-top: $gutter * 0.67;
+		padding: 0 $gutter * 0.5;
+		color: $font-color-dark;
+	}
+
+	&__detail-item {
+		flex: 1;
+	}
+
+	&__detail-label {
+		font-family: $font-family-heading;
+		color: $color-cornflower;
+		@include responsive-font(13, 14);
+	}
+
+	&__detail-value {
+		@include responsive-font(16, 18);
+	}
+
+	&__business-problem {
+		padding: 0 $gutter * 0.5;
+		margin-top: $gutter * 0.67;
+		@include responsive-font(15, 16);
+		color: $font-color-dark;
+	}
+
+	&__problem-text {
+		margin-top: 5px;
+	}
+
+	&__learn-more {
+		padding: 0 $gutter * 0.67;
+		padding-bottom: $gutter * 0.67;
+		text-align: right;
+		font-family: $font-family-heading;
+		font-weight: 600;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		color: $font-color-dark;
+		@include responsive-font(11, 12);
+		text-transform: uppercase;
+		@media (max-width: $max-720) {
+			position: relative;
+			text-align: left;
+			padding: $gutter * 0.67;
+		}
+	}
+}

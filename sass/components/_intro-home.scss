@@ -1,0 +1,71 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../reset' as *;
+@use 'typography' as *;
+
+.intro {
+	position: relative;
+	padding: 50px 0 0;
+	text-align: center;
+
+	&.fullHeight {
+		display: flex;
+		align-items: center;
+		padding: 0;
+		height: 500px;
+		min-height: 100vh;
+	}
+
+	@media (min-width: $min-768) {
+		padding: 50px 0 0;
+	}
+
+	@media (min-width: $min-1024) {
+		padding-top: 0;
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		@extend %title-base;
+	}
+
+	&__subtitle {
+		@extend %subtitle-base;
+	}
+
+	&__text {
+		@include reset-paragraph;
+		@include responsive-font(18, 26);
+		margin: 0 auto 1em;
+		font-weight: 400;
+
+		@media (min-width: $min-480) {
+			max-width: math.div(840, 26) * 1em;
+
+			.fullHeight & {
+				max-width: math.div(940, 26) * 1em;
+			}
+		}
+	}
+
+	&__scrollBtn {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, -20%);
+
+		img {
+			width: 35px;
+			cursor: pointer;
+		}
+
+		@media (max-width: $min-720) {
+			transform: translate(-50%, -120%);
+			bottom: 8%;
+		}
+	}
+}

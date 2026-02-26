@@ -1,0 +1,86 @@
+@use '../variables' as *;
+
+:global {
+	// @import '../base'; // TODO: Fix variables in base
+
+	div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner {
+		display: flex;
+		max-width: 1025px !important;
+	}
+	div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+		width: 105px;
+		margin-top: 0px !important;
+	}
+	#hs-eu-confirmation-button {
+		margin-top: -10px;
+	}
+	@media (max-width: 845px) {
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+			width: 125px;
+			margin-top: 0px !important;
+		}
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner p {
+			margin-right: 5px !important;
+			margin-left: 0px !important;
+		}
+	}
+	@media (max-width: 768px) {
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+			width: 130px;
+			margin-top: 0px !important;
+		}
+	}
+	@media (max-width: 740px) {
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+			width: 140px;
+			margin-top: 0px !important;
+			margin-left: 0px !important;
+			display: block !important;
+		}
+	}
+	@media (max-width: 720px) {
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-en-cookie-confirmation-buttons-area {
+			width: 280px;
+			margin-top: 0px !important;
+			margin-left: 0px !important;
+			margin-right: 0px !important;
+			display: block !important;
+		}
+		div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner div#hs-eu-policy-wording {
+			margin-bottom: 0px !important;
+		}
+	}
+}
+
+#app {
+	z-index: 10; // TODO: Fix z-index
+	position: relative;
+}
+
+.layout {
+	display: block;
+}
+
+/* Page */
+
+.page {
+	position: relative;
+	z-index: 3;
+
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 30vh, rgba(255, 255, 255, 1) 60vh);
+	background-repeat: repeat-x;
+
+	@media (min-width: $min-720) {
+		background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50vh, rgba(255, 255, 255, 1) 110vh);
+	}
+}
+
+/* Content */
+
+.content {
+	&Item {
+		position: relative;
+
+		width: 100%;
+	}
+}

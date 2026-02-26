@@ -1,0 +1,119 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+@use '../reset' as *;
+
+/* CONTACT */
+.makeContact {
+	@include segment-bottom;
+	padding-top: math.percentage(math.div(140px, $limit));
+
+	@media (min-width: $limit) {
+		padding-top: 140px;
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__inner {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 850px;
+
+		&.isLoading {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	}
+
+	&__group {
+		@media (min-width: $min-mobile) {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		&Actions {
+			padding-top: 20px;
+		}
+	}
+
+	&__item {
+		flex: none;
+		position: relative;
+		margin-bottom: $gutter;
+
+		@media (min-width: $min-mobile) {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			flex: none;
+			margin-bottom: $gutter * 1.5;
+			width: calc(50% - 1em);
+
+			&:nth-child(even) {
+				justify-content: flex-end;
+				margin-left: auto;
+			}
+		}
+
+		@media (min-width: $min-tablet) {
+			width: calc(50% - #{math.div(35, 18) * 1em});
+		}
+
+		@media (min-width: $min-desktop) {
+			margin-bottom: $gutter * 2;
+		}
+
+		&Right {
+			align-items: flex-end;
+		}
+
+		&TabletFull {
+			width: 100%;
+		}
+	}
+
+	&__item:nth-child(3) &__input,
+	&__item:nth-child(4) &__input {
+		border-color: $color-primary;
+	}
+
+	&__item:nth-child(5) &__input,
+	&__item:nth-child(6) &__input {
+		border-color: $color-cornflower;
+	}
+
+	&__thanks {
+		padding: $gutter 0;
+		text-align: center;
+	}
+
+	&__title {
+		@include reset-heading;
+		margin: 0 0 math.div($gutter, 2);
+		@include responsive-font(20, 24);
+		font-family: $font-family-gilroy;
+		font-weight: 700;
+		color: $color-codgray;
+	}
+
+	&__subline {
+		@include reset-all;
+		@include responsive-font(16, 18);
+	}
+
+	&__formPlaceholder {
+		padding: 40px 20px;
+		text-align: center;
+		color: $color-shuttlegray;
+
+		p {
+			margin-bottom: 10px;
+		}
+	}
+
+	// Hubspot form styling - removed, now handled by contact-form__contentwrapper
+	// These styles were conflicting with the contact-form styles
+}

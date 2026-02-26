@@ -1,0 +1,45 @@
+@use 'sass:math';
+@use '../reset' as *;
+@use '../variables' as *;
+@use '../grid' as *;
+@use '../mixins' as *;
+
+.articlenotFound {
+	min-height: 100vh;
+
+	&__container {
+		@include container;
+	}
+
+	&__row {
+		@include make-row;
+	}
+
+	&__col {
+		text-align: center;
+		width: 100%;
+		padding: $container-gutter-desktop;
+
+		@media (max-width: $max-720) {
+			padding: $container-gutter-mobile;
+		}
+	}
+
+	&__content {
+		text-align: center;
+	}
+
+	&__title {
+		@include reset-all;
+		@include responsive-font(20, 40);
+		font-family: $font-family-heading;
+		font-weight: 700;
+		color: $color-codgray;
+		line-height: $line-height;
+	}
+
+	&__subline {
+		@include reset-all;
+		@include responsive-font(14, 20);
+	}
+}

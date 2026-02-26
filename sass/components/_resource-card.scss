@@ -1,0 +1,436 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+
+/* RESOURCE CARD */
+.resource-card {
+	width: 33.33%; // TODO: Fix dumb flexbox widths
+	display: flex;
+	padding: 20px;
+
+	@media (max-width: $max-960) {
+		width: 50%;
+	}
+
+	@media (max-width: $max-720) {
+		width: 100%;
+		margin: 0 auto;
+		display: block;
+		margin-bottom: 20px;
+	}
+
+	&__wrapper {
+		box-shadow: 1px 1px 10px #e5e5e5;
+		border-radius: 10px;
+		min-height: 450px;
+		height: 100%; // Ensure all cards have same height
+		position: relative;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		background-color: $color-white;
+
+		@media (max-width: $max-720) {
+			min-height: auto;
+			height: auto;
+		}
+
+		a[href='javascript:;'] {
+			cursor: default;
+		}
+	}
+
+	&__figure {
+		width: 100%;
+		display: block;
+	}
+
+	&__bgImage {
+		width: 100%;
+		display: block;
+		min-height: 96px;
+		height: 101px;
+		// background-size: contain; // TODO: compare on desktop
+		// background-position: 50%;
+		// background-repeat: no-repeat;
+		border-radius: 10px 10px 0px 0px;
+
+		@media (max-width: $max-960) {
+			min-height: 70px;
+			height: auto;
+		}
+
+		@media (max-width: $max-720) {
+			min-height: 100px;
+			height: auto;
+		}
+	}
+
+	&__figure {
+		// height: 190px;
+		overflow: hidden;
+		border-radius: 10px 10px 0 0;
+
+		@media (max-width: $max-960) {
+			min-height: 70px;
+			height: auto;
+		}
+
+		@media (max-width: $max-720) {
+			min-height: 100px;
+			height: auto;
+		}
+	}
+
+	&__img {
+		// width: 100%;
+		height: 100%;
+		display: block;
+		object-fit: contain;
+		border-radius: inherit;
+		object-fit: cover;
+	}
+
+	&__logoImage {
+		min-height: 100px;
+		padding: 25px 0px;
+		display: block;
+	}
+
+	&__imageBorder {
+		border-bottom: 5px solid #003f68;
+	}
+
+	&__logo {
+		margin: 0px auto;
+		max-width: 150px;
+		display: block;
+
+		@media (min-width: $min-720) {
+			margin: 0px auto;
+		}
+	}
+
+	&__row {
+		@include make-row;
+		flex-wrap: inherit;
+		margin-left: 0px;
+		margin-right: 0px;
+		padding: 15px 15px 0 15px;
+		justify-content: space-between;
+		align-items: center;
+		// gap: 10px;
+
+		&--last {
+			padding: 15px 0 0;
+		}
+
+		@media (max-width: $max-960) {
+			flex-direction: column;
+			align-items: baseline;
+			gap: 5px;
+		}
+	}
+
+	&__content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		// min-height: 350px;
+
+		@media (max-width: $max-720) {
+			min-height: auto;
+		}
+	}
+
+	&__type {
+		font-family: $font-family-gilroy;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 20px;
+		display: inline-block;
+		color: $color-codgray;
+		position: relative;
+		white-space: nowrap;
+		text-transform: uppercase;
+		flex-shrink: 0; // Prevent type from shrinking
+		max-width: calc(50% - 5px); // Prevent overlap with city
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__city {
+		font-family: $font-family-gilroy;
+		font-style: normal;
+		font-weight: 700;
+		font-size: 14px;
+		// line-height: 20px;
+		display: inline-block;
+		color: $color-codgray;
+		position: relative;
+		white-space: nowrap;
+		// margin-left: auto;
+		// text-align: right;
+		flex-shrink: 0;
+		margin-bottom: 10px;
+		// max-width: calc(50% - 5px); // Prevent overlap with type
+		// overflow: hidden;
+		// text-overflow: ellipsis;
+	}
+
+	&__title {
+		@include subheading;
+		font-family: $font-family-gilroy;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 24px;
+		line-height: 27px;
+		color: $color-codgray;
+		margin: 15px 0px;
+
+		@media (max-width: $max-960) {
+			min-height: auto;
+			margin-top: 0;
+			font-size: 18px;
+			line-height: 26px;
+		}
+
+		@media (max-width: $max-720) {
+			min-height: auto;
+			margin-top: 0;
+		}
+	}
+
+	&__text {
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 26px;
+		min-height: 120px;
+		color: $color-codgray;
+		flex: 1;
+		margin-top: 0;
+		// Truncate text to prevent overflow
+		display: -webkit-box;
+		-webkit-line-clamp: 5; // Show max 5 lines
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__lastRow {
+		margin-top: auto; // Push to bottom using flexbox
+		padding: 0 15px 15px 15px;
+		width: 100%;
+
+		@media (max-width: $max-720) {
+			margin-top: 15px;
+			padding-bottom: 20px;
+		}
+	}
+
+	&__link-wrapper {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		text-decoration: none;
+		color: inherit;
+		min-height: 0; // Allow flex item to shrink
+	}
+
+	&__date {
+		font-size: 14px;
+		font-weight: 700;
+		font-family: $font-family-gilroy;
+		text-align: right;
+		color: $font-color-dark;
+		position: relative;
+		white-space: nowrap;
+
+		@media (max-width: $max-960) {
+			//margin-bottom: 10px;
+		}
+
+		@media (min-width: $min-720) {
+			white-space: nowrap;
+		}
+
+		@media (max-width: $max-720) {
+			text-align: left;
+			white-space: nowrap;
+		}
+	}
+
+	&__line {
+		width: 100%;
+		height: 1px;
+		background-color: $color-codgray;
+		margin: 9px 15px;
+
+		@media (max-width: $max-960) {
+			display: none;
+		}
+
+		@media (max-width: $max-720) {
+			display: none;
+		}
+	}
+
+	&__link {
+		@include link;
+		text-align: right;
+		display: block;
+		background-color: #003f68;
+		border-radius: 50px;
+		color: $color-white;
+		padding: 5px 25px;
+		white-space: nowrap;
+
+		&:hover {
+			text-decoration: none !important;
+		}
+
+		@media (max-width: $max-960) {
+			margin-top: 10px;
+		}
+	}
+
+	&__nonlink {
+		@include link;
+		text-align: right;
+		display: block;
+		color: #003f68;
+		cursor: default;
+		font-weight: bold;
+		white-space: nowrap;
+
+		&:hover {
+			text-decoration: none !important;
+		}
+
+		@media (max-width: $max-960) {
+			margin-top: 10px;
+		}
+	}
+
+	&__coming-soon {
+		font-family: $font-family-gilroy;
+		font-size: 13px;
+		font-weight: 700;
+		color: #003f68;
+		text-transform: uppercase;
+		text-align: right;
+		display: block;
+		cursor: default;
+		white-space: nowrap;
+		text-decoration: none;
+
+		@media (max-width: $max-720) {
+			text-align: left;
+		}
+	}
+
+	&__link-wrapper--coming-soon {
+		cursor: default;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
+	&--news,
+	&--report {
+		.resource-card__img {
+			object-fit: contain;
+		}
+	}
+
+	// Horizontal layout for Skills Home resources
+	&--horizontal {
+		width: 100%;
+		display: block;
+		margin-top: 0;
+		padding: 0;
+
+		.resource-card__wrapper {
+			min-height: auto;
+		}
+
+		.resource-card__link-wrapper {
+			display: block;
+			text-decoration: none;
+			color: inherit;
+		}
+
+		.resource-card__inner {
+			display: flex;
+			flex-direction: row;
+			align-items: stretch;
+			min-height: 200px;
+
+			@media (max-width: $max-720) {
+				flex-direction: column;
+				min-height: auto;
+			}
+		}
+
+		.resource-card__image-col {
+			flex: 0 0 50%;
+			display: flex;
+
+			@media (max-width: $max-720) {
+				flex: 1 1 auto;
+			}
+		}
+
+		.resource-card__content-col {
+			flex: 0 0 50%;
+			display: flex;
+			flex-direction: column;
+
+			@media (max-width: $max-720) {
+				flex: 1 1 auto;
+			}
+		}
+
+		.resource-card__figure {
+			width: 100%;
+			margin: 0;
+		}
+
+		.resource-card__bgImage {
+			height: 100%;
+			min-height: 200px;
+			background-size: cover;
+			border-radius: 10px 0 0 10px;
+
+			@media (max-width: $max-720) {
+				min-height: 150px;
+				border-radius: 10px 10px 0 0;
+			}
+		}
+
+		.resource-card__content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+			padding: 20px;
+
+			@media (max-width: $max-720) {
+				padding: 15px;
+			}
+		}
+
+		.resource-card__title {
+			margin-top: 0;
+		}
+
+		.resource-card__lastRow {
+			margin-top: auto;
+			padding-top: 15px;
+		}
+	}
+}

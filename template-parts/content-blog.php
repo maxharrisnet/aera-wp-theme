@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * Template part for single blog articles.
+ *
+ * @package Aera_Technology
+ */
+
+defined('ABSPATH') || exit;
+
+$lead_text = function_exists('get_field') ? (string) get_field('blog_lead') : '';
+$lead_paragraphs = array_values(array_filter(array_map('trim', preg_split('/\r\n|\r|\n/', $lead_text ?? ''))));
+$date_value = get_the_date('Y-m-d');
+$display_date = get_the_date('Y-m-d');
+
+$article_classes = array(
+  'article-template',
+);
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class($article_classes); ?>>
+  <div class="article-template__container">
+    <div class="article-template__row">
+      <div class="article-template__col article-template__col--main">
+        <header class="article-template__header">
+          <?php if ($display_date) : ?>
+            <p class="article-template__date">
+              <time datetime="<?php echo esc_attr($date_value); ?>">
+                <?php echo esc_html($display_date); ?>
+              </time>
+            </p>
+          <?php endif; ?>
+
+          <?php the_title('<h1 class="article-template__title">', '</h1>'); ?>
+
+          <?php if (! empty($lead_paragraphs)) : ?>
+            <?php foreach ($lead_paragraphs as $paragraph) : ?>
+              <p class="article-template__lead">
+                <span class="article-template__leadName"><?php echo esc_html($paragraph); ?></span>
+              </p>
+            <?php endforeach; ?>
+          <?php endif; ?>
+        </header>
+
+
+
+        <div class="article-template__content">
+          <?php
+          // Display featured image if available (use blog_hero size for consistency)
+          if (has_post_thumbnail()) :
+            $thumb_id = get_post_thumbnail_id();
+          ?>
+            <div class="article-template__featured-image">
+              <?php
+              if ($thumb_id) {
+                echo wp_get_attachment_image($thumb_id, 'blog_hero', false, array('loading' => 'eager', 'alt' => get_the_title()));
+              } else {
+                the_post_thumbnail('large', array('loading' => 'eager'));
+              }
+              ?>
+            </div>
+          <?php endif; ?>
+          <?php the_content(); ?>
+        </div>
+
+        <?php
+        wp_link_pages(
+          array(
+            'before' => '<nav class="article-template__pagination" aria-label="' . esc_attr__('Article pages', 'aera') . '">',
+            'after'  => '</nav>',
+          )
+        );
+        ?>
+      </div>
+    </div>
+  </div>
+</article>

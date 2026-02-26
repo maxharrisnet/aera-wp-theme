@@ -1,0 +1,108 @@
+@use 'sass:math';
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../grid' as *;
+
+/* RESOURCES PAGE */
+.resources {
+	margin-top: $gutter * 1;
+
+	&__container {
+		@include container;
+	}
+
+	&__title {
+		display: none;
+		@include heading;
+
+		@media (min-width: $min-1200) {
+			margin-left: math.percentage(math.div(1, 12));
+		}
+	}
+
+	&__list {
+		@media (min-width: $min-1200) {
+			@include make-row;
+		}
+	}
+
+	&__col {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0;
+
+		@media (min-width: $min-1200) {
+			@include make-col(math.percentage(math.div(10.5, 12)));
+			margin: 0 auto;
+			padding: 50px 0px;
+			display: flex;
+			flex-wrap: wrap;
+			gap: 0; // Cards handle their own spacing
+		}
+	}
+
+	&__more {
+		display: flex;
+		justify-content: center;
+		padding: 70px 0px;
+	}
+
+	&__pagination {
+		margin-top: $gutter * 2;
+		text-align: center;
+	}
+
+	&__filterWrapper {
+		width: 70%;
+		margin: 0 auto;
+		text-align: center;
+		font-size: 16px;
+		line-height: 24px;
+		padding: 250px 0px 15px 0px;
+		border-bottom: 1px solid $color-codgray;
+		font-family: $font-family-freight;
+		font-style: normal;
+		font-weight: 400;
+		margin-bottom: 35px;
+
+		a {
+			display: inline-block;
+			margin: 0 15px 15px 15px;
+			border-bottom: 1px solid transparent;
+			text-transform: uppercase;
+
+			&:hover {
+				border-bottom: 1px solid #00578f !important;
+			}
+
+			&.active {
+				border-bottom: 1px solid #00578f;
+			}
+
+			@media (max-width: $max-960) {
+				margin: 0 10px 15px 10px;
+			}
+
+			@media (max-width: $max-720) {
+				margin: 0 15px 15px 15px;
+			}
+		}
+
+		@media (max-width: $max-720) {
+			width: 90%;
+			padding-top: 200px;
+		}
+	}
+
+	&__filterType {
+		// Additional filter type styles if needed
+	}
+
+	&__filterTopic {
+		padding-bottom: 40px;
+	}
+
+	&__heading {
+		text-align: center;
+	}
+}

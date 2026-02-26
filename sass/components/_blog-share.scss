@@ -1,0 +1,46 @@
+@use 'sass:math';
+@use '../reset' as *;
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.blog-share {
+	padding-top: 0;
+
+	@media (max-width: $max-960) {
+		padding-top: 0;
+	}
+
+	&__container {
+		margin: 0 70px;
+		padding: 0 0 20px; // Only bottom padding like original
+		border-bottom: 1px solid #000;
+	}
+
+	&__networks {
+		display: flex;
+		align-items: center;
+		gap: 9%;
+		margin-top: 15px;
+	}
+
+	&__network {
+		vertical-align: top;
+		display: inline-block;
+		text-align: right;
+	}
+
+	&__button {
+		@include reset-anchor;
+		display: inline-block;
+		cursor: pointer;
+		transition: opacity 0.3s ease-in-out;
+
+		&:hover:not(:active) {
+			opacity: 0.75;
+		}
+
+		svg {
+			display: block;
+		}
+	}
+}
