@@ -817,18 +817,6 @@ function aera_redirect_disabled_archives(): void
 }
 add_action('template_redirect', 'aera_redirect_disabled_archives');
 
-/**
- * Disable automatic paragraph tags added by WordPress.
- *
- * @return void
- */
-function aera_disable_automatic_paragraphs(): void
-{
-  remove_filter('the_content', 'wpautop');
-  remove_filter('the_excerpt', 'wpautop');
-  remove_filter('comment_text', 'wpautop');
-}
-add_action('init', 'aera_disable_automatic_paragraphs', 20);
 
 /**
  * Exclude default posts from Yoast XML sitemap.
