@@ -216,7 +216,7 @@ function aera_get_script($script_name)
 }
 
 /**
- * Enqueue scripts and styles.
+ * Enqueue scripts and styles. test
  */
 function aera_technology_scripts()
 {
