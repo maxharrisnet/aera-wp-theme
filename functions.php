@@ -221,9 +221,18 @@ function aera_get_script($script_name)
 function aera_technology_scripts()
 {
   // Canonical theme stylesheet: assets/css/aera.css.
-  // For best performance, generate it via `npm run build:css` (compressed, no source map).
-  // style.css is retained only for the required WP theme header.
+  // Build via `npm run build:css` (compressed, no source map).
   wp_enqueue_style('aera-theme-components', get_template_directory_uri() . '/assets/css/aera.css', array(), _S_VERSION);
+
+  // Keep style.css as a live override layer so WP Admin Theme Editor changes
+  // affect frontend styling without modifying compiled Sass output.
+  $style_css_path = get_stylesheet_directory() . '/style.css';
+  wp_enqueue_style(
+    'aera-theme-overrides',
+    get_stylesheet_uri(),
+    array('aera-theme-components'),
+    file_exists($style_css_path) ? (string) filemtime($style_css_path) : _S_VERSION
+  );
 
   // Enqueue GSAP from CDN — loaded in footer since its dependents (site.js) also load in footer
   wp_enqueue_script(

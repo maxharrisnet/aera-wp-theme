@@ -62,6 +62,19 @@ composer lint:wpcs
 - Canonical runtime stylesheet is `assets/css/aera.css`.
 - Dev CSS (`npm run dev:css`) is expanded and includes sourcemaps.
 - Production CSS (`npm run build:css`) is compressed and excludes sourcemaps.
+- `style.css` is also enqueued after `assets/css/aera.css` as an admin-editable override layer.
+
+Temporary hotfix template for `style.css`:
+
+```css
+/*
+HOTFIX: [ticket-id or short label]
+Date: YYYY-MM-DD
+Reason: [what broke]
+Owner: [name]
+Backport: pending -> sass/[path].scss
+*/
+```
 
 ### Deploy recommendation (WP Engine)
 
@@ -71,7 +84,7 @@ Before pushing/deploying to WP Engine, run:
 npm run build
 ```
 
-This ensures compressed production assets are committed/deployed and avoids shipping debug/watch output.
+This ensures production assets are committed/deployed and avoids shipping debug/watch output.
 
 ### Release checklist
 
@@ -83,6 +96,7 @@ This ensures compressed production assets are committed/deployed and avoids ship
 6. Deploy to WP Engine environment.
 7. In WP Admin, sync ACF JSON changes if prompted.
 8. Purge WP Engine cache/CDN and validate frontend + forms.
+9. If an urgent CSS hotfix is needed in production, apply it in `style.css` (admin override layer), then backport that change into Sass (`sass/`) and rebuild assets in the next commit.
 
 ### Platform notes and docs
 

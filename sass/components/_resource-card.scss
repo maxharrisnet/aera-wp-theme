@@ -48,12 +48,8 @@
 
 	&__bgImage {
 		width: 100%;
-		display: block;
-		min-height: 96px;
-		height: 101px;
-		// background-size: contain; // TODO: compare on desktop
-		// background-position: 50%;
-		// background-repeat: no-repeat;
+		aspect-ratio: 16 / 5; /* adjust slightly if needed */
+		overflow: hidden;
 		border-radius: 10px 10px 0px 0px;
 
 		@media (max-width: $max-960) {
@@ -84,12 +80,10 @@
 	}
 
 	&__img {
-		// width: 100%;
-		height: 100%;
-		display: block;
-		object-fit: contain;
-		border-radius: inherit;
-		object-fit: cover;
+		width: 100%;
+		 height: 100%;
+		 object-fit: cover;
+		 display: block;
 	}
 
 	&__logoImage {

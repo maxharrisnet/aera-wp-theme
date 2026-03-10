@@ -17,3 +17,10 @@ Use it to make something cool, have fun, and share what you've learned.
 
 Aera Technology is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+/*
+Admin-editable overrides:
+- This file is loaded after assets/css/aera.css.
+- Add site-specific CSS here when editing from WP Admin.
+*/
