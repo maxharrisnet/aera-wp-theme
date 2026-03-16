@@ -35,6 +35,7 @@ function aera_output_head_meta()
   <!-- Aera: meta/link to match original site -->
   <meta name="google-site-verification" content="UPEFpocP7qNk3bXQc962_ql03GcojuTqs2xbbVu35Ic">
   <meta name="theme-color" content="#ffffff">
+  <meta http-equiv="Permissions-Policy" content="unload=()">
   <meta name="msapplication-square150x150logo" content="<?php echo esc_url($favicons_base . '/mstile-150x150.png'); ?>">
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo esc_url($favicons_base . '/apple-touch-icon.png'); ?>">
   <link rel="mask-icon" href="<?php echo esc_url($favicons_base . '/safari-pinned-tab.svg'); ?>" color="#8ac4e8">
