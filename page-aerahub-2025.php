@@ -50,6 +50,7 @@ $assets_uri = get_template_directory_uri() . '/assets/images/aerahub2025/';
           src="<?php echo esc_url($assets_uri . 'aeraHubHeroOD.webp'); ?>"
           alt="<?php esc_attr_e('Hero Image', 'aera'); ?>"
           class="aerahub-2025__heroImage"
+          loading="eager"
           fetchpriority="high" />
         <div class="aerahub-2025__heroSection" id="hero-section">
           <div class="aerahub-2025__heroRow">
@@ -58,6 +59,7 @@ $assets_uri = get_template_directory_uri() . '/assets/images/aerahub2025/';
                 alt="<?php esc_attr_e('AeraHub Logo', 'aera'); ?>"
                 src="<?php echo esc_url($assets_uri . 'AERAHUB25OD.png'); ?>"
                 class="aerahub-2025__heroLogo"
+                loading="eager"
                 fetchpriority="high" />
               <h1><?php esc_html_e('The Decision Intelligence Global Summit', 'aera'); ?></h1>
               <p><?php esc_html_e('AeraHUB 25 brought together C-level executives, business leaders, and technology pioneers who are digitizing and transforming decisions at scale.', 'aera'); ?></p>
@@ -71,6 +73,7 @@ $assets_uri = get_template_directory_uri() . '/assets/images/aerahub2025/';
               <img
                 src="<?php echo esc_url($assets_uri . 'onDemandSessions.webp'); ?>"
                 alt="<?php esc_attr_e('On-Demand Sessions', 'aera'); ?>"
+                loading="eager"
                 fetchpriority="high" />
             </div>
           </div>

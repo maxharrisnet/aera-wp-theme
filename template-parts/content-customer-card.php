@@ -141,9 +141,9 @@ if (isset($args['link'])) {
         <?php
         $att = $hero_image_data['ID'] ?? $hero_image_data['id'] ?? null;
         if ($att) {
-          echo wp_get_attachment_image($att, 'webinar_card_image', false, array('alt' => 'companyImage', 'class' => 'feature-card__image', 'loading' => 'lazy', 'decoding' => 'async'));
+          echo wp_get_attachment_image($att, 'webinar_card_image', false, array('alt' => 'companyImage', 'class' => 'feature-card__image', 'loading' => 'eager', 'decoding' => 'async'));
         } else {
-          echo '<img src="' . esc_url($hero_image_url) . '" alt="companyImage" class="feature-card__image" loading="lazy" decoding="async" />';
+          echo '<img src="' . esc_url($hero_image_url) . '" alt="companyImage" class="feature-card__image" loading="eager" decoding="async" />';
         }
         ?>
       </div>

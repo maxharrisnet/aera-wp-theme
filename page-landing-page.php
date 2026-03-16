@@ -67,7 +67,7 @@ if (!empty($hero_background_image) && !empty($hero_background_image['url'])) {
           <?php if (!empty($hero_image) && !empty($hero_image['url'])) : ?>
             <div class="landing-page__heroRight">
               <div class="landing-page__heroImage">
-                <img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt'] ?? __('Landing page hero image', 'aera')); ?>" />
+                <img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt'] ?? __('Landing page hero image', 'aera')); ?>" loading="eager" />
               </div>
             </div>
           <?php endif; ?>

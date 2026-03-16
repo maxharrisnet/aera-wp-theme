@@ -168,12 +168,12 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                               if ($attachment_id) {
                                 echo wp_get_attachment_image($attachment_id, 'skill_hero', false, array(
                                   'alt'      => $thumb_alt,
-                                  'loading'  => 'lazy',
+                                  'loading'  => 'eager',
                                   'decoding' => 'async',
                                 ));
                               } else {
                                 $src = $video_thumbnail['sizes']['skill_hero'] ?? $video_thumbnail['sizes']['medium'] ?? $video_thumbnail['url'];
-                                echo '<img src="' . esc_url($src) . '" alt="' . esc_attr($thumb_alt) . '" loading="lazy" decoding="async" />';
+                                echo '<img src="' . esc_url($src) . '" alt="' . esc_attr($thumb_alt) . '" loading="eager" decoding="async" />';
                               }
                               ?>
                               <span class="skill-content__video-play-icon">
@@ -190,12 +190,12 @@ $default_hubspot_form_id = function_exists('get_field') ? get_field('hubspot_for
                             if ($attachment_id) {
                               echo wp_get_attachment_image($attachment_id, 'skill_hero', false, array(
                                 'alt'      => $thumb_alt,
-                                'loading'  => 'lazy',
+                                'loading'  => 'eager',
                                 'decoding' => 'async',
                               ));
                             } else {
                               $src = $video_thumbnail['sizes']['skill_hero'] ?? $video_thumbnail['sizes']['medium'] ?? $video_thumbnail['url'];
-                              echo '<img src="' . esc_url($src) . '" alt="' . esc_attr($thumb_alt) . '" loading="lazy" decoding="async" />';
+                              echo '<img src="' . esc_url($src) . '" alt="' . esc_attr($thumb_alt) . '" loading="eager" decoding="async" />';
                             }
                             ?>
                           <?php endif; ?>
