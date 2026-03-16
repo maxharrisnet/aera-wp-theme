@@ -18,26 +18,10 @@ defined('ABSPATH') || exit;
 function register_taxonomies(): void
 {
   $resourceTypes = array(
-    'news',
-    'press-release',
-    'video',
-    'whitepaper',
-    'blog',
-    'case-study',
-    'podcast',
-    'customer',
-    'event',
     'webinar',
   );
 
   $industryTypes = array(
-    'news',
-    'video',
-    'whitepaper',
-    'blog',
-    'case-study',
-    'podcast',
-    'event',
     'webinar',
   );
 
@@ -334,3 +318,44 @@ function populate_skill_category_parent_function_column(string $content, string 
   return $content;
 }
 add_filter('manage_skill_category_custom_column', __NAMESPACE__ . '\\populate_skill_category_parent_function_column', 10, 3);
+
+/**
+ * Remove Resource Topic and Industry columns from non-webinar resource CPT list tables.
+ *
+ * This is a defensive guard so columns stay hidden even if taxonomy registrations
+ * are expanded again in the future.
+ *
+ * @param array $columns Existing admin columns.
+ * @return array Modified admin columns.
+ */
+function remove_non_webinar_resource_taxonomy_columns(array $columns): array
+{
+  unset($columns['taxonomy-resource_topic'], $columns['taxonomy-industry']);
+  return $columns;
+}
+
+/**
+ * Register admin column removal filters for non-webinar resource CPTs.
+ *
+ * @return void
+ */
+function register_non_webinar_resource_column_filters(): void
+{
+  $post_types = array(
+    'news',
+    'press-release',
+    'video',
+    'whitepaper',
+    'blog',
+    'case-study',
+    'podcast',
+    'report',
+    'customer',
+    'event',
+  );
+
+  foreach ($post_types as $post_type) {
+    add_filter('manage_' . $post_type . '_posts_columns', __NAMESPACE__ . '\\remove_non_webinar_resource_taxonomy_columns', 20);
+  }
+}
+add_action('admin_init', __NAMESPACE__ . '\\register_non_webinar_resource_column_filters');
