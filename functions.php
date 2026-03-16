@@ -248,6 +248,154 @@ function aera_technology_scripts()
 
   $site = aera_get_script('site');
   wp_enqueue_script('aera-theme-site', $site['url'], array('gsap'), $site['version'], true);
+  $hubspot_no_lazyload_debug = defined('WP_DEBUG') && WP_DEBUG;
+  $hubspot_no_lazyload_script = <<<'JS'
+(function () {
+  const AERA_HUBSPOT_NO_LAZYLOAD_DEBUG = __AERA_HUBSPOT_NO_LAZYLOAD_DEBUG__;
+  const HUBSPOT_IFRAME_SELECTOR = 'iframe[src*="hsforms."], iframe[src*="hubspot" i], iframe.hs-form-iframe';
+
+  function debugLog() {
+    if (!AERA_HUBSPOT_NO_LAZYLOAD_DEBUG || !window.console || typeof window.console.log !== 'function') {
+      return;
+    }
+
+    window.console.log.apply(window.console, arguments);
+  }
+
+  function isHubSpotIframe(node) {
+    if (!node || node.tagName !== 'IFRAME') {
+      return false;
+    }
+
+    const src = (node.getAttribute('src') || '').toLowerCase();
+    return (
+      src.includes('hsforms.') ||
+      src.includes('hubspot') ||
+      node.classList.contains('hs-form-iframe') ||
+      node.closest('[id*="HubspotForm" i], [class*="hubspot" i], [class*="hs-form" i]') !== null
+    );
+  }
+
+  function markNoLazyload(node) {
+    if (isHubSpotIframe(node)) {
+      const hadClass = node.classList.contains('no-lazyload');
+      node.classList.add('no-lazyload');
+
+      if (!hadClass) {
+        debugLog('[Aera] Added no-lazyload to HubSpot iframe', node);
+      }
+    }
+  }
+
+  function markAllHubSpotIframes(root) {
+    const scope = root && root.querySelectorAll ? root : document;
+    scope.querySelectorAll(HUBSPOT_IFRAME_SELECTOR).forEach(markNoLazyload);
+  }
+
+  function patchHubSpotCreate() {
+    if (!window.hbspt || !window.hbspt.forms || typeof window.hbspt.forms.create !== 'function') {
+      return false;
+    }
+
+    if (window.hbspt.forms.create.__aeraNoLazyloadPatched) {
+      return true;
+    }
+
+    const originalCreate = window.hbspt.forms.create;
+    const patchedCreate = function (options) {
+      let nextOptions = options;
+
+      if (options && typeof options === 'object') {
+        nextOptions = Object.assign({}, options);
+        const originalOnFormReady = nextOptions.onFormReady;
+
+        nextOptions.onFormReady = function () {
+          markAllHubSpotIframes(document);
+
+          if (typeof originalOnFormReady === 'function') {
+            return originalOnFormReady.apply(this, arguments);
+          }
+
+          return undefined;
+        };
+      }
+
+      const result = originalCreate.call(this, nextOptions);
+      markAllHubSpotIframes(document);
+      setTimeout(function () {
+        markAllHubSpotIframes(document);
+      }, 100);
+
+      return result;
+    };
+
+    patchedCreate.__aeraNoLazyloadPatched = true;
+    window.hbspt.forms.create = patchedCreate;
+    debugLog('[Aera] Patched hbspt.forms.create for no-lazyload support');
+
+    return true;
+  }
+
+  function watchForHubSpotIframes() {
+    if (!window.MutationObserver) {
+      return;
+    }
+
+    const observer = new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (node) {
+          if (!node || node.nodeType !== 1) {
+            return;
+          }
+
+          markNoLazyload(node);
+
+          if (node.querySelectorAll) {
+            node.querySelectorAll('iframe').forEach(markNoLazyload);
+          }
+        });
+      });
+    });
+
+    observer.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  function init() {
+    markAllHubSpotIframes(document);
+    watchForHubSpotIframes();
+    debugLog('[Aera] HubSpot no-lazyload observer initialized');
+
+    if (patchHubSpotCreate()) {
+      return;
+    }
+
+    let attempts = 0;
+    const maxAttempts = 120;
+    const interval = setInterval(function () {
+      attempts += 1;
+
+      if (patchHubSpotCreate() || attempts >= maxAttempts) {
+        clearInterval(interval);
+      }
+    }, 500);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+JS;
+  $hubspot_no_lazyload_script = str_replace(
+    '__AERA_HUBSPOT_NO_LAZYLOAD_DEBUG__',
+    $hubspot_no_lazyload_debug ? 'true' : 'false',
+    $hubspot_no_lazyload_script
+  );
+  wp_add_inline_script('aera-theme-site', $hubspot_no_lazyload_script, 'after');
 
   // Only load the Three.js background bundle on pages that actually use it
   if (aera_is_background_active()) {
