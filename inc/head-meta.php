@@ -31,7 +31,7 @@ function aera_favicons_base_url()
 function aera_output_head_meta()
 {
   $favicons_base = aera_favicons_base_url();
-  ?>
+?>
   <!-- Aera: meta/link to match original site -->
   <meta name="google-site-verification" content="UPEFpocP7qNk3bXQc962_ql03GcojuTqs2xbbVu35Ic">
   <meta name="theme-color" content="#ffffff">
@@ -43,7 +43,7 @@ function aera_output_head_meta()
   <link rel="icon" type="image/png" href="<?php echo esc_url($favicons_base . '/favicon-16x16.png'); ?>" sizes="16x16">
   <link rel="icon" sizes="16x16 32x32" href="<?php echo esc_url($favicons_base . '/favicon.ico'); ?>">
   <link rel="manifest" href="<?php echo esc_url(aera_favicons_base_url() . '/manifest.json'); ?>">
-  <?php
+<?php
 }
 add_action('wp_head', __NAMESPACE__ . '\\aera_output_head_meta', 2);
 

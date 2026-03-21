@@ -117,14 +117,14 @@ if (!empty($hero_background_image) && !empty($hero_background_image['url'])) {
       </section>
 
       <?php if (!empty($form_form_id)) : ?>
-      <script>
-        (function() {
-          const portalId = '<?php echo esc_js($form_portal_id); ?>';
-          const formId = '<?php echo esc_js($form_form_id); ?>';
+        <script>
+          (function() {
+            const portalId = '<?php echo esc_js($form_portal_id); ?>';
+            const formId = '<?php echo esc_js($form_form_id); ?>';
 
-          if (!portalId || !formId) return;
+            if (!portalId || !formId) return;
 
-          const formCss = `#landingHubspotForm .hs-form { width: 100%; }
+            const formCss = `#landingHubspotForm .hs-form { width: 100%; }
 #landingHubspotForm .hs-form .hs-form-iframe { width: 100%; }
 #landingHubspotForm h3 { font-family: "Gilroy", sans-serif !important; font-weight: 700; font-size: 20px; }
 #landingHubspotForm .hs-form .hs-form-iframe fieldset { margin-bottom: 20px; border: none; padding: 0; }
@@ -155,39 +155,39 @@ if (!empty($hero_background_image) && !empty($hero_background_image['url'])) {
 #landingHubspotForm .hs-form .hs_recaptcha { margin-bottom: 20px; }
 #landingHubspotForm .hs-form .hs_recaptcha .grecaptcha-badge { opacity: 0.8 !important; }`;
 
-          function createForm() {
-            if (window.hbspt && window.hbspt.forms) {
-              window.hbspt.forms.create({
-                portalId: portalId,
-                formId: formId,
-                target: '#landingHubspotForm',
-                css: formCss,
-                onFormReady: function($form) {
-                  const el = document.getElementById('landingHubspotForm');
-                  if (el) el.style.opacity = '1';
-                }
-              });
+            function createForm() {
+              if (window.hbspt && window.hbspt.forms) {
+                window.hbspt.forms.create({
+                  portalId: portalId,
+                  formId: formId,
+                  target: '#landingHubspotForm',
+                  css: formCss,
+                  onFormReady: function($form) {
+                    const el = document.getElementById('landingHubspotForm');
+                    if (el) el.style.opacity = '1';
+                  }
+                });
+              }
             }
-          }
 
-          if (document.querySelector('script[src*="js.hsforms.net"]')) {
-            document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', createForm) : createForm();
-            return;
-          }
-
-          const script = document.createElement('script');
-          script.src = 'https://js.hsforms.net/forms/embed/v2.js';
-          script.charset = 'utf-8';
-          script.type = 'text/javascript';
-          script.async = true;
-          script.addEventListener('load', function() {
-            if (window.hbspt && window.hbspt.forms) {
+            if (document.querySelector('script[src*="js.hsforms.net"]')) {
               document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', createForm) : createForm();
+              return;
             }
-          });
-          (document.head || document.getElementsByTagName('head')[0]).appendChild(script);
-        })();
-      </script>
+
+            const script = document.createElement('script');
+            script.src = 'https://js.hsforms.net/forms/embed/v2.js';
+            script.charset = 'utf-8';
+            script.type = 'text/javascript';
+            script.async = true;
+            script.addEventListener('load', function() {
+              if (window.hbspt && window.hbspt.forms) {
+                document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', createForm) : createForm();
+              }
+            });
+            (document.head || document.getElementsByTagName('head')[0]).appendChild(script);
+          })();
+        </script>
       <?php endif; ?>
     <?php endif; ?>
 
