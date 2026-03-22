@@ -19,7 +19,9 @@
     "vite": "^5.1.0"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0",
     "contentful-management": "^11.67.2",
+    "dotenv": "^17.3.1",
     "gsap": "^3.12.2",
     "three": "^0.122.0"
   },
@@ -61,6 +63,18 @@
     "lint:js": "wp-scripts lint-js 'js/*.js'",
     "bundle": "dir-archiver --src . --dest ../aera-technology.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock",
     "build:background": "vite build --config vite.config.js",
-    "watch:background": "vite build --watch --mode development --config vite.config.js"
+    "watch:background": "vite build --watch --mode development --config vite.config.js",
+    "publish-brief": "node scripts/publish.mjs"
+  },
+  "main": "vite.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxharrisnet/aera-wp-theme.git"
+  },
+  "bugs": {
+    "url": "https://github.com/maxharrisnet/aera-wp-theme/issues"
   }
 }

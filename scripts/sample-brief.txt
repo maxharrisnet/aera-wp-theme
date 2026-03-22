@@ -1,0 +1,13 @@
+Title: Why Decision Intelligence Is the Next Frontier for Supply Chain Leaders
+
+Supply chain leaders are under more pressure than ever. Between geopolitical disruption, demand volatility, and the push toward sustainability, traditional planning tools are falling short. Static dashboards and spreadsheet-driven forecasts simply can't keep up with the pace of change.
+
+That's where Decision Intelligence comes in. Unlike conventional analytics that tell you what happened, Decision Intelligence platforms like Aera recommend what to do next — and can even act autonomously on your behalf. By combining real-time data ingestion, machine learning models, and configurable business rules, these systems close the gap between insight and action.
+
+Consider a global FMCG company managing thousands of SKUs across dozens of markets. When a port delay disrupts inbound shipments, a Decision Intelligence system can instantly evaluate the downstream impact on production schedules, customer commitments, and inventory positions — then recommend or execute the optimal response without waiting for a human to crunch the numbers.
+
+The implications go beyond efficiency. Companies using Decision Intelligence report faster response times, lower inventory carrying costs, and improved service levels. More importantly, they free up their best people to focus on strategic decisions instead of firefighting.
+
+For supply chain leaders evaluating their technology roadmap, the question isn't whether to adopt Decision Intelligence — it's how quickly you can get started. The competitive gap is already widening.
+
+Aera Technology's Decision Intelligence platform is purpose-built for the enterprise, with pre-built skills for supply chain, procurement, finance, and more. To learn how leading companies are transforming their operations, explore our customer stories or request a demo.
