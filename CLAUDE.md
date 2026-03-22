@@ -24,13 +24,15 @@ system connecting WordPress, Slack, Google Drive, Figma, HubSpot, JIRA, and GA4.
 
 - **Setup:** Local by Flywheel
 - **Site:** aeratechnology.com (local copy of the migrated production site)
-- **WordPress version:** Check via `wp core version` in Local's shell
-- **PHP version:** Check via `php -v` in Local's shell
-- **Database:** MySQL via Local's built-in DB tools
+- **Local URL:** http://localhost:10020
+- **WP Admin:** http://localhost:10020/wp-admin/
+- **Admin user:** `max` (ID 1, administrator)
+- **Database:** MySQL via Local's built-in DB tools (DB: `local`, user: `root`, pass: `root`)
 - **Theme:** Custom theme at `wp-content/themes/aera-technology/`
-- **Local URL:** Typically http://aeratechnology.local (confirm in Local app)
 
-To open a shell for WP-CLI commands: Open Local > right-click site > Open Site Shell
+**WP-CLI:** Available at `/opt/homebrew/bin/wp` but requires Local's MySQL socket.
+For WP-CLI commands: Open Local > right-click site > Open Site Shell.
+Alternatively, use the REST API directly (works from any terminal).
 
 ---
 
@@ -73,6 +75,53 @@ Registered in `inc/post-types.php`.
 
 All CPTs have `show_in_rest: true` so they're accessible via the REST API.
 
+**Content counts (as of 2026-03-22):**
+blog: 98, press-release: 48, whitepaper: 27, case-study: 9, news: 67, video: 44,
+podcast: 22, report: 7, webinar: 103, event: 6, customer: 15, partner: 8,
+skill: 67, team_member: 12, board_member: 7
+
+---
+
+### Resources Page Architecture
+
+The `/resources/` page (`page-resources.php`) is a **shared archive for multiple CPTs** — it is NOT
+a standard WordPress archive. It queries across: news, press-release, video, whitepaper, blog,
+case-study, podcast, and report CPTs simultaneously.
+
+- Filtering is handled via **client-side AJAX** (`assets/js/min/resources-filter.min.js`)
+- Filter buttons use `data-filter` attributes mapping to CPT slugs
+- URL parameter `?category=blogs` controls the active filter (plural form used in URL, mapped to singular CPT slug internally)
+- The filter mapping (plural → singular): `videos→video`, `whitepapers→whitepaper`, `blogs→blog`, `case-studies→case-study`, `podcasts→podcast`
+- Helper functions in `inc/resources.php`: `get_resource_types()`, `build_resource_query_args()`, `get_resource_cta_label()`, `get_resource_label_for_post_type()`
+- Default CTA labels per type: video→"Watch Now", webinar→"Watch", press-release→"Read", whitepaper→"Download", podcast→"Watch Now", customer→"Explore", case-study→"Explore", default→"Read"
+- "Coming Soon" resources (`resource_coming_soon: true`) sort to the end of listings
+- These resource CPTs do NOT have their own WordPress archive pages (except `blog` which has `archive-blog.php`)
+
+---
+
+### Skills Architecture
+
+The skills system has a three-level hierarchy: **skill_function → skill_category → skill (posts)**.
+
+**skill_function** (6 terms, front-end pages at `/skills/{slug}/`):
+- Supply Chain (32 skills), Procurement (9), Sales & Marketing (11), Finance (9), HR (1), ESG (5)
+- Each has ACF fields: `hubspot_form_id` (default for skill videos), `related_skill_functions` (repeater for cross-linking)
+
+**skill_category** (18 terms, admin-only, no front-end):
+- Grouped under functions via ACF `parent_function` field on the term (NOT WP parent — this is an ACF taxonomy field)
+- Examples: Demand, Inventory, Order, Logistics, Control Tower, FP&A, Revenue Optimization, etc.
+- **Important:** The `parent_function` ACF field is NOT exposed via REST API — the mapping only works in PHP templates
+
+**Template:** `taxonomy-skill_function.php` renders individual function pages with:
+1. Hero section from taxonomy term name/description
+2. Tab navigation by skill_category (only if >1 category for that function)
+3. Sidebar navigation by skill within each category
+4. Skill content sections from ACF `content_sections` repeater
+5. CTA buttons from ACF `cta_buttons` repeater
+6. Gated video modal with HubSpot form integration (portal ID: `4455954`)
+7. Related functions section from ACF `related_skill_functions`
+8. Deep-linking support via URL hash (`#skill-{slug}`) + `?category={slug}` parameter
+
 ---
 
 ### Taxonomies
@@ -86,7 +135,7 @@ Registered in `inc/taxonomies.php`.
 | `webinar_solution_area` | webinar        | No        | Hierarchical; admin-only filtering              |
 | `webinar_job_function`  | webinar        | No        | Hierarchical; admin-only filtering              |
 | `skill_function`        | skill          | Yes       | Front-end at `/skills/{slug}/`; main skills nav |
-| `skill_category`        | skill          | No        | Hierarchical; admin column visible              |
+| `skill_category`        | skill          | No        | Hierarchical; linked to function via ACF field  |
 
 **Note:** There is NO `resource_type` taxonomy. Content types are differentiated by CPT slug.
 
@@ -301,18 +350,59 @@ Applied to: news, press-release, video, whitepaper, blog, case-study, podcast, e
 
 ---
 
-### Key Plugins (confirm via WP admin or WP-CLI)
+### Active Plugins (verified 2026-03-22)
 
-```bash
-wp plugin list --url=http://aeratechnology.local
-```
+| Plugin                              | Version | Notes                          |
+| ----------------------------------- | ------- | ------------------------------ |
+| Advanced Custom Fields Pro          | 6.7.1   | Core field management          |
+| ACF Content Analysis for Yoast SEO  | 3.2     | ACF + Yoast integration        |
+| Classic Editor                      | 1.6.7   | Disables Gutenberg             |
+| Google Tag Manager (duracelltomi)   | 1.22.3  | GTM container management       |
+| HubSpot (leadin)                    | 11.3.43 | HubSpot tracking + forms       |
+| Yoast SEO                          | 27.1.1  | SEO                            |
+| Yoast SEO Premium                  | 26.6    | Premium SEO features           |
+| Google Site Kit                     | 1.174.0 | Analytics dashboard            |
+| Better Search Replace               | 1.4.10  | DB search/replace (migration)  |
+| Intuitive Custom Post Order         | 3.2.0   | Drag-and-drop post ordering    |
+| Post Type Switcher                  | 4.0.1   | Switch post types in editor    |
+| Duplicate Post                      | 4.6     | Clone posts                    |
+| WP Retina 2x                       | 7.1.4   | Retina image handling          |
+| Media Cleaner                       | 7.0.5   | Unused media cleanup           |
+| Query Monitor                       | 3.20.2  | Debug/performance monitoring   |
+| User Role Editor                    | 4.64.6  | Role management                |
+| WordPress Importer                  | 0.9.5   | Content import tool            |
 
-Expected plugins based on the build:
+---
 
-- Advanced Custom Fields Pro
-- WP Migrate (or similar, used during migration)
-- Yoast SEO
-- Custom blocks plugin (if blocks were registered as a separate plugin vs. in-theme)
+### SEO (Yoast) Data in REST API
+
+Yoast SEO Premium is active. All CPTs with templates return `yoast_head_json` in API responses.
+
+**CPTs with SEO data that matters** (have single templates or are indexed):
+- `blog` — Full Yoast: title, description, og_title, og_description, og_image, canonical, schema, twitter_card
+- `press-release` — Full Yoast (single at `/news/{slug}`)
+- `case-study` — Full Yoast (single at `/case-study/{slug}`)
+- `whitepaper` — Full Yoast (single at `/whitepapers/{slug}`)
+- `skill` — Yoast present but redirects to skill_function taxonomy page
+
+**Key Yoast fields available via REST:**
+
+| Field               | Notes                                           |
+| ------------------- | ----------------------------------------------- |
+| `title`             | SEO title (may differ from post title)          |
+| `description`       | Meta description                                |
+| `canonical`         | Canonical URL                                   |
+| `og_title`          | Open Graph title                                |
+| `og_description`    | Open Graph description                          |
+| `og_image`          | Array with url, width, height                   |
+| `twitter_card`      | Usually `summary_large_image`                   |
+| `twitter_site`      | `@Aera_Technology`                              |
+| `robots`            | Index/follow directives                         |
+| `schema`            | JSON-LD structured data                         |
+| `twitter_misc`      | Includes `Est. reading time`                    |
+
+**When creating content via API:** Yoast fields are auto-generated from post content.
+To set custom SEO title/description, use `yoast_meta` in the POST body (requires Yoast REST API support).
 
 ---
 
@@ -321,7 +411,7 @@ Expected plugins based on the build:
 The WordPress REST API is the primary interface for programmatic content operations.
 Since each content type is its own CPT, each has its own endpoint.
 
-**Base URL:** `http://aeratechnology.local/wp-json/wp/v2/`
+**Base URL:** `http://localhost:10020/wp-json/wp/v2/`
 
 **Key endpoints (one per CPT):**
 
@@ -357,23 +447,19 @@ GET  /wp-json/wp/v2/skill_category         — Skill categories
 **ACF fields in REST API:**
 ACF field groups with `show_in_rest: 1` expose fields under `acf: {}` in API responses.
 
-**Authentication for local dev:**
-Use Application Passwords (built into WordPress 5.6+):
-
-1. WP Admin > Users > Your Profile > Application Passwords
-2. Generate a password labeled "Claude Code Local Dev"
-3. Store in `.env` file (never commit to git)
+**Authentication (verified working):**
+Application Password for user `max` is configured. Store in `.env` file (never commit to git).
 
 ```
-WP_BASE_URL=http://aeratechnology.local
-WP_USERNAME=your_admin_username
+WP_BASE_URL=http://localhost:10020
+WP_USERNAME=max
 WP_APP_PASSWORD=xxxx xxxx xxxx xxxx xxxx xxxx
 ```
 
 **Test the connection:**
 
 ```bash
-curl -u "username:app_password" http://aeratechnology.local/wp-json/wp/v2/users/me
+curl -u "username:app_password" http://localhost:10020/wp-json/wp/v2/users/me
 ```
 
 ---
@@ -414,23 +500,22 @@ The first demo shows this single end-to-end flow:
 
 ---
 
-## File Structure for This Project
+## File Structure
 
 ```
-/aera-ai-integration/             <- To be created
-  .env                            <- Local credentials (gitignored)
-  .env.example                    <- Committed template with placeholder values
-  .gitignore
-  /scripts/
-    publish_content.js            <- Core REST API publishing script
-    map_content.js                <- Content parsing and field mapping logic
-    slack_notify.js               <- Slack webhook notification
-  /prompts/
-    resource_brief.md             <- Prompt template for parsing a content brief
-    skill_entry.md                <- Prompt template for creating a Skill entry
-  /examples/
-    sample_brief.md               <- Example content brief for testing
-    sample_output.json            <- Expected API payload for a blog entry
+/wp-content/themes/aera-technology/
+  CLAUDE.md                       <- This file
+  .env                            <- Local credentials (gitignored) ✓ created
+  .env.example                    <- Committed template ✓ created
+  .gitignore                      <- Includes .env ✓ updated
+  /inc/
+    post-types.php                <- CPT registration
+    taxonomies.php                <- Taxonomy registration
+    resources.php                 <- Resource helper functions (filtering, labels, queries)
+    acf.php                       <- ACF field adjustments and JSON sync
+  /acf-json/                      <- ACF field group JSON definitions (source of truth)
+  /assets/js/min/
+    resources-filter.min.js       <- Client-side resource type filtering
 ```
 
 ---
@@ -439,7 +524,7 @@ The first demo shows this single end-to-end flow:
 
 ```
 # WordPress (Local)
-WP_BASE_URL=http://aeratechnology.local
+WP_BASE_URL=http://localhost:10020
 WP_USERNAME=
 WP_APP_PASSWORD=
 
@@ -459,10 +544,10 @@ GOOGLE_DRIVE_FOLDER_ID=
 ## What to Do First in a New Chat
 
 1. Read this CLAUDE.md for full architecture context
-2. Confirm the local site is running in Local by Flywheel
-3. If REST API access is needed, check that `.env` credentials are set
-4. Test the REST API connection: `curl -u "user:pass" http://aeratechnology.local/wp-json/wp/v2/users/me`
-5. For ACF field discovery beyond what's documented here, query: `GET /wp-json/wp/v2/{cpt}?context=edit`
+2. Confirm the local site is running: `curl -s http://localhost:10020/wp-json/ | head -c 100`
+3. Test authenticated API: `curl -s -u "max:APP_PASSWORD" http://localhost:10020/wp-json/wp/v2/users/me`
+4. For ACF field discovery beyond what's documented here, query: `GET /wp-json/wp/v2/{cpt}?per_page=1`
+5. WP-CLI requires Local's shell (DB socket not accessible from standard terminal)
 
 ---
 
@@ -493,3 +578,8 @@ The demo only needs to show V0.5. Everything else is communicated in the pitch d
 - The goal of the demo is legibility: code should be readable and the workflow should be easy to narrate on screen
 - The `acf-json/` directory is the source of truth for field definitions
 - Some field groups are marked `active: false` (press_release, whitepaper, video, podcast) — these may need activation
+- REST API verified working 2026-03-22: all CPT endpoints return ACF fields under `acf: {}`
+- Blog posts include `acf.blog_lead` + all Resource Card fields
+- Skills include `acf.content_sections` (repeater) and `acf.cta_buttons` (repeater)
+- Case studies have the most ACF fields (~18 fields covering card + full page content)
+- Image ACF fields return attachment IDs (integers), not URLs — resolve via `/wp-json/wp/v2/media/{id}`
