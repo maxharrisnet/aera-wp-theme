@@ -1,15 +1,35 @@
 #!/usr/bin/env node
 import 'dotenv/config';
+import { google } from 'googleapis';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
 import Anthropic from '@anthropic-ai/sdk';
-import { readFileSync } from 'fs';
-import { createInterface } from 'readline';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // ── Config ──────────────────────────────────────────────────────────────────
 const WP_BASE = process.env.WP_BASE_URL;
 const WP_AUTH = 'Basic ' + Buffer.from(`${process.env.WP_USERNAME}:${process.env.WP_APP_PASSWORD}`).toString('base64');
+const FOLDER_ID = process.env.GOOGLE_DRIVE_FOLDER_ID;
+const KEY_FILE = resolve(process.env.GOOGLE_SERVICE_ACCOUNT_JSON);
+const POLL_INTERVAL = parseInt(process.env.POLL_INTERVAL || '15000', 10); // 15s default
+const STATE_FILE = resolve(__dirname, '.watch-state.json');
+
 const claude = new Anthropic();
 
-// ── CPT schemas (tells Claude what fields each CPT expects) ─────────────────
+// ── Google Auth ─────────────────────────────────────────────────────────────
+const auth = new google.auth.GoogleAuth({
+  keyFile: KEY_FILE,
+  scopes: [
+    'https://www.googleapis.com/auth/drive.readonly',
+    'https://www.googleapis.com/auth/documents.readonly',
+  ],
+});
+const drive = google.drive({ version: 'v3', auth });
+const docs = google.docs({ version: 'v1', auth });
+
+// ── CPT schemas (same as publish.mjs) ──────────────────────────────────────
 const CPT_SCHEMAS = {
   blog: {
     endpoint: '/wp-json/wp/v2/blog',
@@ -93,13 +113,54 @@ Guidelines:
 - For resource_card_title, only set if a shorter card-friendly title differs from the main title
 - Use clean HTML for content (paragraphs, headers, lists — no inline styles)`;
 
+// ── State: track which docs we've already processed ─────────────────────────
+function loadState() {
+  if (existsSync(STATE_FILE)) {
+    return JSON.parse(readFileSync(STATE_FILE, 'utf-8'));
+  }
+  return { processed: {} };
+}
+
+function saveState(state) {
+  writeFileSync(STATE_FILE, JSON.stringify(state, null, 2));
+}
+
+// ── Google Docs: extract plain text ─────────────────────────────────────────
+function extractText(doc) {
+  let text = '';
+  for (const element of doc.body.content) {
+    if (element.paragraph) {
+      for (const run of element.paragraph.elements) {
+        if (run.textRun) {
+          text += run.textRun.content;
+        }
+      }
+    }
+    if (element.table) {
+      for (const row of element.table.tableRows) {
+        for (const cell of row.tableCells) {
+          for (const cellElement of cell.content) {
+            if (cellElement.paragraph) {
+              for (const run of cellElement.paragraph.elements) {
+                if (run.textRun) {
+                  text += run.textRun.content + '\t';
+                }
+              }
+            }
+          }
+        }
+        text += '\n';
+      }
+    }
+  }
+  return text.trim();
+}
+
 // ── Claude: analyze brief ───────────────────────────────────────────────────
 async function analyzeBrief(brief) {
-  console.log('\n🔍 Analyzing brief with Claude...\n');
-
   const msg = await claude.messages.create({
     model: 'claude-sonnet-4-20250514',
-    max_tokens: 2000,
+    max_tokens: 4096,
     system: SYSTEM_PROMPT,
     messages: [{ role: 'user', content: brief }],
   });
@@ -110,8 +171,8 @@ async function analyzeBrief(brief) {
   try {
     return JSON.parse(text);
   } catch {
-    console.error('Claude returned invalid JSON:', text);
-    process.exit(1);
+    console.error('  Claude returned invalid JSON:', text.slice(0, 200));
+    return null;
   }
 }
 
@@ -119,11 +180,10 @@ async function analyzeBrief(brief) {
 async function createDraft(parsed) {
   const schema = CPT_SCHEMAS[parsed.cpt];
   if (!schema) {
-    console.error(`Unknown CPT: ${parsed.cpt}`);
-    process.exit(1);
+    console.error(`  Unknown CPT: ${parsed.cpt}`);
+    return null;
   }
 
-  // Fetch a default placeholder image for required image fields
   const acf = { ...parsed.acf };
   if (schema.acf.includes('resource_card_image') && !acf.resource_card_image) {
     const mediaRes = await fetch(`${WP_BASE}/wp-json/wp/v2/media?per_page=1`, {
@@ -143,8 +203,6 @@ async function createDraft(parsed) {
   };
 
   const url = `${WP_BASE}${schema.endpoint}`;
-  console.log(`📤 Creating draft at ${url}...\n`);
-
   const res = await fetch(url, {
     method: 'POST',
     headers: {
@@ -156,125 +214,126 @@ async function createDraft(parsed) {
 
   if (!res.ok) {
     const err = await res.json().catch(() => res.statusText);
-    console.error(`WordPress API error (${res.status}):`, JSON.stringify(err, null, 2));
-    process.exit(1);
-  }
-
-  return res.json();
-}
-
-// ── WordPress: publish ──────────────────────────────────────────────────────
-async function publishPost(cpt, postId) {
-  const schema = CPT_SCHEMAS[cpt];
-  const url = `${WP_BASE}${schema.endpoint}/${postId}`;
-
-  const res = await fetch(url, {
-    method: 'POST',
-    headers: {
-      'Authorization': WP_AUTH,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ status: 'publish' }),
-  });
-
-  if (!res.ok) {
-    const err = await res.json().catch(() => res.statusText);
-    console.error(`Publish error (${res.status}):`, JSON.stringify(err, null, 2));
-    process.exit(1);
+    console.error(`  WP API error (${res.status}):`, JSON.stringify(err));
+    return null;
   }
 
   return res.json();
 }
 
 // ── Slack notification ──────────────────────────────────────────────────────
-async function notifySlack(title, url, cpt) {
+async function notifySlack(message) {
   const webhook = process.env.SLACK_WEBHOOK_URL;
-  if (!webhook) {
-    console.log('ℹ️  No SLACK_WEBHOOK_URL configured — skipping notification.\n');
-    return;
-  }
+  if (!webhook) return;
 
   await fetch(webhook, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      text: `✅ Published: *${title}* (${cpt})\n${url}`,
-    }),
+    body: JSON.stringify({ text: message }),
   });
-  console.log('📣 Slack notification sent.\n');
 }
 
-// ── User prompt helper ──────────────────────────────────────────────────────
-const rl = createInterface({ input: process.stdin, output: process.stdout });
+// ── Process a single Google Doc ─────────────────────────────────────────────
+async function processDoc(file) {
+  console.log(`\n--- Processing: ${file.name} ---`);
 
-function ask(question) {
-  return new Promise((resolve) => {
-    rl.question(question, (answer) => {
-      resolve(answer.trim().toLowerCase());
-    });
+  // Fetch doc content
+  const doc = await docs.documents.get({ documentId: file.id });
+  const text = extractText(doc.data);
+
+  if (!text || text.length < 50) {
+    console.log('  Skipped: too short or empty');
+    return null;
+  }
+
+  console.log(`  Extracted ${text.length} chars from Google Doc`);
+
+  // Claude analysis
+  console.log('  Analyzing with Claude...');
+  const parsed = await analyzeBrief(text);
+  if (!parsed) return null;
+
+  console.log(`  CPT: ${parsed.cpt} | Title: ${parsed.title}`);
+  console.log(`  Reason: ${parsed.reasoning}`);
+
+  // Create WP draft
+  console.log('  Creating WordPress draft...');
+  const draft = await createDraft(parsed);
+  if (!draft) return null;
+
+  const editUrl = `${WP_BASE}/wp-admin/post.php?post=${draft.id}&action=edit`;
+  console.log(`  Draft created! ID: ${draft.id}`);
+  console.log(`  Edit: ${editUrl}`);
+
+  // Slack notification
+  await notifySlack(
+    `New draft from Google Docs:\n*${parsed.title}* (${parsed.cpt})\nSource: ${file.name}\nEdit: ${editUrl}`
+  );
+  console.log('  Slack notified');
+
+  return { postId: draft.id, cpt: parsed.cpt, title: parsed.title };
+}
+
+// ── Poll loop ───────────────────────────────────────────────────────────────
+async function poll() {
+  const state = loadState();
+
+  const res = await drive.files.list({
+    q: `'${FOLDER_ID}' in parents and mimeType = 'application/vnd.google-apps.document' and trashed = false`,
+    fields: 'files(id, name, modifiedTime)',
+    orderBy: 'modifiedTime desc',
+    pageSize: 20,
   });
+
+  const files = res.data.files || [];
+
+  for (const file of files) {
+    const prev = state.processed[file.id];
+
+    // Skip if already processed and not modified since
+    if (prev && prev.modifiedTime === file.modifiedTime) {
+      continue;
+    }
+
+    try {
+      const result = await processDoc(file);
+      if (result) {
+        state.processed[file.id] = {
+          modifiedTime: file.modifiedTime,
+          postId: result.postId,
+          cpt: result.cpt,
+          title: result.title,
+          processedAt: new Date().toISOString(),
+        };
+        saveState(state);
+      }
+    } catch (err) {
+      console.error(`  Error processing ${file.name}:`, err.message);
+    }
+  }
 }
 
 // ── Main ────────────────────────────────────────────────────────────────────
 async function main() {
-  const args = process.argv.slice(2);
-  const autoYes = args.includes('--yes');
-  const filePath = args.find(a => !a.startsWith('--'));
+  console.log('Aera AI Publisher — Google Drive Watcher');
+  console.log(`Watching folder: ${FOLDER_ID}`);
+  console.log(`Poll interval: ${POLL_INTERVAL / 1000}s`);
+  console.log('Press Ctrl+C to stop.\n');
 
-  // Read brief from file arg or stdin
-  let brief;
-  if (filePath) {
-    brief = readFileSync(filePath, 'utf-8');
-    console.log(`📄 Read brief from: ${filePath}`);
-  } else {
-    console.log('Paste your content brief below (press Ctrl+D when done):\n');
-    brief = readFileSync('/dev/stdin', 'utf-8');
-  }
+  // Initial poll
+  await poll();
 
-  if (!brief.trim()) {
-    console.error('Empty brief. Provide a file path or paste content via stdin.');
-    process.exit(1);
-  }
-
-  // Step 1: Claude analyzes the brief
-  const parsed = await analyzeBrief(brief);
-
-  console.log(`  CPT:    ${parsed.cpt}`);
-  console.log(`  Title:  ${parsed.title}`);
-  console.log(`  Reason: ${parsed.reasoning}`);
-  if (parsed.acf) {
-    const fields = Object.keys(parsed.acf).filter(k => parsed.acf[k]);
-    console.log(`  ACF:    ${fields.join(', ') || '(none)'}`);
-  }
-
-  // Step 2: Confirm and create draft
-  const proceed = autoYes ? 'y' : await ask('\nCreate draft? (y/n) ');
-  if (proceed !== 'y') {
-    console.log('Cancelled.');
-    process.exit(0);
-  }
-
-  const draft = await createDraft(parsed);
-  const editUrl = `${WP_BASE}/wp-admin/post.php?post=${draft.id}&action=edit`;
-
-  console.log(`\n✅ Draft created!`);
-  console.log(`  ID:     ${draft.id}`);
-  console.log(`  Edit:   ${editUrl}`);
-  if (draft.link) console.log(`  Preview: ${draft.link}`);
-
-  // Step 3: Offer to publish
-  const pub = autoYes ? 'y' : await ask('\nPublish now? (y/n) ');
-  if (pub === 'y') {
-    const published = await publishPost(parsed.cpt, draft.id);
-    console.log(`\n🚀 Published!`);
-    console.log(`  URL: ${published.link}`);
-    await notifySlack(parsed.title, published.link, parsed.cpt);
-  } else {
-    console.log(`\nLeft as draft. Edit at: ${editUrl}`);
-  }
+  // Continue polling
+  setInterval(async () => {
+    try {
+      await poll();
+    } catch (err) {
+      console.error('Poll error:', err.message);
+    }
+  }, POLL_INTERVAL);
 }
 
 main().catch((err) => {
   console.error('Fatal error:', err.message);
   process.exit(1);
-}).finally(() => rl.close());
+});

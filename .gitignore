@@ -1,3 +1,6 @@
 node_modules
 .DS_Store
 .env
+google-service-account.json
+marketing-integrations-demo-*.json
+scripts/.watch-state.json

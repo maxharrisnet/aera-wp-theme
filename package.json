@@ -22,6 +22,7 @@
     "@anthropic-ai/sdk": "^0.80.0",
     "contentful-management": "^11.67.2",
     "dotenv": "^17.3.1",
+    "googleapis": "^171.4.0",
     "gsap": "^3.12.2",
     "three": "^0.122.0"
   },
@@ -64,7 +65,8 @@
     "bundle": "dir-archiver --src . --dest ../aera-technology.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock",
     "build:background": "vite build --config vite.config.js",
     "watch:background": "vite build --watch --mode development --config vite.config.js",
-    "publish-brief": "node scripts/publish.mjs"
+    "publish-brief": "node scripts/publish.mjs",
+    "watch-drive": "node scripts/watch-drive.mjs"
   },
   "main": "vite.config.js",
   "directories": {
