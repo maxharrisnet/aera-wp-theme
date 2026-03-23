@@ -227,13 +227,22 @@ async function downloadInlineImage(doc, inlineObjectId) {
       if (inlineObject) break;
     }
   }
-  if (!inlineObject) return null;
+  if (!inlineObject) {
+    console.log(`    Inline object ${inlineObjectId} not found in doc or tabs`);
+    return null;
+  }
 
   const embeddedObject = inlineObject.inlineObjectProperties?.embeddedObject;
-  if (!embeddedObject) return null;
+  if (!embeddedObject) {
+    console.log(`    No embeddedObject for ${inlineObjectId}`);
+    return null;
+  }
 
   const contentUri = embeddedObject.imageProperties?.contentUri;
-  if (!contentUri) return null;
+  if (!contentUri) {
+    console.log(`    No contentUri for ${inlineObjectId} — image may be a drawing or linked externally`);
+    return null;
+  }
 
   const authClient = await auth.getClient();
   const token = await authClient.getAccessToken();
@@ -241,7 +250,10 @@ async function downloadInlineImage(doc, inlineObjectId) {
   const res = await fetch(contentUri, {
     headers: { 'Authorization': `Bearer ${token.token}` },
   });
-  if (!res.ok) return null;
+  if (!res.ok) {
+    console.log(`    Failed to download inline image (${res.status}): ${contentUri.slice(0, 80)}`);
+    return null;
+  }
 
   const buffer = Buffer.from(await res.arrayBuffer());
   const contentType = res.headers.get('content-type') || 'image/png';
@@ -277,32 +289,41 @@ async function uploadImageToWP(imageData) {
 }
 
 // ── Classify image role by filename ──────────────────────────────────────────
-// "Author Banner" or "card" → resource_card_image
-// "Hero Banner" or "featured" → WordPress featured image (post thumbnail)
+// "Author Banner" or "card" → resource_card_image (ACF field)
 // Everything else → general content image
+// Note: featured image comes from the first inline image in the doc, not from folder files
 function classifyImage(filename) {
   const lower = filename.toLowerCase();
   if (lower.includes('author banner') || lower.includes('card')) return 'card';
-  if (lower.includes('hero banner') || lower.includes('featured')) return 'featured';
   return 'content';
 }
 
 // ── Collect all images for a doc (inline + sibling files in folder) ──────────
+// First inline image from doc → featured image (post thumbnail)
+// "Author Banner" / "card" file in folder → resource_card_image (ACF)
 async function collectImages(doc, fileId) {
   const result = { card: null, featured: null, content: [] };
 
-  // 1. Inline images embedded in the Google Doc (always "content")
+  // 1. Inline images from the Google Doc — first one becomes featured image
   const inlineIds = extractInlineImageIds(doc);
+  console.log(`  Found ${inlineIds.length} inline image(s) in doc`);
   for (const objId of inlineIds) {
     const imgData = await downloadInlineImage(doc, objId);
     if (imgData) {
       console.log(`  Uploading inline image: ${imgData.name}`);
       const wp = await uploadImageToWP(imgData);
-      if (wp) result.content.push(wp);
+      if (wp) {
+        if (!result.featured) {
+          result.featured = wp;
+          console.log(`  → Using as featured image (first inline)`);
+        } else {
+          result.content.push(wp);
+        }
+      }
     }
   }
 
-  // 2. Image files in the same Drive folder — classify by filename
+  // 2. Image files in the same Drive folder — only looking for card image (Author Banner)
   const siblings = await findSiblingImages(fileId);
   for (const img of siblings) {
     const role = classifyImage(img.name);
@@ -312,7 +333,6 @@ async function collectImages(doc, fileId) {
     if (!wp) continue;
 
     if (role === 'card') result.card = wp;
-    else if (role === 'featured') result.featured = wp;
     else result.content.push(wp);
   }
 
@@ -511,7 +531,7 @@ async function processDoc(file) {
   const draft = await createDraft(parsed);
   if (!draft) return null;
 
-  // Set featured image (Hero Banner) as post thumbnail
+  // Set featured image (first inline image from doc) as post thumbnail
   if (images.featured) {
     const schema = CPT_SCHEMAS[parsed.cpt];
     const thumbRes = await fetch(`${WP_BASE}${schema.endpoint}/${draft.id}`, {

@@ -4,3 +4,5 @@ node_modules
 google-service-account.json
 marketing-integrations-demo-*.json
 scripts/.watch-state.json
+scripts/DEMO-INSTRUCTIONS.md
+scripts/DEMO-PROMPTS.md
