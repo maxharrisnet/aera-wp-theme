@@ -141,6 +141,7 @@ async function createDraft(parsed) {
     status: 'draft',
     acf,
   };
+  if (parsed.slug) body.slug = parsed.slug;
 
   const url = `${WP_BASE}${schema.endpoint}`;
   console.log(`📤 Creating draft at ${url}...\n`);
