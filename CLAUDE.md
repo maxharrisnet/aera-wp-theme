@@ -464,39 +464,87 @@ curl -u "username:app_password" http://localhost:10020/wp-json/wp/v2/users/me
 
 ---
 
-## Demo Workflow (V0.5 Target)
+## Demo Workflow (V0.5 — Working)
 
-The first demo shows this single end-to-end flow:
+Two scripts implement the content publishing pipeline:
+
+### `scripts/publish.mjs` — CLI one-shot publisher
 
 ```
-[Input: text brief or Google Doc URL]
+[Input: text brief from file or stdin]
         |
         v
-[Claude reads brief, determines CPT (blog, press-release, case-study, etc.)]
-[Claude extracts: title, body, ACF fields, taxonomy terms, summary]
+[Claude classifies CPT + extracts title, slug, body, ACF fields]
         |
         v
-[Claude formats content to match the target CPT's ACF field schema]
+[Creates WP draft via REST API with all fields populated]
         |
         v
-[POST to the correct WP REST API endpoint (e.g., /wp-json/wp/v2/blog)]
-[Creates draft with all fields populated including ACF fields]
-        |
-        v
-[Claude confirms: "Draft created — Title: X, CPT: blog, Status: Draft. Ready to publish?"]
-        |
-        v
-[On confirmation: PATCH to update status to 'publish']
-        |
-        v
-[Slack message: "Published: [Title] — [URL]"]
+[User confirms → publishes → Slack notification]
 ```
+
+Usage: `npm run publish-brief -- path/to/brief.txt` or `npm run publish-brief -- --yes`
+
+### `scripts/watch-drive.mjs` — Google Drive folder watcher
+
+```
+[Polls Google Drive folder every 15s (recursive, supports subfolders)]
+        |
+        v
+[For each new/modified Google Doc:]
+  [Extracts content from "Final Blog Post" tab]
+  [Extracts metadata from "Website Metadata" tab (title, slug, card text)]
+  [Downloads images: inline from doc + sibling files from folder]
+  [Classifies images by filename: "Author Banner"/card → resource_card_image,
+                                   "Hero Banner"/featured → WP featured image]
+  [Uploads images to WP media library]
+        |
+        v
+[Claude analyzes content + metadata → determines CPT, extracts fields]
+        |
+        v
+[Creates WP draft with title, slug, body, ACF fields, card image, featured image]
+        |
+        v
+[Slack notification with edit link]
+```
+
+Usage: `npm run watch-drive`
+
+### Google Drive folder structure
+
+Each blog post lives in its own subfolder with the doc and images:
+
+```
+Briefs/                              ← GOOGLE_DRIVE_FOLDER_ID points here
+  smarter-waste-prevention/
+    Blog Post.gdoc                   ← Tab 1: "Final Blog Post" (content)
+                                       Tab 2: "Website Metadata" (title, slug, card text)
+    Blog Author Banner - Smarter Waste Prevention.jpg   → resource_card_image
+    Blog Hero Banner - Smarter Waste Prevention.jpg     → WP featured image
+  another-post/
+    ...
+```
+
+**Image classification by filename (case-insensitive):**
+- Contains "Author Banner" or "card" → `resource_card_image` ACF field
+- Contains "Hero Banner" or "featured" → WordPress featured image (`featured_media`)
+- Everything else → uploaded to media library as content image
+
+**Google Doc tabs:**
+- Tab with "metadata" / "meta" in name → parsed for title, slug, resource_card_title, resource_excerpt
+- First non-metadata tab → post body content
+- Falls back gracefully to single-tab (no tabs) docs
+
+**State tracking:** `.watch-state.json` tracks processed doc IDs + modifiedTime to avoid reprocessing.
+Docs are re-processed if their modifiedTime changes.
 
 **What this proves:**
 
 - Claude can read unstructured content and map it to a structured CMS schema
 - Content operations that currently take 15-30 minutes of manual CMS work happen in under 2 minutes
 - The team never opens WordPress admin to create a standard content entry
+- Images from the team's existing workflow (Author Banner, Hero Banner) are automatically assigned to the correct fields
 
 ---
 
@@ -505,9 +553,14 @@ The first demo shows this single end-to-end flow:
 ```
 /wp-content/themes/aera-technology/
   CLAUDE.md                       <- This file
-  .env                            <- Local credentials (gitignored) ✓ created
-  .env.example                    <- Committed template ✓ created
-  .gitignore                      <- Includes .env ✓ updated
+  .env                            <- Local credentials (gitignored)
+  .env.example                    <- Committed template
+  .gitignore                      <- Includes .env, service account JSON, .watch-state.json
+  /scripts/
+    publish.mjs                   <- CLI: brief → Claude → WP draft → publish → Slack
+    watch-drive.mjs               <- Watcher: Google Drive → Claude → WP draft → Slack
+    sample-brief.txt              <- Example content brief for testing publish.mjs
+    .watch-state.json             <- Processed doc state (gitignored, auto-generated)
   /inc/
     post-types.php                <- CPT registration
     taxonomies.php                <- Taxonomy registration
@@ -534,7 +587,7 @@ SLACK_WEBHOOK_URL=
 # Anthropic (if calling Claude API directly from scripts)
 ANTHROPIC_API_KEY=
 
-# Google (for Drive integration — V1.0)
+# Google (for Drive watcher — watch-drive.mjs)
 GOOGLE_SERVICE_ACCOUNT_JSON=
 GOOGLE_DRIVE_FOLDER_ID=
 ```
@@ -557,7 +610,7 @@ This demo is the foundation for a phased AI automation system:
 
 | Phase                   | Timeline     | Key Milestone                                      |
 | ----------------------- | ------------ | -------------------------------------------------- |
-| V0.5 — Local demo       | Weeks 1-3    | Publish content to local WP via Claude Code        |
+| V0.5 — Local demo       | COMPLETE     | Publish content to local WP via Claude Code        |
 | V1.0 — Live integration | Months 1-3   | Slack + Google Drive + WP Engine dev environment   |
 | V1.5 — Content sync     | Months 3-6   | Google Drive as source of truth, Figma integration |
 | V2.0 — Project ops      | Months 5-8   | JIRA integration, sprint-based content workflows   |
@@ -583,3 +636,11 @@ The demo only needs to show V0.5. Everything else is communicated in the pitch d
 - Skills include `acf.content_sections` (repeater) and `acf.cta_buttons` (repeater)
 - Case studies have the most ACF fields (~18 fields covering card + full page content)
 - Image ACF fields return attachment IDs (integers), not URLs — resolve via `/wp-json/wp/v2/media/{id}`
+- `resource_card_image` is a required ACF field on blog CPT — must be a valid attachment ID (not 0)
+- WordPress featured image (post thumbnail) is set via `featured_media` field in the REST API
+- `resource_card_image` (Author Banner) and `featured_media` (Hero Banner) are different images with different purposes
+- Google Docs tabs: use `includeTabsContent: true` in the Docs API call; content lives under `tabs[].documentTab.body.content`, not `doc.body.content`
+- Google Docs inline images: object IDs extracted from `inlineObjectElement`, image data fetched via `contentUri` with OAuth token
+- Claude API responses may be wrapped in markdown code fences — always strip with regex before JSON.parse
+- Node.js: use nvm (`export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh"`) before running scripts in subshells
+- Scripts use `.mjs` extension (ES Modules) to avoid adding `"type": "module"` to theme's package.json
