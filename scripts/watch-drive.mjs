@@ -33,7 +33,7 @@ const docs = google.docs({ version: 'v1', auth });
 const CPT_SCHEMAS = {
   blog: {
     endpoint: '/wp-json/wp/v2/blog',
-    acf: ['blog_lead', 'resource_card_title', 'resource_card_image', 'resource_excerpt', 'resource_cta_text', 'resource_external_url', 'resource_coming_soon'],
+    acf: ['resource_card_title', 'resource_card_image', 'resource_excerpt', 'resource_cta_text', 'resource_external_url', 'resource_coming_soon'],
     hasEditor: true,
   },
   'press-release': {
@@ -99,6 +99,8 @@ Respond with ONLY valid JSON (no markdown, no explanation):
   "cpt": "the-cpt-slug",
   "title": "Post title (from metadata if available)",
   "slug": "url-slug (from metadata if available, otherwise derive from title)",
+  "author_name": "Full name of the author if mentioned (e.g. 'Uma Asthana'), or empty string if not found",
+  "excerpt": "SEO meta description (1-2 sentences, ~155 chars) for Yoast — distinct from resource_excerpt card text",
   "content": "HTML body content (only if CPT hasEditor, otherwise empty string)",
   "acf": {
     "field_name": "value",
@@ -115,11 +117,13 @@ Guidelines:
 - Whitepapers are gated downloadable assets
 - Videos and podcasts are media content
 - Reports are research/analyst reports
-- For blog posts, extract a compelling lead paragraph for blog_lead
+- Do NOT populate blog_lead — leave it empty (the template does not use it)
 - For resource_excerpt, write a 1-2 sentence summary for card display — but prefer the metadata tab's excerpt if provided
+- For excerpt (WP excerpt field), write an SEO meta description (~155 chars) — Yoast uses this. This is different from resource_excerpt which is for the card display. If the metadata tab has a meta description, use it
 - For resource_card_title, use the metadata tab's card title if provided
 - Use clean HTML for content (paragraphs, headers, lists — no inline styles)
-- If the metadata tab includes a slug, use it exactly as provided`;
+- If the metadata tab includes a slug, use it exactly as provided
+- Look for author attribution like "Author: Uma Asthana, Director, Demand Generation" — extract just the full name (e.g. "Uma Asthana"), ignoring title/role`;
 
 // ── State: track which docs we've already processed ─────────────────────────
 function loadState() {
@@ -181,27 +185,36 @@ async function findSiblingImages(docId) {
 function extractInlineImageIds(doc) {
   const imageIds = [];
 
-  // Gather all body content arrays (tabs or legacy single body)
-  const bodies = [];
-  if (doc.tabs) {
-    for (const tab of doc.tabs) {
-      const content = tab.documentTab?.body?.content;
-      if (content) bodies.push(content);
-    }
-  }
-  if (doc.body?.content) bodies.push(doc.body.content);
-
-  for (const bodyContent of bodies) {
-    for (const element of bodyContent) {
-      if (element.paragraph) {
-        for (const run of element.paragraph.elements) {
+  // Scan paragraph elements for inline images
+  function scanElements(elements) {
+    for (const el of elements) {
+      if (el.paragraph) {
+        for (const run of el.paragraph.elements) {
           if (run.inlineObjectElement) {
             imageIds.push(run.inlineObjectElement.inlineObjectId);
           }
         }
       }
+      // Images can also live inside table cells
+      if (el.table) {
+        for (const row of el.table.tableRows) {
+          for (const cell of row.tableCells) {
+            scanElements(cell.content || []);
+          }
+        }
+      }
     }
   }
+
+  // Gather all body content arrays (tabs or legacy single body)
+  if (doc.tabs) {
+    for (const tab of doc.tabs) {
+      const content = tab.documentTab?.body?.content;
+      if (content) scanElements(content);
+    }
+  }
+  if (doc.body?.content) scanElements(doc.body.content);
+
   return imageIds;
 }
 
@@ -278,14 +291,22 @@ async function uploadImageToWP(imageData) {
     body: formData,
   });
 
+  const text = await res.text();
   if (!res.ok) {
-    const err = await res.text();
-    console.error(`  Image upload failed (${res.status}):`, err.slice(0, 200));
+    console.error(`  Image upload failed (${res.status}):`, text.slice(0, 200));
     return null;
   }
 
-  const media = await res.json();
-  return { id: media.id, url: media.source_url };
+  try {
+    // WP sometimes prepends PHP warnings as HTML before the JSON
+    const jsonStart = text.indexOf('{');
+    const jsonStr = jsonStart > 0 ? text.slice(jsonStart) : text;
+    const media = JSON.parse(jsonStr);
+    return { id: media.id, url: media.source_url };
+  } catch {
+    console.error(`  Image upload returned non-JSON:`, text.slice(0, 200));
+    return null;
+  }
 }
 
 // ── Classify image role by filename ──────────────────────────────────────────
@@ -404,7 +425,7 @@ function extractTabs(doc) {
 async function analyzeBrief(brief) {
   const msg = await claude.messages.create({
     model: 'claude-sonnet-4-20250514',
-    max_tokens: 4096,
+    max_tokens: 16384,
     system: SYSTEM_PROMPT,
     messages: [{ role: 'user', content: brief }],
   });
@@ -418,6 +439,28 @@ async function analyzeBrief(brief) {
     console.error('  Claude returned invalid JSON:', text.slice(0, 200));
     return null;
   }
+}
+
+// ── WordPress: find user by name ────────────────────────────────────────────
+async function findWPUser(authorName) {
+  if (!authorName) return null;
+
+  const res = await fetch(`${WP_BASE}/wp-json/wp/v2/users?search=${encodeURIComponent(authorName)}&per_page=10`, {
+    headers: { 'Authorization': WP_AUTH },
+  });
+  if (!res.ok) return null;
+
+  const users = await res.json();
+  if (users.length === 0) return null;
+
+  // Try exact name match first, then partial
+  const nameLower = authorName.toLowerCase();
+  const exact = users.find(u => u.name.toLowerCase() === nameLower);
+  if (exact) return exact;
+
+  // Partial: check if search name appears at the start of user name (ignoring titles/roles)
+  const partial = users.find(u => u.name.toLowerCase().startsWith(nameLower));
+  return partial || users[0];
 }
 
 // ── WordPress: create draft ─────────────────────────────────────────────────
@@ -445,7 +488,12 @@ async function createDraft(parsed) {
     status: 'draft',
     acf,
   };
-  if (parsed.slug) body.slug = parsed.slug;
+  if (parsed.author) body.author = parsed.author;
+  if (parsed.excerpt) body.excerpt = parsed.excerpt;
+  if (parsed.slug) {
+    // Strip any path prefix (e.g. "blogs/my-slug" → "my-slug")
+    body.slug = parsed.slug.split('/').pop();
+  }
 
   const url = `${WP_BASE}${schema.endpoint}`;
   const res = await fetch(url, {
@@ -526,6 +574,38 @@ async function processDoc(file) {
     console.log(`  Set resource_card_image to media ID ${images.card.id}`);
   }
 
+  // Resolve author from WP users
+  const warnings = [];
+  if (parsed.author_name) {
+    const wpUser = await findWPUser(parsed.author_name);
+    if (wpUser) {
+      parsed.author = wpUser.id;
+      console.log(`  Author: ${wpUser.name} (ID: ${wpUser.id})`);
+    } else {
+      const msg = `Author "${parsed.author_name}" not found in WordPress. Please add them as a user.`;
+      console.log(`  ⚠ ${msg}`);
+      warnings.push(msg);
+    }
+  }
+
+  // Check for existing post with same slug to prevent duplicates
+  if (parsed.slug) {
+    // Strip any path prefix (e.g. "blogs/my-slug" → "my-slug")
+    parsed.slug = parsed.slug.split('/').pop();
+    const schema = CPT_SCHEMAS[parsed.cpt];
+    const checkUrl = `${WP_BASE}${schema.endpoint}?slug=${encodeURIComponent(parsed.slug)}&status=draft,publish,pending,private&per_page=1`;
+    const checkRes = await fetch(checkUrl, {
+      headers: { 'Authorization': WP_AUTH },
+    });
+    if (checkRes.ok) {
+      const existing = await checkRes.json();
+      if (existing.length > 0) {
+        console.log(`  Skipped: post with slug "${parsed.slug}" already exists (ID: ${existing[0].id})`);
+        return { postId: existing[0].id, cpt: parsed.cpt, title: parsed.title };
+      }
+    }
+  }
+
   // Create WP draft
   console.log('  Creating WordPress draft...');
   const draft = await createDraft(parsed);
@@ -554,9 +634,11 @@ async function processDoc(file) {
   console.log(`  Edit: ${editUrl}`);
 
   // Slack notification
-  await notifySlack(
-    `New draft from Google Docs:\n*${parsed.title}* (${parsed.cpt})\nSource: ${label}\nEdit: ${editUrl}`
-  );
+  let slackMsg = `New draft from Google Docs:\n*${parsed.title}* (${parsed.cpt})\nSource: ${label}\nEdit: ${editUrl}`;
+  if (warnings.length > 0) {
+    slackMsg += `\n⚠️ *Needs attention:*\n${warnings.map(w => `• ${w}`).join('\n')}`;
+  }
+  await notifySlack(slackMsg);
   console.log('  Slack notified');
 
   return { postId: draft.id, cpt: parsed.cpt, title: parsed.title };
@@ -578,6 +660,14 @@ async function poll() {
     }
 
     try {
+      // Mark as processing IMMEDIATELY to prevent any duplicate runs
+      state.processed[file.id] = {
+        modifiedTime: file.modifiedTime,
+        processing: true,
+        processedAt: new Date().toISOString(),
+      };
+      saveState(state);
+
       const result = await processDoc(file);
       if (result) {
         state.processed[file.id] = {
@@ -605,14 +695,16 @@ async function main() {
   // Initial poll
   await poll();
 
-  // Continue polling
-  setInterval(async () => {
+  // Continue polling — sequential to prevent concurrent duplicate processing
+  async function loop() {
     try {
       await poll();
     } catch (err) {
       console.error('Poll error:', err.message);
     }
-  }, POLL_INTERVAL);
+    setTimeout(loop, POLL_INTERVAL);
+  }
+  setTimeout(loop, POLL_INTERVAL);
 }
 
 main().catch((err) => {

@@ -546,6 +546,24 @@ Docs are re-processed if their modifiedTime changes.
 - The team never opens WordPress admin to create a standard content entry
 - Images from the team's existing workflow (Author Banner, Hero Banner) are automatically assigned to the correct fields
 
+### `scripts/seo-audit.mjs` — AI-powered SEO auditor
+
+Fetches blog posts from the WP REST API, extracts SEO-relevant data (title length, heading
+structure, word count, internal links, images, Yoast meta, ACF fields), and sends structured
+summaries to Claude for analysis. Returns a scored audit with prioritized fixes.
+
+```
+npm run seo-audit                  # latest 1 published post
+npm run seo-audit -- 3             # latest 3 published posts
+npm run seo-audit -- 3 --draft     # latest 3 drafts
+npm run seo-audit -- 10 --all      # latest 10 of any status
+```
+
+Checks: title/slug length, meta description quality, heading hierarchy (H2/H3),
+word count (1200+ target for B2B), internal linking, inline images, alt text,
+blog_lead, resource_card_title, resource_excerpt, resource_card_image, and
+resource_cta_text ACF fields. Scores each post 1-10 with top 3 priority fixes.
+
 ---
 
 ## File Structure
@@ -559,6 +577,7 @@ Docs are re-processed if their modifiedTime changes.
   /scripts/
     publish.mjs                   <- CLI: brief → Claude → WP draft → publish → Slack
     watch-drive.mjs               <- Watcher: Google Drive → Claude → WP draft → Slack
+    seo-audit.mjs                 <- AI SEO audit for blog posts (uses Claude)
     sample-brief.txt              <- Example content brief for testing publish.mjs
     .watch-state.json             <- Processed doc state (gitignored, auto-generated)
   /inc/
