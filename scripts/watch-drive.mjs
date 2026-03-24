@@ -5,6 +5,7 @@ import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import Anthropic from '@anthropic-ai/sdk';
+import { buildPostSummary, runSummaryAudit, sendSummaryToSlack } from './lib/audit.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -640,6 +641,29 @@ async function processDoc(file) {
   }
   await notifySlack(slackMsg);
   console.log('  Slack notified');
+
+  // Run summary audit for blog posts and send to Slack
+  if (parsed.cpt === 'blog') {
+    console.log('  Running content audit summary...');
+    try {
+      const draftRes = await fetch(`${WP_BASE}/wp-json/wp/v2/blog/${draft.id}?context=edit`, {
+        headers: { 'Authorization': WP_AUTH },
+      });
+      if (draftRes.ok) {
+        const fullPost = await draftRes.json();
+        const summary = buildPostSummary(fullPost, WP_BASE);
+        const report = await runSummaryAudit([summary]);
+
+        console.log('\n  ═══ CONTENT AUDIT SUMMARY ═══');
+        console.log(report);
+
+        await sendSummaryToSlack(process.env.SLACK_WEBHOOK_URL, [summary], report);
+        console.log('  Audit summary sent to Slack');
+      }
+    } catch (auditErr) {
+      console.error('  Audit error (non-fatal):', auditErr.message);
+    }
+  }
 
   return { postId: draft.id, cpt: parsed.cpt, title: parsed.title };
 }

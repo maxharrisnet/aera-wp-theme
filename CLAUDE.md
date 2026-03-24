@@ -507,6 +507,9 @@ Usage: `npm run publish-brief -- path/to/brief.txt` or `npm run publish-brief --
         |
         v
 [Slack notification with edit link]
+        |
+        v
+[For blog posts: runs SEO + AEO/GEO audit in parallel → sends audit to Slack]
 ```
 
 Usage: `npm run watch-drive`
@@ -613,6 +616,7 @@ Requires `SLACK_WEBHOOK_URL` for Slack delivery (falls back gracefully if not se
     seo-audit.mjs                 <- AI SEO audit for blog posts (uses Claude)
     aeo-audit.mjs                 <- AI AEO/GEO audit for blog posts (uses Claude)
     content-audit.mjs             <- Combined SEO + AEO/GEO audit with Slack reports
+    lib/audit.mjs                 <- Shared audit logic (extraction, prompts, Slack formatting)
     sample-brief.txt              <- Example content brief for testing publish.mjs
     .watch-state.json             <- Processed doc state (gitignored, auto-generated)
   /inc/
