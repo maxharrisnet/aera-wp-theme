@@ -564,6 +564,39 @@ word count (1200+ target for B2B), internal linking, inline images, alt text,
 blog_lead, resource_card_title, resource_excerpt, resource_card_image, and
 resource_cta_text ACF fields. Scores each post 1-10 with top 3 priority fixes.
 
+### `scripts/aeo-audit.mjs` — AI-powered AEO/GEO auditor
+
+Same interface as seo-audit but focused on Answer Engine Optimization (AEO) and
+Generative Engine Optimization (GEO) — how well content performs when AI systems
+(ChatGPT, Perplexity, Google AI Overviews, Gemini, Claude) try to cite it.
+
+```
+npm run aeo-audit                  # latest 1 published post
+npm run aeo-audit -- 3             # latest 3 published posts
+npm run aeo-audit -- 3 --draft     # latest 3 drafts
+npm run aeo-audit -- 10 --all      # latest 10 of any status
+```
+
+Checks: citability (quotable claims, attributed data, concrete stats), entity clarity
+(brand/product naming, audience specificity), question targeting (headings as questions,
+direct answers), structured data (schema types, lists, bold claims), source authority
+(first-party data, methodology), and content gaps (FAQ sections, comparisons, definitions,
+TL;DR snippets). Scores each post 1-10 with top 3 priority fixes.
+
+### `scripts/content-audit.mjs` — Combined audit with Slack delivery
+
+Runs both the SEO and AEO/GEO audits in parallel, prints both reports to the terminal,
+then sends them to Slack as a single formatted message with post links.
+
+```
+npm run content-audit                  # latest 1 published post
+npm run content-audit -- 3             # latest 3 published posts
+npm run content-audit -- 3 --draft     # latest 3 drafts
+npm run content-audit -- 10 --all      # latest 10 of any status
+```
+
+Requires `SLACK_WEBHOOK_URL` for Slack delivery (falls back gracefully if not set).
+
 ---
 
 ## File Structure
@@ -578,6 +611,8 @@ resource_cta_text ACF fields. Scores each post 1-10 with top 3 priority fixes.
     publish.mjs                   <- CLI: brief → Claude → WP draft → publish → Slack
     watch-drive.mjs               <- Watcher: Google Drive → Claude → WP draft → Slack
     seo-audit.mjs                 <- AI SEO audit for blog posts (uses Claude)
+    aeo-audit.mjs                 <- AI AEO/GEO audit for blog posts (uses Claude)
+    content-audit.mjs             <- Combined SEO + AEO/GEO audit with Slack reports
     sample-brief.txt              <- Example content brief for testing publish.mjs
     .watch-state.json             <- Processed doc state (gitignored, auto-generated)
   /inc/

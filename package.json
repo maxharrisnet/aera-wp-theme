@@ -68,7 +68,9 @@
     "publish-brief": "node scripts/publish.mjs",
     "watch-drive": "node scripts/watch-drive.mjs",
     "clear-cache": "node scripts/clear-cache.mjs",
-    "seo-audit": "node scripts/seo-audit.mjs"
+    "seo-audit": "node scripts/seo-audit.mjs",
+    "aeo-audit": "node scripts/aeo-audit.mjs",
+    "content-audit": "node scripts/content-audit.mjs"
   },
   "main": "vite.config.js",
   "directories": {
