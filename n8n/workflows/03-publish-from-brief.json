@@ -1,0 +1,180 @@
+{
+  "name": "03 — Publish from Brief",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "slack-publish",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "node-301",
+      "name": "Slack Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 300],
+      "webhookId": "slack-publish"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ response_type: 'ephemeral', text: 'Got it — creating your draft now. I\\'ll post a link when it\\'s ready.' }) }}",
+        "options": {}
+      },
+      "id": "node-302",
+      "name": "ACK to Slack",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const body = $input.first().json.body || $input.first().json;\nreturn [{\n  json: {\n    briefText: body.text || '',\n    slackChannel: body.channel_id || $env.SLACK_DEFAULT_CHANNEL || '',\n    slackUserId: body.user_id || '',\n    wpBaseUrl: $env.WP_BASE_URL || 'http://host.docker.internal:10020',\n    wpAuth: 'Basic ' + Buffer.from(($env.WP_USERNAME || '') + ':' + ($env.WP_APP_PASSWORD || '')).toString('base64'),\n    anthropicKey: $env.ANTHROPIC_API_KEY || '',\n    slackToken: $env.SLACK_BOT_TOKEN || '',\n  }\n}];"
+      },
+      "id": "node-303",
+      "name": "Load Config",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const config = $('Load Config').first().json;\n\nconst systemPrompt = `You are a WordPress content classifier and field extractor for Aera Technology.\n\nAvailable content types (CPTs) and their required fields:\n\nblog:\n  endpoint: blog\n  acf: { resource_card_title, resource_excerpt, resource_cta_text, blog_lead }\n  notes: Primary blog post type. blog_lead is a 1-2 sentence intro shown below the title.\n\npress-release:\n  endpoint: press-release\n  acf: { press_release_publication, resource_card_title, resource_excerpt }\n  notes: Official company announcements. press_release_publication is the outlet name.\n\ncase-study:\n  endpoint: case-study\n  acf: { case_study_company_name, case_study_industry, case_study_type, case_study_business_problem, case_study_business_statement, resource_card_title, resource_excerpt }\n  notes: Customer success stories.\n\nwhitepaper:\n  endpoint: whitepaper\n  acf: { resource_card_title, resource_excerpt }\n  notes: Gated research reports.\n\nnews:\n  endpoint: news\n  acf: { resource_external_url, resource_card_title, resource_excerpt }\n  notes: Third-party coverage. No body content — external URL required.\n\nvideo:\n  endpoint: video\n  acf: { video_url, video_type, resource_card_title, resource_excerpt }\n  notes: Video content. video_url is a YouTube/Vimeo embed URL.\n\npodcast:\n  endpoint: podcast\n  acf: { podcast_video, podcast_type, resource_card_title, resource_excerpt }\n  notes: Podcast episodes. podcast_video is the embed URL.\n\nreport:\n  endpoint: report\n  acf: { resource_external_url, resource_card_title, resource_excerpt }\n  notes: Research reports. external URL if gated.\n\nReturn ONLY a valid JSON object (no markdown, no explanation) with this exact structure:\n{\n  \"cpt\": \"<endpoint slug>\",\n  \"title\": \"<post title>\",\n  \"slug\": \"<url-friendly-slug>\",\n  \"content\": \"<full HTML body content, use <p>, <h2>, <h3>, <ul>, <li> tags>\",\n  \"excerpt\": \"<SEO meta description, ~155 chars>\",\n  \"acf\": { <only the relevant ACF fields for this CPT, omit others> },\n  \"reasoning\": \"<one sentence explaining CPT choice>\"\n}`;\n\nconst userMessage = 'Analyze this content brief and extract all fields:\\n\\n' + config.briefText;\n\nreturn [{\n  json: {\n    ...config,\n    claudeRequestBody: {\n      model: 'claude-sonnet-4-20250514',\n      max_tokens: 8192,\n      system: systemPrompt,\n      messages: [{ role: 'user', content: userMessage }]\n    }\n  }\n}];"
+      },
+      "id": "node-304",
+      "name": "Build Claude Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-api-key", "value": "={{ $('Load Config').first().json.anthropicKey }}" },
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify($('Build Claude Prompt').first().json.claudeRequestBody) }}",
+        "options": {}
+      },
+      "id": "node-305",
+      "name": "Claude: Classify + Extract",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [880, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const raw = $input.first().json.content?.[0]?.text || '';\nconst config = $('Load Config').first().json;\n\n// Strip markdown code fences if Claude wrapped the JSON\nconst cleaned = raw.replace(/^```(?:json)?\\n?/i, '').replace(/\\n?```$/i, '').trim();\n\nlet parsed;\ntry {\n  parsed = JSON.parse(cleaned);\n} catch (e) {\n  throw new Error('Claude returned invalid JSON: ' + raw.substring(0, 200));\n}\n\nconst cpt = parsed.cpt || 'blog';\nconst slug = (parsed.slug || '').replace(/^[a-z-]+\\//, ''); // strip any CPT prefix\n\n// Build WP REST API post body\nconst wpBody = {\n  title: parsed.title || 'Untitled',\n  slug,\n  content: parsed.content || '',\n  excerpt: parsed.excerpt || '',\n  status: 'draft',\n  acf: parsed.acf || {},\n};\n\nreturn [{\n  json: {\n    cpt,\n    wpUrl: config.wpBaseUrl + '/wp-json/wp/v2/' + cpt,\n    wpBody,\n    wpBodyJson: JSON.stringify(wpBody),\n    title: parsed.title,\n    reasoning: parsed.reasoning || '',\n    wpBaseUrl: config.wpBaseUrl,\n    wpAuth: config.wpAuth,\n    slackToken: config.slackToken,\n    slackChannel: config.slackChannel,\n  }\n}];"
+      },
+      "id": "node-306",
+      "name": "Parse Claude Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.wpUrl }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "={{ $json.wpAuth }}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ $json.wpBodyJson }}",
+        "options": {}
+      },
+      "id": "node-307",
+      "name": "Create WP Draft",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1320, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const wpPost = $input.first().json;\nconst ctx = $('Parse Claude Response').first().json;\n\n// Parse WP response — might have PHP warnings before the JSON\nlet post = wpPost;\nif (typeof wpPost === 'string') {\n  const idx = wpPost.indexOf('{');\n  if (idx > 0) post = JSON.parse(wpPost.substring(idx));\n}\n\nconst postId = post.id;\nconst postTitle = (post.title?.rendered || post.title || ctx.title || 'Draft').trim();\nconst wpAdminUrl = ctx.wpBaseUrl.replace('host.docker.internal', 'localhost');\nconst editLink = wpAdminUrl + '/wp-admin/post.php?post=' + postId + '&action=edit';\nconst previewLink = wpAdminUrl + '/?p=' + postId + '&preview=true';\n\nconst cptLabels = {\n  blog: 'Blog', 'press-release': 'Press Release', 'case-study': 'Case Study',\n  whitepaper: 'Whitepaper', news: 'News', video: 'Video', podcast: 'Podcast', report: 'Report'\n};\nconst cptLabel = cptLabels[ctx.cpt] || ctx.cpt;\n\nconst blocks = [\n  {\n    type: 'header',\n    text: { type: 'plain_text', text: '\\u2705 Draft Created', emoji: true }\n  },\n  {\n    type: 'section',\n    fields: [\n      { type: 'mrkdwn', text: '*Title:*\\n' + postTitle },\n      { type: 'mrkdwn', text: '*Type:*\\n' + cptLabel },\n    ]\n  },\n  {\n    type: 'section',\n    text: { type: 'mrkdwn', text: '_' + (ctx.reasoning || '') + '_' }\n  },\n  {\n    type: 'actions',\n    elements: [\n      {\n        type: 'button',\n        text: { type: 'plain_text', text: 'Edit in WordPress', emoji: true },\n        url: editLink,\n        style: 'primary'\n      },\n      {\n        type: 'button',\n        text: { type: 'plain_text', text: 'Preview', emoji: true },\n        url: previewLink\n      }\n    ]\n  }\n];\n\nreturn [{\n  json: {\n    channel: ctx.slackChannel,\n    slackToken: ctx.slackToken,\n    text: 'Draft created: ' + postTitle,\n    blocks\n  }\n}];"
+      },
+      "id": "node-308",
+      "name": "Format Slack Confirmation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1540, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Bearer {{ $('Load Config').first().json.slackToken }}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ channel: $json.channel, text: $json.text, blocks: $json.blocks }) }}",
+        "options": {}
+      },
+      "id": "node-309",
+      "name": "Send to Slack",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1760, 300]
+    }
+  ],
+  "connections": {
+    "Slack Webhook": {
+      "main": [[{ "node": "ACK to Slack", "type": "main", "index": 0 }]]
+    },
+    "ACK to Slack": {
+      "main": [[{ "node": "Load Config", "type": "main", "index": 0 }]]
+    },
+    "Load Config": {
+      "main": [[{ "node": "Build Claude Prompt", "type": "main", "index": 0 }]]
+    },
+    "Build Claude Prompt": {
+      "main": [[{ "node": "Claude: Classify + Extract", "type": "main", "index": 0 }]]
+    },
+    "Claude: Classify + Extract": {
+      "main": [[{ "node": "Parse Claude Response", "type": "main", "index": 0 }]]
+    },
+    "Parse Claude Response": {
+      "main": [[{ "node": "Create WP Draft", "type": "main", "index": 0 }]]
+    },
+    "Create WP Draft": {
+      "main": [[{ "node": "Format Slack Confirmation", "type": "main", "index": 0 }]]
+    },
+    "Format Slack Confirmation": {
+      "main": [[{ "node": "Send to Slack", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "id": "publish-from-brief-001",
+  "tags": []
+}

@@ -99,10 +99,6 @@ function adjust_field_settings(array $field): array
   $field_name = $field['name'] ?? '';
   $field_key = $field['key'] ?? '';
 
-  if ($field_name === 'resource_card_image') {
-    $field['required'] = 1;
-  }
-
   if ($field_name === 'hero_title') {
     $field['required'] = 0;
   }

@@ -1,0 +1,92 @@
+{
+  "name": "05 — Status Check: Recent Drafts",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "node-501",
+      "name": "Run Status Check",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "return [{\n  json: {\n    wpBaseUrl: $env.WP_BASE_URL || 'http://host.docker.internal:10020',\n    wpAuth: 'Basic ' + Buffer.from(($env.WP_USERNAME || '') + ':' + ($env.WP_APP_PASSWORD || '')).toString('base64'),\n    slackToken: $env.SLACK_BOT_TOKEN || '',\n    slackChannel: $env.SLACK_DEFAULT_CHANNEL || '',\n    cpts: ['blog', 'press-release', 'case-study', 'whitepaper'],\n  }\n}];"
+      },
+      "id": "node-502",
+      "name": "Load Config",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const config = $('Load Config').first().json;\nconst cpts = config.cpts;\nconst wpBase = config.wpBaseUrl;\nconst wpAuth = config.wpAuth;\n\nconst allDrafts = [];\n\nfor (const cpt of cpts) {\n  let url = wpBase + '/wp-json/wp/v2/' + cpt + '?status=draft&per_page=10&orderby=modified&order=desc&_fields=id,title,slug,status,modified,author';\n  // Swap spaces for %20 just in case\n  url = url.replace(/ /g, '%20');\n\n  let response;\n  try {\n    response = await $helpers.httpRequest({\n      method: 'GET',\n      url,\n      headers: { Authorization: wpAuth },\n    });\n  } catch (e) {\n    // Skip CPTs that error (e.g. not found)\n    continue;\n  }\n\n  const posts = Array.isArray(response) ? response : [];\n  for (const post of posts) {\n    allDrafts.push({\n      id: post.id,\n      cpt,\n      title: (post.title?.rendered || post.title || 'Untitled').trim(),\n      slug: post.slug,\n      modified: post.modified ? new Date(post.modified).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : '',\n      editLink: wpBase + '/wp-admin/post.php?post=' + post.id + '&action=edit',\n    });\n  }\n}\n\n// Sort by modified date descending (already sorted per CPT, just interleave)\nreturn [{ json: { drafts: allDrafts, count: allDrafts.length } }];"
+      },
+      "id": "node-503",
+      "name": "Fetch Drafts",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const { drafts, count } = $input.first().json;\nconst config = $('Load Config').first().json;\n\nconst cptLabels = {\n  blog: 'Blog',\n  'press-release': 'Press Release',\n  'case-study': 'Case Study',\n  whitepaper: 'Whitepaper',\n};\n\nlet text;\nif (count === 0) {\n  text = 'No drafts found.';\n} else {\n  text = drafts.map(d => {\n    const label = cptLabels[d.cpt] || d.cpt;\n    return '\\u2022 *' + d.title + '* [' + label + '] \\u2014 modified ' + d.modified + ' \\u2014 <' + d.editLink + '|Edit>';\n  }).join('\\n');\n}\n\nconst blocks = [\n  {\n    type: 'header',\n    text: { type: 'plain_text', text: 'Drafts: ' + count + ' pending', emoji: true }\n  },\n  {\n    type: 'section',\n    text: { type: 'mrkdwn', text: count > 0 ? text : '_No drafts found across Blog, Press Release, Case Study, and Whitepaper._' }\n  }\n];\n\nreturn [{\n  json: {\n    channel: config.slackChannel,\n    slackToken: config.slackToken,\n    text: count + ' draft' + (count !== 1 ? 's' : '') + ' pending review',\n    blocks,\n  }\n}];"
+      },
+      "id": "node-504",
+      "name": "Format Slack Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Authorization", "value": "=Bearer {{ $('Load Config').first().json.slackToken }}" },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ channel: $json.channel, text: $json.text, blocks: $json.blocks }) }}",
+        "options": {}
+      },
+      "id": "node-505",
+      "name": "Send to Slack",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [880, 300]
+    }
+  ],
+  "connections": {
+    "Run Status Check": {
+      "main": [[{ "node": "Load Config", "type": "main", "index": 0 }]]
+    },
+    "Load Config": {
+      "main": [[{ "node": "Fetch Drafts", "type": "main", "index": 0 }]]
+    },
+    "Fetch Drafts": {
+      "main": [[{ "node": "Format Slack Message", "type": "main", "index": 0 }]]
+    },
+    "Format Slack Message": {
+      "main": [[{ "node": "Send to Slack", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "id": "status-check-001",
+  "tags": []
+}
