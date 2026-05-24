@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"/Users/max/Local Sites/aera-technology/app/public/wp-content/themes/aera-technology/n8n/workflows\")",
+      "Bash(docker --version)",
+      "Bash(docker compose *)",
+      "Bash(ls /Applications/ | grep -i docker; which docker || echo \"not in PATH\"; ls /usr/local/bin/docker 2>/dev/null || echo \"not at /usr/local/bin/docker\"; ls \"$HOME/.docker\" 2>/dev/null | head -5)",
+      "Read(//Applications/**)",
+      "Bash(/usr/local/bin/docker --version)",
+      "Bash(/Applications/Docker.app/Contents/Resources/bin/docker --version)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:5678/healthz)"
+    ],
+    "additionalDirectories": [
+      "/Users/max/Local Sites/aera-technology/app/public/wp-content/themes/aera-technology/n8n"
+    ]
+  }
+}

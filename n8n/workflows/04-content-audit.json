@@ -1,0 +1,183 @@
+{
+  "name": "04 — Content Audit: SEO + AEO",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "node-001",
+      "name": "Run Audit",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "return [{\n  json: {\n    wpBaseUrl: $env.WP_BASE_URL || 'http://localhost:10020',\n    wpAuth: 'Basic ' + Buffer.from(($env.WP_USERNAME || '') + ':' + ($env.WP_APP_PASSWORD || '')).toString('base64'),\n    anthropicKey: $env.ANTHROPIC_API_KEY || '',\n    slackToken: $env.SLACK_BOT_TOKEN || '',\n    slackChannel: $env.SLACK_DEFAULT_CHANNEL || '',\n  }\n}];"
+      },
+      "id": "node-002",
+      "name": "Load Config",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "={{ $('Load Config').first().json.wpBaseUrl }}/wp-json/wp/v2/blog",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            { "name": "status", "value": "publish" },
+            { "name": "per_page", "value": "3" },
+            { "name": "orderby", "value": "date" },
+            { "name": "order", "value": "desc" },
+            { "name": "context", "value": "edit" }
+          ]
+        },
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "={{ $('Load Config').first().json.wpAuth }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "node-003",
+      "name": "Fetch Blog Posts",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "function stripHtml(html) {\n  if (!html) return '';\n  return html.replace(/<[^>]+>/g, ' ').replace(/\\s+/g, ' ').trim();\n}\n\nfunction extractHeadings(html) {\n  if (!html) return [];\n  return [...html.matchAll(/<h([2-6])[^>]*>(.*?)<\\/h\\1>/gi)]\n    .map(m => ({ level: parseInt(m[1]), text: stripHtml(m[2]) }));\n}\n\nfunction countWords(text) {\n  if (!text) return 0;\n  return text.trim().split(/\\s+/).filter(w => w.length > 0).length;\n}\n\nfunction extractLinks(html) {\n  if (!html) return [];\n  return [...html.matchAll(/<a[^>]+href=[\"']([^\"']+)[\"'][^>]*>/gi)]\n    .map(m => m[1]);\n}\n\nfunction extractImages(html) {\n  if (!html) return [];\n  return [...html.matchAll(/<img[^>]+>/gi)].map(m => {\n    const altM = m[0].match(/alt=[\"']([^\"']*)[\"']/i);\n    return { hasAlt: !!(altM && altM[1]), alt: altM?.[1] || '' };\n  });\n}\n\nfunction extractBoldClaims(html) {\n  if (!html) return [];\n  return [...html.matchAll(/<strong[^>]*>(.*?)<\\/strong>/gi)]\n    .map(m => stripHtml(m[1]).trim()).filter(Boolean);\n}\n\nfunction extractStats(text) {\n  if (!text) return [];\n  const regex = /\\b\\d+(?:\\.\\d+)?%|\\$\\s*\\d+(?:\\.\\d+)?(?:\\s*[kKmMbB])?|\\b\\d+(?:\\.\\d+)?\\s*(?:times|x|percent)\\b/g;\n  return [...new Set(text.match(regex) || [])];\n}\n\nfunction extractQuestionHeadings(headings) {\n  const qWords = /^(what|why|how|when|where|who|which|can|does|is|are|do|should|will)/i;\n  return headings.filter(h => qWords.test(h.text) || h.text.endsWith('?'));\n}\n\nconst allItems = $input.all();\nconst posts = (allItems.length === 1 && Array.isArray(allItems[0].json))\n  ? allItems[0].json\n  : allItems.map(item => item.json);\n\nconst wpBase = $('Load Config').first().json.wpBaseUrl;\n\nconst summaries = posts.map(post => {\n  const content = post.content?.rendered || '';\n  const plainText = stripHtml(content);\n  const headings = extractHeadings(content);\n  const images = extractImages(content);\n  const yoast = post.yoast_head_json || {};\n  const acf = post.acf || {};\n  return {\n    id: post.id,\n    status: post.status,\n    title: (post.title?.rendered || '').trim(),\n    slug: post.slug,\n    wordCount: countWords(plainText),\n    headings,\n    questionHeadings: extractQuestionHeadings(headings),\n    linkCount: extractLinks(content).length,\n    imageCount: images.length,\n    imagesWithAlt: images.filter(i => i.hasAlt).length,\n    boldClaims: extractBoldClaims(content),\n    stats: extractStats(plainText),\n    openingWords: plainText.split(/\\s+/).slice(0, 150).join(' '),\n    seo: {\n      seoTitle: yoast.title || '',\n      metaDescription: yoast.description || '',\n      ogImage: yoast.og_image?.[0]?.url || '',\n      canonical: yoast.canonical || '',\n      readingTime: yoast.twitter_misc?.['Est. reading time'] || '',\n    },\n    acf: {\n      blog_lead: acf.blog_lead || null,\n      resource_card_title: acf.resource_card_title || null,\n      resource_card_image: acf.resource_card_image || null,\n      resource_excerpt: acf.resource_excerpt || null,\n      resource_cta_text: acf.resource_cta_text || null,\n    },\n    editLink: wpBase + '/wp-admin/post.php?post=' + post.id + '&action=edit',\n    postLink: post.link || '',\n  };\n});\n\nconst summaryJson = JSON.stringify(summaries, null, 2);\n\nconst seoPrompt = 'You are an expert SEO analyst for B2B SaaS content. Analyze the following WordPress blog post data and provide actionable SEO recommendations.\\n\\nBLOG POST DATA:\\n' + summaryJson + '\\n\\nAnalyze each post across these 7 dimensions:\\n1. Title & Slug -- SEO title compelling and keyword-rich? Under 60 chars? Slug match intent?\\n2. Meta Description -- Present? ~155 chars? Clear value prop and CTA?\\n3. Content Structure -- H2/H3 hierarchy logical? Word count 1200+? Scannable?\\n4. Internal Linking -- Links to /skills/, /resources/, /demo/, or other blog posts?\\n5. Images -- Present? All have descriptive alt text?\\n6. ACF Fields -- blog_lead set? resource_card_title and resource_excerpt populated? resource_card_image set (non-null)?\\n7. Score & Fixes -- Overall score 1-10. Top 3 priority fixes only.\\n\\nFormat as a clear markdown report. Be specific and actionable. Start each post section with its title as a heading.';\n\nconst aeoPrompt = 'You are an expert in Answer Engine Optimization (AEO) and Generative Engine Optimization (GEO) -- how well content is cited by AI systems like ChatGPT, Perplexity, Google AI Overviews, and Claude.\\n\\nBLOG POST DATA:\\n' + summaryJson + '\\n\\nAnalyze each post across these 7 dimensions:\\n1. Citability -- Quotable, specific claims with concrete numbers? Facts AI can cite confidently?\\n2. Entity Clarity -- Is the brand clearly named? Products mentioned by name? Target audience consistent?\\n3. Question Targeting -- List 3-5 questions this content should answer. Does it answer them directly?\\n4. Structured Data -- Schema markup? Lists, tables, bold key terms? Definition patterns?\\n5. Source Authority -- First-party data, case study results, or original research? Or mostly vague claims?\\n6. Content Gaps -- Missing: FAQ section? Comparisons? Key term definitions? TL;DR summary?\\n7. Score & Fixes -- Score 1-10 for AEO/GEO readiness. Top 3 priority improvements only.\\n\\nFormat as a clear markdown report. Be specific. Start each post section with its title as a heading.';\n\nreturn [{\n  json: {\n    summaries,\n    postCount: summaries.length,\n    seoRequestBody: {\n      model: 'claude-sonnet-4-20250514',\n      max_tokens: 4096,\n      messages: [{ role: 'user', content: seoPrompt }]\n    },\n    aeoRequestBody: {\n      model: 'claude-sonnet-4-20250514',\n      max_tokens: 4096,\n      messages: [{ role: 'user', content: aeoPrompt }]\n    }\n  }\n}];"
+      },
+      "id": "node-004",
+      "name": "Build Summaries",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-api-key", "value": "={{ $('Load Config').first().json.anthropicKey }}" },
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify($('Build Summaries').first().json.seoRequestBody) }}",
+        "options": {}
+      },
+      "id": "node-005",
+      "name": "SEO Audit (Claude)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [880, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "x-api-key", "value": "={{ $('Load Config').first().json.anthropicKey }}" },
+            { "name": "anthropic-version", "value": "2023-06-01" },
+            { "name": "content-type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify($('Build Summaries').first().json.aeoRequestBody) }}",
+        "options": {}
+      },
+      "id": "node-006",
+      "name": "AEO Audit (Claude)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, 300]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "function truncateForSlack(text, maxLen) {\n  maxLen = maxLen || 2900;\n  if (!text) return '_No report generated_';\n  let slack = text\n    .replace(/^#{1,3}\\s+(.+)$/gm, '*$1*')\n    .replace(/\\*\\*(.+?)\\*\\*/g, '*$1*');\n  if (slack.length > maxLen) {\n    slack = slack.substring(0, maxLen) + '\\n\\n_[truncated]_';\n  }\n  return slack;\n}\n\nconst summaries = $('Build Summaries').first().json.summaries;\nconst postCount = $('Build Summaries').first().json.postCount;\nconst seoText = $('SEO Audit (Claude)').first().json.content?.[0]?.text || 'SEO audit unavailable';\nconst aeoText = $('AEO Audit (Claude)').first().json.content?.[0]?.text || 'AEO audit unavailable';\nconst slackChannel = $('Load Config').first().json.slackChannel;\nconst slackToken = $('Load Config').first().json.slackToken;\n\nconst postList = summaries.map(p =>\n  '\\u2022 *' + p.title + '* (' + p.wordCount + ' words) \\u2014 <' + p.editLink + '|Edit in WP>'\n).join('\\n');\n\nconst blocks = [\n  {\n    type: 'header',\n    text: { type: 'plain_text', text: 'Content Audit: ' + postCount + ' Blog Post' + (postCount !== 1 ? 's' : ''), emoji: true }\n  },\n  {\n    type: 'section',\n    text: { type: 'mrkdwn', text: postList }\n  },\n  { type: 'divider' },\n  {\n    type: 'header',\n    text: { type: 'plain_text', text: 'SEO Audit', emoji: true }\n  },\n  {\n    type: 'section',\n    text: { type: 'mrkdwn', text: truncateForSlack(seoText) }\n  },\n  { type: 'divider' },\n  {\n    type: 'header',\n    text: { type: 'plain_text', text: 'AEO/GEO Audit', emoji: true }\n  },\n  {\n    type: 'section',\n    text: { type: 'mrkdwn', text: truncateForSlack(aeoText) }\n  }\n];\n\nreturn [{\n  json: {\n    slackToken,\n    channel: slackChannel,\n    text: 'Content Audit: ' + postCount + ' blog post' + (postCount !== 1 ? 's' : '') + ' analyzed',\n    blocks\n  }\n}];"
+      },
+      "id": "node-007",
+      "name": "Format Slack Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1320, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://slack.com/api/chat.postMessage",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('Load Config').first().json.slackToken }}"
+            },
+            { "name": "Content-Type", "value": "application/json" }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ channel: $json.channel, text: $json.text, blocks: $json.blocks }) }}",
+        "options": {}
+      },
+      "id": "node-008",
+      "name": "Send to Slack",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 300]
+    }
+  ],
+  "connections": {
+    "Run Audit": {
+      "main": [[{ "node": "Load Config", "type": "main", "index": 0 }]]
+    },
+    "Load Config": {
+      "main": [[{ "node": "Fetch Blog Posts", "type": "main", "index": 0 }]]
+    },
+    "Fetch Blog Posts": {
+      "main": [[{ "node": "Build Summaries", "type": "main", "index": 0 }]]
+    },
+    "Build Summaries": {
+      "main": [[{ "node": "SEO Audit (Claude)", "type": "main", "index": 0 }]]
+    },
+    "SEO Audit (Claude)": {
+      "main": [[{ "node": "AEO Audit (Claude)", "type": "main", "index": 0 }]]
+    },
+    "AEO Audit (Claude)": {
+      "main": [[{ "node": "Format Slack Message", "type": "main", "index": 0 }]]
+    },
+    "Format Slack Message": {
+      "main": [[{ "node": "Send to Slack", "type": "main", "index": 0 }]]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "id": "content-audit-001",
+  "tags": []
+}

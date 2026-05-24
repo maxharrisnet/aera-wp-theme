@@ -13,20 +13,28 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const WP_BASE = process.env.WP_BASE_URL;
 const WP_AUTH = 'Basic ' + Buffer.from(`${process.env.WP_USERNAME}:${process.env.WP_APP_PASSWORD}`).toString('base64');
 const FOLDER_ID = process.env.GOOGLE_DRIVE_FOLDER_ID;
-const KEY_FILE = resolve(process.env.GOOGLE_SERVICE_ACCOUNT_JSON);
 const POLL_INTERVAL = parseInt(process.env.POLL_INTERVAL || '15000', 10); // 15s default
 const STATE_FILE = resolve(__dirname, '.watch-state.json');
 
 const claude = new Anthropic();
 
 // ── Google Auth ─────────────────────────────────────────────────────────────
-const auth = new google.auth.GoogleAuth({
-  keyFile: KEY_FILE,
+// Support both inline JSON (Vercel env var) and file path (local .env)
+const googleAuthConfig = {
   scopes: [
     'https://www.googleapis.com/auth/drive.readonly',
     'https://www.googleapis.com/auth/documents.readonly',
   ],
-});
+};
+
+const saJson = process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
+if (saJson && saJson.trimStart().startsWith('{')) {
+  googleAuthConfig.credentials = JSON.parse(saJson);
+} else if (saJson) {
+  googleAuthConfig.keyFile = resolve(saJson);
+}
+
+const auth = new google.auth.GoogleAuth(googleAuthConfig);
 const drive = google.drive({ version: 'v3', auth });
 const docs = google.docs({ version: 'v1', auth });
 
