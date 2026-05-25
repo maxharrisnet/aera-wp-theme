@@ -11,6 +11,7 @@ services:
       - WEBHOOK_URL=${N8N_WEBHOOK_URL}
       - GENERIC_TIMEZONE=America/Los_Angeles
       - N8N_BLOCK_ENV_ACCESS_IN_NODE=false
+      - N8N_RUNNERS_ENABLED=false
       # Credentials passed through to n8n environment (available in Code nodes)
       - WP_BASE_URL=${WP_BASE_URL}
       - WP_USERNAME=${WP_USERNAME}

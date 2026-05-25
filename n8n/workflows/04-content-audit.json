@@ -11,8 +11,22 @@
     },
     {
       "parameters": {
+        "httpMethod": "POST",
+        "path": "slack-audit",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "node-009",
+      "name": "Slack Webhook (Audit)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 460],
+      "webhookId": "slack-audit"
+    },
+    {
+      "parameters": {
         "mode": "runOnceForAllItems",
-        "jsCode": "return [{\n  json: {\n    wpBaseUrl: $env.WP_BASE_URL || 'http://localhost:10020',\n    wpAuth: 'Basic ' + Buffer.from(($env.WP_USERNAME || '') + ':' + ($env.WP_APP_PASSWORD || '')).toString('base64'),\n    anthropicKey: $env.ANTHROPIC_API_KEY || '',\n    slackToken: $env.SLACK_BOT_TOKEN || '',\n    slackChannel: $env.SLACK_DEFAULT_CHANNEL || '',\n  }\n}];"
+        "jsCode": "const inp = $input.first().json;\nconst body = inp.body || inp;\nconst countArg = (typeof body.text === 'string') ? parseInt(body.text.trim()) : NaN;\nconst count = Math.min(Math.max(isNaN(countArg) ? 1 : countArg, 1), 5);\nreturn [{\n  json: {\n    count,\n    wpBaseUrl: $env.WP_BASE_URL || 'http://host.docker.internal:10020',\n    wpAuth: 'Basic ' + Buffer.from(($env.WP_USERNAME || '') + ':' + ($env.WP_APP_PASSWORD || '')).toString('base64'),\n    anthropicKey: $env.ANTHROPIC_API_KEY || '',\n    slackToken: $env.SLACK_BOT_TOKEN || '',\n    slackChannel: (typeof body.channel_id === 'string' && body.channel_id) ? body.channel_id : ($env.SLACK_DEFAULT_CHANNEL || ''),\n  }\n}];"
       },
       "id": "node-002",
       "name": "Load Config",
@@ -28,7 +42,7 @@
         "queryParameters": {
           "parameters": [
             { "name": "status", "value": "publish" },
-            { "name": "per_page", "value": "3" },
+            { "name": "per_page", "value": "={{ $('Load Config').first().json.count }}" },
             { "name": "orderby", "value": "date" },
             { "name": "order", "value": "desc" },
             { "name": "context", "value": "edit" }
@@ -150,6 +164,9 @@
   ],
   "connections": {
     "Run Audit": {
+      "main": [[{ "node": "Load Config", "type": "main", "index": 0 }]]
+    },
+    "Slack Webhook (Audit)": {
       "main": [[{ "node": "Load Config", "type": "main", "index": 0 }]]
     },
     "Load Config": {

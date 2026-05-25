@@ -1,0 +1,254 @@
+{
+  "name": "02 — Slack Command Router",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "slack-commands",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "node-201",
+      "name": "Slack Commands Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 300],
+      "webhookId": "slack-commands"
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const inp = $input.first().json;\nconst body = inp.body || inp;\nreturn [{ json: {\n  command: body.command || '',\n  text: (body.text || '').trim(),\n  channelId: body.channel_id || $env.SLACK_DEFAULT_CHANNEL || '',\n  userId: body.user_id || '',\n} }];"
+      },
+      "id": "node-202",
+      "name": "Parse Command",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [220, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ response_type: 'ephemeral', text: $json.command === '/publish' ? 'Creating your draft...' : $json.command === '/audit' ? 'Running content audit (~30s)...' : $json.command === '/status' ? 'Checking recent drafts...' : $json.command === '/process-drive' ? 'Scanning Google Drive...' : 'Working on it...' }) }}",
+        "options": {}
+      },
+      "id": "node-203",
+      "name": "ACK to Slack",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "cond-204",
+              "leftValue": "={{ $json.command }}",
+              "rightValue": "/publish",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "node-204",
+      "name": "Is Publish?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [660, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook/slack-publish",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ text: $json.text, channel_id: $json.channelId, user_id: $json.userId }) }}",
+        "options": {}
+      },
+      "id": "node-205",
+      "name": "Call Publish",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [880, 160]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "cond-206",
+              "leftValue": "={{ $json.command }}",
+              "rightValue": "/audit",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "node-206",
+      "name": "Is Audit?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [880, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook/slack-audit",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ text: $json.text, channel_id: $json.channelId, user_id: $json.userId }) }}",
+        "options": {}
+      },
+      "id": "node-207",
+      "name": "Call Audit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1100, 160]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "cond-208",
+              "leftValue": "={{ $json.command }}",
+              "rightValue": "/status",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "node-208",
+      "name": "Is Status?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1100, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook/slack-status",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ channel_id: $json.channelId }) }}",
+        "options": {}
+      },
+      "id": "node-209",
+      "name": "Call Status",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1320, 160]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "cond-210",
+              "leftValue": "={{ $json.command }}",
+              "rightValue": "/process-drive",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "node-210",
+      "name": "Is Process Drive?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1320, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:5678/webhook/slack-process-drive",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [{ "name": "Content-Type", "value": "application/json" }]
+        },
+        "sendBody": true,
+        "contentType": "raw",
+        "rawContentType": "application/json",
+        "body": "={{ JSON.stringify({ channel_id: $json.channelId }) }}",
+        "options": {}
+      },
+      "id": "node-211",
+      "name": "Call Process Drive",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1540, 160]
+    }
+  ],
+  "connections": {
+    "Slack Commands Webhook": {
+      "main": [[{ "node": "Parse Command", "type": "main", "index": 0 }]]
+    },
+    "Parse Command": {
+      "main": [[{ "node": "ACK to Slack", "type": "main", "index": 0 }]]
+    },
+    "ACK to Slack": {
+      "main": [[{ "node": "Is Publish?", "type": "main", "index": 0 }]]
+    },
+    "Is Publish?": {
+      "main": [
+        [{ "node": "Call Publish", "type": "main", "index": 0 }],
+        [{ "node": "Is Audit?", "type": "main", "index": 0 }]
+      ]
+    },
+    "Is Audit?": {
+      "main": [
+        [{ "node": "Call Audit", "type": "main", "index": 0 }],
+        [{ "node": "Is Status?", "type": "main", "index": 0 }]
+      ]
+    },
+    "Is Status?": {
+      "main": [
+        [{ "node": "Call Status", "type": "main", "index": 0 }],
+        [{ "node": "Is Process Drive?", "type": "main", "index": 0 }]
+      ]
+    },
+    "Is Process Drive?": {
+      "main": [
+        [{ "node": "Call Process Drive", "type": "main", "index": 0 }],
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "id": "slack-router-001",
+  "tags": []
+}

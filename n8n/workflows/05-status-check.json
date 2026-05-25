@@ -11,8 +11,22 @@
     },
     {
       "parameters": {
+        "httpMethod": "POST",
+        "path": "slack-status",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "id": "node-506",
+      "name": "Slack Webhook (Status)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [0, 460],
+      "webhookId": "slack-status"
+    },
+    {
+      "parameters": {
         "mode": "runOnceForAllItems",
-        "jsCode": "return [{\n  json: {\n    wpBaseUrl: $env.WP_BASE_URL || 'http://host.docker.internal:10020',\n    wpAuth: 'Basic ' + Buffer.from(($env.WP_USERNAME || '') + ':' + ($env.WP_APP_PASSWORD || '')).toString('base64'),\n    slackToken: $env.SLACK_BOT_TOKEN || '',\n    slackChannel: $env.SLACK_DEFAULT_CHANNEL || '',\n    cpts: ['blog', 'press-release', 'case-study', 'whitepaper'],\n  }\n}];"
+        "jsCode": "const inp = $input.first().json;\nconst body = inp.body || inp;\nreturn [{\n  json: {\n    wpBaseUrl: $env.WP_BASE_URL || 'http://host.docker.internal:10020',\n    wpAuth: 'Basic ' + Buffer.from(($env.WP_USERNAME || '') + ':' + ($env.WP_APP_PASSWORD || '')).toString('base64'),\n    slackToken: $env.SLACK_BOT_TOKEN || '',\n    slackChannel: (typeof body.channel_id === 'string' && body.channel_id) ? body.channel_id : ($env.SLACK_DEFAULT_CHANNEL || ''),\n    cpts: ['blog', 'press-release', 'case-study', 'whitepaper'],\n  }\n}];"
       },
       "id": "node-502",
       "name": "Load Config",
@@ -68,6 +82,9 @@
   ],
   "connections": {
     "Run Status Check": {
+      "main": [[{ "node": "Load Config", "type": "main", "index": 0 }]]
+    },
+    "Slack Webhook (Status)": {
       "main": [[{ "node": "Load Config", "type": "main", "index": 0 }]]
     },
     "Load Config": {
